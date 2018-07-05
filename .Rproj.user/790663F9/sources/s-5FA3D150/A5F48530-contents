@@ -1,0 +1,1936 @@
+--- 
+title: "Software R: Análise estatística de dados utilizando um programa livre"
+author: 
+- Felipe Micail da Silva Smolski
+- Iara Denise Endruweit Battisti
+date: "2018"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: authoryear
+biblatexoptions: [refsegment=chapter]
+link-citations: yes
+github-repo: rstub/bookdown-chapterbib
+url: 'http\://rstub.github.io/bookdown-chapterbib/'
+description: "Curso de análise estatística com R da UFFS Cerro Largo - RS"
+fontsize: 12pt
+lang: pt-Br
+---
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+Sys.setenv(RSTUDIO_PDFLATEX = "latexmk")
+options(width = 80, digits = 4,
+        bookdown.clean_book = TRUE)
+knitr::opts_chunk$set(
+  tidy = FALSE, 
+  out.width='\\textwidth', 
+  fig.align = "center", 
+  comment = NA)
+```
+
+# Apresentação {-}
+
+A necessidade de flexibilidade e robustez para a análise estatística fez com que fosse criado, na década de 1990, a linguagem de programação R. Capitaneado pelos desenvolvedores Ross Ihaka e Robert Gentleman, dois estatísticos da Universidade de Auckland na Nova Zelândia, o projeto foi uma grande evolução para a análise de dados. A partir de então, a ideia inicial de proporcionar autonomia ao pesquisador, viu na expansão do acesso à internet uma oportunidade para que a pesquisa científica se tornasse cada vez mais colaborativa. Ao mesmo tempo, os códigos e rotinas se tornaram facilmente disponibilizáveis na rede, aumentando a reprodução e replicação dos estudos, práticas estas que podem tornar as análises mais confiáveis.
+
+A linguagem de programação R trouxe consigo inúmeras vantagens aos pesquisadores. Dentre elas, pode-se dizer primeiramente que, basicamente o R trabalha com uma extensa relação de modelos estatísticos, que vão desde a modelagem linear e não-linear, a análise de séries temporais, os testes estatísticos clássicos, análise de grupamento e classificação, etc. Não bastasse este fato, é possível a apresentação gráfica dos resultados contando com variadas técnicas, passando também pela criação e manipulação de mapas.
+
+Outra questão importante é que o R possui uma comunidade ativa de desenvolvedores, que se expande regularmente. Isto faz com que as técnicas de análise de dados atinjam pesquisadores de variadas disciplinas ao longo do planeta. Inclusive, concebe que o desenvolvimento dos pacotes melhorem constantemente. No ano de 2017, já haviam mais de 6.000 pacotes disponibilizados. Não menos importante, talvez o essencial: o programa é livre, ao passo que entrega o estado da arte da estatística ao usuário.
+
+Outro progresso significativo na utilização do R foi a criação do *software* RStudio, a partir de 2010. Este, por sua vez, se configura em um ambiente integrado com o R e com inúmeras linguagens de marcação de texto (exemplos LaTeX, Markdown, HTML). Possui igualmente versão livre que disponibiliza ao pesquisador a execução, guarda, retomada e manipulação dos códigos de programação diretamente em seu console, bem como a administração de diretórios de trabalhos e projetos.
+
+O material aqui criado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no *software* RStudio. O sistema operacional aqui utilizado é o Windows 10.
+
+Este livro está organizado da seguinte maneira: no capítulo [1](#intro) [**Primeiros Passos com o R**], busca-se instruir o pesquisador para a instalação dos programas necessários para acessar o ambiente de programação, bem como orientar sobre a usabilidade do programa em suas funções básicas de carregamento de bases de dados, criação de objetos e princípios de manipulação. 
+
+Já no capítulo [2](#desc) [**Estatística Descritiva**], leva o leitor ao encontro das técnicas básicas para descrever as variáveis em bancos de dados, como exemplos a média, mínima, máxima, desvio padrão, os quartis e também, apresentar os princípios dos elementos gráficos de apresentação dos dados. 
+
+O capítulo [3](#inf) [**Estatística Inferencial**] tratará dos métodos de determinação de intervalos de confiança (média e proporção), testes de hipóteses (verificar a normalidade dos dados) e das comparações entre médias de amostras dependentes e independentes. 
+
+No capítulo [4](#qui) [**Teste de Qui-Quadrado**], serão abordadas as referidas técnicas para verificação de asssociação entre duas variáveis qualitativas e de aderência a uma distribuição.
+
+No capítulo [5](#reg) [**Modelos de Regressão**] serão introduzidos os conhecimentos sobre as técnicas de análise de correlação e regressão linear simples, bem como sobre o diagrama de dispersão, método dos mínimos quadrados, análise de variância, coeficiente e intervalo de predição, da análise dos resíduos e dos princípios de regressão múltipla.
+
+A criação de documentos dinâmicos utilizando o RStudio será tratada no capítulo [6](#rmark) [**RMarkdown**]. O pesquisador poderá conhecer as formas de integrar a programação no R e a manipulação de bases de dados, criando, compilando e configurando relatórios finais em diversos formatos (HTML, PDF e Word/Libre/Open Office).
+
+Boa leitura!
+
+# Introdução {#intro}
+
+
+O R é um ambiente voltado para análise de dados com o uso de uma linguagem de programação, frente a isso um conhecimento prévio dos príncipios de programação facilita a compreensão da condução das análises aplicadas no software. Entretanto, não é pré-requisito. Neste capítulo abordaremos os primeiros passos para o emprego da linguagem de programação R utilizando uma interface "amigável" - o software RStudio. Além disso, serão apresentados os comandos básicos para a manipulação de dados dentro do RStudio.
+
+
+## Download e instalação do R e Rstudio
+
+
+**R**: <http://www.r-project.org>. Clique em Download (CRAN) - escolha o link de um repositório - clique no link do sistema operacional (Linux, Mac ou Windows) - clique em *install R for de first time - Download*. 
+
+**RStudio**: <http://www.rstudio.com/products/rstudio/download>. Em RStudio Desktop, escolha a versão *free*, seguidas da opção do sistema operacional do usuário.
+
+Lembrando que:
+
+- R é o software;
+- RStudio é uma ferramenta amigável para o R.
+
+
+## Painéis
+
+O RStudio é a interface que faz com que seja mais fácil a utilização da programação em R. 
+
+```{r paineis, echo=FALSE, fig.cap='Painéis do Rstudio',fig.subcap = c("Fonte: Elaborado pelo(s) autor(es).")}
+knitr::include_graphics("paineis.png")
+```
+
+- **Fonte/Editor de Scripts**: se constitui do ambiente onde serão abertos os scripts previamente salvos nos mais diversos formatos ou mesmo sendo o local de visualização das bases de dados.
+- **Console**: local onde será efetuada a digitação das linhas de código que serão interpretadas pelo R.
+- **Ambiente e Histórico**: o ambiente será visualizado os objetos criados ou carregados durante a seção e; a aba History retoma os scripts digitados no console.
+- **Plots/arquivos/Pacotes**: local onde podem ser acessados os arquivos salvos no computador pela aba *files*; a aba *Plots* carrega os gráficos e plotagens; a aba *Packages* contém os pacotes instalados em seu computador, onde são ativados ou instalados novos; em *Help* constam as ajudas e explicações dos pacotes e; *Viewer* vizualiza documentos do tipo html.
+
+## Help
+
+Acessamos a ajuda do RStudio por meio do comando `help()`, através da aba "Help" ou ao clicar no nome do pacote. Pode-se digitar a ajuda que usuário necessita (exemplo `help("summary")`), ou diretamente no colsole digitamos ? e a função desejada, exemplo: `?mean`.
+
+## Instalação de pacotes
+
+Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, e para isso se faz necessário efetuar a sua instalação. Precisamos ir até o painel dos pacotes em *packages}, selecionar a opção instalar e inserir o nome do pacote desejado na janela indicada. Ao selecionar a opção instalar, no console receberemos informações do procedimento e do sucesso do mesmo. 
+
+
+```{r pacotes1, echo=FALSE, fig.cap='Instalação de pacotes',fig.subcap = c("Fonte: Elaborado pelo(s) autor(es).")}
+knitr::include_graphics("pacotes,1.png")
+```
+
+```{r pacotes2, echo=FALSE, fig.cap='Caixa de informação de pacote a ser instalado',fig.subcap = c("Fonte: Elaborado pelo(s) autor(es).")}
+knitr::include_graphics("pacotes,2.png")
+```
+
+A mesma função, para instalação de um pacote, pode ser efetuada diretamente via console: `install.packages("pacote")`. É importante ressaltar a função `library(nomedopacote)` que é utilizada no console para informar ao R e "carregar" o pacote que o usuário irá utilizar. Podem ser instalados mais de um pacote ao mesmo tempo, como no exemplo:
+
+
+`install.packages(c("readr", "readxl"))`
+
+
+
+
+
+
+
+
+
+## Abrir arquivo de dados
+
+Dispondo de um banco de dados em uma planilha eletrônica (LibreOffice Calc ou EXCEL), neste caso será utilizado o arquivo  [árvores](https://github.com/Smolski/softwarelivrer/raw/master/basico/arvores.xlsx) como exemplo o banco de dados. Os dados derivam de uma pesquisa com espécies de árvores registrando as variáveis diâmetro altura do peito (DAP) e altura. Dados cedidos pela professora Tatiane Chassot.
+
+Pode-se utilizar a linha de comando para carregar os arquivos de dados, da seguinte forma:
+
+
+`library(readxl)`
+
+
+`nome.objeto.xls = read_excel("d:/arvores.xls")`
+
+Outras opções de arquivos podem ser carregados no RStudio, como por exemplo arquivos de texto (.txt ou .csv), arquivos derivados do excel (.xls ou .xlsx), arquivos de dados do SPSS (.sav), do *software* SAS (.sas7bdat) e do STATA (.dta). A instalação de alguns pacotes é requerida, dependendo da origem da base de dados, como por exemplo o `readxl`, `readr` e `haven`, como os exemplos abaixo:
+
+
+
+
+`library(readr)`
+
+`nomeobjeto = read.csv("d:/arvores.csv")`
+
+
+`library(haven)` 
+
+`nomeobjeto = read_sav("d:/arvores.sav")`
+
+
+`nomeobjeto = read_dta("d:/arvores.dta")`
+
+
+`nomeobjeto = read_sas("d:/arvores.sas7bdat")`
+
+Outras opções podem ser comandadas dentro destes comando para abertura de arquivos, como por exemplo, um arquivo csv em que esteja separado por vírgulas pode ser lido como:
+
+
+`read.csv("d:/arvores.csv", sep=",")`
+
+O comando `header=TRUE` diz que a primeira linha do arquivo contém o cabeçalho; `skip=4` faz com que sejam ignoradas as 4 primeiras linhas.
+
+A opção `load()` (exemplo: `load("base.RData")`) pode ser utilizada para carregar as bases de dados salvas com a função `save()`, que será descrita no subcapítulo a seguir.
+
+Outra opção é o carregamento das bases de dados manualmente pelo caminho *Envoirment $>$ Import Dataset*, escolhendo o tipo de arquivo:
+
+```{r r3, echo=FALSE, fig.cap='Aba *Import Dataset*',fig.subcap = c("Fonte: Elaborado pelo(s) autor(es).")}
+knitr::include_graphics("r3.png")
+```
+
+Na caixa correspondente a File/Url se insere o endereço virtual ou o local onde se encontra o arquivo. Ao importar os dados, carrega-se um objeto criado com as informações contidas no arquivo. No nosso exeplo, carregamos a planilha arvores (arquivo .xls) como mostra a Figura \@ref(fig:r4), derivado do caminho "Import Dataset $>$ From Excel" do Environment.
+
+```{r r4, echo=FALSE, fig.cap='Caixa de informações do Import Data',fig.subcap = c("Fonte: Elaborado pelo(s) autor(es).")}
+knitr::include_graphics("r4.png")
+```
+
+O campo *Code Preview* mostra o comando que está sendo criado para a importação destes dados. Em *Import Options*, delimita-se opções do objeto como o nome (*name*), o número máximo de linhas (*Max Rows*), quantas linhas serão puladas na importação do arquivo (*Skip*), o tratamento das células em branco (*NA*) e se a primeira linha contém os nomes (*Firts Row as Names*).
+
+Com relação à importação de arquivos de texto separado por caracteres (.csv), ela se dá via "Import Dataset $>$ From Text (readr)" do Environment. Constam algumas solicitações diferentes a serem determinadas pelo usuário no campo *Import Options*, conforme mostra a Figura \@ref(fig:r4csv). Uma questão importante é a opção *Delimiter*, a qual o pesquisador tem que prestar atenção quando o arquivo está separado por vírgulas (*Comma*), ponto e vírgula (*Semicolon*) ou outro tipo de caractere. A opção *Locale $>$ Configure...* oportuniza determinar os tipos de marca decimal e codificação de textos, por exemplo.
+
+```{r r4csv, echo=FALSE, fig.cap='Opções da importação de arquivos .csv',fig.subcap = c("Fonte: Elaborado pelo(s) autor(es).")}
+knitr::include_graphics("r4csv.png")
+```
+
+
+Importante mencionar que em ambos os casos de importação, no campo *Dada Preview* onde constam os dados do arquivo a ser importado, é possível determinar o tipo de dado que cada "coluna" contém. Isto é extremamente importante, pois campos que possuem números, que serão posteriormente utilizados em operações aritméticas, por exemplo, devem ser configurados como tal. No entanto, como será visto adiante, a alteração do tipo do dado também pode ser feita posteriormente sem problema algum.
+
+Alguns tipos de dados:
+
+- **Numeric**: números, valores decimais em geral (`5.4`).
+- **Integer**: números (`4`).
+- **Character**: variável de texto, ou *string* (`casa`).
+- **Double**: cria um vetor de precisão dupla, que abarca os números.
+- **Logical**: operadores booleanos (`TRUE, FALSE`).
+- **Date**: opção para datas.
+- **Time**: vetor para séries de tempo.
+- **Factor**: variável nominal, inclusive como fator ordenado, representam categorias.
+
+## Salvar arquivo de dados
+
+O banco de dados que o R armazena na memória pode ser salvo, junto com todo o ambiente, usando o ícone de disquete na aba "Environment" (salva como arquivo .RData), e depois carregado pelo ícone de pasta (Abrir dados...) na mesma aba. Desta forma, salvará todos os objetos criados no ambiente de trabalho.
+
+```{r r6, echo=FALSE, fig.cap='Atalho para abrir e salvar arquivo de dados',fig.subcap = c("Fonte: Elaborado pelo(s) autor(es).")}
+knitr::include_graphics("r6.png")
+```
+
+Outra opção com mesmo efeito é utilizar o comando a seguir diretamente no console do RStudio: 
+
+`save("nomeDoObjeto",file="nomeDoArquivo.RData")`
+
+O nome do objeto pode ser uma lista de objetos para salvar mais de um objeto do ambiente, `list=("objeto1", "objeto2")`. Para carregar um arquivo RData no ambiente, o comando a ser utilizado pelo usuário é 
+
+`load("arquivo.RData")`,
+
+desde que o arquivo esteja no diretório de trabalho do R.
+
+É possível exportar as bases trabalhadas para vários formatos de arquivos de dados e de texto, como seguem alguns exemplos:
+
+- `write.csv(nomeobjeto,"file.csv", sep=";")`: salvando em arquivo csv.
+- `write.foreign(nomeobjeto,"d:/nome.sps")`: arquivos sps.
+- `write.foreign(nomeobjeto,"d:/nome.dta")`: arquivos dta.
+- `write.foreign(nomeobjeto,"d:/nome.sas7bdat")`: arquivos sas7bdat.
+
+## Diretórios de trabalho
+
+Os trabalhos efetudados via Rstudio, incluindo as bases de dados, os objetos, os resultados das fórmulas, os cálculos aplicados sobre os vetores e demais arquivos resultantes da utilização do programa podem ser salvos em seu diretório de arquivos. Após instalado o Rstudio  destina um diretório padrão salvar estes arquivos, o qual pode ser verificado com o comando `getwd()`. 
+
+Este caminho padrão, por sua vez, pode ser alterado via comando
+
+`setwd("C://file/path")`
+
+onde o usuário escolhe a pasta desejada que ficará como padrão. O comando `dir()` mostra ao usuário os documentos que constam no diretório padrão ou o escolhido para a consulta.
+
+## Operações
+
+### Operações Aritméticas
+
+A realização de uma operação aritmética no R acontece da seguinte forma: onde a resolução das operações segue o padrão, ou seja, primeiro exponenciações, seguido de multiplicações e divisões, deixando por ultimo adições e subtrações, de acordo com a ordem que estão dispostas. Para alterar a prioridade da resolução de operações fazemos o uso do parenteses para destacar a operação que deve ser prioritária na resolução. Seguem alguns exemplos efetuados diretamente no console do RStudio:
+
+```{r}
+# soma
+19+26
+# subtração
+19-26
+# divisão
+4/2
+# multiplicação 
+4*2
+# exponenciação
+4^2
+# prioridade de resolução
+19 + 26 /4 -2 *10
+((19 + 26) /(4 -2))*10
+# raiz quadrada
+sqrt(16)
+# Logaritmo 
+log(1)
+
+```
+
+### Operações Lógicas
+
+O ambiente de programação Rstudio trabalha com algumas operações lógicas, que serão importantes na manipulação de bases de dados:
+
+- $a == b$ ("a" é igual a "b")
+- $a != b$ ("a" é diferente a "b")
+- $a > b$ ("a" é maior que "b")
+- $a < b$ ("a" é menor  que "b")
+- $a >= b$ ("a" é maior ou igual a "b")
+- $a <= b$ ("a" é menor ou igual a "b")
+- is.na ("a" é missing - faltante)
+- is.null ("a" é nulo)
+
+Seguem alguns exemplos da aplicação das operações lógicas:
+
+```{r}
+# maior que 
+2 > 1
+1 > 2
+
+# menor que 
+1 < 2
+
+# maior ou igual a 
+0 >= (2+(-2))
+
+# menor ou igual a 
+1 <= 3
+
+# conjunção
+9 > 11 & 0 < 1
+
+# ou
+6 < 5 | 0 > -1
+
+# igual a
+1 == 2/2
+
+# diferente de
+1 != 2
+```
+
+## Criação de variáveis
+
+A linguagem de programação R se configura em uma linguagem orientada a objetos, ou seja, a todo tempo estamos criando diversos tipos de objetos e efetuando operações com os mesmos. Por exemplo, a criação de listas, bases de dados, união de bases de dados, data.frames e até mesmo mapas!
+
+```{r}
+#Criando um objeto simples
+objeto = "meu primeiro objeto" #enter
+#Agora para retomar o objeto criado:
+objeto #enter
+
+#Pode ser efetuada uma operação:
+a= 2+1
+a
+```
+
+O comando `ls()` lista todos os objetos que estão criados no ambiente e `rm(x)` remove o objeto indicado (x). Para remover todos os objetos de uma só vez utiliza-se `rm(list=ls())`.
+
+```{r}
+#Lista objetos do ambiente
+ls()
+#Remover um banco de dados
+rm(a)
+```
+
+### Conversão de uma variável
+
+Para a aplicação de algumas funções é importante que cada variável esteja corretamente classificada, o que em alguns casos não ocorre durante o reconhecimento automático do R. Precisamos então reconhecê-la como variável texto, numérica ou fator. Além disso, a classe ordered se aplica a variáveis categóricas que podem ser consideradas ordenáveis.
+
+```{r}
+idade=c('11', '12', '31')
+nomes=c("Elisa", "Priscila", "Carol")
+cep=c(98700000,98701000,98702000)
+idade= as.numeric(idade)
+idade
+cep = as.character(cep)
+cep
+```
+
+## Alguns comandos essenciais
+
+A função `head()` mostra as 6 primeiras colunas do arquivo para se ter uma noção do conteúdo. No caso do mesmo ser um data.frame, podemos solicitar o número de valores ou linhas a serem mostrados no console através do parâmetro n ou na ausência deste, todas as linhas serão impressas, como exemplo `head(x ,n=2)` para ver as duas primeiras linhas. 
+
+O comando `summary()` efetua o resumo dos dados, se for qualitativa mostra a frequência absoluta das categorias e se for quantitativa apresenta as categorias. No exemplo abaixo trabalharemos com uma base de dados de treinamento denominada "iris" que está acessível no *software* RStudio através do comando que carrega dados específicos `data()`:
+
+```{r  echo=TRUE}
+#Carregando dados da base do RSdudio iris.
+data(iris)
+
+#Visualizando as primeiras 6 colunas
+head(iris)
+
+#Resumo do objeto
+summary(iris)
+```
+
+O comando `names()` lista os nomes das colunas dos bancos de dados escolhidos, enquanto `tail()` mostra as últimas seis linhas.
+
+```{r}
+#Para visualizar os nomes das colunas dos dados:
+names(iris)
+
+#vizualizar as ultimas seis linhas do objetos
+tail(iris)
+```
+
+Para que o pesquisador conheça melhor as bases de dados em que está atuando, o comando `class()` serve para identificar o tipo de base ou dados da base. Com o exemplo abaixo constata-se que o objeto "iris" é um *data frame*, a variável "Sepal.Length" é uma variável numérica e que a variável numérica.
+
+```{r}
+class(iris)
+class(iris$Sepal.Length)
+class(iris$Especie)
+```
+
+Efeito semelhante possui o comando `ls.str()`:
+
+```{r}
+ls.str(iris)
+```
+
+Os comandos `ncol()` e `nrow()` mostram o número de colunas e o número de linhas do objeto, respectivamente.
+
+### Funções *View* e *dim*
+
+A função `View()` permite vizualizar os elementos no script do dataframe requesitado, enquando a função `dim()` (abreviatura de dimensões) fornece o número de linhas e de colunas, respectivamente.
+
+```{r}
+View(iris)
+dim(iris)
+```
+
+Para alterar um nome de uma variável pode ser utilizado o comando colnames. No exemplo acima, vamos alterar o nome da coluna "Species" para "Especie". 
+
+```{r}
+#Alterar o nome da coluna, sendo que o '[5]' indica que está na quinta coluna.
+colnames(iris)[5]='Especie'
+```
+
+Para selecionarmos uma coluna do objeto "iris", por exemplo a coluna "Sepal.Length", poderíamos digitar no console o comando **iris\$Sepal.Length**. O padrão de carregamento da base de dados nos obriga a dizer ao R qual é a base que quer selecionar (iris), inserindo o símbolo `$` e após o nome da coluna a qual deseja as informações. Para criar um novo objeto com esta informação, basta dizer ao R, como já visto acima, por exemplo: **novoobjeto=iris\$novacoluna**.
+
+No entanto, para acessar os dados sem o uso do símbolo `$`, podemos usar o seguinte comando: **attach(iris)**. Assim, podemos efetuar o sumário da coluna "Petal.Width":
+
+```{r}
+#Definindo a função attach para o objeto 'dados'.
+attach(iris)
+#Efetuando o sumário de 'pop.total'.
+summary(Petal.Width)
+#Como a coluna 'distrito' é um fator, o sumário será 
+#a contagem da quantidade de cada fator na coluna.
+summary(Especie)
+```
+
+
+### Comando *tapply*
+
+O comando `taply()` agrega os dados pelos níveis das variáveis qualitativas. Note que a coluna "Especie" possui dados em forma de fatores. Assim, para filtrarmos a informação (coluna "Sepal.Length") média por Especie, podemos utilizar:
+
+```{r}
+#Função 'tapply', número médio da população total por distrito.
+tapply(Sepal.Length, Especie, mean)
+```
+
+No caso da coluna "Sepal.Length", se ela possuir um registro NA (faltante), para que se efetue a média por este coluna neste quesito, há que se adicionar o parâmetro `na.rm=T`, que ignora as células faltantes para calcular-se a média:
+
+```{r}
+#Função 'tapply' considerando NAs:
+tapply(Sepal.Length, Especie, mean)
+#Função 'tapply' sem considerar NAs:
+tapply(Sepal.Length, Especie, mean, na.rm=T)
+```
+
+### Comando *subset*
+
+Utiliza-se o comando `subset()` para formar um subconjunto de dados o qual desejamos selecionar de um objeto. Por exemplo, se quisermos criar um novo objeto com somente os dados da "Especie" setosa:
+
+```{r}
+dadossetosa=subset(iris, Especie=='setosa')
+head(dadossetosa)
+```
+
+Pode ser configurado mais de uma condição para a filtragem dos dados, por exemplo, além de serem filtrados os dados referentes a Especie setosa, aquelas na qual o Sepal.Length é superior a 5. Como no exemplo, criamos um novo objeto com estas condições:
+
+```{r}
+dadossetosa2=subset(iris, Especie=='setosa'& Sepal.Length>5)
+head(dadossetosa2)
+```
+
+## Estrutura de dados
+
+### Vetores
+
+Os fatores são uma classe especial de vetores, que definem variáveis categóricas de classificação, como os tratamentos em um experimento fatorial, ou categorias em uma tabela de contingência.
+
+```{r}
+# Criação de um vetor
+x= c(2, 4, 6)
+x
+```
+
+Os vetores podem ser criados a partir de uma sequência numérica ou mesmo de um intervalo entre valores:
+
+```{r}
+x= c(2:6)
+x
+
+# Criação de um vetor a partir do intervalo entre cada elemento e valores
+#mínimo e máximo
+x= seq(2, 3, by=0.5)
+x
+
+```
+
+Criação de um vetor atráves de uma repetição também é útil em várias situações. No primeiro exemplo repete o intervalo de 1 a 3 4 vezes e no segundo exemplo, a cada 3 vezes:
+
+```{r}
+
+x= rep(1:3, times=4)
+x
+
+y= rep(1:3, each=3)
+y
+```
+
+A função factor cria um fator, a partir de um vetor:
+
+```{r}
+sexo<-factor(rep(c("F", "M"),each=8))
+sexo
+
+numeros=rep(1:3,each=3)
+numeros
+
+numeros.f<-factor(numeros)
+numeros.f
+```
+
+
+Fatores têm um atributo que especifica seus níveis ou categorias (levels), que seguem ordem alfanumérica crescente, por *default*. Em muitas análises essa ordem é de fundamental importância e dessa forma pode ser alterada através do argumento levels, por exemplo, para que possa ser colocado o controle antes dos tratamentos: 
+
+```{r}
+tratamentos=factor(rep(c("controle","adubo A","adubo B"), each=4))
+tratamentos
+
+tratamentos=factor(rep(c("controle","adubo A","adubo B"), each=4), 
+levels=c("controle", "adubo A", "adubo B"))
+tratamentos
+```
+
+Fatores podem conter níveis não usados (vazios):
+
+```{r}
+participantes=factor(rep("mulheres",10), levels=c("mulheres","homens"))
+participantes
+```
+
+Também é possível aplicar uma função aos subconjuntos de um vetor definidos por um fator utilizando a função `tapply()`. Criamos um objeto com o sexo das pessoas, seguido pela dieta e peso (que caracterizamos como numérico). Depois, determinamos a média de peso frente ao sexo e a dieta
+
+```{r}
+sexo=factor(rep(c("F","M"),each=9))
+dieta=factor(rep(rep(c("normal","light","diet"), each=3),2), 
+levels=c("normal", "light","diet"))
+peso=c(90, 89, 78, 69, 85, 69, 77, 89, 80, 60, 75, 79, 65, 94,
+       69, 85, 69, 77)
+sexo
+
+dieta
+
+peso=as.numeric(peso)
+
+# média de peso frente ao sexo e dieta
+tapply(peso,list(sexo,dieta), mean)
+```
+
+#### Função *table*
+
+Para contar elementos em cada nível de um fator, usa-se a função table:
+
+```{r}
+table(participantes)
+```
+
+A função pode fazer tabulações cruzadas, gerando uma tabela de contingência, esse tipo de tabela é usado para registrar observações independentes de duas ou mais variáveis aleatórias: 
+
+
+```{r}
+table(sexo,dieta)
+```
+
+### Matrizes
+
+A função matrix tem a finalidade de criar uma matriz com os valores do argumento data, argumento este que insere as variáveis desejadas na matriz. O número de linhas é definido pelo argumento nrow e o número de colunas é definido pelo argumento ncol: 
+
+```{r}
+nome.da.matriz= matrix(data=1:12,nrow = 3,ncol = 4)
+nome.da.matriz
+```
+
+
+Por *default* (ação tomada pelo *software*), os valores são preenchidos por coluna. Para preencher por linha basta instruir o programa de outra forma, alterando o argumento `byrow` para TRUE:
+
+```{r}
+nome.da.matriz= matrix(data=1:12,nrow = 3,ncol = 4, byrow=T)
+nome.da.matriz
+```
+
+Se a matriz inserida tem menos elementos do que a ordem informada para a matriz, os são repetidos até preenchê-la:
+
+```{r}
+lista= list(matriz=matrix(c(1,2,1), nrow=3, ncol=2))
+lista
+```
+
+### Listas
+
+As listas podem ser criadas a partir do comando `list()`. 
+
+- **nrow**: corresponde ao número de linhas;
+- **ncol**: corresponde ao número de colunas.
+
+Para ver quais elementos estão em suas listas é só chamar pelo nome que foi dado para ela, como no exemplo abaixo. Representa uma coleção de objetos.
+
+```{r}
+lista= list(matriz=matrix(c(1,2,1,5,7,9), nrow=3, ncol=2),vetor=1:6)
+lista
+```
+
+#### Comandos para manipulação de listas
+
+Para descobrirmos de maneira rápida o números de objetos que há na lista, utilizamos o comando `length(nomedalista)`.
+
+```{r}
+lista
+length(lista)
+```
+
+O uso do comando `names(nomedalista)` retorna os nomes dos objetos que estão presentes na lista.
+
+```{r}
+names(lista)
+```
+
+Para chamar várias listas através usamos o comando da seguinte forma:
+
+`c(nome1, nome2)`
+
+```{r}
+lista.1= list(matriz=matrix(c(1,2,1,5,7,9), nrow=3, ncol=2),
+              vetor=1:6)
+lista.2= list(nomes=c("Marcelo", "Fábio", "Felipe"), 
+              idade=c(25, 34, 26))
+c(lista.1,lista.2)
+```
+
+### Data frames
+
+Com a função `data.frame()` reunimos vetores de mesmo comprimento em um só objeto. Neste caso são criadas tabelas de dados. Cada observação é descrita por um conjunto de propriedades. Abaixo podemos ver como inserir os dados para criar a "tabela". Similar como matrizes, porem diferentes colunas podem possuir elementos de natureza diferentes .
+
+```{r}
+estudantes= c("Camila", "Pedro", "Marcelo","Guilherme")
+idade=c(21,17,17,18)
+peso=c(65,79,80,100)
+informacoes=data.frame(estudantes,idade,peso)
+informacoes
+```
+
+Adiciona-se colunas no *data frame* através do comando a seguir, pressupondo que a ordem dos dados esteja correta:
+
+`nomedodata.frame$variávelaseradicionada`
+
+```{r}
+informacoes$cidades=c("Nova Hartz","Gramado","Soledade",
+                      "Porto Alegre")
+informacoes
+```
+
+É possível fazer uma contagem concatenando com a filtragem do pacote `subset`, como no exemplo a contagem dos indivíduos cuja origem é Soledade.
+
+```{r}
+length(subset(informacoes$cidades, informacoes$cidades=="Soledade"))
+```
+
+## Manipulação de banco de dados
+
+## Função *edit*
+
+Esta função abre uma interface simples de edição de dados em formato planilha, e é útil para pequenas modificações. Mas para salvar as modificações atribua o resultado da função `edit` a um objeto.
+
+Utiliza-se o comando da seguinte forma: 
+
+
+`novonomedabase = edit(nomeatualdabase)`
+
+```{r}
+informacoes.2=edit(informacoes)
+```
+
+```{r 95, echo=FALSE, fig.cap='Editor de dados',fig.subcap = c("Fonte: Elaborado pelo(s) autor(es).")}
+knitr::include_graphics("95.png")
+```
+
+Basta clicar no retângulo correspondente a variável que deseja ser modificada, excluir ou adicionar novas colunas.
+
+```{r 10, echo=FALSE, fig.cap='Acréscimo de uma nova coluna através do editor de dados',fig.subcap = c("Fonte: Elaborado pelo(s) autor(es).")}
+knitr::include_graphics("10.png")
+```
+
+Logo, chamando o novo banco de dados, teremos:
+
+```{r}
+informacoes.2 
+```
+
+## Funções
+
+As funções a seguir são aplicáveis a vetores, data.frames e listas, e em muitos casos trazem praticidade a uma análise estatística. Foram criados objetos com informações do nome dos estudantes e altura. Segue o processo de criação do *data frame* com estas informações, lembrando que esta forma de "união" das informações pressupõe que a ordem dos dados esteja correta:
+
+```{r  message=FALSE, warning=FALSE}
+# União de um banco de dados (existencia de uma váriavel em comum)
+
+estudantes=c("Guilherme", "Marcelo", "Pedro", "Camila")
+altura= c(1.50, 1.9, 1.74, 1.80)
+informacoes.3=data.frame(estudantes, altura)
+```
+
+Já o comando `merge()` serve para juntar dois *data frames* que possuam uma coluna em comum. Neste caso, unimos o objeto `informações.2` com o objeto `informações.3` utilizando o nome dos estudantes (informação em comum):
+
+```{r}
+informacoes=merge(informacoes.2,informacoes.3, by="estudantes")
+```
+
+Adicionar um cálculo entre as colunas é muito simples com o RStudio, neste caso com os dados do peso e altura, pode-se calcular o IMC (Índice de Massa Corporal) em uma nova coluna:
+
+```{r}
+informacoes$Imc=c(peso/(altura^2))
+informacoes
+```
+
+Ainda, se houver linhas que tenham pelo menos uma informação faltante (NA), estas podem ser excluídas com o comando `na.omit()`, ou mesmo os NAs serem substituídos por outro caractere (neste caso foi substituído por zero) com o comando `is.na`:
+
+```{r}
+# Retirar as linhas que tenham pelo menos um NA:
+
+informacoes<- na.omit(informacoes)
+informacoes
+
+# Substituir NA's por zero no data.frame
+
+informacoes[is.na(informacoes)] = 0
+informacoes
+```
+
+Outro recurso interessante é a substituição de dados em uma columa, que pode ser feito de forma automática para uma condição padrão escolhida. No exemplo abaixo, substituimos aquelas informações de idade igual a 17 pelo número 19:
+
+```{r}
+# Substituir números na coluna
+informacoes$idade[informacoes$idade == 17] <- 19
+informacoes
+```
+
+A classificação qualitativa das informações, com base em condições definidas pelo usuário podem ser facilmente efetuadas pelo comando `ifelse`. Para quem não tem intimidade com atributos de programação, este comando seleciona "se" (*if*) uma informação desejada é atendida, e cria uma rotina (*else*) que será aplicada "então". 
+
+No nosso exemplo, cria-se um objeto "classificacao" e se a coluna IMC conter dados acima de 25, será marcado como "peso normal", sendo que do contrário, constará como "excesso de peso". Após utilizamos o comando `cbind()` para unir os dois objetos pelas colunas. caso não queira utilizar o comando `cbind()`, poderia ser criado uma nova coluna com o nome do obetjo sendo "informacoes\$classificacao".
+
+```{r}
+# Classificar qualitativamente informações em um determinado intervalo 
+classificacao=ifelse(informacoes$Imc<25, "peso normal", 
+                     "excesso de peso")
+informacoes=cbind(informacoes, classificacao)
+informacoes
+```
+
+```{r imct, echo=FALSE}
+imc=data.frame(Resultado=c("Abaixo de 17",
+                             "Entre 17 e 18,49",
+                             "Entre 18,5 e 24,99",
+                             "Entre 25 e 29,99",
+                             "Entre 30 e 34,99",
+                             "Entre 35 e 39,99",
+                             "Acima de 40"),
+                 Significado=c("Muito abaixo do peso",
+                            "Abaixo do peso",
+                            "Peso normal",
+                            "Acima do peso",
+                            "Obesidade I",
+                            "Obesidade II (severa)",
+                            "Obesidade III (mórbida)"))
+knitr::kable(imc, caption = 'Valores padrão para o IMC')
+```
+
+No entanto, o IMC possui várias classificações de acordo com o seu resultado (Tabela \@ref(tab:imct)), sendo que, por exemplo, resultados abaixo de 17 informam que o indivíduo se encontra como Muito abaixo do peso, e acima de 40, se encontra em Obesidade III. Para efetuar a classificação desta maneira utilizando o comando `ifelse`, ou seja, com mais de uma condição, pode ser efetuada a estruturação com a aglutinação do comando:
+
+```{r}
+informacoes$tipoimc=ifelse(informacoes$Imc<17, "Muito abaixo do peso",
+ifelse(informacoes$Imc>=17&informacoes$Imc<=18.49,"Abaixo do peso",
+ifelse(informacoes$Imc>=18.5&informacoes$Imc<=24.99,"Peso Normal",
+ifelse(informacoes$Imc>=25&informacoes$Imc<=29.99,"Acima do Peso",
+ifelse(informacoes$Imc>=30&informacoes$Imc<=34.99,"Obesidade I",
+ifelse(informacoes$Imc>=35&informacoes$Imc<=39.99,"Obesidade II",
+       "Obesidade III"))))))
+informacoes
+```
+
+A classificação binária dos dados (0,1) também é relevante para o estudo da manipulação dos dados trabalhados pelo pesquisador. Neste exemplo, classificou-se aqueles valores da coluna "classificacao" com o "peso normal" iguais a 1, do contrário classificou-se 0 (zero).
+
+```{r}
+# Classificar informações usando o código binário
+informacoes$binario= ifelse(informacoes$classificacao 
+                            == 'peso normal', 1, 0) 
+informacoes
+```
+
+O comando `rbind()` é utilizado para incluir linhas novas abaixo de um objeto já criado pelo pesquisador, sendo que é importante o cuidado de que estas novas informações tenham os mesmos campos (colunas). A exemplo, pede-se para incluir uma nova pessoa no *data frame* informacoes: Francisco, 30 anos de idade, peso 59, natural de Ijuí, IMC 21.3387, classificado como peso normal. Lembrando de incluir os campos "tipoimc" e "binario".
+
+```{r}
+novo1=data.frame(estudantes="Francisco", idade=30, peso=59, 
+                 cidades="Ijuí", 
+                 altura="1,59", 
+                 Imc= 23.30, 
+                 classificacao= "peso normal",
+                 tipoimc="Peso Normal", 
+                 binario=1)
+informacoes=rbind(informacoes, novo1)
+informacoes
+```
+
+Outra forma de incluir informações adicionais nos *data frames* através de atributos é utilizando o pacote `dplyr`. Decide-se criar um campo "faixa etária", sendo que aqueles indivíduos com idade acima de 21 chamaremos de "adulto" e do contrário "não adulto".
+
+```{r}
+require(dplyr)
+informacoes= mutate(informacoes, 
+                    "faixa etaria"= ifelse(informacoes$idade<21,
+                                           "não adulto", "adulto"))
+informacoes
+```
+
+A (re)ordenação das colunas de um *data frame* pode ser muito útil em alguns casos, sendo extremamente fácil efetuá-la, cada número representa o número da respectiva coluna:
+
+```{r}
+# Reordenar colunas
+informacoes=informacoes[c(8,2,3,4,1,6,5,7,9)]
+```
+
+Caso se queira a inversão total da ordem das colunas do objeto estudado, o comando `rev()` pode ser útil:
+
+```{r}
+# Inversão do posicionamento dos elementos
+rev(informacoes)
+```
+
+A  função `table()` faz a contagem os dados; já o comando `sort()` ordena os objetos em ordem crescente (caso queira no formato decrescente, informar `decreasing=TRUE`).
+
+```{r}
+# contagem de objetos
+table(informacoes$classificacao)
+
+# Ordenar os objetos em ordem crescente
+sort(informacoes$idade)
+```
+
+A ordenação de todo o *data frame* a partir de uma variável, pode ser realizada utilizando o comando `order`, sendo que pode ser realizada inclusive com variáveis categóricas (no exemplo abaixo o nome das cidades).
+
+```{r}
+# Ordem decrescente 
+informacoes[order(informacoes$idade, decreasing = TRUE),]
+
+#ordem crescente
+informacoes[order(informacoes$idade, decreasing = FALSE),]
+
+#ordem crescente
+informacoes[order(informacoes$cidades, decreasing = FALSE),]
+```
+
+O comando `rank()` cria uma ranqueamento crescente das informações. Se pretende-se, por exemplo, criar uma coluna com o ranking dos valores do IMC, pode ser utilizado:
+
+```{r}
+informacoes$rankingImc=rank(informacoes$Imc)
+informacoes
+```
+
+## Funções Matemáticas
+
+A utilização de funções matemáticasno RStudio contribui para que o pesquisador possa realizar vários experimentos com seus dados. Os cálculos podem ser efetuados diretamente no console do programa ou aplicados aos objetos criados:
+
+```{r}
+log(1.5)
+
+exp(1)
+```
+
+No caso do *data frame* o qual foi criado acima ("informacoes"), pode-se buscar as informações dos valores mínimos (função `min()`), máximos (`max()`) da base:
+
+```{r}
+max(informacoes$idade)
+
+min(informacoes$idade)
+```
+
+Ainda, se o interesse está em descobrir a posição, no *data frame}, do peso mínimo e máximo da amostra utiliza-se o comando `which.min` e `which.max`.
+
+```{r}
+# Para descobrir em qual posição se encontra o peso mínimo:
+which.min(informacoes$peso)
+which.max(informacoes$peso)
+```
+
+Para descobrir qual é o estutande que possui o peso mínimo, por exemplo, ou o Imc máximo, utiliza-se o seguinte comando (notem que os resultados trazem a lista de todos os estudantes comparados):
+
+```{r}
+informacoes$estudantes[which.min(informacoes$peso)]
+informacoes$estudantes[which.max(informacoes$Imc)]
+``` 
+
+O arredondamento de valores numéricos pode ser feito utilizando o comando `round()`, o qual o pesquisador informa o número de casas decimais:
+
+```{r}
+# Arredondar para n casas decimais
+round(informacoes$Imc, 2)
+```
+
+Já o comando `signif()` determina onúmero de algarismos significativos da série escolhida, ou seja, ele arredonda para os valores em seu primeiro argumento com os número de dígitos detemrinados: 
+
+```{r}
+x2 <- pi * 100^(-1:3)
+round(x2, 3)
+signif(x2, 3) 
+```
+
+A soma do total da coluna idade, o desvio padrão, a variância, a média aritmética e mediana podem ser encontrados, respectivamente, pelos comandos `sum()`, `sd()`, `var()`, `mean()`, `median()`:
+
+```{r}
+# Realiza a somatória dos valores
+sum(informacoes$idade)
+
+# Desvio padrão
+sd(informacoes$idade)
+
+# Variancia
+var(informacoes$idade)
+
+# Calcula a média aritmética dos valores
+mean(informacoes$idade)
+
+# Informa o valor mediano do conjunto
+median(informacoes$idade)
+```
+
+O comando `quantile()` oferece a possibilidade de obter os quartis dos dados de acordo com as probabilidades estabelecidas pelo pesquisador. No exemplo, explora-se a variável idade:
+
+```{r}
+quantile(informacoes$idade,  probs = c(0.5, 1, 2, 5, 10, 50)/100)
+
+```
+
+## Conversão de datas
+
+A configuração e padronização dos formato de datas no RStudio podem ser efetuadas pelo pesquisador, primeiramente ao carregar a base de dados no programa e em um segundo momento durante a manipulação das informações. Assim, seguem alguns dos procedimentos para a correta alteração dos padrões de datas:
+
+```{r}
+abertura <- c("03/02/69", "17/08/67")
+fechamento <- c("2000-20-01", "1999-14-08")
+abertura <- as.Date(abertura, format = "%d/%m/%y")
+fechamento <- as.Date(fechamento, format = "%Y-%d-%m")
+
+# Diferença de dias dos intervalos informados
+abertura-fechamento
+```
+
+# Estatística Descritiva {#desc}
+
+A Estatística é uma ciência cujo campo de aplicação estende-se a diferentes áreas do conhecimento humano. Tem por objetivo fornecer métodos e técnicas que permitem lidar, racionalmente, com situações sujeitas a incertezas. Apresenta um conjunto de técnicas e métodos de pesquisa que envolvem o planejamento de estudos (experimentais e observacionais), a coleta e organização de dados, a inferência, a análise e a disseminação de informação.
+
+Alguns termos extensamente utilizados em estatística, são definidos a seguir [@triola1999]:
+
+**População**: é uma coleção completa de todos os elementos (valores, pessoas, medidas etc.) a serem estudados.
+
+**Censo**:  é uma coleção de dados relativos a todos os elementos de uma população.
+
+**Amostra**:  é uma sub-coleção de elementos extraídos de uma população.
+	Parâmetro  é a medida numérica que descreve uma característica de uma população.
+	
+**Estatística**: é uma medida numérica que descreve uma característica de uma amostra.
+
+
+## Natureza da medida das variáveis
+
+
+Variáveis reporta-se a características ou atributos que podem tomar diferentes valores ou categorias, o que se opõe ao conceito de constante [@almeida2000]. Assim, variável pode ser definida como sendo a característica dos elementos da amostra ou da população que nos interessa estudar estatisticamente.
+
+Variáveis podem ser classificadas da seguinte forma:
+
+**Variáveis quantitativas**: consistem em números que representam contagens ou medidas. Dividem-se em:
+
+
+a) Variáveis discretas: resultam em um conjunto finito de valores possíveis, ou de um conjunto enumerável desses valores. Ex. número de unidades produzidas.
+
+b) Variáveis contínuas: resultam de um número infinito de valores possíveis que podem ser associados a pontos em uma escala contínua de tal maneira que não haja lacunas ou interrupções. Ex. Renda das famílias em reais.
+
+**Variáveis qualitativas**: ou variáveis categóricas, ou atributos que podem ser separados em diferentes categorias que se distinguem por alguma característica não-numérica. Divididas em:
+
+a) Variável nominal: caracterizada por dados que consistem apenas em nomes, rótulos ou categorias. Os dados não podem ser dispostos segundo um esquema ordenado (como de baixo para cima). Ex. nacionalidade
+
+b) Variável ordinal: envolve variáveis representadas por nomes que podem ser dispostos em alguma ordem, mas as diferenças entre os valores dos dados não podem ser determinadas, ou não tem sentido. Esse nível dá informações sobre comparações relativas, mas os graus de diferença não servem para cálculos [@triola1999]. Ex. Grau de escolaridade.
+
+**Dado**: é o valor assumido por uma variável aleatória em um experimento.
+
+
+A Estatística subdivide-se em descritiva e inferencial. A estatística descritiva se preocupa em descrever os dados. A estatística inferencial, fundamentada na teoria das probabilidades, se preocupa com a análise destes dados e sua interpretação.
+
+Informações estatísticas em jornais, relatórios e outras publicações que consistem de dados reunidos e apresentados de forma clara e resumida, na forma de tabelas, gráficos ou numéricos, são conhecidos como estatísticas descritivas (ANDERSON, 2002).
+
+
+**Exemplo 1**
+
+Estaremos utilizando como exemplo os dados de uma pesquisa (dados simulados), cujo banco de dados está intitulado "Dados\_pesquisa.ods". Os dados são referentes aos resultados obtidos por ocasião de uma pesquisa realizada entre os consumidores a fim de analisar características associadas ao mercado consumidor de sucos, sendo que a amostra é composta de 348 entrevistados aleatoriamente selecionados.
+
+
+- O objetivo primário do estudo foi determinar variáveis que seriam úteis para caracterizar os consumidores que já conhecem o suco e a possibilidade potencial de futuros consumidores. Há também interesse nas relações entre variáveis das características pessoais desses consumidores ou futuros consumidores.
+
+- A pesquisa foi realizada, depois que os participantes realizaram uma visita técnica às instalações da empresa e puderam conhecer seus produtos e processos.
+
+Para cada entrevistado foram registrados dados para as seguintes variáveis:
+ 
+
+**Sexo** – Gênero sexual;
+
+**Divulgacao** – Forma de acesso ao suco ou publicidade do mesmo;
+
+**Renda\_h** – Renda por hora do entrevistado;
+
+**Praticidade** – Aspectos quanto a oferta do suco, como por ex. embalagem;
+
+**Sabor** – Aspectos relacionados ao sabor;
+
+**Pessoas\_familia** – Número de pessoas que compõe o grupo familiar;
+
+**Preço** – como cada entrevistado classificava o preço do produto;
+
+**consumo\_anterior** – Se já consumia o suco antes da visita técnica;
+
+**consumo\_pos** – Se consumia o suco após a visita técnica;
+
+**Idade** – Idade dos consumidores;
+
+**Altura\_(m)** – Altura dos consumidores;
+
+**Peso\_(Kg)** – Peso dos consumidores.
+
+Pede-se:
+
+1.	Salvar inicialmente os dados em formato CSV, xlsx ou outro.
+
+2.	Ler os dados no "Environment" pelo "Import Dataset...From CSV" ou outro. No exemplo abaixo foram importados os dados diretamente do arquivo hospedado na internet.
+
+3.	Carregar o banco de dados, com a finalidade de usar os objetos (variáveis) diretamente nas funções a serem utilizadas.
+
+`attach(nome_da_planilha)`
+  
+```{r  echo=TRUE}
+require(readxl)
+url <- "https://goo.gl/37Fdzz"
+destfile <- "pesquisa_dados.xlsx"
+curl::curl_download(url, destfile)
+pesquisa_dados <- read_excel(destfile)
+attach(pesquisa_dados)
+ls.str(pesquisa_dados)
+```
+  
+## Tabelas e Gráficos
+
+Segundo @barbetta1988, dados representados em tabelas e gráficos adequados, permitem observar determinados aspectos relevantes, bem como delinear hipóteses a respeito da estrutura dos dados em estudo, o que conhecemos como análise exploratória de dados. Isto pode ser feito inicialmente com a representação em forma de tabelas.
+
+
+O comando `table()` é utilizado para elaborarmos tabelas de frequências absolutas. Dependendo da variável a ser representada, podemos usar esse comando de diferentes formas:
+
+### Tabela simples para apresentação das frequências absolutas
+
+Uma tabela simples considera quantas vezes ocorre cada categoria (ou nível).
+
+`table(nome_variável)`
+
+
+Ex. Variável **Praticidade**
+
+```{r  echo=TRUE, message=FALSE}
+table(Praticidade)
+```
+
+### Tabela cruzada
+
+A tabela cruzada, também conhecida como tabela de dupla entrada, para apresentação das frequências absolutas.
+
+
+`table(nome_variável1,nome_variável2)`
+
+
+Ex. Construir uma tabela cruzada apresentando as frequências absolutas das variáveis **Sexo** e **Divulgacao**.
+
+```{r}
+table(pesquisa_dados$Sexo,pesquisa_dados$Divulgacao)
+```
+
+
+### Tabela cruzada para apresentação das frequências relativas
+
+Com a introdução do comando `prop.table| é possível gerar, facilmente, tabelas de frequências relativas para as variáveis de interesse. As medidas relativas são importantes para comparar distribuições de frequências [@barbetta1988].
+
+`prop.table(table(nome_variável1,nome_variável2))`
+
+
+Ex. Construir uma tabela cruzada apresentando as frequências relativas das variáveis **Sexo** e **Divulgacao**.
+
+```{r  echo=TRUE, message=FALSE}
+prop.table(table(Divulgacao,Sexo))
+```
+
+
+A função `tapply` serve para calcular um valor usando uma variável categórica como condição, ou seja, aplica uma função qualquer (como média, por exemplo) a uma variável quantitativa para cada classe de uma variável categórica. Assim, permite obter em um só comando, a medida para cada categoria. 
+
+`tapply(var_quantitativa,var_categórica, função_desejada)`
+
+`tapply(variavel_quantitativa,variavel_qualitativa, mean)`
+
+Se um registro possui `NA`, isto é, dados perdidos: com o parâmetro na.rm=T, indicamos para o comando ignorar os NAs nos dados e calcular a média. 
+
+
+`tapply(variavel_quanti, variavel_quali, mean, na.rm=T)`
+
+## Gráficos
+
+### Gráfico de colunas
+
+As frequências podem ser visualizadas graficamente, usando gráficos de barras elementares, que se aplicam à descrição de qualquer variável qualitativa ou quantitativa discreta, vetor de dados ou tabelas.
+
+No entanto, no caso de dados em banco de dados, quando não utilizamos outros mecanismos de atribuição, precisamos usar o comando table.
+
+`barplot(table(nome_variável))`
+
+Ex. Construir um gráfico de colunas para a variável **Sexo**.
+
+```{r  fig.cap='Gráfico de colunas com a variável Sexo', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+barplot(table(Sexo))
+```
+
+**Obs**.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
+
+
+`barplot(table(nome_variável), col=c("blue","red"), main="Título", xlab="Variável do eixo x", ylab = "Informação que consta no eixo y",border="red")`
+
+
+**Ex.1)** Construir um gráfico de colunas para a variável **Pessoas\_familia**.
+
+
+```{r fig.cap='Gráfico de colunas com a variável `Pessoas familia`', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+
+barplot(table(`Pessoas_familia`), col=c("blue"), main = "Frequência de pessoas por família", xlab = "Frequência", ylab = "Pessoas", border = "red")
+```
+
+**Ex.2)** Construir uma tabela de dupla entrada para as variáveis **Sexo** e **Divulgação**.
+
+```{r  fig.cap='Gráfico de colunas com as variáveis Sexo e Divulgacao', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+
+barplot(table(Sexo,Divulgacao), col=c("blue"), 
+  main = "Frequência de pessoas por Sexo e Divulgacao")
+```
+
+
+**Ex.3)** Na sequência utiliza o sinal de atribuição <- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).
+
+```{r}
+Resultado<-table(Sexo,Divulgacao)
+```
+
+**Ex.4)** Execute o seguinte comando:
+
+```{r  fig.cap='Gráfico de colunas com as variáveis Sexo e Divulgacao (2)', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+
+barplot(Resultado,col=c("blue","red"),main="Título",xlab="Variável do eixo x",
+        ylab="Informação que consta no eixo y", border='red', 
+        beside=T,legend=rownames(Resultado))
+```
+
+
+Observe que o uso do argumento `beside=T` evita que as barras fiquem empilhadas e o arguemnto `legend`' insere a legenda conforme as cores das colunas.
+
+
+**Ex.5)** Repita o exercício a partir do Ex.3, invertendo a ordem entre as variáveis qualitativas.
+
+### Setograma ou gráfico de pizza
+
+Os gráficos em setores são utilizados para ilustrar dados qualitativos de modo mais compreensível. Quando a variável é ordinal, gráficos de colunas são mais indicados pelo fato de permitirem manter a ordem das categorias. Isto também vale para os casos em que se tem muitas categorias ou quanto se pretende dar mais destaque às categorias mais frequentes [@barbetta1988].
+
+`pie(table(nome_variável),main="nome")`
+
+Ex. Construa um gráfico na forma de Setograma para a variável **Sabor**.
+
+```{r  fig.cap='Gráfico de pizza com a variável Sabor', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+pie(table(Sabor))
+```
+
+### Histograma
+
+No histograma, utilizado em geral quando temos variáveis quantitativas contínuas, a altura dos retângulos representa a frequência de ocorrência de valores no intervalo (deve iniciar sempre em zero), devem ter sempre a mesma largura podendo ser justapostos. O eixo horizontal (dos valores da variável) pode iniciar próximo ao menor valor da variável [@barbetta1988]. Para confecção do histograma devemos usar:
+
+`hist(nome_variável)`
+
+Ex. Construa um histograma com a variável **Renda\_h**.
+
+```{r  fig.cap='Histograma com a variável `Renda h`', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+hist(as.numeric(`Renda_h`))
+```
+
+**Obs**. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
+
+**Obs**. II: Para definir o número de intervalos no Histograma, usamos:
+
+
+`hist(nome_variável, breaks = 5)`
+
+```{r  fig.cap='Histograma com a variável Renda h com breaks=5', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+hist(as.numeric(`Renda_h`), breaks=5)
+```
+Use o argumento `main=NULL` para remover o título.
+
+### Boxplot ou diagrama em caixas
+
+Os diagramas em caixa são convenientes para revelar tendências centrais, dispersão, distribuição dos dados e a presença de outliers (valores extremos). Como as medianas revelam uma tendência central, ao passo que os quartis indicam a dispersão dos dados, os diagramas em caixa têm a vantagem de não serem tão sensíveis a valores extremos como outras medidas baseadas na média e no desvio-padrão. Por outro lado, os diagramas em caixa (boxplots) não dão informação tão detalhada quanto os histogramas ou os gráficos ramo-e-folhas, podendo não ser, assim, a melhor escolha quando lidamos com um único conjunto de dados. Os diagramas em caixa são, entretanto, mais convenientes na comparação de dois ou mais conjuntos de dados [@triola1999]. 
+
+No diagrama de caixas, torna-se fácil identificar **outliers** (ou valores extremos), que são valores extremamente  raros, no sentido de que estão muito afastados da maioria dos dados. Ao explorarmos um conjunto de dados, não podem deixar de considerar os outliers, porque eles podem revelar informações importantes [@triola1999].
+
+Para obter o boxplot para um conjunto de dados:
+
+`boxplot(variávelA, variávelB, names=c("A","B"))`
+
+
+**Ex.1)** Construir um boxplot da variável **Idade**.
+
+```{r  fig.cap='Boxplot com a variável Idade', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+boxplot(Idade,horizontal = T)
+```
+
+
+**Ex.2)** Construir um boxplot das variáveis **Peso\_(Kg)** e **Altura\_(m)**.    
+
+
+
+### Gráfico ramo-e-folhas
+
+Em um gráfico ramo-e-folhas, classificamos os dados segundo um padrão que revela a distribuição subjacente. O padrão consiste em separar um número em duas partes em geral: o ramo consiste nos algarismos mais à esquerda e as folhas consistem nos algarismos mais à direita.
+
+No gráfico Ramo-e-folhas, podemos ver a distribuição desses dados, que é uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a informação da lista original; se necessário, podemos recompor a relação original de valores. Note que as linhas de algarismos em um gráfico ramo-e-folhas são análogas, em natureza, às barras de um histograma [@triola1999].
+
+
+`stem(nome_variável)` - comando que permite obter um gráfico Ramo e Folhas. 
+
+Ou 
+
+`stem(nome_variável,scale=1)`
+
+
+O "scale=1", que é o padrão, separa os ramos das folhas a partir das casas decimais.
+
+Caso padrão:
+
+- A ideia do ramo e folhas é separar um número (como 16,0) em duas partes. Assim, a primeira parte inteira (16) chamada de ramo e a segunda, a parte decimal (0) chamada de folha. O padrão do R é separar os números em duas partes (inteira e decimal) e agrupar os números em classes de tamanho 2. Por exemplo, o ramo 16 leva em conta os números 16 e 17. 
+
+
+**Obs.**: Esse padrão vai se alterando, à medida que o conjunto de dados apresente diferentes casas decimais.
+
+Assim, outras opções podem ser avaliadas:
+
+a) `stem(nome_variável,scale=0.5)`
+
+b) `stem(nome_variável,scale=2)`
+
+**Obs.**: Quando uma folha relacionada com certo ramo tem uma quantidade tão grande de valores que ele sintetiza essa quantidade usando a denominação +n, e invade a linha seguinte. Isso pode ser melhorado usando **width**.
+
+c) `stem(nome_variável,scale=0.5,width=120)`
+
+Ex. Construa um gráfico Ramo e Follhas com a variável **Idade**.
+
+```{r}
+stem(Idade,scale=2)
+```
+
+### Gráficos de dispersão
+
+Às vezes temos dados emparelhados de forma que associa cada valor de um conjunto a um determinado valor de um segundo conjunto. Um diagrama de dispersão é um gráfico dos dados emparelhados (x, y), com um eixo x horizontal e um eixo y vertical. O diagrama de dispersão, apresenta no eixo horizontal os valores da primeira variável e um eixo vertical para os valores da segunda variável. O padrão dos pontos assim marcados costuma ajudar a determinar se existe algum relacionamento entre as duas variáveis A e B.
+
+`plot(variável_independente,Variável_dependente)`
+
+Ou
+
+`plot(variável_dependente~variável_independente)`
+
+### Gráfico de linhas
+
+Apresenta a evolução de um dado, geralmente ao longo do tempo. Eixos na vertical e na horizontal indicam as informações a que se refere e a linha traçada entre eles, ascendente, descendente constante ou com vários altos e baixos mostra o percurso de um fenômeno específico.
+
+Ex. Considere os dados que descrevem os valores do número de empresas fiscalizadas na fiscalização do trabalho na área rural Brasil 1998-2010.
+
+```{r  echo=FALSE, fig.subcap='Fonte: MTE. SFIT. Elaboração: DIEESE.'}
+
+emp=data.frame(
+  Ano=c(1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010),
+  `Empresas Fiscalizadas`=c("7.042","6.561","8.585","9.641","8.873","9.367","13.856","12.192","13.326","13.390","10.839","13.379","11.978")
+)
+knitr::kable(emp, caption = 'Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010')
+```
+
+Para construir um gráfico de linhas, utilizamos o seguinte comando:
+
+`plot(x,y,type= "Tipo de símbolo")`
+
+Neste gráfico, podemos utilizar comandos já utilizados anteriormente, para inserir título, nomes dos eixos, etc. Para escolher o formato das linhas, com o uso do argumento `"type"|, seguem algumas opções:
+
+- `"p"` para pontos,
+- `"l"` para linhas,
+- `"b"` para pontos e linhas,
+- `"c"` para linhas descontínuas nos pontos,
+- `"o"` para pontos sobre as linhas,
+- `"n"` para nenhum gráfico, apenas a janela.
+
+Para o caso de representação no mesmo gráfico, de duas ou mais variáveis, o processo deverá ser realizado por etapas:
+
+`plot(x,y1,type="b",main="Título", xlab="Nome_eixo_x",ylab="Nome_eixo_y", col="cor das linhas",ylim=c(yi,ys))`
+
+```{r  fig.cap='Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010', fig.subcap='Fonte: Elaborado pelo(s) autor(es) a partir de MTE. SFIT. Elaboração: DIEESE.'}
+empfisc=data.frame(ano=c(1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,
+    2008,2009,2010), qtd=c(7042,6561,8585,9641,8873,9367,
+13856,12192,13326,13390,10839,13379,11978))
+
+plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
+     xlab="Nome_eixo_x",ylab="Nome_eixo_y", 
+     col="blue",xlim=c(1998,2010))
+```
+
+onde, no argumento `ylim`, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
+
+Na sequência adicionamos as instruções para as demais variáveis:
+
+`lines(x, y2,col="cor_desejada", type="b")`
+
+Com o argumento `"legend"` instruímos a formatação da legenda:
+
+`legend(xp,yp,c("representação_variável_1 na legenda", "representação_variável_2 na legenda"),
+`col =c("Cor1","cor2"),pch=Valor entre 0 e 25)`
+
+Obs.: `pch`= número (entre 0 e 25). No Help do R (buscando com pch), você encontra a lista completa de símbolos que podem ser utilizados na representação da legenda.
+Neste caso, pode ser importante também alterar o tamanho da fonte da legenda, com o uso do argumento `"cex"`.
+
+Exemplo: Segue exemplo de um gráfico de linhas para as temperaturas registradas durante o dia 11/04/2018, pela Estação Meteorológica de São Luiz Gonzaga, RS, conforme dados obtidos no site do Inmet.
+
+```{r}
+library(readr)
+inmet <- read_delim("https://goo.gl/se71v2", 
+    ";", escape_double = FALSE, 
+    col_types = cols(data = col_date(format = "%m/%d/%Y")), 
+    trim_ws = TRUE)
+head(inmet)
+```
+
+Segue a sequência de comandos, para obtenção do gráfico de linhas:
+
+```{r  fig.cap='Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS', fig.subcap='Fonte: Elaborado pelo(s) autor(es) a partir de INMET.'}
+plot(inmet$hora,inmet$temp_inst,type = "b", 
+  main = "Temperaturas registradas na estação metereológica
+  de São Luis Gonzaga, 11 de abril de 2018",
+  xlab = "hora",ylab = "temperaturas",col="blue",
+  ylim = c(20,40))
+
+lines(inmet$hora,inmet$temp_max,col="red",type = "b")
+
+lines(inmet$hora,inmet$temp_min,col="green",type = "b")
+
+legend(0,40,c("temp_inst","temp_max","temp_min"),
+  col =c("blue","red","green"),pch=4.1,cex = 0.75)
+```
+
+## Estatísticas Descritivas
+
+Para determinar o valor máximo de um conjunto de dados, utilizamos: 
+
+`max(nome_da_variável)`
+
+Use a variável **Renda\_h**
+
+```{r  echo=TRUE, message=FALSE}
+#Transforme a variável Renda_h em variável numérica
+pesquisa_dados$Renda_h=as.numeric(pesquisa_dados$Renda_h)
+#É preciso repetir o comando attach()
+attach(pesquisa_dados)
+max(Renda_h)
+```
+
+De forma análoga, para determinar o valor mínimo de um conjunto de dados, utilizamos:
+
+`min(nome_da_variável)`
+
+Use a variável **Renda\_h**
+
+```{echo=TRUE, message=FALSE}
+min(Renda_h)
+```
+
+**Obs.**: Para determinar a amplitude total de um conjunto de dados, utilizamos: 
+
+`max(nome_da_variável)-min(nome_da_variável)`
+
+Use a variável **Renda\_h**
+
+```{r  echo=TRUE, message=FALSE}
+max(Renda_h)-min(Renda_h)
+```
+
+Para obter as medidas da estatística descritiva, no caso medidas de tendência central (mínimo, quartil 1, mediana, média, quartil 3, máximo):
+
+`summary(nome_da_variável)`
+
+Ex. Use a variável **Renda\_h**
+```{r  echo=TRUE, message=FALSE}
+summary(Renda_h)
+```
+
+A moda é o valor que tem o maior número de ocorrências em um conjunto de dados.
+
+O R não tem um padrão de função embutida para calcular a moda. Uma sugestão é a criação de uma função pelo usuário, que pode ser obtida, por exemplo por:
+
+`subset(table(variável), table(variável)==max(table(variável)))`
+
+
+Ex. Use a variável **Praticidade**
+
+```{r  echo=TRUE, message=FALSE}
+subset(table(Praticidade), 
+       table(Praticidade)==max(table(Praticidade)))
+```
+
+Ex. Use a variável quantitativa **Pessoas\_familia**
+
+```{r  echo=TRUE, message=FALSE}
+table(Pessoas_familia)
+```
+
+**Obs.**: O primeiro valor encontrado, refere-se ao valor da moda ao passo que o segundo valor representa quantas vezes esse valor foi verificado.
+
+
+Comando que permite determinar o percentil, no caso o percentil 10:
+
+`quantile(nome_variável,0.1)`
+
+**Obs.**: Experimente usar o comando:
+
+`quantile(nome_variável)`
+
+**Obs.**: Para a obtenção de quartis e decis, basta realizar a conversão para o respectivo percentil e assim calcular normalmente.
+
+```{r  echo=TRUE, message=FALSE}
+quantile(Renda_h)
+quantile(Renda_h,0.1)
+```
+
+Para obter as medidas de variabilidade, no caso, variância e desvio-padrão, respectivamente:
+
+`var(nome_variável)`
+
+`sd(nome_variável)`
+
+Ex. Calcule as medidas de variabilidade com a variável **Pessoas\_familia**
+
+```{r  echo=TRUE, message=FALSE}
+var(Pessoas_familia)
+sd(Pessoas_familia)
+```
+
+A função `subset()`:
+
+Com esta função podemos fazer cálculos utilizando filtros, simultaneamente. A aplicação de filtros é extremamente útil quando queremos explorar os dados de forma rápida e eficiente. 
+
+Exemplos:
+
+Ex. 1) Altura das pessoas do sexo masculino: com a função abaixo o R gera um subconjunto com as alturas de todas as pessoas do sexo masculino.
+
+```{r}
+subset(`Altura_(m)`, Sexo=="Masculino")
+```
+
+Ex. 2) Média das alturas das pessoas do sexo masculino: inserindo o comando `mean()` ao subconjunto anterior, teremos como resultado a média das alturas das pessoas do sexo masculino.
+
+
+```{r}
+mean(subset(`Altura_(m)`, Sexo=="Masculino"))
+```
+
+Ex. 3) Média das alturas das pessoas do sexo masculino com mais de 26 anos:
+
+```{r}
+mean(subset(`Altura_(m)`, Sexo=="Masculino"& Idade>25))
+```
+
+Ex. 4) Contagem de pessoas do sexo feminino que tenham menos de 60 kg:
+  
+```{r}
+length(subset(Sexo,Sexo=="Feminino" & `Peso_(Kg)`<60))
+```
+
+Ex. 5) Montando uma tabela para exibir o gênero de pessoas que classificaram o Sabor como “Pessimo”:
+
+```{r}
+table(subset(Sexo, Sabor=="Pessimo"))
+```
+
+Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a serem aplicados na estatística descritiva (veja help do R), nem tampouco os conceitos estatísticos necessários à compreensão. Para mais detalhes sobre os conceitos de estatística descritiva, você pode consultar outras referências ou até mesmo as já citadas neste capítulo.
+
+
+# Estatística Inferencial{#inf}
+
+A inferência estatística, ou estatística inferencial, tem por objetivo concluir e tomar decisões, com base em amostras (Figura \@ref(fig:infestat)). Usam-se dados extraídos de uma amostra para produzir inferência sobre a população [@lopes2008].
+
+```{r infestat, echo=FALSE, fig.cap='Inferência Estatística', fig.subcap='Fonte: <http://www.portalaction.com.br/inferencia-0>'}
+knitr::include_graphics("infestat.png")
+```
+
+Em Estatística, o termo **população** é definido como conjunto de indivíduos, ou itens, com pelo menos uma característica em comum, podendo ser finita ou infinita [@lopes2008]. Por exemplo, água de um rio, sangue de uma pessoa, lote de peças produzidas por uma indústria, eleitores de um município.
+
+A **amostra** é um subconjunto, necessariamente finito, de uma população e é selecionada de forma que todos os elementos da população tenham a mesma chance de serem escolhidos.
+
+## Intervalo de Confiança
+
+Entre as diferentes técnicas de Inferência Estatística, temos a Estimação de Parâmetros, que consiste na determinação de um **Intervalo de Confiança (IC)** para uma média ou proporção populacional, ao um nível (1 - $\alpha$)\% de confiança.
+
+O nível de confiança (1 - $\alpha$)\% normalmente varia de 90\% a 99\%.
+
+### Intervalo de confiança para uma média populacional
+
+Um **intervalo de confiança (IC)** é o **intervalo** estimado onde a média de um parâmetro tem uma dada probabilidade de ocorrer. Comumente define-se como o **intervalo** onde há (1 - $\alpha$)\% de probabilidade da média verdadeira da população inteira ocorrer.
+
+IC (limite inferior $\leq$ $\mu$ $\leq$ limite superior) = (1 - $\alpha$)\%
+
+
+No software RStudio, o Intervalo de Confiança pode ser obtido usando o teste t.
+
+**Exemplo 1**: Os dados amostrais a seguir representam o número de horas de estudos semanais para a disciplina de Estatística Básica, de uma amostra de 10 alunos:
+
+
+19  18  20  16  18  19  19  17  22  21
+
+Qual é o intervalo de confiança para a média populacional de onde essa amostra foi retirada?
+
+```{r echo=TRUE, message=FALSE}
+horasestudo=c(19,18,20,16,18,19,19,17,22,21)
+t.test(horasestudo)
+```
+
+IC (17,6 $\leq$ $\mu$ $\leq$ 20,2) = 95\%
+
+
+Com 95\% de confiança, a média populacional das horas semanais de estudo para a disciplina de Estatística Básica está entre 17,6 e 20,2 horas. Ou seja, qualquer aluno (de onde essa amostra foi retirada) estuda em média, de 17,6 a 20,2 horas por semana.
+
+Se não informarmos o nível de confiança, o software R considera 95\%. No entanto, para mudar o nível de confiança para 90\%, acrescentamos a informação `conf.level = 0.90` após o nome da variável:
+
+```{r echo=TRUE, message=FALSE}
+t.test(horasestudo, conf.level = 0.90)
+```
+
+IC (17,9 $\leq$ $\mu$ $\leq$ 19,9) = 90\%
+
+Com 90\% de confiança, a média populacional das horas semanais de estudo para a disciplina de Estatística Básica está entre 17,9 e 19,9 horas. Ou seja, qualquer aluno (de onde essa amostra foi retirada) estuda em média, de 17,9 a 19,9 horas por semana.
+
+Para mudar o nível de confiança para 99\%:
+
+```{r echo=TRUE, message=FALSE}
+t.test(horasestudo, conf.level = 0.99)
+```
+
+IC (17,1 $\leq$ $\mu$ $\leq$ 20,7) = 99\%
+
+Com 99\% de confiança, a média populacional das horas semanais de estudo para a disciplina de Estatística Básica está entre 17,1 e 20,7 horas. Ou seja, qualquer aluno (de onde essa amostra foi retirada) estuda em média, de 17,1 a 20,7 horas por semana.
+
+### Para verificar normalidade dos dados
+
+Algumas técnicas de inferência estatística têm como requisitos a normalidade dos dados. Para verificar se os dados seguem uma distribuição normal, podemos, inicialmente usar o histograma e depois confirmar com um teste estatístico para testar normalidade como Shapiro-Wilk ou Kolmogorov-Smirnov.
+
+Hipóteses do teste:
+
+-	**H0**: os dados seguem uma distribuição normal
+- **H1**: os dados não seguem uma distribuição normal
+
+
+O **valor p** reflete a plausibilidade de se obter tais resultados  no caso de H0 ser de fato verdadeira.
+
+```{r testehip1, echo=FALSE, fig.cap='Teste de hipóteses', fig.subcap='Fonte: Elaborado pelo(s) autor(es).'}
+knitr::include_graphics("testehip1.png")
+```
+
+
+
+
+```{r echo=TRUE, message=FALSE}
+shapiro.test(horasestudo)
+```
+
+Como p $>$ 0,05, não rejeita-se H0 e conclui-se que os dados seguem uma distribuição normal.
+
+### Intervalo de confiança para uma proporção populacional
+
+IC (limite inferior $\leq$ $\pi$ $\leq$ limite superior) = (1 - $\alpha$)\%
+
+
+
+**Exemplo 2**:  (adaptado de <https://www.passeidireto.com/arquivo/3802950/capitulo7---intervalos-de-confianca>) Entre 500 pessoas entrevistas a respeito de suas preferências eleitorais, 260 mostraram-se favoráveis ao candidato B. Qual é a proporção amostral dos favoráveis ao candidato B? E a proporção populacional dos favoráveis?
+
+
+Sintaxe no software RStudio:
+
+`prop.test(x,n,conf.level=nível de confiança)`
+
+Em que:
+
+x = número de sucessos 
+
+n= tamanho da amostra
+
+nível de confiança = 0,90 a 0,99
+
+```{r echo=TRUE, message=FALSE}
+prop.test(260,500)
+```
+
+
+A proporção amostral dos eleitores favoráveis ao candidato B é de 0,52.
+
+IC (0,48 $\leq$ $\pi$ $\leq$ 0,56) = 95\%
+
+
+Com 95\% de confiança, a proporção populacional dos eleitores favoráveis ao candidato B está entre 0,48 e 0,56.
+
+Para mudar o nível de confiança para 90\%:
+
+```{r echo=TRUE, message=FALSE}
+prop.test(260,500,conf.level = 0.90)
+```
+
+
+IC (0,48 $\leq$ $\pi$ $\leq$ 0,56) = 90\%
+
+Com 90\% de confiança, a proporção populacional dos eleitores favoráveis ao candidato B está entre 0,48 e 0,56.
+
+Para mudar o nível de confiança para 99\%:
+
+```{r echo=TRUE, message=FALSE}
+prop.test(260,500,conf.level = 0.99)
+```
+
+IC (0,46 $\leq$ $\pi$ $\leq$  0,58) = 99\%
+
+
+Com 99\% de confiança, a proporção populacional dos eleitores favoráveis ao candidato B está entre 0,46 e 0,58.
+
+## Teste de hipóteses
+
+
+O teste de hipóteses é uma outra forma de fazer inferência estatística. Formula-se uma hipótese (H0) para um parâmetro populacional e, partir de uma amostra dessa população, aceita-se ou rejeita-se esta hipótese.
+
+
+**H0**: hipótese nula (sempre tem a condição de igualdade)
+
+**H1**: hipótese alternativa (tem o sinal de $\neq$, $>$ ou $<$)
+
+### Teste de hipóteses para uma média populacional
+
+
+H0: $\mu$ $=$ ......
+
+H1: $\mu$ $\neq$ ......
+
+H0: $\mu$ $=$ .......
+
+H1: $\mu$ $>$ ........
+
+H0: $\mu$ $=$ ......
+
+H1: $\mu$ $<$ ......
+
+No software RStudio, usa-se o `t.test| para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.
+
+De acordo com as hipóteses, temos variações do `t.test`, conforme segue:
+
+
+sintaxe: `t.test(amostra, opções)`
+
+
+- **amostra**: Vetor contendo a amostra da qual se quer testar a média populacional.
+- **opções**: alternative: string indicando a hipótese alternativa desejada. Valores possíveis: `"two-sided"`, `"less"` ou `"greater"`. 
+- $\mu$: valor indicando o verdadeiro valor da média populacional.
+
+
+
+
+**Exemplo 3**: (adaptado de <www.leg.ufpr.br/~paulojus/CE002/pratica/praticase8.xml> ) A precipitação pluviométrica mensal numa certa região nos últimos 9 meses foi a seguinte:
+
+
+30,5    34,1   27,9    35,0    26,9    30,2    28,3    31,7   25,8
+
+Construa um teste de hipóteses para saber se a média da precipitação pluviométrica mensal é igual a 30,0 mm. 
+
+**H0**: $\mu$ $=$ 30 mm
+
+**H1**: $\mu$ $\neq$ 30 mm
+
+
+```{r echo=TRUE, message=FALSE}
+chuva=c(30.5,34.1,27.9,35,26.9,30.2,28.3,31.7,25.8)
+chuva
+
+t.test(chuva,alt="two.sided",mu=30)
+```
+
+
+Conclusão: Aceita-se H0 e conclui-se que a precipitação pluviométrica é igual a 30mm.
+
+
+
+**Exemplo 4**: (adaptado de <https://www.passeidireto.com/arquivo/5533375/lista-eststistica-pronta-p-3-prova-com-respostas/3>) Um empresário desconfia que o tempo médio de espera para atendimento de seus clientes é superior a 20 minutos. Para testar essa hipótese ele entrevistou 20 pessoas e questionou quanto tempo demorou para ser atendido. O resultado dessa pesquisa foi o seguinte:
+
+22	20	21	23	22	20	23	22	20	24 21	20	21	24	22	22	23	22	20	24
+
+Teste a hipótese de que o tempo de espera é superior a 20 minutos.
+
+**H0**: $\mu$ $=$ 20 minutos
+
+**H1**: $\mu$ $>$ 20 minutos
+
+```{r echo=TRUE, message=FALSE}
+tempo=c(22,20,21,23,22,20,23,22,20,24,21,20,21,24,22,22,23,22,20,24)
+tempo
+
+t.test(tempo,alt="greater",mu=20)
+```
+
+
+Conclusão: Rejeita-se H0 com nível de significância de 1\% e conclui-se que o tempo de espera é superior a 20 minutos.
+
+
+
+**Exemplo 5**: (adaptado de <https://docs.ufpr.br/~vayego/pdf_11_2/pratica_04_zoo.pdf>) Os resíduos industriais jogados nos rios, muitas vezes, absorvem oxigênio, reduzindo assim o conteúdo do oxigênio necessário à respiração dos peixes e outras formas de vida aquática. Uma lei estadual exige um mínimo de 5 p.p.m. (Partes por milhão) de oxigênio dissolvido, a fim de que o conteúdo de oxigênio seja suficiente para manter a vida aquática. Seis amostras de água retiradas de um rio, durante a maré baixa, revelaram os índices (em partes por milhão) de oxigênio dissolvido:
+
+4,9    5,1    4,9    5,5    5,0    4,7
+
+Estes dados são evidência para afirmar que o conteúdo de oxigênio é menor que 5 partes por milhão? 
+
+
+**H0**: $\mu$ $=$ 5 ppm
+
+**H1**: $\mu$ $<$ 5 ppm
+
+```{r echo=TRUE, message=FALSE}
+amostras=c(4.9,5.1,4.9,5.5,5.0,4.7)
+t.test(amostras,alt="less",mu=5)
+```
+
+
+Conclusão: Aceita-se H0 e conclui-se que o conteúdo de oxigênio é igual a 5 ppm.
+
+### Teste de hipóteses para uma proporção populacional
+
+H0: $\pi$ $=$ ......
+
+H1: $\pi$ $\neq$ ......
+
+H0: $\pi$ $=$ .......
+
+H1: $\pi$ $>$ ........
+
+H0: $\pi$ $=$ ......
+
+H1: $\pi$ $<$ ......
+
+No software RStudio, usa-se o prop.test para a realização do teste de hipóteses para uma proporção populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.
+
+Sintaxe:
+
+`prop.test(x,n,p=.....,alt=".....")`
+
+em que:
+
+x = número de sucessos;
+
+n= tamanho da amostra;
+
+p = proporção a ser testada;
+
+alt = `"two.sided"`, `"greater"` ou `"less"`.
+
+**Exemplo 6**: (adaptado de <https://docs.ufpr.br/~soniaisoldi/TP707/Aula8.pdf>) Uma máquina está regulada quanto produz 3\% de peças defeituosas. Uma amostra aleatória de 80 peças selecionadas ao acaso apresentou 3 peças defeituosas. Teste a hipótese de que a máquina está regulada.
+
+
+**H0**: $\pi$ $=$ 3\%
+
+**H1**: $\pi$ $\neq$ 3\%
+
+
+```{r echo=TRUE, message=FALSE}
+prop.test(3,80,p=0.03,alt="two.sided")
+```
+
+
+Conclusão: Aceita-se H0 e conclui-se que a máquina produz 3\% de peças defeituosas, ou seja, a máquina está regulada.
+
+**Exemplo 7**: (adaptado de <www.ebah.com.br/content/ABAAAAdLkAI/metodos-estatistico-und-v-lista-resolvida>) As condições de mortalidade de uma região são tais que a proporção de nascidos que sobrevivem até 60 anos é de 0,6. Testar essa hipótese se em 1.000 nascimentos amostrados aleatoriamente, verificou-se 530 sobreviventes até 60 anos.
+
+**H0**: $\pi$ $=$ 0,6
+
+**H1**: $\pi$ $\neq$ 0,6
+
+```{r echo=TRUE, message=FALSE}
+prop.test(530,1000,p=0.6,alt="two.sided")
+```
+
+Conclusão: Rejeita-se H0 com nível de significância de 1\% e conclui-se que a proporção de nascidos que sobrevivem até os 60 anos é diferente de 0,6.
+
+**Exemplo 8**: (adaptado de <https://docs.ufpr.br/~jomarc/intervaloeteste.pdf>) Uma empresa retira periodicamente amostras aleatórias de 500 peças de sua linha de produção para análise da qualidade. As peças da amostra são classificadas como defeituosas ou não, sendo que a política da empresa exige que o processo produtivo seja revisto se houver evidência de mais de 1,5\% de peças defeituosas. Na última amostra, foram encontradas nove peças defeituosas. O processo precisa ser revisto?
+
+**H0**: $\pi$ $=$ 1,5\%
+
+**H1**: $\pi$ $>$ 1,5\%
+
+```{r echo=TRUE, message=FALSE}
+prop.test(9,500,p=0.015,alt="greater")
+```
+
+Conclusão: Não rejeita H0 e conclui-se que a proporção de peças defeituosas é igual a 1,5\%, ou seja, o processo não precisa ser revisto.
+
+**Exemplo 9**: (adaptado de <https://www.passeidireto.com/arquivo/25297344/aula-19---testes-para-proporcao>) Uma pesquisa conclui que 90\% dos médicos recomendam aspirina a pacientes que têm filhos. Teste a afirmação contra a alternativa de que a percentagem é inferior a 90\%, se numa amostra aleatória de 100 médicos, 80 recomendam aspirina.
+
+**H0**: $\pi$ $=$ 90\%
+
+**H1**: $\pi$ $<$ 90\%
+
+```{r echo=TRUE, message=FALSE}
+prop.test(80,100,p=0.90,alt="less")
+```
+
+
+Conclusão: Rejeita-se H0 com nível de significância de 1\% e conclui-se que a proporção de médicos que recomendam aaspirina é inferior a 90\%.
+
+### Teste de hipótese para duas médias
+
+O teste de hipótese para duas médias aplica-se quando se deseja comparar dois grupos:
+
+```{r testehip2, echo=FALSE, fig.cap='Teste de hipótese para dois grupos', fig.subcap='Fonte: <http://www.leg.ufpr.br/lib/exe/fetch.php/disciplinas:ce001:bioestatistica_testes_t_para_comparacao_de_medias_de_dois.pdf>'}
+knitr::include_graphics("testehip2.png")
+```
+
+Podemos comparar duas médias de duas amostras dependentes, também chamadas de pareadas, ou médias de duas amostras independentes.
+
+#### Teste de hipóteses duas amostras dependentes
+
+**Exemplo 10**: Foi obtido o peso de seis indivíduos antes e após um treinamento de exercício físico. Teste a hipótese de que a média antes do treinamento é diferente da média após o treinamento.
+
+```{r echo=FALSE, fig.subcap='Fonte: Elaborado pelo(s) autor(es).'}
+amostdep=data.frame(
+  `Indivíduo`=c("Peso antes do treinamento","Peso depois do treinamento"),
+  A=c(99,94),
+  B=c(62,62),
+  C=c(74,66),
+  D=c(59,58),
+  E=c(70,70),
+  F=c(73,76)
+)
+
+knitr::kable(amostdep, caption = 'Amostras dependentes')
+```
+
+No software RStudio, usa-se o `t.test| para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.
+
+
+Hipóteses:
+
+
+**H0**: média antes $=$ média depois
+
+**H1**: média antes $\neq$ média depois
+
+```{r echo=TRUE, message=FALSE}
+antes=c(99,62,74,59,70,73)
+depois=c(94,62,66,58,70,76)
+t.test(antes,depois,paired=TRUE)
+```
+
+Conclusão: Não rejeita-se H0 e conclui-se que a média de peso antes do treinamento é igual à média de peso depois do treinamento.
+
+**Exemplo 11**: (adaptado de <www.inf.ufsc.br/~marcelo/testes2.html>) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Podemos concluir que o uso da ração contribuiu para o aumento do peso médio dos animais? 
+
+```{r echo=FALSE, fig.subcap='Fonte: <www.inf.ufsc.br/~marcelo/testes2.html>'}
+cob=data.frame(Cobaia=c("Antes","Depois"))
+cobaiaantes=c(635,704,662,560,603,745,698,575,633,669)
+cobaiadepois=c(640,712,681,558,610,740,707,585,635,682)
+amostdep2=cbind(cob,rbind(cobaiaantes,cobaiadepois))
+
+knitr::kable(amostdep2, caption = 'Amostras dependentes - caso 2',row.names = FALSE)
+```  
+
+**H0**: média antes $=$ média depois
+
+**H1**: média antes $\neq$ média depois
+
+```{r echo=TRUE, message=FALSE}
+
+cobaiaantes=c(635,704,662,560,603,745,698,575,633,669)
+cobaiadepois=c(640,712,681,558,610,740,707,585,635,682)
+t.test(cobaiaantes,cobaiadepois,paired=TRUE)
+```
+
+Conclusão: Rejeita-se H0 com nível de significância de 5\% e conclui-se que a média antes da engorda é diferente da média depois da engorda.
+
+
+#### Teste de hipóteses duas amostras independentes
+
+Primeiramente precisamos saber se existe homogeneidade de variâncias populacionais, a qual poderá ser verificada por meio de um teste de homogeneidade de variâncias utilizando os dados das duas amostras.
+
+##### Teste para verificar homogeneidade de variâncias
+
+**Exemplo 12**: (adaptado de <https://www.ime.unicamp.br/~hildete/Aula_p12.pdf>) Dois tipos diferentes de tecido devem ser comparados. Uma máquina de testes pode comparar duas amostras ao mesmo tempo. O peso (em miligramas) para sete experimentos foram: 
+
+
+
+```{r echo=FALSE, fig.subcap='Fonte: <https://www.ime.unicamp.br/~hildete/Aula_p12.pdf>.'}
+
+cob2=c("Tecido A","Tecido B")
+tecidoa=c(36,26,31,38,28,20,37)
+tecidob=c(39,27,35,42,31,39,22)
+amostdep3=cbind(c("Tecido A", "Tecido B"),rbind(tecidoa,tecidob))
+
+knitr::kable(amostdep3, caption = 'Comparação de dois tipos diferentes de tecidos', row.names = FALSE)
+```  
+
+Teste se um tecido é mais pesado que o outro.
+
+**H0**: as variâncias são homogêneas
+
+**H1**: as variâncias são heterogêneas
+
+```{r echo=TRUE, message=FALSE}
+tecidoa=c(36,26,31,38,28,20,37)
+tecidob=c(39,27,35,42,31,39,22)
+var.test(tecidoa,tecidob)
+```
+
+Conclusão: Não rejeita-se H0 e conclui-se que as variâncias são homogêneas.
+
+Agora podemos realizar o teste de comparação de duas amostras independentes.
+
+**H0**: média tecido A $=$ média tecido B
+
+**H1**: média tecido A $\neq$ média tecido B
+
+````{r echo=TRUE, message=FALSE}
+t.test(tecidoa, tecidob, var.equal = TRUE, paired=FALSE)
+```
+
+Conclusão: Não rejeita-se H0 e conclui-se que a média de peso do tecido A é igual à média de peso do tecido B.
+
+
+# Teste de Qui-Quadrado {#qui}
+
+# Modelos de Regressão {#reg}
+
+# RMarkdown {#rmark}
+
+# Referências {-}
+
+
+
+
+
+

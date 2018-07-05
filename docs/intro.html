@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html  lang="pt-Br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Software R: Análise estatística de dados utilizando um programa livre</title>
+  <meta name="description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Software R: Análise estatística de dados utilizando um programa livre" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http://rstub.github.io/bookdown-chapterbib/" />
+  
+  <meta property="og:description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS" />
+  <meta name="github-repo" content="rstub/bookdown-chapterbib" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Software R: Análise estatística de dados utilizando um programa livre" />
+  
+  <meta name="twitter:description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS" />
+  
+
+<meta name="author" content="Felipe Micail da Silva Smolski">
+<meta name="author" content="Iara Denise Endruweit Battisti">
+
+
+<meta name="date" content="2018-01-01">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="desc.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Livro R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Apresentação</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#download-e-instalacao-do-r-e-rstudio"><i class="fa fa-check"></i><b>1.1</b> Download e instalação do R e Rstudio</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#paineis"><i class="fa fa-check"></i><b>1.2</b> Painéis</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#help"><i class="fa fa-check"></i><b>1.3</b> Help</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#instalacao-de-pacotes"><i class="fa fa-check"></i><b>1.4</b> Instalação de pacotes</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#abrir-arquivo-de-dados"><i class="fa fa-check"></i><b>1.5</b> Abrir arquivo de dados</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#salvar-arquivo-de-dados"><i class="fa fa-check"></i><b>1.6</b> Salvar arquivo de dados</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#diretorios-de-trabalho"><i class="fa fa-check"></i><b>1.7</b> Diretórios de trabalho</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#operacoes"><i class="fa fa-check"></i><b>1.8</b> Operações</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="intro.html"><a href="intro.html#operacoes-aritmeticas"><i class="fa fa-check"></i><b>1.8.1</b> Operações Aritméticas</a></li>
+<li class="chapter" data-level="1.8.2" data-path="intro.html"><a href="intro.html#operacoes-logicas"><i class="fa fa-check"></i><b>1.8.2</b> Operações Lógicas</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#criacao-de-variaveis"><i class="fa fa-check"></i><b>1.9</b> Criação de variáveis</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="intro.html"><a href="intro.html#conversao-de-uma-variavel"><i class="fa fa-check"></i><b>1.9.1</b> Conversão de uma variável</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#alguns-comandos-essenciais"><i class="fa fa-check"></i><b>1.10</b> Alguns comandos essenciais</a><ul>
+<li class="chapter" data-level="1.10.1" data-path="intro.html"><a href="intro.html#funcoes-view-e-dim"><i class="fa fa-check"></i><b>1.10.1</b> Funções <em>View</em> e <em>dim</em></a></li>
+<li class="chapter" data-level="1.10.2" data-path="intro.html"><a href="intro.html#comando-tapply"><i class="fa fa-check"></i><b>1.10.2</b> Comando <em>tapply</em></a></li>
+<li class="chapter" data-level="1.10.3" data-path="intro.html"><a href="intro.html#comando-subset"><i class="fa fa-check"></i><b>1.10.3</b> Comando <em>subset</em></a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#estrutura-de-dados"><i class="fa fa-check"></i><b>1.11</b> Estrutura de dados</a><ul>
+<li class="chapter" data-level="1.11.1" data-path="intro.html"><a href="intro.html#vetores"><i class="fa fa-check"></i><b>1.11.1</b> Vetores</a></li>
+<li class="chapter" data-level="1.11.2" data-path="intro.html"><a href="intro.html#matrizes"><i class="fa fa-check"></i><b>1.11.2</b> Matrizes</a></li>
+<li class="chapter" data-level="1.11.3" data-path="intro.html"><a href="intro.html#listas"><i class="fa fa-check"></i><b>1.11.3</b> Listas</a></li>
+<li class="chapter" data-level="1.11.4" data-path="intro.html"><a href="intro.html#data-frames"><i class="fa fa-check"></i><b>1.11.4</b> Data frames</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a></li>
+<li class="chapter" data-level="1.13" data-path="intro.html"><a href="intro.html#funcao-edit"><i class="fa fa-check"></i><b>1.13</b> Função <em>edit</em></a></li>
+<li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#funcoes"><i class="fa fa-check"></i><b>1.14</b> Funções</a></li>
+<li class="chapter" data-level="1.15" data-path="intro.html"><a href="intro.html#funcoes-matematicas"><i class="fa fa-check"></i><b>1.15</b> Funções Matemáticas</a></li>
+<li class="chapter" data-level="1.16" data-path="intro.html"><a href="intro.html#conversao-de-datas"><i class="fa fa-check"></i><b>1.16</b> Conversão de datas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="desc.html"><a href="desc.html"><i class="fa fa-check"></i><b>2</b> Estatística Descritiva</a><ul>
+<li class="chapter" data-level="2.1" data-path="desc.html"><a href="desc.html#natureza-da-medida-das-variaveis"><i class="fa fa-check"></i><b>2.1</b> Natureza da medida das variáveis</a></li>
+<li class="chapter" data-level="2.2" data-path="desc.html"><a href="desc.html#tabelas-e-graficos"><i class="fa fa-check"></i><b>2.2</b> Tabelas e Gráficos</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="desc.html"><a href="desc.html#tabela-simples-para-apresentacao-das-frequencias-absolutas"><i class="fa fa-check"></i><b>2.2.1</b> Tabela simples para apresentação das frequências absolutas</a></li>
+<li class="chapter" data-level="2.2.2" data-path="desc.html"><a href="desc.html#tabela-cruzada"><i class="fa fa-check"></i><b>2.2.2</b> Tabela cruzada</a></li>
+<li class="chapter" data-level="2.2.3" data-path="desc.html"><a href="desc.html#tabela-cruzada-para-apresentacao-das-frequencias-relativas"><i class="fa fa-check"></i><b>2.2.3</b> Tabela cruzada para apresentação das frequências relativas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="desc.html"><a href="desc.html#graficos"><i class="fa fa-check"></i><b>2.3</b> Gráficos</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="desc.html"><a href="desc.html#grafico-de-colunas"><i class="fa fa-check"></i><b>2.3.1</b> Gráfico de colunas</a></li>
+<li class="chapter" data-level="2.3.2" data-path="desc.html"><a href="desc.html#setograma-ou-grafico-de-pizza"><i class="fa fa-check"></i><b>2.3.2</b> Setograma ou gráfico de pizza</a></li>
+<li class="chapter" data-level="2.3.3" data-path="desc.html"><a href="desc.html#histograma"><i class="fa fa-check"></i><b>2.3.3</b> Histograma</a></li>
+<li class="chapter" data-level="2.3.4" data-path="desc.html"><a href="desc.html#boxplot-ou-diagrama-em-caixas"><i class="fa fa-check"></i><b>2.3.4</b> Boxplot ou diagrama em caixas</a></li>
+<li class="chapter" data-level="2.3.5" data-path="desc.html"><a href="desc.html#grafico-ramo-e-folhas"><i class="fa fa-check"></i><b>2.3.5</b> Gráfico ramo-e-folhas</a></li>
+<li class="chapter" data-level="2.3.6" data-path="desc.html"><a href="desc.html#graficos-de-dispersao"><i class="fa fa-check"></i><b>2.3.6</b> Gráficos de dispersão</a></li>
+<li class="chapter" data-level="2.3.7" data-path="desc.html"><a href="desc.html#grafico-de-linhas"><i class="fa fa-check"></i><b>2.3.7</b> Gráfico de linhas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="desc.html"><a href="desc.html#estatisticas-descritivas"><i class="fa fa-check"></i><b>2.4</b> Estatísticas Descritivas</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="inf.html"><a href="inf.html"><i class="fa fa-check"></i><b>3</b> Estatística Inferencial</a><ul>
+<li class="chapter" data-level="3.1" data-path="inf.html"><a href="inf.html#intervalo-de-confianca"><i class="fa fa-check"></i><b>3.1</b> Intervalo de Confiança</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="inf.html"><a href="inf.html#intervalo-de-confianca-para-uma-media-populacional"><i class="fa fa-check"></i><b>3.1.1</b> Intervalo de confiança para uma média populacional</a></li>
+<li class="chapter" data-level="3.1.2" data-path="inf.html"><a href="inf.html#para-verificar-normalidade-dos-dados"><i class="fa fa-check"></i><b>3.1.2</b> Para verificar normalidade dos dados</a></li>
+<li class="chapter" data-level="3.1.3" data-path="inf.html"><a href="inf.html#intervalo-de-confianca-para-uma-proporcao-populacional"><i class="fa fa-check"></i><b>3.1.3</b> Intervalo de confiança para uma proporção populacional</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="inf.html"><a href="inf.html#teste-de-hipoteses"><i class="fa fa-check"></i><b>3.2</b> Teste de hipóteses</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="inf.html"><a href="inf.html#teste-de-hipoteses-para-uma-media-populacional"><i class="fa fa-check"></i><b>3.2.1</b> Teste de hipóteses para uma média populacional</a></li>
+<li class="chapter" data-level="3.2.2" data-path="inf.html"><a href="inf.html#teste-de-hipoteses-para-uma-proporcao-populacional"><i class="fa fa-check"></i><b>3.2.2</b> Teste de hipóteses para uma proporção populacional</a></li>
+<li class="chapter" data-level="3.2.3" data-path="inf.html"><a href="inf.html#teste-de-hipotese-para-duas-medias"><i class="fa fa-check"></i><b>3.2.3</b> Teste de hipótese para duas médias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="qui.html"><a href="qui.html"><i class="fa fa-check"></i><b>4</b> Teste de Qui-Quadrado</a></li>
+<li class="chapter" data-level="5" data-path="reg.html"><a href="reg.html"><i class="fa fa-check"></i><b>5</b> Modelos de Regressão</a></li>
+<li class="chapter" data-level="6" data-path="rmark.html"><a href="rmark.html"><i class="fa fa-check"></i><b>6</b> RMarkdown</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referências</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Software R: Análise estatística de dados utilizando um programa livre</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1">
+<h1><span class="header-section-number">Capítulo 1</span> Introdução</h1>
+<p>O R é um ambiente voltado para análise de dados com o uso de uma linguagem de programação, frente a isso um conhecimento prévio dos príncipios de programação facilita a compreensão da condução das análises aplicadas no software. Entretanto, não é pré-requisito. Neste capítulo abordaremos os primeiros passos para o emprego da linguagem de programação R utilizando uma interface “amigável” - o software RStudio. Além disso, serão apresentados os comandos básicos para a manipulação de dados dentro do RStudio.</p>
+<div id="download-e-instalacao-do-r-e-rstudio" class="section level2">
+<h2><span class="header-section-number">1.1</span> Download e instalação do R e Rstudio</h2>
+<p><strong>R</strong>: <a href="http://www.r-project.org" class="uri">http://www.r-project.org</a>. Clique em Download (CRAN) - escolha o link de um repositório - clique no link do sistema operacional (Linux, Mac ou Windows) - clique em <em>install R for de first time - Download</em>.</p>
+<p><strong>RStudio</strong>: <a href="http://www.rstudio.com/products/rstudio/download" class="uri">http://www.rstudio.com/products/rstudio/download</a>. Em RStudio Desktop, escolha a versão <em>free</em>, seguidas da opção do sistema operacional do usuário.</p>
+<p>Lembrando que:</p>
+<ul>
+<li>R é o software;</li>
+<li>RStudio é uma ferramenta amigável para o R.</li>
+</ul>
+</div>
+<div id="paineis" class="section level2">
+<h2><span class="header-section-number">1.2</span> Painéis</h2>
+<p>O RStudio é a interface que faz com que seja mais fácil a utilização da programação em R.</p>
+<div class="figure" style="text-align: center"><span id="fig:paineis"></span>
+<img src="paineis.png" alt="Painéis do Rstudio" width="\textwidth" />
+<p class="caption">
+Figura 1.1: Painéis do Rstudio
+</p>
+</div>
+<ul>
+<li><strong>Fonte/Editor de Scripts</strong>: se constitui do ambiente onde serão abertos os scripts previamente salvos nos mais diversos formatos ou mesmo sendo o local de visualização das bases de dados.</li>
+<li><strong>Console</strong>: local onde será efetuada a digitação das linhas de código que serão interpretadas pelo R.</li>
+<li><strong>Ambiente e Histórico</strong>: o ambiente será visualizado os objetos criados ou carregados durante a seção e; a aba History retoma os scripts digitados no console.</li>
+<li><strong>Plots/arquivos/Pacotes</strong>: local onde podem ser acessados os arquivos salvos no computador pela aba <em>files</em>; a aba <em>Plots</em> carrega os gráficos e plotagens; a aba <em>Packages</em> contém os pacotes instalados em seu computador, onde são ativados ou instalados novos; em <em>Help</em> constam as ajudas e explicações dos pacotes e; <em>Viewer</em> vizualiza documentos do tipo html.</li>
+</ul>
+</div>
+<div id="help" class="section level2">
+<h2><span class="header-section-number">1.3</span> Help</h2>
+<p>Acessamos a ajuda do RStudio por meio do comando <code>help()</code>, através da aba “Help” ou ao clicar no nome do pacote. Pode-se digitar a ajuda que usuário necessita (exemplo <code>help(&quot;summary&quot;)</code>), ou diretamente no colsole digitamos ? e a função desejada, exemplo: <code>?mean</code>.</p>
+</div>
+<div id="instalacao-de-pacotes" class="section level2">
+<h2><span class="header-section-number">1.4</span> Instalação de pacotes</h2>
+<p>Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, e para isso se faz necessário efetuar a sua instalação. Precisamos ir até o painel dos pacotes em *packages}, selecionar a opção instalar e inserir o nome do pacote desejado na janela indicada. Ao selecionar a opção instalar, no console receberemos informações do procedimento e do sucesso do mesmo.</p>
+<div class="figure" style="text-align: center"><span id="fig:pacotes1"></span>
+<img src="pacotes,1.png" alt="Instalação de pacotes" width="\textwidth" />
+<p class="caption">
+Figura 1.2: Instalação de pacotes
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:pacotes2"></span>
+<img src="pacotes,2.png" alt="Caixa de informação de pacote a ser instalado" width="\textwidth" />
+<p class="caption">
+Figura 1.3: Caixa de informação de pacote a ser instalado
+</p>
+</div>
+<p>A mesma função, para instalação de um pacote, pode ser efetuada diretamente via console: <code>install.packages(&quot;pacote&quot;)</code>. É importante ressaltar a função <code>library(nomedopacote)</code> que é utilizada no console para informar ao R e “carregar” o pacote que o usuário irá utilizar. Podem ser instalados mais de um pacote ao mesmo tempo, como no exemplo:</p>
+<p><code>install.packages(c(&quot;readr&quot;, &quot;readxl&quot;))</code></p>
+</div>
+<div id="abrir-arquivo-de-dados" class="section level2">
+<h2><span class="header-section-number">1.5</span> Abrir arquivo de dados</h2>
+<p>Dispondo de um banco de dados em uma planilha eletrônica (LibreOffice Calc ou EXCEL), neste caso será utilizado o arquivo <a href="https://github.com/Smolski/softwarelivrer/raw/master/basico/arvores.xlsx">árvores</a> como exemplo o banco de dados. Os dados derivam de uma pesquisa com espécies de árvores registrando as variáveis diâmetro altura do peito (DAP) e altura. Dados cedidos pela professora Tatiane Chassot.</p>
+<p>Pode-se utilizar a linha de comando para carregar os arquivos de dados, da seguinte forma:</p>
+<p><code>library(readxl)</code></p>
+<p><code>nome.objeto.xls = read_excel(&quot;d:/arvores.xls&quot;)</code></p>
+<p>Outras opções de arquivos podem ser carregados no RStudio, como por exemplo arquivos de texto (.txt ou .csv), arquivos derivados do excel (.xls ou .xlsx), arquivos de dados do SPSS (.sav), do <em>software</em> SAS (.sas7bdat) e do STATA (.dta). A instalação de alguns pacotes é requerida, dependendo da origem da base de dados, como por exemplo o <code>readxl</code>, <code>readr</code> e <code>haven</code>, como os exemplos abaixo:</p>
+<p><code>library(readr)</code></p>
+<p><code>nomeobjeto = read.csv(&quot;d:/arvores.csv&quot;)</code></p>
+<p><code>library(haven)</code></p>
+<p><code>nomeobjeto = read_sav(&quot;d:/arvores.sav&quot;)</code></p>
+<p><code>nomeobjeto = read_dta(&quot;d:/arvores.dta&quot;)</code></p>
+<p><code>nomeobjeto = read_sas(&quot;d:/arvores.sas7bdat&quot;)</code></p>
+<p>Outras opções podem ser comandadas dentro destes comando para abertura de arquivos, como por exemplo, um arquivo csv em que esteja separado por vírgulas pode ser lido como:</p>
+<p><code>read.csv(&quot;d:/arvores.csv&quot;, sep=&quot;,&quot;)</code></p>
+<p>O comando <code>header=TRUE</code> diz que a primeira linha do arquivo contém o cabeçalho; <code>skip=4</code> faz com que sejam ignoradas as 4 primeiras linhas.</p>
+<p>A opção <code>load()</code> (exemplo: <code>load(&quot;base.RData&quot;)</code>) pode ser utilizada para carregar as bases de dados salvas com a função <code>save()</code>, que será descrita no subcapítulo a seguir.</p>
+<p>Outra opção é o carregamento das bases de dados manualmente pelo caminho <em>Envoirment <span class="math inline">\(&gt;\)</span> Import Dataset</em>, escolhendo o tipo de arquivo:</p>
+<div class="figure" style="text-align: center"><span id="fig:r3"></span>
+<img src="r3.png" alt="Aba *Import Dataset*" width="\textwidth" />
+<p class="caption">
+Figura 1.4: Aba <em>Import Dataset</em>
+</p>
+</div>
+<p>Na caixa correspondente a File/Url se insere o endereço virtual ou o local onde se encontra o arquivo. Ao importar os dados, carrega-se um objeto criado com as informações contidas no arquivo. No nosso exeplo, carregamos a planilha arvores (arquivo .xls) como mostra a Figura <a href="intro.html#fig:r4">1.5</a>, derivado do caminho “Import Dataset <span class="math inline">\(&gt;\)</span> From Excel” do Environment.</p>
+<div class="figure" style="text-align: center"><span id="fig:r4"></span>
+<img src="r4.png" alt="Caixa de informações do Import Data" width="\textwidth" />
+<p class="caption">
+Figura 1.5: Caixa de informações do Import Data
+</p>
+</div>
+<p>O campo <em>Code Preview</em> mostra o comando que está sendo criado para a importação destes dados. Em <em>Import Options</em>, delimita-se opções do objeto como o nome (<em>name</em>), o número máximo de linhas (<em>Max Rows</em>), quantas linhas serão puladas na importação do arquivo (<em>Skip</em>), o tratamento das células em branco (<em>NA</em>) e se a primeira linha contém os nomes (<em>Firts Row as Names</em>).</p>
+<p>Com relação à importação de arquivos de texto separado por caracteres (.csv), ela se dá via “Import Dataset <span class="math inline">\(&gt;\)</span> From Text (readr)” do Environment. Constam algumas solicitações diferentes a serem determinadas pelo usuário no campo <em>Import Options</em>, conforme mostra a Figura <a href="intro.html#fig:r4csv">1.6</a>. Uma questão importante é a opção <em>Delimiter</em>, a qual o pesquisador tem que prestar atenção quando o arquivo está separado por vírgulas (<em>Comma</em>), ponto e vírgula (<em>Semicolon</em>) ou outro tipo de caractere. A opção <em>Locale <span class="math inline">\(&gt;\)</span> Configure…</em> oportuniza determinar os tipos de marca decimal e codificação de textos, por exemplo.</p>
+<div class="figure" style="text-align: center"><span id="fig:r4csv"></span>
+<img src="r4csv.png" alt="Opções da importação de arquivos .csv" width="\textwidth" />
+<p class="caption">
+Figura 1.6: Opções da importação de arquivos .csv
+</p>
+</div>
+<p>Importante mencionar que em ambos os casos de importação, no campo <em>Dada Preview</em> onde constam os dados do arquivo a ser importado, é possível determinar o tipo de dado que cada “coluna” contém. Isto é extremamente importante, pois campos que possuem números, que serão posteriormente utilizados em operações aritméticas, por exemplo, devem ser configurados como tal. No entanto, como será visto adiante, a alteração do tipo do dado também pode ser feita posteriormente sem problema algum.</p>
+<p>Alguns tipos de dados:</p>
+<ul>
+<li><strong>Numeric</strong>: números, valores decimais em geral (<code>5.4</code>).</li>
+<li><strong>Integer</strong>: números (<code>4</code>).</li>
+<li><strong>Character</strong>: variável de texto, ou <em>string</em> (<code>casa</code>).</li>
+<li><strong>Double</strong>: cria um vetor de precisão dupla, que abarca os números.</li>
+<li><strong>Logical</strong>: operadores booleanos (<code>TRUE, FALSE</code>).</li>
+<li><strong>Date</strong>: opção para datas.</li>
+<li><strong>Time</strong>: vetor para séries de tempo.</li>
+<li><strong>Factor</strong>: variável nominal, inclusive como fator ordenado, representam categorias.</li>
+</ul>
+</div>
+<div id="salvar-arquivo-de-dados" class="section level2">
+<h2><span class="header-section-number">1.6</span> Salvar arquivo de dados</h2>
+<p>O banco de dados que o R armazena na memória pode ser salvo, junto com todo o ambiente, usando o ícone de disquete na aba “Environment” (salva como arquivo .RData), e depois carregado pelo ícone de pasta (Abrir dados…) na mesma aba. Desta forma, salvará todos os objetos criados no ambiente de trabalho.</p>
+<div class="figure" style="text-align: center"><span id="fig:r6"></span>
+<img src="r6.PNG" alt="Atalho para abrir e salvar arquivo de dados" width="\textwidth" />
+<p class="caption">
+Figura 1.7: Atalho para abrir e salvar arquivo de dados
+</p>
+</div>
+<p>Outra opção com mesmo efeito é utilizar o comando a seguir diretamente no console do RStudio:</p>
+<p><code>save(&quot;nomeDoObjeto&quot;,file=&quot;nomeDoArquivo.RData&quot;)</code></p>
+<p>O nome do objeto pode ser uma lista de objetos para salvar mais de um objeto do ambiente, <code>list=(&quot;objeto1&quot;, &quot;objeto2&quot;)</code>. Para carregar um arquivo RData no ambiente, o comando a ser utilizado pelo usuário é</p>
+<p><code>load(&quot;arquivo.RData&quot;)</code>,</p>
+<p>desde que o arquivo esteja no diretório de trabalho do R.</p>
+<p>É possível exportar as bases trabalhadas para vários formatos de arquivos de dados e de texto, como seguem alguns exemplos:</p>
+<ul>
+<li><code>write.csv(nomeobjeto,&quot;file.csv&quot;, sep=&quot;;&quot;)</code>: salvando em arquivo csv.</li>
+<li><code>write.foreign(nomeobjeto,&quot;d:/nome.sps&quot;)</code>: arquivos sps.</li>
+<li><code>write.foreign(nomeobjeto,&quot;d:/nome.dta&quot;)</code>: arquivos dta.</li>
+<li><code>write.foreign(nomeobjeto,&quot;d:/nome.sas7bdat&quot;)</code>: arquivos sas7bdat.</li>
+</ul>
+</div>
+<div id="diretorios-de-trabalho" class="section level2">
+<h2><span class="header-section-number">1.7</span> Diretórios de trabalho</h2>
+<p>Os trabalhos efetudados via Rstudio, incluindo as bases de dados, os objetos, os resultados das fórmulas, os cálculos aplicados sobre os vetores e demais arquivos resultantes da utilização do programa podem ser salvos em seu diretório de arquivos. Após instalado o Rstudio destina um diretório padrão salvar estes arquivos, o qual pode ser verificado com o comando <code>getwd()</code>.</p>
+<p>Este caminho padrão, por sua vez, pode ser alterado via comando</p>
+<p><code>setwd(&quot;C://file/path&quot;)</code></p>
+<p>onde o usuário escolhe a pasta desejada que ficará como padrão. O comando <code>dir()</code> mostra ao usuário os documentos que constam no diretório padrão ou o escolhido para a consulta.</p>
+</div>
+<div id="operacoes" class="section level2">
+<h2><span class="header-section-number">1.8</span> Operações</h2>
+<div id="operacoes-aritmeticas" class="section level3">
+<h3><span class="header-section-number">1.8.1</span> Operações Aritméticas</h3>
+<p>A realização de uma operação aritmética no R acontece da seguinte forma: onde a resolução das operações segue o padrão, ou seja, primeiro exponenciações, seguido de multiplicações e divisões, deixando por ultimo adições e subtrações, de acordo com a ordem que estão dispostas. Para alterar a prioridade da resolução de operações fazemos o uso do parenteses para destacar a operação que deve ser prioritária na resolução. Seguem alguns exemplos efetuados diretamente no console do RStudio:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># soma</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="dv">19</span><span class="op">+</span><span class="dv">26</span></a></code></pre></div>
+<pre><code>[1] 45</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># subtração</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="dv">19-26</span></a></code></pre></div>
+<pre><code>[1] -7</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># divisão</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="dv">4</span><span class="op">/</span><span class="dv">2</span></a></code></pre></div>
+<pre><code>[1] 2</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># multiplicação </span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="dv">4</span><span class="op">*</span><span class="dv">2</span></a></code></pre></div>
+<pre><code>[1] 8</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># exponenciação</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="dv">4</span><span class="op">^</span><span class="dv">2</span></a></code></pre></div>
+<pre><code>[1] 16</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># prioridade de resolução</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="dv">19</span> <span class="op">+</span><span class="st"> </span><span class="dv">26</span> <span class="op">/</span><span class="dv">4</span> <span class="dv">-2</span> <span class="op">*</span><span class="dv">10</span></a></code></pre></div>
+<pre><code>[1] 5.5</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">((<span class="dv">19</span> <span class="op">+</span><span class="st"> </span><span class="dv">26</span>) <span class="op">/</span>(<span class="dv">4</span> <span class="dv">-2</span>))<span class="op">*</span><span class="dv">10</span></a></code></pre></div>
+<pre><code>[1] 225</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="co"># raiz quadrada</span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="kw">sqrt</span>(<span class="dv">16</span>)</a></code></pre></div>
+<pre><code>[1] 4</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="co"># Logaritmo </span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="kw">log</span>(<span class="dv">1</span>)</a></code></pre></div>
+<pre><code>[1] 0</code></pre>
+</div>
+<div id="operacoes-logicas" class="section level3">
+<h3><span class="header-section-number">1.8.2</span> Operações Lógicas</h3>
+<p>O ambiente de programação Rstudio trabalha com algumas operações lógicas, que serão importantes na manipulação de bases de dados:</p>
+<ul>
+<li><span class="math inline">\(a == b\)</span> (“a” é igual a “b”)</li>
+<li><span class="math inline">\(a != b\)</span> (“a” é diferente a “b”)</li>
+<li><span class="math inline">\(a &gt; b\)</span> (“a” é maior que “b”)</li>
+<li><span class="math inline">\(a &lt; b\)</span> (“a” é menor que “b”)</li>
+<li><span class="math inline">\(a &gt;= b\)</span> (“a” é maior ou igual a “b”)</li>
+<li><span class="math inline">\(a &lt;= b\)</span> (“a” é menor ou igual a “b”)</li>
+<li>is.na (“a” é missing - faltante)</li>
+<li>is.null (“a” é nulo)</li>
+</ul>
+<p>Seguem alguns exemplos da aplicação das operações lógicas:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="co"># maior que </span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span></a></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="dv">1</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<pre><code>[1] FALSE</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="co"># menor que </span></a>
+<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="dv">1</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="co"># maior ou igual a </span></a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="dv">0</span> <span class="op">&gt;=</span><span class="st"> </span>(<span class="dv">2</span><span class="op">+</span>(<span class="op">-</span><span class="dv">2</span>))</a></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="co"># menor ou igual a </span></a>
+<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="dv">1</span> <span class="op">&lt;=</span><span class="st"> </span><span class="dv">3</span></a></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="co"># conjunção</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="dv">9</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">11</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">0</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">1</span></a></code></pre></div>
+<pre><code>[1] FALSE</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="co"># ou</span></a>
+<a class="sourceLine" id="cb31-2" data-line-number="2"><span class="dv">6</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">5</span> <span class="op">|</span><span class="st"> </span><span class="dv">0</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">-1</span></a></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="co"># igual a</span></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span></a></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="co"># diferente de</span></a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="dv">1</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<div id="criacao-de-variaveis" class="section level2">
+<h2><span class="header-section-number">1.9</span> Criação de variáveis</h2>
+<p>A linguagem de programação R se configura em uma linguagem orientada a objetos, ou seja, a todo tempo estamos criando diversos tipos de objetos e efetuando operações com os mesmos. Por exemplo, a criação de listas, bases de dados, união de bases de dados, data.frames e até mesmo mapas!</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="co">#Criando um objeto simples</span></a>
+<a class="sourceLine" id="cb37-2" data-line-number="2">objeto =<span class="st"> &quot;meu primeiro objeto&quot;</span> <span class="co">#enter</span></a>
+<a class="sourceLine" id="cb37-3" data-line-number="3"><span class="co">#Agora para retomar o objeto criado:</span></a>
+<a class="sourceLine" id="cb37-4" data-line-number="4">objeto <span class="co">#enter</span></a></code></pre></div>
+<pre><code>[1] &quot;meu primeiro objeto&quot;</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="co">#Pode ser efetuada uma operação:</span></a>
+<a class="sourceLine" id="cb39-2" data-line-number="2">a=<span class="st"> </span><span class="dv">2</span><span class="op">+</span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb39-3" data-line-number="3">a</a></code></pre></div>
+<pre><code>[1] 3</code></pre>
+<p>O comando <code>ls()</code> lista todos os objetos que estão criados no ambiente e <code>rm(x)</code> remove o objeto indicado (x). Para remover todos os objetos de uma só vez utiliza-se <code>rm(list=ls())</code>.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="co">#Lista objetos do ambiente</span></a>
+<a class="sourceLine" id="cb41-2" data-line-number="2"><span class="kw">ls</span>()</a></code></pre></div>
+<pre><code>[1] &quot;a&quot;      &quot;objeto&quot;</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="co">#Remover um banco de dados</span></a>
+<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="kw">rm</span>(a)</a></code></pre></div>
+<div id="conversao-de-uma-variavel" class="section level3">
+<h3><span class="header-section-number">1.9.1</span> Conversão de uma variável</h3>
+<p>Para a aplicação de algumas funções é importante que cada variável esteja corretamente classificada, o que em alguns casos não ocorre durante o reconhecimento automático do R. Precisamos então reconhecê-la como variável texto, numérica ou fator. Além disso, a classe ordered se aplica a variáveis categóricas que podem ser consideradas ordenáveis.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1">idade=<span class="kw">c</span>(<span class="st">&#39;11&#39;</span>, <span class="st">&#39;12&#39;</span>, <span class="st">&#39;31&#39;</span>)</a>
+<a class="sourceLine" id="cb44-2" data-line-number="2">nomes=<span class="kw">c</span>(<span class="st">&quot;Elisa&quot;</span>, <span class="st">&quot;Priscila&quot;</span>, <span class="st">&quot;Carol&quot;</span>)</a>
+<a class="sourceLine" id="cb44-3" data-line-number="3">cep=<span class="kw">c</span>(<span class="dv">98700000</span>,<span class="dv">98701000</span>,<span class="dv">98702000</span>)</a>
+<a class="sourceLine" id="cb44-4" data-line-number="4">idade=<span class="st"> </span><span class="kw">as.numeric</span>(idade)</a>
+<a class="sourceLine" id="cb44-5" data-line-number="5">idade</a></code></pre></div>
+<pre><code>[1] 11 12 31</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1">cep =<span class="st"> </span><span class="kw">as.character</span>(cep)</a>
+<a class="sourceLine" id="cb46-2" data-line-number="2">cep</a></code></pre></div>
+<pre><code>[1] &quot;98700000&quot; &quot;98701000&quot; &quot;98702000&quot;</code></pre>
+</div>
+</div>
+<div id="alguns-comandos-essenciais" class="section level2">
+<h2><span class="header-section-number">1.10</span> Alguns comandos essenciais</h2>
+<p>A função <code>head()</code> mostra as 6 primeiras colunas do arquivo para se ter uma noção do conteúdo. No caso do mesmo ser um data.frame, podemos solicitar o número de valores ou linhas a serem mostrados no console através do parâmetro n ou na ausência deste, todas as linhas serão impressas, como exemplo <code>head(x ,n=2)</code> para ver as duas primeiras linhas.</p>
+<p>O comando <code>summary()</code> efetua o resumo dos dados, se for qualitativa mostra a frequência absoluta das categorias e se for quantitativa apresenta as categorias. No exemplo abaixo trabalharemos com uma base de dados de treinamento denominada “iris” que está acessível no <em>software</em> RStudio através do comando que carrega dados específicos <code>data()</code>:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="co">#Carregando dados da base do RSdudio iris.</span></a>
+<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="kw">data</span>(iris)</a>
+<a class="sourceLine" id="cb48-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb48-4" data-line-number="4"><span class="co">#Visualizando as primeiras 6 colunas</span></a>
+<a class="sourceLine" id="cb48-5" data-line-number="5"><span class="kw">head</span>(iris)</a></code></pre></div>
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="co">#Resumo do objeto</span></a>
+<a class="sourceLine" id="cb50-2" data-line-number="2"><span class="kw">summary</span>(iris)</a></code></pre></div>
+<pre><code>  Sepal.Length   Sepal.Width    Petal.Length   Petal.Width        Species  
+ Min.   :4.30   Min.   :2.00   Min.   :1.00   Min.   :0.1   setosa    :50  
+ 1st Qu.:5.10   1st Qu.:2.80   1st Qu.:1.60   1st Qu.:0.3   versicolor:50  
+ Median :5.80   Median :3.00   Median :4.35   Median :1.3   virginica :50  
+ Mean   :5.84   Mean   :3.06   Mean   :3.76   Mean   :1.2                  
+ 3rd Qu.:6.40   3rd Qu.:3.30   3rd Qu.:5.10   3rd Qu.:1.8                  
+ Max.   :7.90   Max.   :4.40   Max.   :6.90   Max.   :2.5                  </code></pre>
+<p>O comando <code>names()</code> lista os nomes das colunas dos bancos de dados escolhidos, enquanto <code>tail()</code> mostra as últimas seis linhas.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="co">#Para visualizar os nomes das colunas dos dados:</span></a>
+<a class="sourceLine" id="cb52-2" data-line-number="2"><span class="kw">names</span>(iris)</a></code></pre></div>
+<pre><code>[1] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot;  &quot;Petal.Length&quot; &quot;Petal.Width&quot;  &quot;Species&quot;     </code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="co">#vizualizar as ultimas seis linhas do objetos</span></a>
+<a class="sourceLine" id="cb54-2" data-line-number="2"><span class="kw">tail</span>(iris)</a></code></pre></div>
+<pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+145          6.7         3.3          5.7         2.5 virginica
+146          6.7         3.0          5.2         2.3 virginica
+147          6.3         2.5          5.0         1.9 virginica
+148          6.5         3.0          5.2         2.0 virginica
+149          6.2         3.4          5.4         2.3 virginica
+150          5.9         3.0          5.1         1.8 virginica</code></pre>
+<p>Para que o pesquisador conheça melhor as bases de dados em que está atuando, o comando <code>class()</code> serve para identificar o tipo de base ou dados da base. Com o exemplo abaixo constata-se que o objeto “iris” é um <em>data frame</em>, a variável “Sepal.Length” é uma variável numérica e que a variável numérica.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="kw">class</span>(iris)</a></code></pre></div>
+<pre><code>[1] &quot;data.frame&quot;</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw">class</span>(iris<span class="op">$</span>Sepal.Length)</a></code></pre></div>
+<pre><code>[1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="kw">class</span>(iris<span class="op">$</span>Especie)</a></code></pre></div>
+<pre><code>[1] &quot;NULL&quot;</code></pre>
+<p>Efeito semelhante possui o comando <code>ls.str()</code>:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1"><span class="kw">ls.str</span>(iris)</a></code></pre></div>
+<pre><code>Petal.Length :  num [1:150] 1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+Petal.Width :  num [1:150] 0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+Sepal.Length :  num [1:150] 5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+Sepal.Width :  num [1:150] 3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+Species :  Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<p>Os comandos <code>ncol()</code> e <code>nrow()</code> mostram o número de colunas e o número de linhas do objeto, respectivamente.</p>
+<div id="funcoes-view-e-dim" class="section level3">
+<h3><span class="header-section-number">1.10.1</span> Funções <em>View</em> e <em>dim</em></h3>
+<p>A função <code>View()</code> permite vizualizar os elementos no script do dataframe requesitado, enquando a função <code>dim()</code> (abreviatura de dimensões) fornece o número de linhas e de colunas, respectivamente.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="kw">View</span>(iris)</a>
+<a class="sourceLine" id="cb64-2" data-line-number="2"><span class="kw">dim</span>(iris)</a></code></pre></div>
+<pre><code>[1] 150   5</code></pre>
+<p>Para alterar um nome de uma variável pode ser utilizado o comando colnames. No exemplo acima, vamos alterar o nome da coluna “Species” para “Especie”.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="co">#Alterar o nome da coluna, sendo que o &#39;[5]&#39; indica que está na quinta coluna.</span></a>
+<a class="sourceLine" id="cb66-2" data-line-number="2"><span class="kw">colnames</span>(iris)[<span class="dv">5</span>]=<span class="st">&#39;Especie&#39;</span></a></code></pre></div>
+<p>Para selecionarmos uma coluna do objeto “iris”, por exemplo a coluna “Sepal.Length”, poderíamos digitar no console o comando <strong>iris$Sepal.Length</strong>. O padrão de carregamento da base de dados nos obriga a dizer ao R qual é a base que quer selecionar (iris), inserindo o símbolo <code>$</code> e após o nome da coluna a qual deseja as informações. Para criar um novo objeto com esta informação, basta dizer ao R, como já visto acima, por exemplo: <strong>novoobjeto=iris$novacoluna</strong>.</p>
+<p>No entanto, para acessar os dados sem o uso do símbolo <code>$</code>, podemos usar o seguinte comando: <strong>attach(iris)</strong>. Assim, podemos efetuar o sumário da coluna “Petal.Width”:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="co">#Definindo a função attach para o objeto &#39;dados&#39;.</span></a>
+<a class="sourceLine" id="cb67-2" data-line-number="2"><span class="kw">attach</span>(iris)</a>
+<a class="sourceLine" id="cb67-3" data-line-number="3"><span class="co">#Efetuando o sumário de &#39;pop.total&#39;.</span></a>
+<a class="sourceLine" id="cb67-4" data-line-number="4"><span class="kw">summary</span>(Petal.Width)</a></code></pre></div>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    0.1     0.3     1.3     1.2     1.8     2.5 </code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="co">#Como a coluna &#39;distrito&#39; é um fator, o sumário será </span></a>
+<a class="sourceLine" id="cb69-2" data-line-number="2"><span class="co">#a contagem da quantidade de cada fator na coluna.</span></a>
+<a class="sourceLine" id="cb69-3" data-line-number="3"><span class="kw">summary</span>(Especie)</a></code></pre></div>
+<pre><code>    setosa versicolor  virginica 
+        50         50         50 </code></pre>
+</div>
+<div id="comando-tapply" class="section level3">
+<h3><span class="header-section-number">1.10.2</span> Comando <em>tapply</em></h3>
+<p>O comando <code>taply()</code> agrega os dados pelos níveis das variáveis qualitativas. Note que a coluna “Especie” possui dados em forma de fatores. Assim, para filtrarmos a informação (coluna “Sepal.Length”) média por Especie, podemos utilizar:</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="co">#Função &#39;tapply&#39;, número médio da população total por distrito.</span></a>
+<a class="sourceLine" id="cb71-2" data-line-number="2"><span class="kw">tapply</span>(Sepal.Length, Especie, mean)</a></code></pre></div>
+<pre><code>    setosa versicolor  virginica 
+     5.006      5.936      6.588 </code></pre>
+<p>No caso da coluna “Sepal.Length”, se ela possuir um registro NA (faltante), para que se efetue a média por este coluna neste quesito, há que se adicionar o parâmetro <code>na.rm=T</code>, que ignora as células faltantes para calcular-se a média:</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="co">#Função &#39;tapply&#39; considerando NAs:</span></a>
+<a class="sourceLine" id="cb73-2" data-line-number="2"><span class="kw">tapply</span>(Sepal.Length, Especie, mean)</a></code></pre></div>
+<pre><code>    setosa versicolor  virginica 
+     5.006      5.936      6.588 </code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="co">#Função &#39;tapply&#39; sem considerar NAs:</span></a>
+<a class="sourceLine" id="cb75-2" data-line-number="2"><span class="kw">tapply</span>(Sepal.Length, Especie, mean, <span class="dt">na.rm=</span>T)</a></code></pre></div>
+<pre><code>    setosa versicolor  virginica 
+     5.006      5.936      6.588 </code></pre>
+</div>
+<div id="comando-subset" class="section level3">
+<h3><span class="header-section-number">1.10.3</span> Comando <em>subset</em></h3>
+<p>Utiliza-se o comando <code>subset()</code> para formar um subconjunto de dados o qual desejamos selecionar de um objeto. Por exemplo, se quisermos criar um novo objeto com somente os dados da “Especie” setosa:</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1">dadossetosa=<span class="kw">subset</span>(iris, Especie<span class="op">==</span><span class="st">&#39;setosa&#39;</span>)</a>
+<a class="sourceLine" id="cb77-2" data-line-number="2"><span class="kw">head</span>(dadossetosa)</a></code></pre></div>
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Especie
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<p>Pode ser configurado mais de uma condição para a filtragem dos dados, por exemplo, além de serem filtrados os dados referentes a Especie setosa, aquelas na qual o Sepal.Length é superior a 5. Como no exemplo, criamos um novo objeto com estas condições:</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1">dadossetosa2=<span class="kw">subset</span>(iris, Especie<span class="op">==</span><span class="st">&#39;setosa&#39;</span><span class="op">&amp;</span><span class="st"> </span>Sepal.Length<span class="op">&gt;</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb79-2" data-line-number="2"><span class="kw">head</span>(dadossetosa2)</a></code></pre></div>
+<pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Especie
+1           5.1         3.5          1.4         0.2  setosa
+6           5.4         3.9          1.7         0.4  setosa
+11          5.4         3.7          1.5         0.2  setosa
+15          5.8         4.0          1.2         0.2  setosa
+16          5.7         4.4          1.5         0.4  setosa
+17          5.4         3.9          1.3         0.4  setosa</code></pre>
+</div>
+</div>
+<div id="estrutura-de-dados" class="section level2">
+<h2><span class="header-section-number">1.11</span> Estrutura de dados</h2>
+<div id="vetores" class="section level3">
+<h3><span class="header-section-number">1.11.1</span> Vetores</h3>
+<p>Os fatores são uma classe especial de vetores, que definem variáveis categóricas de classificação, como os tratamentos em um experimento fatorial, ou categorias em uma tabela de contingência.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="co"># Criação de um vetor</span></a>
+<a class="sourceLine" id="cb81-2" data-line-number="2">x=<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb81-3" data-line-number="3">x</a></code></pre></div>
+<pre><code>[1] 2 4 6</code></pre>
+<p>Os vetores podem ser criados a partir de uma sequência numérica ou mesmo de um intervalo entre valores:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1">x=<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span><span class="op">:</span><span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb83-2" data-line-number="2">x</a></code></pre></div>
+<pre><code>[1] 2 3 4 5 6</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="co"># Criação de um vetor a partir do intervalo entre cada elemento e valores</span></a>
+<a class="sourceLine" id="cb85-2" data-line-number="2"><span class="co">#mínimo e máximo</span></a>
+<a class="sourceLine" id="cb85-3" data-line-number="3">x=<span class="st"> </span><span class="kw">seq</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dt">by=</span><span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb85-4" data-line-number="4">x</a></code></pre></div>
+<pre><code>[1] 2.0 2.5 3.0</code></pre>
+<p>Criação de um vetor atráves de uma repetição também é útil em várias situações. No primeiro exemplo repete o intervalo de 1 a 3 4 vezes e no segundo exemplo, a cada 3 vezes:</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1">x=<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">times=</span><span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb87-2" data-line-number="2">x</a></code></pre></div>
+<pre><code> [1] 1 2 3 1 2 3 1 2 3 1 2 3</code></pre>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1">y=<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">each=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb89-2" data-line-number="2">y</a></code></pre></div>
+<pre><code>[1] 1 1 1 2 2 2 3 3 3</code></pre>
+<p>A função factor cria um fator, a partir de um vetor:</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1">sexo&lt;-<span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>),<span class="dt">each=</span><span class="dv">8</span>))</a>
+<a class="sourceLine" id="cb91-2" data-line-number="2">sexo</a></code></pre></div>
+<pre><code> [1] F F F F F F F F M M M M M M M M
+Levels: F M</code></pre>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1">numeros=<span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,<span class="dt">each=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb93-2" data-line-number="2">numeros</a></code></pre></div>
+<pre><code>[1] 1 1 1 2 2 2 3 3 3</code></pre>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1">numeros.f&lt;-<span class="kw">factor</span>(numeros)</a>
+<a class="sourceLine" id="cb95-2" data-line-number="2">numeros.f</a></code></pre></div>
+<pre><code>[1] 1 1 1 2 2 2 3 3 3
+Levels: 1 2 3</code></pre>
+<p>Fatores têm um atributo que especifica seus níveis ou categorias (levels), que seguem ordem alfanumérica crescente, por <em>default</em>. Em muitas análises essa ordem é de fundamental importância e dessa forma pode ser alterada através do argumento levels, por exemplo, para que possa ser colocado o controle antes dos tratamentos:</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1">tratamentos=<span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;controle&quot;</span>,<span class="st">&quot;adubo A&quot;</span>,<span class="st">&quot;adubo B&quot;</span>), <span class="dt">each=</span><span class="dv">4</span>))</a>
+<a class="sourceLine" id="cb97-2" data-line-number="2">tratamentos</a></code></pre></div>
+<pre><code> [1] controle controle controle controle adubo A  adubo A  adubo A  adubo A 
+ [9] adubo B  adubo B  adubo B  adubo B 
+Levels: adubo A adubo B controle</code></pre>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1">tratamentos=<span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;controle&quot;</span>,<span class="st">&quot;adubo A&quot;</span>,<span class="st">&quot;adubo B&quot;</span>), <span class="dt">each=</span><span class="dv">4</span>), </a>
+<a class="sourceLine" id="cb99-2" data-line-number="2"><span class="dt">levels=</span><span class="kw">c</span>(<span class="st">&quot;controle&quot;</span>, <span class="st">&quot;adubo A&quot;</span>, <span class="st">&quot;adubo B&quot;</span>))</a>
+<a class="sourceLine" id="cb99-3" data-line-number="3">tratamentos</a></code></pre></div>
+<pre><code> [1] controle controle controle controle adubo A  adubo A  adubo A  adubo A 
+ [9] adubo B  adubo B  adubo B  adubo B 
+Levels: controle adubo A adubo B</code></pre>
+<p>Fatores podem conter níveis não usados (vazios):</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1">participantes=<span class="kw">factor</span>(<span class="kw">rep</span>(<span class="st">&quot;mulheres&quot;</span>,<span class="dv">10</span>), <span class="dt">levels=</span><span class="kw">c</span>(<span class="st">&quot;mulheres&quot;</span>,<span class="st">&quot;homens&quot;</span>))</a>
+<a class="sourceLine" id="cb101-2" data-line-number="2">participantes</a></code></pre></div>
+<pre><code> [1] mulheres mulheres mulheres mulheres mulheres mulheres mulheres mulheres
+ [9] mulheres mulheres
+Levels: mulheres homens</code></pre>
+<p>Também é possível aplicar uma função aos subconjuntos de um vetor definidos por um fator utilizando a função <code>tapply()</code>. Criamos um objeto com o sexo das pessoas, seguido pela dieta e peso (que caracterizamos como numérico). Depois, determinamos a média de peso frente ao sexo e a dieta</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" data-line-number="1">sexo=<span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;F&quot;</span>,<span class="st">&quot;M&quot;</span>),<span class="dt">each=</span><span class="dv">9</span>))</a>
+<a class="sourceLine" id="cb103-2" data-line-number="2">dieta=<span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;normal&quot;</span>,<span class="st">&quot;light&quot;</span>,<span class="st">&quot;diet&quot;</span>), <span class="dt">each=</span><span class="dv">3</span>),<span class="dv">2</span>), </a>
+<a class="sourceLine" id="cb103-3" data-line-number="3"><span class="dt">levels=</span><span class="kw">c</span>(<span class="st">&quot;normal&quot;</span>, <span class="st">&quot;light&quot;</span>,<span class="st">&quot;diet&quot;</span>))</a>
+<a class="sourceLine" id="cb103-4" data-line-number="4">peso=<span class="kw">c</span>(<span class="dv">90</span>, <span class="dv">89</span>, <span class="dv">78</span>, <span class="dv">69</span>, <span class="dv">85</span>, <span class="dv">69</span>, <span class="dv">77</span>, <span class="dv">89</span>, <span class="dv">80</span>, <span class="dv">60</span>, <span class="dv">75</span>, <span class="dv">79</span>, <span class="dv">65</span>, <span class="dv">94</span>,</a>
+<a class="sourceLine" id="cb103-5" data-line-number="5">       <span class="dv">69</span>, <span class="dv">85</span>, <span class="dv">69</span>, <span class="dv">77</span>)</a>
+<a class="sourceLine" id="cb103-6" data-line-number="6">sexo</a></code></pre></div>
+<pre><code> [1] F F F F F F F F F M M M M M M M M M
+Levels: F M</code></pre>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" data-line-number="1">dieta</a></code></pre></div>
+<pre><code> [1] normal normal normal light  light  light  diet   diet   diet   normal
+[11] normal normal light  light  light  diet   diet   diet  
+Levels: normal light diet</code></pre>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" data-line-number="1">peso=<span class="kw">as.numeric</span>(peso)</a>
+<a class="sourceLine" id="cb107-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb107-3" data-line-number="3"><span class="co"># média de peso frente ao sexo e dieta</span></a>
+<a class="sourceLine" id="cb107-4" data-line-number="4"><span class="kw">tapply</span>(peso,<span class="kw">list</span>(sexo,dieta), mean)</a></code></pre></div>
+<pre><code>  normal light diet
+F  85.67 74.33   82
+M  71.33 76.00   77</code></pre>
+<div id="funcao-table" class="section level4">
+<h4><span class="header-section-number">1.11.1.1</span> Função <em>table</em></h4>
+<p>Para contar elementos em cada nível de um fator, usa-se a função table:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="kw">table</span>(participantes)</a></code></pre></div>
+<pre><code>participantes
+mulheres   homens 
+      10        0 </code></pre>
+<p>A função pode fazer tabulações cruzadas, gerando uma tabela de contingência, esse tipo de tabela é usado para registrar observações independentes de duas ou mais variáveis aleatórias:</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="kw">table</span>(sexo,dieta)</a></code></pre></div>
+<pre><code>    dieta
+sexo normal light diet
+   F      3     3    3
+   M      3     3    3</code></pre>
+</div>
+</div>
+<div id="matrizes" class="section level3">
+<h3><span class="header-section-number">1.11.2</span> Matrizes</h3>
+<p>A função matrix tem a finalidade de criar uma matriz com os valores do argumento data, argumento este que insere as variáveis desejadas na matriz. O número de linhas é definido pelo argumento nrow e o número de colunas é definido pelo argumento ncol:</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1">nome.da.matriz=<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data=</span><span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,<span class="dt">nrow =</span> <span class="dv">3</span>,<span class="dt">ncol =</span> <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb113-2" data-line-number="2">nome.da.matriz</a></code></pre></div>
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1    4    7   10
+[2,]    2    5    8   11
+[3,]    3    6    9   12</code></pre>
+<p>Por <em>default</em> (ação tomada pelo <em>software</em>), os valores são preenchidos por coluna. Para preencher por linha basta instruir o programa de outra forma, alterando o argumento <code>byrow</code> para TRUE:</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1">nome.da.matriz=<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data=</span><span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,<span class="dt">nrow =</span> <span class="dv">3</span>,<span class="dt">ncol =</span> <span class="dv">4</span>, <span class="dt">byrow=</span>T)</a>
+<a class="sourceLine" id="cb115-2" data-line-number="2">nome.da.matriz</a></code></pre></div>
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    5    6    7    8
+[3,]    9   10   11   12</code></pre>
+<p>Se a matriz inserida tem menos elementos do que a ordem informada para a matriz, os são repetidos até preenchê-la:</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1">lista=<span class="st"> </span><span class="kw">list</span>(<span class="dt">matriz=</span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>), <span class="dt">nrow=</span><span class="dv">3</span>, <span class="dt">ncol=</span><span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb117-2" data-line-number="2">lista</a></code></pre></div>
+<pre><code>$matriz
+     [,1] [,2]
+[1,]    1    1
+[2,]    2    2
+[3,]    1    1</code></pre>
+</div>
+<div id="listas" class="section level3">
+<h3><span class="header-section-number">1.11.3</span> Listas</h3>
+<p>As listas podem ser criadas a partir do comando <code>list()</code>.</p>
+<ul>
+<li><strong>nrow</strong>: corresponde ao número de linhas;</li>
+<li><strong>ncol</strong>: corresponde ao número de colunas.</li>
+</ul>
+<p>Para ver quais elementos estão em suas listas é só chamar pelo nome que foi dado para ela, como no exemplo abaixo. Representa uma coleção de objetos.</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1">lista=<span class="st"> </span><span class="kw">list</span>(<span class="dt">matriz=</span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>), <span class="dt">nrow=</span><span class="dv">3</span>, <span class="dt">ncol=</span><span class="dv">2</span>),<span class="dt">vetor=</span><span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb119-2" data-line-number="2">lista</a></code></pre></div>
+<pre><code>$matriz
+     [,1] [,2]
+[1,]    1    5
+[2,]    2    7
+[3,]    1    9
+
+$vetor
+[1] 1 2 3 4 5 6</code></pre>
+<div id="comandos-para-manipulacao-de-listas" class="section level4">
+<h4><span class="header-section-number">1.11.3.1</span> Comandos para manipulação de listas</h4>
+<p>Para descobrirmos de maneira rápida o números de objetos que há na lista, utilizamos o comando <code>length(nomedalista)</code>.</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1">lista</a></code></pre></div>
+<pre><code>$matriz
+     [,1] [,2]
+[1,]    1    5
+[2,]    2    7
+[3,]    1    9
+
+$vetor
+[1] 1 2 3 4 5 6</code></pre>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1"><span class="kw">length</span>(lista)</a></code></pre></div>
+<pre><code>[1] 2</code></pre>
+<p>O uso do comando <code>names(nomedalista)</code> retorna os nomes dos objetos que estão presentes na lista.</p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1"><span class="kw">names</span>(lista)</a></code></pre></div>
+<pre><code>[1] &quot;matriz&quot; &quot;vetor&quot; </code></pre>
+<p>Para chamar várias listas através usamos o comando da seguinte forma:</p>
+<p><code>c(nome1, nome2)</code></p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1">lista<span class="fl">.1</span>=<span class="st"> </span><span class="kw">list</span>(<span class="dt">matriz=</span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>), <span class="dt">nrow=</span><span class="dv">3</span>, <span class="dt">ncol=</span><span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb127-2" data-line-number="2">              <span class="dt">vetor=</span><span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb127-3" data-line-number="3">lista<span class="fl">.2</span>=<span class="st"> </span><span class="kw">list</span>(<span class="dt">nomes=</span><span class="kw">c</span>(<span class="st">&quot;Marcelo&quot;</span>, <span class="st">&quot;Fábio&quot;</span>, <span class="st">&quot;Felipe&quot;</span>), </a>
+<a class="sourceLine" id="cb127-4" data-line-number="4">              <span class="dt">idade=</span><span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">34</span>, <span class="dv">26</span>))</a>
+<a class="sourceLine" id="cb127-5" data-line-number="5"><span class="kw">c</span>(lista<span class="fl">.1</span>,lista<span class="fl">.2</span>)</a></code></pre></div>
+<pre><code>$matriz
+     [,1] [,2]
+[1,]    1    5
+[2,]    2    7
+[3,]    1    9
+
+$vetor
+[1] 1 2 3 4 5 6
+
+$nomes
+[1] &quot;Marcelo&quot; &quot;Fábio&quot;   &quot;Felipe&quot; 
+
+$idade
+[1] 25 34 26</code></pre>
+</div>
+</div>
+<div id="data-frames" class="section level3">
+<h3><span class="header-section-number">1.11.4</span> Data frames</h3>
+<p>Com a função <code>data.frame()</code> reunimos vetores de mesmo comprimento em um só objeto. Neste caso são criadas tabelas de dados. Cada observação é descrita por um conjunto de propriedades. Abaixo podemos ver como inserir os dados para criar a “tabela”. Similar como matrizes, porem diferentes colunas podem possuir elementos de natureza diferentes .</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" data-line-number="1">estudantes=<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Camila&quot;</span>, <span class="st">&quot;Pedro&quot;</span>, <span class="st">&quot;Marcelo&quot;</span>,<span class="st">&quot;Guilherme&quot;</span>)</a>
+<a class="sourceLine" id="cb129-2" data-line-number="2">idade=<span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">17</span>,<span class="dv">17</span>,<span class="dv">18</span>)</a>
+<a class="sourceLine" id="cb129-3" data-line-number="3">peso=<span class="kw">c</span>(<span class="dv">65</span>,<span class="dv">79</span>,<span class="dv">80</span>,<span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb129-4" data-line-number="4">informacoes=<span class="kw">data.frame</span>(estudantes,idade,peso)</a>
+<a class="sourceLine" id="cb129-5" data-line-number="5">informacoes</a></code></pre></div>
+<pre><code>  estudantes idade peso
+1     Camila    21   65
+2      Pedro    17   79
+3    Marcelo    17   80
+4  Guilherme    18  100</code></pre>
+<p>Adiciona-se colunas no <em>data frame</em> através do comando a seguir, pressupondo que a ordem dos dados esteja correta:</p>
+<p><code>nomedodata.frame$variávelaseradicionada</code></p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" data-line-number="1">informacoes<span class="op">$</span>cidades=<span class="kw">c</span>(<span class="st">&quot;Nova Hartz&quot;</span>,<span class="st">&quot;Gramado&quot;</span>,<span class="st">&quot;Soledade&quot;</span>,</a>
+<a class="sourceLine" id="cb131-2" data-line-number="2">                      <span class="st">&quot;Porto Alegre&quot;</span>)</a>
+<a class="sourceLine" id="cb131-3" data-line-number="3">informacoes</a></code></pre></div>
+<pre><code>  estudantes idade peso      cidades
+1     Camila    21   65   Nova Hartz
+2      Pedro    17   79      Gramado
+3    Marcelo    17   80     Soledade
+4  Guilherme    18  100 Porto Alegre</code></pre>
+<p>É possível fazer uma contagem concatenando com a filtragem do pacote <code>subset</code>, como no exemplo a contagem dos indivíduos cuja origem é Soledade.</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" data-line-number="1"><span class="kw">length</span>(<span class="kw">subset</span>(informacoes<span class="op">$</span>cidades, informacoes<span class="op">$</span>cidades<span class="op">==</span><span class="st">&quot;Soledade&quot;</span>))</a></code></pre></div>
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<div id="manipulacao-de-banco-de-dados" class="section level2">
+<h2><span class="header-section-number">1.12</span> Manipulação de banco de dados</h2>
+</div>
+<div id="funcao-edit" class="section level2">
+<h2><span class="header-section-number">1.13</span> Função <em>edit</em></h2>
+<p>Esta função abre uma interface simples de edição de dados em formato planilha, e é útil para pequenas modificações. Mas para salvar as modificações atribua o resultado da função <code>edit</code> a um objeto.</p>
+<p>Utiliza-se o comando da seguinte forma:</p>
+<p><code>novonomedabase = edit(nomeatualdabase)</code></p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1">informacoes<span class="fl">.2</span>=<span class="kw">edit</span>(informacoes)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:95"></span>
+<img src="95.PNG" alt="Editor de dados" width="\textwidth" />
+<p class="caption">
+Figura 1.8: Editor de dados
+</p>
+</div>
+<p>Basta clicar no retângulo correspondente a variável que deseja ser modificada, excluir ou adicionar novas colunas.</p>
+<div class="figure" style="text-align: center"><span id="fig:10"></span>
+<img src="10.PNG" alt="Acréscimo de uma nova coluna através do editor de dados" width="\textwidth" />
+<p class="caption">
+Figura 1.9: Acréscimo de uma nova coluna através do editor de dados
+</p>
+</div>
+<p>Logo, chamando o novo banco de dados, teremos:</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" data-line-number="1">informacoes<span class="fl">.2</span> </a></code></pre></div>
+<pre><code>  estudantes idade peso      cidades
+1     Camila    21   65   Nova Hartz
+2      Pedro    17   79      Gramado
+3    Marcelo    17   80     Soledade
+4  Guilherme    18  100 Porto Alegre</code></pre>
+</div>
+<div id="funcoes" class="section level2">
+<h2><span class="header-section-number">1.14</span> Funções</h2>
+<p>As funções a seguir são aplicáveis a vetores, data.frames e listas, e em muitos casos trazem praticidade a uma análise estatística. Foram criados objetos com informações do nome dos estudantes e altura. Segue o processo de criação do <em>data frame</em> com estas informações, lembrando que esta forma de “união” das informações pressupõe que a ordem dos dados esteja correta:</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" data-line-number="1"><span class="co"># União de um banco de dados (existencia de uma váriavel em comum)</span></a>
+<a class="sourceLine" id="cb138-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb138-3" data-line-number="3">estudantes=<span class="kw">c</span>(<span class="st">&quot;Guilherme&quot;</span>, <span class="st">&quot;Marcelo&quot;</span>, <span class="st">&quot;Pedro&quot;</span>, <span class="st">&quot;Camila&quot;</span>)</a>
+<a class="sourceLine" id="cb138-4" data-line-number="4">altura=<span class="st"> </span><span class="kw">c</span>(<span class="fl">1.50</span>, <span class="fl">1.9</span>, <span class="fl">1.74</span>, <span class="fl">1.80</span>)</a>
+<a class="sourceLine" id="cb138-5" data-line-number="5">informacoes<span class="fl">.3</span>=<span class="kw">data.frame</span>(estudantes, altura)</a></code></pre></div>
+<p>Já o comando <code>merge()</code> serve para juntar dois <em>data frames</em> que possuam uma coluna em comum. Neste caso, unimos o objeto <code>informações.2</code> com o objeto <code>informações.3</code> utilizando o nome dos estudantes (informação em comum):</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" data-line-number="1">informacoes=<span class="kw">merge</span>(informacoes<span class="fl">.2</span>,informacoes<span class="fl">.3</span>, <span class="dt">by=</span><span class="st">&quot;estudantes&quot;</span>)</a></code></pre></div>
+<p>Adicionar um cálculo entre as colunas é muito simples com o RStudio, neste caso com os dados do peso e altura, pode-se calcular o IMC (Índice de Massa Corporal) em uma nova coluna:</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" data-line-number="1">informacoes<span class="op">$</span>Imc=<span class="kw">c</span>(peso<span class="op">/</span>(altura<span class="op">^</span><span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb140-2" data-line-number="2">informacoes</a></code></pre></div>
+<pre><code>  estudantes idade peso      cidades altura   Imc
+1     Camila    21   65   Nova Hartz   1.80 28.89
+2  Guilherme    18  100 Porto Alegre   1.50 21.88
+3    Marcelo    17   80     Soledade   1.90 26.42
+4      Pedro    17   79      Gramado   1.74 30.86</code></pre>
+<p>Ainda, se houver linhas que tenham pelo menos uma informação faltante (NA), estas podem ser excluídas com o comando <code>na.omit()</code>, ou mesmo os NAs serem substituídos por outro caractere (neste caso foi substituído por zero) com o comando <code>is.na</code>:</p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" data-line-number="1"><span class="co"># Retirar as linhas que tenham pelo menos um NA:</span></a>
+<a class="sourceLine" id="cb142-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb142-3" data-line-number="3">informacoes&lt;-<span class="st"> </span><span class="kw">na.omit</span>(informacoes)</a>
+<a class="sourceLine" id="cb142-4" data-line-number="4">informacoes</a></code></pre></div>
+<pre><code>  estudantes idade peso      cidades altura   Imc
+1     Camila    21   65   Nova Hartz   1.80 28.89
+2  Guilherme    18  100 Porto Alegre   1.50 21.88
+3    Marcelo    17   80     Soledade   1.90 26.42
+4      Pedro    17   79      Gramado   1.74 30.86</code></pre>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" data-line-number="1"><span class="co"># Substituir NA&#39;s por zero no data.frame</span></a>
+<a class="sourceLine" id="cb144-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb144-3" data-line-number="3">informacoes[<span class="kw">is.na</span>(informacoes)] =<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb144-4" data-line-number="4">informacoes</a></code></pre></div>
+<pre><code>  estudantes idade peso      cidades altura   Imc
+1     Camila    21   65   Nova Hartz   1.80 28.89
+2  Guilherme    18  100 Porto Alegre   1.50 21.88
+3    Marcelo    17   80     Soledade   1.90 26.42
+4      Pedro    17   79      Gramado   1.74 30.86</code></pre>
+<p>Outro recurso interessante é a substituição de dados em uma columa, que pode ser feito de forma automática para uma condição padrão escolhida. No exemplo abaixo, substituimos aquelas informações de idade igual a 17 pelo número 19:</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1"><span class="co"># Substituir números na coluna</span></a>
+<a class="sourceLine" id="cb146-2" data-line-number="2">informacoes<span class="op">$</span>idade[informacoes<span class="op">$</span>idade <span class="op">==</span><span class="st"> </span><span class="dv">17</span>] &lt;-<span class="st"> </span><span class="dv">19</span></a>
+<a class="sourceLine" id="cb146-3" data-line-number="3">informacoes</a></code></pre></div>
+<pre><code>  estudantes idade peso      cidades altura   Imc
+1     Camila    21   65   Nova Hartz   1.80 28.89
+2  Guilherme    18  100 Porto Alegre   1.50 21.88
+3    Marcelo    19   80     Soledade   1.90 26.42
+4      Pedro    19   79      Gramado   1.74 30.86</code></pre>
+<p>A classificação qualitativa das informações, com base em condições definidas pelo usuário podem ser facilmente efetuadas pelo comando <code>ifelse</code>. Para quem não tem intimidade com atributos de programação, este comando seleciona “se” (<em>if</em>) uma informação desejada é atendida, e cria uma rotina (<em>else</em>) que será aplicada “então”.</p>
+<p>No nosso exemplo, cria-se um objeto “classificacao” e se a coluna IMC conter dados acima de 25, será marcado como “peso normal”, sendo que do contrário, constará como “excesso de peso”. Após utilizamos o comando <code>cbind()</code> para unir os dois objetos pelas colunas. caso não queira utilizar o comando <code>cbind()</code>, poderia ser criado uma nova coluna com o nome do obetjo sendo “informacoes$classificacao”.</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" data-line-number="1"><span class="co"># Classificar qualitativamente informações em um determinado intervalo </span></a>
+<a class="sourceLine" id="cb148-2" data-line-number="2">classificacao=<span class="kw">ifelse</span>(informacoes<span class="op">$</span>Imc<span class="op">&lt;</span><span class="dv">25</span>, <span class="st">&quot;peso normal&quot;</span>, </a>
+<a class="sourceLine" id="cb148-3" data-line-number="3">                     <span class="st">&quot;excesso de peso&quot;</span>)</a>
+<a class="sourceLine" id="cb148-4" data-line-number="4">informacoes=<span class="kw">cbind</span>(informacoes, classificacao)</a>
+<a class="sourceLine" id="cb148-5" data-line-number="5">informacoes</a></code></pre></div>
+<pre><code>  estudantes idade peso      cidades altura   Imc   classificacao
+1     Camila    21   65   Nova Hartz   1.80 28.89 excesso de peso
+2  Guilherme    18  100 Porto Alegre   1.50 21.88     peso normal
+3    Marcelo    19   80     Soledade   1.90 26.42 excesso de peso
+4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso</code></pre>
+<table>
+<caption><span id="tab:imct">Tabela 1.1: </span>Valores padrão para o IMC</caption>
+<thead>
+<tr class="header">
+<th align="left">Resultado</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Abaixo de 17</td>
+<td align="left">Muito abaixo do peso</td>
+</tr>
+<tr class="even">
+<td align="left">Entre 17 e 18,49</td>
+<td align="left">Abaixo do peso</td>
+</tr>
+<tr class="odd">
+<td align="left">Entre 18,5 e 24,99</td>
+<td align="left">Peso normal</td>
+</tr>
+<tr class="even">
+<td align="left">Entre 25 e 29,99</td>
+<td align="left">Acima do peso</td>
+</tr>
+<tr class="odd">
+<td align="left">Entre 30 e 34,99</td>
+<td align="left">Obesidade I</td>
+</tr>
+<tr class="even">
+<td align="left">Entre 35 e 39,99</td>
+<td align="left">Obesidade II (severa)</td>
+</tr>
+<tr class="odd">
+<td align="left">Acima de 40</td>
+<td align="left">Obesidade III (mórbida)</td>
+</tr>
+</tbody>
+</table>
+<p>No entanto, o IMC possui várias classificações de acordo com o seu resultado (Tabela <a href="intro.html#tab:imct">1.1</a>), sendo que, por exemplo, resultados abaixo de 17 informam que o indivíduo se encontra como Muito abaixo do peso, e acima de 40, se encontra em Obesidade III. Para efetuar a classificação desta maneira utilizando o comando <code>ifelse</code>, ou seja, com mais de uma condição, pode ser efetuada a estruturação com a aglutinação do comando:</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" data-line-number="1">informacoes<span class="op">$</span>tipoimc=<span class="kw">ifelse</span>(informacoes<span class="op">$</span>Imc<span class="op">&lt;</span><span class="dv">17</span>, <span class="st">&quot;Muito abaixo do peso&quot;</span>,</a>
+<a class="sourceLine" id="cb150-2" data-line-number="2"><span class="kw">ifelse</span>(informacoes<span class="op">$</span>Imc<span class="op">&gt;=</span><span class="dv">17</span><span class="op">&amp;</span>informacoes<span class="op">$</span>Imc<span class="op">&lt;=</span><span class="fl">18.49</span>,<span class="st">&quot;Abaixo do peso&quot;</span>,</a>
+<a class="sourceLine" id="cb150-3" data-line-number="3"><span class="kw">ifelse</span>(informacoes<span class="op">$</span>Imc<span class="op">&gt;=</span><span class="fl">18.5</span><span class="op">&amp;</span>informacoes<span class="op">$</span>Imc<span class="op">&lt;=</span><span class="fl">24.99</span>,<span class="st">&quot;Peso Normal&quot;</span>,</a>
+<a class="sourceLine" id="cb150-4" data-line-number="4"><span class="kw">ifelse</span>(informacoes<span class="op">$</span>Imc<span class="op">&gt;=</span><span class="dv">25</span><span class="op">&amp;</span>informacoes<span class="op">$</span>Imc<span class="op">&lt;=</span><span class="fl">29.99</span>,<span class="st">&quot;Acima do Peso&quot;</span>,</a>
+<a class="sourceLine" id="cb150-5" data-line-number="5"><span class="kw">ifelse</span>(informacoes<span class="op">$</span>Imc<span class="op">&gt;=</span><span class="dv">30</span><span class="op">&amp;</span>informacoes<span class="op">$</span>Imc<span class="op">&lt;=</span><span class="fl">34.99</span>,<span class="st">&quot;Obesidade I&quot;</span>,</a>
+<a class="sourceLine" id="cb150-6" data-line-number="6"><span class="kw">ifelse</span>(informacoes<span class="op">$</span>Imc<span class="op">&gt;=</span><span class="dv">35</span><span class="op">&amp;</span>informacoes<span class="op">$</span>Imc<span class="op">&lt;=</span><span class="fl">39.99</span>,<span class="st">&quot;Obesidade II&quot;</span>,</a>
+<a class="sourceLine" id="cb150-7" data-line-number="7">       <span class="st">&quot;Obesidade III&quot;</span>))))))</a>
+<a class="sourceLine" id="cb150-8" data-line-number="8">informacoes</a></code></pre></div>
+<pre><code>  estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
+1     Camila    21   65   Nova Hartz   1.80 28.89 excesso de peso Acima do Peso
+2  Guilherme    18  100 Porto Alegre   1.50 21.88     peso normal   Peso Normal
+3    Marcelo    19   80     Soledade   1.90 26.42 excesso de peso Acima do Peso
+4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso   Obesidade I</code></pre>
+<p>A classificação binária dos dados (0,1) também é relevante para o estudo da manipulação dos dados trabalhados pelo pesquisador. Neste exemplo, classificou-se aqueles valores da coluna “classificacao” com o “peso normal” iguais a 1, do contrário classificou-se 0 (zero).</p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1"><span class="co"># Classificar informações usando o código binário</span></a>
+<a class="sourceLine" id="cb152-2" data-line-number="2">informacoes<span class="op">$</span>binario=<span class="st"> </span><span class="kw">ifelse</span>(informacoes<span class="op">$</span>classificacao </a>
+<a class="sourceLine" id="cb152-3" data-line-number="3">                            <span class="op">==</span><span class="st"> &#39;peso normal&#39;</span>, <span class="dv">1</span>, <span class="dv">0</span>) </a>
+<a class="sourceLine" id="cb152-4" data-line-number="4">informacoes</a></code></pre></div>
+<pre><code>  estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
+1     Camila    21   65   Nova Hartz   1.80 28.89 excesso de peso Acima do Peso
+2  Guilherme    18  100 Porto Alegre   1.50 21.88     peso normal   Peso Normal
+3    Marcelo    19   80     Soledade   1.90 26.42 excesso de peso Acima do Peso
+4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso   Obesidade I
+  binario
+1       0
+2       1
+3       0
+4       0</code></pre>
+<p>O comando <code>rbind()</code> é utilizado para incluir linhas novas abaixo de um objeto já criado pelo pesquisador, sendo que é importante o cuidado de que estas novas informações tenham os mesmos campos (colunas). A exemplo, pede-se para incluir uma nova pessoa no <em>data frame</em> informacoes: Francisco, 30 anos de idade, peso 59, natural de Ijuí, IMC 21.3387, classificado como peso normal. Lembrando de incluir os campos “tipoimc” e “binario”.</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1">novo1=<span class="kw">data.frame</span>(<span class="dt">estudantes=</span><span class="st">&quot;Francisco&quot;</span>, <span class="dt">idade=</span><span class="dv">30</span>, <span class="dt">peso=</span><span class="dv">59</span>, </a>
+<a class="sourceLine" id="cb154-2" data-line-number="2">                 <span class="dt">cidades=</span><span class="st">&quot;Ijuí&quot;</span>, </a>
+<a class="sourceLine" id="cb154-3" data-line-number="3">                 <span class="dt">altura=</span><span class="st">&quot;1,59&quot;</span>, </a>
+<a class="sourceLine" id="cb154-4" data-line-number="4">                 <span class="dt">Imc=</span> <span class="fl">23.30</span>, </a>
+<a class="sourceLine" id="cb154-5" data-line-number="5">                 <span class="dt">classificacao=</span> <span class="st">&quot;peso normal&quot;</span>,</a>
+<a class="sourceLine" id="cb154-6" data-line-number="6">                 <span class="dt">tipoimc=</span><span class="st">&quot;Peso Normal&quot;</span>, </a>
+<a class="sourceLine" id="cb154-7" data-line-number="7">                 <span class="dt">binario=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb154-8" data-line-number="8">informacoes=<span class="kw">rbind</span>(informacoes, novo1)</a>
+<a class="sourceLine" id="cb154-9" data-line-number="9">informacoes</a></code></pre></div>
+<pre><code>  estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
+1     Camila    21   65   Nova Hartz    1.8 28.89 excesso de peso Acima do Peso
+2  Guilherme    18  100 Porto Alegre    1.5 21.88     peso normal   Peso Normal
+3    Marcelo    19   80     Soledade    1.9 26.42 excesso de peso Acima do Peso
+4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso   Obesidade I
+5  Francisco    30   59         Ijuí   1,59 23.30     peso normal   Peso Normal
+  binario
+1       0
+2       1
+3       0
+4       0
+5       1</code></pre>
+<p>Outra forma de incluir informações adicionais nos <em>data frames</em> através de atributos é utilizando o pacote <code>dplyr</code>. Decide-se criar um campo “faixa etária”, sendo que aqueles indivíduos com idade acima de 21 chamaremos de “adulto” e do contrário “não adulto”.</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1"><span class="kw">require</span>(dplyr)</a></code></pre></div>
+<pre><code>Carregando pacotes exigidos: dplyr</code></pre>
+<pre><code>
+Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>The following objects are masked from &#39;package:stats&#39;:
+
+    filter, lag</code></pre>
+<pre><code>The following objects are masked from &#39;package:base&#39;:
+
+    intersect, setdiff, setequal, union</code></pre>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" data-line-number="1">informacoes=<span class="st"> </span><span class="kw">mutate</span>(informacoes, </a>
+<a class="sourceLine" id="cb161-2" data-line-number="2">                    <span class="st">&quot;faixa etaria&quot;</span>=<span class="st"> </span><span class="kw">ifelse</span>(informacoes<span class="op">$</span>idade<span class="op">&lt;</span><span class="dv">21</span>,</a>
+<a class="sourceLine" id="cb161-3" data-line-number="3">                                           <span class="st">&quot;não adulto&quot;</span>, <span class="st">&quot;adulto&quot;</span>))</a>
+<a class="sourceLine" id="cb161-4" data-line-number="4">informacoes</a></code></pre></div>
+<pre><code>  estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
+1     Camila    21   65   Nova Hartz    1.8 28.89 excesso de peso Acima do Peso
+2  Guilherme    18  100 Porto Alegre    1.5 21.88     peso normal   Peso Normal
+3    Marcelo    19   80     Soledade    1.9 26.42 excesso de peso Acima do Peso
+4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso   Obesidade I
+5  Francisco    30   59         Ijuí   1,59 23.30     peso normal   Peso Normal
+  binario faixa etaria
+1       0       adulto
+2       1   não adulto
+3       0   não adulto
+4       0   não adulto
+5       1       adulto</code></pre>
+<p>A (re)ordenação das colunas de um <em>data frame</em> pode ser muito útil em alguns casos, sendo extremamente fácil efetuá-la, cada número representa o número da respectiva coluna:</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" data-line-number="1"><span class="co"># Reordenar colunas</span></a>
+<a class="sourceLine" id="cb163-2" data-line-number="2">informacoes=informacoes[<span class="kw">c</span>(<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>)]</a></code></pre></div>
+<p>Caso se queira a inversão total da ordem das colunas do objeto estudado, o comando <code>rev()</code> pode ser útil:</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" data-line-number="1"><span class="co"># Inversão do posicionamento dos elementos</span></a>
+<a class="sourceLine" id="cb164-2" data-line-number="2"><span class="kw">rev</span>(informacoes)</a></code></pre></div>
+<pre><code>  binario   classificacao altura   Imc estudantes      cidades peso idade
+1       0 excesso de peso    1.8 28.89     Camila   Nova Hartz   65    21
+2       1     peso normal    1.5 21.88  Guilherme Porto Alegre  100    18
+3       0 excesso de peso    1.9 26.42    Marcelo     Soledade   80    19
+4       0 excesso de peso   1.74 30.86      Pedro      Gramado   79    19
+5       1     peso normal   1,59 23.30  Francisco         Ijuí   59    30
+        tipoimc
+1 Acima do Peso
+2   Peso Normal
+3 Acima do Peso
+4   Obesidade I
+5   Peso Normal</code></pre>
+<p>A função <code>table()</code> faz a contagem os dados; já o comando <code>sort()</code> ordena os objetos em ordem crescente (caso queira no formato decrescente, informar <code>decreasing=TRUE</code>).</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" data-line-number="1"><span class="co"># contagem de objetos</span></a>
+<a class="sourceLine" id="cb166-2" data-line-number="2"><span class="kw">table</span>(informacoes<span class="op">$</span>classificacao)</a></code></pre></div>
+<pre><code>
+excesso de peso     peso normal 
+              3               2 </code></pre>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" data-line-number="1"><span class="co"># Ordenar os objetos em ordem crescente</span></a>
+<a class="sourceLine" id="cb168-2" data-line-number="2"><span class="kw">sort</span>(informacoes<span class="op">$</span>idade)</a></code></pre></div>
+<pre><code>[1] 18 19 19 21 30</code></pre>
+<p>A ordenação de todo o <em>data frame</em> a partir de uma variável, pode ser realizada utilizando o comando <code>order</code>, sendo que pode ser realizada inclusive com variáveis categóricas (no exemplo abaixo o nome das cidades).</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" data-line-number="1"><span class="co"># Ordem decrescente </span></a>
+<a class="sourceLine" id="cb170-2" data-line-number="2">informacoes[<span class="kw">order</span>(informacoes<span class="op">$</span>idade, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>),]</a></code></pre></div>
+<pre><code>        tipoimc idade peso      cidades estudantes   Imc altura   classificacao
+5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+1 Acima do Peso    21   65   Nova Hartz     Camila 28.89    1.8 excesso de peso
+3 Acima do Peso    19   80     Soledade    Marcelo 26.42    1.9 excesso de peso
+4   Obesidade I    19   79      Gramado      Pedro 30.86   1.74 excesso de peso
+2   Peso Normal    18  100 Porto Alegre  Guilherme 21.88    1.5     peso normal
+  binario
+5       1
+1       0
+3       0
+4       0
+2       1</code></pre>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" data-line-number="1"><span class="co">#ordem crescente</span></a>
+<a class="sourceLine" id="cb172-2" data-line-number="2">informacoes[<span class="kw">order</span>(informacoes<span class="op">$</span>idade, <span class="dt">decreasing =</span> <span class="ot">FALSE</span>),]</a></code></pre></div>
+<pre><code>        tipoimc idade peso      cidades estudantes   Imc altura   classificacao
+2   Peso Normal    18  100 Porto Alegre  Guilherme 21.88    1.5     peso normal
+3 Acima do Peso    19   80     Soledade    Marcelo 26.42    1.9 excesso de peso
+4   Obesidade I    19   79      Gramado      Pedro 30.86   1.74 excesso de peso
+1 Acima do Peso    21   65   Nova Hartz     Camila 28.89    1.8 excesso de peso
+5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+  binario
+2       1
+3       0
+4       0
+1       0
+5       1</code></pre>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" data-line-number="1"><span class="co">#ordem crescente</span></a>
+<a class="sourceLine" id="cb174-2" data-line-number="2">informacoes[<span class="kw">order</span>(informacoes<span class="op">$</span>cidades, <span class="dt">decreasing =</span> <span class="ot">FALSE</span>),]</a></code></pre></div>
+<pre><code>        tipoimc idade peso      cidades estudantes   Imc altura   classificacao
+4   Obesidade I    19   79      Gramado      Pedro 30.86   1.74 excesso de peso
+5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+1 Acima do Peso    21   65   Nova Hartz     Camila 28.89    1.8 excesso de peso
+2   Peso Normal    18  100 Porto Alegre  Guilherme 21.88    1.5     peso normal
+3 Acima do Peso    19   80     Soledade    Marcelo 26.42    1.9 excesso de peso
+  binario
+4       0
+5       1
+1       0
+2       1
+3       0</code></pre>
+<p>O comando <code>rank()</code> cria uma ranqueamento crescente das informações. Se pretende-se, por exemplo, criar uma coluna com o ranking dos valores do IMC, pode ser utilizado:</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" data-line-number="1">informacoes<span class="op">$</span>rankingImc=<span class="kw">rank</span>(informacoes<span class="op">$</span>Imc)</a>
+<a class="sourceLine" id="cb176-2" data-line-number="2">informacoes</a></code></pre></div>
+<pre><code>        tipoimc idade peso      cidades estudantes   Imc altura   classificacao
+1 Acima do Peso    21   65   Nova Hartz     Camila 28.89    1.8 excesso de peso
+2   Peso Normal    18  100 Porto Alegre  Guilherme 21.88    1.5     peso normal
+3 Acima do Peso    19   80     Soledade    Marcelo 26.42    1.9 excesso de peso
+4   Obesidade I    19   79      Gramado      Pedro 30.86   1.74 excesso de peso
+5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+  binario rankingImc
+1       0          4
+2       1          1
+3       0          3
+4       0          5
+5       1          2</code></pre>
+</div>
+<div id="funcoes-matematicas" class="section level2">
+<h2><span class="header-section-number">1.15</span> Funções Matemáticas</h2>
+<p>A utilização de funções matemáticasno RStudio contribui para que o pesquisador possa realizar vários experimentos com seus dados. Os cálculos podem ser efetuados diretamente no console do programa ou aplicados aos objetos criados:</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" data-line-number="1"><span class="kw">log</span>(<span class="fl">1.5</span>)</a></code></pre></div>
+<pre><code>[1] 0.4055</code></pre>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" data-line-number="1"><span class="kw">exp</span>(<span class="dv">1</span>)</a></code></pre></div>
+<pre><code>[1] 2.718</code></pre>
+<p>No caso do <em>data frame</em> o qual foi criado acima (“informacoes”), pode-se buscar as informações dos valores mínimos (função <code>min()</code>), máximos (<code>max()</code>) da base:</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" data-line-number="1"><span class="kw">max</span>(informacoes<span class="op">$</span>idade)</a></code></pre></div>
+<pre><code>[1] 30</code></pre>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" data-line-number="1"><span class="kw">min</span>(informacoes<span class="op">$</span>idade)</a></code></pre></div>
+<pre><code>[1] 18</code></pre>
+<p>Ainda, se o interesse está em descobrir a posição, no *data frame}, do peso mínimo e máximo da amostra utiliza-se o comando <code>which.min</code> e <code>which.max</code>.</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb186-1" data-line-number="1"><span class="co"># Para descobrir em qual posição se encontra o peso mínimo:</span></a>
+<a class="sourceLine" id="cb186-2" data-line-number="2"><span class="kw">which.min</span>(informacoes<span class="op">$</span>peso)</a></code></pre></div>
+<pre><code>[1] 5</code></pre>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb188-1" data-line-number="1"><span class="kw">which.max</span>(informacoes<span class="op">$</span>peso)</a></code></pre></div>
+<pre><code>[1] 2</code></pre>
+<p>Para descobrir qual é o estutande que possui o peso mínimo, por exemplo, ou o Imc máximo, utiliza-se o seguinte comando (notem que os resultados trazem a lista de todos os estudantes comparados):</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb190-1" data-line-number="1">informacoes<span class="op">$</span>estudantes[<span class="kw">which.min</span>(informacoes<span class="op">$</span>peso)]</a></code></pre></div>
+<pre><code>[1] Francisco
+Levels: Camila Guilherme Marcelo Pedro Francisco</code></pre>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" data-line-number="1">informacoes<span class="op">$</span>estudantes[<span class="kw">which.max</span>(informacoes<span class="op">$</span>Imc)]</a></code></pre></div>
+<pre><code>[1] Pedro
+Levels: Camila Guilherme Marcelo Pedro Francisco</code></pre>
+<p>O arredondamento de valores numéricos pode ser feito utilizando o comando <code>round()</code>, o qual o pesquisador informa o número de casas decimais:</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb194-1" data-line-number="1"><span class="co"># Arredondar para n casas decimais</span></a>
+<a class="sourceLine" id="cb194-2" data-line-number="2"><span class="kw">round</span>(informacoes<span class="op">$</span>Imc, <span class="dv">2</span>)</a></code></pre></div>
+<pre><code>[1] 28.89 21.88 26.42 30.86 23.30</code></pre>
+<p>Já o comando <code>signif()</code> determina onúmero de algarismos significativos da série escolhida, ou seja, ele arredonda para os valores em seu primeiro argumento com os número de dígitos detemrinados:</p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb196-1" data-line-number="1">x2 &lt;-<span class="st"> </span>pi <span class="op">*</span><span class="st"> </span><span class="dv">100</span><span class="op">^</span>(<span class="op">-</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb196-2" data-line-number="2"><span class="kw">round</span>(x2, <span class="dv">3</span>)</a></code></pre></div>
+<pre><code>[1] 3.100e-02 3.142e+00 3.142e+02 3.142e+04 3.142e+06</code></pre>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb198-1" data-line-number="1"><span class="kw">signif</span>(x2, <span class="dv">3</span>) </a></code></pre></div>
+<pre><code>[1] 3.14e-02 3.14e+00 3.14e+02 3.14e+04 3.14e+06</code></pre>
+<p>A soma do total da coluna idade, o desvio padrão, a variância, a média aritmética e mediana podem ser encontrados, respectivamente, pelos comandos <code>sum()</code>, <code>sd()</code>, <code>var()</code>, <code>mean()</code>, <code>median()</code>:</p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb200-1" data-line-number="1"><span class="co"># Realiza a somatória dos valores</span></a>
+<a class="sourceLine" id="cb200-2" data-line-number="2"><span class="kw">sum</span>(informacoes<span class="op">$</span>idade)</a></code></pre></div>
+<pre><code>[1] 107</code></pre>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb202-1" data-line-number="1"><span class="co"># Desvio padrão</span></a>
+<a class="sourceLine" id="cb202-2" data-line-number="2"><span class="kw">sd</span>(informacoes<span class="op">$</span>idade)</a></code></pre></div>
+<pre><code>[1] 4.93</code></pre>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb204-1" data-line-number="1"><span class="co"># Variancia</span></a>
+<a class="sourceLine" id="cb204-2" data-line-number="2"><span class="kw">var</span>(informacoes<span class="op">$</span>idade)</a></code></pre></div>
+<pre><code>[1] 24.3</code></pre>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb206-1" data-line-number="1"><span class="co"># Calcula a média aritmética dos valores</span></a>
+<a class="sourceLine" id="cb206-2" data-line-number="2"><span class="kw">mean</span>(informacoes<span class="op">$</span>idade)</a></code></pre></div>
+<pre><code>[1] 21.4</code></pre>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb208-1" data-line-number="1"><span class="co"># Informa o valor mediano do conjunto</span></a>
+<a class="sourceLine" id="cb208-2" data-line-number="2"><span class="kw">median</span>(informacoes<span class="op">$</span>idade)</a></code></pre></div>
+<pre><code>[1] 19</code></pre>
+<p>O comando <code>quantile()</code> oferece a possibilidade de obter os quartis dos dados de acordo com as probabilidades estabelecidas pelo pesquisador. No exemplo, explora-se a variável idade:</p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb210-1" data-line-number="1"><span class="kw">quantile</span>(informacoes<span class="op">$</span>idade,  <span class="dt">probs =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">50</span>)<span class="op">/</span><span class="dv">100</span>)</a></code></pre></div>
+<pre><code> 0.5%    1%    2%    5%   10%   50% 
+18.02 18.04 18.08 18.20 18.40 19.00 </code></pre>
+</div>
+<div id="conversao-de-datas" class="section level2">
+<h2><span class="header-section-number">1.16</span> Conversão de datas</h2>
+<p>A configuração e padronização dos formato de datas no RStudio podem ser efetuadas pelo pesquisador, primeiramente ao carregar a base de dados no programa e em um segundo momento durante a manipulação das informações. Assim, seguem alguns dos procedimentos para a correta alteração dos padrões de datas:</p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb212-1" data-line-number="1">abertura &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;03/02/69&quot;</span>, <span class="st">&quot;17/08/67&quot;</span>)</a>
+<a class="sourceLine" id="cb212-2" data-line-number="2">fechamento &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2000-20-01&quot;</span>, <span class="st">&quot;1999-14-08&quot;</span>)</a>
+<a class="sourceLine" id="cb212-3" data-line-number="3">abertura &lt;-<span class="st"> </span><span class="kw">as.Date</span>(abertura, <span class="dt">format =</span> <span class="st">&quot;%d/%m/%y&quot;</span>)</a>
+<a class="sourceLine" id="cb212-4" data-line-number="4">fechamento &lt;-<span class="st"> </span><span class="kw">as.Date</span>(fechamento, <span class="dt">format =</span> <span class="st">&quot;%Y-%d-%m&quot;</span>)</a>
+<a class="sourceLine" id="cb212-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb212-6" data-line-number="6"><span class="co"># Diferença de dias dos intervalos informados</span></a>
+<a class="sourceLine" id="cb212-7" data-line-number="7">abertura<span class="op">-</span>fechamento</a></code></pre></div>
+<pre><code>Time differences in days
+[1] -11308  24840</code></pre>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="desc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["livror.pdf", "livror.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
