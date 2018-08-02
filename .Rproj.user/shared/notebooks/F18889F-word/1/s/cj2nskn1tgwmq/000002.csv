@@ -1,0 +1,2 @@
+"0","#Alterar o nome da coluna, sendo que o '[5]' indica que está na quinta coluna."
+"0","colnames(iris)[5]='Especie'"

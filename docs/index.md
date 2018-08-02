@@ -3,19 +3,21 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Felipe Micail da Silva Smolski
 - Iara Denise Endruweit Battisti
-date: "2018"
+date: "2018-08-01"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: authoryear
-biblatexoptions: [refsegment=chapter]
 link-citations: yes
 github-repo: rstub/bookdown-chapterbib
 url: 'http\://rstub.github.io/bookdown-chapterbib/'
 description: "Curso de análise estatística com R da UFFS Cerro Largo - RS"
 fontsize: 12pt
 lang: pt-Br
+csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
 ---
+
+
 
 
 
@@ -45,8 +47,7 @@ A criação de documentos dinâmicos utilizando o RStudio será tratada no capí
 
 Boa leitura!
 
-# Introdução {#intro}
-
+# Introdução
 
 O R é um ambiente voltado para análise de dados com o uso de uma linguagem de programação, frente a isso um conhecimento prévio dos príncipios de programação facilita a compreensão da condução das análises aplicadas no software. Entretanto, não é pré-requisito. Neste capítulo abordaremos os primeiros passos para o emprego da linguagem de programação R utilizando uma interface "amigável" - o software RStudio. Além disso, serão apresentados os comandos básicos para a manipulação de dados dentro do RStudio.
 
@@ -68,10 +69,15 @@ Lembrando que:
 
 O RStudio é a interface que faz com que seja mais fácil a utilização da programação em R. 
 
-<div class="figure" style="text-align: center">
-<img src="paineis.png" alt="Painéis do Rstudio" width="\textwidth" />
-<p class="caption">(\#fig:paineis)Painéis do Rstudio</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{paineis} 
+
+}
+
+\caption{Painéis do Rstudio}(\#fig:paineis1)
+\end{figure}
+Fonte: Elaborado pelo(s) autor(es).
 
 - **Fonte/Editor de Scripts**: se constitui do ambiente onde serão abertos os scripts previamente salvos nos mais diversos formatos ou mesmo sendo o local de visualização das bases de dados.
 - **Console**: local onde será efetuada a digitação das linhas de código que serão interpretadas pelo R.
@@ -84,31 +90,35 @@ Acessamos a ajuda do RStudio por meio do comando `help()`, através da aba "Help
 
 ## Instalação de pacotes
 
-Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, e para isso se faz necessário efetuar a sua instalação. Precisamos ir até o painel dos pacotes em *packages}, selecionar a opção instalar e inserir o nome do pacote desejado na janela indicada. Ao selecionar a opção instalar, no console receberemos informações do procedimento e do sucesso do mesmo. 
+Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, e para isso se faz necessário efetuar a sua instalação. Precisamos ir até o painel dos pacotes em *packages*, selecionar a opção instalar e inserir o nome do pacote desejado na janela indicada. Ao selecionar a opção instalar, no console receberemos informações do procedimento e do sucesso do mesmo. 
 
 
-<div class="figure" style="text-align: center">
-<img src="pacotes,1.png" alt="Instalação de pacotes" width="\textwidth" />
-<p class="caption">(\#fig:pacotes1)Instalação de pacotes</p>
-</div>
+\begin{figure}
 
-<div class="figure" style="text-align: center">
-<img src="pacotes,2.png" alt="Caixa de informação de pacote a ser instalado" width="\textwidth" />
-<p class="caption">(\#fig:pacotes2)Caixa de informação de pacote a ser instalado</p>
-</div>
+{\centering \includegraphics[width=\textwidth]{pacotes1} 
+
+}
+
+\caption{Instalação de pacotes}(\#fig:pacotes1)
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{pacotes2} 
+
+}
+
+\caption{Caixa de informação de pacote a ser instalado}(\#fig:pacotes2)
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es)
 
 A mesma função, para instalação de um pacote, pode ser efetuada diretamente via console: `install.packages("pacote")`. É importante ressaltar a função `library(nomedopacote)` que é utilizada no console para informar ao R e "carregar" o pacote que o usuário irá utilizar. Podem ser instalados mais de um pacote ao mesmo tempo, como no exemplo:
 
 
 `install.packages(c("readr", "readxl"))`
-
-
-
-
-
-
-
-
 
 ## Abrir arquivo de dados
 
@@ -116,34 +126,25 @@ Dispondo de um banco de dados em uma planilha eletrônica (LibreOffice Calc ou E
 
 Pode-se utilizar a linha de comando para carregar os arquivos de dados, da seguinte forma:
 
-
 `library(readxl)`
-
 
 `nome.objeto.xls = read_excel("d:/arvores.xls")`
 
 Outras opções de arquivos podem ser carregados no RStudio, como por exemplo arquivos de texto (.txt ou .csv), arquivos derivados do excel (.xls ou .xlsx), arquivos de dados do SPSS (.sav), do *software* SAS (.sas7bdat) e do STATA (.dta). A instalação de alguns pacotes é requerida, dependendo da origem da base de dados, como por exemplo o `readxl`, `readr` e `haven`, como os exemplos abaixo:
 
-
-
-
 `library(readr)`
 
 `nomeobjeto = read.csv("d:/arvores.csv")`
-
 
 `library(haven)` 
 
 `nomeobjeto = read_sav("d:/arvores.sav")`
 
-
 `nomeobjeto = read_dta("d:/arvores.dta")`
-
 
 `nomeobjeto = read_sas("d:/arvores.sas7bdat")`
 
 Outras opções podem ser comandadas dentro destes comando para abertura de arquivos, como por exemplo, um arquivo csv em que esteja separado por vírgulas pode ser lido como:
-
 
 `read.csv("d:/arvores.csv", sep=",")`
 
@@ -153,27 +154,43 @@ A opção `load()` (exemplo: `load("base.RData")`) pode ser utilizada para carre
 
 Outra opção é o carregamento das bases de dados manualmente pelo caminho *Envoirment $>$ Import Dataset*, escolhendo o tipo de arquivo:
 
-<div class="figure" style="text-align: center">
-<img src="r3.png" alt="Aba *Import Dataset*" width="\textwidth" />
-<p class="caption">(\#fig:r3)Aba *Import Dataset*</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{r3} 
+
+}
+
+\caption{Aba *Import Dataset*}(\#fig:r3)
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
 
 Na caixa correspondente a File/Url se insere o endereço virtual ou o local onde se encontra o arquivo. Ao importar os dados, carrega-se um objeto criado com as informações contidas no arquivo. No nosso exeplo, carregamos a planilha arvores (arquivo .xls) como mostra a Figura \@ref(fig:r4), derivado do caminho "Import Dataset $>$ From Excel" do Environment.
 
-<div class="figure" style="text-align: center">
-<img src="r4.png" alt="Caixa de informações do Import Data" width="\textwidth" />
-<p class="caption">(\#fig:r4)Caixa de informações do Import Data</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{r4} 
+
+}
+
+\caption{Caixa de informações do Import Data}(\#fig:r4)
+\end{figure}
+Fonte: Elaborado pelo(s) autor(es).
 
 O campo *Code Preview* mostra o comando que está sendo criado para a importação destes dados. Em *Import Options*, delimita-se opções do objeto como o nome (*name*), o número máximo de linhas (*Max Rows*), quantas linhas serão puladas na importação do arquivo (*Skip*), o tratamento das células em branco (*NA*) e se a primeira linha contém os nomes (*Firts Row as Names*).
 
 Com relação à importação de arquivos de texto separado por caracteres (.csv), ela se dá via "Import Dataset $>$ From Text (readr)" do Environment. Constam algumas solicitações diferentes a serem determinadas pelo usuário no campo *Import Options*, conforme mostra a Figura \@ref(fig:r4csv). Uma questão importante é a opção *Delimiter*, a qual o pesquisador tem que prestar atenção quando o arquivo está separado por vírgulas (*Comma*), ponto e vírgula (*Semicolon*) ou outro tipo de caractere. A opção *Locale $>$ Configure...* oportuniza determinar os tipos de marca decimal e codificação de textos, por exemplo.
 
-<div class="figure" style="text-align: center">
-<img src="r4csv.png" alt="Opções da importação de arquivos .csv" width="\textwidth" />
-<p class="caption">(\#fig:r4csv)Opções da importação de arquivos .csv</p>
-</div>
+\begin{figure}
 
+{\centering \includegraphics[width=\textwidth]{r4csv} 
+
+}
+
+\caption{Opções da importação de arquivos .csv}(\#fig:r4csv)
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es)
 
 Importante mencionar que em ambos os casos de importação, no campo *Dada Preview* onde constam os dados do arquivo a ser importado, é possível determinar o tipo de dado que cada "coluna" contém. Isto é extremamente importante, pois campos que possuem números, que serão posteriormente utilizados em operações aritméticas, por exemplo, devem ser configurados como tal. No entanto, como será visto adiante, a alteração do tipo do dado também pode ser feita posteriormente sem problema algum.
 
@@ -192,10 +209,16 @@ Alguns tipos de dados:
 
 O banco de dados que o R armazena na memória pode ser salvo, junto com todo o ambiente, usando o ícone de disquete na aba "Environment" (salva como arquivo .RData), e depois carregado pelo ícone de pasta (Abrir dados...) na mesma aba. Desta forma, salvará todos os objetos criados no ambiente de trabalho.
 
-<div class="figure" style="text-align: center">
-<img src="r6.png" alt="Atalho para abrir e salvar arquivo de dados" width="\textwidth" />
-<p class="caption">(\#fig:r6)Atalho para abrir e salvar arquivo de dados</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{r6} 
+
+}
+
+\caption{Atalho para abrir e salvar arquivo de dados}(\#fig:r6)
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es)
 
 Outra opção com mesmo efeito é utilizar o comando a seguir diretamente no console do RStudio: 
 
@@ -1129,17 +1152,25 @@ Utiliza-se o comando da seguinte forma:
 informacoes.2=edit(informacoes)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="95.png" alt="Editor de dados" width="\textwidth" />
-<p class="caption">(\#fig:95)Editor de dados</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{95} 
+
+}
+
+\caption{Editor de dados}(\#fig:95)
+\end{figure}
 
 Basta clicar no retângulo correspondente a variável que deseja ser modificada, excluir ou adicionar novas colunas.
 
-<div class="figure" style="text-align: center">
-<img src="10.png" alt="Acréscimo de uma nova coluna através do editor de dados" width="\textwidth" />
-<p class="caption">(\#fig:10)Acréscimo de uma nova coluna através do editor de dados</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{10} 
+
+}
+
+\caption{Acréscimo de uma nova coluna através do editor de dados}(\#fig:10)
+\end{figure}
 
 Logo, chamando o novo banco de dados, teremos:
 
@@ -1263,18 +1294,30 @@ informacoes
 4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso
 ```
 
+\begin{table}
 
-Table: (\#tab:imct)Valores padrão para o IMC
-
-Resultado            Significado             
--------------------  ------------------------
-Abaixo de 17         Muito abaixo do peso    
-Entre 17 e 18,49     Abaixo do peso          
-Entre 18,5 e 24,99   Peso normal             
-Entre 25 e 29,99     Acima do peso           
-Entre 30 e 34,99     Obesidade I             
-Entre 35 e 39,99     Obesidade II (severa)   
-Acima de 40          Obesidade III (mórbida) 
+\caption{(\#tab:imct)Valores padrão para o IMC}
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+Resultado & Significado\\
+\hline
+Abaixo de 17 & Muito abaixo do peso\\
+\hline
+Entre 17 e 18,49 & Abaixo do peso\\
+\hline
+Entre 18,5 e 24,99 & Peso normal\\
+\hline
+Entre 25 e 29,99 & Acima do peso\\
+\hline
+Entre 30 e 34,99 & Obesidade I\\
+\hline
+Entre 35 e 39,99 & Obesidade II (severa)\\
+\hline
+Acima de 40 & Obesidade III (mórbida)\\
+\hline
+\end{tabular}
+\end{table}
 
 No entanto, o IMC possui várias classificações de acordo com o seu resultado (Tabela \@ref(tab:imct)), sendo que, por exemplo, resultados abaixo de 17 informam que o indivíduo se encontra como Muito abaixo do peso, e acima de 40, se encontra em Obesidade III. Para efetuar a classificação desta maneira utilizando o comando `ifelse`, ou seja, com mais de uma condição, pode ser efetuada a estruturação com a aglutinação do comando:
 
@@ -1734,7 +1777,7 @@ Time differences in days
 [1] -11308  24840
 ```
 
-# Estatística Descritiva {#desc}
+# Estatística Descritiva
 
 A Estatística é uma ciência cujo campo de aplicação estende-se a diferentes áreas do conhecimento humano. Tem por objetivo fornecer métodos e técnicas que permitem lidar, racionalmente, com situações sujeitas a incertezas. Apresenta um conjunto de técnicas e métodos de pesquisa que envolvem o planejamento de estudos (experimentais e observacionais), a coleta e organização de dados, a inferência, a análise e a disseminação de informação.
 
@@ -1960,10 +2003,14 @@ Ex. Construir um gráfico de colunas para a variável **Sexo**.
 barplot(table(Sexo))
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-67-1.png" alt="Gráfico de colunas com a variável Sexo" width="\textwidth" />
-<p class="caption">(\#fig:unnamed-chunk-67)Gráfico de colunas com a variável Sexo</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-67-1} 
+
+}
+
+\caption{Gráfico de colunas com a variável Sexo}(\#fig:unnamed-chunk-67)
+\end{figure}
 
 **Obs**.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
 
@@ -1979,10 +2026,14 @@ barplot(table(Sexo))
 barplot(table(`Pessoas_familia`), col=c("blue"), main = "Frequência de pessoas por família", xlab = "Frequência", ylab = "Pessoas", border = "red")
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-68-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="\textwidth" />
-<p class="caption">(\#fig:unnamed-chunk-68)Gráfico de colunas com a variável `Pessoas familia`</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-68-1} 
+
+}
+
+\caption{Gráfico de colunas com a variável `Pessoas familia`}(\#fig:unnamed-chunk-68)
+\end{figure}
 
 **Ex.2)** Construir uma tabela de dupla entrada para as variáveis **Sexo** e **Divulgação**.
 
@@ -1992,10 +2043,14 @@ barplot(table(Sexo,Divulgacao), col=c("blue"),
   main = "Frequência de pessoas por Sexo e Divulgacao")
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-69-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="\textwidth" />
-<p class="caption">(\#fig:unnamed-chunk-69)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-69-1} 
+
+}
+
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}(\#fig:unnamed-chunk-69)
+\end{figure}
 
 
 **Ex.3)** Na sequência utiliza o sinal de atribuição <- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).
@@ -2014,10 +2069,14 @@ barplot(Resultado,col=c("blue","red"),main="Título",xlab="Variável do eixo x",
         beside=T,legend=rownames(Resultado))
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-71-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="\textwidth" />
-<p class="caption">(\#fig:unnamed-chunk-71)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-71-1} 
+
+}
+
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}(\#fig:unnamed-chunk-71)
+\end{figure}
 
 
 Observe que o uso do argumento `beside=T` evita que as barras fiquem empilhadas e o arguemnto `legend`' insere a legenda conforme as cores das colunas.
@@ -2038,10 +2097,14 @@ Ex. Construa um gráfico na forma de Setograma para a variável **Sabor**.
 pie(table(Sabor))
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-72-1.png" alt="Gráfico de pizza com a variável Sabor" width="\textwidth" />
-<p class="caption">(\#fig:unnamed-chunk-72)Gráfico de pizza com a variável Sabor</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-72-1} 
+
+}
+
+\caption{Gráfico de pizza com a variável Sabor}(\#fig:unnamed-chunk-72)
+\end{figure}
 
 ### Histograma
 
@@ -2056,10 +2119,14 @@ Ex. Construa um histograma com a variável **Renda\_h**.
 hist(as.numeric(`Renda_h`))
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-73-1.png" alt="Histograma com a variável `Renda h`" width="\textwidth" />
-<p class="caption">(\#fig:unnamed-chunk-73)Histograma com a variável `Renda h`</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-73-1} 
+
+}
+
+\caption{Histograma com a variável `Renda h`}(\#fig:unnamed-chunk-73)
+\end{figure}
 
 **Obs**. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
 
@@ -2073,10 +2140,14 @@ hist(as.numeric(`Renda_h`))
 hist(as.numeric(`Renda_h`), breaks=5)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-74-1.png" alt="Histograma com a variável Renda h com breaks=5" width="\textwidth" />
-<p class="caption">(\#fig:unnamed-chunk-74)Histograma com a variável Renda h com breaks=5</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-74-1} 
+
+}
+
+\caption{Histograma com a variável Renda h com breaks=5}(\#fig:unnamed-chunk-74)
+\end{figure}
 Use o argumento `main=NULL` para remover o título.
 
 ### Boxplot ou diagrama em caixas
@@ -2097,10 +2168,14 @@ Para obter o boxplot para um conjunto de dados:
 boxplot(Idade,horizontal = T)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-75-1.png" alt="Boxplot com a variável Idade" width="\textwidth" />
-<p class="caption">(\#fig:unnamed-chunk-75)Boxplot com a variável Idade</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-75-1} 
+
+}
+
+\caption{Boxplot com a variável Idade}(\#fig:unnamed-chunk-75)
+\end{figure}
 
 
 **Ex.2)** Construir um boxplot das variáveis **Peso\_(Kg)** e **Altura\_(m)**.    
@@ -2202,24 +2277,44 @@ Apresenta a evolução de um dado, geralmente ao longo do tempo. Eixos na vertic
 
 Ex. Considere os dados que descrevem os valores do número de empresas fiscalizadas na fiscalização do trabalho na área rural Brasil 1998-2010.
 
+\begin{table}
 
-Table: (\#tab:unnamed-chunk-77)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
+\caption{(\#tab:unnamed-chunk-77)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010}
+\centering
+\begin{tabular}[t]{r|l}
+\hline
+Ano & Empresas.Fiscalizadas\\
+\hline
+1998 & 7.042\\
+\hline
+1999 & 6.561\\
+\hline
+2000 & 8.585\\
+\hline
+2001 & 9.641\\
+\hline
+2002 & 8.873\\
+\hline
+2003 & 9.367\\
+\hline
+2004 & 13.856\\
+\hline
+2005 & 12.192\\
+\hline
+2006 & 13.326\\
+\hline
+2007 & 13.390\\
+\hline
+2008 & 10.839\\
+\hline
+2009 & 13.379\\
+\hline
+2010 & 11.978\\
+\hline
+\end{tabular}
+\end{table}
 
-  Ano  Empresas.Fiscalizadas 
------  ----------------------
- 1998  7.042                 
- 1999  6.561                 
- 2000  8.585                 
- 2001  9.641                 
- 2002  8.873                 
- 2003  9.367                 
- 2004  13.856                
- 2005  12.192                
- 2006  13.326                
- 2007  13.390                
- 2008  10.839                
- 2009  13.379                
- 2010  11.978                
+Fonte: MTE. SFIT. Elaboração: DIEESE.
 
 Para construir um gráfico de linhas, utilizamos o seguinte comando:
 
@@ -2249,10 +2344,14 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
      col="blue",xlim=c(1998,2010))
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-78-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="\textwidth" />
-<p class="caption">(\#fig:unnamed-chunk-78)Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-78-1} 
+
+}
+
+\caption{Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010}(\#fig:unnamed-chunk-78)
+\end{figure}
 
 onde, no argumento `ylim`, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
 
@@ -2310,10 +2409,14 @@ legend(0,40,c("temp_inst","temp_max","temp_min"),
   col =c("blue","red","green"),pch=4.1,cex = 0.75)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-80-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="\textwidth" />
-<p class="caption">(\#fig:unnamed-chunk-80)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-80-1} 
+
+}
+
+\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}(\#fig:unnamed-chunk-80)
+\end{figure}
 
 ## Estatísticas Descritivas
 
@@ -2343,8 +2446,12 @@ De forma análoga, para determinar o valor mínimo de um conjunto de dados, util
 Use a variável **Renda\_h**
 
 
-```echo
+```r
 min(Renda_h)
+```
+
+```
+[1] 1.02
 ```
 
 **Obs.**: Para determinar a amplitude total de um conjunto de dados, utilizamos: 
@@ -2537,14 +2644,18 @@ table(subset(Sexo, Sabor=="Pessimo"))
 Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a serem aplicados na estatística descritiva (veja help do R), nem tampouco os conceitos estatísticos necessários à compreensão. Para mais detalhes sobre os conceitos de estatística descritiva, você pode consultar outras referências ou até mesmo as já citadas neste capítulo.
 
 
-# Estatística Inferencial{#inf}
+# Estatística Inferencial
 
 A inferência estatística, ou estatística inferencial, tem por objetivo concluir e tomar decisões, com base em amostras (Figura \@ref(fig:infestat)). Usam-se dados extraídos de uma amostra para produzir inferência sobre a população [@lopes2008].
 
-<div class="figure" style="text-align: center">
-<img src="infestat.png" alt="Inferência Estatística" width="\textwidth" />
-<p class="caption">(\#fig:infestat)Inferência Estatística</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{infestat} 
+
+}
+
+\caption{Inferência Estatística}(\#fig:infestat)
+\end{figure}
 
 Em Estatística, o termo **população** é definido como conjunto de indivíduos, ou itens, com pelo menos uma característica em comum, podendo ser finita ou infinita [@lopes2008]. Por exemplo, água de um rio, sangue de uma pessoa, lote de peças produzidas por uma indústria, eleitores de um município.
 
@@ -2659,10 +2770,14 @@ Hipóteses do teste:
 
 O **valor p** reflete a plausibilidade de se obter tais resultados  no caso de H0 ser de fato verdadeira.
 
-<div class="figure" style="text-align: center">
-<img src="testehip1.png" alt="Teste de hipóteses" width="\textwidth" />
-<p class="caption">(\#fig:testehip1)Teste de hipóteses</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{testehip1} 
+
+}
+
+\caption{Teste de hipóteses}(\#fig:testehip1)
+\end{figure}
 
 
 
@@ -2988,11 +3103,6 @@ prop.test(3,80,p=0.03,alt="two.sided")
 ```
 
 ```
-Warning in prop.test(3, 80, p = 0.03, alt = "two.sided"): Chi-squared
-approximation may be incorrect
-```
-
-```
 
 	1-sample proportions test with continuity correction
 
@@ -3095,10 +3205,14 @@ Conclusão: Rejeita-se H0 com nível de significância de 1\% e conclui-se que a
 
 O teste de hipótese para duas médias aplica-se quando se deseja comparar dois grupos:
 
-<div class="figure" style="text-align: center">
-<img src="testehip2.png" alt="Teste de hipótese para dois grupos" width="\textwidth" />
-<p class="caption">(\#fig:testehip2)Teste de hipótese para dois grupos</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{testehip2} 
+
+}
+
+\caption{Teste de hipótese para dois grupos}(\#fig:testehip2)
+\end{figure}
 
 Podemos comparar duas médias de duas amostras dependentes, também chamadas de pareadas, ou médias de duas amostras independentes.
 
@@ -3106,13 +3220,20 @@ Podemos comparar duas médias de duas amostras dependentes, também chamadas de 
 
 **Exemplo 10**: Foi obtido o peso de seis indivíduos antes e após um treinamento de exercício físico. Teste a hipótese de que a média antes do treinamento é diferente da média após o treinamento.
 
+\begin{table}
 
-Table: (\#tab:unnamed-chunk-107)Amostras dependentes
-
-Indivíduo                      A    B    C    D    E    F
----------------------------  ---  ---  ---  ---  ---  ---
-Peso antes do treinamento     99   62   74   59   70   73
-Peso depois do treinamento    94   62   66   58   70   76
+\caption{(\#tab:unnamed-chunk-108)Amostras dependentes}
+\centering
+\begin{tabular}[t]{l|r|r|r|r|r|r}
+\hline
+Indivíduo & A & B & C & D & E & F\\
+\hline
+Peso antes do treinamento & 99 & 62 & 74 & 59 & 70 & 73\\
+\hline
+Peso depois do treinamento & 94 & 62 & 66 & 58 & 70 & 76\\
+\hline
+\end{tabular}
+\end{table}
 
 No software RStudio, usa-se o `t.test| para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.
 
@@ -3149,13 +3270,20 @@ Conclusão: Não rejeita-se H0 e conclui-se que a média de peso antes do treina
 
 **Exemplo 11**: (adaptado de <www.inf.ufsc.br/~marcelo/testes2.html>) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Podemos concluir que o uso da ração contribuiu para o aumento do peso médio dos animais? 
 
+\begin{table}
 
-Table: (\#tab:unnamed-chunk-109)Amostras dependentes - caso 2
-
-Cobaia      1     2     3     4     5     6     7     8     9    10
--------  ----  ----  ----  ----  ----  ----  ----  ----  ----  ----
-Antes     635   704   662   560   603   745   698   575   633   669
-Depois    640   712   681   558   610   740   707   585   635   682
+\caption{(\#tab:unnamed-chunk-110)Amostras dependentes - caso 2}
+\centering
+\begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
+\hline
+Cobaia & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
+\hline
+Antes & 635 & 704 & 662 & 560 & 603 & 745 & 698 & 575 & 633 & 669\\
+\hline
+Depois & 640 & 712 & 681 & 558 & 610 & 740 & 707 & 585 & 635 & 682\\
+\hline
+\end{tabular}
+\end{table}
 
 **H0**: média antes $=$ média depois
 
@@ -3195,13 +3323,18 @@ Primeiramente precisamos saber se existe homogeneidade de variâncias populacion
 
 
 
+\begin{table}
 
-Table: (\#tab:unnamed-chunk-111)Comparação de dois tipos diferentes de tecidos
-
----------  ---  ---  ---  ---  ---  ---  ---
-Tecido A   36   26   31   38   28   20   37 
-Tecido B   39   27   35   42   31   39   22 
----------  ---  ---  ---  ---  ---  ---  ---
+\caption{(\#tab:unnamed-chunk-112)Comparação de dois tipos diferentes de tecidos}
+\centering
+\begin{tabular}[t]{l|l|l|l|l|l|l|l}
+\hline
+Tecido A & 36 & 26 & 31 & 38 & 28 & 20 & 37\\
+\hline
+Tecido B & 39 & 27 & 35 & 42 & 31 & 39 & 22\\
+\hline
+\end{tabular}
+\end{table}
 
 Teste se um tecido é mais pesado que o outro.
 
@@ -3260,13 +3393,536 @@ mean of x mean of y
 Conclusão: Não rejeita-se H0 e conclui-se que a média de peso do tecido A é igual à média de peso do tecido B.
 
 
-# Teste de Qui-Quadrado {#qui}
+# Teste de Qui-Quadrado
 
-# Modelos de Regressão {#reg}
+Quando existem duas variáveis de interesse, a representação tabular das frequências observadas pode ser feita através de uma tabela de contingência<!--(Tabela \@ref(tab:qui2))-->, também chamada de tabela cruzada ou tabela de dupla entrada. Cada interseção de uma linha com uma coluna é chamada de casela e o valor que aparece em cada casela é a frequência observada, nomeada como $O_{ij}$, em que i corresponde a linha e j corresponde a coluna.
 
-# RMarkdown {#rmark}
+<!--Observando-se a Tabela \@ref(tab:qui2), o valor 33 corresponde ao sexo masculino e a opinião favorável (masculino $\bigcap $ favorável), é chamada de $O_{11}$.-->
 
-# Referências {-}
+## Teste de qui-quadrado para verificar associação entre duas variáveis qualitativas
+
+**Exemplo 1**: Uma pesquisa sobre "a exposição a agrotóxicos entre trabalhadores rurais no município de Cerro Largo/RS" foi desenvolvida por Letiane Peccin Ristow, no ano de 2017 (dissertação e mestrado no Programa de Pós-Graduação em Desenvolvimento e Políticas Públicas da UFFS, Campus Cerro Largo. Na Tabela \@ref(tab:tamprop)<!--\@ref(tab:qui2)--> são apresentados os resultados do "tamanho da propriedade" e "armazenamento seguro do EPI". Para verificar a existência de associação significativa entre essas duas variáveis utilizamos o teste de qui-quadrado, dado que são duas variáveis qualitativas: variável 1 - tamanho da propriedade (até 25ha; 26ha ou mais) e variável 2 – armazenamento seguro (sim; não).
+
+Primeiramente definimos as seguintes hipóteses estatísticas:
+
+H0: não existe associação entre tamanho da propriedade e armazenamento seguro (as variáveis são independentes)
+
+H1: existe associação entre tamanho da propriedade e armazenamento seguro (as variáveis são dependentes)
+
+<!--
+
+```
+Carregando pacotes exigidos: kableExtra
+```
+
+\begin{table}
+
+\caption{(\#tab:qui2)Tamanho da propriedade e armazenamento seguro dos agrotóxicos, agricultores de Cerro Largo, RS, 2017}
+\centering
+\begin{tabular}[t]{l|r|r}
+\hline
+\multicolumn{1}{c|}{Tamanho da Propriedade} & \multicolumn{2}{|c}{Armazenamento seguro} \\
+\cline{1-1} \cline{2-3}
+  & Não & Sim\\
+\hline
+Até 25 ha & 59 & 8\\
+\hline
+26 ha ou mais & 31 & 14\\
+\hline
+\multicolumn{3}{l}{\textit{Fonte:}  @Ristow2017.}\\
+\end{tabular}
+\end{table}
+-->
+
+Table: (\#tab:tamprop)Tamanho da propriedade e armazenamento seguro dos agrotóxicos, agricultores de Cerro Largo, RS, 2017.
+
+  -------------------------------------------------------------------
+  **Tamanho da propriedade**  **Armazenamento seguro**     
+  --------------------------  -------------------------- ------------
+                              Não                        Sim
+  
+  Até 25 ha                   59                         8
+  
+  26 ha ou mais               31                         14
+  -------------------------------------------------------------------
+
+Fonte: @Ristow2017.
+
+A estatística de teste para testar as hipóteses apresentadas é o $\chi^2$ (qui-quadrado):
+
+$$
+\chi^2_{cal}=\sum_{i=1}^{l}\sum_{j=1}^{c}\frac{(O_{ij}-E_{ij})^2}{E_{ij}}
+$$
+em que:
+
+$l$: número de linhas
+
+$c$: número de colunas
+
+$O_{ij}$: frequência observada na linha i e coluna j
+
+$E_{ij}$: frequência esperada na linha i e coluna j
+
+com grau de liberdade = $gl = (c-1)(l-1)$.
+
+A frequência esperada de uma casela é obtida pela multiplicação do total da linha pelo total da coluna dividido pelo total geral. Por exemplo, a frequência esperada  é igual ao total da coluna 1 multiplicada pelo total da linha 1 dividido pelo total geral, ou seja, (68x90)/112.
+
+Porém, é importante conhecermos as pressuposições do teste de qui-quadrado de Pearson. Para auxiliar no encaminhamento do teste adequado para verificar a relação de duas variáveis qualitativas, seguimos o seguinte check-list.
+
+## Check list para escolher o teste adequado para verificar a relação entre duas variáveis qualitativas
+
+-	O cálculo do teste de qui-quadrado deve ser somente com valores absolutos.	Quando temos uma tabela 2x2, isto é, duas linhas e duas colunas, devemos utilizar o teste de qui-quadrado com correção de continuidade (correção de Yates). O motivo é que a distribuição de frequências observadas é discreta e está sendo aproximada pela distribuição qui-quadrado, que é contínua [@barbetta1988].
+
+-	Não devemos aplicar o teste de qui-quadrado quando a frequência esperada em qualquer casela for menor que 5. Neste caso, devemos usar o teste exato de Fisher, para garantir o grau de certeza do teste. 
+-	Quando temos duas amostras pareadas (duas amostras dependentes), utilizamos o teste de McNemar.
+-	Caso tenhamos interesse em avaliar a força da associação entre as duas variáveis, devemos utilizar algumas medidas de magnitude dessa força, como por exemplo, coeficiente de contingência, razão de prevalência, risco relativo e razão de chances (*odds ratio*). Porém, essas medidas de magnitude são  dependentes do tipo de delineamento do estudo.
+
+Para aplicar o teste de qui-quadrado ou um alternativo no software R, primeiramente precisamos informar os dados, podemos fazer isso de duas formas:
+
+(a) incluindo os valores no formatado de tabela;
+
+(b) acessando os valores no banco de dados.
+
+## Exemplo utilizando os recursos do software R
+
+Realizar o teste de associação para os dados da Tabela \@ref(tab:tamprop), <!--\@ref(tab:qui2)--> para isso, digitar os dados da tabela cruzada (tabela de contingência) no formato de uma matriz, valor ij, considerando i=linha e j=coluna, em sequência por coluna (por exemplo, digita-se todos os valores da primeira coluna, depois digita-se todos os valores da segunda coluna e assim sucessivamente).
+
+Sintaxe no software R para incluir os valores no formato de tabela:
+
+
+```r
+quiquadrado1<-matrix(c(59,31,8,14),nc=2)
+quiquadrado1
+```
+
+```
+     [,1] [,2]
+[1,]   59    8
+[2,]   31   14
+```
+
+O comando `matrix` indica que os dados serão organizados em uma matriz, `nc` indica o número de colunas da tabela, o operador `<-` atribui os valores digitados no nome informado pelo usuário que neste caso é `quiquadrado1`.
+
+O segundo comando `quiquadrado1`, mostra a matriz elaborada, que neste caso representa uma tabela cruzada de duas linhas e duas colunas, conforme a Tabela \@ref(tab:tamprop). <!--\@ref(tab:qui2)-->
+
+Primeiramente, deve-se verificar a existência de alguma casela com frequência esperada menor que 5.
+
+
+```r
+chisq.test(quiquadrado1)$expected
+```
+
+```
+      [,1]   [,2]
+[1,] 53.84 13.161
+[2,] 36.16  8.839
+```
+
+Caso não exista, utiliza-se o teste de qui-quadrado com o comando `chisq.test`.
+
+
+```r
+chisq.test(quiquadrado1)
+```
+
+```
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  quiquadrado1
+X-squared = 5.1, df = 1, p-value = 0.02
+```
+
+Observa-se que o software R identificou a tabela 2x2 e aplicou a correção de continuidade. Porém, podemos informar isso na linha de comando, incluindo opção `correct = TRUE`:
+
+
+```r
+chisq.test(quiquadrado1, correct=TRUE)
+```
+
+```
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  quiquadrado1
+X-squared = 5.1, df = 1, p-value = 0.02
+```
+
+Então devemos concluir pela rejeição ou não da H0 e interpretar esse resultados.
+
+Caso pelo menos uma casela tenha frequência esperada menor que 5 como por exemplo na tabela abaixo <!--\@ref(tab:qui3)-->, utilizamos o teste exato de Fisher.
+
+<!--
+\begin{table}
+
+\caption{(\#tab:qui3)Tamanho da propriedade e devolução das embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS, 2017}
+\centering
+\begin{tabular}[t]{l|r|r}
+\hline
+\multicolumn{1}{c|}{Tamanho da Propriedade} & \multicolumn{2}{|c}{Devolução} \\
+\cline{1-1} \cline{2-3}
+  & Não & Sim\\
+\hline
+Até 25 ha & 8 & 59\\
+\hline
+26 ha ou mais & 3 & 43\\
+\hline
+\multicolumn{3}{l}{\textit{Fonte:}  @Ristow2017.}\\
+\end{tabular}
+\end{table}
+-->
+
+Table: (\#tab:tamprop1)Tamanho da propriedade e devolução das embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS, 2017.
+
+  -------------------------------------------------------------------
+  **Tamanho da propriedade**  **Devolução**     
+  --------------------------  -------------------------- ------------
+                              Não                        Sim
+  
+  Até 25 ha                   8                          59
+  
+  26 ha ou mais               3                          43
+  -------------------------------------------------------------------
+
+Fonte: @Ristow2017.
+
+Definindo as hipóteses estatísticas:
+
+H0: não existe associação entre tamanho da propriedade e devolução das embalagens (as variáveis são independentes);
+
+H1: existe associação entre tamanho da propriedade e devolução das embalagens (as variáveis são dependentes).
+
+Incluindo os valores:
+
+
+```r
+quiquadrado2<-matrix(c(8,3,59,43),nc=2)
+quiquadrado2
+```
+
+```
+     [,1] [,2]
+[1,]    8   59
+[2,]    3   43
+```
+
+Verificando se todas frequências esperadas são maiores ou iguais a 5. 
+
+
+```r
+chisq.test(quiquadrado2)$expected
+```
+
+```
+      [,1]  [,2]
+[1,] 6.522 60.48
+[2,] 4.478 41.52
+```
+
+Neste caso, o software R apresenta um "aviso" pois observa-se uma frequência esperada menor que 5. Então devemos optar pelo teste exato de Fisher.
+
+
+```r
+fisher.test(quiquadrado2)
+```
+
+```
+
+	Fisher's Exact Test for Count Data
+
+data:  quiquadrado2
+p-value = 0.5
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.4316 11.9646
+sample estimates:
+odds ratio 
+     1.933 
+```
+
+Então devemos concluir, através do valor p, pela rejeição ou não da H0 e interpretar esse resultados.
+
+## Teste de associação com duas amostras dependentes
+
+No caso de amostras pareadas (dependentes), utiliza-se o teste de McNemar para testar a associação.
+
+
+```r
+dados1=matrix(c(5,10,12,8),nc=2)
+dados1
+```
+
+```
+     [,1] [,2]
+[1,]    5   12
+[2,]   10    8
+```
+
+```r
+mcnemar.test(dados1)
+```
+
+```
+
+	McNemar's Chi-squared test with continuity correction
+
+data:  dados1
+McNemar's chi-squared = 0.045, df = 1, p-value = 0.8
+```
+
+
+Importante observar que para executar o teste de McNemar: no software R os dados na matriz (tabela de contingência) devem ser distribuídos da mesma maneira tanto nas linhas quanto nas colunas. Isto é, "a" e "d" devem expressar o mesmo comportamento. Por exemplo: aprovado, desaprovado, aprovado, desaprovado. 
+
+<!--
+\begin{table}
+
+\caption{(\#tab:qui4)Tabela de contingência}
+\centering
+\begin{tabular}[t]{l|l|l}
+\hline
+\multicolumn{1}{c|}{Antes} & \multicolumn{2}{|c}{Depois} \\
+\cline{1-1} \cline{2-3}
+  & Aprovado & Desaprovado\\
+\hline
+Aprovado & a & b\\
+\hline
+Desaprovado & c & d\\
+\hline
+\multicolumn{3}{l}{\textit{Fonte:}  Dados simulados.}\\
+\end{tabular}
+\end{table}
+-->
+
+
+Table: (\#tab:tabcont)Tabela de Contingência.
+
+  ----------------------------------------
+                 **Depois**     
+  -------------  ------------ ------------
+  **Antes**      Aprovado     Desaprovado
+  
+  Aprovado       a            b
+  
+  Desaprovado    c            d    
+  ----------------------------------------
+
+Fonte: Dados simulados.
+
+
+**Exemplo 2**: Uma pesquisa foi realizada para verificar o efeito de um medicamento para perda de peso. O estudo foi realizado com 45 cobaias com características semelhantes. Na Tabela abaixo <!--\@ref(tab:qui5)--> são apresentadas a situação do peso antes e após a intervenção (utilização do medicamento). 
+
+Como trata-se de duas amostras dependentes (antes e após) não podemos aplicar o teste de qui-quadrado. O teste adequado é McNemar.
+
+<!--
+\begin{table}
+
+\caption{(\#tab:qui55)Situação do peso de cobaias do estudo antes e após a intervenção}
+\centering
+\begin{tabular}[t]{l|r|r}
+\hline
+\multicolumn{1}{c|}{Peso Antes} & \multicolumn{2}{|c}{Peso Após} \\
+\cline{1-1} \cline{2-3}
+  & Adequado & Sobrepeso\\
+\hline
+Aprovado & 15 & 5\\
+\hline
+Desaprovado & 18 & 7\\
+\hline
+\multicolumn{3}{l}{\textit{Fonte:}  Dados simulados.}\\
+\end{tabular}
+\end{table}
+-->
+<!--
+\begin{table}
+
+\caption{(\#tab:unnamed-chunk-123)Situação do peso de cobaias do estudo antes e após a intervenção.}
+\centering
+\begin{tabular}[t]{l|l|l}
+\hline
+Antes & Após & .\\
+\hline
+ & Adequado & Sobrepeso\\
+\hline
+Aprovado & 15 & 5\\
+\hline
+Desaprovado & 18 & 7\\
+\hline
+\end{tabular}
+\end{table}
+-->
+
+
+Table: (\#tab:tamprop)Situação do peso de cobaias do estudo antes e após a intervenção.
+
+  -------------------------------------------------------
+  **Peso Antes**              **Peso Após**     
+  --------------------------  -------------- ------------
+                              Adequado       Sobrepeso
+                              
+  Aprovado                    15             5
+  
+  Desaprovado                 18             7
+  -------------------------------------------------------
+
+Fonte: Dados simulados.
+<!--
+
+Table: (\#tab:qui5)Situação do peso de cobaias do estudo antes e após a intervenção
+
+---------------  --------------  ----------
+**Peso Antes**   **Peso Após**             
+                 Adequado        Sobrepeso 
+Aprovado         15              5         
+Desaprovado      18              7         
+---------------  --------------  ----------
+-->
+
+Hipóteses estatísticas: 
+
+H0: As frequências das diferentes categorias ocorrem na mesma proporção (Frequências b e c ocorrem na mesma proporção);
+
+H1: As frequências b e c ocorrem em proporções diferentes, ou seja, as mudanças são significativas.
+
+
+```r
+mcnemar=matrix(c(15,18,5,7),nc=2)
+mcnemar
+```
+
+```
+     [,1] [,2]
+[1,]   15    5
+[2,]   18    7
+```
+
+```r
+chisq.test(mcnemar)$expected
+```
+
+```
+      [,1]  [,2]
+[1,] 14.67 5.333
+[2,] 18.33 6.667
+```
+
+```r
+mcnemar.test(mcnemar)
+```
+
+```
+
+	McNemar's Chi-squared test with continuity correction
+
+data:  mcnemar
+McNemar's chi-squared = 6.3, df = 1, p-value = 0.01
+```
+
+## Teste de qui-quadrado para verificar aderência a uma distribuição
+
+Neste caso usamos o teste de qui-quadrado para verificar se o conjunto de dados segue uma distribuição teórica especificada.
+
+**Exemplo 3**: Deseja-se verificar se o número de borrachudos é o mesmo em diferentes pontos da margem de um rio. O número de borrachudos observados para cada ponto (local) é apresentado na Tabela \@ref(tab:borrach).
+
+\begin{table}
+
+\caption{(\#tab:borrach)Número de borrachudos nos diferentes pontos}
+\centering
+\begin{tabular}[t]{l|r}
+\hline
+Ponto & Borrachudos\\
+\hline
+Ponto 1 & 19\\
+\hline
+Ponto 2 & 12\\
+\hline
+Ponto 3 & 10\\
+\hline
+Ponto 4 & 17\\
+\hline
+Ponto 5 & 25\\
+\hline
+Ponto 6 & 22\\
+\hline
+Ponto 7 & 15\\
+\hline
+\end{tabular}
+\end{table}
+
+Fonte: Dados simulados.
+
+
+
+
+
+Para um nível de 5\% de significância, as hipóteses a serem testadas: 
+
+H0: O número de borrachudos não muda conforme o ponto;
+
+H1: Pelo menos um dos pontos tem número de borrachudos diferente dos demais. 
+
+
+```r
+borrach<-c(20,12,10,17,30,22,35)
+chisq.test(borrach)$expected
+```
+
+```
+[1] 20.86 20.86 20.86 20.86 20.86 20.86 20.86
+```
+
+```r
+chisq.test(borrach)
+```
+
+```
+
+	Chi-squared test for given probabilities
+
+data:  borrach
+X-squared = 24, df = 6, p-value = 6e-04
+```
+
+**Exemplo 4**: Suponha que desejamos verificar se o número de borrachudos segue uma distribuição específica, informado em "dist". Lembrando que os valores no vetor "dist" devem estar no formato de proporção (por exemplo, 0,35).
+
+
+H0: O número de borrachudos segue a distribuição teórica informada;
+
+H1: O número de borrachudos não segue a distribuição teórica informada.
+
+
+
+```r
+borrachudos<-c(20,12,10,17,30,22,35)
+dist<-c(0.10,0.10,0.10,0.15,0.15,0.15,0.25)
+chisq.test(borrachudos)$expected
+```
+
+```
+[1] 20.86 20.86 20.86 20.86 20.86 20.86 20.86
+```
+
+```r
+chisq.test(borrachudos, p=dist)
+```
+
+```
+
+	Chi-squared test for given probabilities
+
+data:  borrachudos
+X-squared = 8.1, df = 6, p-value = 0.2
+```
+
+# Modelos de Regressão
+
+
+
+
+
+
+# RMarkdown
+
+
 
 
 

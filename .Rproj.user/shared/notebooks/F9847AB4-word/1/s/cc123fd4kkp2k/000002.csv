@@ -1,0 +1,5 @@
+"0","plot(inmet$hora,inmet$temp_inst,type = ""b"", "
+"0","  main = ""Temperaturas registradas na estação metereológica"
+"0","  de São Luis Gonzaga, 11 de abril de 2018"","
+"0","  xlab = ""hora"",ylab = ""temperaturas"",col=""blue"","
+"0","  ylim = c(20,40))"

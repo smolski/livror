@@ -1,0 +1,3 @@
+"0","# Substituir NA's por zero no data.frame"
+"0","informacoes[is.na(informacoes)] = 0"
+"0","informacoes"

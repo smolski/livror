@@ -1,0 +1,6 @@
+"0","library(readr)"
+"0","inmet <- read_delim(""https://goo.gl/se71v2"", "
+"0","    "";"", escape_double = FALSE, "
+"0","    col_types = cols(data = col_date(format = ""%m/%d/%Y"")), "
+"0","    trim_ws = TRUE)"
+"0","head(inmet)"

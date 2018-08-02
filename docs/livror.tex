@@ -36,7 +36,7 @@
   \setmainlanguage[]{brazil}
 \fi
 \usepackage[style=authoryear]{biblatex}
-\ExecuteBibliographyOptions{refsegment=chapter}
+
 \addbibresource{book.bib}
 \addbibresource{packages.bib}
 \usepackage{color}
@@ -133,9 +133,37 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018}
+    \date{2018-08-01}
 
 \usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{longtable,ltcaption}
+\usepackage{pdfpages}
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}
+
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.0}
+\setlength{\parindent}{1.25cm}
+\selectlanguage{brazil}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
 
 \begin{document}
 \maketitle
@@ -236,8 +264,8 @@ Office).
 
 Boa leitura!
 
-\hypertarget{intro}{%
-\chapter{Introdução}\label{intro}}
+\hypertarget{introducao}{%
+\chapter{Introdução}\label{introducao}}
 
 O R é um ambiente voltado para análise de dados com o uso de uma
 linguagem de programação, frente a isso um conhecimento prévio dos
@@ -284,8 +312,10 @@ programação em R.
 
 }
 
-\caption{Painéis do Rstudio}\label{fig:paineis}
+\caption{Painéis do Rstudio}\label{fig:paineis1}
 \end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
 
 \begin{itemize}
 \tightlist
@@ -323,28 +353,32 @@ diretamente no colsole digitamos ? e a função desejada, exemplo:
 
 Em alguns situações, o uso de pacotes pode dar ao trabalho mais
 praticidade, e para isso se faz necessário efetuar a sua instalação.
-Precisamos ir até o painel dos pacotes em *packages\}, selecionar a
+Precisamos ir até o painel dos pacotes em \emph{packages}, selecionar a
 opção instalar e inserir o nome do pacote desejado na janela indicada.
 Ao selecionar a opção instalar, no console receberemos informações do
 procedimento e do sucesso do mesmo.
 
 \begin{figure}
 
-{\centering \includegraphics[width=\textwidth]{pacotes,1} 
+{\centering \includegraphics[width=\textwidth]{pacotes1} 
 
 }
 
 \caption{Instalação de pacotes}\label{fig:pacotes1}
 \end{figure}
 
+Fonte: Elaborado pelo(s) autor(es).
+
 \begin{figure}
 
-{\centering \includegraphics[width=\textwidth]{pacotes,2} 
+{\centering \includegraphics[width=\textwidth]{pacotes2} 
 
 }
 
 \caption{Caixa de informação de pacote a ser instalado}\label{fig:pacotes2}
 \end{figure}
+
+Fonte: Elaborado pelo(s) autor(es)
 
 A mesma função, para instalação de um pacote, pode ser efetuada
 diretamente via console: \texttt{install.packages("pacote")}. É
@@ -418,6 +452,8 @@ Outra opção é o carregamento das bases de dados manualmente pelo caminho
 \caption{Aba *Import Dataset*}\label{fig:r3}
 \end{figure}
 
+Fonte: Elaborado pelo(s) autor(es).
+
 Na caixa correspondente a File/Url se insere o endereço virtual ou o
 local onde se encontra o arquivo. Ao importar os dados, carrega-se um
 objeto criado com as informações contidas no arquivo. No nosso exeplo,
@@ -433,6 +469,8 @@ Environment.
 
 \caption{Caixa de informações do Import Data}\label{fig:r4}
 \end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
 
 O campo \emph{Code Preview} mostra o comando que está sendo criado para
 a importação destes dados. Em \emph{Import Options}, delimita-se opções
@@ -460,6 +498,8 @@ e codificação de textos, por exemplo.
 
 \caption{Opções da importação de arquivos .csv}\label{fig:r4csv}
 \end{figure}
+
+Fonte: Elaborado pelo(s) autor(es)
 
 Importante mencionar que em ambos os casos de importação, no campo
 \emph{Dada Preview} onde constam os dados do arquivo a ser importado, é
@@ -512,6 +552,8 @@ objetos criados no ambiente de trabalho.
 
 \caption{Atalho para abrir e salvar arquivo de dados}\label{fig:r6}
 \end{figure}
+
+Fonte: Elaborado pelo(s) autor(es)
 
 Outra opção com mesmo efeito é utilizar o comando a seguir diretamente
 no console do RStudio:
@@ -2456,8 +2498,8 @@ Time differences in days
 [1] -11308  24840
 \end{verbatim}
 
-\hypertarget{desc}{%
-\chapter{Estatística Descritiva}\label{desc}}
+\hypertarget{estatistica-descritiva}{%
+\chapter{Estatística Descritiva}\label{estatistica-descritiva}}
 
 A Estatística é uma ciência cujo campo de aplicação estende-se a
 diferentes áreas do conhecimento humano. Tem por objetivo fornecer
@@ -3177,6 +3219,8 @@ Ano & Empresas.Fiscalizadas\\
 \end{tabular}
 \end{table}
 
+Fonte: MTE. SFIT. Elaboração: DIEESE.
+
 Para construir um gráfico de linhas, utilizamos o seguinte comando:
 
 \texttt{plot(x,y,type=\ "Tipo\ de\ símbolo")}
@@ -3332,8 +3376,14 @@ dados, utilizamos:
 
 Use a variável \textbf{Renda\_h}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{min}\NormalTok{(Renda_h)}
+\end{Highlighting}
+\end{Shaded}
+
 \begin{verbatim}
-min(Renda_h)
+[1] 1.02
 \end{verbatim}
 
 \textbf{Obs.}: Para determinar a amplitude total de um conjunto de
@@ -3561,8 +3611,8 @@ nem tampouco os conceitos estatísticos necessários à compreensão. Para
 mais detalhes sobre os conceitos de estatística descritiva, você pode
 consultar outras referências ou até mesmo as já citadas neste capítulo.
 
-\hypertarget{inf}{%
-\chapter{Estatística Inferencial}\label{inf}}
+\hypertarget{estatistica-inferencial}{%
+\chapter{Estatística Inferencial}\label{estatistica-inferencial}}
 
 A inferência estatística, ou estatística inferencial, tem por objetivo
 concluir e tomar decisões, com base em amostras (Figura
@@ -4108,11 +4158,6 @@ defeituosas. Teste a hipótese de que a máquina está regulada.
 \end{Shaded}
 
 \begin{verbatim}
-Warning in prop.test(3, 80, p = 0.03, alt = "two.sided"): Chi-squared
-approximation may be incorrect
-\end{verbatim}
-
-\begin{verbatim}
 
     1-sample proportions test with continuity correction
 
@@ -4264,7 +4309,7 @@ antes do treinamento é diferente da média após o treinamento.
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-107}Amostras dependentes}
+\caption{\label{tab:unnamed-chunk-108}Amostras dependentes}
 \centering
 \begin{tabular}[t]{l|r|r|r|r|r|r}
 \hline
@@ -4321,7 +4366,7 @@ animais?
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-109}Amostras dependentes - caso 2}
+\caption{\label{tab:unnamed-chunk-110}Amostras dependentes - caso 2}
 \centering
 \begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
 \hline
@@ -4383,7 +4428,7 @@ experimentos foram:
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-111}Comparação de dois tipos diferentes de tecidos}
+\caption{\label{tab:unnamed-chunk-112}Comparação de dois tipos diferentes de tecidos}
 \centering
 \begin{tabular}[t]{l|l|l|l|l|l|l|l}
 \hline
@@ -4455,18 +4500,666 @@ mean of x mean of y
 Conclusão: Não rejeita-se H0 e conclui-se que a média de peso do tecido
 A é igual à média de peso do tecido B.
 
-\hypertarget{qui}{%
-\chapter{Teste de Qui-Quadrado}\label{qui}}
+\hypertarget{teste-de-qui-quadrado}{%
+\chapter{Teste de Qui-Quadrado}\label{teste-de-qui-quadrado}}
 
-\hypertarget{reg}{%
-\chapter{Modelos de Regressão}\label{reg}}
+Quando existem duas variáveis de interesse, a representação tabular das
+frequências observadas pode ser feita através de uma tabela de
+contingência, também chamada de tabela cruzada ou tabela de dupla
+entrada. Cada interseção de uma linha com uma coluna é chamada de casela
+e o valor que aparece em cada casela é a frequência observada, nomeada
+como \(O_{ij}\), em que i corresponde a linha e j corresponde a coluna.
 
-\hypertarget{rmark}{%
-\chapter{RMarkdown}\label{rmark}}
+\hypertarget{teste-de-qui-quadrado-para-verificar-associacao-entre-duas-variaveis-qualitativas}{%
+\section{Teste de qui-quadrado para verificar associação entre duas
+variáveis
+qualitativas}\label{teste-de-qui-quadrado-para-verificar-associacao-entre-duas-variaveis-qualitativas}}
 
-\hypertarget{referencias}{%
-\chapter*{Referências}\label{referencias}}
-\addcontentsline{toc}{chapter}{Referências}
+\textbf{Exemplo 1}: Uma pesquisa sobre ``a exposição a agrotóxicos entre
+trabalhadores rurais no município de Cerro Largo/RS'' foi desenvolvida
+por Letiane Peccin Ristow, no ano de 2017 (dissertação e mestrado no
+Programa de Pós-Graduação em Desenvolvimento e Políticas Públicas da
+UFFS, Campus Cerro Largo. Na Tabela \ref{tab:tamprop} são apresentados
+os resultados do ``tamanho da propriedade'' e ``armazenamento seguro do
+EPI''. Para verificar a existência de associação significativa entre
+essas duas variáveis utilizamos o teste de qui-quadrado, dado que são
+duas variáveis qualitativas: variável 1 - tamanho da propriedade (até
+25ha; 26ha ou mais) e variável 2 -- armazenamento seguro (sim; não).
+
+Primeiramente definimos as seguintes hipóteses estatísticas:
+
+H0: não existe associação entre tamanho da propriedade e armazenamento
+seguro (as variáveis são independentes)
+
+H1: existe associação entre tamanho da propriedade e armazenamento
+seguro (as variáveis são dependentes)
+
+\begin{longtable}[]{@{}lll@{}}
+\caption{\label{tab:tamprop}Tamanho da propriedade e armazenamento seguro
+dos agrotóxicos, agricultores de Cerro Largo, RS, 2017.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.35\columnwidth}\raggedright
+\textbf{Tamanho da propriedade}\strut
+\end{minipage} & \begin{minipage}[b]{0.34\columnwidth}\raggedright
+\textbf{Armazenamento seguro}\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.35\columnwidth}\raggedright
+\textbf{Tamanho da propriedade}\strut
+\end{minipage} & \begin{minipage}[b]{0.34\columnwidth}\raggedright
+\textbf{Armazenamento seguro}\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.34\columnwidth}\raggedright
+Não\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Sim\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+Até 25 ha\strut
+\end{minipage} & \begin{minipage}[t]{0.34\columnwidth}\raggedright
+59\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+8\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+26 ha ou mais\strut
+\end{minipage} & \begin{minipage}[t]{0.34\columnwidth}\raggedright
+31\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+14\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Fonte: \textcite{Ristow2017}.
+
+A estatística de teste para testar as hipóteses apresentadas é o
+\(\chi^2\) (qui-quadrado):
+
+\[
+\chi^2_{cal}=\sum_{i=1}^{l}\sum_{j=1}^{c}\frac{(O_{ij}-E_{ij})^2}{E_{ij}}
+\] em que:
+
+\(l\): número de linhas
+
+\(c\): número de colunas
+
+\(O_{ij}\): frequência observada na linha i e coluna j
+
+\(E_{ij}\): frequência esperada na linha i e coluna j
+
+com grau de liberdade = \(gl = (c-1)(l-1)\).
+
+A frequência esperada de uma casela é obtida pela multiplicação do total
+da linha pelo total da coluna dividido pelo total geral. Por exemplo, a
+frequência esperada é igual ao total da coluna 1 multiplicada pelo total
+da linha 1 dividido pelo total geral, ou seja, (68x90)/112.
+
+Porém, é importante conhecermos as pressuposições do teste de
+qui-quadrado de Pearson. Para auxiliar no encaminhamento do teste
+adequado para verificar a relação de duas variáveis qualitativas,
+seguimos o seguinte check-list.
+
+\hypertarget{check-list-para-escolher-o-teste-adequado-para-verificar-a-relacao-entre-duas-variaveis-qualitativas}{%
+\section{Check list para escolher o teste adequado para verificar a
+relação entre duas variáveis
+qualitativas}\label{check-list-para-escolher-o-teste-adequado-para-verificar-a-relacao-entre-duas-variaveis-qualitativas}}
+
+\begin{itemize}
+\item
+  O cálculo do teste de qui-quadrado deve ser somente com valores
+  absolutos. Quando temos uma tabela 2x2, isto é, duas linhas e duas
+  colunas, devemos utilizar o teste de qui-quadrado com correção de
+  continuidade (correção de Yates). O motivo é que a distribuição de
+  frequências observadas é discreta e está sendo aproximada pela
+  distribuição qui-quadrado, que é contínua \autocite{barbetta1988}.
+\item
+  Não devemos aplicar o teste de qui-quadrado quando a frequência
+  esperada em qualquer casela for menor que 5. Neste caso, devemos usar
+  o teste exato de Fisher, para garantir o grau de certeza do teste.
+\item
+  Quando temos duas amostras pareadas (duas amostras dependentes),
+  utilizamos o teste de McNemar.
+\item
+  Caso tenhamos interesse em avaliar a força da associação entre as duas
+  variáveis, devemos utilizar algumas medidas de magnitude dessa força,
+  como por exemplo, coeficiente de contingência, razão de prevalência,
+  risco relativo e razão de chances (\emph{odds ratio}). Porém, essas
+  medidas de magnitude são dependentes do tipo de delineamento do
+  estudo.
+\end{itemize}
+
+Para aplicar o teste de qui-quadrado ou um alternativo no software R,
+primeiramente precisamos informar os dados, podemos fazer isso de duas
+formas:
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  incluindo os valores no formatado de tabela;
+\item
+  acessando os valores no banco de dados.
+\end{enumerate}
+
+\hypertarget{exemplo-utilizando-os-recursos-do-software-r}{%
+\section{Exemplo utilizando os recursos do software
+R}\label{exemplo-utilizando-os-recursos-do-software-r}}
+
+Realizar o teste de associação para os dados da Tabela
+\ref{tab:tamprop}, para isso, digitar os dados da tabela cruzada (tabela
+de contingência) no formato de uma matriz, valor ij, considerando
+i=linha e j=coluna, em sequência por coluna (por exemplo, digita-se
+todos os valores da primeira coluna, depois digita-se todos os valores
+da segunda coluna e assim sucessivamente).
+
+Sintaxe no software R para incluir os valores no formato de tabela:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{quiquadrado1<-}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{59}\NormalTok{,}\DecValTok{31}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{14}\NormalTok{),}\DataTypeTok{nc=}\DecValTok{2}\NormalTok{)}
+\NormalTok{quiquadrado1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     [,1] [,2]
+[1,]   59    8
+[2,]   31   14
+\end{verbatim}
+
+O comando \texttt{matrix} indica que os dados serão organizados em uma
+matriz, \texttt{nc} indica o número de colunas da tabela, o operador
+\texttt{\textless{}-} atribui os valores digitados no nome informado
+pelo usuário que neste caso é \texttt{quiquadrado1}.
+
+O segundo comando \texttt{quiquadrado1}, mostra a matriz elaborada, que
+neste caso representa uma tabela cruzada de duas linhas e duas colunas,
+conforme a Tabela \ref{tab:tamprop}.
+
+Primeiramente, deve-se verificar a existência de alguma casela com
+frequência esperada menor que 5.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{chisq.test}\NormalTok{(quiquadrado1)}\OperatorTok{$}\NormalTok{expected}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      [,1]   [,2]
+[1,] 53.84 13.161
+[2,] 36.16  8.839
+\end{verbatim}
+
+Caso não exista, utiliza-se o teste de qui-quadrado com o comando
+\texttt{chisq.test}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{chisq.test}\NormalTok{(quiquadrado1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Pearson's Chi-squared test with Yates' continuity correction
+
+data:  quiquadrado1
+X-squared = 5.1, df = 1, p-value = 0.02
+\end{verbatim}
+
+Observa-se que o software R identificou a tabela 2x2 e aplicou a
+correção de continuidade. Porém, podemos informar isso na linha de
+comando, incluindo opção \texttt{correct\ =\ TRUE}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{chisq.test}\NormalTok{(quiquadrado1, }\DataTypeTok{correct=}\OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Pearson's Chi-squared test with Yates' continuity correction
+
+data:  quiquadrado1
+X-squared = 5.1, df = 1, p-value = 0.02
+\end{verbatim}
+
+Então devemos concluir pela rejeição ou não da H0 e interpretar esse
+resultados.
+
+Caso pelo menos uma casela tenha frequência esperada menor que 5 como
+por exemplo na tabela abaixo , utilizamos o teste exato de Fisher.
+
+\begin{longtable}[]{@{}lll@{}}
+\caption{\label{tab:tamprop1}Tamanho da propriedade e devolução das
+embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS,
+2017.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.35\columnwidth}\raggedright
+\textbf{Tamanho da propriedade}\strut
+\end{minipage} & \begin{minipage}[b]{0.34\columnwidth}\raggedright
+\textbf{Devolução}\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.35\columnwidth}\raggedright
+\textbf{Tamanho da propriedade}\strut
+\end{minipage} & \begin{minipage}[b]{0.34\columnwidth}\raggedright
+\textbf{Devolução}\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.34\columnwidth}\raggedright
+Não\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Sim\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+Até 25 ha\strut
+\end{minipage} & \begin{minipage}[t]{0.34\columnwidth}\raggedright
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+59\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+26 ha ou mais\strut
+\end{minipage} & \begin{minipage}[t]{0.34\columnwidth}\raggedright
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+43\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Fonte: \textcite{Ristow2017}.
+
+Definindo as hipóteses estatísticas:
+
+H0: não existe associação entre tamanho da propriedade e devolução das
+embalagens (as variáveis são independentes);
+
+H1: existe associação entre tamanho da propriedade e devolução das
+embalagens (as variáveis são dependentes).
+
+Incluindo os valores:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{quiquadrado2<-}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{59}\NormalTok{,}\DecValTok{43}\NormalTok{),}\DataTypeTok{nc=}\DecValTok{2}\NormalTok{)}
+\NormalTok{quiquadrado2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     [,1] [,2]
+[1,]    8   59
+[2,]    3   43
+\end{verbatim}
+
+Verificando se todas frequências esperadas são maiores ou iguais a 5.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{chisq.test}\NormalTok{(quiquadrado2)}\OperatorTok{$}\NormalTok{expected}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      [,1]  [,2]
+[1,] 6.522 60.48
+[2,] 4.478 41.52
+\end{verbatim}
+
+Neste caso, o software R apresenta um ``aviso'' pois observa-se uma
+frequência esperada menor que 5. Então devemos optar pelo teste exato de
+Fisher.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{fisher.test}\NormalTok{(quiquadrado2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Fisher's Exact Test for Count Data
+
+data:  quiquadrado2
+p-value = 0.5
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.4316 11.9646
+sample estimates:
+odds ratio 
+     1.933 
+\end{verbatim}
+
+Então devemos concluir, através do valor p, pela rejeição ou não da H0 e
+interpretar esse resultados.
+
+\hypertarget{teste-de-associacao-com-duas-amostras-dependentes}{%
+\section{Teste de associação com duas amostras
+dependentes}\label{teste-de-associacao-com-duas-amostras-dependentes}}
+
+No caso de amostras pareadas (dependentes), utiliza-se o teste de
+McNemar para testar a associação.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dados1=}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{12}\NormalTok{,}\DecValTok{8}\NormalTok{),}\DataTypeTok{nc=}\DecValTok{2}\NormalTok{)}
+\NormalTok{dados1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     [,1] [,2]
+[1,]    5   12
+[2,]   10    8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{mcnemar.test}\NormalTok{(dados1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    McNemar's Chi-squared test with continuity correction
+
+data:  dados1
+McNemar's chi-squared = 0.045, df = 1, p-value = 0.8
+\end{verbatim}
+
+Importante observar que para executar o teste de McNemar: no software R
+os dados na matriz (tabela de contingência) devem ser distribuídos da
+mesma maneira tanto nas linhas quanto nas colunas. Isto é, ``a'' e ``d''
+devem expressar o mesmo comportamento. Por exemplo: aprovado,
+desaprovado, aprovado, desaprovado.
+
+\begin{longtable}[]{@{}lll@{}}
+\caption{\label{tab:tabcont}Tabela de Contingência.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.19\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright
+\textbf{Depois}\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.19\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright
+\textbf{Depois}\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.19\columnwidth}\raggedright
+\textbf{Antes}\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+Aprovado\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+Desaprovado\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.19\columnwidth}\raggedright
+Aprovado\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+a\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+b\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.19\columnwidth}\raggedright
+Desaprovado\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+c\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+d\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Fonte: Dados simulados.
+
+\textbf{Exemplo 2}: Uma pesquisa foi realizada para verificar o efeito
+de um medicamento para perda de peso. O estudo foi realizado com 45
+cobaias com características semelhantes. Na Tabela abaixo são
+apresentadas a situação do peso antes e após a intervenção (utilização
+do medicamento).
+
+Como trata-se de duas amostras dependentes (antes e após) não podemos
+aplicar o teste de qui-quadrado. O teste adequado é McNemar.
+
+\begin{longtable}[]{@{}lll@{}}
+\caption{\label{tab:tamprop}Situação do peso de cobaias do estudo antes e
+após a intervenção.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.35\columnwidth}\raggedright
+\textbf{Peso Antes}\strut
+\end{minipage} & \begin{minipage}[b]{0.19\columnwidth}\raggedright
+\textbf{Peso Após}\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.35\columnwidth}\raggedright
+\textbf{Peso Antes}\strut
+\end{minipage} & \begin{minipage}[b]{0.19\columnwidth}\raggedright
+\textbf{Peso Após}\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright
+Adequado\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Sobrepeso\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+Aprovado\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright
+15\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+5\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+Desaprovado\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+7\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Fonte: Dados simulados.
+
+Hipóteses estatísticas:
+
+H0: As frequências das diferentes categorias ocorrem na mesma proporção
+(Frequências b e c ocorrem na mesma proporção);
+
+H1: As frequências b e c ocorrem em proporções diferentes, ou seja, as
+mudanças são significativas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mcnemar=}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{15}\NormalTok{,}\DecValTok{18}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{),}\DataTypeTok{nc=}\DecValTok{2}\NormalTok{)}
+\NormalTok{mcnemar}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     [,1] [,2]
+[1,]   15    5
+[2,]   18    7
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{chisq.test}\NormalTok{(mcnemar)}\OperatorTok{$}\NormalTok{expected}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      [,1]  [,2]
+[1,] 14.67 5.333
+[2,] 18.33 6.667
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{mcnemar.test}\NormalTok{(mcnemar)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    McNemar's Chi-squared test with continuity correction
+
+data:  mcnemar
+McNemar's chi-squared = 6.3, df = 1, p-value = 0.01
+\end{verbatim}
+
+\hypertarget{teste-de-qui-quadrado-para-verificar-aderencia-a-uma-distribuicao}{%
+\section{Teste de qui-quadrado para verificar aderência a uma
+distribuição}\label{teste-de-qui-quadrado-para-verificar-aderencia-a-uma-distribuicao}}
+
+Neste caso usamos o teste de qui-quadrado para verificar se o conjunto
+de dados segue uma distribuição teórica especificada.
+
+\textbf{Exemplo 3}: Deseja-se verificar se o número de borrachudos é o
+mesmo em diferentes pontos da margem de um rio. O número de borrachudos
+observados para cada ponto (local) é apresentado na Tabela
+\ref{tab:borrach}.
+
+\begin{table}
+
+\caption{\label{tab:borrach}Número de borrachudos nos diferentes pontos}
+\centering
+\begin{tabular}[t]{l|r}
+\hline
+Ponto & Borrachudos\\
+\hline
+Ponto 1 & 19\\
+\hline
+Ponto 2 & 12\\
+\hline
+Ponto 3 & 10\\
+\hline
+Ponto 4 & 17\\
+\hline
+Ponto 5 & 25\\
+\hline
+Ponto 6 & 22\\
+\hline
+Ponto 7 & 15\\
+\hline
+\end{tabular}
+\end{table}
+
+Fonte: Dados simulados.
+
+Para um nível de 5\% de significância, as hipóteses a serem testadas:
+
+H0: O número de borrachudos não muda conforme o ponto;
+
+H1: Pelo menos um dos pontos tem número de borrachudos diferente dos
+demais.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{borrach<-}\KeywordTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{,}\DecValTok{12}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{17}\NormalTok{,}\DecValTok{30}\NormalTok{,}\DecValTok{22}\NormalTok{,}\DecValTok{35}\NormalTok{)}
+\KeywordTok{chisq.test}\NormalTok{(borrach)}\OperatorTok{$}\NormalTok{expected}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 20.86 20.86 20.86 20.86 20.86 20.86 20.86
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{chisq.test}\NormalTok{(borrach)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Chi-squared test for given probabilities
+
+data:  borrach
+X-squared = 24, df = 6, p-value = 6e-04
+\end{verbatim}
+
+\textbf{Exemplo 4}: Suponha que desejamos verificar se o número de
+borrachudos segue uma distribuição específica, informado em ``dist''.
+Lembrando que os valores no vetor ``dist'' devem estar no formato de
+proporção (por exemplo, 0,35).
+
+H0: O número de borrachudos segue a distribuição teórica informada;
+
+H1: O número de borrachudos não segue a distribuição teórica informada.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{borrachudos<-}\KeywordTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{,}\DecValTok{12}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{17}\NormalTok{,}\DecValTok{30}\NormalTok{,}\DecValTok{22}\NormalTok{,}\DecValTok{35}\NormalTok{)}
+\NormalTok{dist<-}\KeywordTok{c}\NormalTok{(}\FloatTok{0.10}\NormalTok{,}\FloatTok{0.10}\NormalTok{,}\FloatTok{0.10}\NormalTok{,}\FloatTok{0.15}\NormalTok{,}\FloatTok{0.15}\NormalTok{,}\FloatTok{0.15}\NormalTok{,}\FloatTok{0.25}\NormalTok{)}
+\KeywordTok{chisq.test}\NormalTok{(borrachudos)}\OperatorTok{$}\NormalTok{expected}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 20.86 20.86 20.86 20.86 20.86 20.86 20.86
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{chisq.test}\NormalTok{(borrachudos, }\DataTypeTok{p=}\NormalTok{dist)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Chi-squared test for given probabilities
+
+data:  borrachudos
+X-squared = 8.1, df = 6, p-value = 0.2
+\end{verbatim}
+
+\hypertarget{modelos-de-regressao}{%
+\chapter{Modelos de Regressão}\label{modelos-de-regressao}}
+
+\hypertarget{rmarkdown}{%
+\chapter{RMarkdown}\label{rmarkdown}}
 
 \printbibliography
 

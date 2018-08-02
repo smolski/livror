@@ -1,0 +1,3 @@
+"0","barplot(Resultado,col=c(""blue"",""red""),main=""Título"",xlab=""Variável do eixo x"","
+"0","        ylab=""Informação que consta no eixo y"", border='red', "
+"0","        beside=T,legend=rownames(Resultado))"

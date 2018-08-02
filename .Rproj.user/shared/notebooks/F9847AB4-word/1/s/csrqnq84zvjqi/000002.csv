@@ -1,0 +1,1 @@
+"0","barplot(table(`Pessoas_familia`), col=c(""blue""), main = ""Frequência de pessoas por família"", xlab = ""Frequência"", ylab = ""Pessoas"", border = ""red"")"
