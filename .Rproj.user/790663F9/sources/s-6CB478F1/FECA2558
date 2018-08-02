@@ -5,17 +5,17 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2994993101",
+    "hash" : "3557148198",
     "id" : "FECA2558",
-    "lastKnownWriteTime" : 1533175084,
-    "last_content_update" : 1533175084686,
+    "lastKnownWriteTime" : 1533226499,
+    "last_content_update" : 1533226499677,
     "path" : "D:/Github/livror/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "2258,0",
+        "cursorPosition" : "2496,23",
         "docOutlineSize" : "113.04406259407997",
         "docOutlineVisible" : "1",
-        "scrollLine" : "2243"
+        "scrollLine" : "2472"
     },
     "relative_order" : 4,
     "source_on_save" : false,

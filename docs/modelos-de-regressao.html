@@ -26,7 +26,7 @@
 <meta name="author" content="Iara Denise Endruweit Battisti">
 
 
-<meta name="date" content="2018-08-01">
+<meta name="date" content="2018-08-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -203,8 +203,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4" data-path="teste-de-qui-quadrado.html"><a href="teste-de-qui-quadrado.html#teste-de-associacao-com-duas-amostras-dependentes"><i class="fa fa-check"></i><b>4.4</b> Teste de associação com duas amostras dependentes</a></li>
 <li class="chapter" data-level="4.5" data-path="teste-de-qui-quadrado.html"><a href="teste-de-qui-quadrado.html#teste-de-qui-quadrado-para-verificar-aderencia-a-uma-distribuicao"><i class="fa fa-check"></i><b>4.5</b> Teste de qui-quadrado para verificar aderência a uma distribuição</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html"><i class="fa fa-check"></i><b>5</b> Modelos de Regressão</a></li>
+<li class="chapter" data-level="5" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html"><i class="fa fa-check"></i><b>5</b> Modelos de Regressão</a><ul>
+<li class="chapter" data-level="5.1" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html#correlacao-linear"><i class="fa fa-check"></i><b>5.1</b> Correlação linear</a></li>
+<li class="chapter" data-level="5.2" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html#diagrama-de-dispersao"><i class="fa fa-check"></i><b>5.2</b> Diagrama de dispersão</a></li>
+<li class="chapter" data-level="5.3" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html#coeficiente-de-correlacao-linear-de-pearson"><i class="fa fa-check"></i><b>5.3</b> Coeficiente de Correlação Linear de Pearson</a></li>
+<li class="chapter" data-level="5.4" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html#modelo-de-regressao"><i class="fa fa-check"></i><b>5.4</b> Modelo de Regressão</a></li>
+<li class="chapter" data-level="5.5" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html#modelo-de-regressao-linear-simples"><i class="fa fa-check"></i><b>5.5</b> Modelo de Regressão Linear Simples</a></li>
+<li class="chapter" data-level="5.6" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html#metodo-dos-minimos-quadrados"><i class="fa fa-check"></i><b>5.6</b> Método dos Mínimos Quadrados</a></li>
+<li class="chapter" data-level="5.7" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html#analise-de-variancia"><i class="fa fa-check"></i><b>5.7</b> Análise de Variância</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>6</b> RMarkdown</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referências</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -227,6 +236,237 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="modelos-de-regressao" class="section level1">
 <h1><span class="header-section-number">Capítulo 5</span> Modelos de Regressão</h1>
+<p>Muitas vezes há a necessidade de estudar duas ou mais variáveis ao mesmo tempo com o objetivo de predizer uma variável em função da(s) outra(s). Por exemplo, verificar se sólidos removidos de um material relaciona-se com o tempo de secagem e qual é a forma dessa relação. Outros exemplos: relação entre tempo de estudo e desempenho a uma avaliação; relação entre investimento em comunicação e vendas; entre outros.</p>
+<p>A análise de correlação permite verificar a relação entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Estudaremos os modelos de regressão linear na qual a variáveis resposta (<span class="math inline">\(Y\)</span>) é quantitativa e as variáveis preditoras (<span class="math inline">\(X_i\)</span>) são quantitativas ou qualitativas.</p>
+<div id="correlacao-linear" class="section level2">
+<h2><span class="header-section-number">5.1</span> Correlação linear</h2>
+<p>É a técnica mais simples para estudar a relação entre duas variáveis. Os dados compõem uma única amostra de pares de valores (<span class="math inline">\(x_i, y_i\)</span>), correspondendo aos valores das variáveis X e Y, respectivamente, feitas em cada elemento da amostra. Para analisar a existência de relação entre as duas variáveis, primeiramente pode-se fazer o Diagrama de Dispersão.</p>
+</div>
+<div id="diagrama-de-dispersao" class="section level2">
+<h2><span class="header-section-number">5.2</span> Diagrama de dispersão</h2>
+<p>É um gráfico para verificar a existência de relação entre as variáveis X e Y. É composto por pontos, os quais correspondem aos pares de valores (<span class="math inline">\(xi, y_i\)</span>), sendo a variável X representada no eixo horizontal e a variável Y representada no eixo vertical.</p>
+<p>O diagrama de disperção fornece uma visualização gráfica do comportamento conjunto das duas variávei em estudo. Na Figura <a href="modelos-de-regressao.html#fig:diag">5.1</a> a percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variaveis crescem conjuntamente, já na Figura <a href="modelos-de-regressao.html#fig:diag">5.1</a>b percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura <a href="modelos-de-regressao.html#fig:diag">5.1</a>c informa a ausência de relação entre as duas variáveis e, a Figura <a href="modelos-de-regressao.html#fig:diag">5.1</a>d mostra uma relação não linear, a qual não será objeto de estudo nesta publicação.</p>
+<div class="figure" style="text-align: center"><span id="fig:diag"></span>
+<img src="correlacao1.png" alt="Diagramas de Dispersão" width="\textwidth" />
+<p class="caption">
+Figura 5.1: Diagramas de Dispersão
+</p>
+</div>
+<p>Fonte: Elaborado pelo(s) autor(es).</p>
+<p><strong>Exemplo</strong>: Suponha que 15 alunos foram selecionados aleatoriamente na turma de Estatística, sendo registrado o tempo de estudo e nota da atividade avaliativa. O objetivo da pesquisa é verificar se existe relação entre tempo de estudo e nota.</p>
+<table style="width:40%;">
+<caption><span id="tab:reg1">Tabela 5.1: </span>Relação entre o tempo de estudo e a nota.</caption>
+<colgroup>
+<col width="22%" />
+<col width="18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"><strong>Tempo</strong></th>
+<th align="left"><strong>Nota</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">4,0</td>
+<td align="left">5,5</td>
+</tr>
+<tr class="even">
+<td align="left">6,0</td>
+<td align="left">7,5</td>
+</tr>
+<tr class="odd">
+<td align="left">5,5</td>
+<td align="left">8,0</td>
+</tr>
+<tr class="even">
+<td align="left">5,0</td>
+<td align="left">7,0</td>
+</tr>
+<tr class="odd">
+<td align="left">6,8</td>
+<td align="left">8,1</td>
+</tr>
+<tr class="even">
+<td align="left">6,5</td>
+<td align="left">8,6</td>
+</tr>
+<tr class="odd">
+<td align="left">3,5</td>
+<td align="left">4,7</td>
+</tr>
+<tr class="even">
+<td align="left">4,5</td>
+<td align="left">7,5</td>
+</tr>
+<tr class="odd">
+<td align="left">7,5</td>
+<td align="left">9,5</td>
+</tr>
+<tr class="even">
+<td align="left">8,0</td>
+<td align="left">9,5</td>
+</tr>
+<tr class="odd">
+<td align="left">5,4</td>
+<td align="left">7,8</td>
+</tr>
+<tr class="even">
+<td align="left">6,5</td>
+<td align="left">8,0</td>
+</tr>
+<tr class="odd">
+<td align="left">7,7</td>
+<td align="left">9,1</td>
+</tr>
+<tr class="even">
+<td align="left">7,5</td>
+<td align="left">8,0</td>
+</tr>
+</tbody>
+</table>
+<p>Fonte: Dados simulados.</p>
+<p>Sintaxe no software R:</p>
+<p><code>plot(x,y)</code></p>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb341-1" data-line-number="1">tempo=<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="fl">5.5</span>,<span class="dv">5</span>,<span class="fl">6.8</span>,<span class="fl">6.5</span>,<span class="fl">3.5</span>,<span class="fl">4.5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="fl">5.4</span>,<span class="fl">6.5</span>,<span class="fl">7.7</span>,<span class="fl">7.5</span>,<span class="fl">5.8</span>)</a>
+<a class="sourceLine" id="cb341-2" data-line-number="2">nota=<span class="kw">c</span>(<span class="fl">5.5</span>,<span class="fl">7.5</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="fl">8.1</span>,<span class="fl">8.6</span>,<span class="fl">4.7</span>,<span class="fl">7.5</span>,<span class="fl">9.5</span>,<span class="fl">9.5</span>,<span class="fl">7.8</span>,<span class="dv">8</span>,<span class="fl">9.1</span>,<span class="fl">9.5</span>,<span class="dv">8</span>)</a></code></pre></div>
+<p>O diagrama de dispersão do exemplo está representado abaixo.</p>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb342-1" data-line-number="1"><span class="kw">plot</span>(tempo,nota)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-128"></span>
+<img src="index_files/figure-html/unnamed-chunk-128-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="\textwidth" />
+<p class="caption">
+Figura 5.2: Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo
+</p>
+</div>
+<p>Fonte: Elaborado pelo(s) autor(es).</p>
+</div>
+<div id="coeficiente-de-correlacao-linear-de-pearson" class="section level2">
+<h2><span class="header-section-number">5.3</span> Coeficiente de Correlação Linear de Pearson</h2>
+<p>O coeficiente de correlação linear de Pearson (Karl Pearson 1857-1936) mede o grau de relacionamento linear entre os valores pareados <span class="math inline">\(x_i\)</span> e <span class="math inline">\(y_i\)</span> em uma amostra. O coeficiente linear de Pearson é obtido da seguinte forma:</p>
+<p><span class="math display">\[
+\begin{equation}
+r=\frac{n\sum xy-(\sum x)(\sum y)}{\sqrt{n(\sum x^2)-(\sum x)^2} \sqrt{(\sum y^2)-(\sum y)^2}}
+\end{equation}
+\]</span>
+em que:</p>
+<ul>
+<li>n = número de pares na amostra</li>
+<li>x: valores da variável x</li>
+<li>y: valores da variável y</li>
+</ul>
+<p>O coeficiente de correlação linear (r) é uma estatística amostral, representando a magnitude da relação entre duas variáveis na amostra. O parâmetro populacional é representado por <span class="math inline">\(\rho\)</span>. O coeficiente de correlação linear assume valores entre -1 e +1, inclusive. Se o valor de r está próximo de 0, conclui-se que não há correlação linear entre as variáveis X e Y. Seo valor de r está próximo de -1 ou +1, conclui-se pela existência de correlação linear significativa entre as variáveis X e Y, sendo que o sinal indica uma relação linear positiva (direta) ou negativa (inversa).</p>
+<p>Sintaxe no software R:</p>
+<p><code>cor(x,y)</code></p>
+<p>Obs: x e y são numéricos.</p>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb343-1" data-line-number="1"><span class="kw">cor</span>(tempo,nota)</a></code></pre></div>
+<pre><code>[1] 0.9224</code></pre>
+</div>
+<div id="modelo-de-regressao" class="section level2">
+<h2><span class="header-section-number">5.4</span> Modelo de Regressão</h2>
+<p>O estudo de regressão refere-se aos casos em que se pretende estabelecer uma relação entre uma variável Y considerada dependente (variável resposta ou desfecho) e uma ou mais variáveis <span class="math inline">\(x_1, x_2,\cdots, x_k\)</span> (variáveis explicativas ou preditoras) consideradas independentes.</p>
+<p>O objetivo da análise de regressão é ajustar uma equação que permita explicar o comportamento da variável resposta de maneira que o valor previsto possa estar próximo do que seria observado. A forma do modelo de regressão depende da relação entre as variáveis, expressa visualmente pelo diagrama de dispersão, conforme Figura <a href="modelos-de-regressao.html#fig:diag">5.1</a>.</p>
+<p>A análise de regressão é uma técnica muito utilizada em variáveis quantitativas, como por exemplo:</p>
+<ul>
+<li><p>Vendas em função do investimento em comunicação;</p></li>
+<li><p>Altura de crianças em função da idade;</p></li>
+<li><p>Nota obtida em função de horas de estudo;</p></li>
+<li><p>Produtividade de uma cultura em relação a quantidade de adubação.</p></li>
+</ul>
+<p>Na Figura <a href="modelos-de-regressao.html#fig:regress">5.3</a> é apresentada a variação explicada e não explicada na análise por modelo regressão.</p>
+<div class="figure" style="text-align: center"><span id="fig:regress"></span>
+<img src="regress1.png" alt="Variação explicada e não explicada na análise de regressão" width="\textwidth" />
+<p class="caption">
+Figura 5.3: Variação explicada e não explicada na análise de regressão
+</p>
+</div>
+<p>Fonte: Elaborado pelo(s) autor(es).</p>
+<p>Observa-se na Figura <a href="modelos-de-regressao.html#fig:regress">5.3</a>, uma identidade na regressão, conforme a seguinte expressão:</p>
+<div class="figure" style="text-align: center"><span id="fig:regress2"></span>
+<img src="regress2.png" alt="Identidade da Regressão" width="\textwidth" />
+<p class="caption">
+Figura 5.4: Identidade da Regressão
+</p>
+</div>
+<p>Fonte: Elaborado pelo(s) autor(es).</p>
+<p>Assim, a partir da expressão apresentada que o modelo de regressão será mais adequado na medida em que a proporção de “Soma de Quadrados de Regressão” é mais alta em relação à “Soma de Quadrado Total” do que a “Soma de Quadrado do Resíduo”.</p>
+</div>
+<div id="modelo-de-regressao-linear-simples" class="section level2">
+<h2><span class="header-section-number">5.5</span> Modelo de Regressão Linear Simples</h2>
+<p>O modelo de regressão linear simples é usado quando a resposta da variável dependente se expressa de forma linear (Figura <a href="modelos-de-regressao.html#fig:regress">5.3</a> e neste caso com apenas uma variável explicativa, expresso da seguinte maneira <span class="citation">(Hoffmann e others, <a href="#ref-hoffmann1998">1998</a>)</span>:</p>
+<p><span class="math display">\[
+\begin{equation}
+y_i=\beta_0+\beta_1x_i+\varepsilon _i
+\end{equation}
+\]</span></p>
+<p>Em que:</p>
+<p><span class="math inline">\(y_i\)</span>: valores da variável resposta (dependente, desfecho), <span class="math inline">\(i = 1,2,...,n\)</span> observações;</p>
+<p><span class="math inline">\(x_i\)</span>: valores da variável explicativa (independente, preditora), <span class="math inline">\(i = 1,2,...,n\)</span> observações;</p>
+<p><span class="math inline">\(\beta_0\)</span>: coeficiente linear (intercepto). Interpretado como o valor da variável dependente quando a variável independente é igual a 0;</p>
+<p><span class="math inline">\(\beta_1\)</span>: coeficiente angular (inclinação). Interpretado como acréscimo/decréscimo na variável dependente para a variação de uma unidade na variável independente;</p>
+<p><span class="math inline">\(\varepsilon_i\)</span>: erros aleatórios supostamente de uma população normal, com média 0 e variância constante <span class="math inline">\(\begin{bmatrix}\varepsilon_i N(0, \sigma^2)\end{bmatrix}\)</span>.</p>
+</div>
+<div id="metodo-dos-minimos-quadrados" class="section level2">
+<h2><span class="header-section-number">5.6</span> Método dos Mínimos Quadrados</h2>
+<p>O método dos mínimos quadrados (MMQ) é utilizado para a obtenção dos coeficientes linear e angular. Consiste em minimizar a Soma de Quadrados de Resíduos, ou seja, minimizar:</p>
+<p><span class="math display">\[
+\begin{equation}
+\sum (y_i-\hat y_i)^2=\sum (y_i-b_0-b_1x_i^2)
+\end{equation}
+\]</span></p>
+<p>As expressões para os coeficientes, que minimizam SQResíduos são obtidas pela derivadas desta soma de quadrados em relação a <span class="math inline">\(b_0\)</span> e em relação a <span class="math inline">\(b_1\)</span> e podem ser descritas por <span class="citation">(Hoffmann e others, <a href="#ref-hoffmann1998">1998</a>)</span>:</p>
+<p><span class="math display">\[
+\begin{equation}
+b_1=\frac{\sum xy-\frac{\sum x \sum y}{n}}{\sum x^2 - \frac{(\sum x)^2}{n}}
+\end{equation}
+\]</span></p>
+<p>em que:</p>
+<p><strong>n</strong>: número de pares na amostra;
+<strong>x</strong>: valores da variável x;
+<strong>y</strong>: valores da variável y.</p>
+<p>e</p>
+<p><span class="math display">\[
+\begin{equation}
+b_0=\bar{y}-b_1\bar{x}
+\end{equation}
+\]</span></p>
+<p>em que:</p>
+<p><strong><span class="math inline">\(\bar{x}\)</span></strong>: média aritmética dos valores de x;</p>
+<p><strong><span class="math inline">\(\bar{y}\)</span></strong>: média aritmética dos valores de y;</p>
+<p><strong><span class="math inline">\(b_1\)</span></strong>: valor calculado do coeficiente angular.</p>
+<p>Obtendo-se a seguinte equação de regressão linear simples estimada:</p>
+<p><span class="math display">\[
+\begin{equation}
+\hat{y}=b_0-b_1{x}
+\end{equation}
+\]</span></p>
+<p>em que:</p>
+<p><strong><span class="math inline">\(b_0\)</span></strong>: coeficiente linear estimado;</p>
+<p><strong><span class="math inline">\(b_1\)</span></strong>: coeficiente angular estimado;</p>
+<p><strong><span class="math inline">\(x\)</span></strong>: valores da variável explicativa.</p>
+<p>Esta equação refere-se a reta de regressão, se <span class="math inline">\(b_1\)</span> é um valor positivo a reta é crescente, demonstrando uma relação positiva entre as variáveis e se <span class="math inline">\(b_1\)</span> é um o valor negativo, a reta é decrescente, demonstrando uma relação inversa entre as variáveis.</p>
+<p>Sintaxe no software R:</p>
+<p><code>regressao=lm(y~x)</code></p>
+<p>Obs: y são valores numéricos da variável resposta e x são valores numéricos da variável preditora.</p>
+<p>Por exemplo:</p>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb345-1" data-line-number="1">regressao=<span class="kw">lm</span>(nota<span class="op">~</span>tempo)</a>
+<a class="sourceLine" id="cb345-2" data-line-number="2">regressao</a></code></pre></div>
+<pre><code>
+Call:
+lm(formula = nota ~ tempo)
+
+Coefficients:
+(Intercept)        tempo  
+      2.221        0.947  </code></pre>
+</div>
+<div id="analise-de-variancia" class="section level2">
+<h2><span class="header-section-number">5.7</span> Análise de Variância</h2>
+</div>
+</div>
+<h3>Referências</h3>
+<div id="refs" class="references">
+<div id="ref-hoffmann1998">
+<p>HOFFMANN, R.; OTHERS. <strong>Análise de regressão: uma introdução à econometria</strong>. Traducao. São Paulo: Hucitec, 1998. </p>
+</div>
 </div>
             </section>
 

@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Felipe Micail da Silva Smolski
 - Iara Denise Endruweit Battisti
-date: "2018-08-01"
+date: "2018-08-02"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -69,14 +69,10 @@ Lembrando que:
 
 O RStudio é a interface que faz com que seja mais fácil a utilização da programação em R. 
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{paineis} 
-
-}
-
-\caption{Painéis do Rstudio}(\#fig:paineis1)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="paineis.png" alt="Painéis do Rstudio" width="\textwidth" />
+<p class="caption">(\#fig:paineis1)Painéis do Rstudio</p>
+</div>
 Fonte: Elaborado pelo(s) autor(es).
 
 - **Fonte/Editor de Scripts**: se constitui do ambiente onde serão abertos os scripts previamente salvos nos mais diversos formatos ou mesmo sendo o local de visualização das bases de dados.
@@ -93,25 +89,17 @@ Acessamos a ajuda do RStudio por meio do comando `help()`, através da aba "Help
 Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, e para isso se faz necessário efetuar a sua instalação. Precisamos ir até o painel dos pacotes em *packages*, selecionar a opção instalar e inserir o nome do pacote desejado na janela indicada. Ao selecionar a opção instalar, no console receberemos informações do procedimento e do sucesso do mesmo. 
 
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{pacotes1} 
-
-}
-
-\caption{Instalação de pacotes}(\#fig:pacotes1)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="pacotes1.png" alt="Instalação de pacotes" width="\textwidth" />
+<p class="caption">(\#fig:pacotes1)Instalação de pacotes</p>
+</div>
 
 Fonte: Elaborado pelo(s) autor(es).
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{pacotes2} 
-
-}
-
-\caption{Caixa de informação de pacote a ser instalado}(\#fig:pacotes2)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="pacotes2.png" alt="Caixa de informação de pacote a ser instalado" width="\textwidth" />
+<p class="caption">(\#fig:pacotes2)Caixa de informação de pacote a ser instalado</p>
+</div>
 
 Fonte: Elaborado pelo(s) autor(es)
 
@@ -154,41 +142,29 @@ A opção `load()` (exemplo: `load("base.RData")`) pode ser utilizada para carre
 
 Outra opção é o carregamento das bases de dados manualmente pelo caminho *Envoirment $>$ Import Dataset*, escolhendo o tipo de arquivo:
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{r3} 
-
-}
-
-\caption{Aba *Import Dataset*}(\#fig:r3)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="r3.png" alt="Aba *Import Dataset*" width="\textwidth" />
+<p class="caption">(\#fig:r3)Aba *Import Dataset*</p>
+</div>
 
 Fonte: Elaborado pelo(s) autor(es).
 
 Na caixa correspondente a File/Url se insere o endereço virtual ou o local onde se encontra o arquivo. Ao importar os dados, carrega-se um objeto criado com as informações contidas no arquivo. No nosso exeplo, carregamos a planilha arvores (arquivo .xls) como mostra a Figura \@ref(fig:r4), derivado do caminho "Import Dataset $>$ From Excel" do Environment.
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{r4} 
-
-}
-
-\caption{Caixa de informações do Import Data}(\#fig:r4)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="r4.png" alt="Caixa de informações do Import Data" width="\textwidth" />
+<p class="caption">(\#fig:r4)Caixa de informações do Import Data</p>
+</div>
 Fonte: Elaborado pelo(s) autor(es).
 
 O campo *Code Preview* mostra o comando que está sendo criado para a importação destes dados. Em *Import Options*, delimita-se opções do objeto como o nome (*name*), o número máximo de linhas (*Max Rows*), quantas linhas serão puladas na importação do arquivo (*Skip*), o tratamento das células em branco (*NA*) e se a primeira linha contém os nomes (*Firts Row as Names*).
 
 Com relação à importação de arquivos de texto separado por caracteres (.csv), ela se dá via "Import Dataset $>$ From Text (readr)" do Environment. Constam algumas solicitações diferentes a serem determinadas pelo usuário no campo *Import Options*, conforme mostra a Figura \@ref(fig:r4csv). Uma questão importante é a opção *Delimiter*, a qual o pesquisador tem que prestar atenção quando o arquivo está separado por vírgulas (*Comma*), ponto e vírgula (*Semicolon*) ou outro tipo de caractere. A opção *Locale $>$ Configure...* oportuniza determinar os tipos de marca decimal e codificação de textos, por exemplo.
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{r4csv} 
-
-}
-
-\caption{Opções da importação de arquivos .csv}(\#fig:r4csv)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="r4csv.png" alt="Opções da importação de arquivos .csv" width="\textwidth" />
+<p class="caption">(\#fig:r4csv)Opções da importação de arquivos .csv</p>
+</div>
 
 Fonte: Elaborado pelo(s) autor(es)
 
@@ -209,14 +185,10 @@ Alguns tipos de dados:
 
 O banco de dados que o R armazena na memória pode ser salvo, junto com todo o ambiente, usando o ícone de disquete na aba "Environment" (salva como arquivo .RData), e depois carregado pelo ícone de pasta (Abrir dados...) na mesma aba. Desta forma, salvará todos os objetos criados no ambiente de trabalho.
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{r6} 
-
-}
-
-\caption{Atalho para abrir e salvar arquivo de dados}(\#fig:r6)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="r6.png" alt="Atalho para abrir e salvar arquivo de dados" width="\textwidth" />
+<p class="caption">(\#fig:r6)Atalho para abrir e salvar arquivo de dados</p>
+</div>
 
 Fonte: Elaborado pelo(s) autor(es)
 
@@ -1152,25 +1124,17 @@ Utiliza-se o comando da seguinte forma:
 informacoes.2=edit(informacoes)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{95} 
-
-}
-
-\caption{Editor de dados}(\#fig:95)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="95.png" alt="Editor de dados" width="\textwidth" />
+<p class="caption">(\#fig:95)Editor de dados</p>
+</div>
 
 Basta clicar no retângulo correspondente a variável que deseja ser modificada, excluir ou adicionar novas colunas.
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{10} 
-
-}
-
-\caption{Acréscimo de uma nova coluna através do editor de dados}(\#fig:10)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="10.png" alt="Acréscimo de uma nova coluna através do editor de dados" width="\textwidth" />
+<p class="caption">(\#fig:10)Acréscimo de uma nova coluna através do editor de dados</p>
+</div>
 
 Logo, chamando o novo banco de dados, teremos:
 
@@ -1294,30 +1258,18 @@ informacoes
 4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso
 ```
 
-\begin{table}
 
-\caption{(\#tab:imct)Valores padrão para o IMC}
-\centering
-\begin{tabular}[t]{l|l}
-\hline
-Resultado & Significado\\
-\hline
-Abaixo de 17 & Muito abaixo do peso\\
-\hline
-Entre 17 e 18,49 & Abaixo do peso\\
-\hline
-Entre 18,5 e 24,99 & Peso normal\\
-\hline
-Entre 25 e 29,99 & Acima do peso\\
-\hline
-Entre 30 e 34,99 & Obesidade I\\
-\hline
-Entre 35 e 39,99 & Obesidade II (severa)\\
-\hline
-Acima de 40 & Obesidade III (mórbida)\\
-\hline
-\end{tabular}
-\end{table}
+Table: (\#tab:imct)Valores padrão para o IMC
+
+Resultado            Significado             
+-------------------  ------------------------
+Abaixo de 17         Muito abaixo do peso    
+Entre 17 e 18,49     Abaixo do peso          
+Entre 18,5 e 24,99   Peso normal             
+Entre 25 e 29,99     Acima do peso           
+Entre 30 e 34,99     Obesidade I             
+Entre 35 e 39,99     Obesidade II (severa)   
+Acima de 40          Obesidade III (mórbida) 
 
 No entanto, o IMC possui várias classificações de acordo com o seu resultado (Tabela \@ref(tab:imct)), sendo que, por exemplo, resultados abaixo de 17 informam que o indivíduo se encontra como Muito abaixo do peso, e acima de 40, se encontra em Obesidade III. Para efetuar a classificação desta maneira utilizando o comando `ifelse`, ou seja, com mais de uma condição, pode ser efetuada a estruturação com a aglutinação do comando:
 
@@ -2003,14 +1955,10 @@ Ex. Construir um gráfico de colunas para a variável **Sexo**.
 barplot(table(Sexo))
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-67-1} 
-
-}
-
-\caption{Gráfico de colunas com a variável Sexo}(\#fig:unnamed-chunk-67)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-html/unnamed-chunk-67-1.png" alt="Gráfico de colunas com a variável Sexo" width="\textwidth" />
+<p class="caption">(\#fig:unnamed-chunk-67)Gráfico de colunas com a variável Sexo</p>
+</div>
 
 **Obs**.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
 
@@ -2026,14 +1974,10 @@ barplot(table(Sexo))
 barplot(table(`Pessoas_familia`), col=c("blue"), main = "Frequência de pessoas por família", xlab = "Frequência", ylab = "Pessoas", border = "red")
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-68-1} 
-
-}
-
-\caption{Gráfico de colunas com a variável `Pessoas familia`}(\#fig:unnamed-chunk-68)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-html/unnamed-chunk-68-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="\textwidth" />
+<p class="caption">(\#fig:unnamed-chunk-68)Gráfico de colunas com a variável `Pessoas familia`</p>
+</div>
 
 **Ex.2)** Construir uma tabela de dupla entrada para as variáveis **Sexo** e **Divulgação**.
 
@@ -2043,14 +1987,10 @@ barplot(table(Sexo,Divulgacao), col=c("blue"),
   main = "Frequência de pessoas por Sexo e Divulgacao")
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-69-1} 
-
-}
-
-\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}(\#fig:unnamed-chunk-69)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-html/unnamed-chunk-69-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="\textwidth" />
+<p class="caption">(\#fig:unnamed-chunk-69)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
+</div>
 
 
 **Ex.3)** Na sequência utiliza o sinal de atribuição <- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).
@@ -2069,14 +2009,10 @@ barplot(Resultado,col=c("blue","red"),main="Título",xlab="Variável do eixo x",
         beside=T,legend=rownames(Resultado))
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-71-1} 
-
-}
-
-\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}(\#fig:unnamed-chunk-71)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-html/unnamed-chunk-71-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="\textwidth" />
+<p class="caption">(\#fig:unnamed-chunk-71)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
+</div>
 
 
 Observe que o uso do argumento `beside=T` evita que as barras fiquem empilhadas e o arguemnto `legend`' insere a legenda conforme as cores das colunas.
@@ -2097,14 +2033,10 @@ Ex. Construa um gráfico na forma de Setograma para a variável **Sabor**.
 pie(table(Sabor))
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-72-1} 
-
-}
-
-\caption{Gráfico de pizza com a variável Sabor}(\#fig:unnamed-chunk-72)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-html/unnamed-chunk-72-1.png" alt="Gráfico de pizza com a variável Sabor" width="\textwidth" />
+<p class="caption">(\#fig:unnamed-chunk-72)Gráfico de pizza com a variável Sabor</p>
+</div>
 
 ### Histograma
 
@@ -2119,14 +2051,10 @@ Ex. Construa um histograma com a variável **Renda\_h**.
 hist(as.numeric(`Renda_h`))
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-73-1} 
-
-}
-
-\caption{Histograma com a variável `Renda h`}(\#fig:unnamed-chunk-73)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-html/unnamed-chunk-73-1.png" alt="Histograma com a variável `Renda h`" width="\textwidth" />
+<p class="caption">(\#fig:unnamed-chunk-73)Histograma com a variável `Renda h`</p>
+</div>
 
 **Obs**. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
 
@@ -2140,14 +2068,10 @@ hist(as.numeric(`Renda_h`))
 hist(as.numeric(`Renda_h`), breaks=5)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-74-1} 
-
-}
-
-\caption{Histograma com a variável Renda h com breaks=5}(\#fig:unnamed-chunk-74)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-html/unnamed-chunk-74-1.png" alt="Histograma com a variável Renda h com breaks=5" width="\textwidth" />
+<p class="caption">(\#fig:unnamed-chunk-74)Histograma com a variável Renda h com breaks=5</p>
+</div>
 Use o argumento `main=NULL` para remover o título.
 
 ### Boxplot ou diagrama em caixas
@@ -2168,14 +2092,10 @@ Para obter o boxplot para um conjunto de dados:
 boxplot(Idade,horizontal = T)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-75-1} 
-
-}
-
-\caption{Boxplot com a variável Idade}(\#fig:unnamed-chunk-75)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-html/unnamed-chunk-75-1.png" alt="Boxplot com a variável Idade" width="\textwidth" />
+<p class="caption">(\#fig:unnamed-chunk-75)Boxplot com a variável Idade</p>
+</div>
 
 
 **Ex.2)** Construir um boxplot das variáveis **Peso\_(Kg)** e **Altura\_(m)**.    
@@ -2277,42 +2197,24 @@ Apresenta a evolução de um dado, geralmente ao longo do tempo. Eixos na vertic
 
 Ex. Considere os dados que descrevem os valores do número de empresas fiscalizadas na fiscalização do trabalho na área rural Brasil 1998-2010.
 
-\begin{table}
 
-\caption{(\#tab:unnamed-chunk-77)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010}
-\centering
-\begin{tabular}[t]{r|l}
-\hline
-Ano & Empresas.Fiscalizadas\\
-\hline
-1998 & 7.042\\
-\hline
-1999 & 6.561\\
-\hline
-2000 & 8.585\\
-\hline
-2001 & 9.641\\
-\hline
-2002 & 8.873\\
-\hline
-2003 & 9.367\\
-\hline
-2004 & 13.856\\
-\hline
-2005 & 12.192\\
-\hline
-2006 & 13.326\\
-\hline
-2007 & 13.390\\
-\hline
-2008 & 10.839\\
-\hline
-2009 & 13.379\\
-\hline
-2010 & 11.978\\
-\hline
-\end{tabular}
-\end{table}
+Table: (\#tab:unnamed-chunk-77)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
+
+  Ano  Empresas.Fiscalizadas 
+-----  ----------------------
+ 1998  7.042                 
+ 1999  6.561                 
+ 2000  8.585                 
+ 2001  9.641                 
+ 2002  8.873                 
+ 2003  9.367                 
+ 2004  13.856                
+ 2005  12.192                
+ 2006  13.326                
+ 2007  13.390                
+ 2008  10.839                
+ 2009  13.379                
+ 2010  11.978                
 
 Fonte: MTE. SFIT. Elaboração: DIEESE.
 
@@ -2344,14 +2246,10 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
      col="blue",xlim=c(1998,2010))
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-78-1} 
-
-}
-
-\caption{Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010}(\#fig:unnamed-chunk-78)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-html/unnamed-chunk-78-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="\textwidth" />
+<p class="caption">(\#fig:unnamed-chunk-78)Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
+</div>
 
 onde, no argumento `ylim`, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
 
@@ -2409,14 +2307,10 @@ legend(0,40,c("temp_inst","temp_max","temp_min"),
   col =c("blue","red","green"),pch=4.1,cex = 0.75)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-80-1} 
-
-}
-
-\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}(\#fig:unnamed-chunk-80)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-html/unnamed-chunk-80-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="\textwidth" />
+<p class="caption">(\#fig:unnamed-chunk-80)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
+</div>
 
 ## Estatísticas Descritivas
 
@@ -2648,14 +2542,10 @@ Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a
 
 A inferência estatística, ou estatística inferencial, tem por objetivo concluir e tomar decisões, com base em amostras (Figura \@ref(fig:infestat)). Usam-se dados extraídos de uma amostra para produzir inferência sobre a população [@lopes2008].
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{infestat} 
-
-}
-
-\caption{Inferência Estatística}(\#fig:infestat)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="infestat.png" alt="Inferência Estatística" width="\textwidth" />
+<p class="caption">(\#fig:infestat)Inferência Estatística</p>
+</div>
 
 Em Estatística, o termo **população** é definido como conjunto de indivíduos, ou itens, com pelo menos uma característica em comum, podendo ser finita ou infinita [@lopes2008]. Por exemplo, água de um rio, sangue de uma pessoa, lote de peças produzidas por uma indústria, eleitores de um município.
 
@@ -2770,14 +2660,10 @@ Hipóteses do teste:
 
 O **valor p** reflete a plausibilidade de se obter tais resultados  no caso de H0 ser de fato verdadeira.
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{testehip1} 
-
-}
-
-\caption{Teste de hipóteses}(\#fig:testehip1)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="testehip1.png" alt="Teste de hipóteses" width="\textwidth" />
+<p class="caption">(\#fig:testehip1)Teste de hipóteses</p>
+</div>
 
 
 
@@ -3205,14 +3091,10 @@ Conclusão: Rejeita-se H0 com nível de significância de 1\% e conclui-se que a
 
 O teste de hipótese para duas médias aplica-se quando se deseja comparar dois grupos:
 
-\begin{figure}
-
-{\centering \includegraphics[width=\textwidth]{testehip2} 
-
-}
-
-\caption{Teste de hipótese para dois grupos}(\#fig:testehip2)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="testehip2.png" alt="Teste de hipótese para dois grupos" width="\textwidth" />
+<p class="caption">(\#fig:testehip2)Teste de hipótese para dois grupos</p>
+</div>
 
 Podemos comparar duas médias de duas amostras dependentes, também chamadas de pareadas, ou médias de duas amostras independentes.
 
@@ -3220,20 +3102,13 @@ Podemos comparar duas médias de duas amostras dependentes, também chamadas de 
 
 **Exemplo 10**: Foi obtido o peso de seis indivíduos antes e após um treinamento de exercício físico. Teste a hipótese de que a média antes do treinamento é diferente da média após o treinamento.
 
-\begin{table}
 
-\caption{(\#tab:unnamed-chunk-108)Amostras dependentes}
-\centering
-\begin{tabular}[t]{l|r|r|r|r|r|r}
-\hline
-Indivíduo & A & B & C & D & E & F\\
-\hline
-Peso antes do treinamento & 99 & 62 & 74 & 59 & 70 & 73\\
-\hline
-Peso depois do treinamento & 94 & 62 & 66 & 58 & 70 & 76\\
-\hline
-\end{tabular}
-\end{table}
+Table: (\#tab:unnamed-chunk-108)Amostras dependentes
+
+Indivíduo                      A    B    C    D    E    F
+---------------------------  ---  ---  ---  ---  ---  ---
+Peso antes do treinamento     99   62   74   59   70   73
+Peso depois do treinamento    94   62   66   58   70   76
 
 No software RStudio, usa-se o `t.test| para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.
 
@@ -3270,20 +3145,13 @@ Conclusão: Não rejeita-se H0 e conclui-se que a média de peso antes do treina
 
 **Exemplo 11**: (adaptado de <www.inf.ufsc.br/~marcelo/testes2.html>) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Podemos concluir que o uso da ração contribuiu para o aumento do peso médio dos animais? 
 
-\begin{table}
 
-\caption{(\#tab:unnamed-chunk-110)Amostras dependentes - caso 2}
-\centering
-\begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
-\hline
-Cobaia & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
-\hline
-Antes & 635 & 704 & 662 & 560 & 603 & 745 & 698 & 575 & 633 & 669\\
-\hline
-Depois & 640 & 712 & 681 & 558 & 610 & 740 & 707 & 585 & 635 & 682\\
-\hline
-\end{tabular}
-\end{table}
+Table: (\#tab:unnamed-chunk-110)Amostras dependentes - caso 2
+
+Cobaia      1     2     3     4     5     6     7     8     9    10
+-------  ----  ----  ----  ----  ----  ----  ----  ----  ----  ----
+Antes     635   704   662   560   603   745   698   575   633   669
+Depois    640   712   681   558   610   740   707   585   635   682
 
 **H0**: média antes $=$ média depois
 
@@ -3323,18 +3191,13 @@ Primeiramente precisamos saber se existe homogeneidade de variâncias populacion
 
 
 
-\begin{table}
 
-\caption{(\#tab:unnamed-chunk-112)Comparação de dois tipos diferentes de tecidos}
-\centering
-\begin{tabular}[t]{l|l|l|l|l|l|l|l}
-\hline
-Tecido A & 36 & 26 & 31 & 38 & 28 & 20 & 37\\
-\hline
-Tecido B & 39 & 27 & 35 & 42 & 31 & 39 & 22\\
-\hline
-\end{tabular}
-\end{table}
+Table: (\#tab:unnamed-chunk-112)Comparação de dois tipos diferentes de tecidos
+
+---------  ---  ---  ---  ---  ---  ---  ---
+Tecido A   36   26   31   38   28   20   37 
+Tecido B   39   27   35   42   31   39   22 
+---------  ---  ---  ---  ---  ---  ---  ---
 
 Teste se um tecido é mais pesado que o outro.
 
@@ -3415,23 +3278,34 @@ H1: existe associação entre tamanho da propriedade e armazenamento seguro (as 
 Carregando pacotes exigidos: kableExtra
 ```
 
-\begin{table}
-
-\caption{(\#tab:qui2)Tamanho da propriedade e armazenamento seguro dos agrotóxicos, agricultores de Cerro Largo, RS, 2017}
-\centering
-\begin{tabular}[t]{l|r|r}
-\hline
-\multicolumn{1}{c|}{Tamanho da Propriedade} & \multicolumn{2}{|c}{Armazenamento seguro} \\
-\cline{1-1} \cline{2-3}
-  & Não & Sim\\
-\hline
-Até 25 ha & 59 & 8\\
-\hline
-26 ha ou mais & 31 & 14\\
-\hline
-\multicolumn{3}{l}{\textit{Fonte:}  @Ristow2017.}\\
-\end{tabular}
-\end{table}
+<table>
+<caption>(\#tab:qui2)Tamanho da propriedade e armazenamento seguro dos agrotóxicos, agricultores de Cerro Largo, RS, 2017</caption>
+ <thead>
+<tr>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Tamanho da Propriedade</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Armazenamento seguro</div></th>
+</tr>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Não </th>
+   <th style="text-align:right;"> Sim </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Até 25 ha </td>
+   <td style="text-align:right;"> 59 </td>
+   <td style="text-align:right;"> 8 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 26 ha ou mais </td>
+   <td style="text-align:right;"> 31 </td>
+   <td style="text-align:right;"> 14 </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Fonte:</span> <sup></sup>  @Ristow2017.</td></tr></tfoot>
+</table>
 -->
 
 Table: (\#tab:tamprop)Tamanho da propriedade e armazenamento seguro dos agrotóxicos, agricultores de Cerro Largo, RS, 2017.
@@ -3553,23 +3427,34 @@ Então devemos concluir pela rejeição ou não da H0 e interpretar esse resulta
 Caso pelo menos uma casela tenha frequência esperada menor que 5 como por exemplo na tabela abaixo <!--\@ref(tab:qui3)-->, utilizamos o teste exato de Fisher.
 
 <!--
-\begin{table}
-
-\caption{(\#tab:qui3)Tamanho da propriedade e devolução das embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS, 2017}
-\centering
-\begin{tabular}[t]{l|r|r}
-\hline
-\multicolumn{1}{c|}{Tamanho da Propriedade} & \multicolumn{2}{|c}{Devolução} \\
-\cline{1-1} \cline{2-3}
-  & Não & Sim\\
-\hline
-Até 25 ha & 8 & 59\\
-\hline
-26 ha ou mais & 3 & 43\\
-\hline
-\multicolumn{3}{l}{\textit{Fonte:}  @Ristow2017.}\\
-\end{tabular}
-\end{table}
+<table>
+<caption>(\#tab:qui3)Tamanho da propriedade e devolução das embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS, 2017</caption>
+ <thead>
+<tr>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Tamanho da Propriedade</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Devolução</div></th>
+</tr>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Não </th>
+   <th style="text-align:right;"> Sim </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Até 25 ha </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 59 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 26 ha ou mais </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 43 </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Fonte:</span> <sup></sup>  @Ristow2017.</td></tr></tfoot>
+</table>
 -->
 
 Table: (\#tab:tamprop1)Tamanho da propriedade e devolução das embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS, 2017.
@@ -3674,23 +3559,34 @@ McNemar's chi-squared = 0.045, df = 1, p-value = 0.8
 Importante observar que para executar o teste de McNemar: no software R os dados na matriz (tabela de contingência) devem ser distribuídos da mesma maneira tanto nas linhas quanto nas colunas. Isto é, "a" e "d" devem expressar o mesmo comportamento. Por exemplo: aprovado, desaprovado, aprovado, desaprovado. 
 
 <!--
-\begin{table}
-
-\caption{(\#tab:qui4)Tabela de contingência}
-\centering
-\begin{tabular}[t]{l|l|l}
-\hline
-\multicolumn{1}{c|}{Antes} & \multicolumn{2}{|c}{Depois} \\
-\cline{1-1} \cline{2-3}
-  & Aprovado & Desaprovado\\
-\hline
-Aprovado & a & b\\
-\hline
-Desaprovado & c & d\\
-\hline
-\multicolumn{3}{l}{\textit{Fonte:}  Dados simulados.}\\
-\end{tabular}
-\end{table}
+<table>
+<caption>(\#tab:qui4)Tabela de contingência</caption>
+ <thead>
+<tr>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Antes</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Depois</div></th>
+</tr>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;"> Aprovado </th>
+   <th style="text-align:left;"> Desaprovado </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Aprovado </td>
+   <td style="text-align:left;"> a </td>
+   <td style="text-align:left;"> b </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Desaprovado </td>
+   <td style="text-align:left;"> c </td>
+   <td style="text-align:left;"> d </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Fonte:</span> <sup></sup>  Dados simulados.</td></tr></tfoot>
+</table>
 -->
 
 
@@ -3714,41 +3610,63 @@ Fonte: Dados simulados.
 Como trata-se de duas amostras dependentes (antes e após) não podemos aplicar o teste de qui-quadrado. O teste adequado é McNemar.
 
 <!--
-\begin{table}
-
-\caption{(\#tab:qui55)Situação do peso de cobaias do estudo antes e após a intervenção}
-\centering
-\begin{tabular}[t]{l|r|r}
-\hline
-\multicolumn{1}{c|}{Peso Antes} & \multicolumn{2}{|c}{Peso Após} \\
-\cline{1-1} \cline{2-3}
-  & Adequado & Sobrepeso\\
-\hline
-Aprovado & 15 & 5\\
-\hline
-Desaprovado & 18 & 7\\
-\hline
-\multicolumn{3}{l}{\textit{Fonte:}  Dados simulados.}\\
-\end{tabular}
-\end{table}
+<table>
+<caption>(\#tab:qui55)Situação do peso de cobaias do estudo antes e após a intervenção</caption>
+ <thead>
+<tr>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Peso Antes</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Peso Após</div></th>
+</tr>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Adequado </th>
+   <th style="text-align:right;"> Sobrepeso </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Aprovado </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Desaprovado </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 7 </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Fonte:</span> <sup></sup>  Dados simulados.</td></tr></tfoot>
+</table>
 -->
 <!--
-\begin{table}
-
-\caption{(\#tab:unnamed-chunk-123)Situação do peso de cobaias do estudo antes e após a intervenção.}
-\centering
-\begin{tabular}[t]{l|l|l}
-\hline
-Antes & Após & .\\
-\hline
- & Adequado & Sobrepeso\\
-\hline
-Aprovado & 15 & 5\\
-\hline
-Desaprovado & 18 & 7\\
-\hline
-\end{tabular}
-\end{table}
+<table>
+<caption>(\#tab:unnamed-chunk-123)Situação do peso de cobaias do estudo antes e após a intervenção.</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Antes </th>
+   <th style="text-align:left;"> Após </th>
+   <th style="text-align:left;"> . </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> Adequado </td>
+   <td style="text-align:left;"> Sobrepeso </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Aprovado </td>
+   <td style="text-align:left;"> 15 </td>
+   <td style="text-align:left;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Desaprovado </td>
+   <td style="text-align:left;"> 18 </td>
+   <td style="text-align:left;"> 7 </td>
+  </tr>
+</tbody>
+</table>
 -->
 
 
@@ -3823,30 +3741,45 @@ Neste caso usamos o teste de qui-quadrado para verificar se o conjunto de dados 
 
 **Exemplo 3**: Deseja-se verificar se o número de borrachudos é o mesmo em diferentes pontos da margem de um rio. O número de borrachudos observados para cada ponto (local) é apresentado na Tabela \@ref(tab:borrach).
 
-\begin{table}
-
-\caption{(\#tab:borrach)Número de borrachudos nos diferentes pontos}
-\centering
-\begin{tabular}[t]{l|r}
-\hline
-Ponto & Borrachudos\\
-\hline
-Ponto 1 & 19\\
-\hline
-Ponto 2 & 12\\
-\hline
-Ponto 3 & 10\\
-\hline
-Ponto 4 & 17\\
-\hline
-Ponto 5 & 25\\
-\hline
-Ponto 6 & 22\\
-\hline
-Ponto 7 & 15\\
-\hline
-\end{tabular}
-\end{table}
+<table>
+<caption>(\#tab:borrach)Número de borrachudos nos diferentes pontos</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Ponto </th>
+   <th style="text-align:right;"> Borrachudos </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Ponto 1 </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ponto 2 </td>
+   <td style="text-align:right;"> 12 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ponto 3 </td>
+   <td style="text-align:right;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ponto 4 </td>
+   <td style="text-align:right;"> 17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ponto 5 </td>
+   <td style="text-align:right;"> 25 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ponto 6 </td>
+   <td style="text-align:right;"> 22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ponto 7 </td>
+   <td style="text-align:right;"> 15 </td>
+  </tr>
+</tbody>
+</table>
 
 Fonte: Dados simulados.
 
@@ -3915,12 +3848,282 @@ X-squared = 8.1, df = 6, p-value = 0.2
 
 # Modelos de Regressão
 
+Muitas vezes há a necessidade de estudar duas ou mais variáveis ao mesmo tempo com o objetivo de predizer uma variável em função da(s) outra(s). Por exemplo, verificar se sólidos removidos de um material relaciona-se com o tempo de secagem e qual é a forma dessa relação. Outros exemplos: relação entre tempo de estudo e desempenho a uma avaliação; relação entre investimento em comunicação e vendas; entre outros.
+
+A análise de correlação permite verificar a relação entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Estudaremos os modelos de regressão linear na qual a variáveis resposta ($Y$) é quantitativa e as variáveis preditoras ($X_i$) são quantitativas ou qualitativas.
+
+## Correlação linear
+
+É a técnica mais simples para estudar a relação entre duas variáveis. Os dados compõem uma única amostra de pares de valores ($x_i, y_i$), correspondendo aos valores das variáveis X e Y, respectivamente, feitas em cada elemento da amostra. Para analisar a existência de relação entre as duas variáveis, primeiramente pode-se fazer o Diagrama de Dispersão.
+
+## Diagrama de dispersão
+
+É um gráfico para verificar a existência de relação entre as variáveis X e Y. É composto por pontos, os quais correspondem aos pares de valores ($xi, y_i$), sendo a variável X representada no eixo horizontal e a variável Y representada no eixo vertical.
+
+O diagrama de disperção fornece uma visualização gráfica do comportamento conjunto das duas variávei em estudo. Na Figura \@ref(fig:diag) a percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variaveis crescem conjuntamente, já na Figura \@ref(fig:diag)b percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura \@ref(fig:diag)c informa a ausência de relação entre as duas variáveis e, a Figura \@ref(fig:diag)d mostra uma relação não linear, a qual não será objeto de estudo nesta publicação.
+
+
+<div class="figure" style="text-align: center">
+<img src="correlacao1.png" alt="Diagramas de Dispersão" width="\textwidth" />
+<p class="caption">(\#fig:diag)Diagramas de Dispersão</p>
+</div>
+
+Fonte: Elaborado pelo(s) autor(es).
+
+**Exemplo**: Suponha que 15 alunos foram selecionados aleatoriamente na turma de Estatística, sendo registrado o tempo de estudo e nota da atividade avaliativa. O objetivo da pesquisa é verificar se existe relação entre tempo de estudo e nota.
+
+Table: (\#tab:reg1)Relação entre o tempo de estudo e a nota.
+
+  -----------------------------
+  **Tempo**       **Nota**     
+  --------------  -------------
+  4,0             5,5
+  
+  6,0             7,5
+  
+  5,5             8,0
+  
+  5,0             7,0
+  
+  6,8             8,1
+  
+  6,5             8,6
+  
+  3,5             4,7
+  
+  4,5             7,5
+  
+  7,5             9,5
+  
+  8,0             9,5
+  
+  5,4             7,8
+  
+  6,5             8,0
+  
+  7,7             9,1
+  
+  7,5             8,0
+  -----------------------------
+
+Fonte: Dados simulados.
+
+Sintaxe no software R:
+
+`plot(x,y)`
+
+
+```r
+tempo=c(4,6,5.5,5,6.8,6.5,3.5,4.5,7,8,5.4,6.5,7.7,7.5,5.8)
+nota=c(5.5,7.5,8,7,8.1,8.6,4.7,7.5,9.5,9.5,7.8,8,9.1,9.5,8)
+```
+
+O diagrama de dispersão do exemplo está representado abaixo.
+
+
+```r
+plot(tempo,nota)
+```
+
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-html/unnamed-chunk-128-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="\textwidth" />
+<p class="caption">(\#fig:unnamed-chunk-128)Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo</p>
+</div>
+
+Fonte: Elaborado pelo(s) autor(es).
+
+## Coeficiente de Correlação Linear de Pearson
+
+O coeficiente de correlação linear de Pearson (Karl Pearson 1857-1936) mede o grau de relacionamento linear entre os valores pareados $x_i$ e $y_i$ em uma amostra. O coeficiente linear de Pearson é obtido da seguinte forma:
+
+
+$$
+\begin{equation}
+r=\frac{n\sum xy-(\sum x)(\sum y)}{\sqrt{n(\sum x^2)-(\sum x)^2} \sqrt{(\sum y^2)-(\sum y)^2}}
+\end{equation}
+$$
+em que:
+
+- n = número de pares na amostra
+- x: valores da variável x
+- y: valores da variável y
+
+O coeficiente de correlação linear (r) é uma estatística amostral, representando a magnitude da relação entre duas variáveis na amostra. O parâmetro populacional é representado por $\rho$. O coeficiente de correlação linear assume valores entre -1 e +1, inclusive. Se o valor de r está próximo de 0, conclui-se que não há correlação linear entre as variáveis X e Y. Seo valor de r está próximo de -1 ou +1, conclui-se pela existência de correlação linear significativa entre as variáveis X e Y, sendo que o sinal indica uma relação linear positiva (direta) ou negativa (inversa).
+
+Sintaxe no software R:
+
+`cor(x,y)`
+
+Obs: x e y são  numéricos.
+
+
+```r
+cor(tempo,nota)
+```
+
+```
+[1] 0.9224
+```
+
+
+
+## Modelo de Regressão
+
+O estudo de regressão refere-se aos casos em que se pretende estabelecer uma relação entre uma variável Y considerada dependente (variável resposta ou desfecho) e uma ou mais variáveis $x_1, x_2,\cdots, x_k$ (variáveis explicativas ou preditoras) consideradas independentes.
+
+O objetivo da análise de regressão é ajustar uma equação que permita explicar o comportamento da variável resposta de maneira que o valor previsto possa estar próximo do que seria observado. A forma do modelo de regressão depende da relação entre as variáveis, expressa visualmente pelo diagrama de dispersão, conforme Figura \@ref(fig:diag).
+
+A análise de regressão é uma técnica muito utilizada em variáveis quantitativas, como por exemplo:
+
+- Vendas em função do investimento em comunicação;
+
+- Altura de crianças em função da idade;
+
+- Nota obtida em função de horas de estudo;
+
+- Produtividade de uma cultura em relação a quantidade de adubação.
+
+Na Figura \@ref(fig:regress) é apresentada a variação explicada e não explicada na análise por modelo regressão.
+
+
+<div class="figure" style="text-align: center">
+<img src="regress1.png" alt="Variação explicada e não explicada na análise de regressão" width="\textwidth" />
+<p class="caption">(\#fig:regress)Variação explicada e não explicada na análise de regressão</p>
+</div>
+
+Fonte: Elaborado pelo(s) autor(es).
+
+
+Observa-se na Figura \@ref(fig:regress), uma identidade na regressão, conforme a seguinte expressão:
+
+<div class="figure" style="text-align: center">
+<img src="regress2.png" alt="Identidade da Regressão" width="\textwidth" />
+<p class="caption">(\#fig:regress2)Identidade da Regressão</p>
+</div>
+Fonte: Elaborado pelo(s) autor(es).
+
+Assim, a partir da expressão apresentada que o modelo de regressão será mais adequado na medida em que a proporção de "Soma de Quadrados de Regressão" é mais alta em relação à "Soma de Quadrado Total" do que a "Soma de Quadrado do Resíduo".
+
+## Modelo de Regressão Linear Simples
+
+
+O modelo de regressão linear simples é usado quando a resposta da variável dependente se expressa de forma linear (Figura \@ref(fig:regress) e neste caso com apenas uma variável explicativa, expresso da seguinte maneira [@hoffmann1998]:
+
+$$
+\begin{equation}
+y_i=\beta_0+\beta_1x_i+\varepsilon _i
+\end{equation}
+$$
+
+Em que:
+
+
+$y_i$: valores da variável resposta (dependente, desfecho), $i = 1,2,...,n$ observações;
+
+$x_i$: valores da variável explicativa (independente, preditora), $i = 1,2,...,n$ observações;
+
+$\beta_0$: coeficiente linear (intercepto). Interpretado como o valor da variável dependente quando a variável independente é igual a 0;
+
+$\beta_1$: coeficiente angular (inclinação). Interpretado como acréscimo/decréscimo na variável dependente para a variação de uma unidade na variável independente;
+
+$\varepsilon_i$: erros aleatórios supostamente de uma população normal, com média 0 e variância constante $\begin{bmatrix}\varepsilon_i N(0, \sigma^2)\end{bmatrix}$.
+
+
+## Método dos Mínimos Quadrados
+
+
+O método dos mínimos quadrados (MMQ) é utilizado para a obtenção dos coeficientes linear e angular. Consiste em minimizar a Soma de Quadrados de Resíduos, ou seja, minimizar:
+
+$$
+\begin{equation}
+\sum (y_i-\hat y_i)^2=\sum (y_i-b_0-b_1x_i^2)
+\end{equation}
+$$
+
+As expressões para os coeficientes, que minimizam SQResíduos são obtidas pela derivadas desta soma de quadrados em relação a $b_0$ e em relação a $b_1$ e podem ser descritas por [@hoffmann1998]:
+
+$$
+\begin{equation}
+b_1=\frac{\sum xy-\frac{\sum x \sum y}{n}}{\sum x^2 - \frac{(\sum x)^2}{n}}
+\end{equation}
+$$
+
+em que:
+
+**n**: número de pares na amostra;
+**x**: valores da variável x;
+**y**: valores da variável y.
+
+e
+
+$$
+\begin{equation}
+b_0=\bar{y}-b_1\bar{x}
+\end{equation}
+$$
+
+em que:
+
+**$\bar{x}$**: média aritmética dos valores de x;
+
+**$\bar{y}$**: média aritmética dos valores de y;
+
+**$b_1$**: valor calculado do coeficiente angular.
+
+Obtendo-se a seguinte equação de regressão linear simples estimada:
+
+$$
+\begin{equation}
+\hat{y}=b_0-b_1{x}
+\end{equation}
+$$
+
+em que:
+
+**$b_0$**: coeficiente linear estimado;
+
+**$b_1$**: coeficiente angular estimado;
+
+**$x$**: valores da variável explicativa.
+
+Esta equação refere-se a reta de regressão, se $b_1$ é um valor positivo a reta é crescente, demonstrando uma relação positiva entre as variáveis e se $b_1$ é um o valor negativo, a reta é decrescente, demonstrando uma relação inversa entre as variáveis.
+
+Sintaxe no software R:
+
+`regressao=lm(y~x)`
+
+Obs: y são valores numéricos da variável resposta e x são valores numéricos da variável preditora.
+
+Por exemplo:
+
+
+```r
+regressao=lm(nota~tempo)
+regressao
+```
+
+```
+
+Call:
+lm(formula = nota ~ tempo)
+
+Coefficients:
+(Intercept)        tempo  
+      2.221        0.947  
+```
+
+## Análise de Variância
+
+
+
 
 
 
 
 
 # RMarkdown
+
+# Referências {-}
 
 
 

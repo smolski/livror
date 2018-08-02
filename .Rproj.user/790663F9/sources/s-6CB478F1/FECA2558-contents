@@ -2256,12 +2256,256 @@ chisq.test(borrachudos, p=dist)
 
 # Modelos de Regressão
 
+Muitas vezes há a necessidade de estudar duas ou mais variáveis ao mesmo tempo com o objetivo de predizer uma variável em função da(s) outra(s). Por exemplo, verificar se sólidos removidos de um material relaciona-se com o tempo de secagem e qual é a forma dessa relação. Outros exemplos: relação entre tempo de estudo e desempenho a uma avaliação; relação entre investimento em comunicação e vendas; entre outros.
+
+A análise de correlação permite verificar a relação entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Estudaremos os modelos de regressão linear na qual a variáveis resposta ($Y$) é quantitativa e as variáveis preditoras ($X_i$) são quantitativas ou qualitativas.
+
+## Correlação linear
+
+É a técnica mais simples para estudar a relação entre duas variáveis. Os dados compõem uma única amostra de pares de valores ($x_i, y_i$), correspondendo aos valores das variáveis X e Y, respectivamente, feitas em cada elemento da amostra. Para analisar a existência de relação entre as duas variáveis, primeiramente pode-se fazer o Diagrama de Dispersão.
+
+## Diagrama de dispersão
+
+É um gráfico para verificar a existência de relação entre as variáveis X e Y. É composto por pontos, os quais correspondem aos pares de valores ($xi, y_i$), sendo a variável X representada no eixo horizontal e a variável Y representada no eixo vertical.
+
+O diagrama de disperção fornece uma visualização gráfica do comportamento conjunto das duas variávei em estudo. Na Figura \@ref(fig:diag) a percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variaveis crescem conjuntamente, já na Figura \@ref(fig:diag)b percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura \@ref(fig:diag)c informa a ausência de relação entre as duas variáveis e, a Figura \@ref(fig:diag)d mostra uma relação não linear, a qual não será objeto de estudo nesta publicação.
+
+
+```{r diag, echo=FALSE, fig.cap='Diagramas de Dispersão'}
+knitr::include_graphics("correlacao1.png")
+```
+
+Fonte: Elaborado pelo(s) autor(es).
+
+**Exemplo**: Suponha que 15 alunos foram selecionados aleatoriamente na turma de Estatística, sendo registrado o tempo de estudo e nota da atividade avaliativa. O objetivo da pesquisa é verificar se existe relação entre tempo de estudo e nota.
+
+Table: (\#tab:reg1)Relação entre o tempo de estudo e a nota.
+
+  -----------------------------
+  **Tempo**       **Nota**     
+  --------------  -------------
+  4,0             5,5
+  
+  6,0             7,5
+  
+  5,5             8,0
+  
+  5,0             7,0
+  
+  6,8             8,1
+  
+  6,5             8,6
+  
+  3,5             4,7
+  
+  4,5             7,5
+  
+  7,5             9,5
+  
+  8,0             9,5
+  
+  5,4             7,8
+  
+  6,5             8,0
+  
+  7,7             9,1
+  
+  7,5             8,0
+  -----------------------------
+
+Fonte: Dados simulados.
+
+Sintaxe no software R:
+
+`plot(x,y)`
+
+```{r}
+tempo=c(4,6,5.5,5,6.8,6.5,3.5,4.5,7,8,5.4,6.5,7.7,7.5,5.8)
+nota=c(5.5,7.5,8,7,8.1,8.6,4.7,7.5,9.5,9.5,7.8,8,9.1,9.5,8)
+```
+
+O diagrama de dispersão do exemplo está representado abaixo.
+
+```{r, echo=TRUE, message=FALSE, fig.cap='Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo'}
+plot(tempo,nota)
+```
+
+Fonte: Elaborado pelo(s) autor(es).
+
+## Coeficiente de Correlação Linear de Pearson
+
+O coeficiente de correlação linear de Pearson (Karl Pearson 1857-1936) mede o grau de relacionamento linear entre os valores pareados $x_i$ e $y_i$ em uma amostra. O coeficiente linear de Pearson é obtido da seguinte forma:
+
+
+$$
+\begin{equation}
+r=\frac{n\sum xy-(\sum x)(\sum y)}{\sqrt{n(\sum x^2)-(\sum x)^2} \sqrt{(\sum y^2)-(\sum y)^2}}
+\end{equation}
+$$
+em que:
+
+- n = número de pares na amostra
+- x: valores da variável x
+- y: valores da variável y
+
+O coeficiente de correlação linear (r) é uma estatística amostral, representando a magnitude da relação entre duas variáveis na amostra. O parâmetro populacional é representado por $\rho$. O coeficiente de correlação linear assume valores entre -1 e +1, inclusive. Se o valor de r está próximo de 0, conclui-se que não há correlação linear entre as variáveis X e Y. Seo valor de r está próximo de -1 ou +1, conclui-se pela existência de correlação linear significativa entre as variáveis X e Y, sendo que o sinal indica uma relação linear positiva (direta) ou negativa (inversa).
+
+Sintaxe no software R:
+
+`cor(x,y)`
+
+Obs: x e y são  numéricos.
+
+```{r, echo=TRUE}
+cor(tempo,nota)
+```
+
+
+
+## Modelo de Regressão
+
+O estudo de regressão refere-se aos casos em que se pretende estabelecer uma relação entre uma variável Y considerada dependente (variável resposta ou desfecho) e uma ou mais variáveis $x_1, x_2,\cdots, x_k$ (variáveis explicativas ou preditoras) consideradas independentes.
+
+O objetivo da análise de regressão é ajustar uma equação que permita explicar o comportamento da variável resposta de maneira que o valor previsto possa estar próximo do que seria observado. A forma do modelo de regressão depende da relação entre as variáveis, expressa visualmente pelo diagrama de dispersão, conforme Figura \@ref(fig:diag).
+
+A análise de regressão é uma técnica muito utilizada em variáveis quantitativas, como por exemplo:
+
+- Vendas em função do investimento em comunicação;
+
+- Altura de crianças em função da idade;
+
+- Nota obtida em função de horas de estudo;
+
+- Produtividade de uma cultura em relação a quantidade de adubação.
+
+Na Figura \@ref(fig:regress) é apresentada a variação explicada e não explicada na análise por modelo regressão.
+
+
+```{r regress, echo=FALSE, fig.cap="Variação explicada e não explicada na análise de regressão"}
+knitr::include_graphics("regress1.png")
+```
+
+Fonte: Elaborado pelo(s) autor(es).
+
+
+Observa-se na Figura \@ref(fig:regress), uma identidade na regressão, conforme a seguinte expressão:
+
+```{r regress2, echo=FALSE, fig.cap="Identidade da Regressão"}
+knitr::include_graphics("regress2.png")
+```
+Fonte: Elaborado pelo(s) autor(es).
+
+Assim, a partir da expressão apresentada que o modelo de regressão será mais adequado na medida em que a proporção de "Soma de Quadrados de Regressão" é mais alta em relação à "Soma de Quadrado Total" do que a "Soma de Quadrado do Resíduo".
+
+## Modelo de Regressão Linear Simples
+
+
+O modelo de regressão linear simples é usado quando a resposta da variável dependente se expressa de forma linear (Figura \@ref(fig:regress) e neste caso com apenas uma variável explicativa, expresso da seguinte maneira [@hoffmann1998]:
+
+$$
+\begin{equation}
+y_i=\beta_0+\beta_1x_i+\varepsilon _i
+\end{equation}
+$$
+
+Em que:
+
+
+$y_i$: valores da variável resposta (dependente, desfecho), $i = 1,2,...,n$ observações;
+
+$x_i$: valores da variável explicativa (independente, preditora), $i = 1,2,...,n$ observações;
+
+$\beta_0$: coeficiente linear (intercepto). Interpretado como o valor da variável dependente quando a variável independente é igual a 0;
+
+$\beta_1$: coeficiente angular (inclinação). Interpretado como acréscimo/decréscimo na variável dependente para a variação de uma unidade na variável independente;
+
+$\varepsilon_i$: erros aleatórios supostamente de uma população normal, com média 0 e variância constante $\begin{bmatrix}\varepsilon_i N(0, \sigma^2)\end{bmatrix}$.
+
+
+## Método dos Mínimos Quadrados
+
+
+O método dos mínimos quadrados (MMQ) é utilizado para a obtenção dos coeficientes linear e angular. Consiste em minimizar a Soma de Quadrados de Resíduos, ou seja, minimizar:
+
+$$
+\begin{equation}
+\sum (y_i-\hat y_i)^2=\sum (y_i-b_0-b_1x_i^2)
+\end{equation}
+$$
+
+As expressões para os coeficientes, que minimizam SQResíduos são obtidas pela derivadas desta soma de quadrados em relação a $b_0$ e em relação a $b_1$ e podem ser descritas por [@hoffmann1998]:
+
+$$
+\begin{equation}
+b_1=\frac{\sum xy-\frac{\sum x \sum y}{n}}{\sum x^2 - \frac{(\sum x)^2}{n}}
+\end{equation}
+$$
+
+em que:
+
+**n**: número de pares na amostra;
+**x**: valores da variável x;
+**y**: valores da variável y.
+
+e
+
+$$
+\begin{equation}
+b_0=\bar{y}-b_1\bar{x}
+\end{equation}
+$$
+
+em que:
+
+**$\bar{x}$**: média aritmética dos valores de x;
+
+**$\bar{y}$**: média aritmética dos valores de y;
+
+**$b_1$**: valor calculado do coeficiente angular.
+
+Obtendo-se a seguinte equação de regressão linear simples estimada:
+
+$$
+\begin{equation}
+\hat{y}=b_0-b_1{x}
+\end{equation}
+$$
+
+em que:
+
+**$b_0$**: coeficiente linear estimado;
+
+**$b_1$**: coeficiente angular estimado;
+
+**$x$**: valores da variável explicativa.
+
+Esta equação refere-se a reta de regressão, se $b_1$ é um valor positivo a reta é crescente, demonstrando uma relação positiva entre as variáveis e se $b_1$ é um o valor negativo, a reta é decrescente, demonstrando uma relação inversa entre as variáveis.
+
+Sintaxe no software R:
+
+`regressao=lm(y~x)`
+
+Obs: y são valores numéricos da variável resposta e x são valores numéricos da variável preditora.
+
+Por exemplo:
+
+```{r reg, echo=TRUE}
+regressao=lm(nota~tempo)
+regressao
+```
+
+## Análise de Variância
+
+
+
 
 
 
 
 
 # RMarkdown
+
+# Referências {-}
 
 
 

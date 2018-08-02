@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1533176045965.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "B4C7CA1F",
+    "lastKnownWriteTime" : 1525311837,
+    "last_content_update" : 1525311837,
+    "path" : "D:/Educ/Software_R/Manuais/Livro_R1/regressao.Rnw",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "278,9",
+        "scrollLine" : "266"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "sweave"
+}

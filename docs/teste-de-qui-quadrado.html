@@ -26,7 +26,7 @@
 <meta name="author" content="Iara Denise Endruweit Battisti">
 
 
-<meta name="date" content="2018-08-01">
+<meta name="date" content="2018-08-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -203,8 +203,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4" data-path="teste-de-qui-quadrado.html"><a href="teste-de-qui-quadrado.html#teste-de-associacao-com-duas-amostras-dependentes"><i class="fa fa-check"></i><b>4.4</b> Teste de associação com duas amostras dependentes</a></li>
 <li class="chapter" data-level="4.5" data-path="teste-de-qui-quadrado.html"><a href="teste-de-qui-quadrado.html#teste-de-qui-quadrado-para-verificar-aderencia-a-uma-distribuicao"><i class="fa fa-check"></i><b>4.5</b> Teste de qui-quadrado para verificar aderência a uma distribuição</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html"><i class="fa fa-check"></i><b>5</b> Modelos de Regressão</a></li>
+<li class="chapter" data-level="5" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html"><i class="fa fa-check"></i><b>5</b> Modelos de Regressão</a><ul>
+<li class="chapter" data-level="5.1" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html#correlacao-linear"><i class="fa fa-check"></i><b>5.1</b> Correlação linear</a></li>
+<li class="chapter" data-level="5.2" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html#diagrama-de-dispersao"><i class="fa fa-check"></i><b>5.2</b> Diagrama de dispersão</a></li>
+<li class="chapter" data-level="5.3" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html#coeficiente-de-correlacao-linear-de-pearson"><i class="fa fa-check"></i><b>5.3</b> Coeficiente de Correlação Linear de Pearson</a></li>
+<li class="chapter" data-level="5.4" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html#modelo-de-regressao"><i class="fa fa-check"></i><b>5.4</b> Modelo de Regressão</a></li>
+<li class="chapter" data-level="5.5" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html#modelo-de-regressao-linear-simples"><i class="fa fa-check"></i><b>5.5</b> Modelo de Regressão Linear Simples</a></li>
+<li class="chapter" data-level="5.6" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html#metodo-dos-minimos-quadrados"><i class="fa fa-check"></i><b>5.6</b> Método dos Mínimos Quadrados</a></li>
+<li class="chapter" data-level="5.7" data-path="modelos-de-regressao.html"><a href="modelos-de-regressao.html#analise-de-variancia"><i class="fa fa-check"></i><b>5.7</b> Análise de Variância</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>6</b> RMarkdown</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referências</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -231,7 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!--Observando-se a Tabela \@ref(tab:qui2), o valor 33 corresponde ao sexo masculino e a opinião favorável (masculino $\bigcap $ favorável), é chamada de $O_{11}$.-->
 <div id="teste-de-qui-quadrado-para-verificar-associacao-entre-duas-variaveis-qualitativas" class="section level2">
 <h2><span class="header-section-number">4.1</span> Teste de qui-quadrado para verificar associação entre duas variáveis qualitativas</h2>
-<p><strong>Exemplo 1</strong>: Uma pesquisa sobre “a exposição a agrotóxicos entre trabalhadores rurais no município de Cerro Largo/RS” foi desenvolvida por Letiane Peccin Ristow, no ano de 2017 (dissertação e mestrado no Programa de Pós-Graduação em Desenvolvimento e Políticas Públicas da UFFS, Campus Cerro Largo. Na Tabela <a href="teste-de-qui-quadrado.html#tab:tamprop">4.1</a> <!--\@ref(tab:qui2)--> são apresentados os resultados do “tamanho da propriedade” e “armazenamento seguro do EPI”. Para verificar a existência de associação significativa entre essas duas variáveis utilizamos o teste de qui-quadrado, dado que são duas variáveis qualitativas: variável 1 - tamanho da propriedade (até 25ha; 26ha ou mais) e variável 2 – armazenamento seguro (sim; não).</p>
+<p><strong>Exemplo 1</strong>: Uma pesquisa sobre “a exposição a agrotóxicos entre trabalhadores rurais no município de Cerro Largo/RS” foi desenvolvida por Letiane Peccin Ristow, no ano de 2017 (dissertação e mestrado no Programa de Pós-Graduação em Desenvolvimento e Políticas Públicas da UFFS, Campus Cerro Largo. Na Tabela <a href="teste-de-qui-quadrado.html#tab:tamprop">4.1</a><!--\@ref(tab:qui2)--> são apresentados os resultados do “tamanho da propriedade” e “armazenamento seguro do EPI”. Para verificar a existência de associação significativa entre essas duas variáveis utilizamos o teste de qui-quadrado, dado que são duas variáveis qualitativas: variável 1 - tamanho da propriedade (até 25ha; 26ha ou mais) e variável 2 – armazenamento seguro (sim; não).</p>
 <p>Primeiramente definimos as seguintes hipóteses estatísticas:</p>
 <p>H0: não existe associação entre tamanho da propriedade e armazenamento seguro (as variáveis são independentes)</p>
 <p>H1: existe associação entre tamanho da propriedade e armazenamento seguro (as variáveis são dependentes)</p>
@@ -332,7 +341,7 @@ em que:</p>
 </div>
 <div id="exemplo-utilizando-os-recursos-do-software-r" class="section level2">
 <h2><span class="header-section-number">4.3</span> Exemplo utilizando os recursos do software R</h2>
-<p>Realizar o teste de associação para os dados da Tabela <a href="teste-de-qui-quadrado.html#tab:tamprop">4.1</a> <!--\@ref(tab:qui2)-->, para isso, digitar os dados da tabela cruzada (tabela de contingência) no formato de uma matriz, valor ij, considerando i=linha e j=coluna, em sequência por coluna (por exemplo, digita-se todos os valores da primeira coluna, depois digita-se todos os valores da segunda coluna e assim sucessivamente).</p>
+<p>Realizar o teste de associação para os dados da Tabela <a href="teste-de-qui-quadrado.html#tab:tamprop">4.1</a>, <!--\@ref(tab:qui2)--> para isso, digitar os dados da tabela cruzada (tabela de contingência) no formato de uma matriz, valor ij, considerando i=linha e j=coluna, em sequência por coluna (por exemplo, digita-se todos os valores da primeira coluna, depois digita-se todos os valores da segunda coluna e assim sucessivamente).</p>
 <p>Sintaxe no software R para incluir os valores no formato de tabela:</p>
 <div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb309-1" data-line-number="1">quiquadrado1&lt;-<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">59</span>,<span class="dv">31</span>,<span class="dv">8</span>,<span class="dv">14</span>),<span class="dt">nc=</span><span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb309-2" data-line-number="2">quiquadrado1</a></code></pre></div>
@@ -340,7 +349,7 @@ em que:</p>
 [1,]   59    8
 [2,]   31   14</code></pre>
 <p>O comando <code>matrix</code> indica que os dados serão organizados em uma matriz, <code>nc</code> indica o número de colunas da tabela, o operador <code>&lt;-</code> atribui os valores digitados no nome informado pelo usuário que neste caso é <code>quiquadrado1</code>.</p>
-<p>O segundo comando <code>quiquadrado1</code>, mostra a matriz elaborada, que neste caso representa uma tabela cruzada de duas linhas e duas colunas, conforme a Tabela <a href="teste-de-qui-quadrado.html#tab:tamprop">4.1</a> <!--\@ref(tab:qui2)-->.</p>
+<p>O segundo comando <code>quiquadrado1</code>, mostra a matriz elaborada, que neste caso representa uma tabela cruzada de duas linhas e duas colunas, conforme a Tabela <a href="teste-de-qui-quadrado.html#tab:tamprop">4.1</a>. <!--\@ref(tab:qui2)--></p>
 <p>Primeiramente, deve-se verificar a existência de alguma casela com frequência esperada menor que 5.</p>
 <div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb311-1" data-line-number="1"><span class="kw">chisq.test</span>(quiquadrado1)<span class="op">$</span>expected</a></code></pre></div>
 <pre><code>      [,1]   [,2]
@@ -761,7 +770,7 @@ data:  borrachudos
 X-squared = 8.1, df = 6, p-value = 0.2</code></pre>
 </div>
 </div>
-<h3> RMarkdown</h3>
+<h3>Referências</h3>
 <div id="refs" class="references">
 <div id="ref-Ristow2017">
 <p>RISTOW, L. P. <strong>Exposição ocupacional de trabalhadores rurais a agrotóxicos e relação com políticas públicas</strong>. Cerro Largo: Universidade Federal da Fronteira Sul, 2017.</p>
