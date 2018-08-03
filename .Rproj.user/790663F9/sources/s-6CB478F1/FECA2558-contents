@@ -2496,6 +2496,11 @@ regressao
 
 ## Análise de Variância
 
+A análise de variância (técnica introduzida por Fisher, na década de 20) testa o ajuste da equação como um todo, ou seja, um teste para verificar se a equação de regressão obtida é significativa ou não. No caso de regressão linear simples, a análise de variância é definida como apresentada na Tabela \@ref(tab:varian).
+
+
+
+
 
 
 
