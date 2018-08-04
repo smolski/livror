@@ -26,7 +26,7 @@
 <meta name="author" content="Iara Denise Endruweit Battisti">
 
 
-<meta name="date" content="2018-08-03">
+<meta name="date" content="2018-08-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -242,7 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="estatistica-descritiva" class="section level1">
 <h1><span class="header-section-number">Capítulo 2</span> Estatística Descritiva</h1>
 <p>A Estatística é uma ciência cujo campo de aplicação estende-se a diferentes áreas do conhecimento humano. Tem por objetivo fornecer métodos e técnicas que permitem lidar, racionalmente, com situações sujeitas a incertezas. Apresenta um conjunto de técnicas e métodos de pesquisa que envolvem o planejamento de estudos (experimentais e observacionais), a coleta e organização de dados, a inferência, a análise e a disseminação de informação.</p>
-<p>Alguns termos extensamente utilizados em estatística, são definidos a seguir <span class="citation">(Triola, <a href="#ref-triola1999">2011</a>)</span>:</p>
+<p>Alguns termos extensamente utilizados em estatística, são definidos a seguir <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>:</p>
 <p><strong>População</strong>: é uma coleção completa de todos os elementos (valores, pessoas, medidas etc.) a serem estudados.</p>
 <p><strong>Censo</strong>: é uma coleção de dados relativos a todos os elementos de uma população.</p>
 <p><strong>Amostra</strong>: é uma sub-coleção de elementos extraídos de uma população.
@@ -250,7 +250,7 @@ Parâmetro é a medida numérica que descreve uma característica de uma popula�
 <p><strong>Estatística</strong>: é uma medida numérica que descreve uma característica de uma amostra.</p>
 <div id="natureza-da-medida-das-variaveis" class="section level2">
 <h2><span class="header-section-number">2.1</span> Natureza da medida das variáveis</h2>
-<p>Variáveis reporta-se a características ou atributos que podem tomar diferentes valores ou categorias, o que se opõe ao conceito de constante <span class="citation">(Almeida e Freire, <a href="#ref-almeida2000">2000</a>)</span>. Assim, variável pode ser definida como sendo a característica dos elementos da amostra ou da população que nos interessa estudar estatisticamente.</p>
+<p>Variáveis reporta-se a características ou atributos que podem tomar diferentes valores ou categorias, o que se opõe ao conceito de constante <span class="citation">(Almeida e Freire <a href="#ref-almeida2000">2000</a>)</span>. Assim, variável pode ser definida como sendo a característica dos elementos da amostra ou da população que nos interessa estudar estatisticamente.</p>
 <p>Variáveis podem ser classificadas da seguinte forma:</p>
 <p><strong>Variáveis quantitativas</strong>: consistem em números que representam contagens ou medidas. Dividem-se em:</p>
 <ol style="list-style-type: lower-alpha">
@@ -260,7 +260,7 @@ Parâmetro é a medida numérica que descreve uma característica de uma popula�
 <p><strong>Variáveis qualitativas</strong>: ou variáveis categóricas, ou atributos que podem ser separados em diferentes categorias que se distinguem por alguma característica não-numérica. Divididas em:</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Variável nominal: caracterizada por dados que consistem apenas em nomes, rótulos ou categorias. Os dados não podem ser dispostos segundo um esquema ordenado (como de baixo para cima). Ex. nacionalidade</p></li>
-<li><p>Variável ordinal: envolve variáveis representadas por nomes que podem ser dispostos em alguma ordem, mas as diferenças entre os valores dos dados não podem ser determinadas, ou não tem sentido. Esse nível dá informações sobre comparações relativas, mas os graus de diferença não servem para cálculos <span class="citation">(Triola, <a href="#ref-triola1999">2011</a>)</span>. Ex. Grau de escolaridade.</p></li>
+<li><p>Variável ordinal: envolve variáveis representadas por nomes que podem ser dispostos em alguma ordem, mas as diferenças entre os valores dos dados não podem ser determinadas, ou não tem sentido. Esse nível dá informações sobre comparações relativas, mas os graus de diferença não servem para cálculos <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>. Ex. Grau de escolaridade.</p></li>
 </ol>
 <p><strong>Dado</strong>: é o valor assumido por uma variável aleatória em um experimento.</p>
 <p>A Estatística subdivide-se em descritiva e inferencial. A estatística descritiva se preocupa em descrever os dados. A estatística inferencial, fundamentada na teoria das probabilidades, se preocupa com a análise destes dados e sua interpretação.</p>
@@ -340,7 +340,7 @@ Sexo :  chr [1:348] &quot;Feminino&quot; &quot;Feminino&quot; &quot;Feminino&quo
 </div>
 <div id="tabela-cruzada-para-apresentacao-das-frequencias-relativas" class="section level3">
 <h3><span class="header-section-number">2.2.3</span> Tabela cruzada para apresentação das frequências relativas</h3>
-<p>Com a introdução do comando `prop.table| é possível gerar, facilmente, tabelas de frequências relativas para as variáveis de interesse. As medidas relativas são importantes para comparar distribuições de frequências <span class="citation">(Barbetta, <a href="#ref-barbetta1988">2010</a>)</span>.</p>
+<p>Com a introdução do comando `prop.table| é possível gerar, facilmente, tabelas de frequências relativas para as variáveis de interesse. As medidas relativas são importantes para comparar distribuições de frequências <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>.</p>
 <p><code>prop.table(table(nome_variável1,nome_variável2))</code></p>
 <p>Ex. Construir uma tabela cruzada apresentando as frequências relativas das variáveis <strong>Sexo</strong> e <strong>Divulgacao</strong>.</p>
 <div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb222-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Divulgacao,Sexo))</a></code></pre></div>
@@ -408,7 +408,7 @@ Figura 2.4: Gráfico de colunas com as variáveis Sexo e Divulgacao (2)
 </div>
 <div id="setograma-ou-grafico-de-pizza" class="section level3">
 <h3><span class="header-section-number">2.3.2</span> Setograma ou gráfico de pizza</h3>
-<p>Os gráficos em setores são utilizados para ilustrar dados qualitativos de modo mais compreensível. Quando a variável é ordinal, gráficos de colunas são mais indicados pelo fato de permitirem manter a ordem das categorias. Isto também vale para os casos em que se tem muitas categorias ou quanto se pretende dar mais destaque às categorias mais frequentes <span class="citation">(Barbetta, <a href="#ref-barbetta1988">2010</a>)</span>.</p>
+<p>Os gráficos em setores são utilizados para ilustrar dados qualitativos de modo mais compreensível. Quando a variável é ordinal, gráficos de colunas são mais indicados pelo fato de permitirem manter a ordem das categorias. Isto também vale para os casos em que se tem muitas categorias ou quanto se pretende dar mais destaque às categorias mais frequentes <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>.</p>
 <p><code>pie(table(nome_variável),main=&quot;nome&quot;)</code></p>
 <p>Ex. Construa um gráfico na forma de Setograma para a variável <strong>Sabor</strong>.</p>
 <div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb229-1" data-line-number="1"><span class="kw">pie</span>(<span class="kw">table</span>(Sabor))</a></code></pre></div>
@@ -421,7 +421,7 @@ Figura 2.5: Gráfico de pizza com a variável Sabor
 </div>
 <div id="histograma" class="section level3">
 <h3><span class="header-section-number">2.3.3</span> Histograma</h3>
-<p>No histograma, utilizado em geral quando temos variáveis quantitativas contínuas, a altura dos retângulos representa a frequência de ocorrência de valores no intervalo (deve iniciar sempre em zero), devem ter sempre a mesma largura podendo ser justapostos. O eixo horizontal (dos valores da variável) pode iniciar próximo ao menor valor da variável <span class="citation">(Barbetta, <a href="#ref-barbetta1988">2010</a>)</span>. Para confecção do histograma devemos usar:</p>
+<p>No histograma, utilizado em geral quando temos variáveis quantitativas contínuas, a altura dos retângulos representa a frequência de ocorrência de valores no intervalo (deve iniciar sempre em zero), devem ter sempre a mesma largura podendo ser justapostos. O eixo horizontal (dos valores da variável) pode iniciar próximo ao menor valor da variável <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>. Para confecção do histograma devemos usar:</p>
 <p><code>hist(nome_variável)</code></p>
 <p>Ex. Construa um histograma com a variável <strong>Renda_h</strong>.</p>
 <div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb230-1" data-line-number="1"><span class="kw">hist</span>(<span class="kw">as.numeric</span>(<span class="st">`</span><span class="dt">Renda_h</span><span class="st">`</span>))</a></code></pre></div>
@@ -445,8 +445,8 @@ Figura 2.7: Histograma com a variável Renda h com breaks=5
 </div>
 <div id="boxplot-ou-diagrama-em-caixas" class="section level3">
 <h3><span class="header-section-number">2.3.4</span> Boxplot ou diagrama em caixas</h3>
-<p>Os diagramas em caixa são convenientes para revelar tendências centrais, dispersão, distribuição dos dados e a presença de outliers (valores extremos). Como as medianas revelam uma tendência central, ao passo que os quartis indicam a dispersão dos dados, os diagramas em caixa têm a vantagem de não serem tão sensíveis a valores extremos como outras medidas baseadas na média e no desvio-padrão. Por outro lado, os diagramas em caixa (boxplots) não dão informação tão detalhada quanto os histogramas ou os gráficos ramo-e-folhas, podendo não ser, assim, a melhor escolha quando lidamos com um único conjunto de dados. Os diagramas em caixa são, entretanto, mais convenientes na comparação de dois ou mais conjuntos de dados <span class="citation">(Triola, <a href="#ref-triola1999">2011</a>)</span>.</p>
-<p>No diagrama de caixas, torna-se fácil identificar <strong>outliers</strong> (ou valores extremos), que são valores extremamente raros, no sentido de que estão muito afastados da maioria dos dados. Ao explorarmos um conjunto de dados, não podem deixar de considerar os outliers, porque eles podem revelar informações importantes <span class="citation">(Triola, <a href="#ref-triola1999">2011</a>)</span>.</p>
+<p>Os diagramas em caixa são convenientes para revelar tendências centrais, dispersão, distribuição dos dados e a presença de outliers (valores extremos). Como as medianas revelam uma tendência central, ao passo que os quartis indicam a dispersão dos dados, os diagramas em caixa têm a vantagem de não serem tão sensíveis a valores extremos como outras medidas baseadas na média e no desvio-padrão. Por outro lado, os diagramas em caixa (boxplots) não dão informação tão detalhada quanto os histogramas ou os gráficos ramo-e-folhas, podendo não ser, assim, a melhor escolha quando lidamos com um único conjunto de dados. Os diagramas em caixa são, entretanto, mais convenientes na comparação de dois ou mais conjuntos de dados <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>.</p>
+<p>No diagrama de caixas, torna-se fácil identificar <strong>outliers</strong> (ou valores extremos), que são valores extremamente raros, no sentido de que estão muito afastados da maioria dos dados. Ao explorarmos um conjunto de dados, não podem deixar de considerar os outliers, porque eles podem revelar informações importantes <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>.</p>
 <p>Para obter o boxplot para um conjunto de dados:</p>
 <p><code>boxplot(variávelA, variávelB, names=c(&quot;A&quot;,&quot;B&quot;))</code></p>
 <p><strong>Ex.1)</strong> Construir um boxplot da variável <strong>Idade</strong>.</p>
@@ -462,7 +462,7 @@ Figura 2.8: Boxplot com a variável Idade
 <div id="grafico-ramo-e-folhas" class="section level3">
 <h3><span class="header-section-number">2.3.5</span> Gráfico ramo-e-folhas</h3>
 <p>Em um gráfico ramo-e-folhas, classificamos os dados segundo um padrão que revela a distribuição subjacente. O padrão consiste em separar um número em duas partes em geral: o ramo consiste nos algarismos mais à esquerda e as folhas consistem nos algarismos mais à direita.</p>
-<p>No gráfico Ramo-e-folhas, podemos ver a distribuição desses dados, que é uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a informação da lista original; se necessário, podemos recompor a relação original de valores. Note que as linhas de algarismos em um gráfico ramo-e-folhas são análogas, em natureza, às barras de um histograma <span class="citation">(Triola, <a href="#ref-triola1999">2011</a>)</span>.</p>
+<p>No gráfico Ramo-e-folhas, podemos ver a distribuição desses dados, que é uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a informação da lista original; se necessário, podemos recompor a relação original de valores. Note que as linhas de algarismos em um gráfico ramo-e-folhas são análogas, em natureza, às barras de um histograma <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>.</p>
 <p><code>stem(nome_variável)</code> - comando que permite obter um gráfico Ramo e Folhas.</p>
 <p>Ou</p>
 <p><code>stem(nome_variável,scale=1)</code></p>
@@ -754,13 +754,13 @@ Figura 2.10: Gráfico de linha sobre as temperaturas registradas em São Luiz Go
 <h3>Referências</h3>
 <div id="refs" class="references">
 <div id="ref-triola1999">
-<p>TRIOLA, M. F. <strong>Introdução à estatística</strong>. Traducao. 10. ed. Rio de Janeiro: LTC, 2011. </p>
+<p>Triola, M. F. 2011. <em>Introdução à estatística</em>. 10 ed. Rio de Janeiro: LTC.</p>
 </div>
 <div id="ref-almeida2000">
-<p>ALMEIDA, L.; FREIRE, T. <strong>Metodologia da investigação em psicologia e educação</strong>. Traducao. 2. ed. Braga: Psiquilíbrios, 2000. </p>
+<p>Almeida, L, e T Freire. 2000. <em>Metodologia da investigação em psicologia e educação</em>. 2 ed. Braga: Psiquilíbrios.</p>
 </div>
 <div id="ref-barbetta1988">
-<p>BARBETTA, P. A. <strong>Estatística aplicada às ciências sociais</strong>. Traducao. 7. ed. Florianópolis: Ed. UFSC, 2010. </p>
+<p>Barbetta, Pedro Alberto. 2010. <em>Estatística aplicada às ciências sociais</em>. 7 ed. Florianópolis: Ed. UFSC.</p>
 </div>
 </div>
             </section>
@@ -802,7 +802,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["livror.pdf"],
+"download": ["livror.pdf", "livror.epub"],
 "toc": {
 "collapse": "subsection"
 }

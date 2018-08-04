@@ -1,8 +1,11 @@
 book_filename: "livror"
 chapter_name: "Capítulo "
+repo: https://github.com/rstub/bookdown-chapterbib
 output_dir: docs
 rmd_files: ["index.Rmd"]
 clean: [packages.bib, bookdown.bbl]
+delete_merged_file: TRUE
+new_session: yes
 language:
   label:
     fig: 'Figura '
@@ -19,7 +22,3 @@ language:
     proof: 'Proof. '
     remark: 'Remark. '
     solution: 'Solution. '
-delete_merged_file: TRUE
-new_session: yes
-
-

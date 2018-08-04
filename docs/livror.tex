@@ -35,10 +35,6 @@
   \usepackage{polyglossia}
   \setmainlanguage[]{brazil}
 \fi
-\usepackage[style=authoryear]{biblatex}
-
-\addbibresource{book.bib}
-\addbibresource{packages.bib}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -133,7 +129,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-08-03}
+    \date{2018-08-04}
 
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -2510,7 +2506,7 @@ observacionais), a coleta e organização de dados, a inferência, a
 análise e a disseminação de informação.
 
 Alguns termos extensamente utilizados em estatística, são definidos a
-seguir \autocite{triola1999}:
+seguir (TRIOLA, \protect\hyperlink{ref-triola1999}{2011}):
 
 \textbf{População}: é uma coleção completa de todos os elementos
 (valores, pessoas, medidas etc.) a serem estudados.
@@ -2531,9 +2527,9 @@ variáveis}\label{natureza-da-medida-das-variaveis}}
 
 Variáveis reporta-se a características ou atributos que podem tomar
 diferentes valores ou categorias, o que se opõe ao conceito de constante
-\autocite{almeida2000}. Assim, variável pode ser definida como sendo a
-característica dos elementos da amostra ou da população que nos
-interessa estudar estatisticamente.
+(ALMEIDA; FREIRE, \protect\hyperlink{ref-almeida2000}{2000}). Assim,
+variável pode ser definida como sendo a característica dos elementos da
+amostra ou da população que nos interessa estudar estatisticamente.
 
 Variáveis podem ser classificadas da seguinte forma:
 
@@ -2568,7 +2564,8 @@ alguma característica não-numérica. Divididas em:
   ser dispostos em alguma ordem, mas as diferenças entre os valores dos
   dados não podem ser determinadas, ou não tem sentido. Esse nível dá
   informações sobre comparações relativas, mas os graus de diferença não
-  servem para cálculos \autocite{triola1999}. Ex. Grau de escolaridade.
+  servem para cálculos (TRIOLA,
+  \protect\hyperlink{ref-triola1999}{2011}). Ex. Grau de escolaridade.
 \end{enumerate}
 
 \textbf{Dado}: é o valor assumido por uma variável aleatória em um
@@ -2694,11 +2691,12 @@ Sexo :  chr [1:348] "Feminino" "Feminino" "Feminino" "Feminino" "Masculino" ...
 \hypertarget{tabelas-e-graficos}{%
 \section{Tabelas e Gráficos}\label{tabelas-e-graficos}}
 
-Segundo \textcite{barbetta1988}, dados representados em tabelas e
-gráficos adequados, permitem observar determinados aspectos relevantes,
-bem como delinear hipóteses a respeito da estrutura dos dados em estudo,
-o que conhecemos como análise exploratória de dados. Isto pode ser feito
-inicialmente com a representação em forma de tabelas.
+Segundo BARBETTA (\protect\hyperlink{ref-barbetta1988}{2010}), dados
+representados em tabelas e gráficos adequados, permitem observar
+determinados aspectos relevantes, bem como delinear hipóteses a respeito
+da estrutura dos dados em estudo, o que conhecemos como análise
+exploratória de dados. Isto pode ser feito inicialmente com a
+representação em forma de tabelas.
 
 O comando \texttt{table()} é utilizado para elaborarmos tabelas de
 frequências absolutas. Dependendo da variável a ser representada,
@@ -2758,7 +2756,8 @@ relativas}\label{tabela-cruzada-para-apresentacao-das-frequencias-relativas}}
 Com a introdução do comando `prop.table\textbar{} é possível gerar,
 facilmente, tabelas de frequências relativas para as variáveis de
 interesse. As medidas relativas são importantes para comparar
-distribuições de frequências \autocite{barbetta1988}.
+distribuições de frequências (BARBETTA,
+\protect\hyperlink{ref-barbetta1988}{2010}).
 
 \texttt{prop.table(table(nome\_variável1,nome\_variável2))}
 
@@ -2917,7 +2916,7 @@ de modo mais compreensível. Quando a variável é ordinal, gráficos de
 colunas são mais indicados pelo fato de permitirem manter a ordem das
 categorias. Isto também vale para os casos em que se tem muitas
 categorias ou quanto se pretende dar mais destaque às categorias mais
-frequentes \autocite{barbetta1988}.
+frequentes (BARBETTA, \protect\hyperlink{ref-barbetta1988}{2010}).
 
 \texttt{pie(table(nome\_variável),main="nome")}
 
@@ -2946,8 +2945,9 @@ No histograma, utilizado em geral quando temos variáveis quantitativas
 contínuas, a altura dos retângulos representa a frequência de ocorrência
 de valores no intervalo (deve iniciar sempre em zero), devem ter sempre
 a mesma largura podendo ser justapostos. O eixo horizontal (dos valores
-da variável) pode iniciar próximo ao menor valor da variável
-\autocite{barbetta1988}. Para confecção do histograma devemos usar:
+da variável) pode iniciar próximo ao menor valor da variável (BARBETTA,
+\protect\hyperlink{ref-barbetta1988}{2010}). Para confecção do
+histograma devemos usar:
 
 \texttt{hist(nome\_variável)}
 
@@ -3010,13 +3010,15 @@ diagramas em caixa (boxplots) não dão informação tão detalhada quanto os
 histogramas ou os gráficos ramo-e-folhas, podendo não ser, assim, a
 melhor escolha quando lidamos com um único conjunto de dados. Os
 diagramas em caixa são, entretanto, mais convenientes na comparação de
-dois ou mais conjuntos de dados \autocite{triola1999}.
+dois ou mais conjuntos de dados (TRIOLA,
+\protect\hyperlink{ref-triola1999}{2011}).
 
 No diagrama de caixas, torna-se fácil identificar \textbf{outliers} (ou
 valores extremos), que são valores extremamente raros, no sentido de que
 estão muito afastados da maioria dos dados. Ao explorarmos um conjunto
 de dados, não podem deixar de considerar os outliers, porque eles podem
-revelar informações importantes \autocite{triola1999}.
+revelar informações importantes (TRIOLA,
+\protect\hyperlink{ref-triola1999}{2011}).
 
 Para obter o boxplot para um conjunto de dados:
 
@@ -3055,7 +3057,7 @@ uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a
 informação da lista original; se necessário, podemos recompor a relação
 original de valores. Note que as linhas de algarismos em um gráfico
 ramo-e-folhas são análogas, em natureza, às barras de um histograma
-\autocite{triola1999}.
+(TRIOLA, \protect\hyperlink{ref-triola1999}{2011}).
 
 \texttt{stem(nome\_variável)} - comando que permite obter um gráfico
 Ramo e Folhas.
@@ -3617,7 +3619,8 @@ consultar outras referências ou até mesmo as já citadas neste capítulo.
 A inferência estatística, ou estatística inferencial, tem por objetivo
 concluir e tomar decisões, com base em amostras (Figura
 \ref{fig:infestat}). Usam-se dados extraídos de uma amostra para
-produzir inferência sobre a população \autocite{lopes2008}.
+produzir inferência sobre a população (LOPES et al.,
+\protect\hyperlink{ref-lopes2008}{2008}).
 
 \begin{figure}
 
@@ -3630,9 +3633,10 @@ produzir inferência sobre a população \autocite{lopes2008}.
 
 Em Estatística, o termo \textbf{população} é definido como conjunto de
 indivíduos, ou itens, com pelo menos uma característica em comum,
-podendo ser finita ou infinita \autocite{lopes2008}. Por exemplo, água
-de um rio, sangue de uma pessoa, lote de peças produzidas por uma
-indústria, eleitores de um município.
+podendo ser finita ou infinita (LOPES et al.,
+\protect\hyperlink{ref-lopes2008}{2008}). Por exemplo, água de um rio,
+sangue de uma pessoa, lote de peças produzidas por uma indústria,
+eleitores de um município.
 
 A \textbf{amostra} é um subconjunto, necessariamente finito, de uma
 população e é selecionada de forma que todos os elementos da população
@@ -4581,7 +4585,7 @@ Até 25 ha\strut
 \bottomrule
 \end{longtable}
 
-Fonte: \textcite{Ristow2017}.
+Fonte: RISTOW (\protect\hyperlink{ref-Ristow2017}{2017}).
 
 A estatística de teste para testar as hipóteses apresentadas é o
 \(\chi^2\) (qui-quadrado):
@@ -4622,7 +4626,8 @@ qualitativas}\label{check-list-para-escolher-o-teste-adequado-para-verificar-a-r
   colunas, devemos utilizar o teste de qui-quadrado com correção de
   continuidade (correção de Yates). O motivo é que a distribuição de
   frequências observadas é discreta e está sendo aproximada pela
-  distribuição qui-quadrado, que é contínua \autocite{barbetta1988}.
+  distribuição qui-quadrado, que é contínua (BARBETTA,
+  \protect\hyperlink{ref-barbetta1988}{2010}).
 \item
   Não devemos aplicar o teste de qui-quadrado quando a frequência
   esperada em qualquer casela for menor que 5. Neste caso, devemos usar
@@ -4790,7 +4795,7 @@ Até 25 ha\strut
 \bottomrule
 \end{longtable}
 
-Fonte: \textcite{Ristow2017}.
+Fonte: RISTOW (\protect\hyperlink{ref-Ristow2017}{2017}).
 
 Definindo as hipóteses estatísticas:
 
@@ -5471,7 +5476,8 @@ Simples}\label{modelo-de-regressao-linear-simples}}
 O modelo de regressão linear simples é usado quando a resposta da
 variável dependente se expressa de forma linear (Figura
 \ref{fig:regress} e neste caso com apenas uma variável explicativa,
-expresso da seguinte maneira \autocite{hoffmann1998}:
+expresso da seguinte maneira (HOFFMANN; OTHERS,
+\protect\hyperlink{ref-hoffmann1998}{1998}):
 
 \[
 y_i=\beta_0+\beta_1x_i+\varepsilon _i
@@ -5510,7 +5516,8 @@ de Resíduos, ou seja, minimizar:
 
 As expressões para os coeficientes, que minimizam SQResíduos são obtidas
 pela derivadas desta soma de quadrados em relação a \(b_0\) e em relação
-a \(b_1\) e podem ser descritas por \autocite{hoffmann1998}:
+a \(b_1\) e podem ser descritas por (HOFFMANN; OTHERS,
+\protect\hyperlink{ref-hoffmann1998}{1998}):
 
 \[
 b_1=\frac{\sum xy-\frac{\sum x \sum y}{n}}{\sum x^2 - \frac{(\sum x)^2}{n}}
@@ -5836,7 +5843,8 @@ descrevendo que após a estimação dos parâmetros do modelo, pode-se
 calcular os resíduos, através da diferença entre os valores observados y
 e os valores preditos \(\hat{y}\), associados a cada x usado na análise.
 Faz-se então um gráfico com os pares (\(x,\varepsilon\)), sendo
-\(\varepsilon = y -\hat{y}\) \autocite{barbetta1988}.
+\(\varepsilon = y -\hat{y}\) (BARBETTA,
+\protect\hyperlink{ref-barbetta1988}{2010}).
 
 Se o modelo ajustado for apropriado para os dados, os pontos devem estar
 distribuídos de forma aleatória no gráfico dos resíduos, conforme Figura
@@ -6310,7 +6318,31 @@ Para o exemplo R:
 \chapter*{Referências}\label{referencias}}
 \addcontentsline{toc}{chapter}{Referências}
 
-\printbibliography
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-almeida2000}{}%
+ALMEIDA, L.; FREIRE, T. \textbf{Metodologia da investigação em
+psicologia e educação}. Braga: Psiquilíbrios, 2000.
+
+\leavevmode\hypertarget{ref-barbetta1988}{}%
+BARBETTA, P. A. \textbf{Estatística aplicada às ciências sociais}.
+Florianópolis: Ed. UFSC, 2010.
+
+\leavevmode\hypertarget{ref-hoffmann1998}{}%
+HOFFMANN, R.; OTHERS. \textbf{Análise de regressão: uma introdução à
+econometria}. São Paulo: Hucitec, 1998.
+
+\leavevmode\hypertarget{ref-lopes2008}{}%
+LOPES, L. F. D. et al. \textbf{Caderno didático: estatística Geral}.
+Santa Maria: UFSM, 2008.
+
+\leavevmode\hypertarget{ref-Ristow2017}{}%
+RISTOW, L. P. \textbf{Exposição ocupacional de trabalhadores rurais a
+agrotóxicos e relação com políticas públicas}. tese de mestrado -
+Universidade Federal da Fronteira Sul, 2017.
+
+\leavevmode\hypertarget{ref-triola1999}{}%
+TRIOLA, M. F. \textbf{Introdução à estatística}. Rio de Janeiro: LTC,
+2011.
 
 
 \end{document}

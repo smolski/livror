@@ -14,7 +14,7 @@ url: 'http\://rstub.github.io/bookdown-chapterbib/'
 description: "Curso de análise estatística com R da UFFS Cerro Largo - RS"
 fontsize: 12pt
 lang: pt-Br
-csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
+always_allow_html: yes
 ---
 
 ```{r, include=FALSE}

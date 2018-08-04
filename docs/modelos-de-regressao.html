@@ -26,7 +26,7 @@
 <meta name="author" content="Iara Denise Endruweit Battisti">
 
 
-<meta name="date" content="2018-08-03">
+<meta name="date" content="2018-08-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -382,7 +382,7 @@ Figura 5.4: Identidade da Regressão
 </div>
 <div id="modelo-de-regressao-linear-simples" class="section level2">
 <h2><span class="header-section-number">5.5</span> Modelo de Regressão Linear Simples</h2>
-<p>O modelo de regressão linear simples é usado quando a resposta da variável dependente se expressa de forma linear (Figura <a href="modelos-de-regressao.html#fig:regress">5.3</a> e neste caso com apenas uma variável explicativa, expresso da seguinte maneira <span class="citation">(Hoffmann e others, <a href="#ref-hoffmann1998">1998</a>)</span>:</p>
+<p>O modelo de regressão linear simples é usado quando a resposta da variável dependente se expressa de forma linear (Figura <a href="modelos-de-regressao.html#fig:regress">5.3</a> e neste caso com apenas uma variável explicativa, expresso da seguinte maneira <span class="citation">(Hoffmann e others <a href="#ref-hoffmann1998">1998</a>)</span>:</p>
 <p><span class="math display">\[
 y_i=\beta_0+\beta_1x_i+\varepsilon _i
 \]</span></p>
@@ -399,7 +399,7 @@ y_i=\beta_0+\beta_1x_i+\varepsilon _i
 <p><span class="math display">\[
 \sum (y_i-\hat y_i)^2=\sum (y_i-b_0-b_1x_i^2)
 \]</span></p>
-<p>As expressões para os coeficientes, que minimizam SQResíduos são obtidas pela derivadas desta soma de quadrados em relação a <span class="math inline">\(b_0\)</span> e em relação a <span class="math inline">\(b_1\)</span> e podem ser descritas por <span class="citation">(Hoffmann e others, <a href="#ref-hoffmann1998">1998</a>)</span>:</p>
+<p>As expressões para os coeficientes, que minimizam SQResíduos são obtidas pela derivadas desta soma de quadrados em relação a <span class="math inline">\(b_0\)</span> e em relação a <span class="math inline">\(b_1\)</span> e podem ser descritas por <span class="citation">(Hoffmann e others <a href="#ref-hoffmann1998">1998</a>)</span>:</p>
 <p><span class="math display">\[
 b_1=\frac{\sum xy-\frac{\sum x \sum y}{n}}{\sum x^2 - \frac{(\sum x)^2}{n}}
 \]</span></p>
@@ -576,7 +576,7 @@ tempo       0.7097  1.185</code></pre>
 <div id="analise-dos-residuos" class="section level2">
 <h2><span class="header-section-number">5.9</span> Análise dos Resíduos</h2>
 <p>Para a validade dos intervalos de confiança e teste de hipótese torna-se necessário supor que as observações de Y sejam independentes e o termo de erro tenha distribuição aproximadamente normal com média 0 e variância constante.</p>
-<p>O método gráfico pode ser utilizado para testar estas suposições, descrevendo que após a estimação dos parâmetros do modelo, pode-se calcular os resíduos, através da diferença entre os valores observados y e os valores preditos <span class="math inline">\(\hat{y}\)</span>, associados a cada x usado na análise. Faz-se então um gráfico com os pares (<span class="math inline">\(x,\varepsilon\)</span>), sendo <span class="math inline">\(\varepsilon = y -\hat{y}\)</span> <span class="citation">(Barbetta, <a href="#ref-barbetta1988">2010</a>)</span>.</p>
+<p>O método gráfico pode ser utilizado para testar estas suposições, descrevendo que após a estimação dos parâmetros do modelo, pode-se calcular os resíduos, através da diferença entre os valores observados y e os valores preditos <span class="math inline">\(\hat{y}\)</span>, associados a cada x usado na análise. Faz-se então um gráfico com os pares (<span class="math inline">\(x,\varepsilon\)</span>), sendo <span class="math inline">\(\varepsilon = y -\hat{y}\)</span> <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>.</p>
 <p>Se o modelo ajustado for apropriado para os dados, os pontos devem estar
 distribuídos de forma aleatória no gráfico dos resíduos, conforme Figura <a href="modelos-de-regressao.html#fig:residuos">5.6</a>a. Caso a suposição não seja satisfeita, métodos alternativos podem ser utilizados como: método dos mínimos quadrados ponderados para o caso de não homocedasticidade; o método dos mínimos quadrados generalizados para o caso de erros correlacionados; e, métodos não-paramétricos para o caso de não normalidade.</p>
 <p>Além da análise gráfica, existem testes para avaliar a homocedasticidade como o Teste de Bartlett e para avaliar a normalidade aplicam-se os testes de Shapiro Wilks ou Kolmogorov-Smirnov.</p>
@@ -789,10 +789,10 @@ S_e=\sqrt\textrm{QMResduo}=\sqrt\frac{\sum(y-\hat{y})^2}{n-2}
 <h3>Referências</h3>
 <div id="refs" class="references">
 <div id="ref-hoffmann1998">
-<p>HOFFMANN, R.; OTHERS. <strong>Análise de regressão: uma introdução à econometria</strong>. Traducao. São Paulo: Hucitec, 1998. </p>
+<p>Hoffmann, Rodolfo, e others. 1998. <em>Análise de regressão: uma introdução à econometria</em>. São Paulo: Hucitec.</p>
 </div>
 <div id="ref-barbetta1988">
-<p>BARBETTA, P. A. <strong>Estatística aplicada às ciências sociais</strong>. Traducao. 7. ed. Florianópolis: Ed. UFSC, 2010. </p>
+<p>Barbetta, Pedro Alberto. 2010. <em>Estatística aplicada às ciências sociais</em>. 7 ed. Florianópolis: Ed. UFSC.</p>
 </div>
 </div>
             </section>
@@ -834,7 +834,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["livror.pdf"],
+"download": ["livror.pdf", "livror.epub"],
 "toc": {
 "collapse": "subsection"
 }
