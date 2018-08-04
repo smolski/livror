@@ -133,7 +133,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-08-01}
+    \date{2018-08-03}
 
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -5158,8 +5158,1157 @@ X-squared = 8.1, df = 6, p-value = 0.2
 \hypertarget{modelos-de-regressao}{%
 \chapter{Modelos de Regressão}\label{modelos-de-regressao}}
 
+Muitas vezes há a necessidade de estudar duas ou mais variáveis ao mesmo
+tempo com o objetivo de predizer uma variável em função da(s) outra(s).
+Por exemplo, verificar se sólidos removidos de um material relaciona-se
+com o tempo de secagem e qual é a forma dessa relação. Outros exemplos:
+relação entre tempo de estudo e desempenho a uma avaliação; relação
+entre investimento em comunicação e vendas; entre outros.
+
+A análise de correlação permite verificar a relação entre duas variáveis
+quantitativas. Os modelos de regressão permitem demonstrar a forma da
+relação entre duas ou mais variáveis. Estudaremos os modelos de
+regressão linear na qual a variáveis resposta (\(Y\)) é quantitativa e
+as variáveis preditoras (\(X_i\)) são quantitativas ou qualitativas.
+
+\hypertarget{correlacao-linear}{%
+\section{Correlação linear}\label{correlacao-linear}}
+
+É a técnica mais simples para estudar a relação entre duas variáveis. Os
+dados compõem uma única amostra de pares de valores (\(x_i, y_i\)),
+correspondendo aos valores das variáveis X e Y, respectivamente, feitas
+em cada elemento da amostra. Para analisar a existência de relação entre
+as duas variáveis, primeiramente pode-se fazer o Diagrama de Dispersão.
+
+\hypertarget{diagrama-de-dispersao}{%
+\section{Diagrama de dispersão}\label{diagrama-de-dispersao}}
+
+É um gráfico para verificar a existência de relação entre as variáveis X
+e Y. É composto por pontos, os quais correspondem aos pares de valores
+(\(xi, y_i\)), sendo a variável X representada no eixo horizontal e a
+variável Y representada no eixo vertical.
+
+O diagrama de disperção fornece uma visualização gráfica do
+comportamento conjunto das duas variávei em estudo. Na Figura
+\ref{fig:diag} a percebe-se uma correlação (relação) linear positiva
+entre as variáveis X e Y, ou seja, os valores das duas variaveis crescem
+conjuntamente, já na Figura \ref{fig:diag}b percebe-se uma correlação
+linear negativa entre as variáveis X e Y, neste caso, os valores de uma
+variável crescem enquanto os valores da outra variável decrescem. A
+Figura \ref{fig:diag}c informa a ausência de relação entre as duas
+variáveis e, a Figura \ref{fig:diag}d mostra uma relação não linear, a
+qual não será objeto de estudo nesta publicação.
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{correlacao1} 
+
+}
+
+\caption{Diagramas de Dispersão}\label{fig:diag}
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+\textbf{Exemplo}: Suponha que 15 alunos foram selecionados
+aleatoriamente na turma de Estatística, sendo registrado o tempo de
+estudo e nota da atividade avaliativa. O objetivo da pesquisa é
+verificar se existe relação entre tempo de estudo e nota.
+
+\begin{longtable}[]{@{}lllllllllllllll@{}}
+\caption{\label{tab:reg1}Relação entre o tempo de estudo e a
+nota.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\raggedright
+\textbf{Tempo}\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+4,0\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+6,0\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+5,5\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+5,0\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+6,8\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+6,5\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+3,5\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+4,5\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+7,5\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+8,0\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+5,4\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+6,5\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+7,7\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+7,5\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\raggedright
+\textbf{Tempo}\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+4,0\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+6,0\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+5,5\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+5,0\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+6,8\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+6,5\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+3,5\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+4,5\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+7,5\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+8,0\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+5,4\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+6,5\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+7,7\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright
+7,5\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
+\textbf{Nota}\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
+5,5\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
+7,5\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
+8,0\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
+7,0\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
+8,1\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
+8,6\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
+4,7\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
+7,5\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
+9,5\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
+9,5\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
+7,8\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
+8,0\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
+9,1\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright
+8,0\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Fonte: Dados simulados.
+
+Sintaxe no software R:
+
+\texttt{plot(x,y)}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tempo=}\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{,}\FloatTok{5.5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\FloatTok{6.8}\NormalTok{,}\FloatTok{6.5}\NormalTok{,}\FloatTok{3.5}\NormalTok{,}\FloatTok{4.5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{,}\FloatTok{5.4}\NormalTok{,}\FloatTok{6.5}\NormalTok{,}\FloatTok{7.7}\NormalTok{,}\FloatTok{7.5}\NormalTok{,}\FloatTok{5.8}\NormalTok{)}
+\NormalTok{nota=}\KeywordTok{c}\NormalTok{(}\FloatTok{5.5}\NormalTok{,}\FloatTok{7.5}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{7}\NormalTok{,}\FloatTok{8.1}\NormalTok{,}\FloatTok{8.6}\NormalTok{,}\FloatTok{4.7}\NormalTok{,}\FloatTok{7.5}\NormalTok{,}\FloatTok{9.5}\NormalTok{,}\FloatTok{9.5}\NormalTok{,}\FloatTok{7.8}\NormalTok{,}\DecValTok{8}\NormalTok{,}\FloatTok{9.1}\NormalTok{,}\FloatTok{9.5}\NormalTok{,}\DecValTok{8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+O diagrama de dispersão do exemplo está representado abaixo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(tempo,nota)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-128-1} 
+
+}
+
+\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}\label{fig:unnamed-chunk-128}
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+\hypertarget{coeficiente-de-correlacao-linear-de-pearson}{%
+\section{Coeficiente de Correlação Linear de
+Pearson}\label{coeficiente-de-correlacao-linear-de-pearson}}
+
+O coeficiente de correlação linear de Pearson (Karl Pearson 1857-1936)
+mede o grau de relacionamento linear entre os valores pareados \(x_i\) e
+\(y_i\) em uma amostra. O coeficiente linear de Pearson é obtido da
+seguinte forma:
+
+\[
+r=\frac{n\sum xy-(\sum x)(\sum y)}{\sqrt{n(\sum x^2)-(\sum x)^2} \sqrt{(\sum  y^2)-(\sum y)^2}}
+\]
+
+em que:
+
+\begin{itemize}
+\tightlist
+\item
+  n = número de pares na amostra
+\item
+  x: valores da variável x
+\item
+  y: valores da variável y
+\end{itemize}
+
+O coeficiente de correlação linear (r) é uma estatística amostral,
+representando a magnitude da relação entre duas variáveis na amostra. O
+parâmetro populacional é representado por \(\rho\). O coeficiente de
+correlação linear assume valores entre -1 e +1, inclusive. Se o valor de
+r está próximo de 0, conclui-se que não há correlação linear entre as
+variáveis X e Y. Seo valor de r está próximo de -1 ou +1, conclui-se
+pela existência de correlação linear significativa entre as variáveis X
+e Y, sendo que o sinal indica uma relação linear positiva (direta) ou
+negativa (inversa).
+
+Sintaxe no software R:
+
+\texttt{cor(x,y)}
+
+Obs: x e y são numéricos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{cor}\NormalTok{(tempo,nota)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.9224
+\end{verbatim}
+
+\hypertarget{modelo-de-regressao}{%
+\section{Modelo de Regressão}\label{modelo-de-regressao}}
+
+O estudo de regressão refere-se aos casos em que se pretende estabelecer
+uma relação entre uma variável Y considerada dependente (variável
+resposta ou desfecho) e uma ou mais variáveis \(x_1, x_2,\cdots, x_k\)
+(variáveis explicativas ou preditoras) consideradas independentes.
+
+O objetivo da análise de regressão é ajustar uma equação que permita
+explicar o comportamento da variável resposta de maneira que o valor
+previsto possa estar próximo do que seria observado. A forma do modelo
+de regressão depende da relação entre as variáveis, expressa visualmente
+pelo diagrama de dispersão, conforme Figura \ref{fig:diag}.
+
+A análise de regressão é uma técnica muito utilizada em variáveis
+quantitativas, como por exemplo:
+
+\begin{itemize}
+\item
+  Vendas em função do investimento em comunicação;
+\item
+  Altura de crianças em função da idade;
+\item
+  Nota obtida em função de horas de estudo;
+\item
+  Produtividade de uma cultura em relação a quantidade de adubação.
+\end{itemize}
+
+Na Figura \ref{fig:regress} é apresentada a variação explicada e não
+explicada na análise por modelo regressão.
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{regress1} 
+
+}
+
+\caption{Variação explicada e não explicada na análise de regressão}\label{fig:regress}
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+Observa-se na Figura \ref{fig:regress}, uma identidade na regressão,
+conforme a seguinte expressão:
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{regress2} 
+
+}
+
+\caption{Identidade da Regressão}\label{fig:regress2}
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+Assim, a partir da expressão apresentada que o modelo de regressão será
+mais adequado na medida em que a proporção de ``Soma de Quadrados de
+Regressão'' é mais alta em relação à ``Soma de Quadrado Total'' do que a
+``Soma de Quadrado do Resíduo''.
+
+\hypertarget{modelo-de-regressao-linear-simples}{%
+\section{Modelo de Regressão Linear
+Simples}\label{modelo-de-regressao-linear-simples}}
+
+O modelo de regressão linear simples é usado quando a resposta da
+variável dependente se expressa de forma linear (Figura
+\ref{fig:regress} e neste caso com apenas uma variável explicativa,
+expresso da seguinte maneira \autocite{hoffmann1998}:
+
+\[
+y_i=\beta_0+\beta_1x_i+\varepsilon _i
+\]
+
+Em que:
+
+\(y_i\): valores da variável resposta (dependente, desfecho),
+\(i = 1,2,...,n\) observações;
+
+\(x_i\): valores da variável explicativa (independente, preditora),
+\(i = 1,2,...,n\) observações;
+
+\(\beta_0\): coeficiente linear (intercepto). Interpretado como o valor
+da variável dependente quando a variável independente é igual a 0;
+
+\(\beta_1\): coeficiente angular (inclinação). Interpretado como
+acréscimo/decréscimo na variável dependente para a variação de uma
+unidade na variável independente;
+
+\(\varepsilon_i\): erros aleatórios supostamente de uma população
+normal, com média 0 e variância constante
+\(\begin{bmatrix}\varepsilon_i N(0, \sigma^2)\end{bmatrix}\).
+
+\hypertarget{metodo-dos-minimos-quadrados}{%
+\section{Método dos Mínimos
+Quadrados}\label{metodo-dos-minimos-quadrados}}
+
+O método dos mínimos quadrados (MMQ) é utilizado para a obtenção dos
+coeficientes linear e angular. Consiste em minimizar a Soma de Quadrados
+de Resíduos, ou seja, minimizar:
+
+\[
+\sum (y_i-\hat y_i)^2=\sum (y_i-b_0-b_1x_i^2)
+\]
+
+As expressões para os coeficientes, que minimizam SQResíduos são obtidas
+pela derivadas desta soma de quadrados em relação a \(b_0\) e em relação
+a \(b_1\) e podem ser descritas por \autocite{hoffmann1998}:
+
+\[
+b_1=\frac{\sum xy-\frac{\sum x \sum y}{n}}{\sum x^2 - \frac{(\sum x)^2}{n}}
+\]
+
+em que:
+
+\textbf{n}: número de pares na amostra;
+
+\textbf{x}: valores da variável x;
+
+\textbf{y}: valores da variável y.
+
+e
+
+\[
+b_0=\bar{y}-b_1\bar{x}
+\]
+
+em que:
+
+\(\bar{x}\): média aritmética dos valores de x;
+
+\(\bar{y}\): média aritmética dos valores de y;
+
+\(b_1\): valor calculado do coeficiente angular.
+
+Obtendo-se a seguinte equação de regressão linear simples estimada:
+
+\[
+\hat{y}=b_0-b_1{x}
+\]
+
+em que:
+
+\(b_0\): coeficiente linear estimado;
+
+\(b_1\): coeficiente angular estimado;
+
+\(x\): valores da variável explicativa.
+
+Esta equação refere-se a reta de regressão, se \(b_1\) é um valor
+positivo a reta é crescente, demonstrando uma relação positiva entre as
+variáveis e se \(b_1\) é um o valor negativo, a reta é decrescente,
+demonstrando uma relação inversa entre as variáveis.
+
+Sintaxe no software R:
+
+\texttt{regressao=lm(y\textasciitilde{}x)}
+
+Obs: y são valores numéricos da variável resposta e x são valores
+numéricos da variável preditora.
+
+Por exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{regressao=}\KeywordTok{lm}\NormalTok{(nota}\OperatorTok{~}\NormalTok{tempo)}
+\NormalTok{regressao}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = nota ~ tempo)
+
+Coefficients:
+(Intercept)        tempo  
+      2.221        0.947  
+\end{verbatim}
+
+\hypertarget{analise-de-variancia}{%
+\section{Análise de Variância}\label{analise-de-variancia}}
+
+A análise de variância (técnica introduzida por Fisher, na década de 20)
+testa o ajuste da equação como um todo, ou seja, um teste para verificar
+se a equação de regressão obtida é significativa ou não. No caso de
+regressão linear simples, a análise de variância é definida como
+apresentada na Tabela \ref{tab:varian}.
+
+As hipóteses testadas na Análise de Variância da Regressão são:
+
+\[
+H_0:\beta_1=0 \textrm{(a regressao não é significativa)} 
+\] \[
+H_1:\beta_1 \neq 0 \textrm{(a regressão é significativa)}
+\]
+
+\begin{longtable}[]{@{}lllll@{}}
+\caption{\label{tab:varian}Análise de variância para a regressão
+linear.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.19\columnwidth}\raggedright
+\textbf{FV}\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedright
+\textbf{GL}\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright
+\textbf{SQ}\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\raggedright
+\textbf{QM}\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedright
+\textbf{F}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.19\columnwidth}\raggedright
+\textbf{FV}\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedright
+\textbf{GL}\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright
+\textbf{SQ}\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\raggedright
+\textbf{QM}\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedright
+\textbf{F}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.19\columnwidth}\raggedright
+Regressão\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+SQRegressão\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+QMRegressão\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
+Fc\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.19\columnwidth}\raggedright
+Desvios\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+n-2\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+SQResíduos\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+QMResíduos\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
+-\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.19\columnwidth}\raggedright
+Total\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+n-1\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+SQTotal\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+-\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedright
+-\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+em que:
+
+\[
+SQ \textrm{Regressao} = \frac{(\sum xy - \frac{(\sum x \sum y)^2}{n})}{\sum x^2 - \frac{(\sum x)^2}{n}}
+\]
+
+\[
+SQ \textrm{Total} = \sum y^2 - \frac{(\sum y)^2}{n}
+\]
+
+SQResíduo = SQTotal - SQRegressão
+
+QMRegressão = SQRegressão \(/\) GLregressão
+
+QMResíduo = SQResíduo \(/\) GLresíduo
+
+Fc = QMRegressão \(/\) QMResíduo
+
+Espera-se que o QMResíduo seja mínimo, assim o modelo de regressão
+estará bem ajustado.
+
+A distribuição de probabilidade para a razão de duas variâncias é
+conhecida como a distribuição F. Se a hipótese nula for rejeitada ao
+nível de signicância \(\alpha\), rejeita-se H0, portanto a regressão é
+significativa.
+
+Sintaze no software R:
+
+\texttt{anova(regressao)}
+
+Obs: regressao é o nome dado ao modelo de regressão.
+
+Por exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{anova}\NormalTok{(regressao)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Analysis of Variance Table
+
+Response: nota
+          Df Sum Sq Mean Sq F value  Pr(>F)    
+tempo      1   22.8   22.82    74.2 9.9e-07 ***
+Residuals 13    4.0    0.31                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\hypertarget{coeficiente-de-determinacao}{%
+\section{Coeficiente de
+Determinação}\label{coeficiente-de-determinacao}}
+
+Representa o percentual de variação total que é explicada pela equação
+de regressão, sendo obtido da seguinte forma:
+
+\[
+R^2 = \frac{\textrm{SQRegressao}}{SQTotal}
+\]
+
+Quanto mais próximo de 1 (ou 100\%), melhor será o ajuste da equação de
+regressão. Também utiliza-se o coeficiente de determinação ajustado
+(R\(^2\) ajustado), o qual considera o número de variáveis e o tamanho
+da amostra, sendo este o mais indicado para regressão múltipla.
+
+Sintaxe no software R:
+
+\texttt{summary(regressao)}
+
+Obs: regressao é o nome dado ao modelo de regressão.
+
+Por exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(regressao)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Call:
+lm(formula = nota ~ tempo)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.8372 -0.4109  0.0418  0.3733  1.0154 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    2.221      0.673    3.30   0.0057 ** 
+tempo          0.947      0.110    8.61  9.9e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.555 on 13 degrees of freedom
+Multiple R-squared:  0.851, Adjusted R-squared:  0.839 
+F-statistic: 74.2 on 1 and 13 DF,  p-value: 9.88e-07
+\end{verbatim}
+
+Para traçar a reta de regressão no diagrama de dispersão, utiliza-se o
+seguinte comando:
+
+Sintaxe no software R:
+
+\texttt{abline(regressao)}
+
+Obs: regressao é o nome dado ao modelo de regressão.
+
+Para o exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(nota}\OperatorTok{~}\NormalTok{tempo)}
+\KeywordTok{abline}\NormalTok{(}\KeywordTok{coef}\NormalTok{(regressao))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-132-1} 
+
+}
+
+\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-132}
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+O intervalo de 95\% de confiança para os coeficientes de regressão são
+obtidos, no software R, da seguinte forma:
+
+Sintaxe no software R:
+
+\texttt{confint(regressao)}
+
+Obs: regressao é o nome dado ao modelo de regressão.
+
+Para o exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{confint}\NormalTok{(regressao)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+             2.5 % 97.5 %
+(Intercept) 0.7671  3.676
+tempo       0.7097  1.185
+\end{verbatim}
+
+\hypertarget{analise-dos-residuos}{%
+\section{Análise dos Resíduos}\label{analise-dos-residuos}}
+
+Para a validade dos intervalos de confiança e teste de hipótese torna-se
+necessário supor que as observações de Y sejam independentes e o termo
+de erro tenha distribuição aproximadamente normal com média 0 e
+variância constante.
+
+O método gráfico pode ser utilizado para testar estas suposições,
+descrevendo que após a estimação dos parâmetros do modelo, pode-se
+calcular os resíduos, através da diferença entre os valores observados y
+e os valores preditos \(\hat{y}\), associados a cada x usado na análise.
+Faz-se então um gráfico com os pares (\(x,\varepsilon\)), sendo
+\(\varepsilon = y -\hat{y}\) \autocite{barbetta1988}.
+
+Se o modelo ajustado for apropriado para os dados, os pontos devem estar
+distribuídos de forma aleatória no gráfico dos resíduos, conforme Figura
+\ref{fig:residuos}a. Caso a suposição não seja satisfeita, métodos
+alternativos podem ser utilizados como: método dos mínimos quadrados
+ponderados para o caso de não homocedasticidade; o método dos mínimos
+quadrados generalizados para o caso de erros correlacionados; e, métodos
+não-paramétricos para o caso de não normalidade.
+
+Além da análise gráfica, existem testes para avaliar a homocedasticidade
+como o Teste de Bartlett e para avaliar a normalidade aplicam-se os
+testes de Shapiro Wilks ou Kolmogorov-Smirnov.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\StringTok{"residuos1.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{residuos1} 
+
+}
+
+\caption{Gráficos para análise de resíduos em regressão}\label{fig:residuos}
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+O primeiro gráfico de resíduos que podemos elaborar é para representar
+os valores ajustados pela equação de regressão ajustada no eixo x e os
+valores dos resíduos no eixo y, conforme segue.
+
+Sintaxe no software R:
+
+\texttt{plot(fitted(regressao),residuals(regressao),}
+
+\texttt{xlab="Valores\ ajustados",ylab="Resíduos")}
+
+Obs: \texttt{regressao} é o nome dado ao modelo de regressão, fitted
+define os valores ajustados no eixo x; \texttt{residuals} define os
+valores ajustados no eixo Y; \texttt{xlab} indica o nome do eixo x e
+\texttt{ylab} indica o nome do eixo y.
+
+\texttt{abline(h=0)} (obs: adicionar uma linha constante em y=0).
+
+Na Figura \ref{fig:residuos1} é apresentado o gráfico de resíduo, no
+qual os resíduos são apresentados no eixo y e os valores ajustados são
+apresentados no eixo x.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(}\KeywordTok{fitted}\NormalTok{(regressao), }\KeywordTok{residuals}\NormalTok{(regressao),}
+\DataTypeTok{xlab=}\StringTok{"Valores ajustados"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"Residuos"}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h=}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/residuos1-1} 
+
+}
+
+\caption{Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo}\label{fig:residuos1}
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+Outro gráfico de resíduos que é possível elaborar na análise de resíduos
+representa a variável preditora (x) no eixo x e o resíduos no eixo Y.
+
+Sintaxe no software R:
+
+\texttt{plot(tempo,residuals(regressao),}
+
+\texttt{xlab="Valores\ independente",\ ylab="Resíduos")}
+
+Obs: \texttt{regressao} é o nome dado ao modelo de regressão; a variável
+x define os valores do eixo x e residuals define os valores ajustados no
+eixo Y; \texttt{xlab} indica o nome do eixo x e ylab indica o nome do
+eixo y.
+
+\texttt{abline(h=0)}
+
+Obs: adicionar uma linha constante em y=0.
+
+Por exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(tempo, }\KeywordTok{residuals}\NormalTok{(regressao), }\DataTypeTok{xlab =} \StringTok{"Valores independentes"}\NormalTok{,}
+\DataTypeTok{ylab=}\StringTok{"Residuos"}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h=}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/residuos2-1} 
+
+}
+
+\caption{Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente}\label{fig:residuos2}
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+Na Figura \ref{fig:residuos2} é apresentado o gráfico de resíduo, em que
+no eixo y constam os valores dos resíduos e no eixo x constam os valores
+da variável independente.
+
+Considerando os dados do exemplo, suponha que um aluno estudou 6,5 horas
+(x=6,5), então o valor ajustado da nota (y ) é dado por
+2,2214+0,9474*6,5, resultando em 8,38. Para esse caso, o resíduo é:
+
+Yobservado -- Yestimado =8 --8,38 = -0,38
+
+Para exibir os valores ajustados e os resíduos da equação de regressão
+utilizam-se os seguintes comandos:
+
+Sintaxe no software R:
+
+\texttt{regressao\$residuals} (exibe os resíduos do modelo regressao).
+
+\texttt{regressao\$fitted.values} (exibe os valores ajustados do modelo
+regressao).
+
+Por exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{regressao}\OperatorTok{$}\NormalTok{residuals}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+       1        2        3        4        5        6        7        8 
+-0.51087 -0.40561  0.56807  0.04176 -0.56351  0.22070 -0.83718  1.01544 
+       9       10       11       12       13       14       15 
+ 0.64701 -0.30036  0.46281 -0.37930 -0.41615  0.17333  0.28386 
+\end{verbatim}
+
+Para testar a suposição que os erros aleatórios têm distribuição normal,
+pode-se elaborar o gráfico de probabilidade normal, conforme segue:
+
+Sintaxe no software R:
+
+\texttt{qqnorm(residuals(regressao))}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{qqnorm}\NormalTok{(}\KeywordTok{residuals}\NormalTok{(regressao))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/qqnorm-1} 
+
+}
+
+\caption{Gráfico de probabilidade normal para verificar normalidade dos resíduos}\label{fig:qqnorm}
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+Ainda, pode-se construir o gráfico com a distribuiçõa da probabilidade
+dos resíduos, através de um histograma, verificando assim se a cauda é
+simétrica ou não:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{hist}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ regressao}\OperatorTok{$}\NormalTok{residuals,}
+      \DataTypeTok{xlab =} \StringTok{"Resíduos"}\NormalTok{,}
+      \DataTypeTok{ylab =} \StringTok{"Densidade"}\NormalTok{,}
+      \DataTypeTok{main =} \StringTok{""}\NormalTok{,}
+      \DataTypeTok{col =} \StringTok{"lightgreen"}\NormalTok{,}
+      \DataTypeTok{probability =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{lines}\NormalTok{(}\KeywordTok{density}\NormalTok{(regressao}\OperatorTok{$}\NormalTok{residuals))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/unnamed-chunk-135-1} 
+
+}
+
+\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:unnamed-chunk-135}
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+Também, pode-se aplicar o teste de normalidade de Shapiro Wilk para
+verificar a normalidade dos dados, confirmando a simetria ou não da
+cauda do gráfico acima. O comando utilizado é o seguinte:
+
+\texttt{shapiro.test(residuals(regressao))}
+
+Obs: \texttt{residuals(regressão)} indica os resíduos do modelo de
+regressão.
+
+Por exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{shapiro.test}\NormalTok{(}\KeywordTok{residuals}\NormalTok{(regressao))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Shapiro-Wilk normality test
+
+data:  residuals(regressao)
+W = 0.96, p-value = 0.6
+\end{verbatim}
+
+\hypertarget{valores-outliers-na-regressao}{%
+\section{Valores outliers na
+regressão}\label{valores-outliers-na-regressao}}
+
+Para análise dos valores outliers nos resíduos (\emph{residuals
+standard} e \emph{residuals studentized}), utilizam-se os seguintes
+comandos:
+
+Sintaxe no software R:
+
+\texttt{rstudent(regressao)}
+
+\texttt{rstandard(regressao)}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rstudent}\NormalTok{(regressao)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+       1        2        3        4        5        6        7        8 
+-1.04742 -0.74389  1.07142  0.07646 -1.07311  0.40066 -2.01860  2.29138 
+       9       10       11       12       13       14       15 
+ 1.26283 -0.60069  0.86125 -0.69777 -0.81958  0.32859  0.51493 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rstandard}\NormalTok{(regressao)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+       1        2        3        4        5        6        7        8 
+-1.04353 -0.75701  1.06538  0.07956 -1.06691  0.41426 -1.81531  1.98916 
+       9       10       11       12       13       14       15 
+ 1.23490 -0.61602  0.86993 -0.71196 -0.83013  0.34048  0.53013 
+\end{verbatim}
+
+E o gráfico para verificar valores outliers nos resíduos:
+
+Sintaxe no software R:
+
+\texttt{plot(rstudent(regressao))}
+
+\texttt{plot(rstandard(regressao))}
+
+Os gráficos dos resíduos padronizados (standard) e studentizados
+(student) estão apresentados nas Figuras \ref{fig:residpad} e
+\ref{fig:residst}, respectivamente.
+
+Para o exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(}\KeywordTok{rstandard}\NormalTok{(regressao))}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h=}\DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h=}\OperatorTok{-}\DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/residpad-1} 
+
+}
+
+\caption{Resíduos padronizados para o exemplo}\label{fig:residpad}
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+Aqueles valores fora do intervalo (-2,+2) são possíveis outliers.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(}\KeywordTok{rstudent}\NormalTok{(regressao)) }
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h=}\DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h=}\OperatorTok{-}\DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/residst-1} 
+
+}
+
+\caption{Resíduos studentizados para o exemplo}\label{fig:residst}
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+\hypertarget{valores-influentes-na-regressao}{%
+\section{Valores influentes na
+regressão}\label{valores-influentes-na-regressao}}
+
+Para análise dos valores influentes, utiliza-se:
+
+Sintaxe no software R:
+
+\texttt{dffits(regressao)}
+
+Para esse exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dffits}\NormalTok{(regressao)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+       1        2        3        4        5        6        7        8 
+-0.55767 -0.19884  0.30669  0.02611 -0.34386  0.11597 -1.34854  0.97320 
+       9       10       11       12       13       14       15 
+ 0.43848 -0.32566  0.25379 -0.20196 -0.38792  0.14210  0.13902 
+\end{verbatim}
+
+Aqueles valores maiores que \(2*(p/n)^(1/2)\) são possíveis pontos
+influentes. Em que, p = número de parâmetros do modelo e n = tamanho da
+amostra.
+
+Para esse exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2}\OperatorTok{*}\NormalTok{(}\DecValTok{2}\OperatorTok{/}\DecValTok{15}\NormalTok{)}\OperatorTok{^}\NormalTok{(}\DecValTok{1}\OperatorTok{/}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.7303
+\end{verbatim}
+
+O gráfico para detectar pontos influentes pode ser elaborado pelo
+comando (o gráfico está apresentado na Figura \ref{fig:ptoinf}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(}\KeywordTok{dffits}\NormalTok{(regressao))}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h=}\OperatorTok{-}\FloatTok{0.73}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h=}\FloatTok{0.73}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{index_files/figure-latex/ptoinf-1} 
+
+}
+
+\caption{Pontos influentes para o exemplo}\label{fig:ptoinf}
+\end{figure}
+
+Fonte: Elaborado pelo(s) autor(es).
+
+O comando \texttt{plot(regressao)} elabora diferentes gráficos para o
+diagnóstico do modelo.
+
+\hypertarget{intervalo-de-predicao}{%
+\section{Intervalo de Predição}\label{intervalo-de-predicao}}
+
+Após o ajuste da equação de regressão linear simples, verificada a
+significância da equação (p \(<\) 0,05) e verificada que a equação
+estimada se ajusta bem aos dados pelo valor do coeficiente de
+determinação então podemos utilizar a para predizer valores da variável
+Y (resposta) a partir de valores da variável X (explicativa). Caso a
+regressão não seja significativa a melhor predição para a variável Y é
+média dos valores de \(y\), ou seja, \(\hat{y}\).
+
+A predição de valores só tem sentido nos seguintes casos:
+
+\begin{itemize}
+\tightlist
+\item
+  regressão significativa;
+\item
+  os valores de X devem estar dentro dos limites inferior e superior dos
+  dados amostrais;
+\item
+  as inferências referem-se somente a população de onde a amostra
+  aleatória foi extraída;
+\item
+  as suposições sobre os resíduos devem ser satisfeitas.
+\end{itemize}
+
+Quando tem-se um equação estimada do tipo \(\hat{y} = b_0 + b_1x\),
+\(\hat{y}\) representa o valor predito da variável Y para um dado valor
+da variável X, ou seja, é uma predição pontual, porém esta não informa a
+sua precisão, a qual é contemplada no intervalo de predição (da mesma
+forma do intervalo de confiança, já visto em inferência estatística).
+
+O intervalo de predição para um determinado Y é dado por:
+
+\[
+\hat{y}\pm \varepsilon
+\]
+
+em que:
+
+\[
+\varepsilon = t_{(n-2;\frac{a}{2})}.S_e. \sqrt{ 1+ \frac{1}{n} +  \frac{n(x_p-\bar{x})^2}{n(\sum x^2)-(\sum x)^2} }
+\]
+
+onde:
+
+\(x_p\): o valor dado para x
+
+\(S_e\): o erro padrão da estimativa, definido por:
+
+\[
+S_e=\sqrt\textrm{QMResduo}=\sqrt\frac{\sum(y-\hat{y})^2}{n-2}
+\]
+
+Assim, obtêm-se o intervalo de predição para um determinado Y, que
+também pode ser expresso da seguinte forma:
+
+\[
+(\hat{y} - \varepsilon;\hat{y} + \varepsilon)
+\]
+
+Sintaxe no software R:
+
+\texttt{x0=data.frame(x=valor\_numérico)}
+
+Obs: x0 recebe o valor de x.
+
+\texttt{predict(regressao,x0,interval="prediction")}
+
+Obs: regressao é o nome dado ao modelo de regressão.
+
+Para o exemplo R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x0=}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{tempo=}\FloatTok{5.5}\NormalTok{)}
+\KeywordTok{predict}\NormalTok{(regressao, x0, }\DataTypeTok{interval=}\StringTok{"prediction"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    fit   lwr   upr
+1 7.432 6.189 8.675
+\end{verbatim}
+
 \hypertarget{rmarkdown}{%
 \chapter{RMarkdown}\label{rmarkdown}}
+
+\hypertarget{referencias}{%
+\chapter*{Referências}\label{referencias}}
+\addcontentsline{toc}{chapter}{Referências}
 
 \printbibliography
 
