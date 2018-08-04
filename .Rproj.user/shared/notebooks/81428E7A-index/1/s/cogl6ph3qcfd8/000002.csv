@@ -1,0 +1,20 @@
+"0","title: ""Software R: An√°lise estat√≠stica de dados utilizando um programa livre""
+author: 
+- Felipe Micail da Silva Smolski
+- Iara Denise Endruweit Battisti
+date: ""`r Sys.Date()`""
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: authoryear
+link-citations: yes
+github-repo: rstub/bookdown-chapterbib
+url: 'http\://rstub.github.io/bookdown-chapterbib/'
+description: ""Curso de an√°lise estat√≠stica com R da UFFS Cerro Largo - RS""
+fontsize: 12pt
+lang: pt-Br
+always_allow_html: yes
+---"
+"2","'""---""' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+"
