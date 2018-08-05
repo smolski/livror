@@ -1,4 +1,4 @@
-\documentclass[12pt,brazil,]{book}
+\documentclass[12pt,brazil,oneside]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -146,6 +146,8 @@
 \renewcommand{\baselinestretch}{1.0}
 \setlength{\parindent}{1.25cm}
 \selectlanguage{brazil}
+
+\usepackage{float}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -308,7 +310,7 @@ Lembrando que:
 O RStudio é a interface que faz com que seja mais fácil a utilização da
 programação em R.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{paineis} 
 
@@ -360,7 +362,7 @@ opção instalar e inserir o nome do pacote desejado na janela indicada.
 Ao selecionar a opção instalar, no console receberemos informações do
 procedimento e do sucesso do mesmo.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{pacotes1} 
 
@@ -371,7 +373,7 @@ procedimento e do sucesso do mesmo.
 
 Fonte: Elaborado pelo(s) autor(es).
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{pacotes2} 
 
@@ -445,7 +447,7 @@ utilizada para carregar as bases de dados salvas com a função
 Outra opção é o carregamento das bases de dados manualmente pelo caminho
 \emph{Envoirment \(>\) Import Dataset}, escolhendo o tipo de arquivo:
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{r3} 
 
@@ -463,7 +465,7 @@ carregamos a planilha arvores (arquivo .xls) como mostra a Figura
 \ref{fig:r4}, derivado do caminho ``Import Dataset \(>\) From Excel'' do
 Environment.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{r4} 
 
@@ -492,7 +494,7 @@ arquivo está separado por vírgulas (\emph{Comma}), ponto e vírgula
 \(>\) Configure\ldots{}} oportuniza determinar os tipos de marca decimal
 e codificação de textos, por exemplo.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{r4csv} 
 
@@ -546,7 +548,7 @@ todo o ambiente, usando o ícone de disquete na aba ``Environment''
 (Abrir dados\ldots{}) na mesma aba. Desta forma, salvará todos os
 objetos criados no ambiente de trabalho.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{r6} 
 
@@ -1742,7 +1744,7 @@ Utiliza-se o comando da seguinte forma:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{95} 
 
@@ -1754,7 +1756,7 @@ Utiliza-se o comando da seguinte forma:
 Basta clicar no retângulo correspondente a variável que deseja ser
 modificada, excluir ou adicionar novas colunas.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{10} 
 
@@ -2828,7 +2830,7 @@ Ex. Construir um gráfico de colunas para a variável \textbf{Sexo}.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/unnamed-chunk-67-1} 
 
@@ -2857,7 +2859,7 @@ cores, assim como os comandos devem ser expressas em inglês.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/unnamed-chunk-68-1} 
 
@@ -2877,7 +2879,7 @@ cores, assim como os comandos devem ser expressas em inglês.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/unnamed-chunk-69-1} 
 
@@ -2909,7 +2911,7 @@ obtida em Ex.2).
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/unnamed-chunk-71-1} 
 
@@ -2971,7 +2973,7 @@ Ex. Construa um gráfico na forma de Setograma para a variável
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/unnamed-chunk-72-1} 
 
@@ -3001,7 +3003,7 @@ Ex. Construa um histograma com a variável \textbf{Renda\_h}.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/unnamed-chunk-73-1} 
 
@@ -3027,7 +3029,7 @@ usamos:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/unnamed-chunk-74-1} 
 
@@ -3074,7 +3076,7 @@ Para obter o boxplot para um conjunto de dados:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/unnamed-chunk-75-1} 
 
@@ -3297,7 +3299,7 @@ variáveis, o processo deverá ser realizado por etapas:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/unnamed-chunk-78-1} 
 
@@ -3371,7 +3373,7 @@ Segue a sequência de comandos, para obtenção do gráfico de linhas:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/unnamed-chunk-80-1} 
 
@@ -3658,7 +3660,7 @@ concluir e tomar decisões, com base em amostras (Figura
 produzir inferência sobre a população (LOPES et al.,
 \protect\hyperlink{ref-lopes2008}{2008}).
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{infestat} 
 
@@ -3824,7 +3826,7 @@ Hipóteses do teste:
 O \textbf{valor p} reflete a plausibilidade de se obter tais resultados
 no caso de H0 ser de fato verdadeira.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{testehip1} 
 
@@ -4327,7 +4329,7 @@ médias}\label{teste-de-hipotese-para-duas-medias}}
 O teste de hipótese para duas médias aplica-se quando se deseja comparar
 dois grupos:
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{testehip2} 
 
@@ -5222,7 +5224,7 @@ Figura \ref{fig:diag}c informa a ausência de relação entre as duas
 variáveis e, a Figura \ref{fig:diag}d mostra uma relação não linear, a
 qual não será objeto de estudo nesta publicação.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{correlacao1} 
 
@@ -5364,7 +5366,7 @@ O diagrama de dispersão do exemplo está representado abaixo.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/unnamed-chunk-128-1} 
 
@@ -5457,7 +5459,7 @@ quantitativas, como por exemplo:
 Na Figura \ref{fig:regress} é apresentada a variação explicada e não
 explicada na análise por modelo regressão.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{regress1} 
 
@@ -5471,7 +5473,7 @@ Fonte: Elaborado pelo(s) autor(es).
 Observa-se na Figura \ref{fig:regress}, uma identidade na regressão,
 conforme a seguinte expressão:
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{regress2} 
 
@@ -5814,7 +5816,7 @@ Para o exemplo:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/unnamed-chunk-132-1} 
 
@@ -5876,7 +5878,7 @@ Além da análise gráfica, existem testes para avaliar a homocedasticidade
 como o Teste de Bartlett e para avaliar a normalidade aplicam-se os
 testes de Shapiro Wilks ou Kolmogorov-Smirnov.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{residuos1} 
 
@@ -5916,7 +5918,7 @@ apresentados no eixo x.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/residuos1-1} 
 
@@ -5955,7 +5957,7 @@ Por exemplo:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/residuos2-1} 
 
@@ -6014,7 +6016,7 @@ Sintaxe no software R:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/qqnorm-1} 
 
@@ -6041,7 +6043,7 @@ simétrica ou não:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/unnamed-chunk-135-1} 
 
@@ -6139,7 +6141,7 @@ Para o exemplo:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/residpad-1} 
 
@@ -6160,7 +6162,7 @@ Aqueles valores fora do intervalo (-2,+2) são possíveis outliers.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/residst-1} 
 
@@ -6223,7 +6225,7 @@ comando (o gráfico está apresentado na Figura \ref{fig:ptoinf}:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{index_files/figure-latex/ptoinf-1} 
 
@@ -6339,7 +6341,7 @@ com a análise e manipulação de dados em um único documento (Figura
 \ref{fig:rmark}). Desta forma, é possível efetuar pesquisas científicas
 que podem ser reproduzidas de forma muito mais fácil.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkdown} 
 
@@ -6374,7 +6376,7 @@ Neste exemplo será criado um documento em Word, onde são preenchidos os
 campos com o título do documento, o nome do autor e escolha o tipo de
 documento.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{criararq1} 
 
@@ -6395,7 +6397,7 @@ adiante. Para compilação do documento para o formato desejado (neste
 caso Word), o usuário deve clicar na aba ``Knit \(>\) Knit to Word'', ou
 pelo atalho no teclado CTRL+SHIFT+K.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{compilar} 
 
@@ -6412,7 +6414,7 @@ ser resolvido salvando o documento criado com a codificação UTF-8. Para
 isto, clique em ``File \(>\) Save with Encoding \(>\) UTF-8''. Deve ser
 feito este procedimento para cada tipo de arquivo: Word, HTML e PDF.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{errocodif} 
 
@@ -6443,7 +6445,7 @@ normalmente em forma de parágrafos (``fora'' dos Chunks), sendo que o
 novo parágrafo é iniciado após pressionar a tecla ``Enter'' entre os
 textos informados.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmark2} 
 
@@ -6480,7 +6482,7 @@ como visto anteriormente, cria documentos totalmente dinâmicos entre si.
 Os níveis de títulos dos documentos RMarkdown são definidos pelo símbolo
 \texttt{\#}:
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarktit} 
 
@@ -6500,7 +6502,7 @@ normalmente dentro do texto, no entanto os demais (exemplo do cifrão
 negrito, subscrito, sobrescrito, links e demais formatações são feitas
 no documento (Figura \ref{fig:rmarkform}).
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkform} 
 
@@ -6522,7 +6524,7 @@ pesquisador nesta empreitada.
 É possível efetuar a inserção de links nos documentos, para páginas
 externas ou mesmo internas ao documento (Figura \ref{fig:rmarklinks}).
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarklinks} 
 
@@ -6538,7 +6540,7 @@ no exemplo .png) é feita a partir do direcionamento do nome da imagem
 salva na mesma pasta do arquivo .Rmd criado, ou mesmo pelo link na
 internet (Figura \ref{fig:rmarkimg}).
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkimg} 
 
@@ -6552,7 +6554,7 @@ Fonte: Elaborado pelo(s) autor(es).
 A Figura \ref{fig:rmarklist} demonstra algumas formas de criar listas e
 itens no decorrer do corpo de texto no \textbf{RMarkdown}.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarklist} 
 
@@ -6567,7 +6569,7 @@ A criação de tabelas simples segue a disposição dos elementos
 pré-definidos, sendo que o alinhamento da coluna se dá pelo caractere
 ``\texttt{:}'' (dois pontos) conforme a Figura \ref{fig:rmarktab}:
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarktab} 
 
@@ -6583,7 +6585,7 @@ do acento circunflexo \texttt{\^{}{[}\ {]}}. O pesquisador adiciona-os
 durante o texto, e o programa enumera automaticamente no documento final
 em Word (Figura \ref{fig:rmarkrodape}).
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkrodape} 
 
@@ -6604,7 +6606,7 @@ inserido o autor ou autores e as informações do currículo do pesquisador
 são inseridas via nota de rodapé dentro do símbolo
 \texttt{\^{}{[}\ \ {]}}; o campo \emph{date} é opcional.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkautor} 
 
@@ -6665,7 +6667,7 @@ YAML relacionando-se com a saída do documento em Word:
 Também é possível incluir um campo \texttt{abstract} para o resumo, no
 caso de artigo e suas respectivas palavras-chave:
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{abstract} 
 
@@ -6692,7 +6694,7 @@ inclusão do código ??? , ou via plataforma RStudio, no menu ``Insert
 \(>\) Insert a new R chunk'', conforme demonstra a Figura
 \ref{fig:rmarkchunk1}:
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkchunk1} 
 
@@ -6720,7 +6722,7 @@ portanto será mostrado somente o valor 2. Caso o usuário almejasse
 inserir, no arquivo final, o código do R escrito (1+1) juntamente com o
 resultado da operação, marcaria \texttt{echo=TRUE}.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkchunk2} 
 
@@ -6744,7 +6746,7 @@ tempo que se existir uma Chunk durante o texto que deva ser configurada
 de forma diferente (por exemplo, o tamanho da imagem), pode ser efetuado
 em cada Chunk individual.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkchunkopt} 
 
@@ -6800,7 +6802,7 @@ dentro da Chunk, o comando \texttt{require\ ()} juntamente com o pacote
 necessário. Podem ser inseridos tantos pacotes quanto forem utilizados
 no documento, conforme a Figura \ref{fig:rmarkchunk3}.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkchunk3} 
 
@@ -6822,7 +6824,7 @@ exemplos trazidos abaixo incluem a utilização dos pacotes
 \texttt{kable}, \texttt{xtable} e \texttt{flextable} para a criação das
 tabelas.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkchunktab1} 
 
@@ -6837,7 +6839,7 @@ Além disso, o pacote \texttt{stargazer} é extremamente útil para geração
 de tabelas com resultados de regressões com a saída dos documentos em
 PDF.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkchunktab2} 
 
@@ -6860,7 +6862,7 @@ Da mesma forma que as tabelas, as imagens também podem ser inseridas com
 o auxílio de Chunks. Lembrando que a imagem deve estar na mesma pasta do
 arquivo ou na pasta indicada:
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkchunkimg} 
 
@@ -6906,7 +6908,7 @@ Abra o arquivo em Word (denominamos ``modelo.docx''). Atente para a
 caixa de seleção de estilos do Word, que será trabalhado nesta etapa
 (Figura \ref{fig:rmarkestilos}).
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkestilos} 
 
@@ -6925,7 +6927,7 @@ pesquisador na criação do documento padrão. Clique com o botão direito
 nos estilos e em ``Modificar'' para definir a formatação padrão para
 cada parte do texto.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkestilos1} 
 
@@ -6948,7 +6950,7 @@ deve-se incluir a seguinte informação no YAML mostrada na Figura
 arquivos em Open/Libre Office, deve ser inserida a opção
 \texttt{reference\_odt} seguida do arquivo (.odt) do modelo.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkestilos2} 
 
@@ -6989,7 +6991,7 @@ enquanto a segunda (\texttt{@book}) se trata de um livro. Dentro das
 chaves estão os dados das referências, como o título (\texttt{title}),
 autores (\texttt{author}) e o ano (\texttt{year}) por exemplo.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkbib} 
 
@@ -7046,7 +7048,7 @@ para o formato do BibLateX, pois podem copiar as entradas com as
 informações de um trabalho e inserí-las dentro do arquivo .bib (Figura
 \ref{fig:rmarkmendeley}).
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkmendeley} 
 
@@ -7063,7 +7065,7 @@ texto. Para isto, utiliza o nome da bibliografia inserida no arquivo
 .bib, no nosso exemplo \texttt{bresser} e \texttt{Forstater2008}, como
 mostra a Figura \ref{fig:rmarkcitar}.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkcitar} 
 
@@ -7097,7 +7099,7 @@ que o arquivo ``.csl'' deve ser salvo na mesma pasta do arquivo
 \url{http://editor.citationstyles.org/searchByName/} também são
 encontrados arquivos para várias normas bibliográficas.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkcitar1} 
 
@@ -7124,7 +7126,7 @@ com a geração das análises por meio do RStudio.
 
 Segue o resultado do arquivo final:
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.6\linewidth]{rmarkcitarf} 
 

@@ -1,6 +1,10 @@
 {
-    "path" : "D:/Github/livror",
+    "path" : "D:/Github/livroavancado",
     "sortOrder" : [
+        {
+            "ascending" : false,
+            "columnIndex" : 4
+        },
         {
             "ascending" : false,
             "columnIndex" : 2

@@ -15,6 +15,7 @@ description: "Curso de análise estatística com R da UFFS Cerro Largo - RS"
 fontsize: 12pt
 lang: pt-Br
 always_allow_html: yes
+classoption: oneside
 ---
 
 ```{r, include=FALSE}
@@ -29,7 +30,8 @@ knitr::opts_chunk$set(
   tidy = FALSE, 
   fig.align = "center", 
   out.width = '60%',
-  comment = NA
+  comment = NA,
+  fig.pos = 'H'
   )
 ```
 
@@ -3324,7 +3326,7 @@ A partir de então fica muito mais fácil alterar a norma necessária para a pro
 Segue o resultado do arquivo final:
 
 
-```{r rmarkcitarf, echo=FALSE, fig.cap="Resultado final das citações e referências com RMarkdown"}
+```{r rmarkcitarf, echo=FALSE, fig.cap="Resultado final das citações e referências com RMarkdown",fig.showtext="TEste"}
 knitr::include_graphics("rmarkcitarf.png")
 ```
 
