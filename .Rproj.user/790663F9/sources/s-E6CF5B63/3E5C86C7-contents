@@ -2,6 +2,8 @@ bookdown::gitbook:
   fig_caption: true
   css: style.css
   split_by: chapter
+  includes:
+    in_header: google-analytics.js
   config:
     toc:
       collapse: subsection
