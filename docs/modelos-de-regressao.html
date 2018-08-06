@@ -26,7 +26,7 @@
 <meta name="author" content="Iara Denise Endruweit Battisti">
 
 
-<meta name="date" content="2018-08-05">
+<meta name="date" content="2018-08-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -280,7 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>É um gráfico para verificar a existência de relação entre as variáveis X e Y. É composto por pontos, os quais correspondem aos pares de valores (<span class="math inline">\(xi, y_i\)</span>), sendo a variável X representada no eixo horizontal e a variável Y representada no eixo vertical.</p>
 <p>O diagrama de disperção fornece uma visualização gráfica do comportamento conjunto das duas variávei em estudo. Na Figura <a href="modelos-de-regressao.html#fig:diag">5.1</a> a percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variaveis crescem conjuntamente, já na Figura <a href="modelos-de-regressao.html#fig:diag">5.1</a>b percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura <a href="modelos-de-regressao.html#fig:diag">5.1</a>c informa a ausência de relação entre as duas variáveis e, a Figura <a href="modelos-de-regressao.html#fig:diag">5.1</a>d mostra uma relação não linear, a qual não será objeto de estudo nesta publicação.</p>
 <div class="figure" style="text-align: center"><span id="fig:diag"></span>
-<img src="correlacao1.png" alt="Diagramas de Dispersão" width="60%" />
+<img src="correlacao1.png" alt="Diagramas de Dispersão" width="80%" />
 <p class="caption">
 Figura 5.1: Diagramas de Dispersão
 </p>
@@ -353,7 +353,7 @@ Figura 5.1: Diagramas de Dispersão
 <p>O diagrama de dispersão do exemplo está representado abaixo.</p>
 <div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb342-1" data-line-number="1"><span class="kw">plot</span>(tempo,nota)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-128"></span>
-<img src="index_files/figure-html/unnamed-chunk-128-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="60%" />
+<img src="index_files/figure-html/unnamed-chunk-128-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="80%" />
 <p class="caption">
 Figura 5.2: Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo
 </p>
@@ -392,7 +392,7 @@ r=\frac{n\sum xy-(\sum x)(\sum y)}{\sqrt{n(\sum x^2)-(\sum x)^2} \sqrt{(\sum  y^
 </ul>
 <p>Na Figura <a href="modelos-de-regressao.html#fig:regress">5.3</a> é apresentada a variação explicada e não explicada na análise por modelo regressão.</p>
 <div class="figure" style="text-align: center"><span id="fig:regress"></span>
-<img src="regress1.png" alt="Variação explicada e não explicada na análise de regressão" width="60%" />
+<img src="regress1.png" alt="Variação explicada e não explicada na análise de regressão" width="80%" />
 <p class="caption">
 Figura 5.3: Variação explicada e não explicada na análise de regressão
 </p>
@@ -400,7 +400,7 @@ Figura 5.3: Variação explicada e não explicada na análise de regressão
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>Observa-se na Figura <a href="modelos-de-regressao.html#fig:regress">5.3</a>, uma identidade na regressão, conforme a seguinte expressão:</p>
 <div class="figure" style="text-align: center"><span id="fig:regress2"></span>
-<img src="regress2.png" alt="Identidade da Regressão" width="60%" />
+<img src="regress2.png" alt="Identidade da Regressão" width="80%" />
 <p class="caption">
 Figura 5.4: Identidade da Regressão
 </p>
@@ -585,7 +585,7 @@ F-statistic: 74.2 on 1 and 13 DF,  p-value: 9.88e-07</code></pre>
 <div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb351-1" data-line-number="1"><span class="kw">plot</span>(nota<span class="op">~</span>tempo)</a>
 <a class="sourceLine" id="cb351-2" data-line-number="2"><span class="kw">abline</span>(<span class="kw">coef</span>(regressao))</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-132"></span>
-<img src="index_files/figure-html/unnamed-chunk-132-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="60%" />
+<img src="index_files/figure-html/unnamed-chunk-132-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="80%" />
 <p class="caption">
 Figura 5.5: Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa
 </p>
@@ -609,7 +609,7 @@ tempo       0.7097  1.185</code></pre>
 distribuídos de forma aleatória no gráfico dos resíduos, conforme Figura <a href="modelos-de-regressao.html#fig:residuos">5.6</a>a. Caso a suposição não seja satisfeita, métodos alternativos podem ser utilizados como: método dos mínimos quadrados ponderados para o caso de não homocedasticidade; o método dos mínimos quadrados generalizados para o caso de erros correlacionados; e, métodos não-paramétricos para o caso de não normalidade.</p>
 <p>Além da análise gráfica, existem testes para avaliar a homocedasticidade como o Teste de Bartlett e para avaliar a normalidade aplicam-se os testes de Shapiro Wilks ou Kolmogorov-Smirnov.</p>
 <div class="figure" style="text-align: center"><span id="fig:residuos"></span>
-<img src="residuos1.png" alt="Gráficos para análise de resíduos em regressão" width="60%" />
+<img src="residuos1.png" alt="Gráficos para análise de resíduos em regressão" width="80%" />
 <p class="caption">
 Figura 5.6: Gráficos para análise de resíduos em regressão
 </p>
@@ -626,7 +626,7 @@ Figura 5.6: Gráficos para análise de resíduos em regressão
 <a class="sourceLine" id="cb354-2" data-line-number="2"><span class="dt">xlab=</span><span class="st">&quot;Valores ajustados&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Residuos&quot;</span>)</a>
 <a class="sourceLine" id="cb354-3" data-line-number="3"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:residuos1"></span>
-<img src="index_files/figure-html/residuos1-1.png" alt="Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo" width="60%" />
+<img src="index_files/figure-html/residuos1-1.png" alt="Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo" width="80%" />
 <p class="caption">
 Figura 5.7: Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo
 </p>
@@ -644,7 +644,7 @@ Figura 5.7: Gráfico dos resíduos em relação aos valores ajustados para os da
 <a class="sourceLine" id="cb355-2" data-line-number="2"><span class="dt">ylab=</span><span class="st">&quot;Residuos&quot;</span>)</a>
 <a class="sourceLine" id="cb355-3" data-line-number="3"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:residuos2"></span>
-<img src="index_files/figure-html/residuos2-1.png" alt="Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente" width="60%" />
+<img src="index_files/figure-html/residuos2-1.png" alt="Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente" width="80%" />
 <p class="caption">
 Figura 5.8: Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente
 </p>
@@ -668,7 +668,7 @@ Figura 5.8: Gráfico gerado pelo RStudio para análise dos resíduos com os valo
 <p><code>qqnorm(residuals(regressao))</code></p>
 <div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb358-1" data-line-number="1"><span class="kw">qqnorm</span>(<span class="kw">residuals</span>(regressao))</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:qqnorm"></span>
-<img src="index_files/figure-html/qqnorm-1.png" alt="Gráfico de probabilidade normal para verificar normalidade dos resíduos" width="60%" />
+<img src="index_files/figure-html/qqnorm-1.png" alt="Gráfico de probabilidade normal para verificar normalidade dos resíduos" width="80%" />
 <p class="caption">
 Figura 5.9: Gráfico de probabilidade normal para verificar normalidade dos resíduos
 </p>
@@ -683,7 +683,7 @@ Figura 5.9: Gráfico de probabilidade normal para verificar normalidade dos res�
 <a class="sourceLine" id="cb359-6" data-line-number="6">      <span class="dt">probability =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb359-7" data-line-number="7"><span class="kw">lines</span>(<span class="kw">density</span>(regressao<span class="op">$</span>residuals))</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-135"></span>
-<img src="index_files/figure-html/unnamed-chunk-135-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="60%" />
+<img src="index_files/figure-html/unnamed-chunk-135-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="80%" />
 <p class="caption">
 Figura 5.10: Histograma de distribuição da probabilidade para os resíduos
 </p>
@@ -725,7 +725,7 @@ W = 0.96, p-value = 0.6</code></pre>
 <a class="sourceLine" id="cb366-2" data-line-number="2"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a>
 <a class="sourceLine" id="cb366-3" data-line-number="3"><span class="kw">abline</span>(<span class="dt">h=</span><span class="op">-</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:residpad"></span>
-<img src="index_files/figure-html/residpad-1.png" alt="Resíduos padronizados para o exemplo" width="60%" />
+<img src="index_files/figure-html/residpad-1.png" alt="Resíduos padronizados para o exemplo" width="80%" />
 <p class="caption">
 Figura 5.11: Resíduos padronizados para o exemplo
 </p>
@@ -736,7 +736,7 @@ Figura 5.11: Resíduos padronizados para o exemplo
 <a class="sourceLine" id="cb367-2" data-line-number="2"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a>
 <a class="sourceLine" id="cb367-3" data-line-number="3"><span class="kw">abline</span>(<span class="dt">h=</span><span class="op">-</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:residst"></span>
-<img src="index_files/figure-html/residst-1.png" alt="Resíduos studentizados para o exemplo" width="60%" />
+<img src="index_files/figure-html/residst-1.png" alt="Resíduos studentizados para o exemplo" width="80%" />
 <p class="caption">
 Figura 5.12: Resíduos studentizados para o exemplo
 </p>
@@ -763,7 +763,7 @@ Figura 5.12: Resíduos studentizados para o exemplo
 <a class="sourceLine" id="cb372-2" data-line-number="2"><span class="kw">abline</span>(<span class="dt">h=</span><span class="op">-</span><span class="fl">0.73</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a>
 <a class="sourceLine" id="cb372-3" data-line-number="3"><span class="kw">abline</span>(<span class="dt">h=</span><span class="fl">0.73</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:ptoinf"></span>
-<img src="index_files/figure-html/ptoinf-1.png" alt="Pontos influentes para o exemplo" width="60%" />
+<img src="index_files/figure-html/ptoinf-1.png" alt="Pontos influentes para o exemplo" width="80%" />
 <p class="caption">
 Figura 5.13: Pontos influentes para o exemplo
 </p>

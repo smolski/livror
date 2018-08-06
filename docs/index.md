@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Felipe Micail da Silva Smolski
 - Iara Denise Endruweit Battisti
-date: "2018-08-05"
+date: "2018-08-06"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -77,7 +77,7 @@ Lembrando que:
 O RStudio é a interface que faz com que seja mais fácil a utilização da programação em R. 
 
 <div class="figure" style="text-align: center">
-<img src="paineis.png" alt="Painéis do Rstudio" width="60%" />
+<img src="paineis.png" alt="Painéis do Rstudio" width="80%" />
 <p class="caption">(\#fig:paineis1)Painéis do Rstudio</p>
 </div>
 Fonte: Elaborado pelo(s) autor(es).
@@ -97,14 +97,14 @@ Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, e
 
 
 <div class="figure" style="text-align: center">
-<img src="pacotes1.png" alt="Instalação de pacotes" width="60%" />
+<img src="pacotes1.png" alt="Instalação de pacotes" width="80%" />
 <p class="caption">(\#fig:pacotes1)Instalação de pacotes</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
 
 <div class="figure" style="text-align: center">
-<img src="pacotes2.png" alt="Caixa de informação de pacote a ser instalado" width="60%" />
+<img src="pacotes2.png" alt="Caixa de informação de pacote a ser instalado" width="80%" />
 <p class="caption">(\#fig:pacotes2)Caixa de informação de pacote a ser instalado</p>
 </div>
 
@@ -150,7 +150,7 @@ A opção `load()` (exemplo: `load("base.RData")`) pode ser utilizada para carre
 Outra opção é o carregamento das bases de dados manualmente pelo caminho *Envoirment $>$ Import Dataset*, escolhendo o tipo de arquivo:
 
 <div class="figure" style="text-align: center">
-<img src="r3.png" alt="Aba Import Dataset" width="60%" />
+<img src="r3.png" alt="Aba Import Dataset" width="80%" />
 <p class="caption">(\#fig:r3)Aba Import Dataset</p>
 </div>
 
@@ -159,7 +159,7 @@ Fonte: Elaborado pelo(s) autor(es).
 Na caixa correspondente a File/Url se insere o endereço virtual ou o local onde se encontra o arquivo. Ao importar os dados, carrega-se um objeto criado com as informações contidas no arquivo. No nosso exeplo, carregamos a planilha arvores (arquivo .xls) como mostra a Figura \@ref(fig:r4), derivado do caminho "Import Dataset $>$ From Excel" do Environment.
 
 <div class="figure" style="text-align: center">
-<img src="r4.png" alt="Caixa de informações do Import Data" width="60%" />
+<img src="r4.png" alt="Caixa de informações do Import Data" width="80%" />
 <p class="caption">(\#fig:r4)Caixa de informações do Import Data</p>
 </div>
 Fonte: Elaborado pelo(s) autor(es).
@@ -169,7 +169,7 @@ O campo *Code Preview* mostra o comando que está sendo criado para a importaç�
 Com relação à importação de arquivos de texto separado por caracteres (.csv), ela se dá via "Import Dataset $>$ From Text (readr)" do Environment. Constam algumas solicitações diferentes a serem determinadas pelo usuário no campo *Import Options*, conforme mostra a Figura \@ref(fig:r4csv). Uma questão importante é a opção *Delimiter*, a qual o pesquisador tem que prestar atenção quando o arquivo está separado por vírgulas (*Comma*), ponto e vírgula (*Semicolon*) ou outro tipo de caractere. A opção *Locale $>$ Configure...* oportuniza determinar os tipos de marca decimal e codificação de textos, por exemplo.
 
 <div class="figure" style="text-align: center">
-<img src="r4csv.png" alt="Opções da importação de arquivos .csv" width="60%" />
+<img src="r4csv.png" alt="Opções da importação de arquivos .csv" width="80%" />
 <p class="caption">(\#fig:r4csv)Opções da importação de arquivos .csv</p>
 </div>
 
@@ -193,7 +193,7 @@ Alguns tipos de dados:
 O banco de dados que o R armazena na memória pode ser salvo, junto com todo o ambiente, usando o ícone de disquete na aba "Environment" (salva como arquivo .RData), e depois carregado pelo ícone de pasta (Abrir dados...) na mesma aba. Desta forma, salvará todos os objetos criados no ambiente de trabalho.
 
 <div class="figure" style="text-align: center">
-<img src="r6.png" alt="Atalho para abrir e salvar arquivo de dados" width="60%" />
+<img src="r6.png" alt="Atalho para abrir e salvar arquivo de dados" width="80%" />
 <p class="caption">(\#fig:r6)Atalho para abrir e salvar arquivo de dados</p>
 </div>
 
@@ -1132,14 +1132,14 @@ informacoes.2=edit(informacoes)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="95.png" alt="Editor de dados" width="60%" />
+<img src="95.png" alt="Editor de dados" width="80%" />
 <p class="caption">(\#fig:95)Editor de dados</p>
 </div>
 
 Basta clicar no retângulo correspondente a variável que deseja ser modificada, excluir ou adicionar novas colunas.
 
 <div class="figure" style="text-align: center">
-<img src="10.png" alt="Acréscimo de uma nova coluna através do editor de dados" width="60%" />
+<img src="10.png" alt="Acréscimo de uma nova coluna através do editor de dados" width="80%" />
 <p class="caption">(\#fig:10)Acréscimo de uma nova coluna através do editor de dados</p>
 </div>
 
@@ -1967,7 +1967,7 @@ barplot(table(Sexo))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-67-1.png" alt="Gráfico de colunas com a variável Sexo" width="60%" />
+<img src="index_files/figure-epub3/unnamed-chunk-67-1.png" alt="Gráfico de colunas com a variável Sexo" width="80%" />
 <p class="caption">(\#fig:unnamed-chunk-67)Gráfico de colunas com a variável Sexo</p>
 </div>
 
@@ -1990,7 +1990,7 @@ barplot(table(`Pessoas_familia`), col=c("blue"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-68-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="60%" />
+<img src="index_files/figure-epub3/unnamed-chunk-68-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="80%" />
 <p class="caption">(\#fig:unnamed-chunk-68)Gráfico de colunas com a variável `Pessoas familia`</p>
 </div>
 
@@ -2004,7 +2004,7 @@ barplot(table(Sexo,Divulgacao),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-69-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="60%" />
+<img src="index_files/figure-epub3/unnamed-chunk-69-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="80%" />
 <p class="caption">(\#fig:unnamed-chunk-69)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
 </div>
 
@@ -2029,7 +2029,7 @@ barplot(Resultado,col=c("blue","red"),main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-71-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="60%" />
+<img src="index_files/figure-epub3/unnamed-chunk-71-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="80%" />
 <p class="caption">(\#fig:unnamed-chunk-71)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
 </div>
 
@@ -2077,7 +2077,7 @@ legend(x="topright", # Determina posição da legenda
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-72-1.png" alt="Gráfico de pizza com a variável Sabor" width="60%" />
+<img src="index_files/figure-epub3/unnamed-chunk-72-1.png" alt="Gráfico de pizza com a variável Sabor" width="80%" />
 <p class="caption">(\#fig:unnamed-chunk-72)Gráfico de pizza com a variável Sabor</p>
 </div>
 
@@ -2095,7 +2095,7 @@ hist(as.numeric(`Renda_h`))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-73-1.png" alt="Histograma com a variável `Renda h`" width="60%" />
+<img src="index_files/figure-epub3/unnamed-chunk-73-1.png" alt="Histograma com a variável `Renda h`" width="80%" />
 <p class="caption">(\#fig:unnamed-chunk-73)Histograma com a variável `Renda h`</p>
 </div>
 
@@ -2112,7 +2112,7 @@ hist(as.numeric(`Renda_h`), breaks=5)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-74-1.png" alt="Histograma com a variável Renda h com breaks=5" width="60%" />
+<img src="index_files/figure-epub3/unnamed-chunk-74-1.png" alt="Histograma com a variável Renda h com breaks=5" width="80%" />
 <p class="caption">(\#fig:unnamed-chunk-74)Histograma com a variável Renda h com breaks=5</p>
 </div>
 Use o argumento `main=NULL` para remover o título.
@@ -2136,7 +2136,7 @@ boxplot(Idade,horizontal = T)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-75-1.png" alt="Boxplot com a variável Idade" width="60%" />
+<img src="index_files/figure-epub3/unnamed-chunk-75-1.png" alt="Boxplot com a variável Idade" width="80%" />
 <p class="caption">(\#fig:unnamed-chunk-75)Boxplot com a variável Idade</p>
 </div>
 
@@ -2310,7 +2310,7 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-78-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="60%" />
+<img src="index_files/figure-epub3/unnamed-chunk-78-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="80%" />
 <p class="caption">(\#fig:unnamed-chunk-78)Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
 </div>
 
@@ -2371,7 +2371,7 @@ legend(0,40,c("temp_inst","temp_max","temp_min"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-80-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="60%" />
+<img src="index_files/figure-epub3/unnamed-chunk-80-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="80%" />
 <p class="caption">(\#fig:unnamed-chunk-80)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
 </div>
 
@@ -2610,7 +2610,7 @@ Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a
 A inferência estatística, ou estatística inferencial, tem por objetivo concluir e tomar decisões, com base em amostras (Figura \@ref(fig:infestat)). Usam-se dados extraídos de uma amostra para produzir inferência sobre a população [@lopes2008].
 
 <div class="figure" style="text-align: center">
-<img src="infestat.png" alt="Inferência Estatística" width="60%" />
+<img src="infestat.png" alt="Inferência Estatística" width="80%" />
 <p class="caption">(\#fig:infestat)Inferência Estatística</p>
 </div>
 
@@ -2728,7 +2728,7 @@ Hipóteses do teste:
 O **valor p** reflete a plausibilidade de se obter tais resultados  no caso de H0 ser de fato verdadeira.
 
 <div class="figure" style="text-align: center">
-<img src="testehip1.png" alt="Teste de hipóteses" width="60%" />
+<img src="testehip1.png" alt="Teste de hipóteses" width="80%" />
 <p class="caption">(\#fig:testehip1)Teste de hipóteses</p>
 </div>
 
@@ -3159,7 +3159,7 @@ Conclusão: Rejeita-se H0 com nível de significância de 1\% e conclui-se que a
 O teste de hipótese para duas médias aplica-se quando se deseja comparar dois grupos:
 
 <div class="figure" style="text-align: center">
-<img src="testehip2.png" alt="Teste de hipótese para dois grupos" width="60%" />
+<img src="testehip2.png" alt="Teste de hipótese para dois grupos" width="80%" />
 <p class="caption">(\#fig:testehip2)Teste de hipótese para dois grupos</p>
 </div>
 
@@ -3942,7 +3942,7 @@ O diagrama de disperção fornece uma visualização gráfica do comportamento c
 
 
 <div class="figure" style="text-align: center">
-<img src="correlacao1.png" alt="Diagramas de Dispersão" width="60%" />
+<img src="correlacao1.png" alt="Diagramas de Dispersão" width="80%" />
 <p class="caption">(\#fig:diag)Diagramas de Dispersão</p>
 </div>
 
@@ -3978,7 +3978,7 @@ plot(tempo,nota)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-128-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="60%" />
+<img src="index_files/figure-epub3/unnamed-chunk-128-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="80%" />
 <p class="caption">(\#fig:unnamed-chunk-128)Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo</p>
 </div>
 
@@ -4038,7 +4038,7 @@ Na Figura \@ref(fig:regress) é apresentada a variação explicada e não explic
 
 
 <div class="figure" style="text-align: center">
-<img src="regress1.png" alt="Variação explicada e não explicada na análise de regressão" width="60%" />
+<img src="regress1.png" alt="Variação explicada e não explicada na análise de regressão" width="80%" />
 <p class="caption">(\#fig:regress)Variação explicada e não explicada na análise de regressão</p>
 </div>
 
@@ -4048,7 +4048,7 @@ Fonte: Elaborado pelo(s) autor(es).
 Observa-se na Figura \@ref(fig:regress), uma identidade na regressão, conforme a seguinte expressão:
 
 <div class="figure" style="text-align: center">
-<img src="regress2.png" alt="Identidade da Regressão" width="60%" />
+<img src="regress2.png" alt="Identidade da Regressão" width="80%" />
 <p class="caption">(\#fig:regress2)Identidade da Regressão</p>
 </div>
 Fonte: Elaborado pelo(s) autor(es).
@@ -4301,7 +4301,7 @@ abline(coef(regressao))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-132-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="60%" />
+<img src="index_files/figure-epub3/unnamed-chunk-132-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="80%" />
 <p class="caption">(\#fig:unnamed-chunk-132)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
 </div>
 
@@ -4341,7 +4341,7 @@ distribuídos de forma aleatória no gráfico dos resíduos, conforme Figura \@r
 Além da análise gráfica, existem testes para avaliar a homocedasticidade como o Teste de Bartlett e para avaliar a normalidade aplicam-se os testes de Shapiro Wilks ou Kolmogorov-Smirnov.
 
 <div class="figure" style="text-align: center">
-<img src="residuos1.png" alt="Gráficos para análise de resíduos em regressão" width="60%" />
+<img src="residuos1.png" alt="Gráficos para análise de resíduos em regressão" width="80%" />
 <p class="caption">(\#fig:residuos)Gráficos para análise de resíduos em regressão</p>
 </div>
 
@@ -4369,7 +4369,7 @@ abline(h=0)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/residuos1-1.png" alt="Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo" width="60%" />
+<img src="index_files/figure-epub3/residuos1-1.png" alt="Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo" width="80%" />
 <p class="caption">(\#fig:residuos1)Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo</p>
 </div>
 
@@ -4400,7 +4400,7 @@ abline(h=0)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/residuos2-1.png" alt="Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente" width="60%" />
+<img src="index_files/figure-epub3/residuos2-1.png" alt="Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente" width="80%" />
 <p class="caption">(\#fig:residuos2)Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente</p>
 </div>
 
@@ -4447,7 +4447,7 @@ qqnorm(residuals(regressao))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/qqnorm-1.png" alt="Gráfico de probabilidade normal para verificar normalidade dos resíduos" width="60%" />
+<img src="index_files/figure-epub3/qqnorm-1.png" alt="Gráfico de probabilidade normal para verificar normalidade dos resíduos" width="80%" />
 <p class="caption">(\#fig:qqnorm)Gráfico de probabilidade normal para verificar normalidade dos resíduos</p>
 </div>
 
@@ -4467,7 +4467,7 @@ lines(density(regressao$residuals))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-135-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="60%" />
+<img src="index_files/figure-epub3/unnamed-chunk-135-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="80%" />
 <p class="caption">(\#fig:unnamed-chunk-135)Histograma de distribuição da probabilidade para os resíduos</p>
 </div>
 
@@ -4547,7 +4547,7 @@ abline(h=-2,col="red")
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/residpad-1.png" alt="Resíduos padronizados para o exemplo" width="60%" />
+<img src="index_files/figure-epub3/residpad-1.png" alt="Resíduos padronizados para o exemplo" width="80%" />
 <p class="caption">(\#fig:residpad)Resíduos padronizados para o exemplo</p>
 </div>
 
@@ -4563,7 +4563,7 @@ abline(h=-2,col="red")
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/residst-1.png" alt="Resíduos studentizados para o exemplo" width="60%" />
+<img src="index_files/figure-epub3/residst-1.png" alt="Resíduos studentizados para o exemplo" width="80%" />
 <p class="caption">(\#fig:residst)Resíduos studentizados para o exemplo</p>
 </div>
 
@@ -4614,7 +4614,7 @@ abline(h=0.73,col="red")
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/ptoinf-1.png" alt="Pontos influentes para o exemplo" width="60%" />
+<img src="index_files/figure-epub3/ptoinf-1.png" alt="Pontos influentes para o exemplo" width="80%" />
 <p class="caption">(\#fig:ptoinf)Pontos influentes para o exemplo</p>
 </div>
 
@@ -4703,7 +4703,7 @@ predict(regressao, x0, interval="prediction")
 **Markdown** é uma linguagem de marcação de textos utilizada para a criação de diversos documentos, incluindo artigos, livros e apresentações. A grande inovação do **RMarkdown** no RStudio neste sentido é a utilização desta linguagem por meio do pacote `rmarkdown` (arquivos .Rmd) para integrar a criação de documentos com a análise e manipulação de dados em um único documento (Figura \@ref(fig:rmark)). Desta forma, é possível efetuar  pesquisas científicas que podem ser reproduzidas de forma muito mais fácil.
 
 <div class="figure" style="text-align: center">
-<img src="rmarkdown.png" alt="Processo de criação de documentos no RMarkdown" width="60%" />
+<img src="rmarkdown.png" alt="Processo de criação de documentos no RMarkdown" width="80%" />
 <p class="caption">(\#fig:rmark)Processo de criação de documentos no RMarkdown</p>
 </div>
 
@@ -4719,7 +4719,7 @@ Neste exemplo será criado um documento em Word, onde são preenchidos os campos
 
 
 <div class="figure" style="text-align: center">
-<img src="criararq1.png" alt="Criar documento RMarkdown" width="60%" />
+<img src="criararq1.png" alt="Criar documento RMarkdown" width="80%" />
 <p class="caption">(\#fig:criararq1)Criar documento RMarkdown</p>
 </div>
 
@@ -4731,7 +4731,7 @@ Fonte: Elaborado pelo(s) autor(es).
 O **RMarkdown** cria um documento incial padrão, contendo alguns exemplos básicos de inserção de textos e de formatação, que serão vistos adiante. Para compilação do documento para o formato desejado (neste caso Word), o usuário deve clicar na aba "Knit $>$ Knit to Word", ou pelo atalho no teclado CTRL+SHIFT+K.
 
 <div class="figure" style="text-align: center">
-<img src="compilar.png" alt="Compilado o documento RMarkdown" width="60%" />
+<img src="compilar.png" alt="Compilado o documento RMarkdown" width="80%" />
 <p class="caption">(\#fig:compil)Compilado o documento RMarkdown</p>
 </div>
 
@@ -4740,7 +4740,7 @@ Fonte: Elaborado pelo(s) autor(es).
 Caso ocorram erros com relação à codificação do documento, no que diz respeito aos caracteres de acentuação da língua portuguesa, este pode ser resolvido salvando o documento criado com a codificação UTF-8. Para isto, clique em "File $>$ Save with Encoding $>$ UTF-8". Deve ser feito este procedimento para cada tipo de arquivo: Word, HTML e PDF.
 
 <div class="figure" style="text-align: center">
-<img src="errocodif.png" alt="Erro de codificação do documento RMarkdown" width="60%" />
+<img src="errocodif.png" alt="Erro de codificação do documento RMarkdown" width="80%" />
 <p class="caption">(\#fig:errocodif)Erro de codificação do documento RMarkdown</p>
 </div>
 
@@ -4754,7 +4754,7 @@ A configuração básica de um arquivo RMarkdown divide-se entre a YAML Header e
 Já abaixo do YAML, situa-se o local onde o pesquisador digitará o texto, bem como integrará a inserção de códigos do R e também efetuará as análises posteriores (análises descritivas, regressões, tabelas, fórmulas, etc.). Por sua vez, os códigos do R (para manipulação de dados, como visto até o capítulo anterior deste livro) são "embutidos" no texto por meio das **Code Chunks**. Já o texto é inserido normalmente em forma de parágrafos ("fora" dos Chunks), sendo que o novo parágrafo é iniciado após pressionar a tecla "Enter" entre os textos informados.
 
 <div class="figure" style="text-align: center">
-<img src="rmark2.png" alt="Tela inicial do arquivo RMarkdown" width="60%" />
+<img src="rmark2.png" alt="Tela inicial do arquivo RMarkdown" width="80%" />
 <p class="caption">(\#fig:rmark2)Tela inicial do arquivo RMarkdown</p>
 </div>
 
@@ -4772,7 +4772,7 @@ Dentro do documento **RMarkdown**, depois dos metadados, começa o espaço desti
 Os níveis de títulos dos documentos RMarkdown são definidos pelo símbolo `#`:
 
 <div class="figure" style="text-align: center">
-<img src="rmarktit.png" alt="Títulos no RMarkdown" width="60%" />
+<img src="rmarktit.png" alt="Títulos no RMarkdown" width="80%" />
 <p class="caption">(\#fig:rmarktit)Títulos no RMarkdown</p>
 </div>
 
@@ -4781,7 +4781,7 @@ Fonte: Elaborado pelo(s) autor(es).
 A acentuação das palavras, dentro do texto, é feita normalmente pelo teclado do usuário. Os caracteres `*#/()[]<>` podem ser escritos normalmente dentro do texto, no entanto os demais (exemplo do cifrão `$`) devem ser escritos precedidos de uma barra: `\$`. Por outro lado, a formatação em itálico, negrito, subscrito, sobrescrito, links e demais formatações são feitas no documento (Figura \@ref(fig:rmarkform)).
 
 <div class="figure" style="text-align: center">
-<img src="rmarkform.png" alt="Formatação no RMarkdown" width="60%" />
+<img src="rmarkform.png" alt="Formatação no RMarkdown" width="80%" />
 <p class="caption">(\#fig:rmarkform)Formatação no RMarkdown</p>
 </div>
 Fonte: Elaborado pelo(s) autor(es).
@@ -4791,7 +4791,7 @@ Como visto, é possível escrever as fórmulas em notação matemática, o que f
 É possível efetuar a inserção de links nos documentos, para páginas externas ou mesmo internas ao documento (Figura \@ref(fig:rmarklinks)).
 
 <div class="figure" style="text-align: center">
-<img src="rmarklinks.png" alt="Links no RMarkdown" width="60%" />
+<img src="rmarklinks.png" alt="Links no RMarkdown" width="80%" />
 <p class="caption">(\#fig:rmarklinks)Links no RMarkdown</p>
 </div>
 
@@ -4800,7 +4800,7 @@ Fonte: Elaborado pelo(s) autor(es).
 A inserção de imagens externas no documento, em diversos formatos (aqui no exemplo .png) é feita a partir do direcionamento do nome da imagem salva na mesma pasta do arquivo .Rmd criado, ou mesmo pelo link na internet (Figura \@ref(fig:rmarkimg)).
 
 <div class="figure" style="text-align: center">
-<img src="rmarkimg.png" alt="Imagens no RMarkdown" width="60%" />
+<img src="rmarkimg.png" alt="Imagens no RMarkdown" width="80%" />
 <p class="caption">(\#fig:rmarkimg)Imagens no RMarkdown</p>
 </div>
 
@@ -4809,7 +4809,7 @@ Fonte: Elaborado pelo(s) autor(es).
 A Figura \@ref(fig:rmarklist) demonstra algumas formas de criar listas e itens no decorrer do corpo de texto no **RMarkdown**.
 
 <div class="figure" style="text-align: center">
-<img src="rmarklist.png" alt="Listas no RMarkdown" width="60%" />
+<img src="rmarklist.png" alt="Listas no RMarkdown" width="80%" />
 <p class="caption">(\#fig:rmarklist)Listas no RMarkdown</p>
 </div>
 
@@ -4818,7 +4818,7 @@ Fonte: Elaborado pelo(s) autor(es).
 A criação de tabelas simples segue a disposição dos elementos pré-definidos, sendo que o alinhamento da coluna se dá pelo caractere "`:`" (dois pontos) conforme a Figura \@ref(fig:rmarktab):
 
 <div class="figure" style="text-align: center">
-<img src="rmarktab.png" alt="Tabelas simples no RMarkdown" width="60%" />
+<img src="rmarktab.png" alt="Tabelas simples no RMarkdown" width="80%" />
 <p class="caption">(\#fig:rmarktab)Tabelas simples no RMarkdown</p>
 </div>
 
@@ -4827,7 +4827,7 @@ Fonte: Elaborado pelo(s) autor(es).
 As notas de rodapé são inseridas no texto dentro das chaves precedidas do acento circunflexo `^[ ]`. O pesquisador adiciona-os durante o texto, e o programa enumera automaticamente no documento final em Word (Figura \@ref(fig:rmarkrodape)).
 
 <div class="figure" style="text-align: center">
-<img src="rmarkrodape.png" alt="Notas de rodapé no RMarkdown" width="60%" />
+<img src="rmarkrodape.png" alt="Notas de rodapé no RMarkdown" width="80%" />
 <p class="caption">(\#fig:rmarkrodape)Notas de rodapé no RMarkdown</p>
 </div>
 
@@ -4839,7 +4839,7 @@ Fonte: Elaborado pelo(s) autor(es).
 O YAML, ou os metadados do documento, são informações básicas do documento que podem ser alteradas (Figura \@ref(fig:rmarkautor)). Dentre elas *title* define o título do documento; em *author* é inserido o autor ou autores e as informações do currículo do pesquisador são inseridas via nota de rodapé dentro do símbolo `^[  ]`; o campo *date* é opcional.
 
 <div class="figure" style="text-align: center">
-<img src="rmarkautor.png" alt="Configuração do YAML" width="60%" />
+<img src="rmarkautor.png" alt="Configuração do YAML" width="80%" />
 <p class="caption">(\#fig:rmarkautor)Configuração do YAML</p>
 </div>
 
@@ -4873,7 +4873,7 @@ Os campos `fig\_height` e `fig\_width` determinam a altura e largura padrão de 
 Também é possível incluir um campo `abstract` para o resumo, no caso de artigo e suas respectivas palavras-chave:
 
 <div class="figure" style="text-align: center">
-<img src="abstract.png" alt="Abstract no YAML" width="60%" />
+<img src="abstract.png" alt="Abstract no YAML" width="80%" />
 <p class="caption">(\#fig:abstract)Abstract no YAML</p>
 </div>
 
@@ -4888,7 +4888,7 @@ A criação das Chunks é feita manualmente no corpo do documento .Rmd pela incl
 
 
 <div class="figure" style="text-align: center">
-<img src="rmarkchunk1.png" alt="Criação de Chunks" width="60%" />
+<img src="rmarkchunk1.png" alt="Criação de Chunks" width="80%" />
 <p class="caption">(\#fig:rmarkchunk1)Criação de Chunks</p>
 </div>
 
@@ -4901,7 +4901,7 @@ No exemplo abaixo, o nome da Chunk criada foi "r nomedochunk". E no campo das op
 A primeira opção, `echo=FALSE`, informa que no arquivo compilado, somente será mostrado o resultado da rotina inserida na Chunk (1+1), portanto será mostrado somente o valor 2. Caso o usuário almejasse inserir, no arquivo final, o código do R escrito (1+1) juntamente com o resultado da operação, marcaria `echo=TRUE`.
 
 <div class="figure" style="text-align: center">
-<img src="rmarkchunk2.png" alt="Criação de Chunks" width="60%" />
+<img src="rmarkchunk2.png" alt="Criação de Chunks" width="80%" />
 <p class="caption">(\#fig:rmarkchunk2)Criação de Chunks</p>
 </div>
 
@@ -4913,7 +4913,7 @@ As opções `fig.height` e `fig.width` referem-se à altura e largura caso o res
 Para padronizar todas as Chunks para que tenham as mesmas opções, uma maneira utilizada usualmente é a inserção de uma `Chunk global`. Ela é incluída no início do texto, sendo que a sua inclusão é facultativa. No entanto, contribui para padronizar o texto, ao mesmo tempo que se existir uma Chunk durante o texto que deva ser configurada de forma diferente (por exemplo, o tamanho da imagem), pode ser efetuado em cada Chunk individual.
 
 <div class="figure" style="text-align: center">
-<img src="rmarkchunkopt.png" alt="Chunk global" width="60%" />
+<img src="rmarkchunkopt.png" alt="Chunk global" width="80%" />
 <p class="caption">(\#fig:rmarkchunkopt)Chunk global</p>
 </div>
 
@@ -4938,7 +4938,7 @@ Como mencionado no início deste capítulo, a grande vantagem do **RMarkdown** �
 No exemplo abaixo, foi criado um *data frame* nomeado "amost" diretamente no console dentro da Chunk. Em um segundo momento, para utilizarmos um determinado pacote instalado no RStudio, utiliza-se, dentro da Chunk, o comando `require ()` juntamente com o pacote necessário. Podem ser inseridos tantos pacotes quanto forem utilizados no documento, conforme a Figura \@ref(fig:rmarkchunk3).
 
 <div class="figure" style="text-align: center">
-<img src="rmarkchunk3.png" alt="Exemplo de criação de Chunk e carregamento de pacote" width="60%" />
+<img src="rmarkchunk3.png" alt="Exemplo de criação de Chunk e carregamento de pacote" width="80%" />
 <p class="caption">(\#fig:rmarkchunk3)Exemplo de criação de Chunk e carregamento de pacote</p>
 </div>
 
@@ -4950,7 +4950,7 @@ Fonte: Elaborado pelo(s) autor(es).
 Como visto, algumas ações extremamente úteis podem ser efetuadas por meio das Chunks. Dentre elas, inclui-se a plotagem de tabelas no texto final, derivadas de objetos criados pelo pesquisador no RStudio. Os exemplos trazidos abaixo incluem a utilização dos pacotes `kable`, `xtable` e `flextable` para a criação das tabelas. 
 
 <div class="figure" style="text-align: center">
-<img src="rmarkchunktab1.png" alt="Exemplo de criação de tabelas com os pacotes kable, xtable e flextable" width="60%" />
+<img src="rmarkchunktab1.png" alt="Exemplo de criação de tabelas com os pacotes kable, xtable e flextable" width="80%" />
 <p class="caption">(\#fig:rmarkchunk31)Exemplo de criação de tabelas com os pacotes kable, xtable e flextable</p>
 </div>
 
@@ -4960,7 +4960,7 @@ Fonte: Elaborado pelo(s) autor(es).
 Além disso, o pacote `stargazer` é extremamente útil para geração de tabelas com resultados de regressões com a saída dos documentos em PDF.
 
 <div class="figure" style="text-align: center">
-<img src="rmarkchunktab2.png" alt="Exemplo de criação de tabelas com stargazer" width="60%" />
+<img src="rmarkchunktab2.png" alt="Exemplo de criação de tabelas com stargazer" width="80%" />
 <p class="caption">(\#fig:rmarkchunk33)Exemplo de criação de tabelas com stargazer</p>
 </div>
 
@@ -4975,7 +4975,7 @@ Da mesma forma que as tabelas, as imagens também podem ser inseridas com o aux�
 
 
 <div class="figure" style="text-align: center">
-<img src="rmarkchunkimg.png" alt="Exemplo de inserção de imagens pelos Chunks" width="60%" />
+<img src="rmarkchunkimg.png" alt="Exemplo de inserção de imagens pelos Chunks" width="80%" />
 <p class="caption">(\#fig:rmarkchunk333)Exemplo de inserção de imagens pelos Chunks</p>
 </div>
 
@@ -4998,7 +4998,7 @@ Como já visto, para criação de documentos .Rmd clique em "File $>$ New File $
 Abra o arquivo em Word (denominamos ``modelo.docx''). Atente para a caixa de seleção de estilos do Word, que será trabalhado nesta etapa (Figura \@ref(fig:rmarkestilos)). 
 
 <div class="figure" style="text-align: center">
-<img src="rmarkestilos.png" alt="Caixa estilos no Word" width="60%" />
+<img src="rmarkestilos.png" alt="Caixa estilos no Word" width="80%" />
 <p class="caption">(\#fig:rmarkestilos)Caixa estilos no Word</p>
 </div>
 
@@ -5007,7 +5007,7 @@ Fonte: Elaborado pelo(s) autor(es).
 Note que para o resultado desta compilação, o menu estilos traz várias formatações das diferentes partes do texto, entre elas "Abstract", "Author", "Normal", "Titulo", "Titulo 1", etc. Estes estilos serão alterados pelo usuário, para adequar às necessidades do pesquisador na criação do documento padrão. Clique com o botão direito nos estilos e em ``Modificar'' para definir a formatação padrão para cada parte do texto.
 
 <div class="figure" style="text-align: center">
-<img src="rmarkestilos1.png" alt="Modificação de estilos no Word" width="60%" />
+<img src="rmarkestilos1.png" alt="Modificação de estilos no Word" width="80%" />
 <p class="caption">(\#fig:rmarkestilos1)Modificação de estilos no Word</p>
 </div>
 
@@ -5020,7 +5020,7 @@ Após detemrinar as alterações em todos os campos de estilos do documento mode
 
 
 <div class="figure" style="text-align: center">
-<img src="rmarkestilos2.png" alt="Vinculação do modelo" width="60%" />
+<img src="rmarkestilos2.png" alt="Vinculação do modelo" width="80%" />
 <p class="caption">(\#fig:rmarkestilos2)Vinculação do modelo</p>
 </div>
 
@@ -5040,7 +5040,7 @@ Dentro deste arquivo serão armazenadas as referências biliográficas, não dev
 A primeira (`@article`), demonstra que é um artigo de uma revista enquanto a segunda (`@book`) se trata de um livro. Dentro das chaves estão os dados das referências, como o título (`title`), autores (`author`) e o ano (`year`) por exemplo.
 
 <div class="figure" style="text-align: center">
-<img src="rmarkbib.png" alt="Arquivo .bib" width="60%" />
+<img src="rmarkbib.png" alt="Arquivo .bib" width="80%" />
 <p class="caption">(\#fig:rmarkbib)Arquivo .bib</p>
 </div>
 
@@ -5069,7 +5069,7 @@ Estas configurações do BibLateX são comuns nos programas de gerenciamento de 
 
 
 <div class="figure" style="text-align: center">
-<img src="rmarkmendeley.png" alt="Utilização do Mendeley para exportação de dados de bibliografias" width="60%" />
+<img src="rmarkmendeley.png" alt="Utilização do Mendeley para exportação de dados de bibliografias" width="80%" />
 <p class="caption">(\#fig:rmarkmendeley)Utilização do Mendeley para exportação de dados de bibliografias</p>
 </div>
 
@@ -5081,7 +5081,7 @@ Após escolhidas as bibliografias a serem utilizadas no trabalho, o pesquisador 
 
 
 <div class="figure" style="text-align: center">
-<img src="rmarkcitar.png" alt="Inserção de citações no arquivo .Rmd" width="60%" />
+<img src="rmarkcitar.png" alt="Inserção de citações no arquivo .Rmd" width="80%" />
 <p class="caption">(\#fig:rmarkcitar)Inserção de citações no arquivo .Rmd</p>
 </div>
 
@@ -5096,7 +5096,7 @@ Estes arquivos podem ser encontrados em diversos locais, como por exemplo em <ht
 também são encontrados arquivos para várias normas bibliográficas.
 
 <div class="figure" style="text-align: center">
-<img src="rmarkcitar1.png" alt="Configurando YAML para citações e fererências" width="60%" />
+<img src="rmarkcitar1.png" alt="Configurando YAML para citações e fererências" width="80%" />
 <p class="caption">(\#fig:rmarkcitar1)Configurando YAML para citações e fererências</p>
 </div>
 
@@ -5112,7 +5112,7 @@ Segue o resultado do arquivo final:
 
 
 <div class="figure" style="text-align: center">
-<img src="rmarkcitarf.png" alt="Resultado final das citações e referências com RMarkdown" width="60%" />
+<img src="rmarkcitarf.png" alt="Resultado final das citações e referências com RMarkdown" width="80%" />
 <p class="caption">(\#fig:rmarkcitarf)Resultado final das citações e referências com RMarkdown</p>
 </div>
 

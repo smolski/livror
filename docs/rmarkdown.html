@@ -26,7 +26,7 @@
 <meta name="author" content="Iara Denise Endruweit Battisti">
 
 
-<meta name="date" content="2018-08-05">
+<meta name="date" content="2018-08-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -271,7 +271,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <p><strong>Markdown</strong> é uma linguagem de marcação de textos utilizada para a criação de diversos documentos, incluindo artigos, livros e apresentações. A grande inovação do <strong>RMarkdown</strong> no RStudio neste sentido é a utilização desta linguagem por meio do pacote <code>rmarkdown</code> (arquivos .Rmd) para integrar a criação de documentos com a análise e manipulação de dados em um único documento (Figura <a href="rmarkdown.html#fig:rmark">6.1</a>). Desta forma, é possível efetuar pesquisas científicas que podem ser reproduzidas de forma muito mais fácil.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmark"></span>
-<img src="rmarkdown.png" alt="Processo de criação de documentos no RMarkdown" width="60%" />
+<img src="rmarkdown.png" alt="Processo de criação de documentos no RMarkdown" width="80%" />
 <p class="caption">
 Figura 6.1: Processo de criação de documentos no RMarkdown
 </p>
@@ -283,7 +283,7 @@ Figura 6.1: Processo de criação de documentos no RMarkdown
 <p>Para criação do documento RMarkdown, no RStudio clique em “File <span class="math inline">\(&gt;\)</span> New File <span class="math inline">\(&gt;\)</span> R Markdown”, ou mesmo através do atalho para criação de documentos conforme mostra a Figura <a href="rmarkdown.html#fig:criararq1">6.2</a>. Haverá a escolha entre a criação de documentos (HTML, PDF e Word/Libre/Open Office), a criação de uma apresentação (<em>Presentation</em>), a criação de um documento Shiny (documento dinâmico para criação de <em>dashboards</em>) e o carregamento de um modelo de documento pré-estabelecido (<em>From Template</em>).</p>
 <p>Neste exemplo será criado um documento em Word, onde são preenchidos os campos com o título do documento, o nome do autor e escolha o tipo de documento.</p>
 <div class="figure" style="text-align: center"><span id="fig:criararq1"></span>
-<img src="criararq1.png" alt="Criar documento RMarkdown" width="60%" />
+<img src="criararq1.png" alt="Criar documento RMarkdown" width="80%" />
 <p class="caption">
 Figura 6.2: Criar documento RMarkdown
 </p>
@@ -294,7 +294,7 @@ Figura 6.2: Criar documento RMarkdown
 <h2><span class="header-section-number">6.2</span> Compilando os resultados do arquivo</h2>
 <p>O <strong>RMarkdown</strong> cria um documento incial padrão, contendo alguns exemplos básicos de inserção de textos e de formatação, que serão vistos adiante. Para compilação do documento para o formato desejado (neste caso Word), o usuário deve clicar na aba “Knit <span class="math inline">\(&gt;\)</span> Knit to Word”, ou pelo atalho no teclado CTRL+SHIFT+K.</p>
 <div class="figure" style="text-align: center"><span id="fig:compil"></span>
-<img src="compilar.png" alt="Compilado o documento RMarkdown" width="60%" />
+<img src="compilar.png" alt="Compilado o documento RMarkdown" width="80%" />
 <p class="caption">
 Figura 6.3: Compilado o documento RMarkdown
 </p>
@@ -302,7 +302,7 @@ Figura 6.3: Compilado o documento RMarkdown
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>Caso ocorram erros com relação à codificação do documento, no que diz respeito aos caracteres de acentuação da língua portuguesa, este pode ser resolvido salvando o documento criado com a codificação UTF-8. Para isto, clique em “File <span class="math inline">\(&gt;\)</span> Save with Encoding <span class="math inline">\(&gt;\)</span> UTF-8”. Deve ser feito este procedimento para cada tipo de arquivo: Word, HTML e PDF.</p>
 <div class="figure" style="text-align: center"><span id="fig:errocodif"></span>
-<img src="errocodif.png" alt="Erro de codificação do documento RMarkdown" width="60%" />
+<img src="errocodif.png" alt="Erro de codificação do documento RMarkdown" width="80%" />
 <p class="caption">
 Figura 6.4: Erro de codificação do documento RMarkdown
 </p>
@@ -314,7 +314,7 @@ Figura 6.4: Erro de codificação do documento RMarkdown
 <p>A configuração básica de um arquivo RMarkdown divide-se entre a YAML Header e o corpo do documento. A YAML (Yet Another Markup Language) Header, ou metadados, é um cabeçalho onde são inseridas as informações sobre o arquivo e das opções de compilação. Sempre devem iniciar o documento, sendo inseridas dentro de dois campos de sinais <span class="math inline">\(---\)</span>.</p>
 <p>Já abaixo do YAML, situa-se o local onde o pesquisador digitará o texto, bem como integrará a inserção de códigos do R e também efetuará as análises posteriores (análises descritivas, regressões, tabelas, fórmulas, etc.). Por sua vez, os códigos do R (para manipulação de dados, como visto até o capítulo anterior deste livro) são “embutidos” no texto por meio das <strong>Code Chunks</strong>. Já o texto é inserido normalmente em forma de parágrafos (“fora” dos Chunks), sendo que o novo parágrafo é iniciado após pressionar a tecla “Enter” entre os textos informados.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmark2"></span>
-<img src="rmark2.png" alt="Tela inicial do arquivo RMarkdown" width="60%" />
+<img src="rmark2.png" alt="Tela inicial do arquivo RMarkdown" width="80%" />
 <p class="caption">
 Figura 6.5: Tela inicial do arquivo RMarkdown
 </p>
@@ -328,7 +328,7 @@ Figura 6.5: Tela inicial do arquivo RMarkdown
 <p>Dentro do documento <strong>RMarkdown</strong>, depois dos metadados, começa o espaço destinado ao texto do documento. Nesta etapa seguem algumas condições para a formatação do texto, bem como da configuração dos títulos e fórmulas matemáticas. A linguagem <em>markdown</em> preza pela simplicidade na formatação do texto, a qual posteriormente pode ser exportada para diversos tipos de documentos de uma só vez. Desta forma, como visto anteriormente, cria documentos totalmente dinâmicos entre si.</p>
 <p>Os níveis de títulos dos documentos RMarkdown são definidos pelo símbolo <code>#</code>:</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarktit"></span>
-<img src="rmarktit.png" alt="Títulos no RMarkdown" width="60%" />
+<img src="rmarktit.png" alt="Títulos no RMarkdown" width="80%" />
 <p class="caption">
 Figura 6.6: Títulos no RMarkdown
 </p>
@@ -336,7 +336,7 @@ Figura 6.6: Títulos no RMarkdown
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>A acentuação das palavras, dentro do texto, é feita normalmente pelo teclado do usuário. Os caracteres <code>*#/()[]&lt;&gt;</code> podem ser escritos normalmente dentro do texto, no entanto os demais (exemplo do cifrão <code>$</code>) devem ser escritos precedidos de uma barra: <code>\$</code>. Por outro lado, a formatação em itálico, negrito, subscrito, sobrescrito, links e demais formatações são feitas no documento (Figura <a href="rmarkdown.html#fig:rmarkform">6.7</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkform"></span>
-<img src="rmarkform.png" alt="Formatação no RMarkdown" width="60%" />
+<img src="rmarkform.png" alt="Formatação no RMarkdown" width="80%" />
 <p class="caption">
 Figura 6.7: Formatação no RMarkdown
 </p>
@@ -345,7 +345,7 @@ Figura 6.7: Formatação no RMarkdown
 <p>Como visto, é possível escrever as fórmulas em notação matemática, o que facilita e muito a vida do pesquisador. No ambiente matemático do <strong>RMarkdown</strong>, elas são escritas por meio da linguagem de marcação de textos LaTeX. Existem muitos manuais sobre esta linguagem, e para facilitar a escrita, sites como <a href="https://www.codecogs.com/latex/eqneditor.php?lang=pt-br" class="uri">https://www.codecogs.com/latex/eqneditor.php?lang=pt-br</a> ajudam o pesquisador nesta empreitada.</p>
 <p>É possível efetuar a inserção de links nos documentos, para páginas externas ou mesmo internas ao documento (Figura <a href="rmarkdown.html#fig:rmarklinks">6.8</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarklinks"></span>
-<img src="rmarklinks.png" alt="Links no RMarkdown" width="60%" />
+<img src="rmarklinks.png" alt="Links no RMarkdown" width="80%" />
 <p class="caption">
 Figura 6.8: Links no RMarkdown
 </p>
@@ -353,7 +353,7 @@ Figura 6.8: Links no RMarkdown
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>A inserção de imagens externas no documento, em diversos formatos (aqui no exemplo .png) é feita a partir do direcionamento do nome da imagem salva na mesma pasta do arquivo .Rmd criado, ou mesmo pelo link na internet (Figura <a href="rmarkdown.html#fig:rmarkimg">6.9</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkimg"></span>
-<img src="rmarkimg.png" alt="Imagens no RMarkdown" width="60%" />
+<img src="rmarkimg.png" alt="Imagens no RMarkdown" width="80%" />
 <p class="caption">
 Figura 6.9: Imagens no RMarkdown
 </p>
@@ -361,7 +361,7 @@ Figura 6.9: Imagens no RMarkdown
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>A Figura <a href="rmarkdown.html#fig:rmarklist">6.10</a> demonstra algumas formas de criar listas e itens no decorrer do corpo de texto no <strong>RMarkdown</strong>.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarklist"></span>
-<img src="rmarklist.png" alt="Listas no RMarkdown" width="60%" />
+<img src="rmarklist.png" alt="Listas no RMarkdown" width="80%" />
 <p class="caption">
 Figura 6.10: Listas no RMarkdown
 </p>
@@ -369,7 +369,7 @@ Figura 6.10: Listas no RMarkdown
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>A criação de tabelas simples segue a disposição dos elementos pré-definidos, sendo que o alinhamento da coluna se dá pelo caractere “<code>:</code>” (dois pontos) conforme a Figura <a href="rmarkdown.html#fig:rmarktab">6.11</a>:</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarktab"></span>
-<img src="rmarktab.png" alt="Tabelas simples no RMarkdown" width="60%" />
+<img src="rmarktab.png" alt="Tabelas simples no RMarkdown" width="80%" />
 <p class="caption">
 Figura 6.11: Tabelas simples no RMarkdown
 </p>
@@ -377,7 +377,7 @@ Figura 6.11: Tabelas simples no RMarkdown
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>As notas de rodapé são inseridas no texto dentro das chaves precedidas do acento circunflexo <code>^[ ]</code>. O pesquisador adiciona-os durante o texto, e o programa enumera automaticamente no documento final em Word (Figura <a href="rmarkdown.html#fig:rmarkrodape">6.12</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkrodape"></span>
-<img src="rmarkrodape.png" alt="Notas de rodapé no RMarkdown" width="60%" />
+<img src="rmarkrodape.png" alt="Notas de rodapé no RMarkdown" width="80%" />
 <p class="caption">
 Figura 6.12: Notas de rodapé no RMarkdown
 </p>
@@ -388,7 +388,7 @@ Figura 6.12: Notas de rodapé no RMarkdown
 <h2><span class="header-section-number">6.5</span> Elementos básicos do YAML</h2>
 <p>O YAML, ou os metadados do documento, são informações básicas do documento que podem ser alteradas (Figura <a href="rmarkdown.html#fig:rmarkautor">6.13</a>). Dentre elas <em>title</em> define o título do documento; em <em>author</em> é inserido o autor ou autores e as informações do currículo do pesquisador são inseridas via nota de rodapé dentro do símbolo <code>^[  ]</code>; o campo <em>date</em> é opcional.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkautor"></span>
-<img src="rmarkautor.png" alt="Configuração do YAML" width="60%" />
+<img src="rmarkautor.png" alt="Configuração do YAML" width="80%" />
 <p class="caption">
 Figura 6.13: Configuração do YAML
 </p>
@@ -410,7 +410,7 @@ Figura 6.13: Configuração do YAML
 </ul>
 <p>Também é possível incluir um campo <code>abstract</code> para o resumo, no caso de artigo e suas respectivas palavras-chave:</p>
 <div class="figure" style="text-align: center"><span id="fig:abstract"></span>
-<img src="abstract.png" alt="Abstract no YAML" width="60%" />
+<img src="abstract.png" alt="Abstract no YAML" width="80%" />
 <p class="caption">
 Figura 6.14: Abstract no YAML
 </p>
@@ -422,7 +422,7 @@ Figura 6.14: Abstract no YAML
 <p>Os <strong>Code Chunks</strong>, como já visto, são espaços destinados à inclusão de códigos diretamente do RStudio, como se inseríssemos a informação em seu Console. Desta forma, por exemplo, se efetuarmos uma operação matemática ou se carregarmos uma base de dados para ser trabalhada, as rotinas serão efetuadas no momento em que for compilado o arquivo .Rmd trabalhado.</p>
 <p>A criação das Chunks é feita manualmente no corpo do documento .Rmd pela inclusão do código ??? , ou via plataforma RStudio, no menu “Insert <span class="math inline">\(&gt;\)</span> Insert a new R chunk”, conforme demonstra a Figura <a href="rmarkdown.html#fig:rmarkchunk1">6.15</a>:</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkchunk1"></span>
-<img src="rmarkchunk1.png" alt="Criação de Chunks" width="60%" />
+<img src="rmarkchunk1.png" alt="Criação de Chunks" width="80%" />
 <p class="caption">
 Figura 6.15: Criação de Chunks
 </p>
@@ -432,7 +432,7 @@ Figura 6.15: Criação de Chunks
 <p>No exemplo abaixo, o nome da Chunk criada foi “r nomedochunk”. E no campo das opções, constaram <code>echo=FALSE</code>, <code>fig.height=10</code> e <code>fig.width=5</code>. Lembrando que estes campos determinam as opções somente para este chunk.</p>
 <p>A primeira opção, <code>echo=FALSE</code>, informa que no arquivo compilado, somente será mostrado o resultado da rotina inserida na Chunk (1+1), portanto será mostrado somente o valor 2. Caso o usuário almejasse inserir, no arquivo final, o código do R escrito (1+1) juntamente com o resultado da operação, marcaria <code>echo=TRUE</code>.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkchunk2"></span>
-<img src="rmarkchunk2.png" alt="Criação de Chunks" width="60%" />
+<img src="rmarkchunk2.png" alt="Criação de Chunks" width="80%" />
 <p class="caption">
 Figura 6.16: Criação de Chunks
 </p>
@@ -441,7 +441,7 @@ Figura 6.16: Criação de Chunks
 <p>As opções <code>fig.height</code> e <code>fig.width</code> referem-se à altura e largura caso o resultado final da Chunk fosse uma figura ou gráfico derivado de dados inseridos na mesma. Vale lembrar que somente seriam determinadas as medidas para esta Chunk.</p>
 <p>Para padronizar todas as Chunks para que tenham as mesmas opções, uma maneira utilizada usualmente é a inserção de uma <code>Chunk global</code>. Ela é incluída no início do texto, sendo que a sua inclusão é facultativa. No entanto, contribui para padronizar o texto, ao mesmo tempo que se existir uma Chunk durante o texto que deva ser configurada de forma diferente (por exemplo, o tamanho da imagem), pode ser efetuado em cada Chunk individual.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkchunkopt"></span>
-<img src="rmarkchunkopt.png" alt="Chunk global" width="60%" />
+<img src="rmarkchunkopt.png" alt="Chunk global" width="80%" />
 <p class="caption">
 Figura 6.17: Chunk global
 </p>
@@ -461,7 +461,7 @@ Figura 6.17: Chunk global
 <p>Como mencionado no início deste capítulo, a grande vantagem do <strong>RMarkdown</strong> é a sua versatilidade na criação de documentos concatenados com as análises estatísticas no RStudio. Desta forma, dentro das Ckunks, podem ser criadas bases de dados, bem como importados de sites ou mesmo carregados de arquivos trabalhados previamente no RStudio.</p>
 <p>No exemplo abaixo, foi criado um <em>data frame</em> nomeado “amost” diretamente no console dentro da Chunk. Em um segundo momento, para utilizarmos um determinado pacote instalado no RStudio, utiliza-se, dentro da Chunk, o comando <code>require ()</code> juntamente com o pacote necessário. Podem ser inseridos tantos pacotes quanto forem utilizados no documento, conforme a Figura <a href="rmarkdown.html#fig:rmarkchunk3">6.18</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkchunk3"></span>
-<img src="rmarkchunk3.png" alt="Exemplo de criação de Chunk e carregamento de pacote" width="60%" />
+<img src="rmarkchunk3.png" alt="Exemplo de criação de Chunk e carregamento de pacote" width="80%" />
 <p class="caption">
 Figura 6.18: Exemplo de criação de Chunk e carregamento de pacote
 </p>
@@ -471,7 +471,7 @@ Figura 6.18: Exemplo de criação de Chunk e carregamento de pacote
 <h3><span class="header-section-number">6.6.1</span> Inserindo tabelas com as Chunks</h3>
 <p>Como visto, algumas ações extremamente úteis podem ser efetuadas por meio das Chunks. Dentre elas, inclui-se a plotagem de tabelas no texto final, derivadas de objetos criados pelo pesquisador no RStudio. Os exemplos trazidos abaixo incluem a utilização dos pacotes <code>kable</code>, <code>xtable</code> e <code>flextable</code> para a criação das tabelas.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkchunk31"></span>
-<img src="rmarkchunktab1.png" alt="Exemplo de criação de tabelas com os pacotes kable, xtable e flextable" width="60%" />
+<img src="rmarkchunktab1.png" alt="Exemplo de criação de tabelas com os pacotes kable, xtable e flextable" width="80%" />
 <p class="caption">
 Figura 6.19: Exemplo de criação de tabelas com os pacotes kable, xtable e flextable
 </p>
@@ -479,7 +479,7 @@ Figura 6.19: Exemplo de criação de tabelas com os pacotes kable, xtable e flex
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>Além disso, o pacote <code>stargazer</code> é extremamente útil para geração de tabelas com resultados de regressões com a saída dos documentos em PDF.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkchunk33"></span>
-<img src="rmarkchunktab2.png" alt="Exemplo de criação de tabelas com stargazer" width="60%" />
+<img src="rmarkchunktab2.png" alt="Exemplo de criação de tabelas com stargazer" width="80%" />
 <p class="caption">
 Figura 6.20: Exemplo de criação de tabelas com stargazer
 </p>
@@ -491,7 +491,7 @@ Figura 6.20: Exemplo de criação de tabelas com stargazer
 <h3><span class="header-section-number">6.6.2</span> Inserindo imagens com as Chunks</h3>
 <p>Da mesma forma que as tabelas, as imagens também podem ser inseridas com o auxílio de Chunks. Lembrando que a imagem deve estar na mesma pasta do arquivo ou na pasta indicada:</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkchunk333"></span>
-<img src="rmarkchunkimg.png" alt="Exemplo de inserção de imagens pelos Chunks" width="60%" />
+<img src="rmarkchunkimg.png" alt="Exemplo de inserção de imagens pelos Chunks" width="80%" />
 <p class="caption">
 Figura 6.21: Exemplo de inserção de imagens pelos Chunks
 </p>
@@ -511,7 +511,7 @@ Figura 6.21: Exemplo de inserção de imagens pelos Chunks
 <h3><span class="header-section-number">6.7.2</span> Segundo passo: formatação do modelo</h3>
 <p>Abra o arquivo em Word (denominamos ``modelo.docx’’). Atente para a caixa de seleção de estilos do Word, que será trabalhado nesta etapa (Figura <a href="rmarkdown.html#fig:rmarkestilos">6.22</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkestilos"></span>
-<img src="rmarkestilos.png" alt="Caixa estilos no Word" width="60%" />
+<img src="rmarkestilos.png" alt="Caixa estilos no Word" width="80%" />
 <p class="caption">
 Figura 6.22: Caixa estilos no Word
 </p>
@@ -519,7 +519,7 @@ Figura 6.22: Caixa estilos no Word
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>Note que para o resultado desta compilação, o menu estilos traz várias formatações das diferentes partes do texto, entre elas “Abstract”, “Author”, “Normal”, “Titulo”, “Titulo 1”, etc. Estes estilos serão alterados pelo usuário, para adequar às necessidades do pesquisador na criação do documento padrão. Clique com o botão direito nos estilos e em ``Modificar’’ para definir a formatação padrão para cada parte do texto.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkestilos1"></span>
-<img src="rmarkestilos1.png" alt="Modificação de estilos no Word" width="60%" />
+<img src="rmarkestilos1.png" alt="Modificação de estilos no Word" width="80%" />
 <p class="caption">
 Figura 6.23: Modificação de estilos no Word
 </p>
@@ -530,7 +530,7 @@ Figura 6.23: Modificação de estilos no Word
 <h3><span class="header-section-number">6.7.3</span> Terceiro passo: vinculação do modelo ao arquivo em RMarkdown</h3>
 <p>Após detemrinar as alterações em todos os campos de estilos do documento modelo no Word, o pesquisador deve vincular este modelo ao documento .Rmd principal. Além de deixar salvo o modelo em Word na mesma pasta, deve-se incluir a seguinte informação no YAML mostrada na Figura <a href="rmarkdown.html#fig:rmarkestilos2">6.24</a> (<code>reference_docx</code>). Lembrando que para arquivos em Open/Libre Office, deve ser inserida a opção <code>reference_odt</code> seguida do arquivo (.odt) do modelo.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkestilos2"></span>
-<img src="rmarkestilos2.png" alt="Vinculação do modelo" width="60%" />
+<img src="rmarkestilos2.png" alt="Vinculação do modelo" width="80%" />
 <p class="caption">
 Figura 6.24: Vinculação do modelo
 </p>
@@ -546,7 +546,7 @@ Figura 6.24: Vinculação do modelo
 <p>Dentro deste arquivo serão armazenadas as referências biliográficas, não deve-se preocupar neste momento com a ordem das referências. Como mostra a Figura <a href="rmarkdown.html#fig:rmarkbib">6.25</a>, inserimos duas bibliografias a serem citadas posteriormente.</p>
 <p>A primeira (<code>@article</code>), demonstra que é um artigo de uma revista enquanto a segunda (<code>@book</code>) se trata de um livro. Dentro das chaves estão os dados das referências, como o título (<code>title</code>), autores (<code>author</code>) e o ano (<code>year</code>) por exemplo.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkbib"></span>
-<img src="rmarkbib.png" alt="Arquivo .bib" width="60%" />
+<img src="rmarkbib.png" alt="Arquivo .bib" width="80%" />
 <p class="caption">
 Figura 6.25: Arquivo .bib
 </p>
@@ -563,7 +563,7 @@ Figura 6.25: Arquivo .bib
 <p><code>@phdthesis</code> - Tese de doutorado. <strong>OBRIGATÓRIOS</strong>: author, title, school, year. <strong>OPCIONAIS</strong>: type, address, month, note, key.</p>
 <p>Estas configurações do BibLateX são comuns nos programas de gerenciamento de bibliografias, como por exemplo no <em>software</em> Mendeley. Os usuários deste programa tem uma facilidade na exportação para o formato do BibLateX, pois podem copiar as entradas com as informações de um trabalho e inserí-las dentro do arquivo .bib (Figura <a href="rmarkdown.html#fig:rmarkmendeley">6.26</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkmendeley"></span>
-<img src="rmarkmendeley.png" alt="Utilização do Mendeley para exportação de dados de bibliografias" width="60%" />
+<img src="rmarkmendeley.png" alt="Utilização do Mendeley para exportação de dados de bibliografias" width="80%" />
 <p class="caption">
 Figura 6.26: Utilização do Mendeley para exportação de dados de bibliografias
 </p>
@@ -571,7 +571,7 @@ Figura 6.26: Utilização do Mendeley para exportação de dados de bibliografia
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>Após escolhidas as bibliografias a serem utilizadas no trabalho, o pesquisador deve inserir estas entradas como referências dentro do texto. Para isto, utiliza o nome da bibliografia inserida no arquivo .bib, no nosso exemplo <code>bresser</code> e <code>Forstater2008</code>, como mostra a Figura <a href="rmarkdown.html#fig:rmarkcitar">6.27</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkcitar"></span>
-<img src="rmarkcitar.png" alt="Inserção de citações no arquivo .Rmd" width="60%" />
+<img src="rmarkcitar.png" alt="Inserção de citações no arquivo .Rmd" width="80%" />
 <p class="caption">
 Figura 6.27: Inserção de citações no arquivo .Rmd
 </p>
@@ -582,7 +582,7 @@ Mas qual norma será utilizada para as citações e a criação de referências 
 <p>Estes arquivos podem ser encontrados em diversos locais, como por exemplo em <a href="https://github.com/citation-style-language/styles" class="uri">https://github.com/citation-style-language/styles</a> (copie <a href="https://raw.githubusercontent.com/citation-style-language/styles/44808db510152943c5d9dc471a9c8982a3edfbea/associacao-brasileira-de-normas-tecnicas-ipea.csl">este</a> conteúdo para um arquivo “.txt” e o renomeie para “.csl”). Lembrando que o arquivo “.csl” deve ser salvo na mesma pasta do arquivo “.Rmd”. O arquivo csl aqui utilizado refere-se às normas da ABNT (Associação Brasileira de Normas Técnicas) utilizados pelo IPEA (Instituto de Pesquisa Econômica Aplicada). Verifica-se na Figura <a href="rmarkdown.html#fig:rmarkcitar1">6.28</a> a configuração final do YAML. Neste site <a href="http://editor.citationstyles.org/searchByName/" class="uri">http://editor.citationstyles.org/searchByName/</a>
 também são encontrados arquivos para várias normas bibliográficas.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkcitar1"></span>
-<img src="rmarkcitar1.png" alt="Configurando YAML para citações e fererências" width="60%" />
+<img src="rmarkcitar1.png" alt="Configurando YAML para citações e fererências" width="80%" />
 <p class="caption">
 Figura 6.28: Configurando YAML para citações e fererências
 </p>
@@ -592,7 +592,7 @@ Figura 6.28: Configurando YAML para citações e fererências
 <p>A partir de então fica muito mais fácil alterar a norma necessária para a produção do trabalho acadêmico, utilizando os mesmos dados de um artigo ou outro material a ser citado. Isto agiliza a produção acadêmica e proporciona, como visto neste livro, uma interação muito proveitosa com a geração das análises por meio do RStudio.</p>
 <p>Segue o resultado do arquivo final:</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkcitarf"></span>
-<img src="rmarkcitarf.png" alt="Resultado final das citações e referências com RMarkdown" width="60%" />
+<img src="rmarkcitarf.png" alt="Resultado final das citações e referências com RMarkdown" width="80%" />
 <p class="caption">
 Figura 6.29: Resultado final das citações e referências com RMarkdown
 </p>

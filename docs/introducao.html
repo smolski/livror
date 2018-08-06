@@ -26,7 +26,7 @@
 <meta name="author" content="Iara Denise Endruweit Battisti">
 
 
-<meta name="date" content="2018-08-05">
+<meta name="date" content="2018-08-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -284,7 +284,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">1.2</span> Painéis</h2>
 <p>O RStudio é a interface que faz com que seja mais fácil a utilização da programação em R.</p>
 <div class="figure" style="text-align: center"><span id="fig:paineis1"></span>
-<img src="paineis.png" alt="Painéis do Rstudio" width="60%" />
+<img src="paineis.png" alt="Painéis do Rstudio" width="80%" />
 <p class="caption">
 Figura 1.1: Painéis do Rstudio
 </p>
@@ -305,14 +305,14 @@ Figura 1.1: Painéis do Rstudio
 <h2><span class="header-section-number">1.4</span> Instalação de pacotes</h2>
 <p>Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, e para isso se faz necessário efetuar a sua instalação. Precisamos ir até o painel dos pacotes em <em>packages</em>, selecionar a opção instalar e inserir o nome do pacote desejado na janela indicada. Ao selecionar a opção instalar, no console receberemos informações do procedimento e do sucesso do mesmo.</p>
 <div class="figure" style="text-align: center"><span id="fig:pacotes1"></span>
-<img src="pacotes1.png" alt="Instalação de pacotes" width="60%" />
+<img src="pacotes1.png" alt="Instalação de pacotes" width="80%" />
 <p class="caption">
 Figura 1.2: Instalação de pacotes
 </p>
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <div class="figure" style="text-align: center"><span id="fig:pacotes2"></span>
-<img src="pacotes2.png" alt="Caixa de informação de pacote a ser instalado" width="60%" />
+<img src="pacotes2.png" alt="Caixa de informação de pacote a ser instalado" width="80%" />
 <p class="caption">
 Figura 1.3: Caixa de informação de pacote a ser instalado
 </p>
@@ -340,7 +340,7 @@ Figura 1.3: Caixa de informação de pacote a ser instalado
 <p>A opção <code>load()</code> (exemplo: <code>load(&quot;base.RData&quot;)</code>) pode ser utilizada para carregar as bases de dados salvas com a função <code>save()</code>, que será descrita no subcapítulo a seguir.</p>
 <p>Outra opção é o carregamento das bases de dados manualmente pelo caminho <em>Envoirment <span class="math inline">\(&gt;\)</span> Import Dataset</em>, escolhendo o tipo de arquivo:</p>
 <div class="figure" style="text-align: center"><span id="fig:r3"></span>
-<img src="r3.png" alt="Aba Import Dataset" width="60%" />
+<img src="r3.png" alt="Aba Import Dataset" width="80%" />
 <p class="caption">
 Figura 1.4: Aba Import Dataset
 </p>
@@ -348,7 +348,7 @@ Figura 1.4: Aba Import Dataset
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>Na caixa correspondente a File/Url se insere o endereço virtual ou o local onde se encontra o arquivo. Ao importar os dados, carrega-se um objeto criado com as informações contidas no arquivo. No nosso exeplo, carregamos a planilha arvores (arquivo .xls) como mostra a Figura <a href="introducao.html#fig:r4">1.5</a>, derivado do caminho “Import Dataset <span class="math inline">\(&gt;\)</span> From Excel” do Environment.</p>
 <div class="figure" style="text-align: center"><span id="fig:r4"></span>
-<img src="r4.png" alt="Caixa de informações do Import Data" width="60%" />
+<img src="r4.png" alt="Caixa de informações do Import Data" width="80%" />
 <p class="caption">
 Figura 1.5: Caixa de informações do Import Data
 </p>
@@ -357,7 +357,7 @@ Figura 1.5: Caixa de informações do Import Data
 <p>O campo <em>Code Preview</em> mostra o comando que está sendo criado para a importação destes dados. Em <em>Import Options</em>, delimita-se opções do objeto como o nome (<em>name</em>), o número máximo de linhas (<em>Max Rows</em>), quantas linhas serão puladas na importação do arquivo (<em>Skip</em>), o tratamento das células em branco (<em>NA</em>) e se a primeira linha contém os nomes (<em>Firts Row as Names</em>).</p>
 <p>Com relação à importação de arquivos de texto separado por caracteres (.csv), ela se dá via “Import Dataset <span class="math inline">\(&gt;\)</span> From Text (readr)” do Environment. Constam algumas solicitações diferentes a serem determinadas pelo usuário no campo <em>Import Options</em>, conforme mostra a Figura <a href="introducao.html#fig:r4csv">1.6</a>. Uma questão importante é a opção <em>Delimiter</em>, a qual o pesquisador tem que prestar atenção quando o arquivo está separado por vírgulas (<em>Comma</em>), ponto e vírgula (<em>Semicolon</em>) ou outro tipo de caractere. A opção <em>Locale <span class="math inline">\(&gt;\)</span> Configure…</em> oportuniza determinar os tipos de marca decimal e codificação de textos, por exemplo.</p>
 <div class="figure" style="text-align: center"><span id="fig:r4csv"></span>
-<img src="r4csv.png" alt="Opções da importação de arquivos .csv" width="60%" />
+<img src="r4csv.png" alt="Opções da importação de arquivos .csv" width="80%" />
 <p class="caption">
 Figura 1.6: Opções da importação de arquivos .csv
 </p>
@@ -380,7 +380,7 @@ Figura 1.6: Opções da importação de arquivos .csv
 <h2><span class="header-section-number">1.6</span> Salvar arquivo de dados</h2>
 <p>O banco de dados que o R armazena na memória pode ser salvo, junto com todo o ambiente, usando o ícone de disquete na aba “Environment” (salva como arquivo .RData), e depois carregado pelo ícone de pasta (Abrir dados…) na mesma aba. Desta forma, salvará todos os objetos criados no ambiente de trabalho.</p>
 <div class="figure" style="text-align: center"><span id="fig:r6"></span>
-<img src="r6.PNG" alt="Atalho para abrir e salvar arquivo de dados" width="60%" />
+<img src="r6.PNG" alt="Atalho para abrir e salvar arquivo de dados" width="80%" />
 <p class="caption">
 Figura 1.7: Atalho para abrir e salvar arquivo de dados
 </p>
@@ -840,14 +840,14 @@ $idade
 <p><code>novonomedabase = edit(nomeatualdabase)</code></p>
 <div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1">informacoes<span class="fl">.2</span>=<span class="kw">edit</span>(informacoes)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:95"></span>
-<img src="95.PNG" alt="Editor de dados" width="60%" />
+<img src="95.PNG" alt="Editor de dados" width="80%" />
 <p class="caption">
 Figura 1.8: Editor de dados
 </p>
 </div>
 <p>Basta clicar no retângulo correspondente a variável que deseja ser modificada, excluir ou adicionar novas colunas.</p>
 <div class="figure" style="text-align: center"><span id="fig:10"></span>
-<img src="10.PNG" alt="Acréscimo de uma nova coluna através do editor de dados" width="60%" />
+<img src="10.PNG" alt="Acréscimo de uma nova coluna através do editor de dados" width="80%" />
 <p class="caption">
 Figura 1.9: Acréscimo de uma nova coluna através do editor de dados
 </p>
