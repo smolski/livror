@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html  lang="pt-Br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Software R: Análise estatística de dados utilizando um programa livre</title>
+  <meta name="description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Software R: Análise estatística de dados utilizando um programa livre" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http://rstub.github.io/bookdown-chapterbib/" />
+  
+  <meta property="og:description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS" />
+  <meta name="github-repo" content="rstub/bookdown-chapterbib" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Software R: Análise estatística de dados utilizando um programa livre" />
+  
+  <meta name="twitter:description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS" />
+  
+
+<meta name="author" content="Felipe Micail da Silva Smolski">
+<meta name="author" content="Iara Denise Endruweit Battisti">
+
+
+<meta name="date" content="2018-08-06">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="intro.html">
+<link rel="next" href="inf.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112034801-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112034801-4');
+</script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Livro R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Apresentação</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#download-e-instalacao-do-r-e-rstudio"><i class="fa fa-check"></i><b>1.1</b> Download e instalação do R e Rstudio</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#paineis"><i class="fa fa-check"></i><b>1.2</b> Painéis</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#help"><i class="fa fa-check"></i><b>1.3</b> Help</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#instalacao-de-pacotes"><i class="fa fa-check"></i><b>1.4</b> Instalação de pacotes</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#abrir-arquivo-de-dados"><i class="fa fa-check"></i><b>1.5</b> Abrir arquivo de dados</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#salvar-arquivo-de-dados"><i class="fa fa-check"></i><b>1.6</b> Salvar arquivo de dados</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#diretorios-de-trabalho"><i class="fa fa-check"></i><b>1.7</b> Diretórios de trabalho</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#operacoes"><i class="fa fa-check"></i><b>1.8</b> Operações</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="intro.html"><a href="intro.html#operacoes-aritmeticas"><i class="fa fa-check"></i><b>1.8.1</b> Operações Aritméticas</a></li>
+<li class="chapter" data-level="1.8.2" data-path="intro.html"><a href="intro.html#operacoes-logicas"><i class="fa fa-check"></i><b>1.8.2</b> Operações Lógicas</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#criacao-de-variaveis"><i class="fa fa-check"></i><b>1.9</b> Criação de variáveis</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="intro.html"><a href="intro.html#conversao-de-uma-variavel"><i class="fa fa-check"></i><b>1.9.1</b> Conversão de uma variável</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#alguns-comandos-essenciais"><i class="fa fa-check"></i><b>1.10</b> Alguns comandos essenciais</a><ul>
+<li class="chapter" data-level="1.10.1" data-path="intro.html"><a href="intro.html#funcoes-view-e-dim"><i class="fa fa-check"></i><b>1.10.1</b> Funções <em>View</em> e <em>dim</em></a></li>
+<li class="chapter" data-level="1.10.2" data-path="intro.html"><a href="intro.html#comando-tapply"><i class="fa fa-check"></i><b>1.10.2</b> Comando <em>tapply</em></a></li>
+<li class="chapter" data-level="1.10.3" data-path="intro.html"><a href="intro.html#comando-subset"><i class="fa fa-check"></i><b>1.10.3</b> Comando <em>subset</em></a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#estrutura-de-dados"><i class="fa fa-check"></i><b>1.11</b> Estrutura de dados</a><ul>
+<li class="chapter" data-level="1.11.1" data-path="intro.html"><a href="intro.html#vetores"><i class="fa fa-check"></i><b>1.11.1</b> Vetores</a></li>
+<li class="chapter" data-level="1.11.2" data-path="intro.html"><a href="intro.html#matrizes"><i class="fa fa-check"></i><b>1.11.2</b> Matrizes</a></li>
+<li class="chapter" data-level="1.11.3" data-path="intro.html"><a href="intro.html#listas"><i class="fa fa-check"></i><b>1.11.3</b> Listas</a></li>
+<li class="chapter" data-level="1.11.4" data-path="intro.html"><a href="intro.html#data-frames"><i class="fa fa-check"></i><b>1.11.4</b> Data frames</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a></li>
+<li class="chapter" data-level="1.13" data-path="intro.html"><a href="intro.html#funcao-edit"><i class="fa fa-check"></i><b>1.13</b> Função <em>edit</em></a></li>
+<li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#funcoes"><i class="fa fa-check"></i><b>1.14</b> Funções</a></li>
+<li class="chapter" data-level="1.15" data-path="intro.html"><a href="intro.html#funcoes-matematicas"><i class="fa fa-check"></i><b>1.15</b> Funções Matemáticas</a></li>
+<li class="chapter" data-level="1.16" data-path="intro.html"><a href="intro.html#conversao-de-datas"><i class="fa fa-check"></i><b>1.16</b> Conversão de datas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="desc.html"><a href="desc.html"><i class="fa fa-check"></i><b>2</b> Estatística Descritiva</a><ul>
+<li class="chapter" data-level="2.1" data-path="desc.html"><a href="desc.html#natureza-da-medida-das-variaveis"><i class="fa fa-check"></i><b>2.1</b> Natureza da medida das variáveis</a></li>
+<li class="chapter" data-level="2.2" data-path="desc.html"><a href="desc.html#tabelas-e-graficos"><i class="fa fa-check"></i><b>2.2</b> Tabelas e Gráficos</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="desc.html"><a href="desc.html#tabela-simples-para-apresentacao-das-frequencias-absolutas"><i class="fa fa-check"></i><b>2.2.1</b> Tabela simples para apresentação das frequências absolutas</a></li>
+<li class="chapter" data-level="2.2.2" data-path="desc.html"><a href="desc.html#tabela-cruzada"><i class="fa fa-check"></i><b>2.2.2</b> Tabela cruzada</a></li>
+<li class="chapter" data-level="2.2.3" data-path="desc.html"><a href="desc.html#tabela-cruzada-para-apresentacao-das-frequencias-relativas"><i class="fa fa-check"></i><b>2.2.3</b> Tabela cruzada para apresentação das frequências relativas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="desc.html"><a href="desc.html#graficos"><i class="fa fa-check"></i><b>2.3</b> Gráficos</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="desc.html"><a href="desc.html#grafico-de-colunas"><i class="fa fa-check"></i><b>2.3.1</b> Gráfico de colunas</a></li>
+<li class="chapter" data-level="2.3.2" data-path="desc.html"><a href="desc.html#setograma-ou-grafico-de-pizza"><i class="fa fa-check"></i><b>2.3.2</b> Setograma ou gráfico de pizza</a></li>
+<li class="chapter" data-level="2.3.3" data-path="desc.html"><a href="desc.html#histograma"><i class="fa fa-check"></i><b>2.3.3</b> Histograma</a></li>
+<li class="chapter" data-level="2.3.4" data-path="desc.html"><a href="desc.html#boxplot-ou-diagrama-em-caixas"><i class="fa fa-check"></i><b>2.3.4</b> Boxplot ou diagrama em caixas</a></li>
+<li class="chapter" data-level="2.3.5" data-path="desc.html"><a href="desc.html#grafico-ramo-e-folhas"><i class="fa fa-check"></i><b>2.3.5</b> Gráfico ramo-e-folhas</a></li>
+<li class="chapter" data-level="2.3.6" data-path="desc.html"><a href="desc.html#graficos-de-dispersao"><i class="fa fa-check"></i><b>2.3.6</b> Gráficos de dispersão</a></li>
+<li class="chapter" data-level="2.3.7" data-path="desc.html"><a href="desc.html#grafico-de-linhas"><i class="fa fa-check"></i><b>2.3.7</b> Gráfico de linhas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="desc.html"><a href="desc.html#estatisticas-descritivas"><i class="fa fa-check"></i><b>2.4</b> Estatísticas Descritivas</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="inf.html"><a href="inf.html"><i class="fa fa-check"></i><b>3</b> Estatística Inferencial</a><ul>
+<li class="chapter" data-level="3.1" data-path="inf.html"><a href="inf.html#intervalo-de-confianca"><i class="fa fa-check"></i><b>3.1</b> Intervalo de Confiança</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="inf.html"><a href="inf.html#intervalo-de-confianca-para-uma-media-populacional"><i class="fa fa-check"></i><b>3.1.1</b> Intervalo de confiança para uma média populacional</a></li>
+<li class="chapter" data-level="3.1.2" data-path="inf.html"><a href="inf.html#para-verificar-normalidade-dos-dados"><i class="fa fa-check"></i><b>3.1.2</b> Para verificar normalidade dos dados</a></li>
+<li class="chapter" data-level="3.1.3" data-path="inf.html"><a href="inf.html#intervalo-de-confianca-para-uma-proporcao-populacional"><i class="fa fa-check"></i><b>3.1.3</b> Intervalo de confiança para uma proporção populacional</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="inf.html"><a href="inf.html#teste-de-hipoteses"><i class="fa fa-check"></i><b>3.2</b> Teste de hipóteses</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="inf.html"><a href="inf.html#teste-de-hipoteses-para-uma-media-populacional"><i class="fa fa-check"></i><b>3.2.1</b> Teste de hipóteses para uma média populacional</a></li>
+<li class="chapter" data-level="3.2.2" data-path="inf.html"><a href="inf.html#teste-de-hipoteses-para-uma-proporcao-populacional"><i class="fa fa-check"></i><b>3.2.2</b> Teste de hipóteses para uma proporção populacional</a></li>
+<li class="chapter" data-level="3.2.3" data-path="inf.html"><a href="inf.html#teste-de-hipotese-para-duas-medias"><i class="fa fa-check"></i><b>3.2.3</b> Teste de hipótese para duas médias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="qui.html"><a href="qui.html"><i class="fa fa-check"></i><b>4</b> Teste de Qui-Quadrado</a><ul>
+<li class="chapter" data-level="4.1" data-path="qui.html"><a href="qui.html#teste-de-qui-quadrado-para-verificar-associacao-entre-duas-variaveis-qualitativas"><i class="fa fa-check"></i><b>4.1</b> Teste de qui-quadrado para verificar associação entre duas variáveis qualitativas</a></li>
+<li class="chapter" data-level="4.2" data-path="qui.html"><a href="qui.html#check-list-para-escolher-o-teste-adequado-para-verificar-a-relacao-entre-duas-variaveis-qualitativas"><i class="fa fa-check"></i><b>4.2</b> Check list para escolher o teste adequado para verificar a relação entre duas variáveis qualitativas</a></li>
+<li class="chapter" data-level="4.3" data-path="qui.html"><a href="qui.html#exemplo-utilizando-os-recursos-do-software-r"><i class="fa fa-check"></i><b>4.3</b> Exemplo utilizando os recursos do software R</a></li>
+<li class="chapter" data-level="4.4" data-path="qui.html"><a href="qui.html#teste-de-associacao-com-duas-amostras-dependentes"><i class="fa fa-check"></i><b>4.4</b> Teste de associação com duas amostras dependentes</a></li>
+<li class="chapter" data-level="4.5" data-path="qui.html"><a href="qui.html#teste-de-qui-quadrado-para-verificar-aderencia-a-uma-distribuicao"><i class="fa fa-check"></i><b>4.5</b> Teste de qui-quadrado para verificar aderência a uma distribuição</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="reg.html"><a href="reg.html"><i class="fa fa-check"></i><b>5</b> Modelos de Regressão</a><ul>
+<li class="chapter" data-level="5.1" data-path="reg.html"><a href="reg.html#correlacao-linear"><i class="fa fa-check"></i><b>5.1</b> Correlação linear</a></li>
+<li class="chapter" data-level="5.2" data-path="reg.html"><a href="reg.html#diagrama-de-dispersao"><i class="fa fa-check"></i><b>5.2</b> Diagrama de dispersão</a></li>
+<li class="chapter" data-level="5.3" data-path="reg.html"><a href="reg.html#coeficiente-de-correlacao-linear-de-pearson"><i class="fa fa-check"></i><b>5.3</b> Coeficiente de Correlação Linear de Pearson</a></li>
+<li class="chapter" data-level="5.4" data-path="reg.html"><a href="reg.html#modelo-de-regressao"><i class="fa fa-check"></i><b>5.4</b> Modelo de Regressão</a></li>
+<li class="chapter" data-level="5.5" data-path="reg.html"><a href="reg.html#modelo-de-regressao-linear-simples"><i class="fa fa-check"></i><b>5.5</b> Modelo de Regressão Linear Simples</a></li>
+<li class="chapter" data-level="5.6" data-path="reg.html"><a href="reg.html#metodo-dos-minimos-quadrados"><i class="fa fa-check"></i><b>5.6</b> Método dos Mínimos Quadrados</a></li>
+<li class="chapter" data-level="5.7" data-path="reg.html"><a href="reg.html#analise-de-variancia"><i class="fa fa-check"></i><b>5.7</b> Análise de Variância</a></li>
+<li class="chapter" data-level="5.8" data-path="reg.html"><a href="reg.html#coeficiente-de-determinacao"><i class="fa fa-check"></i><b>5.8</b> Coeficiente de Determinação</a></li>
+<li class="chapter" data-level="5.9" data-path="reg.html"><a href="reg.html#analise-dos-residuos"><i class="fa fa-check"></i><b>5.9</b> Análise dos Resíduos</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="reg.html"><a href="reg.html#valores-outliers-na-regressao"><i class="fa fa-check"></i><b>5.9.1</b> Valores outliers na regressão</a></li>
+<li class="chapter" data-level="5.9.2" data-path="reg.html"><a href="reg.html#valores-influentes-na-regressao"><i class="fa fa-check"></i><b>5.9.2</b> Valores influentes na regressão</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="reg.html"><a href="reg.html#intervalo-de-predicao"><i class="fa fa-check"></i><b>5.10</b> Intervalo de Predição</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="rmark.html"><a href="rmark.html"><i class="fa fa-check"></i><b>6</b> RMarkdown</a><ul>
+<li class="chapter" data-level="6.1" data-path="rmark.html"><a href="rmark.html#criando-o-documento"><i class="fa fa-check"></i><b>6.1</b> Criando o documento</a></li>
+<li class="chapter" data-level="6.2" data-path="rmark.html"><a href="rmark.html#compilando-os-resultados-do-arquivo"><i class="fa fa-check"></i><b>6.2</b> Compilando os resultados do arquivo</a></li>
+<li class="chapter" data-level="6.3" data-path="rmark.html"><a href="rmark.html#elementos-basicos-do-rmarkdown"><i class="fa fa-check"></i><b>6.3</b> Elementos básicos do RMarkdown</a></li>
+<li class="chapter" data-level="6.4" data-path="rmark.html"><a href="rmark.html#elementos-basicos-de-formatacao"><i class="fa fa-check"></i><b>6.4</b> Elementos básicos de formatação</a></li>
+<li class="chapter" data-level="6.5" data-path="rmark.html"><a href="rmark.html#elementos-basicos-do-yaml"><i class="fa fa-check"></i><b>6.5</b> Elementos básicos do YAML</a></li>
+<li class="chapter" data-level="6.6" data-path="rmark.html"><a href="rmark.html#elementos-basicos-dos-chunks"><i class="fa fa-check"></i><b>6.6</b> Elementos básicos dos Chunks</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="rmark.html"><a href="rmark.html#inserindo-tabelas-com-as-chunks"><i class="fa fa-check"></i><b>6.6.1</b> Inserindo tabelas com as Chunks</a></li>
+<li class="chapter" data-level="6.6.2" data-path="rmark.html"><a href="rmark.html#inserindo-imagens-com-as-chunks"><i class="fa fa-check"></i><b>6.6.2</b> Inserindo imagens com as Chunks</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="rmark.html"><a href="rmark.html#criacao-de-modelos-para-formatacao-vinculada"><i class="fa fa-check"></i><b>6.7</b> Criação de modelos para formatação vinculada</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="rmark.html"><a href="rmark.html#primeiro-passo-criacao-de-um-documento-modelo"><i class="fa fa-check"></i><b>6.7.1</b> Primeiro passo: criação de um documento modelo</a></li>
+<li class="chapter" data-level="6.7.2" data-path="rmark.html"><a href="rmark.html#segundo-passo-formatacao-do-modelo"><i class="fa fa-check"></i><b>6.7.2</b> Segundo passo: formatação do modelo</a></li>
+<li class="chapter" data-level="6.7.3" data-path="rmark.html"><a href="rmark.html#terceiro-passo-vinculacao-do-modelo-ao-arquivo-em-rmarkdown"><i class="fa fa-check"></i><b>6.7.3</b> Terceiro passo: vinculação do modelo ao arquivo em RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="rmark.html"><a href="rmark.html#citacoes-e-bibliografias"><i class="fa fa-check"></i><b>6.8</b> Citações e bibliografias</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sobre-os-autores.html"><a href="sobre-os-autores.html"><i class="fa fa-check"></i>Sobre os autores</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referências</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Software R: Análise estatística de dados utilizando um programa livre</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="desc" class="section level1">
+<h1><span class="header-section-number">Capítulo 2</span> Estatística Descritiva</h1>
+
+<p>A Estatística é uma ciência cujo campo de aplicação estende-se a diferentes áreas do conhecimento humano. Tem por objetivo fornecer métodos e técnicas que permitem lidar, racionalmente, com situações sujeitas a incertezas. Apresenta um conjunto de técnicas e métodos de pesquisa que envolvem o planejamento de estudos (experimentais e observacionais), a coleta e organização de dados, a inferência, a análise e a disseminação de informação.</p>
+<p>Alguns termos extensamente utilizados em estatística, são definidos a seguir <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>:</p>
+<p><strong>População</strong>: é uma coleção completa de todos os elementos (valores, pessoas, medidas etc.) a serem estudados.</p>
+<p><strong>Censo</strong>: é uma coleção de dados relativos a todos os elementos de uma população.</p>
+<p><strong>Amostra</strong>: é uma sub-coleção de elementos extraídos de uma população.
+Parâmetro é a medida numérica que descreve uma característica de uma população.</p>
+<p><strong>Estatística</strong>: é uma medida numérica que descreve uma característica de uma amostra.</p>
+<div id="natureza-da-medida-das-variaveis" class="section level2">
+<h2><span class="header-section-number">2.1</span> Natureza da medida das variáveis</h2>
+<p>Variáveis reporta-se a características ou atributos que podem tomar diferentes valores ou categorias, o que se opõe ao conceito de constante <span class="citation">(Almeida e Freire <a href="#ref-almeida2000">2000</a>)</span>. Assim, variável pode ser definida como sendo a característica dos elementos da amostra ou da população que nos interessa estudar estatisticamente.</p>
+<p>Variáveis podem ser classificadas da seguinte forma:</p>
+<p><strong>Variáveis quantitativas</strong>: consistem em números que representam contagens ou medidas. Dividem-se em:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Variáveis discretas: resultam em um conjunto finito de valores possíveis, ou de um conjunto enumerável desses valores. Ex. número de unidades produzidas.</p></li>
+<li><p>Variáveis contínuas: resultam de um número infinito de valores possíveis que podem ser associados a pontos em uma escala contínua de tal maneira que não haja lacunas ou interrupções. Ex. Renda das famílias em reais.</p></li>
+</ol>
+<p><strong>Variáveis qualitativas</strong>: ou variáveis categóricas, ou atributos que podem ser separados em diferentes categorias que se distinguem por alguma característica não-numérica. Divididas em:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Variável nominal: caracterizada por dados que consistem apenas em nomes, rótulos ou categorias. Os dados não podem ser dispostos segundo um esquema ordenado (como de baixo para cima). Ex. nacionalidade</p></li>
+<li><p>Variável ordinal: envolve variáveis representadas por nomes que podem ser dispostos em alguma ordem, mas as diferenças entre os valores dos dados não podem ser determinadas, ou não tem sentido. Esse nível dá informações sobre comparações relativas, mas os graus de diferença não servem para cálculos <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>. Ex. Grau de escolaridade.</p></li>
+</ol>
+<p><strong>Dado</strong>: é o valor assumido por uma variável aleatória em um experimento.</p>
+<p>A Estatística subdivide-se em descritiva e inferencial. A estatística descritiva se preocupa em descrever os dados. A estatística inferencial, fundamentada na teoria das probabilidades, se preocupa com a análise destes dados e sua interpretação.</p>
+<p>Informações estatísticas em jornais, relatórios e outras publicações que consistem de dados reunidos e apresentados de forma clara e resumida, na forma de tabelas, gráficos ou numéricos, são conhecidos como estatísticas descritivas (ANDERSON, 2002).</p>
+<p><strong>Exemplo 1</strong></p>
+<p>Estaremos utilizando como exemplo os dados de uma pesquisa (dados simulados), cujo banco de dados está intitulado “Dados_pesquisa.ods”. Os dados são referentes aos resultados obtidos por ocasião de uma pesquisa realizada entre os consumidores a fim de analisar características associadas ao mercado consumidor de sucos, sendo que a amostra é composta de 348 entrevistados aleatoriamente selecionados.</p>
+<ul>
+<li><p>O objetivo primário do estudo foi determinar variáveis que seriam úteis para caracterizar os consumidores que já conhecem o suco e a possibilidade potencial de futuros consumidores. Há também interesse nas relações entre variáveis das características pessoais desses consumidores ou futuros consumidores.</p></li>
+<li><p>A pesquisa foi realizada, depois que os participantes realizaram uma visita técnica às instalações da empresa e puderam conhecer seus produtos e processos.</p></li>
+</ul>
+<p>Para cada entrevistado foram registrados dados para as seguintes variáveis:</p>
+<p><strong>Sexo</strong> – Gênero sexual;</p>
+<p><strong>Divulgacao</strong> – Forma de acesso ao suco ou publicidade do mesmo;</p>
+<p><strong>Renda_h</strong> – Renda por hora do entrevistado;</p>
+<p><strong>Praticidade</strong> – Aspectos quanto a oferta do suco, como por ex. embalagem;</p>
+<p><strong>Sabor</strong> – Aspectos relacionados ao sabor;</p>
+<p><strong>Pessoas_familia</strong> – Número de pessoas que compõe o grupo familiar;</p>
+<p><strong>Preço</strong> – como cada entrevistado classificava o preço do produto;</p>
+<p><strong>consumo_anterior</strong> – Se já consumia o suco antes da visita técnica;</p>
+<p><strong>consumo_pos</strong> – Se consumia o suco após a visita técnica;</p>
+<p><strong>Idade</strong> – Idade dos consumidores;</p>
+<p><strong>Altura_(m)</strong> – Altura dos consumidores;</p>
+<p><strong>Peso_(Kg)</strong> – Peso dos consumidores.</p>
+<p>Pede-se:</p>
+<ol style="list-style-type: decimal">
+<li><p>Salvar inicialmente os dados em formato CSV, xlsx ou outro.</p></li>
+<li><p>Ler os dados no “Environment” pelo “Import Dataset…From CSV” ou outro. No exemplo abaixo foram importados os dados diretamente do arquivo hospedado na internet.</p></li>
+<li><p>Carregar o banco de dados, com a finalidade de usar os objetos (variáveis) diretamente nas funções a serem utilizadas.</p></li>
+</ol>
+<p><code>attach(nome_da_planilha)</code></p>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb214-1" data-line-number="1"><span class="kw">require</span>(readxl)</a></code></pre></div>
+<pre><code>Carregando pacotes exigidos: readxl</code></pre>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb216-1" data-line-number="1">url &lt;-<span class="st"> &quot;https://goo.gl/37Fdzz&quot;</span></a>
+<a class="sourceLine" id="cb216-2" data-line-number="2">destfile &lt;-<span class="st"> &quot;pesquisa_dados.xlsx&quot;</span></a>
+<a class="sourceLine" id="cb216-3" data-line-number="3">curl<span class="op">::</span><span class="kw">curl_download</span>(url, destfile)</a>
+<a class="sourceLine" id="cb216-4" data-line-number="4">pesquisa_dados &lt;-<span class="st"> </span><span class="kw">read_excel</span>(destfile)</a>
+<a class="sourceLine" id="cb216-5" data-line-number="5"><span class="kw">attach</span>(pesquisa_dados)</a>
+<a class="sourceLine" id="cb216-6" data-line-number="6"><span class="kw">ls.str</span>(pesquisa_dados)</a></code></pre></div>
+<pre><code>Altura_(m) :  num [1:348] 1.82 1.9 1.69 1.89 1.9 1.76 1.83 1.81 1.67 1.55 ...
+Caso :  num [1:348] 1 2 3 4 5 6 7 8 9 10 ...
+consumo_anterior :  chr [1:348] &quot;N&quot; &quot;N&quot; &quot;S&quot; &quot;N&quot; &quot;S&quot; &quot;S&quot; &quot;S&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;S&quot; &quot;S&quot; &quot;S&quot; ...
+consumo_pos :  chr [1:348] &quot;N&quot; &quot;S&quot; &quot;N&quot; &quot;S&quot; &quot;N&quot; &quot;S&quot; &quot;N&quot; &quot;S&quot; &quot;N&quot; &quot;S&quot; &quot;S&quot; &quot;S&quot; &quot;S&quot; &quot;S&quot; &quot;S&quot; ...
+Divulgacao :  chr [1:348] &quot;Degustacao&quot; &quot;Radio&quot; &quot;TV&quot; &quot;TV&quot; &quot;Degustacao&quot; &quot;TV&quot; &quot;TV&quot; &quot;Radio&quot; ...
+Idade :  num [1:348] 22 21 20 18 16 28 19 19 22 19 ...
+Peso_(Kg) :  num [1:348] 78.5 80 54 78 36 82 75 69 58 49 ...
+Pessoas_familia :  num [1:348] 4 3 3 7 4 4 3 4 1 4 ...
+Praticidade :  chr [1:348] &quot;Pessima&quot; &quot;Otima&quot; &quot;Boa&quot; &quot;Pessima&quot; &quot;Ruim&quot; &quot;Boa&quot; &quot;Regular&quot; ...
+Preço :  chr [1:348] &quot;Acima_concorrencia&quot; &quot;Abaixo_concorrencia&quot; ...
+Renda_h :  chr [1:348] &quot;1.41&quot; &quot;17.34&quot; &quot;6.86&quot; &quot;2.65&quot; &quot;2.01&quot; &quot;11.32&quot; &quot;6.86&quot; &quot;3.25&quot; ...
+Sabor :  chr [1:348] &quot;Otimo&quot; &quot;Pessimo&quot; &quot;Bom&quot; &quot;Otimo&quot; &quot;Otimo&quot; &quot;Regular&quot; &quot;Ruim&quot; &quot;Bom&quot; ...
+Sexo :  chr [1:348] &quot;Feminino&quot; &quot;Feminino&quot; &quot;Feminino&quot; &quot;Feminino&quot; &quot;Masculino&quot; ...</code></pre>
+</div>
+<div id="tabelas-e-graficos" class="section level2">
+<h2><span class="header-section-number">2.2</span> Tabelas e Gráficos</h2>
+<p>Segundo <span class="citation">Barbetta (<a href="#ref-barbetta1988">2010</a>)</span>, dados representados em tabelas e gráficos adequados, permitem observar determinados aspectos relevantes, bem como delinear hipóteses a respeito da estrutura dos dados em estudo, o que conhecemos como análise exploratória de dados. Isto pode ser feito inicialmente com a representação em forma de tabelas.</p>
+<p>O comando <code>table()</code> é utilizado para elaborarmos tabelas de frequências absolutas. Dependendo da variável a ser representada, podemos usar esse comando de diferentes formas:</p>
+<div id="tabela-simples-para-apresentacao-das-frequencias-absolutas" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Tabela simples para apresentação das frequências absolutas</h3>
+<p>Uma tabela simples considera quantas vezes ocorre cada categoria (ou nível).</p>
+<p><code>table(nome_variável)</code></p>
+<p>Ex. Variável <strong>Praticidade</strong></p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb218-1" data-line-number="1"><span class="kw">table</span>(Praticidade)</a></code></pre></div>
+<pre><code>Praticidade
+    Boa   Otima Pessima Regular    Ruim 
+     82      70      21      80      95 </code></pre>
+</div>
+<div id="tabela-cruzada" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Tabela cruzada</h3>
+<p>A tabela cruzada, também conhecida como tabela de dupla entrada, para apresentação das frequências absolutas.</p>
+<p><code>table(nome_variável1,nome_variável2)</code></p>
+<p>Ex. Construir uma tabela cruzada apresentando as frequências absolutas das variáveis <strong>Sexo</strong> e <strong>Divulgacao</strong>.</p>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb220-1" data-line-number="1"><span class="kw">table</span>(pesquisa_dados<span class="op">$</span>Sexo,pesquisa_dados<span class="op">$</span>Divulgacao)</a></code></pre></div>
+<pre><code>           
+            Degustacao Outro Radio  TV
+  Feminino          78     6    61 147
+  Masculino         19     1    15  21</code></pre>
+</div>
+<div id="tabela-cruzada-para-apresentacao-das-frequencias-relativas" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Tabela cruzada para apresentação das frequências relativas</h3>
+<p>Com a introdução do comando `prop.table| é possível gerar, facilmente, tabelas de frequências relativas para as variáveis de interesse. As medidas relativas são importantes para comparar distribuições de frequências <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>.</p>
+<p><code>prop.table(table(nome_variável1,nome_variável2))</code></p>
+<p>Ex. Construir uma tabela cruzada apresentando as frequências relativas das variáveis <strong>Sexo</strong> e <strong>Divulgacao</strong>.</p>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb222-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Divulgacao,Sexo))</a></code></pre></div>
+<pre><code>            Sexo
+Divulgacao   Feminino Masculino
+  Degustacao 0.224138  0.054598
+  Outro      0.017241  0.002874
+  Radio      0.175287  0.043103
+  TV         0.422414  0.060345</code></pre>
+<p>A função <code>tapply</code> serve para calcular um valor usando uma variável categórica como condição, ou seja, aplica uma função qualquer (como média, por exemplo) a uma variável quantitativa para cada classe de uma variável categórica. Assim, permite obter em um só comando, a medida para cada categoria.</p>
+<p><code>tapply(var_quantitativa,var_categórica, função_desejada)</code></p>
+<p><code>tapply(variavel_quantitativa,variavel_qualitativa, mean)</code></p>
+<p>Se um registro possui <code>NA</code>, isto é, dados perdidos: com o parâmetro na.rm=T, indicamos para o comando ignorar os NAs nos dados e calcular a média.</p>
+<p><code>tapply(variavel_quanti, variavel_quali, mean, na.rm=T)</code></p>
+</div>
+</div>
+<div id="graficos" class="section level2">
+<h2><span class="header-section-number">2.3</span> Gráficos</h2>
+<div id="grafico-de-colunas" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Gráfico de colunas</h3>
+<p>As frequências podem ser visualizadas graficamente, usando gráficos de barras elementares, que se aplicam à descrição de qualquer variável qualitativa ou quantitativa discreta, vetor de dados ou tabelas.</p>
+<p>No entanto, no caso de dados em banco de dados, quando não utilizamos outros mecanismos de atribuição, precisamos usar o comando table.</p>
+<p><code>barplot(table(nome_variável))</code></p>
+<p>Ex. Construir um gráfico de colunas para a variável <strong>Sexo</strong>.</p>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb224-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo))</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-67"></span>
+<img src="index_files/figure-html/unnamed-chunk-67-1.png" alt="Gráfico de colunas com a variável Sexo" width="80%" />
+<p class="caption">
+Figura 2.1: Gráfico de colunas com a variável Sexo
+</p>
+</div>
+<p><strong>Obs</strong>.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.</p>
+<p><code>barplot(table(nome_variável), col=c(&quot;blue&quot;,&quot;red&quot;), main=&quot;Título&quot;, xlab=&quot;Variável do eixo x&quot;, ylab = &quot;Informação que consta no eixo y&quot;,border=&quot;red&quot;)</code></p>
+<p><strong>Ex.1)</strong> Construir um gráfico de colunas para a variável <strong>Pessoas_familia</strong>.</p>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb225-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(<span class="st">`</span><span class="dt">Pessoas_familia</span><span class="st">`</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>), </a>
+<a class="sourceLine" id="cb225-2" data-line-number="2">        <span class="dt">main =</span> <span class="st">&quot;Frequência de pessoas por família&quot;</span>, </a>
+<a class="sourceLine" id="cb225-3" data-line-number="3">        <span class="dt">xlab =</span> <span class="st">&quot;Frequência&quot;, </span></a>
+<a class="sourceLine" id="cb225-4" data-line-number="4"><span class="st">        ylab = &quot;</span>Pessoas<span class="st">&quot;, </span></a>
+<a class="sourceLine" id="cb225-5" data-line-number="5"><span class="st">        border = &quot;</span>red<span class="st">&quot;)</span></a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-68"></span>
+<img src="index_files/figure-html/unnamed-chunk-68-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="80%" />
+<p class="caption">
+Figura 2.2: Gráfico de colunas com a variável <code>Pessoas familia</code>
+</p>
+</div>
+<p><strong>Ex.2)</strong> Construir uma tabela de dupla entrada para as variáveis <strong>Sexo</strong> e <strong>Divulgação</strong>.</p>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb226-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo,Divulgacao), </a>
+<a class="sourceLine" id="cb226-2" data-line-number="2">        <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>), </a>
+<a class="sourceLine" id="cb226-3" data-line-number="3">        <span class="dt">main =</span> <span class="st">&quot;Frequência de pessoas por Sexo e Divulgacao&quot;</span>)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-69"></span>
+<img src="index_files/figure-html/unnamed-chunk-69-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="80%" />
+<p class="caption">
+Figura 2.3: Gráfico de colunas com as variáveis Sexo e Divulgacao
+</p>
+</div>
+<p><strong>Ex.3)</strong> Na sequência utiliza o sinal de atribuição &lt;- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).</p>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb227-1" data-line-number="1">Resultado&lt;-<span class="kw">table</span>(Sexo,Divulgacao)</a></code></pre></div>
+<p><strong>Ex.4)</strong> Execute o seguinte comando:</p>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb228-1" data-line-number="1"><span class="kw">barplot</span>(Resultado,<span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;red&quot;</span>),<span class="dt">main=</span><span class="st">&quot;Título&quot;</span>,</a>
+<a class="sourceLine" id="cb228-2" data-line-number="2">        <span class="dt">xlab=</span><span class="st">&quot;Variável do eixo x&quot;</span>,</a>
+<a class="sourceLine" id="cb228-3" data-line-number="3">        <span class="dt">ylab=</span><span class="st">&quot;Informação que consta no eixo y&quot;</span>, </a>
+<a class="sourceLine" id="cb228-4" data-line-number="4">        <span class="dt">border=</span><span class="st">&#39;red&#39;</span>, </a>
+<a class="sourceLine" id="cb228-5" data-line-number="5">        <span class="dt">beside=</span>T,<span class="dt">legend=</span><span class="kw">rownames</span>(Resultado),</a>
+<a class="sourceLine" id="cb228-6" data-line-number="6">        <span class="dt">args.legend =</span> <span class="kw">list</span>(<span class="dt">x =</span> <span class="st">&quot;topleft&quot;</span>))</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-71"></span>
+<img src="index_files/figure-html/unnamed-chunk-71-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="80%" />
+<p class="caption">
+Figura 2.4: Gráfico de colunas com as variáveis Sexo e Divulgacao (2)
+</p>
+</div>
+<p>Observe que o uso do argumento <code>beside=T</code> evita que as barras fiquem empilhadas e o arguemnto <code>legend</code>’ insere a legenda conforme as cores das colunas.</p>
+<p><strong>Ex.5)</strong> Repita o exercício a partir do Ex.3, invertendo a ordem entre as variáveis qualitativas.</p>
+</div>
+<div id="setograma-ou-grafico-de-pizza" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Setograma ou gráfico de pizza</h3>
+<p>Os gráficos em setores são utilizados para ilustrar dados qualitativos de modo mais compreensível. Quando a variável é ordinal, gráficos de colunas são mais indicados pelo fato de permitirem manter a ordem das categorias. Isto também vale para os casos em que se tem muitas categorias ou quanto se pretende dar mais destaque às categorias mais frequentes <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>.</p>
+<p><code>pie(table(nome_variável),main=&quot;nome&quot;)</code></p>
+<p>Ex. Construa um gráfico na forma de Setograma para a variável <strong>Sabor</strong>.</p>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb229-1" data-line-number="1"><span class="co"># Criar objeto com a tabela de Sabor</span></a>
+<a class="sourceLine" id="cb229-2" data-line-number="2">Sabor1=<span class="kw">table</span>(Sabor)</a>
+<a class="sourceLine" id="cb229-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb229-4" data-line-number="4"><span class="co"># Calcular o percentual</span></a>
+<a class="sourceLine" id="cb229-5" data-line-number="5">percent=<span class="kw">signif</span>(Sabor1<span class="op">/</span><span class="kw">sum</span>(Sabor1)<span class="op">*</span><span class="dv">100</span>,<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb229-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb229-7" data-line-number="7"><span class="co">#Criando os nomes da legenda</span></a>
+<a class="sourceLine" id="cb229-8" data-line-number="8">nomesleg=<span class="kw">c</span>(<span class="st">&quot;Bom&quot;</span>,<span class="st">&quot;Ótimo&quot;</span>,<span class="st">&quot;Péssimo&quot;</span>,<span class="st">&quot;Regular&quot;</span>,<span class="st">&quot;Ruim&quot;</span>)</a>
+<a class="sourceLine" id="cb229-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb229-10" data-line-number="10"><span class="co">#Plota-se o gráfico de pizza</span></a>
+<a class="sourceLine" id="cb229-11" data-line-number="11"><span class="kw">pie</span>(Sabor1, </a>
+<a class="sourceLine" id="cb229-12" data-line-number="12">    <span class="dt">labels =</span> <span class="kw">paste</span>(percent, <span class="st">&quot;%&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;&quot;</span>), </a>
+<a class="sourceLine" id="cb229-13" data-line-number="13">    <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">5</span>), <span class="co"># Determina cores </span></a>
+<a class="sourceLine" id="cb229-14" data-line-number="14">    <span class="dt">radius =</span> <span class="dv">1</span>) </a>
+<a class="sourceLine" id="cb229-15" data-line-number="15"><span class="kw">legend</span>(<span class="dt">x=</span><span class="st">&quot;topright&quot;</span>, <span class="co"># Determina posição da legenda</span></a>
+<a class="sourceLine" id="cb229-16" data-line-number="16">       <span class="dt">legend=</span>nomesleg, <span class="co"># Insere nomes da legenda</span></a>
+<a class="sourceLine" id="cb229-17" data-line-number="17">       <span class="dt">cex =</span> <span class="fl">0.65</span>, <span class="co"># Tamanho do texto</span></a>
+<a class="sourceLine" id="cb229-18" data-line-number="18">       <span class="dt">fill =</span> <span class="kw">terrain.colors</span>(<span class="dv">5</span>)) <span class="co"># Determina cores </span></a>
+<a class="sourceLine" id="cb229-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb229-20" data-line-number="20">## Alguns exemplos de paletas de cores:</a>
+<a class="sourceLine" id="cb229-21" data-line-number="21"><span class="co"># - rainbow(n)</span></a>
+<a class="sourceLine" id="cb229-22" data-line-number="22"><span class="co"># - heat.colors(n)</span></a>
+<a class="sourceLine" id="cb229-23" data-line-number="23"><span class="co"># - terrain.colors(n) </span></a>
+<a class="sourceLine" id="cb229-24" data-line-number="24"><span class="co"># - topo.colors(n)</span></a>
+<a class="sourceLine" id="cb229-25" data-line-number="25"><span class="co"># - cm.colors(n)</span></a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-72"></span>
+<img src="index_files/figure-html/unnamed-chunk-72-1.png" alt="Gráfico de pizza com a variável Sabor" width="80%" />
+<p class="caption">
+Figura 2.5: Gráfico de pizza com a variável Sabor
+</p>
+</div>
+</div>
+<div id="histograma" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> Histograma</h3>
+<p>No histograma, utilizado em geral quando temos variáveis quantitativas contínuas, a altura dos retângulos representa a frequência de ocorrência de valores no intervalo (deve iniciar sempre em zero), devem ter sempre a mesma largura podendo ser justapostos. O eixo horizontal (dos valores da variável) pode iniciar próximo ao menor valor da variável <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>. Para confecção do histograma devemos usar:</p>
+<p><code>hist(nome_variável)</code></p>
+<p>Ex. Construa um histograma com a variável <strong>Renda_h</strong>.</p>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb230-1" data-line-number="1"><span class="kw">hist</span>(<span class="kw">as.numeric</span>(<span class="st">`</span><span class="dt">Renda_h</span><span class="st">`</span>))</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-73"></span>
+<img src="index_files/figure-html/unnamed-chunk-73-1.png" alt="Histograma com a variável `Renda h`" width="80%" />
+<p class="caption">
+Figura 2.6: Histograma com a variável <code>Renda h</code>
+</p>
+</div>
+<p><strong>Obs</strong>. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.</p>
+<p><strong>Obs</strong>. II: Para definir o número de intervalos no Histograma, usamos:</p>
+<p><code>hist(nome_variável, breaks = 5)</code></p>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb231-1" data-line-number="1"><span class="kw">hist</span>(<span class="kw">as.numeric</span>(<span class="st">`</span><span class="dt">Renda_h</span><span class="st">`</span>), <span class="dt">breaks=</span><span class="dv">5</span>)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-74"></span>
+<img src="index_files/figure-html/unnamed-chunk-74-1.png" alt="Histograma com a variável Renda h com breaks=5" width="80%" />
+<p class="caption">
+Figura 2.7: Histograma com a variável Renda h com breaks=5
+</p>
+</div>
+<p>Use o argumento <code>main=NULL</code> para remover o título.</p>
+</div>
+<div id="boxplot-ou-diagrama-em-caixas" class="section level3">
+<h3><span class="header-section-number">2.3.4</span> Boxplot ou diagrama em caixas</h3>
+<p>Os diagramas em caixa são convenientes para revelar tendências centrais, dispersão, distribuição dos dados e a presença de outliers (valores extremos). Como as medianas revelam uma tendência central, ao passo que os quartis indicam a dispersão dos dados, os diagramas em caixa têm a vantagem de não serem tão sensíveis a valores extremos como outras medidas baseadas na média e no desvio-padrão. Por outro lado, os diagramas em caixa (boxplots) não dão informação tão detalhada quanto os histogramas ou os gráficos ramo-e-folhas, podendo não ser, assim, a melhor escolha quando lidamos com um único conjunto de dados. Os diagramas em caixa são, entretanto, mais convenientes na comparação de dois ou mais conjuntos de dados <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>.</p>
+<p>No diagrama de caixas, torna-se fácil identificar <strong>outliers</strong> (ou valores extremos), que são valores extremamente raros, no sentido de que estão muito afastados da maioria dos dados. Ao explorarmos um conjunto de dados, não podem deixar de considerar os outliers, porque eles podem revelar informações importantes <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>.</p>
+<p>Para obter o boxplot para um conjunto de dados:</p>
+<p><code>boxplot(variávelA, variávelB, names=c(&quot;A&quot;,&quot;B&quot;))</code></p>
+<p><strong>Ex.1)</strong> Construir um boxplot da variável <strong>Idade</strong>.</p>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb232-1" data-line-number="1"><span class="kw">boxplot</span>(Idade,<span class="dt">horizontal =</span> T)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-75"></span>
+<img src="index_files/figure-html/unnamed-chunk-75-1.png" alt="Boxplot com a variável Idade" width="80%" />
+<p class="caption">
+Figura 2.8: Boxplot com a variável Idade
+</p>
+</div>
+<p><strong>Ex.2)</strong> Construir um boxplot das variáveis <strong>Peso_(Kg)</strong> e <strong>Altura_(m)</strong>.</p>
+</div>
+<div id="grafico-ramo-e-folhas" class="section level3">
+<h3><span class="header-section-number">2.3.5</span> Gráfico ramo-e-folhas</h3>
+<p>Em um gráfico ramo-e-folhas, classificamos os dados segundo um padrão que revela a distribuição subjacente. O padrão consiste em separar um número em duas partes em geral: o ramo consiste nos algarismos mais à esquerda e as folhas consistem nos algarismos mais à direita.</p>
+<p>No gráfico Ramo-e-folhas, podemos ver a distribuição desses dados, que é uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a informação da lista original; se necessário, podemos recompor a relação original de valores. Note que as linhas de algarismos em um gráfico ramo-e-folhas são análogas, em natureza, às barras de um histograma <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>.</p>
+<p><code>stem(nome_variável)</code> - comando que permite obter um gráfico Ramo e Folhas.</p>
+<p>Ou</p>
+<p><code>stem(nome_variável,scale=1)</code></p>
+<p>O “scale=1”, que é o padrão, separa os ramos das folhas a partir das casas decimais.</p>
+<p>Caso padrão:</p>
+<ul>
+<li>A ideia do ramo e folhas é separar um número (como 16,0) em duas partes. Assim, a primeira parte inteira (16) chamada de ramo e a segunda, a parte decimal (0) chamada de folha. O padrão do R é separar os números em duas partes (inteira e decimal) e agrupar os números em classes de tamanho 2. Por exemplo, o ramo 16 leva em conta os números 16 e 17.</li>
+</ul>
+<p><strong>Obs.</strong>: Esse padrão vai se alterando, à medida que o conjunto de dados apresente diferentes casas decimais.</p>
+<p>Assim, outras opções podem ser avaliadas:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><code>stem(nome_variável,scale=0.5)</code></p></li>
+<li><p><code>stem(nome_variável,scale=2)</code></p></li>
+</ol>
+<p><strong>Obs.</strong>: Quando uma folha relacionada com certo ramo tem uma quantidade tão grande de valores que ele sintetiza essa quantidade usando a denominação +n, e invade a linha seguinte. Isso pode ser melhorado usando <strong>width</strong>.</p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><code>stem(nome_variável,scale=0.5,width=120)</code></li>
+</ol>
+<p>Ex. Construa um gráfico Ramo e Follhas com a variável <strong>Idade</strong>.</p>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb233-1" data-line-number="1"><span class="kw">stem</span>(Idade,<span class="dt">scale=</span><span class="dv">2</span>)</a></code></pre></div>
+<pre><code>
+  The decimal point is at the |
+
+  16 | 000
+  17 | 000000000
+  18 | 0000000000000000000000000000000000000000
+  19 | 000000000000000000000000000000000000000000000000
+  20 | 0000000000000000000000000000000000000000000000000000000000000000
+  21 | 000000000000000000000000000000000000000000000000000000000000
+  22 | 0000000000000000000000000000000000000000000
+  23 | 000000000000
+  24 | 000000000
+  25 | 0000
+  26 | 00000000000
+  27 | 00000000000
+  28 | 0000000000000
+  29 | 00
+  30 | 00000
+  31 | 
+  32 | 00
+  33 | 
+  34 | 00
+  35 | 00
+  36 | 
+  37 | 
+  38 | 000
+  39 | 
+  40 | 
+  41 | 
+  42 | 
+  43 | 
+  44 | 
+  45 | 
+  46 | 
+  47 | 
+  48 | 00000</code></pre>
+</div>
+<div id="graficos-de-dispersao" class="section level3">
+<h3><span class="header-section-number">2.3.6</span> Gráficos de dispersão</h3>
+<p>Às vezes temos dados emparelhados de forma que associa cada valor de um conjunto a um determinado valor de um segundo conjunto. Um diagrama de dispersão é um gráfico dos dados emparelhados (x, y), com um eixo x horizontal e um eixo y vertical. O diagrama de dispersão, apresenta no eixo horizontal os valores da primeira variável e um eixo vertical para os valores da segunda variável. O padrão dos pontos assim marcados costuma ajudar a determinar se existe algum relacionamento entre as duas variáveis A e B.</p>
+<p><code>plot(variável_independente,Variável_dependente)</code></p>
+<p>Ou</p>
+<p><code>plot(variável_dependente~variável_independente)</code></p>
+</div>
+<div id="grafico-de-linhas" class="section level3">
+<h3><span class="header-section-number">2.3.7</span> Gráfico de linhas</h3>
+<p>Apresenta a evolução de um dado, geralmente ao longo do tempo. Eixos na vertical e na horizontal indicam as informações a que se refere e a linha traçada entre eles, ascendente, descendente constante ou com vários altos e baixos mostra o percurso de um fenômeno específico.</p>
+<p>Ex. Considere os dados que descrevem os valores do número de empresas fiscalizadas na fiscalização do trabalho na área rural Brasil 1998-2010.</p>
+<!--
+
+Table: (\#tab:unnamed-chunk-77)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
+
+  Ano  Empresas.Fiscalizadas 
+-----  ----------------------
+ 1998  7.042                 
+ 1999  6.561                 
+ 2000  8.585                 
+ 2001  9.641                 
+ 2002  8.873                 
+ 2003  9.367                 
+ 2004  13.856                
+ 2005  12.192                
+ 2006  13.326                
+ 2007  13.390                
+ 2008  10.839                
+ 2009  13.379                
+ 2010  11.978                
+-->
+<table>
+<caption><span id="tab:evolres">Tabela 2.1: </span>Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010</caption>
+<thead>
+<tr class="header">
+<th align="right"><strong>Ano</strong></th>
+<th align="center"><strong>Empresas Fiscalizadas</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1998</td>
+<td align="center">7.042</td>
+</tr>
+<tr class="even">
+<td align="right">1999</td>
+<td align="center">6.561</td>
+</tr>
+<tr class="odd">
+<td align="right">2000</td>
+<td align="center">8.585</td>
+</tr>
+<tr class="even">
+<td align="right">2001</td>
+<td align="center">9.641</td>
+</tr>
+<tr class="odd">
+<td align="right">2002</td>
+<td align="center">8.873</td>
+</tr>
+<tr class="even">
+<td align="right">2003</td>
+<td align="center">9.367</td>
+</tr>
+<tr class="odd">
+<td align="right">2004</td>
+<td align="center">13.856</td>
+</tr>
+<tr class="even">
+<td align="right">2005</td>
+<td align="center">12.192</td>
+</tr>
+<tr class="odd">
+<td align="right">2006</td>
+<td align="center">13.326</td>
+</tr>
+<tr class="even">
+<td align="right">2007</td>
+<td align="center">13.390</td>
+</tr>
+<tr class="odd">
+<td align="right">2008</td>
+<td align="center">10.839</td>
+</tr>
+<tr class="even">
+<td align="right">2009</td>
+<td align="center">13.379</td>
+</tr>
+<tr class="odd">
+<td align="right">2010</td>
+<td align="center">11.978</td>
+</tr>
+</tbody>
+</table>
+<p>Fonte: MTE. SFIT. Elaboração: DIEESE.</p>
+<p>Para construir um gráfico de linhas, utilizamos o seguinte comando:</p>
+<p><code>plot(x,y,type= &quot;Tipo de símbolo&quot;)</code></p>
+<p>Neste gráfico, podemos utilizar comandos já utilizados anteriormente, para inserir título, nomes dos eixos, etc. Para escolher o formato das linhas, com o uso do argumento `“type”|, seguem algumas opções:</p>
+<ul>
+<li><code>&quot;p&quot;</code> para pontos,</li>
+<li><code>&quot;l&quot;</code> para linhas,</li>
+<li><code>&quot;b&quot;</code> para pontos e linhas,</li>
+<li><code>&quot;c&quot;</code> para linhas descontínuas nos pontos,</li>
+<li><code>&quot;o&quot;</code> para pontos sobre as linhas,</li>
+<li><code>&quot;n&quot;</code> para nenhum gráfico, apenas a janela.</li>
+</ul>
+<p>Para o caso de representação no mesmo gráfico, de duas ou mais variáveis, o processo deverá ser realizado por etapas:</p>
+<p><code>plot(x,y1,type=&quot;b&quot;,main=&quot;Título&quot;, xlab=&quot;Nome_eixo_x&quot;,ylab=&quot;Nome_eixo_y&quot;, col=&quot;cor das linhas&quot;,ylim=c(yi,ys))</code></p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb235-1" data-line-number="1">empfisc=<span class="kw">data.frame</span>(<span class="dt">ano=</span><span class="kw">c</span>(<span class="dv">1998</span>,<span class="dv">1999</span>,<span class="dv">2000</span>,<span class="dv">2001</span>,<span class="dv">2002</span>,<span class="dv">2003</span>,<span class="dv">2004</span>,<span class="dv">2005</span>,<span class="dv">2006</span>,<span class="dv">2007</span>,</a>
+<a class="sourceLine" id="cb235-2" data-line-number="2">    <span class="dv">2008</span>,<span class="dv">2009</span>,<span class="dv">2010</span>), <span class="dt">qtd=</span><span class="kw">c</span>(<span class="dv">7042</span>,<span class="dv">6561</span>,<span class="dv">8585</span>,<span class="dv">9641</span>,<span class="dv">8873</span>,<span class="dv">9367</span>,</a>
+<a class="sourceLine" id="cb235-3" data-line-number="3"><span class="dv">13856</span>,<span class="dv">12192</span>,<span class="dv">13326</span>,<span class="dv">13390</span>,<span class="dv">10839</span>,<span class="dv">13379</span>,<span class="dv">11978</span>))</a>
+<a class="sourceLine" id="cb235-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb235-5" data-line-number="5"><span class="kw">plot</span>(empfisc<span class="op">$</span>ano,empfisc<span class="op">$</span>qtd,<span class="dt">type=</span><span class="st">&quot;b&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Título&quot;</span>,</a>
+<a class="sourceLine" id="cb235-6" data-line-number="6">     <span class="dt">xlab=</span><span class="st">&quot;Nome_eixo_x&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Nome_eixo_y&quot;</span>, </a>
+<a class="sourceLine" id="cb235-7" data-line-number="7">     <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1998</span>,<span class="dv">2010</span>))</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-78"></span>
+<img src="index_files/figure-html/unnamed-chunk-78-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="80%" />
+<p class="caption">
+Figura 2.9: Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010
+</p>
+</div>
+<p>onde, no argumento <code>ylim</code>, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.</p>
+<p>Na sequência adicionamos as instruções para as demais variáveis:</p>
+<p><code>lines(x, y2,col=&quot;cor_desejada&quot;, type=&quot;b&quot;)</code></p>
+<p>Com o argumento <code>&quot;legend&quot;</code> instruímos a formatação da legenda:</p>
+<p><code>legend(xp,yp,c(&quot;representação_variável_1 na legenda&quot;, &quot;representação_variável_2 na legenda&quot;),</code>col =c(“Cor1”,“cor2”),pch=Valor entre 0 e 25)`</p>
+<p>Obs.: <code>pch</code>= número (entre 0 e 25). No Help do R (buscando com pch), você encontra a lista completa de símbolos que podem ser utilizados na representação da legenda.
+Neste caso, pode ser importante também alterar o tamanho da fonte da legenda, com o uso do argumento <code>&quot;cex&quot;</code>.</p>
+<p>Exemplo: Segue exemplo de um gráfico de linhas para as temperaturas registradas durante o dia 11/04/2018, pela Estação Meteorológica de São Luiz Gonzaga, RS, conforme dados obtidos no site do Inmet.</p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb236-1" data-line-number="1"><span class="kw">library</span>(readr)</a>
+<a class="sourceLine" id="cb236-2" data-line-number="2">inmet &lt;-<span class="st"> </span><span class="kw">read_delim</span>(<span class="st">&quot;https://goo.gl/se71v2&quot;</span>, </a>
+<a class="sourceLine" id="cb236-3" data-line-number="3">    <span class="st">&quot;;&quot;</span>, <span class="dt">escape_double =</span> <span class="ot">FALSE</span>, </a>
+<a class="sourceLine" id="cb236-4" data-line-number="4">    <span class="dt">col_types =</span> <span class="kw">cols</span>(<span class="dt">data =</span> <span class="kw">col_date</span>(<span class="dt">format =</span> <span class="st">&quot;%m/%d/%Y&quot;</span>)), </a>
+<a class="sourceLine" id="cb236-5" data-line-number="5">    <span class="dt">trim_ws =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb236-6" data-line-number="6"><span class="kw">head</span>(inmet)</a></code></pre></div>
+<pre><code># A tibble: 6 x 6
+  codigo_estacao data        hora temp_inst temp_max temp_min
+  &lt;chr&gt;          &lt;date&gt;     &lt;int&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+1 A852           2018-04-11     0      26.2     27.1     26.2
+2 A852           2018-04-11     1      26       26.2     26  
+3 A852           2018-04-11     2      25.5     26.1     25.5
+4 A852           2018-04-11     3      25.1     25.5     25  
+5 A852           2018-04-11     4      24.6     25.2     24.5
+6 A852           2018-04-11     5      24.3     24.7     24.2</code></pre>
+<p>Segue a sequência de comandos, para obtenção do gráfico de linhas:</p>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb238-1" data-line-number="1"><span class="kw">plot</span>(inmet<span class="op">$</span>hora,inmet<span class="op">$</span>temp_inst,<span class="dt">type =</span> <span class="st">&quot;b&quot;</span>, </a>
+<a class="sourceLine" id="cb238-2" data-line-number="2">  <span class="dt">main =</span> <span class="st">&quot;Temperaturas registradas na estação metereológica</span></a>
+<a class="sourceLine" id="cb238-3" data-line-number="3"><span class="st">  de São Luis Gonzaga, 11 de abril de 2018&quot;</span>,</a>
+<a class="sourceLine" id="cb238-4" data-line-number="4">  <span class="dt">xlab =</span> <span class="st">&quot;hora&quot;</span>,<span class="dt">ylab =</span> <span class="st">&quot;temperaturas&quot;</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,</a>
+<a class="sourceLine" id="cb238-5" data-line-number="5">  <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">40</span>))</a>
+<a class="sourceLine" id="cb238-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb238-7" data-line-number="7"><span class="kw">lines</span>(inmet<span class="op">$</span>hora,inmet<span class="op">$</span>temp_max,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">type =</span> <span class="st">&quot;b&quot;</span>)</a>
+<a class="sourceLine" id="cb238-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb238-9" data-line-number="9"><span class="kw">lines</span>(inmet<span class="op">$</span>hora,inmet<span class="op">$</span>temp_min,<span class="dt">col=</span><span class="st">&quot;green&quot;</span>,<span class="dt">type =</span> <span class="st">&quot;b&quot;</span>)</a>
+<a class="sourceLine" id="cb238-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb238-11" data-line-number="11"><span class="kw">legend</span>(<span class="dv">0</span>,<span class="dv">40</span>,<span class="kw">c</span>(<span class="st">&quot;temp_inst&quot;</span>,<span class="st">&quot;temp_max&quot;</span>,<span class="st">&quot;temp_min&quot;</span>),</a>
+<a class="sourceLine" id="cb238-12" data-line-number="12">  <span class="dt">col =</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;green&quot;</span>),<span class="dt">pch=</span><span class="fl">4.1</span>,<span class="dt">cex =</span> <span class="fl">0.75</span>)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-80"></span>
+<img src="index_files/figure-html/unnamed-chunk-80-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="80%" />
+<p class="caption">
+Figura 2.10: Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS
+</p>
+</div>
+</div>
+</div>
+<div id="estatisticas-descritivas" class="section level2">
+<h2><span class="header-section-number">2.4</span> Estatísticas Descritivas</h2>
+<p>Para determinar o valor máximo de um conjunto de dados, utilizamos:</p>
+<p><code>max(nome_da_variável)</code></p>
+<p>Use a variável <strong>Renda_h</strong></p>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb239-1" data-line-number="1"><span class="co">#Transforme a variável Renda_h em variável numérica</span></a>
+<a class="sourceLine" id="cb239-2" data-line-number="2">pesquisa_dados<span class="op">$</span>Renda_h=<span class="kw">as.numeric</span>(pesquisa_dados<span class="op">$</span>Renda_h)</a>
+<a class="sourceLine" id="cb239-3" data-line-number="3"><span class="co">#É preciso repetir o comando attach()</span></a>
+<a class="sourceLine" id="cb239-4" data-line-number="4"><span class="kw">attach</span>(pesquisa_dados)</a>
+<a class="sourceLine" id="cb239-5" data-line-number="5"><span class="kw">max</span>(Renda_h)</a></code></pre></div>
+<pre><code>[1] 21.83</code></pre>
+<p>De forma análoga, para determinar o valor mínimo de um conjunto de dados, utilizamos:</p>
+<p><code>min(nome_da_variável)</code></p>
+<p>Use a variável <strong>Renda_h</strong></p>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb241-1" data-line-number="1"><span class="kw">min</span>(Renda_h)</a></code></pre></div>
+<pre><code>[1] 1.02</code></pre>
+<p><strong>Obs.</strong>: Para determinar a amplitude total de um conjunto de dados, utilizamos:</p>
+<p><code>max(nome_da_variável)-min(nome_da_variável)</code></p>
+<p>Use a variável <strong>Renda_h</strong></p>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb243-1" data-line-number="1"><span class="kw">max</span>(Renda_h)<span class="op">-</span><span class="kw">min</span>(Renda_h)</a></code></pre></div>
+<pre><code>[1] 20.81</code></pre>
+<p>Para obter as medidas da estatística descritiva, no caso medidas de tendência central (mínimo, quartil 1, mediana, média, quartil 3, máximo):</p>
+<p><code>summary(nome_da_variável)</code></p>
+<p>Ex. Use a variável <strong>Renda_h</strong></p>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb245-1" data-line-number="1"><span class="kw">summary</span>(Renda_h)</a></code></pre></div>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.02    4.64    6.79    7.31    9.51   21.83 </code></pre>
+<p>A moda é o valor que tem o maior número de ocorrências em um conjunto de dados.</p>
+<p>O R não tem um padrão de função embutida para calcular a moda. Uma sugestão é a criação de uma função pelo usuário, que pode ser obtida, por exemplo por:</p>
+<p><code>subset(table(variável), table(variável)==max(table(variável)))</code></p>
+<p>Ex. Use a variável <strong>Praticidade</strong></p>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb247-1" data-line-number="1"><span class="kw">subset</span>(<span class="kw">table</span>(Praticidade), </a>
+<a class="sourceLine" id="cb247-2" data-line-number="2">       <span class="kw">table</span>(Praticidade)<span class="op">==</span><span class="kw">max</span>(<span class="kw">table</span>(Praticidade)))</a></code></pre></div>
+<pre><code>Ruim 
+  95 </code></pre>
+<p>Ex. Use a variável quantitativa <strong>Pessoas_familia</strong></p>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb249-1" data-line-number="1"><span class="kw">table</span>(Pessoas_familia)</a></code></pre></div>
+<pre><code>Pessoas_familia
+ 0  1  2  3  4  5  6  7  8  9 10 
+ 2 14 25 62 73 60 64 30 15  2  1 </code></pre>
+<p><strong>Obs.</strong>: O primeiro valor encontrado, refere-se ao valor da moda ao passo que o segundo valor representa quantas vezes esse valor foi verificado.</p>
+<p>Comando que permite determinar o percentil, no caso o percentil 10:</p>
+<p><code>quantile(nome_variável,0.1)</code></p>
+<p><strong>Obs.</strong>: Experimente usar o comando:</p>
+<p><code>quantile(nome_variável)</code></p>
+<p><strong>Obs.</strong>: Para a obtenção de quartis e decis, basta realizar a conversão para o respectivo percentil e assim calcular normalmente.</p>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb251-1" data-line-number="1"><span class="kw">quantile</span>(Renda_h)</a></code></pre></div>
+<pre><code>    0%    25%    50%    75%   100% 
+ 1.020  4.638  6.785  9.512 21.830 </code></pre>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb253-1" data-line-number="1"><span class="kw">quantile</span>(Renda_h,<span class="fl">0.1</span>)</a></code></pre></div>
+<pre><code>  10% 
+3.244 </code></pre>
+<p>Para obter as medidas de variabilidade, no caso, variância e desvio-padrão, respectivamente:</p>
+<p><code>var(nome_variável)</code></p>
+<p><code>sd(nome_variável)</code></p>
+<p>Ex. Calcule as medidas de variabilidade com a variável <strong>Pessoas_familia</strong></p>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb255-1" data-line-number="1"><span class="kw">var</span>(Pessoas_familia)</a></code></pre></div>
+<pre><code>[1] 3.245</code></pre>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb257-1" data-line-number="1"><span class="kw">sd</span>(Pessoas_familia)</a></code></pre></div>
+<pre><code>[1] 1.801</code></pre>
+<p>A função <code>subset()</code>:</p>
+<p>Com esta função podemos fazer cálculos utilizando filtros, simultaneamente. A aplicação de filtros é extremamente útil quando queremos explorar os dados de forma rápida e eficiente.</p>
+<p>Exemplos:</p>
+<p>Ex. 1) Altura das pessoas do sexo masculino: com a função abaixo o R gera um subconjunto com as alturas de todas as pessoas do sexo masculino.</p>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb259-1" data-line-number="1"><span class="kw">subset</span>(<span class="st">`</span><span class="dt">Altura_(m)</span><span class="st">`</span>, Sexo<span class="op">==</span><span class="st">&quot;Masculino&quot;</span>)</a></code></pre></div>
+<pre><code> [1] 1.90 1.76 1.83 1.81 1.67 1.55 1.60 1.84 1.80 1.60 1.75 1.73 1.68 1.81 1.90
+[16] 1.80 1.56 1.65 1.60 1.61 1.59 1.75 1.59 1.89 1.62 1.60 1.50 1.65 1.79 1.65
+[31] 1.79 1.67 1.59 1.71 1.60 1.72 1.73 1.65 1.65 1.50 1.57 1.86 1.85 1.80 1.77
+[46] 1.81 1.73 1.80 1.66 1.71 1.60 1.72 1.81 1.55 1.60 1.80</code></pre>
+<p>Ex. 2) Média das alturas das pessoas do sexo masculino: inserindo o comando <code>mean()</code> ao subconjunto anterior, teremos como resultado a média das alturas das pessoas do sexo masculino.</p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb261-1" data-line-number="1"><span class="kw">mean</span>(<span class="kw">subset</span>(<span class="st">`</span><span class="dt">Altura_(m)</span><span class="st">`</span>, Sexo<span class="op">==</span><span class="st">&quot;Masculino&quot;</span>))</a></code></pre></div>
+<pre><code>[1] 1.702</code></pre>
+<p>Ex. 3) Média das alturas das pessoas do sexo masculino com mais de 26 anos:</p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb263-1" data-line-number="1"><span class="kw">mean</span>(<span class="kw">subset</span>(<span class="st">`</span><span class="dt">Altura_(m)</span><span class="st">`</span>, Sexo<span class="op">==</span><span class="st">&quot;Masculino&quot;</span><span class="op">&amp;</span><span class="st"> </span>Idade<span class="op">&gt;</span><span class="dv">25</span>))</a></code></pre></div>
+<pre><code>[1] 1.654</code></pre>
+<p>Ex. 4) Contagem de pessoas do sexo feminino que tenham menos de 60 kg:</p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb265-1" data-line-number="1"><span class="kw">length</span>(<span class="kw">subset</span>(Sexo,Sexo<span class="op">==</span><span class="st">&quot;Feminino&quot;</span> <span class="op">&amp;</span><span class="st"> `</span><span class="dt">Peso_(Kg)</span><span class="st">`</span><span class="op">&lt;</span><span class="dv">60</span>))</a></code></pre></div>
+<pre><code>[1] 94</code></pre>
+<p>Ex. 5) Montando uma tabela para exibir o gênero de pessoas que classificaram o Sabor como “Pessimo”:</p>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb267-1" data-line-number="1"><span class="kw">table</span>(<span class="kw">subset</span>(Sexo, Sabor<span class="op">==</span><span class="st">&quot;Pessimo&quot;</span>))</a></code></pre></div>
+<pre><code>
+ Feminino Masculino 
+        7         3 </code></pre>
+<p>Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a serem aplicados na estatística descritiva (veja help do R), nem tampouco os conceitos estatísticos necessários à compreensão. Para mais detalhes sobre os conceitos de estatística descritiva, você pode consultar outras referências ou até mesmo as já citadas neste capítulo.</p>
+</div>
+</div>
+<h3>Referências</h3>
+<div id="refs" class="references">
+<div id="ref-triola1999">
+<p>Triola, M. F. 2011. <em>Introdução à estatística</em>. 10 ed. Rio de Janeiro: LTC.</p>
+</div>
+<div id="ref-almeida2000">
+<p>Almeida, L, e T Freire. 2000. <em>Metodologia da investigação em psicologia e educação</em>. 2 ed. Braga: Psiquilíbrios.</p>
+</div>
+<div id="ref-barbetta1988">
+<p>Barbetta, Pedro Alberto. 2010. <em>Estatística aplicada às ciências sociais</em>. 7 ed. Florianópolis: Ed. UFSC.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="inf.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["livror.pdf", "livror.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

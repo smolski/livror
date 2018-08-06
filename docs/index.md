@@ -48,7 +48,7 @@ A criação de documentos dinâmicos utilizando o RStudio será tratada no capí
 
 Boa leitura!
 
-# Introdução
+# Introdução{#intro}
 
 \begin{flushright}
 \emph{Felipe Micail da Silva Smolski}
@@ -1736,7 +1736,7 @@ Time differences in days
 [1] -11308  24840
 ```
 
-# Estatística Descritiva
+# Estatística Descritiva{#desc}
 
 \begin{flushright}
 \emph{Denize Ivete Reis}
@@ -2601,7 +2601,7 @@ table(subset(Sexo, Sabor=="Pessimo"))
 Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a serem aplicados na estatística descritiva (veja help do R), nem tampouco os conceitos estatísticos necessários à compreensão. Para mais detalhes sobre os conceitos de estatística descritiva, você pode consultar outras referências ou até mesmo as já citadas neste capítulo.
 
 
-# Estatística Inferencial
+# Estatística Inferencial{#inf}
 
 \begin{flushright}
 \emph{Tatiane Chassot}
@@ -3323,7 +3323,7 @@ mean of x mean of y
 Conclusão: Não rejeita-se H0 e conclui-se que a média de peso do tecido A é igual à média de peso do tecido B.
 
 
-# Teste de Qui-Quadrado
+# Teste de Qui-Quadrado{#qui}
 
 \begin{flushright}
 \emph{Iara Denise Endruweit Battisti}
@@ -3918,7 +3918,7 @@ data:  borrachudos
 X-squared = 8.1, df = 6, p-value = 0.2
 ```
 
-# Modelos de Regressão
+# Modelos de Regressão{#reg}
 
 \begin{flushright}
 \emph{Iara Denise Endruweit Battisti}
@@ -4691,7 +4691,7 @@ predict(regressao, x0, interval="prediction")
 ```
 
 
-# RMarkdown
+# RMarkdown{#rmark}
 
 \begin{flushright}
 \emph{Felipe Micail da Silva Smolski}
@@ -4845,11 +4845,11 @@ O YAML, ou os metadados do documento, são informações básicas do documento q
 
 Fonte: Elaborado pelo(s) autor(es).
 
-Já o campo *output* define a opção de salvamento do arquivo final. Pode ser informado todos os tipos de arquivos previamente, sendo que no momento da compilação será utilizado o primeiro tipo de arquivo, no exemplo, em Word. Para salvar em PDF, é só colocar o campo `pdf\_document` em primeiro lugar juntamente com a configuração dentro deste tipo de arquivo. 
+Já o campo *output* define a opção de salvamento do arquivo final. Pode ser informado todos os tipos de arquivos previamente, sendo que no momento da compilação será utilizado o primeiro tipo de arquivo, no exemplo, em Word. Para salvar em PDF, é só colocar o campo `pdf_document` em primeiro lugar juntamente com a configuração dentro deste tipo de arquivo. 
 
-Abaixo do tipo de arquivo a ser salvo, constam as opções de salvamento. No caso do exemplo, abaixo de Word está constando a opção `fig\_caption`, que dita se as figuras do documento em Word serão inseridas com títulos. 
+Abaixo do tipo de arquivo a ser salvo, constam as opções de salvamento. No caso do exemplo, abaixo de Word está constando a opção `fig_caption`, que dita se as figuras do documento em Word serão inseridas com títulos. 
 
-Os campos `fig\_height` e `fig\_width` determinam a altura e largura padrão de todas as imagens do documento Word. Abaixo seguem algumas opções do YAML relacionando-se com a saída do documento em Word:
+Os campos `fig_height` e `fig_width` determinam a altura e largura padrão de todas as imagens do documento Word. Abaixo seguem algumas opções do YAML relacionando-se com a saída do documento em Word:
 
 - **fig\_caption** - As figuras devem ter título? 
     

@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html  lang="pt-Br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Software R: Análise estatística de dados utilizando um programa livre</title>
+  <meta name="description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Software R: Análise estatística de dados utilizando um programa livre" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http://rstub.github.io/bookdown-chapterbib/" />
+  
+  <meta property="og:description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS" />
+  <meta name="github-repo" content="rstub/bookdown-chapterbib" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Software R: Análise estatística de dados utilizando um programa livre" />
+  
+  <meta name="twitter:description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS" />
+  
+
+<meta name="author" content="Felipe Micail da Silva Smolski">
+<meta name="author" content="Iara Denise Endruweit Battisti">
+
+
+<meta name="date" content="2018-08-06">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="inf.html">
+<link rel="next" href="reg.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112034801-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112034801-4');
+</script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Livro R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Apresentação</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#download-e-instalacao-do-r-e-rstudio"><i class="fa fa-check"></i><b>1.1</b> Download e instalação do R e Rstudio</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#paineis"><i class="fa fa-check"></i><b>1.2</b> Painéis</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#help"><i class="fa fa-check"></i><b>1.3</b> Help</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#instalacao-de-pacotes"><i class="fa fa-check"></i><b>1.4</b> Instalação de pacotes</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#abrir-arquivo-de-dados"><i class="fa fa-check"></i><b>1.5</b> Abrir arquivo de dados</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#salvar-arquivo-de-dados"><i class="fa fa-check"></i><b>1.6</b> Salvar arquivo de dados</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#diretorios-de-trabalho"><i class="fa fa-check"></i><b>1.7</b> Diretórios de trabalho</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#operacoes"><i class="fa fa-check"></i><b>1.8</b> Operações</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="intro.html"><a href="intro.html#operacoes-aritmeticas"><i class="fa fa-check"></i><b>1.8.1</b> Operações Aritméticas</a></li>
+<li class="chapter" data-level="1.8.2" data-path="intro.html"><a href="intro.html#operacoes-logicas"><i class="fa fa-check"></i><b>1.8.2</b> Operações Lógicas</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#criacao-de-variaveis"><i class="fa fa-check"></i><b>1.9</b> Criação de variáveis</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="intro.html"><a href="intro.html#conversao-de-uma-variavel"><i class="fa fa-check"></i><b>1.9.1</b> Conversão de uma variável</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#alguns-comandos-essenciais"><i class="fa fa-check"></i><b>1.10</b> Alguns comandos essenciais</a><ul>
+<li class="chapter" data-level="1.10.1" data-path="intro.html"><a href="intro.html#funcoes-view-e-dim"><i class="fa fa-check"></i><b>1.10.1</b> Funções <em>View</em> e <em>dim</em></a></li>
+<li class="chapter" data-level="1.10.2" data-path="intro.html"><a href="intro.html#comando-tapply"><i class="fa fa-check"></i><b>1.10.2</b> Comando <em>tapply</em></a></li>
+<li class="chapter" data-level="1.10.3" data-path="intro.html"><a href="intro.html#comando-subset"><i class="fa fa-check"></i><b>1.10.3</b> Comando <em>subset</em></a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#estrutura-de-dados"><i class="fa fa-check"></i><b>1.11</b> Estrutura de dados</a><ul>
+<li class="chapter" data-level="1.11.1" data-path="intro.html"><a href="intro.html#vetores"><i class="fa fa-check"></i><b>1.11.1</b> Vetores</a></li>
+<li class="chapter" data-level="1.11.2" data-path="intro.html"><a href="intro.html#matrizes"><i class="fa fa-check"></i><b>1.11.2</b> Matrizes</a></li>
+<li class="chapter" data-level="1.11.3" data-path="intro.html"><a href="intro.html#listas"><i class="fa fa-check"></i><b>1.11.3</b> Listas</a></li>
+<li class="chapter" data-level="1.11.4" data-path="intro.html"><a href="intro.html#data-frames"><i class="fa fa-check"></i><b>1.11.4</b> Data frames</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a></li>
+<li class="chapter" data-level="1.13" data-path="intro.html"><a href="intro.html#funcao-edit"><i class="fa fa-check"></i><b>1.13</b> Função <em>edit</em></a></li>
+<li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#funcoes"><i class="fa fa-check"></i><b>1.14</b> Funções</a></li>
+<li class="chapter" data-level="1.15" data-path="intro.html"><a href="intro.html#funcoes-matematicas"><i class="fa fa-check"></i><b>1.15</b> Funções Matemáticas</a></li>
+<li class="chapter" data-level="1.16" data-path="intro.html"><a href="intro.html#conversao-de-datas"><i class="fa fa-check"></i><b>1.16</b> Conversão de datas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="desc.html"><a href="desc.html"><i class="fa fa-check"></i><b>2</b> Estatística Descritiva</a><ul>
+<li class="chapter" data-level="2.1" data-path="desc.html"><a href="desc.html#natureza-da-medida-das-variaveis"><i class="fa fa-check"></i><b>2.1</b> Natureza da medida das variáveis</a></li>
+<li class="chapter" data-level="2.2" data-path="desc.html"><a href="desc.html#tabelas-e-graficos"><i class="fa fa-check"></i><b>2.2</b> Tabelas e Gráficos</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="desc.html"><a href="desc.html#tabela-simples-para-apresentacao-das-frequencias-absolutas"><i class="fa fa-check"></i><b>2.2.1</b> Tabela simples para apresentação das frequências absolutas</a></li>
+<li class="chapter" data-level="2.2.2" data-path="desc.html"><a href="desc.html#tabela-cruzada"><i class="fa fa-check"></i><b>2.2.2</b> Tabela cruzada</a></li>
+<li class="chapter" data-level="2.2.3" data-path="desc.html"><a href="desc.html#tabela-cruzada-para-apresentacao-das-frequencias-relativas"><i class="fa fa-check"></i><b>2.2.3</b> Tabela cruzada para apresentação das frequências relativas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="desc.html"><a href="desc.html#graficos"><i class="fa fa-check"></i><b>2.3</b> Gráficos</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="desc.html"><a href="desc.html#grafico-de-colunas"><i class="fa fa-check"></i><b>2.3.1</b> Gráfico de colunas</a></li>
+<li class="chapter" data-level="2.3.2" data-path="desc.html"><a href="desc.html#setograma-ou-grafico-de-pizza"><i class="fa fa-check"></i><b>2.3.2</b> Setograma ou gráfico de pizza</a></li>
+<li class="chapter" data-level="2.3.3" data-path="desc.html"><a href="desc.html#histograma"><i class="fa fa-check"></i><b>2.3.3</b> Histograma</a></li>
+<li class="chapter" data-level="2.3.4" data-path="desc.html"><a href="desc.html#boxplot-ou-diagrama-em-caixas"><i class="fa fa-check"></i><b>2.3.4</b> Boxplot ou diagrama em caixas</a></li>
+<li class="chapter" data-level="2.3.5" data-path="desc.html"><a href="desc.html#grafico-ramo-e-folhas"><i class="fa fa-check"></i><b>2.3.5</b> Gráfico ramo-e-folhas</a></li>
+<li class="chapter" data-level="2.3.6" data-path="desc.html"><a href="desc.html#graficos-de-dispersao"><i class="fa fa-check"></i><b>2.3.6</b> Gráficos de dispersão</a></li>
+<li class="chapter" data-level="2.3.7" data-path="desc.html"><a href="desc.html#grafico-de-linhas"><i class="fa fa-check"></i><b>2.3.7</b> Gráfico de linhas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="desc.html"><a href="desc.html#estatisticas-descritivas"><i class="fa fa-check"></i><b>2.4</b> Estatísticas Descritivas</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="inf.html"><a href="inf.html"><i class="fa fa-check"></i><b>3</b> Estatística Inferencial</a><ul>
+<li class="chapter" data-level="3.1" data-path="inf.html"><a href="inf.html#intervalo-de-confianca"><i class="fa fa-check"></i><b>3.1</b> Intervalo de Confiança</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="inf.html"><a href="inf.html#intervalo-de-confianca-para-uma-media-populacional"><i class="fa fa-check"></i><b>3.1.1</b> Intervalo de confiança para uma média populacional</a></li>
+<li class="chapter" data-level="3.1.2" data-path="inf.html"><a href="inf.html#para-verificar-normalidade-dos-dados"><i class="fa fa-check"></i><b>3.1.2</b> Para verificar normalidade dos dados</a></li>
+<li class="chapter" data-level="3.1.3" data-path="inf.html"><a href="inf.html#intervalo-de-confianca-para-uma-proporcao-populacional"><i class="fa fa-check"></i><b>3.1.3</b> Intervalo de confiança para uma proporção populacional</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="inf.html"><a href="inf.html#teste-de-hipoteses"><i class="fa fa-check"></i><b>3.2</b> Teste de hipóteses</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="inf.html"><a href="inf.html#teste-de-hipoteses-para-uma-media-populacional"><i class="fa fa-check"></i><b>3.2.1</b> Teste de hipóteses para uma média populacional</a></li>
+<li class="chapter" data-level="3.2.2" data-path="inf.html"><a href="inf.html#teste-de-hipoteses-para-uma-proporcao-populacional"><i class="fa fa-check"></i><b>3.2.2</b> Teste de hipóteses para uma proporção populacional</a></li>
+<li class="chapter" data-level="3.2.3" data-path="inf.html"><a href="inf.html#teste-de-hipotese-para-duas-medias"><i class="fa fa-check"></i><b>3.2.3</b> Teste de hipótese para duas médias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="qui.html"><a href="qui.html"><i class="fa fa-check"></i><b>4</b> Teste de Qui-Quadrado</a><ul>
+<li class="chapter" data-level="4.1" data-path="qui.html"><a href="qui.html#teste-de-qui-quadrado-para-verificar-associacao-entre-duas-variaveis-qualitativas"><i class="fa fa-check"></i><b>4.1</b> Teste de qui-quadrado para verificar associação entre duas variáveis qualitativas</a></li>
+<li class="chapter" data-level="4.2" data-path="qui.html"><a href="qui.html#check-list-para-escolher-o-teste-adequado-para-verificar-a-relacao-entre-duas-variaveis-qualitativas"><i class="fa fa-check"></i><b>4.2</b> Check list para escolher o teste adequado para verificar a relação entre duas variáveis qualitativas</a></li>
+<li class="chapter" data-level="4.3" data-path="qui.html"><a href="qui.html#exemplo-utilizando-os-recursos-do-software-r"><i class="fa fa-check"></i><b>4.3</b> Exemplo utilizando os recursos do software R</a></li>
+<li class="chapter" data-level="4.4" data-path="qui.html"><a href="qui.html#teste-de-associacao-com-duas-amostras-dependentes"><i class="fa fa-check"></i><b>4.4</b> Teste de associação com duas amostras dependentes</a></li>
+<li class="chapter" data-level="4.5" data-path="qui.html"><a href="qui.html#teste-de-qui-quadrado-para-verificar-aderencia-a-uma-distribuicao"><i class="fa fa-check"></i><b>4.5</b> Teste de qui-quadrado para verificar aderência a uma distribuição</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="reg.html"><a href="reg.html"><i class="fa fa-check"></i><b>5</b> Modelos de Regressão</a><ul>
+<li class="chapter" data-level="5.1" data-path="reg.html"><a href="reg.html#correlacao-linear"><i class="fa fa-check"></i><b>5.1</b> Correlação linear</a></li>
+<li class="chapter" data-level="5.2" data-path="reg.html"><a href="reg.html#diagrama-de-dispersao"><i class="fa fa-check"></i><b>5.2</b> Diagrama de dispersão</a></li>
+<li class="chapter" data-level="5.3" data-path="reg.html"><a href="reg.html#coeficiente-de-correlacao-linear-de-pearson"><i class="fa fa-check"></i><b>5.3</b> Coeficiente de Correlação Linear de Pearson</a></li>
+<li class="chapter" data-level="5.4" data-path="reg.html"><a href="reg.html#modelo-de-regressao"><i class="fa fa-check"></i><b>5.4</b> Modelo de Regressão</a></li>
+<li class="chapter" data-level="5.5" data-path="reg.html"><a href="reg.html#modelo-de-regressao-linear-simples"><i class="fa fa-check"></i><b>5.5</b> Modelo de Regressão Linear Simples</a></li>
+<li class="chapter" data-level="5.6" data-path="reg.html"><a href="reg.html#metodo-dos-minimos-quadrados"><i class="fa fa-check"></i><b>5.6</b> Método dos Mínimos Quadrados</a></li>
+<li class="chapter" data-level="5.7" data-path="reg.html"><a href="reg.html#analise-de-variancia"><i class="fa fa-check"></i><b>5.7</b> Análise de Variância</a></li>
+<li class="chapter" data-level="5.8" data-path="reg.html"><a href="reg.html#coeficiente-de-determinacao"><i class="fa fa-check"></i><b>5.8</b> Coeficiente de Determinação</a></li>
+<li class="chapter" data-level="5.9" data-path="reg.html"><a href="reg.html#analise-dos-residuos"><i class="fa fa-check"></i><b>5.9</b> Análise dos Resíduos</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="reg.html"><a href="reg.html#valores-outliers-na-regressao"><i class="fa fa-check"></i><b>5.9.1</b> Valores outliers na regressão</a></li>
+<li class="chapter" data-level="5.9.2" data-path="reg.html"><a href="reg.html#valores-influentes-na-regressao"><i class="fa fa-check"></i><b>5.9.2</b> Valores influentes na regressão</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="reg.html"><a href="reg.html#intervalo-de-predicao"><i class="fa fa-check"></i><b>5.10</b> Intervalo de Predição</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="rmark.html"><a href="rmark.html"><i class="fa fa-check"></i><b>6</b> RMarkdown</a><ul>
+<li class="chapter" data-level="6.1" data-path="rmark.html"><a href="rmark.html#criando-o-documento"><i class="fa fa-check"></i><b>6.1</b> Criando o documento</a></li>
+<li class="chapter" data-level="6.2" data-path="rmark.html"><a href="rmark.html#compilando-os-resultados-do-arquivo"><i class="fa fa-check"></i><b>6.2</b> Compilando os resultados do arquivo</a></li>
+<li class="chapter" data-level="6.3" data-path="rmark.html"><a href="rmark.html#elementos-basicos-do-rmarkdown"><i class="fa fa-check"></i><b>6.3</b> Elementos básicos do RMarkdown</a></li>
+<li class="chapter" data-level="6.4" data-path="rmark.html"><a href="rmark.html#elementos-basicos-de-formatacao"><i class="fa fa-check"></i><b>6.4</b> Elementos básicos de formatação</a></li>
+<li class="chapter" data-level="6.5" data-path="rmark.html"><a href="rmark.html#elementos-basicos-do-yaml"><i class="fa fa-check"></i><b>6.5</b> Elementos básicos do YAML</a></li>
+<li class="chapter" data-level="6.6" data-path="rmark.html"><a href="rmark.html#elementos-basicos-dos-chunks"><i class="fa fa-check"></i><b>6.6</b> Elementos básicos dos Chunks</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="rmark.html"><a href="rmark.html#inserindo-tabelas-com-as-chunks"><i class="fa fa-check"></i><b>6.6.1</b> Inserindo tabelas com as Chunks</a></li>
+<li class="chapter" data-level="6.6.2" data-path="rmark.html"><a href="rmark.html#inserindo-imagens-com-as-chunks"><i class="fa fa-check"></i><b>6.6.2</b> Inserindo imagens com as Chunks</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="rmark.html"><a href="rmark.html#criacao-de-modelos-para-formatacao-vinculada"><i class="fa fa-check"></i><b>6.7</b> Criação de modelos para formatação vinculada</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="rmark.html"><a href="rmark.html#primeiro-passo-criacao-de-um-documento-modelo"><i class="fa fa-check"></i><b>6.7.1</b> Primeiro passo: criação de um documento modelo</a></li>
+<li class="chapter" data-level="6.7.2" data-path="rmark.html"><a href="rmark.html#segundo-passo-formatacao-do-modelo"><i class="fa fa-check"></i><b>6.7.2</b> Segundo passo: formatação do modelo</a></li>
+<li class="chapter" data-level="6.7.3" data-path="rmark.html"><a href="rmark.html#terceiro-passo-vinculacao-do-modelo-ao-arquivo-em-rmarkdown"><i class="fa fa-check"></i><b>6.7.3</b> Terceiro passo: vinculação do modelo ao arquivo em RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="rmark.html"><a href="rmark.html#citacoes-e-bibliografias"><i class="fa fa-check"></i><b>6.8</b> Citações e bibliografias</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sobre-os-autores.html"><a href="sobre-os-autores.html"><i class="fa fa-check"></i>Sobre os autores</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referências</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Software R: Análise estatística de dados utilizando um programa livre</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="qui" class="section level1">
+<h1><span class="header-section-number">Capítulo 4</span> Teste de Qui-Quadrado</h1>
+
+<p>Quando existem duas variáveis de interesse, a representação tabular das frequências observadas pode ser feita através de uma tabela de contingência<!--(Tabela \@ref(tab:qui2))-->, também chamada de tabela cruzada ou tabela de dupla entrada. Cada interseção de uma linha com uma coluna é chamada de casela e o valor que aparece em cada casela é a frequência observada, nomeada como <span class="math inline">\(O_{ij}\)</span>, em que i corresponde a linha e j corresponde a coluna.</p>
+<!--Observando-se a Tabela \@ref(tab:qui2), o valor 33 corresponde ao sexo masculino e a opinião favorável (masculino $\bigcap $ favorável), é chamada de $O_{11}$.-->
+<div id="teste-de-qui-quadrado-para-verificar-associacao-entre-duas-variaveis-qualitativas" class="section level2">
+<h2><span class="header-section-number">4.1</span> Teste de qui-quadrado para verificar associação entre duas variáveis qualitativas</h2>
+<p><strong>Exemplo 1</strong>: Uma pesquisa sobre “a exposição a agrotóxicos entre trabalhadores rurais no município de Cerro Largo/RS” foi desenvolvida por Letiane Peccin Ristow, no ano de 2017 (dissertação e mestrado no Programa de Pós-Graduação em Desenvolvimento e Políticas Públicas da UFFS, Campus Cerro Largo. Na Tabela <a href="qui.html#tab:tamprop">4.1</a><!--\@ref(tab:qui2)--> são apresentados os resultados do “tamanho da propriedade” e “armazenamento seguro do EPI”. Para verificar a existência de associação significativa entre essas duas variáveis utilizamos o teste de qui-quadrado, dado que são duas variáveis qualitativas: variável 1 - tamanho da propriedade (até 25ha; 26ha ou mais) e variável 2 – armazenamento seguro (sim; não).</p>
+<p>Primeiramente definimos as seguintes hipóteses estatísticas:</p>
+<p>H0: não existe associação entre tamanho da propriedade e armazenamento seguro (as variáveis são independentes)</p>
+<p>H1: existe associação entre tamanho da propriedade e armazenamento seguro (as variáveis são dependentes)</p>
+<!--
+
+```
+Carregando pacotes exigidos: kableExtra
+```
+
+<table>
+<caption>(\#tab:qui2)Tamanho da propriedade e armazenamento seguro dos agrotóxicos, agricultores de Cerro Largo, RS, 2017</caption>
+ <thead>
+<tr>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Tamanho da Propriedade</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Armazenamento seguro</div></th>
+</tr>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Não </th>
+   <th style="text-align:right;"> Sim </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Até 25 ha </td>
+   <td style="text-align:right;"> 59 </td>
+   <td style="text-align:right;"> 8 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 26 ha ou mais </td>
+   <td style="text-align:right;"> 31 </td>
+   <td style="text-align:right;"> 14 </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Fonte:</span> <sup></sup>  @Ristow2017.</td></tr></tfoot>
+</table>
+-->
+<table style="width:90%;">
+<caption><span id="tab:tamprop">Tabela 4.1: </span>Tamanho da propriedade e armazenamento seguro dos agrotóxicos, agricultores de Cerro Largo, RS, 2017.</caption>
+<colgroup>
+<col width="38%" />
+<col width="34%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Tamanho da propriedade</strong></th>
+<th><strong>Armazenamento seguro</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>Não</td>
+<td>Sim</td>
+</tr>
+<tr class="even">
+<td>Até 25 ha</td>
+<td>59</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>26 ha ou mais</td>
+<td>31</td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+<p>Fonte: <span class="citation">Ristow (<a href="#ref-Ristow2017">2017</a>)</span>.</p>
+<p>A estatística de teste para testar as hipóteses apresentadas é o <span class="math inline">\(\chi^2\)</span> (qui-quadrado):</p>
+<p><span class="math display">\[
+\chi^2_{cal}=\sum_{i=1}^{l}\sum_{j=1}^{c}\frac{(O_{ij}-E_{ij})^2}{E_{ij}}
+\]</span>
+em que:</p>
+<p><span class="math inline">\(l\)</span>: número de linhas</p>
+<p><span class="math inline">\(c\)</span>: número de colunas</p>
+<p><span class="math inline">\(O_{ij}\)</span>: frequência observada na linha i e coluna j</p>
+<p><span class="math inline">\(E_{ij}\)</span>: frequência esperada na linha i e coluna j</p>
+<p>com grau de liberdade = <span class="math inline">\(gl = (c-1)(l-1)\)</span>.</p>
+<p>A frequência esperada de uma casela é obtida pela multiplicação do total da linha pelo total da coluna dividido pelo total geral. Por exemplo, a frequência esperada é igual ao total da coluna 1 multiplicada pelo total da linha 1 dividido pelo total geral, ou seja, (68x90)/112.</p>
+<p>Porém, é importante conhecermos as pressuposições do teste de qui-quadrado de Pearson. Para auxiliar no encaminhamento do teste adequado para verificar a relação de duas variáveis qualitativas, seguimos o seguinte check-list.</p>
+</div>
+<div id="check-list-para-escolher-o-teste-adequado-para-verificar-a-relacao-entre-duas-variaveis-qualitativas" class="section level2">
+<h2><span class="header-section-number">4.2</span> Check list para escolher o teste adequado para verificar a relação entre duas variáveis qualitativas</h2>
+<ul>
+<li><p>O cálculo do teste de qui-quadrado deve ser somente com valores absolutos. Quando temos uma tabela 2x2, isto é, duas linhas e duas colunas, devemos utilizar o teste de qui-quadrado com correção de continuidade (correção de Yates). O motivo é que a distribuição de frequências observadas é discreta e está sendo aproximada pela distribuição qui-quadrado, que é contínua <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>.</p></li>
+<li>Não devemos aplicar o teste de qui-quadrado quando a frequência esperada em qualquer casela for menor que 5. Neste caso, devemos usar o teste exato de Fisher, para garantir o grau de certeza do teste.</li>
+<li>Quando temos duas amostras pareadas (duas amostras dependentes), utilizamos o teste de McNemar.</li>
+<li><p>Caso tenhamos interesse em avaliar a força da associação entre as duas variáveis, devemos utilizar algumas medidas de magnitude dessa força, como por exemplo, coeficiente de contingência, razão de prevalência, risco relativo e razão de chances (<em>odds ratio</em>). Porém, essas medidas de magnitude são dependentes do tipo de delineamento do estudo.</p></li>
+</ul>
+<p>Para aplicar o teste de qui-quadrado ou um alternativo no software R, primeiramente precisamos informar os dados, podemos fazer isso de duas formas:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>incluindo os valores no formatado de tabela;</p></li>
+<li><p>acessando os valores no banco de dados.</p></li>
+</ol>
+</div>
+<div id="exemplo-utilizando-os-recursos-do-software-r" class="section level2">
+<h2><span class="header-section-number">4.3</span> Exemplo utilizando os recursos do software R</h2>
+<p>Realizar o teste de associação para os dados da Tabela <a href="qui.html#tab:tamprop">4.1</a>, <!--\@ref(tab:qui2)--> para isso, digitar os dados da tabela cruzada (tabela de contingência) no formato de uma matriz, valor ij, considerando i=linha e j=coluna, em sequência por coluna (por exemplo, digita-se todos os valores da primeira coluna, depois digita-se todos os valores da segunda coluna e assim sucessivamente).</p>
+<p>Sintaxe no software R para incluir os valores no formato de tabela:</p>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb309-1" data-line-number="1">quiquadrado1&lt;-<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">59</span>,<span class="dv">31</span>,<span class="dv">8</span>,<span class="dv">14</span>),<span class="dt">nc=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb309-2" data-line-number="2">quiquadrado1</a></code></pre></div>
+<pre><code>     [,1] [,2]
+[1,]   59    8
+[2,]   31   14</code></pre>
+<p>O comando <code>matrix</code> indica que os dados serão organizados em uma matriz, <code>nc</code> indica o número de colunas da tabela, o operador <code>&lt;-</code> atribui os valores digitados no nome informado pelo usuário que neste caso é <code>quiquadrado1</code>.</p>
+<p>O segundo comando <code>quiquadrado1</code>, mostra a matriz elaborada, que neste caso representa uma tabela cruzada de duas linhas e duas colunas, conforme a Tabela <a href="qui.html#tab:tamprop">4.1</a>. <!--\@ref(tab:qui2)--></p>
+<p>Primeiramente, deve-se verificar a existência de alguma casela com frequência esperada menor que 5.</p>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb311-1" data-line-number="1"><span class="kw">chisq.test</span>(quiquadrado1)<span class="op">$</span>expected</a></code></pre></div>
+<pre><code>      [,1]   [,2]
+[1,] 53.84 13.161
+[2,] 36.16  8.839</code></pre>
+<p>Caso não exista, utiliza-se o teste de qui-quadrado com o comando <code>chisq.test</code>.</p>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb313-1" data-line-number="1"><span class="kw">chisq.test</span>(quiquadrado1)</a></code></pre></div>
+<pre><code>
+    Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+
+data:  quiquadrado1
+X-squared = 5.1, df = 1, p-value = 0.02</code></pre>
+<p>Observa-se que o software R identificou a tabela 2x2 e aplicou a correção de continuidade. Porém, podemos informar isso na linha de comando, incluindo opção <code>correct = TRUE</code>:</p>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb315-1" data-line-number="1"><span class="kw">chisq.test</span>(quiquadrado1, <span class="dt">correct=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>
+    Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+
+data:  quiquadrado1
+X-squared = 5.1, df = 1, p-value = 0.02</code></pre>
+<p>Então devemos concluir pela rejeição ou não da H0 e interpretar esse resultados.</p>
+<p>Caso pelo menos uma casela tenha frequência esperada menor que 5 como por exemplo na tabela abaixo <!--\@ref(tab:qui3)-->, utilizamos o teste exato de Fisher.</p>
+<!--
+<table>
+<caption>(\#tab:qui3)Tamanho da propriedade e devolução das embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS, 2017</caption>
+ <thead>
+<tr>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Tamanho da Propriedade</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Devolução</div></th>
+</tr>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Não </th>
+   <th style="text-align:right;"> Sim </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Até 25 ha </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 59 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 26 ha ou mais </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 43 </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Fonte:</span> <sup></sup>  @Ristow2017.</td></tr></tfoot>
+</table>
+-->
+<table style="width:92%;">
+<caption><span id="tab:tamprop1">Tabela 4.2: </span>Tamanho da propriedade e devolução das embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS, 2017.</caption>
+<colgroup>
+<col width="38%" />
+<col width="37%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Tamanho da propriedade</strong></th>
+<th align="left"><strong>Devolução</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td align="left">Não</td>
+<td>Sim</td>
+</tr>
+<tr class="even">
+<td>Até 25 ha</td>
+<td align="left">8</td>
+<td>59</td>
+</tr>
+<tr class="odd">
+<td>26 ha ou mais</td>
+<td align="left">3</td>
+<td>43</td>
+</tr>
+</tbody>
+</table>
+<p>Fonte: <span class="citation">Ristow (<a href="#ref-Ristow2017">2017</a>)</span>.</p>
+<p>Definindo as hipóteses estatísticas:</p>
+<p>H0: não existe associação entre tamanho da propriedade e devolução das embalagens (as variáveis são independentes);</p>
+<p>H1: existe associação entre tamanho da propriedade e devolução das embalagens (as variáveis são dependentes).</p>
+<p>Incluindo os valores:</p>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb317-1" data-line-number="1">quiquadrado2&lt;-<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">59</span>,<span class="dv">43</span>),<span class="dt">nc=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb317-2" data-line-number="2">quiquadrado2</a></code></pre></div>
+<pre><code>     [,1] [,2]
+[1,]    8   59
+[2,]    3   43</code></pre>
+<p>Verificando se todas frequências esperadas são maiores ou iguais a 5.</p>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb319-1" data-line-number="1"><span class="kw">chisq.test</span>(quiquadrado2)<span class="op">$</span>expected</a></code></pre></div>
+<pre><code>      [,1]  [,2]
+[1,] 6.522 60.48
+[2,] 4.478 41.52</code></pre>
+<p>Neste caso, o software R apresenta um “aviso” pois observa-se uma frequência esperada menor que 5. Então devemos optar pelo teste exato de Fisher.</p>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb321-1" data-line-number="1"><span class="kw">fisher.test</span>(quiquadrado2)</a></code></pre></div>
+<pre><code>
+    Fisher&#39;s Exact Test for Count Data
+
+data:  quiquadrado2
+p-value = 0.5
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.4316 11.9646
+sample estimates:
+odds ratio 
+     1.933 </code></pre>
+<p>Então devemos concluir, através do valor p, pela rejeição ou não da H0 e interpretar esse resultados.</p>
+</div>
+<div id="teste-de-associacao-com-duas-amostras-dependentes" class="section level2">
+<h2><span class="header-section-number">4.4</span> Teste de associação com duas amostras dependentes</h2>
+<p>No caso de amostras pareadas (dependentes), utiliza-se o teste de McNemar para testar a associação.</p>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb323-1" data-line-number="1">dados1=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">12</span>,<span class="dv">8</span>),<span class="dt">nc=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb323-2" data-line-number="2">dados1</a></code></pre></div>
+<pre><code>     [,1] [,2]
+[1,]    5   12
+[2,]   10    8</code></pre>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb325-1" data-line-number="1"><span class="kw">mcnemar.test</span>(dados1)</a></code></pre></div>
+<pre><code>
+    McNemar&#39;s Chi-squared test with continuity correction
+
+data:  dados1
+McNemar&#39;s chi-squared = 0.045, df = 1, p-value = 0.8</code></pre>
+<p>Importante observar que para executar o teste de McNemar: no software R os dados na matriz (tabela de contingência) devem ser distribuídos da mesma maneira tanto nas linhas quanto nas colunas. Isto é, “a” e “d” devem expressar o mesmo comportamento. Por exemplo: aprovado, desaprovado, aprovado, desaprovado.</p>
+<!--
+<table>
+<caption>(\#tab:qui4)Tabela de contingência</caption>
+ <thead>
+<tr>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Antes</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Depois</div></th>
+</tr>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;"> Aprovado </th>
+   <th style="text-align:left;"> Desaprovado </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Aprovado </td>
+   <td style="text-align:left;"> a </td>
+   <td style="text-align:left;"> b </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Desaprovado </td>
+   <td style="text-align:left;"> c </td>
+   <td style="text-align:left;"> d </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Fonte:</span> <sup></sup>  Dados simulados.</td></tr></tfoot>
+</table>
+-->
+<table style="width:57%;">
+<caption><span id="tab:tabcont">Tabela 4.3: </span>Tabela de Contingência.</caption>
+<colgroup>
+<col width="20%" />
+<col width="18%" />
+<col width="18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left"><strong>Depois</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Antes</strong></td>
+<td align="left">Aprovado</td>
+<td>Desaprovado</td>
+</tr>
+<tr class="even">
+<td>Aprovado</td>
+<td align="left">a</td>
+<td>b</td>
+</tr>
+<tr class="odd">
+<td>Desaprovado</td>
+<td align="left">c</td>
+<td>d</td>
+</tr>
+</tbody>
+</table>
+<p>Fonte: Dados simulados.</p>
+<p><strong>Exemplo 2</strong>: Uma pesquisa foi realizada para verificar o efeito de um medicamento para perda de peso. O estudo foi realizado com 45 cobaias com características semelhantes. Na Tabela abaixo <!--\@ref(tab:qui5)--> são apresentadas a situação do peso antes e após a intervenção (utilização do medicamento).</p>
+<p>Como trata-se de duas amostras dependentes (antes e após) não podemos aplicar o teste de qui-quadrado. O teste adequado é McNemar.</p>
+<!--
+<table>
+<caption>(\#tab:qui55)Situação do peso de cobaias do estudo antes e após a intervenção</caption>
+ <thead>
+<tr>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Peso Antes</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Peso Após</div></th>
+</tr>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Adequado </th>
+   <th style="text-align:right;"> Sobrepeso </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Aprovado </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Desaprovado </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 7 </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Fonte:</span> <sup></sup>  Dados simulados.</td></tr></tfoot>
+</table>
+-->
+<!--
+<table>
+<caption>(\#tab:unnamed-chunk-123)Situação do peso de cobaias do estudo antes e após a intervenção.</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Antes </th>
+   <th style="text-align:left;"> Após </th>
+   <th style="text-align:left;"> . </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> Adequado </td>
+   <td style="text-align:left;"> Sobrepeso </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Aprovado </td>
+   <td style="text-align:left;"> 15 </td>
+   <td style="text-align:left;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Desaprovado </td>
+   <td style="text-align:left;"> 18 </td>
+   <td style="text-align:left;"> 7 </td>
+  </tr>
+</tbody>
+</table>
+-->
+<p>Table: (#tab:tamprop)Situação do peso de cobaias do estudo antes e após a intervenção.</p>
+<hr />
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Peso Antes</strong></th>
+<th align="left"><strong>Peso Após</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Adequado</td>
+<td>Sobrepeso</td>
+</tr>
+</tbody>
+</table>
+<p>Aprovado 15 5</p>
+<p>Desaprovado 18 7
+—————————————————————–</p>
+<p>Fonte: Dados simulados.
+<!--
+
+Table: (\#tab:qui5)Situação do peso de cobaias do estudo antes e após a intervenção
+
+---------------  --------------  ----------
+**Peso Antes**   **Peso Após**             
+                 Adequado        Sobrepeso 
+Aprovado         15              5         
+Desaprovado      18              7         
+---------------  --------------  ----------
+--></p>
+<p>Hipóteses estatísticas:</p>
+<p>H0: As frequências das diferentes categorias ocorrem na mesma proporção (Frequências b e c ocorrem na mesma proporção);</p>
+<p>H1: As frequências b e c ocorrem em proporções diferentes, ou seja, as mudanças são significativas.</p>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb327-1" data-line-number="1">mcnemar=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">18</span>,<span class="dv">5</span>,<span class="dv">7</span>),<span class="dt">nc=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb327-2" data-line-number="2">mcnemar</a></code></pre></div>
+<pre><code>     [,1] [,2]
+[1,]   15    5
+[2,]   18    7</code></pre>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" data-line-number="1"><span class="kw">chisq.test</span>(mcnemar)<span class="op">$</span>expected</a></code></pre></div>
+<pre><code>      [,1]  [,2]
+[1,] 14.67 5.333
+[2,] 18.33 6.667</code></pre>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb331-1" data-line-number="1"><span class="kw">mcnemar.test</span>(mcnemar)</a></code></pre></div>
+<pre><code>
+    McNemar&#39;s Chi-squared test with continuity correction
+
+data:  mcnemar
+McNemar&#39;s chi-squared = 6.3, df = 1, p-value = 0.01</code></pre>
+</div>
+<div id="teste-de-qui-quadrado-para-verificar-aderencia-a-uma-distribuicao" class="section level2">
+<h2><span class="header-section-number">4.5</span> Teste de qui-quadrado para verificar aderência a uma distribuição</h2>
+<p>Neste caso usamos o teste de qui-quadrado para verificar se o conjunto de dados segue uma distribuição teórica especificada.</p>
+<p><strong>Exemplo 3</strong>: Deseja-se verificar se o número de borrachudos é o mesmo em diferentes pontos da margem de um rio. O número de borrachudos observados para cada ponto (local) é apresentado na Tabela <a href="qui.html#tab:borrach">4.4</a>.</p>
+<table>
+<caption>
+<span id="tab:borrach">Tabela 4.4: </span>Número de borrachudos nos diferentes pontos
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Ponto
+</th>
+<th style="text-align:right;">
+Borrachudos
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Ponto 1
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ponto 2
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ponto 3
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ponto 4
+</td>
+<td style="text-align:right;">
+17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ponto 5
+</td>
+<td style="text-align:right;">
+25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ponto 6
+</td>
+<td style="text-align:right;">
+22
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ponto 7
+</td>
+<td style="text-align:right;">
+15
+</td>
+</tr>
+</tbody>
+</table>
+<p>Fonte: Dados simulados.</p>
+<p>Para um nível de 5% de significância, as hipóteses a serem testadas:</p>
+<p>H0: O número de borrachudos não muda conforme o ponto;</p>
+<p>H1: Pelo menos um dos pontos tem número de borrachudos diferente dos demais.</p>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb333-1" data-line-number="1">borrach&lt;-<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">12</span>,<span class="dv">10</span>,<span class="dv">17</span>,<span class="dv">30</span>,<span class="dv">22</span>,<span class="dv">35</span>)</a>
+<a class="sourceLine" id="cb333-2" data-line-number="2"><span class="kw">chisq.test</span>(borrach)<span class="op">$</span>expected</a></code></pre></div>
+<pre><code>[1] 20.86 20.86 20.86 20.86 20.86 20.86 20.86</code></pre>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb335-1" data-line-number="1"><span class="kw">chisq.test</span>(borrach)</a></code></pre></div>
+<pre><code>
+    Chi-squared test for given probabilities
+
+data:  borrach
+X-squared = 24, df = 6, p-value = 6e-04</code></pre>
+<p><strong>Exemplo 4</strong>: Suponha que desejamos verificar se o número de borrachudos segue uma distribuição específica, informado em “dist”. Lembrando que os valores no vetor “dist” devem estar no formato de proporção (por exemplo, 0,35).</p>
+<p>H0: O número de borrachudos segue a distribuição teórica informada;</p>
+<p>H1: O número de borrachudos não segue a distribuição teórica informada.</p>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb337-1" data-line-number="1">borrachudos&lt;-<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">12</span>,<span class="dv">10</span>,<span class="dv">17</span>,<span class="dv">30</span>,<span class="dv">22</span>,<span class="dv">35</span>)</a>
+<a class="sourceLine" id="cb337-2" data-line-number="2">dist&lt;-<span class="kw">c</span>(<span class="fl">0.10</span>,<span class="fl">0.10</span>,<span class="fl">0.10</span>,<span class="fl">0.15</span>,<span class="fl">0.15</span>,<span class="fl">0.15</span>,<span class="fl">0.25</span>)</a>
+<a class="sourceLine" id="cb337-3" data-line-number="3"><span class="kw">chisq.test</span>(borrachudos)<span class="op">$</span>expected</a></code></pre></div>
+<pre><code>[1] 20.86 20.86 20.86 20.86 20.86 20.86 20.86</code></pre>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb339-1" data-line-number="1"><span class="kw">chisq.test</span>(borrachudos, <span class="dt">p=</span>dist)</a></code></pre></div>
+<pre><code>
+    Chi-squared test for given probabilities
+
+data:  borrachudos
+X-squared = 8.1, df = 6, p-value = 0.2</code></pre>
+</div>
+</div>
+<h3>Referências</h3>
+<div id="refs" class="references">
+<div id="ref-Ristow2017">
+<p>Ristow, Letiane Peccin. 2017. «Exposição ocupacional de trabalhadores rurais a agrotóxicos e relação com políticas públicas». Tese de mestrado, Cerro Largo: Universidade Federal da Fronteira Sul.</p>
+</div>
+<div id="ref-barbetta1988">
+<p>Barbetta, Pedro Alberto. 2010. <em>Estatística aplicada às ciências sociais</em>. 7 ed. Florianópolis: Ed. UFSC.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="inf.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="reg.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["livror.pdf", "livror.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
