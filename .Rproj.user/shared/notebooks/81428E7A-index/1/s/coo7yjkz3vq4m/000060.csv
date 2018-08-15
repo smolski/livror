@@ -1,6 +1,0 @@
-"0","barplot(Resultado,col=c(""blue"",""red""),main=""Título"","
-"0","        xlab=""Variável do eixo x"","
-"0","        ylab=""Informação que consta no eixo y"", "
-"0","        border='red', "
-"0","        beside=T,legend=rownames(Resultado),"
-"0","        args.legend = list(x = ""topleft""))"

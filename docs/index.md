@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Felipe Micail da Silva Smolski
 - Iara Denise Endruweit Battisti
-date: "2018-08-06"
+date: "2018-08-14"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -1735,6 +1735,56 @@ abertura-fechamento
 Time differences in days
 [1] -11308  24840
 ```
+
+## Exercícios
+
+**1.**	Baixe o arquivo "arvores" que se encontra no endereço <https://smolski.github.io/softwarelivrer/atividades>. Este é um banco de dados com informações cedido pela professora Tatiane Chassot. Abra o arquivo no Rstudio tomando os cuidados necessários (importar no formato correto, prestar atenção nas vírgulas e nomes...). Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.
+
+**1.1.**	Qual é a espécie de árvore que possui o maior e menor diâmetro?  E quais são estes valores de diâmetro?
+
+<!--
+Neste caso, irão utilizar o comando da seguinte forma >Nome_do_banco_de_dados$Nome_da_variável_buscada[which.max(diâmetro_cm)]
+-->
+
+**1.2.**	Qual é a altura média, mínima e média das árvores? 
+
+**1.3.**	Encontre o diâmetro médio para cada espécie de árvores.
+
+**1.4.**	Com os comandos do R, verifique a quantidade de dados referente as variáveis, bem como o nome referente a cada variável.
+
+**1.5.**	Renomeie a primeira coluna para "espécie".
+
+**1.6.**	Classifique as árvores quanto ao seu porte, em relação à altura, em que:
+
+Pequeno porte = árvores com altura inferior a 10 metros.
+
+Grande porte = árvores com altura superior a 10 metros. 
+
+
+**2.**	Baixe o arquivo "bancodedados1" que se encontra no endereço <https://smolski.github.io/softwarelivrer/atividades>. Este é um banco de dados com informações fictícias que usaremos a fim de aprendizado. Abra o arquivo no Rstudio tomando os cuidados necessários. Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.
+
+**2.1.** Qual é o vendedor com mais sucesso de vendas?  E o vendedor com menor número de vendas?
+
+**2.2.**	Qual foi o número total de vendas?
+
+**2.3.**	Supondo que um vendedor tenha ficado de fora dos dados, insira suas informações no banco de dados que já possuímos.
+
+- Vendedor = Silvia
+
+- Idade = 48
+
+- Setor = 2
+
+- N de vendas = 45
+
+**2.4.**	Crie uma nova coluna classificando os vendedores como:
+
+- vendas $<$ 25 = "Regular"
+
+- 25 $>$ vendas = "Ótimo"
+
+**2.5** Renomeie a coluna "vendas mensais" para "vendas diárias".
+
 
 # Estatística Descritiva{#desc}
 
