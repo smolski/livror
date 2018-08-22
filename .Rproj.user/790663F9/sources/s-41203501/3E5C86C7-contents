@@ -11,6 +11,21 @@ bookdown::gitbook:
         <li><a href="./">Livro R</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    sharing:
+      facebook: no
+      twitter: no
+      google: no
+      linkedin: no
+      weibo: no
+      instapper: no
+      vk: no
+    edit: null
+    download: null
+    search: yes
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
