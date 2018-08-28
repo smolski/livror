@@ -26,7 +26,7 @@
 <meta name="author" content="Iara Denise Endruweit Battisti">
 
 
-<meta name="date" content="2018-08-21">
+<meta name="date" content="2018-08-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -170,11 +170,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.11.4" data-path="intro.html"><a href="intro.html#data-frames"><i class="fa fa-check"></i><b>1.11.4</b> Data frames</a></li>
 </ul></li>
 <li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a></li>
-<li class="chapter" data-level="1.13" data-path="intro.html"><a href="intro.html#funcao-edit"><i class="fa fa-check"></i><b>1.13</b> Função <em>edit</em></a></li>
-<li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#funcoes"><i class="fa fa-check"></i><b>1.14</b> Funções</a></li>
-<li class="chapter" data-level="1.15" data-path="intro.html"><a href="intro.html#funcoes-matematicas"><i class="fa fa-check"></i><b>1.15</b> Funções Matemáticas</a></li>
-<li class="chapter" data-level="1.16" data-path="intro.html"><a href="intro.html#conversao-de-datas"><i class="fa fa-check"></i><b>1.16</b> Conversão de datas</a></li>
-<li class="chapter" data-level="1.17" data-path="intro.html"><a href="intro.html#exercicios"><i class="fa fa-check"></i><b>1.17</b> Exercícios</a></li>
+<li class="chapter" data-level="1.13" data-path="intro.html"><a href="intro.html#funcoes"><i class="fa fa-check"></i><b>1.13</b> Funções</a></li>
+<li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#funcoes-matematicas"><i class="fa fa-check"></i><b>1.14</b> Funções Matemáticas</a></li>
+<li class="chapter" data-level="1.15" data-path="intro.html"><a href="intro.html#conversao-de-datas"><i class="fa fa-check"></i><b>1.15</b> Conversão de datas</a></li>
+<li class="chapter" data-level="1.16" data-path="intro.html"><a href="intro.html#exercicios"><i class="fa fa-check"></i><b>1.16</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="desc.html"><a href="desc.html"><i class="fa fa-check"></i><b>2</b> Estatística Descritiva</a><ul>
 <li class="chapter" data-level="2.1" data-path="desc.html"><a href="desc.html#natureza-da-medida-das-variaveis"><i class="fa fa-check"></i><b>2.1</b> Natureza da medida das variáveis</a></li>
@@ -834,9 +833,9 @@ $idade
 <div id="manipulacao-de-banco-de-dados" class="section level2">
 <h2><span class="header-section-number">1.12</span> Manipulação de banco de dados</h2>
 </div>
-<div id="funcao-edit" class="section level2">
-<h2><span class="header-section-number">1.13</span> Função <em>edit</em></h2>
-<p>Esta função abre uma interface simples de edição de dados em formato planilha, e é útil para pequenas modificações. Mas para salvar as modificações atribua o resultado da função <code>edit</code> a um objeto.</p>
+<div id="funcoes" class="section level2">
+<h2><span class="header-section-number">1.13</span> Funções</h2>
+<p>A função <code>edit()</code> abre uma interface simples de edição de dados em formato planilha, e é útil para pequenas modificações. Mas para salvar as modificações atribua o resultado da função <code>edit</code> a um objeto.</p>
 <p>Utiliza-se o comando da seguinte forma:</p>
 <p><code>novonomedabase = edit(nomeatualdabase)</code></p>
 <div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1">informacoes<span class="fl">.2</span>=<span class="kw">edit</span>(informacoes)</a></code></pre></div>
@@ -860,9 +859,6 @@ Figura 1.9: Acréscimo de uma nova coluna através do editor de dados
 2      Pedro    17   79      Gramado
 3    Marcelo    17   80     Soledade
 4  Guilherme    18  100 Porto Alegre</code></pre>
-</div>
-<div id="funcoes" class="section level2">
-<h2><span class="header-section-number">1.14</span> Funções</h2>
 <p>As funções a seguir são aplicáveis a vetores, data.frames e listas, e em muitos casos trazem praticidade a uma análise estatística. Foram criados objetos com informações do nome dos estudantes e altura. Segue o processo de criação do <em>data frame</em> com estas informações, lembrando que esta forma de “união” das informações pressupõe que a ordem dos dados esteja correta:</p>
 <div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" data-line-number="1"><span class="co"># União de um banco de dados (existencia de uma váriavel em comum)</span></a>
 <a class="sourceLine" id="cb138-2" data-line-number="2"></a>
@@ -872,41 +868,41 @@ Figura 1.9: Acréscimo de uma nova coluna através do editor de dados
 <p>Já o comando <code>merge()</code> serve para juntar dois <em>data frames</em> que possuam uma coluna em comum. Neste caso, unimos o objeto <code>informações.2</code> com o objeto <code>informações.3</code> utilizando o nome dos estudantes (informação em comum):</p>
 <div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" data-line-number="1">informacoes=<span class="kw">merge</span>(informacoes<span class="fl">.2</span>,informacoes<span class="fl">.3</span>, <span class="dt">by=</span><span class="st">&quot;estudantes&quot;</span>)</a></code></pre></div>
 <p>Adicionar um cálculo entre as colunas é muito simples com o RStudio, neste caso com os dados do peso e altura, pode-se calcular o IMC (Índice de Massa Corporal) em uma nova coluna:</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" data-line-number="1">informacoes<span class="op">$</span>Imc=<span class="kw">c</span>(peso<span class="op">/</span>(altura<span class="op">^</span><span class="dv">2</span>))</a>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" data-line-number="1">informacoes<span class="op">$</span>Imc=<span class="kw">c</span>(informacoes<span class="op">$</span>peso<span class="op">/</span>(informacoes<span class="op">$</span>altura<span class="op">^</span><span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb140-2" data-line-number="2">informacoes</a></code></pre></div>
 <pre><code>  estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 28.89
-2  Guilherme    18  100 Porto Alegre   1.50 21.88
-3    Marcelo    17   80     Soledade   1.90 26.42
-4      Pedro    17   79      Gramado   1.74 30.86</code></pre>
+1     Camila    21   65   Nova Hartz   1.80 20.06
+2  Guilherme    18  100 Porto Alegre   1.50 44.44
+3    Marcelo    17   80     Soledade   1.90 22.16
+4      Pedro    17   79      Gramado   1.74 26.09</code></pre>
 <p>Ainda, se houver linhas que tenham pelo menos uma informação faltante (NA), estas podem ser excluídas com o comando <code>na.omit()</code>, ou mesmo os NAs serem substituídos por outro caractere (neste caso foi substituído por zero) com o comando <code>is.na</code>:</p>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" data-line-number="1"><span class="co"># Retirar as linhas que tenham pelo menos um NA:</span></a>
 <a class="sourceLine" id="cb142-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb142-3" data-line-number="3">informacoes&lt;-<span class="st"> </span><span class="kw">na.omit</span>(informacoes)</a>
 <a class="sourceLine" id="cb142-4" data-line-number="4">informacoes</a></code></pre></div>
 <pre><code>  estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 28.89
-2  Guilherme    18  100 Porto Alegre   1.50 21.88
-3    Marcelo    17   80     Soledade   1.90 26.42
-4      Pedro    17   79      Gramado   1.74 30.86</code></pre>
+1     Camila    21   65   Nova Hartz   1.80 20.06
+2  Guilherme    18  100 Porto Alegre   1.50 44.44
+3    Marcelo    17   80     Soledade   1.90 22.16
+4      Pedro    17   79      Gramado   1.74 26.09</code></pre>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" data-line-number="1"><span class="co"># Substituir NA&#39;s por zero no data.frame</span></a>
 <a class="sourceLine" id="cb144-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb144-3" data-line-number="3">informacoes[<span class="kw">is.na</span>(informacoes)] =<span class="st"> </span><span class="dv">0</span></a>
 <a class="sourceLine" id="cb144-4" data-line-number="4">informacoes</a></code></pre></div>
 <pre><code>  estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 28.89
-2  Guilherme    18  100 Porto Alegre   1.50 21.88
-3    Marcelo    17   80     Soledade   1.90 26.42
-4      Pedro    17   79      Gramado   1.74 30.86</code></pre>
+1     Camila    21   65   Nova Hartz   1.80 20.06
+2  Guilherme    18  100 Porto Alegre   1.50 44.44
+3    Marcelo    17   80     Soledade   1.90 22.16
+4      Pedro    17   79      Gramado   1.74 26.09</code></pre>
 <p>Outro recurso interessante é a substituição de dados em uma columa, que pode ser feito de forma automática para uma condição padrão escolhida. No exemplo abaixo, substituimos aquelas informações de idade igual a 17 pelo número 19:</p>
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1"><span class="co"># Substituir números na coluna</span></a>
 <a class="sourceLine" id="cb146-2" data-line-number="2">informacoes<span class="op">$</span>idade[informacoes<span class="op">$</span>idade <span class="op">==</span><span class="st"> </span><span class="dv">17</span>] &lt;-<span class="st"> </span><span class="dv">19</span></a>
 <a class="sourceLine" id="cb146-3" data-line-number="3">informacoes</a></code></pre></div>
 <pre><code>  estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 28.89
-2  Guilherme    18  100 Porto Alegre   1.50 21.88
-3    Marcelo    19   80     Soledade   1.90 26.42
-4      Pedro    19   79      Gramado   1.74 30.86</code></pre>
+1     Camila    21   65   Nova Hartz   1.80 20.06
+2  Guilherme    18  100 Porto Alegre   1.50 44.44
+3    Marcelo    19   80     Soledade   1.90 22.16
+4      Pedro    19   79      Gramado   1.74 26.09</code></pre>
 <p>A classificação qualitativa das informações, com base em condições definidas pelo usuário podem ser facilmente efetuadas pelo comando <code>ifelse</code>. Para quem não tem intimidade com atributos de programação, este comando seleciona “se” (<em>if</em>) uma informação desejada é atendida, e cria uma rotina (<em>else</em>) que será aplicada “então”.</p>
 <p>No nosso exemplo, cria-se um objeto “classificacao” e se a coluna IMC conter dados acima de 25, será marcado como “peso normal”, sendo que do contrário, constará como “excesso de peso”. Após utilizamos o comando <code>cbind()</code> para unir os dois objetos pelas colunas. caso não queira utilizar o comando <code>cbind()</code>, poderia ser criado uma nova coluna com o nome do obetjo sendo “informacoes$classificacao”.</p>
 <div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" data-line-number="1"><span class="co"># Classificar qualitativamente informações em um determinado intervalo </span></a>
@@ -915,10 +911,10 @@ Figura 1.9: Acréscimo de uma nova coluna através do editor de dados
 <a class="sourceLine" id="cb148-4" data-line-number="4">informacoes=<span class="kw">cbind</span>(informacoes, classificacao)</a>
 <a class="sourceLine" id="cb148-5" data-line-number="5">informacoes</a></code></pre></div>
 <pre><code>  estudantes idade peso      cidades altura   Imc   classificacao
-1     Camila    21   65   Nova Hartz   1.80 28.89 excesso de peso
-2  Guilherme    18  100 Porto Alegre   1.50 21.88     peso normal
-3    Marcelo    19   80     Soledade   1.90 26.42 excesso de peso
-4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso</code></pre>
+1     Camila    21   65   Nova Hartz   1.80 20.06     peso normal
+2  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso
+3    Marcelo    19   80     Soledade   1.90 22.16     peso normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso</code></pre>
 <table>
 <caption><span id="tab:imct">Tabela 1.1: </span>Valores padrão para o IMC</caption>
 <thead>
@@ -968,24 +964,24 @@ Figura 1.9: Acréscimo de uma nova coluna através do editor de dados
 <a class="sourceLine" id="cb150-7" data-line-number="7">       <span class="st">&quot;Obesidade III&quot;</span>))))))</a>
 <a class="sourceLine" id="cb150-8" data-line-number="8">informacoes</a></code></pre></div>
 <pre><code>  estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1     Camila    21   65   Nova Hartz   1.80 28.89 excesso de peso Acima do Peso
-2  Guilherme    18  100 Porto Alegre   1.50 21.88     peso normal   Peso Normal
-3    Marcelo    19   80     Soledade   1.90 26.42 excesso de peso Acima do Peso
-4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso   Obesidade I</code></pre>
+1     Camila    21   65   Nova Hartz   1.80 20.06     peso normal   Peso Normal
+2  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso Obesidade III
+3    Marcelo    19   80     Soledade   1.90 22.16     peso normal   Peso Normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso</code></pre>
 <p>A classificação binária dos dados (0,1) também é relevante para o estudo da manipulação dos dados trabalhados pelo pesquisador. Neste exemplo, classificou-se aqueles valores da coluna “classificacao” com o “peso normal” iguais a 1, do contrário classificou-se 0 (zero).</p>
 <div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1"><span class="co"># Classificar informações usando o código binário</span></a>
 <a class="sourceLine" id="cb152-2" data-line-number="2">informacoes<span class="op">$</span>binario=<span class="st"> </span><span class="kw">ifelse</span>(informacoes<span class="op">$</span>classificacao </a>
 <a class="sourceLine" id="cb152-3" data-line-number="3">                            <span class="op">==</span><span class="st"> &#39;peso normal&#39;</span>, <span class="dv">1</span>, <span class="dv">0</span>) </a>
 <a class="sourceLine" id="cb152-4" data-line-number="4">informacoes</a></code></pre></div>
 <pre><code>  estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1     Camila    21   65   Nova Hartz   1.80 28.89 excesso de peso Acima do Peso
-2  Guilherme    18  100 Porto Alegre   1.50 21.88     peso normal   Peso Normal
-3    Marcelo    19   80     Soledade   1.90 26.42 excesso de peso Acima do Peso
-4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso   Obesidade I
+1     Camila    21   65   Nova Hartz   1.80 20.06     peso normal   Peso Normal
+2  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso Obesidade III
+3    Marcelo    19   80     Soledade   1.90 22.16     peso normal   Peso Normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
   binario
-1       0
-2       1
-3       0
+1       1
+2       0
+3       1
 4       0</code></pre>
 <p>O comando <code>rbind()</code> é utilizado para incluir linhas novas abaixo de um objeto já criado pelo pesquisador, sendo que é importante o cuidado de que estas novas informações tenham os mesmos campos (colunas). A exemplo, pede-se para incluir uma nova pessoa no <em>data frame</em> informacoes: Francisco, 30 anos de idade, peso 59, natural de Ijuí, IMC 21.3387, classificado como peso normal. Lembrando de incluir os campos “tipoimc” e “binario”.</p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1">novo1=<span class="kw">data.frame</span>(<span class="dt">estudantes=</span><span class="st">&quot;Francisco&quot;</span>, <span class="dt">idade=</span><span class="dv">30</span>, <span class="dt">peso=</span><span class="dv">59</span>, </a>
@@ -998,15 +994,15 @@ Figura 1.9: Acréscimo de uma nova coluna através do editor de dados
 <a class="sourceLine" id="cb154-8" data-line-number="8">informacoes=<span class="kw">rbind</span>(informacoes, novo1)</a>
 <a class="sourceLine" id="cb154-9" data-line-number="9">informacoes</a></code></pre></div>
 <pre><code>  estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1     Camila    21   65   Nova Hartz    1.8 28.89 excesso de peso Acima do Peso
-2  Guilherme    18  100 Porto Alegre    1.5 21.88     peso normal   Peso Normal
-3    Marcelo    19   80     Soledade    1.9 26.42 excesso de peso Acima do Peso
-4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso   Obesidade I
+1     Camila    21   65   Nova Hartz    1.8 20.06     peso normal   Peso Normal
+2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
+3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
 5  Francisco    30   59         Ijuí   1,59 23.30     peso normal   Peso Normal
   binario
-1       0
-2       1
-3       0
+1       1
+2       0
+3       1
 4       0
 5       1</code></pre>
 <p>Outra forma de incluir informações adicionais nos <em>data frames</em> através de atributos é utilizando o pacote <code>dplyr</code>. Decide-se criar um campo “faixa etária”, sendo que aqueles indivíduos com idade acima de 21 chamaremos de “adulto” e do contrário “não adulto”.</p>
@@ -1025,15 +1021,15 @@ Attaching package: &#39;dplyr&#39;</code></pre>
 <a class="sourceLine" id="cb161-3" data-line-number="3">                                           <span class="st">&quot;não adulto&quot;</span>, <span class="st">&quot;adulto&quot;</span>))</a>
 <a class="sourceLine" id="cb161-4" data-line-number="4">informacoes</a></code></pre></div>
 <pre><code>  estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1     Camila    21   65   Nova Hartz    1.8 28.89 excesso de peso Acima do Peso
-2  Guilherme    18  100 Porto Alegre    1.5 21.88     peso normal   Peso Normal
-3    Marcelo    19   80     Soledade    1.9 26.42 excesso de peso Acima do Peso
-4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso   Obesidade I
+1     Camila    21   65   Nova Hartz    1.8 20.06     peso normal   Peso Normal
+2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
+3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
 5  Francisco    30   59         Ijuí   1,59 23.30     peso normal   Peso Normal
   binario faixa etaria
-1       0       adulto
-2       1   não adulto
-3       0   não adulto
+1       1       adulto
+2       0   não adulto
+3       1   não adulto
 4       0   não adulto
 5       1       adulto</code></pre>
 <p>A (re)ordenação das colunas de um <em>data frame</em> pode ser muito útil em alguns casos, sendo extremamente fácil efetuá-la, cada número representa o número da respectiva coluna:</p>
@@ -1043,23 +1039,23 @@ Attaching package: &#39;dplyr&#39;</code></pre>
 <div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" data-line-number="1"><span class="co"># Inversão do posicionamento dos elementos</span></a>
 <a class="sourceLine" id="cb164-2" data-line-number="2"><span class="kw">rev</span>(informacoes)</a></code></pre></div>
 <pre><code>  binario   classificacao altura   Imc estudantes      cidades peso idade
-1       0 excesso de peso    1.8 28.89     Camila   Nova Hartz   65    21
-2       1     peso normal    1.5 21.88  Guilherme Porto Alegre  100    18
-3       0 excesso de peso    1.9 26.42    Marcelo     Soledade   80    19
-4       0 excesso de peso   1.74 30.86      Pedro      Gramado   79    19
+1       1     peso normal    1.8 20.06     Camila   Nova Hartz   65    21
+2       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre  100    18
+3       1     peso normal    1.9 22.16    Marcelo     Soledade   80    19
+4       0 excesso de peso   1.74 26.09      Pedro      Gramado   79    19
 5       1     peso normal   1,59 23.30  Francisco         Ijuí   59    30
         tipoimc
-1 Acima do Peso
-2   Peso Normal
-3 Acima do Peso
-4   Obesidade I
+1   Peso Normal
+2 Obesidade III
+3   Peso Normal
+4 Acima do Peso
 5   Peso Normal</code></pre>
 <p>A função <code>table()</code> faz a contagem os dados; já o comando <code>sort()</code> ordena os objetos em ordem crescente (caso queira no formato decrescente, informar <code>decreasing=TRUE</code>).</p>
 <div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" data-line-number="1"><span class="co"># contagem de objetos</span></a>
 <a class="sourceLine" id="cb166-2" data-line-number="2"><span class="kw">table</span>(informacoes<span class="op">$</span>classificacao)</a></code></pre></div>
 <pre><code>
 excesso de peso     peso normal 
-              3               2 </code></pre>
+              2               3 </code></pre>
 <div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" data-line-number="1"><span class="co"># Ordenar os objetos em ordem crescente</span></a>
 <a class="sourceLine" id="cb168-2" data-line-number="2"><span class="kw">sort</span>(informacoes<span class="op">$</span>idade)</a></code></pre></div>
 <pre><code>[1] 18 19 19 21 30</code></pre>
@@ -1068,62 +1064,62 @@ excesso de peso     peso normal
 <a class="sourceLine" id="cb170-2" data-line-number="2">informacoes[<span class="kw">order</span>(informacoes<span class="op">$</span>idade, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>),]</a></code></pre></div>
 <pre><code>        tipoimc idade peso      cidades estudantes   Imc altura   classificacao
 5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
-1 Acima do Peso    21   65   Nova Hartz     Camila 28.89    1.8 excesso de peso
-3 Acima do Peso    19   80     Soledade    Marcelo 26.42    1.9 excesso de peso
-4   Obesidade I    19   79      Gramado      Pedro 30.86   1.74 excesso de peso
-2   Peso Normal    18  100 Porto Alegre  Guilherme 21.88    1.5     peso normal
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
+3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
+4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
   binario
 5       1
-1       0
-3       0
+1       1
+3       1
 4       0
-2       1</code></pre>
+2       0</code></pre>
 <div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" data-line-number="1"><span class="co">#ordem crescente</span></a>
 <a class="sourceLine" id="cb172-2" data-line-number="2">informacoes[<span class="kw">order</span>(informacoes<span class="op">$</span>idade, <span class="dt">decreasing =</span> <span class="ot">FALSE</span>),]</a></code></pre></div>
 <pre><code>        tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-2   Peso Normal    18  100 Porto Alegre  Guilherme 21.88    1.5     peso normal
-3 Acima do Peso    19   80     Soledade    Marcelo 26.42    1.9 excesso de peso
-4   Obesidade I    19   79      Gramado      Pedro 30.86   1.74 excesso de peso
-1 Acima do Peso    21   65   Nova Hartz     Camila 28.89    1.8 excesso de peso
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
+3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
+4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
   binario
-2       1
-3       0
+2       0
+3       1
 4       0
-1       0
+1       1
 5       1</code></pre>
 <div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" data-line-number="1"><span class="co">#ordem crescente</span></a>
 <a class="sourceLine" id="cb174-2" data-line-number="2">informacoes[<span class="kw">order</span>(informacoes<span class="op">$</span>cidades, <span class="dt">decreasing =</span> <span class="ot">FALSE</span>),]</a></code></pre></div>
 <pre><code>        tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-4   Obesidade I    19   79      Gramado      Pedro 30.86   1.74 excesso de peso
+4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
-1 Acima do Peso    21   65   Nova Hartz     Camila 28.89    1.8 excesso de peso
-2   Peso Normal    18  100 Porto Alegre  Guilherme 21.88    1.5     peso normal
-3 Acima do Peso    19   80     Soledade    Marcelo 26.42    1.9 excesso de peso
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
+3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
   binario
 4       0
 5       1
-1       0
-2       1
-3       0</code></pre>
+1       1
+2       0
+3       1</code></pre>
 <p>O comando <code>rank()</code> cria uma ranqueamento crescente das informações. Se pretende-se, por exemplo, criar uma coluna com o ranking dos valores do IMC, pode ser utilizado:</p>
 <div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" data-line-number="1">informacoes<span class="op">$</span>rankingImc=<span class="kw">rank</span>(informacoes<span class="op">$</span>Imc)</a>
 <a class="sourceLine" id="cb176-2" data-line-number="2">informacoes</a></code></pre></div>
 <pre><code>        tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-1 Acima do Peso    21   65   Nova Hartz     Camila 28.89    1.8 excesso de peso
-2   Peso Normal    18  100 Porto Alegre  Guilherme 21.88    1.5     peso normal
-3 Acima do Peso    19   80     Soledade    Marcelo 26.42    1.9 excesso de peso
-4   Obesidade I    19   79      Gramado      Pedro 30.86   1.74 excesso de peso
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
+3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
+4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
   binario rankingImc
-1       0          4
-2       1          1
-3       0          3
-4       0          5
-5       1          2</code></pre>
+1       1          1
+2       0          5
+3       1          2
+4       0          4
+5       1          3</code></pre>
 </div>
 <div id="funcoes-matematicas" class="section level2">
-<h2><span class="header-section-number">1.15</span> Funções Matemáticas</h2>
+<h2><span class="header-section-number">1.14</span> Funções Matemáticas</h2>
 <p>A utilização de funções matemáticasno RStudio contribui para que o pesquisador possa realizar vários experimentos com seus dados. Os cálculos podem ser efetuados diretamente no console do programa ou aplicados aos objetos criados:</p>
 <div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" data-line-number="1"><span class="kw">log</span>(<span class="fl">1.5</span>)</a></code></pre></div>
 <pre><code>[1] 0.4055</code></pre>
@@ -1145,12 +1141,12 @@ excesso de peso     peso normal
 <pre><code>[1] Francisco
 Levels: Camila Guilherme Marcelo Pedro Francisco</code></pre>
 <div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" data-line-number="1">informacoes<span class="op">$</span>estudantes[<span class="kw">which.max</span>(informacoes<span class="op">$</span>Imc)]</a></code></pre></div>
-<pre><code>[1] Pedro
+<pre><code>[1] Guilherme
 Levels: Camila Guilherme Marcelo Pedro Francisco</code></pre>
 <p>O arredondamento de valores numéricos pode ser feito utilizando o comando <code>round()</code>, o qual o pesquisador informa o número de casas decimais:</p>
 <div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb194-1" data-line-number="1"><span class="co"># Arredondar para n casas decimais</span></a>
 <a class="sourceLine" id="cb194-2" data-line-number="2"><span class="kw">round</span>(informacoes<span class="op">$</span>Imc, <span class="dv">2</span>)</a></code></pre></div>
-<pre><code>[1] 28.89 21.88 26.42 30.86 23.30</code></pre>
+<pre><code>[1] 20.06 44.44 22.16 26.09 23.30</code></pre>
 <p>Já o comando <code>signif()</code> determina onúmero de algarismos significativos da série escolhida, ou seja, ele arredonda para os valores em seu primeiro argumento com os número de dígitos detemrinados:</p>
 <div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb196-1" data-line-number="1">x2 &lt;-<span class="st"> </span>pi <span class="op">*</span><span class="st"> </span><span class="dv">100</span><span class="op">^</span>(<span class="op">-</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb196-2" data-line-number="2"><span class="kw">round</span>(x2, <span class="dv">3</span>)</a></code></pre></div>
@@ -1179,7 +1175,7 @@ Levels: Camila Guilherme Marcelo Pedro Francisco</code></pre>
 18.02 18.04 18.08 18.20 18.40 19.00 </code></pre>
 </div>
 <div id="conversao-de-datas" class="section level2">
-<h2><span class="header-section-number">1.16</span> Conversão de datas</h2>
+<h2><span class="header-section-number">1.15</span> Conversão de datas</h2>
 <p>A configuração e padronização dos formato de datas no RStudio podem ser efetuadas pelo pesquisador, primeiramente ao carregar a base de dados no programa e em um segundo momento durante a manipulação das informações. Assim, seguem alguns dos procedimentos para a correta alteração dos padrões de datas:</p>
 <div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb212-1" data-line-number="1">abertura &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;03/02/69&quot;</span>, <span class="st">&quot;17/08/67&quot;</span>)</a>
 <a class="sourceLine" id="cb212-2" data-line-number="2">fechamento &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2000-20-01&quot;</span>, <span class="st">&quot;1999-14-08&quot;</span>)</a>
@@ -1192,7 +1188,7 @@ Levels: Camila Guilherme Marcelo Pedro Francisco</code></pre>
 [1] -11308  24840</code></pre>
 </div>
 <div id="exercicios" class="section level2">
-<h2><span class="header-section-number">1.17</span> Exercícios</h2>
+<h2><span class="header-section-number">1.16</span> Exercícios</h2>
 <p><strong>1.</strong> Baixe o arquivo “arvores” que se encontra no endereço <a href="https://smolski.github.io/softwarelivrer/atividades" class="uri">https://smolski.github.io/softwarelivrer/atividades</a>. Este é um banco de dados com informações cedido pela professora Tatiane Chassot. Abra o arquivo no Rstudio tomando os cuidados necessários (importar no formato correto, prestar atenção nas vírgulas e nomes…). Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.</p>
 <p><strong>1.1.</strong> Qual é a espécie de árvore que possui o maior e menor diâmetro? E quais são estes valores de diâmetro?</p>
 <!--

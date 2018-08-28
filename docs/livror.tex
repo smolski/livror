@@ -129,7 +129,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-08-14}
+    \date{2018-08-27}
 
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -1726,13 +1726,13 @@ Soledade.
 \section{Manipulação de banco de
 dados}\label{manipulacao-de-banco-de-dados}}
 
-\hypertarget{funcao-edit}{%
-\section{\texorpdfstring{Função
-\emph{edit}}{Função edit}}\label{funcao-edit}}
+\hypertarget{funcoes}{%
+\section{Funções}\label{funcoes}}
 
-Esta função abre uma interface simples de edição de dados em formato
-planilha, e é útil para pequenas modificações. Mas para salvar as
-modificações atribua o resultado da função \texttt{edit} a um objeto.
+A função \texttt{edit()} abre uma interface simples de edição de dados
+em formato planilha, e é útil para pequenas modificações. Mas para
+salvar as modificações atribua o resultado da função \texttt{edit} a um
+objeto.
 
 Utiliza-se o comando da seguinte forma:
 
@@ -1781,9 +1781,6 @@ Logo, chamando o novo banco de dados, teremos:
 4  Guilherme    18  100 Porto Alegre
 \end{verbatim}
 
-\hypertarget{funcoes}{%
-\section{Funções}\label{funcoes}}
-
 As funções a seguir são aplicáveis a vetores, data.frames e listas, e em
 muitos casos trazem praticidade a uma análise estatística. Foram criados
 objetos com informações do nome dos estudantes e altura. Segue o
@@ -1818,17 +1815,17 @@ de Massa Corporal) em uma nova coluna:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{informacoes}\OperatorTok{$}\NormalTok{Imc=}\KeywordTok{c}\NormalTok{(peso}\OperatorTok{/}\NormalTok{(altura}\OperatorTok{^}\DecValTok{2}\NormalTok{))}
+\NormalTok{informacoes}\OperatorTok{$}\NormalTok{Imc=}\KeywordTok{c}\NormalTok{(informacoes}\OperatorTok{$}\NormalTok{peso}\OperatorTok{/}\NormalTok{(informacoes}\OperatorTok{$}\NormalTok{altura}\OperatorTok{^}\DecValTok{2}\NormalTok{))}
 \NormalTok{informacoes}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
   estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 28.89
-2  Guilherme    18  100 Porto Alegre   1.50 21.88
-3    Marcelo    17   80     Soledade   1.90 26.42
-4      Pedro    17   79      Gramado   1.74 30.86
+1     Camila    21   65   Nova Hartz   1.80 20.06
+2  Guilherme    18  100 Porto Alegre   1.50 44.44
+3    Marcelo    17   80     Soledade   1.90 22.16
+4      Pedro    17   79      Gramado   1.74 26.09
 \end{verbatim}
 
 Ainda, se houver linhas que tenham pelo menos uma informação faltante
@@ -1847,10 +1844,10 @@ substituído por zero) com o comando \texttt{is.na}:
 
 \begin{verbatim}
   estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 28.89
-2  Guilherme    18  100 Porto Alegre   1.50 21.88
-3    Marcelo    17   80     Soledade   1.90 26.42
-4      Pedro    17   79      Gramado   1.74 30.86
+1     Camila    21   65   Nova Hartz   1.80 20.06
+2  Guilherme    18  100 Porto Alegre   1.50 44.44
+3    Marcelo    17   80     Soledade   1.90 22.16
+4      Pedro    17   79      Gramado   1.74 26.09
 \end{verbatim}
 
 \begin{Shaded}
@@ -1864,10 +1861,10 @@ substituído por zero) com o comando \texttt{is.na}:
 
 \begin{verbatim}
   estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 28.89
-2  Guilherme    18  100 Porto Alegre   1.50 21.88
-3    Marcelo    17   80     Soledade   1.90 26.42
-4      Pedro    17   79      Gramado   1.74 30.86
+1     Camila    21   65   Nova Hartz   1.80 20.06
+2  Guilherme    18  100 Porto Alegre   1.50 44.44
+3    Marcelo    17   80     Soledade   1.90 22.16
+4      Pedro    17   79      Gramado   1.74 26.09
 \end{verbatim}
 
 Outro recurso interessante é a substituição de dados em uma columa, que
@@ -1885,10 +1882,10 @@ pelo número 19:
 
 \begin{verbatim}
   estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 28.89
-2  Guilherme    18  100 Porto Alegre   1.50 21.88
-3    Marcelo    19   80     Soledade   1.90 26.42
-4      Pedro    19   79      Gramado   1.74 30.86
+1     Camila    21   65   Nova Hartz   1.80 20.06
+2  Guilherme    18  100 Porto Alegre   1.50 44.44
+3    Marcelo    19   80     Soledade   1.90 22.16
+4      Pedro    19   79      Gramado   1.74 26.09
 \end{verbatim}
 
 A classificação qualitativa das informações, com base em condições
@@ -1917,10 +1914,10 @@ nova coluna com o nome do obetjo sendo ``informacoes\$classificacao''.
 
 \begin{verbatim}
   estudantes idade peso      cidades altura   Imc   classificacao
-1     Camila    21   65   Nova Hartz   1.80 28.89 excesso de peso
-2  Guilherme    18  100 Porto Alegre   1.50 21.88     peso normal
-3    Marcelo    19   80     Soledade   1.90 26.42 excesso de peso
-4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso
+1     Camila    21   65   Nova Hartz   1.80 20.06     peso normal
+2  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso
+3    Marcelo    19   80     Soledade   1.90 22.16     peso normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso
 \end{verbatim}
 
 \begin{table}
@@ -1971,10 +1968,10 @@ aglutinação do comando:
 
 \begin{verbatim}
   estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1     Camila    21   65   Nova Hartz   1.80 28.89 excesso de peso Acima do Peso
-2  Guilherme    18  100 Porto Alegre   1.50 21.88     peso normal   Peso Normal
-3    Marcelo    19   80     Soledade   1.90 26.42 excesso de peso Acima do Peso
-4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso   Obesidade I
+1     Camila    21   65   Nova Hartz   1.80 20.06     peso normal   Peso Normal
+2  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso Obesidade III
+3    Marcelo    19   80     Soledade   1.90 22.16     peso normal   Peso Normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
 \end{verbatim}
 
 A classificação binária dos dados (0,1) também é relevante para o estudo
@@ -1993,14 +1990,14 @@ normal'' iguais a 1, do contrário classificou-se 0 (zero).
 
 \begin{verbatim}
   estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1     Camila    21   65   Nova Hartz   1.80 28.89 excesso de peso Acima do Peso
-2  Guilherme    18  100 Porto Alegre   1.50 21.88     peso normal   Peso Normal
-3    Marcelo    19   80     Soledade   1.90 26.42 excesso de peso Acima do Peso
-4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso   Obesidade I
+1     Camila    21   65   Nova Hartz   1.80 20.06     peso normal   Peso Normal
+2  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso Obesidade III
+3    Marcelo    19   80     Soledade   1.90 22.16     peso normal   Peso Normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
   binario
-1       0
-2       1
-3       0
+1       1
+2       0
+3       1
 4       0
 \end{verbatim}
 
@@ -2028,15 +2025,15 @@ os campos ``tipoimc'' e ``binario''.
 
 \begin{verbatim}
   estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1     Camila    21   65   Nova Hartz    1.8 28.89 excesso de peso Acima do Peso
-2  Guilherme    18  100 Porto Alegre    1.5 21.88     peso normal   Peso Normal
-3    Marcelo    19   80     Soledade    1.9 26.42 excesso de peso Acima do Peso
-4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso   Obesidade I
+1     Camila    21   65   Nova Hartz    1.8 20.06     peso normal   Peso Normal
+2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
+3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
 5  Francisco    30   59         Ijuí   1,59 23.30     peso normal   Peso Normal
   binario
-1       0
-2       1
-3       0
+1       1
+2       0
+3       1
 4       0
 5       1
 \end{verbatim}
@@ -2084,15 +2081,15 @@ The following objects are masked from 'package:base':
 
 \begin{verbatim}
   estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1     Camila    21   65   Nova Hartz    1.8 28.89 excesso de peso Acima do Peso
-2  Guilherme    18  100 Porto Alegre    1.5 21.88     peso normal   Peso Normal
-3    Marcelo    19   80     Soledade    1.9 26.42 excesso de peso Acima do Peso
-4      Pedro    19   79      Gramado   1.74 30.86 excesso de peso   Obesidade I
+1     Camila    21   65   Nova Hartz    1.8 20.06     peso normal   Peso Normal
+2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
+3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
 5  Francisco    30   59         Ijuí   1,59 23.30     peso normal   Peso Normal
   binario faixa etaria
-1       0       adulto
-2       1   não adulto
-3       0   não adulto
+1       1       adulto
+2       0   não adulto
+3       1   não adulto
 4       0   não adulto
 5       1       adulto
 \end{verbatim}
@@ -2120,16 +2117,16 @@ o comando \texttt{rev()} pode ser útil:
 
 \begin{verbatim}
   binario   classificacao altura   Imc estudantes      cidades peso idade
-1       0 excesso de peso    1.8 28.89     Camila   Nova Hartz   65    21
-2       1     peso normal    1.5 21.88  Guilherme Porto Alegre  100    18
-3       0 excesso de peso    1.9 26.42    Marcelo     Soledade   80    19
-4       0 excesso de peso   1.74 30.86      Pedro      Gramado   79    19
+1       1     peso normal    1.8 20.06     Camila   Nova Hartz   65    21
+2       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre  100    18
+3       1     peso normal    1.9 22.16    Marcelo     Soledade   80    19
+4       0 excesso de peso   1.74 26.09      Pedro      Gramado   79    19
 5       1     peso normal   1,59 23.30  Francisco         Ijuí   59    30
         tipoimc
-1 Acima do Peso
-2   Peso Normal
-3 Acima do Peso
-4   Obesidade I
+1   Peso Normal
+2 Obesidade III
+3   Peso Normal
+4 Acima do Peso
 5   Peso Normal
 \end{verbatim}
 
@@ -2147,7 +2144,7 @@ formato decrescente, informar \texttt{decreasing=TRUE}).
 \begin{verbatim}
 
 excesso de peso     peso normal 
-              3               2 
+              2               3 
 \end{verbatim}
 
 \begin{Shaded}
@@ -2176,16 +2173,16 @@ das cidades).
 \begin{verbatim}
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
 5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
-1 Acima do Peso    21   65   Nova Hartz     Camila 28.89    1.8 excesso de peso
-3 Acima do Peso    19   80     Soledade    Marcelo 26.42    1.9 excesso de peso
-4   Obesidade I    19   79      Gramado      Pedro 30.86   1.74 excesso de peso
-2   Peso Normal    18  100 Porto Alegre  Guilherme 21.88    1.5     peso normal
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
+3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
+4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
   binario
 5       1
-1       0
-3       0
+1       1
+3       1
 4       0
-2       1
+2       0
 \end{verbatim}
 
 \begin{Shaded}
@@ -2197,16 +2194,16 @@ das cidades).
 
 \begin{verbatim}
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-2   Peso Normal    18  100 Porto Alegre  Guilherme 21.88    1.5     peso normal
-3 Acima do Peso    19   80     Soledade    Marcelo 26.42    1.9 excesso de peso
-4   Obesidade I    19   79      Gramado      Pedro 30.86   1.74 excesso de peso
-1 Acima do Peso    21   65   Nova Hartz     Camila 28.89    1.8 excesso de peso
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
+3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
+4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
   binario
-2       1
-3       0
+2       0
+3       1
 4       0
-1       0
+1       1
 5       1
 \end{verbatim}
 
@@ -2219,17 +2216,17 @@ das cidades).
 
 \begin{verbatim}
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-4   Obesidade I    19   79      Gramado      Pedro 30.86   1.74 excesso de peso
+4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
-1 Acima do Peso    21   65   Nova Hartz     Camila 28.89    1.8 excesso de peso
-2   Peso Normal    18  100 Porto Alegre  Guilherme 21.88    1.5     peso normal
-3 Acima do Peso    19   80     Soledade    Marcelo 26.42    1.9 excesso de peso
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
+3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
   binario
 4       0
 5       1
-1       0
-2       1
-3       0
+1       1
+2       0
+3       1
 \end{verbatim}
 
 O comando \texttt{rank()} cria uma ranqueamento crescente das
@@ -2245,17 +2242,17 @@ dos valores do IMC, pode ser utilizado:
 
 \begin{verbatim}
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-1 Acima do Peso    21   65   Nova Hartz     Camila 28.89    1.8 excesso de peso
-2   Peso Normal    18  100 Porto Alegre  Guilherme 21.88    1.5     peso normal
-3 Acima do Peso    19   80     Soledade    Marcelo 26.42    1.9 excesso de peso
-4   Obesidade I    19   79      Gramado      Pedro 30.86   1.74 excesso de peso
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
+3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
+4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
   binario rankingImc
-1       0          4
-2       1          1
-3       0          3
-4       0          5
-5       1          2
+1       1          1
+2       0          5
+3       1          2
+4       0          4
+5       1          3
 \end{verbatim}
 
 \hypertarget{funcoes-matematicas}{%
@@ -2357,7 +2354,7 @@ Levels: Camila Guilherme Marcelo Pedro Francisco
 \end{Shaded}
 
 \begin{verbatim}
-[1] Pedro
+[1] Guilherme
 Levels: Camila Guilherme Marcelo Pedro Francisco
 \end{verbatim}
 
@@ -2373,7 +2370,7 @@ decimais:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 28.89 21.88 26.42 30.86 23.30
+[1] 20.06 44.44 22.16 26.09 23.30
 \end{verbatim}
 
 Já o comando \texttt{signif()} determina onúmero de algarismos

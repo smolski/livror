@@ -645,9 +645,9 @@ length(subset(informacoes$cidades, informacoes$cidades=="Soledade"))
 
 ## Manipulação de banco de dados
 
-## Função *edit*
+## Funções
 
-Esta função abre uma interface simples de edição de dados em formato planilha, e é útil para pequenas modificações. Mas para salvar as modificações atribua o resultado da função `edit` a um objeto.
+A função `edit()` abre uma interface simples de edição de dados em formato planilha, e é útil para pequenas modificações. Mas para salvar as modificações atribua o resultado da função `edit` a um objeto.
 
 Utiliza-se o comando da seguinte forma: 
 
@@ -674,7 +674,6 @@ Logo, chamando o novo banco de dados, teremos:
 informacoes.2 
 ```
 
-## Funções
 
 As funções a seguir são aplicáveis a vetores, data.frames e listas, e em muitos casos trazem praticidade a uma análise estatística. Foram criados objetos com informações do nome dos estudantes e altura. Segue o processo de criação do *data frame* com estas informações, lembrando que esta forma de "união" das informações pressupõe que a ordem dos dados esteja correta:
 
@@ -695,7 +694,7 @@ informacoes=merge(informacoes.2,informacoes.3, by="estudantes")
 Adicionar um cálculo entre as colunas é muito simples com o RStudio, neste caso com os dados do peso e altura, pode-se calcular o IMC (Índice de Massa Corporal) em uma nova coluna:
 
 ```{r}
-informacoes$Imc=c(peso/(altura^2))
+informacoes$Imc=c(informacoes$peso/(informacoes$altura^2))
 informacoes
 ```
 
