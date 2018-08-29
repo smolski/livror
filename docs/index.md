@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Felipe Micail da Silva Smolski
 - Iara Denise Endruweit Battisti
-date: "2018-08-27"
+date: "2018-08-29"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -3872,10 +3872,9 @@ Desaprovado & 18 & 7\\
 -->
 
 
-Table: (\#tab:tamprop)Situação do peso de cobaias do estudo antes e após a intervenção.
+Table: (\#tab:sitcob)Situação do peso de cobaias do estudo antes e após a intervenção.
 
   -----------------------------------------------------------------
-  
   **Peso Antes**              **Peso Após**     
   --------------------------  ------------------- -----------------
                               Adequado            Sobrepeso

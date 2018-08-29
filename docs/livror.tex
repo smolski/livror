@@ -129,7 +129,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-08-27}
+    \date{2018-08-29}
 
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -5065,24 +5065,52 @@ do medicamento).
 Como trata-se de duas amostras dependentes (antes e após) não podemos
 aplicar o teste de qui-quadrado. O teste adequado é McNemar.
 
-Table: \label{tab:tamprop}Situação do peso de cobaias do estudo antes e após
-a intervenção.
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
 \begin{longtable}[]{@{}lll@{}}
+\caption{\label{tab:sitcob}Situação do peso de cobaias do estudo antes e
+após a intervenção.}\tabularnewline
 \toprule
-\textbf{Peso Antes} & \textbf{Peso Após} &\tabularnewline
+\begin{minipage}[b]{0.35\columnwidth}\raggedright
+\textbf{Peso Antes}\strut
+\end{minipage} & \begin{minipage}[b]{0.25\columnwidth}\raggedright
+\textbf{Peso Após}\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.35\columnwidth}\raggedright
+\textbf{Peso Antes}\strut
+\end{minipage} & \begin{minipage}[b]{0.25\columnwidth}\raggedright
+\textbf{Peso Após}\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
 \midrule
 \endhead
-& Adequado & Sobrepeso\tabularnewline
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
+Adequado\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+Sobrepeso\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+Aprovado\strut
+\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
+15\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+5\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+Desaprovado\strut
+\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+7\strut
+\end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
-
-Aprovado 15 5
-
-Desaprovado 18 7
------------------------------------------------------------------
 
 Fonte: Dados simulados.
 

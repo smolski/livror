@@ -2295,10 +2295,9 @@ knitr::kable(as.matrix(qui5), caption = 'Situação do peso de cobaias do estudo
 -->
 
 
-Table: (\#tab:tamprop)Situação do peso de cobaias do estudo antes e após a intervenção.
+Table: (\#tab:sitcob)Situação do peso de cobaias do estudo antes e após a intervenção.
 
   -----------------------------------------------------------------
-  
   **Peso Antes**              **Peso Após**     
   --------------------------  ------------------- -----------------
                               Adequado            Sobrepeso
