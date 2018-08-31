@@ -1,9 +1,10 @@
 "0","novo1=data.frame(estudantes=""Francisco"", idade=30, peso=59, "
 "0","                 cidades=""Ijuí"", "
 "0","                 altura=""1,59"", "
-"0","                 Imc= 23.30, "
+"0","                 Imc= 23.33768, "
 "0","                 classificacao= ""peso normal"","
 "0","                 tipoimc=""Peso Normal"", "
 "0","                 binario=1)"
 "0","informacoes=rbind(informacoes, novo1)"
-"0","informacoes"
+"2","Error in rbind(informacoes, novo1) : object 'informacoes' not found
+"

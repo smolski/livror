@@ -1,4 +1,6 @@
 "0","require(readxl)"
+"2","Carregando pacotes exigidos: readxl
+"
 "0","url <- ""https://goo.gl/37Fdzz"""
 "0","destfile <- ""pesquisa_dados.xlsx"""
 "0","curl::curl_download(url, destfile)"

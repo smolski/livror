@@ -1,0 +1,1 @@
+{"frames":[{"character_number":0,"end_character_number":0,"end_line_number":0,"file":"","func":"rbind(informacoes, novo1)","line_number":0}],"message":"Error in rbind(informacoes, novo1) : object 'informacoes' not found\n"}

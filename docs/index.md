@@ -1226,7 +1226,7 @@ informacoes
 4      Pedro    17   79      Gramado   1.74 26.09
 ```
 
-Outro recurso interessante é a substituição de dados em uma columa, que pode ser feito de forma automática para uma condição padrão escolhida. No exemplo abaixo, substituimos aquelas informações de idade igual a 17 pelo número 19:
+Outro recurso interessante é a substituição de dados em uma coluna, que pode ser feito de forma automática para uma condição padrão escolhida. No exemplo abaixo, substituimos aquelas informações de idade igual a 17 pelo número 19:
 
 
 ```r
@@ -1322,14 +1322,14 @@ informacoes
 4       0
 ```
 
-O comando `rbind()` é utilizado para incluir linhas novas abaixo de um objeto já criado pelo pesquisador, sendo que é importante o cuidado de que estas novas informações tenham os mesmos campos (colunas). A exemplo, pede-se para incluir uma nova pessoa no *data frame* informacoes: Francisco, 30 anos de idade, peso 59, natural de Ijuí, IMC 21.3387, classificado como peso normal. Lembrando de incluir os campos "tipoimc" e "binario".
+O comando `rbind()` é utilizado para incluir linhas novas abaixo de um objeto já criado pelo pesquisador, sendo que é importante o cuidado de que estas novas informações tenham os mesmos campos (colunas). A exemplo, pede-se para incluir uma nova pessoa no *data frame* informacoes: Francisco, 30 anos de idade, peso 59, natural de Ijuí, IMC 23,33768, classificado como peso normal. Lembrando de incluir os campos "tipoimc" e "binario".
 
 
 ```r
 novo1=data.frame(estudantes="Francisco", idade=30, peso=59, 
                  cidades="Ijuí", 
                  altura="1,59", 
-                 Imc= 23.30, 
+                 Imc= 23.33768, 
                  classificacao= "peso normal",
                  tipoimc="Peso Normal", 
                  binario=1)
@@ -1343,7 +1343,7 @@ informacoes
 2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
 3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
 4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
-5  Francisco    30   59         Ijuí   1,59 23.30     peso normal   Peso Normal
+5  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
   binario
 1       1
 2       0
@@ -1393,7 +1393,7 @@ informacoes
 2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
 3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
 4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
-5  Francisco    30   59         Ijuí   1,59 23.30     peso normal   Peso Normal
+5  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
   binario faixa etaria
 1       1       adulto
 2       0   não adulto
@@ -1424,7 +1424,7 @@ rev(informacoes)
 2       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre  100    18
 3       1     peso normal    1.9 22.16    Marcelo     Soledade   80    19
 4       0 excesso de peso   1.74 26.09      Pedro      Gramado   79    19
-5       1     peso normal   1,59 23.30  Francisco         Ijuí   59    30
+5       1     peso normal   1,59 23.34  Francisco         Ijuí   59    30
         tipoimc
 1   Peso Normal
 2 Obesidade III
@@ -1466,7 +1466,7 @@ informacoes[order(informacoes$idade, decreasing = TRUE),]
 
 ```
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
@@ -1490,7 +1490,7 @@ informacoes[order(informacoes$idade, decreasing = FALSE),]
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
-5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
   binario
 2       0
 3       1
@@ -1507,7 +1507,7 @@ informacoes[order(informacoes$cidades, decreasing = FALSE),]
 ```
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
@@ -1533,7 +1533,7 @@ informacoes
 2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
   binario rankingImc
 1       1          1
 2       0          5
@@ -1632,7 +1632,7 @@ round(informacoes$Imc, 2)
 ```
 
 ```
-[1] 20.06 44.44 22.16 26.09 23.30
+[1] 20.06 44.44 22.16 26.09 23.34
 ```
 
 Já o comando `signif()` determina onúmero de algarismos significativos da série escolhida, ou seja, ele arredonda para os valores em seu primeiro argumento com os número de dígitos detemrinados: 
@@ -1768,13 +1768,7 @@ Grande porte = árvores com altura superior a 10 metros.
 
 **2.3.**	Supondo que um vendedor tenha ficado de fora dos dados, insira suas informações no banco de dados que já possuímos.
 
-- Vendedor = Silvia
-
-- Idade = 48
-
-- Setor = 2
-
-- N de vendas = 45
+- Vendedor = Silvia; Idade = 48; Setor = 2; N de vendas = 45.
 
 **2.4.**	Crie uma nova coluna classificando os vendedores como:
 
@@ -1913,7 +1907,7 @@ Sabor :  chr [1:348] "Otimo" "Pessimo" "Bom" "Otimo" "Otimo" "Regular" "Ruim" "B
 Sexo :  chr [1:348] "Feminino" "Feminino" "Feminino" "Feminino" "Masculino" ...
 ```
   
-## Tabelas e Gráficos
+## Tabelas
 
 Segundo @barbetta1988, dados representados em tabelas e gráficos adequados, permitem observar determinados aspectos relevantes, bem como delinear hipóteses a respeito da estrutura dos dados em estudo, o que conhecemos como análise exploratória de dados. Isto pode ser feito inicialmente com a representação em forma de tabelas.
 

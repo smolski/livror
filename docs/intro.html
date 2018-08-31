@@ -177,7 +177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="desc.html"><a href="desc.html"><i class="fa fa-check"></i><b>2</b> Estatística Descritiva</a><ul>
 <li class="chapter" data-level="2.1" data-path="desc.html"><a href="desc.html#natureza-da-medida-das-variaveis"><i class="fa fa-check"></i><b>2.1</b> Natureza da medida das variáveis</a></li>
-<li class="chapter" data-level="2.2" data-path="desc.html"><a href="desc.html#tabelas-e-graficos"><i class="fa fa-check"></i><b>2.2</b> Tabelas e Gráficos</a><ul>
+<li class="chapter" data-level="2.2" data-path="desc.html"><a href="desc.html#tabelas"><i class="fa fa-check"></i><b>2.2</b> Tabelas</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="desc.html"><a href="desc.html#tabela-simples-para-apresentacao-das-frequencias-absolutas"><i class="fa fa-check"></i><b>2.2.1</b> Tabela simples para apresentação das frequências absolutas</a></li>
 <li class="chapter" data-level="2.2.2" data-path="desc.html"><a href="desc.html#tabela-cruzada"><i class="fa fa-check"></i><b>2.2.2</b> Tabela cruzada</a></li>
 <li class="chapter" data-level="2.2.3" data-path="desc.html"><a href="desc.html#tabela-cruzada-para-apresentacao-das-frequencias-relativas"><i class="fa fa-check"></i><b>2.2.3</b> Tabela cruzada para apresentação das frequências relativas</a></li>
@@ -894,7 +894,7 @@ Figura 1.9: Acréscimo de uma nova coluna através do editor de dados
 2  Guilherme    18  100 Porto Alegre   1.50 44.44
 3    Marcelo    17   80     Soledade   1.90 22.16
 4      Pedro    17   79      Gramado   1.74 26.09</code></pre>
-<p>Outro recurso interessante é a substituição de dados em uma columa, que pode ser feito de forma automática para uma condição padrão escolhida. No exemplo abaixo, substituimos aquelas informações de idade igual a 17 pelo número 19:</p>
+<p>Outro recurso interessante é a substituição de dados em uma coluna, que pode ser feito de forma automática para uma condição padrão escolhida. No exemplo abaixo, substituimos aquelas informações de idade igual a 17 pelo número 19:</p>
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1"><span class="co"># Substituir números na coluna</span></a>
 <a class="sourceLine" id="cb146-2" data-line-number="2">informacoes<span class="op">$</span>idade[informacoes<span class="op">$</span>idade <span class="op">==</span><span class="st"> </span><span class="dv">17</span>] &lt;-<span class="st"> </span><span class="dv">19</span></a>
 <a class="sourceLine" id="cb146-3" data-line-number="3">informacoes</a></code></pre></div>
@@ -983,11 +983,11 @@ Figura 1.9: Acréscimo de uma nova coluna através do editor de dados
 2       0
 3       1
 4       0</code></pre>
-<p>O comando <code>rbind()</code> é utilizado para incluir linhas novas abaixo de um objeto já criado pelo pesquisador, sendo que é importante o cuidado de que estas novas informações tenham os mesmos campos (colunas). A exemplo, pede-se para incluir uma nova pessoa no <em>data frame</em> informacoes: Francisco, 30 anos de idade, peso 59, natural de Ijuí, IMC 21.3387, classificado como peso normal. Lembrando de incluir os campos “tipoimc” e “binario”.</p>
+<p>O comando <code>rbind()</code> é utilizado para incluir linhas novas abaixo de um objeto já criado pelo pesquisador, sendo que é importante o cuidado de que estas novas informações tenham os mesmos campos (colunas). A exemplo, pede-se para incluir uma nova pessoa no <em>data frame</em> informacoes: Francisco, 30 anos de idade, peso 59, natural de Ijuí, IMC 23,33768, classificado como peso normal. Lembrando de incluir os campos “tipoimc” e “binario”.</p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1">novo1=<span class="kw">data.frame</span>(<span class="dt">estudantes=</span><span class="st">&quot;Francisco&quot;</span>, <span class="dt">idade=</span><span class="dv">30</span>, <span class="dt">peso=</span><span class="dv">59</span>, </a>
 <a class="sourceLine" id="cb154-2" data-line-number="2">                 <span class="dt">cidades=</span><span class="st">&quot;Ijuí&quot;</span>, </a>
 <a class="sourceLine" id="cb154-3" data-line-number="3">                 <span class="dt">altura=</span><span class="st">&quot;1,59&quot;</span>, </a>
-<a class="sourceLine" id="cb154-4" data-line-number="4">                 <span class="dt">Imc=</span> <span class="fl">23.30</span>, </a>
+<a class="sourceLine" id="cb154-4" data-line-number="4">                 <span class="dt">Imc=</span> <span class="fl">23.33768</span>, </a>
 <a class="sourceLine" id="cb154-5" data-line-number="5">                 <span class="dt">classificacao=</span> <span class="st">&quot;peso normal&quot;</span>,</a>
 <a class="sourceLine" id="cb154-6" data-line-number="6">                 <span class="dt">tipoimc=</span><span class="st">&quot;Peso Normal&quot;</span>, </a>
 <a class="sourceLine" id="cb154-7" data-line-number="7">                 <span class="dt">binario=</span><span class="dv">1</span>)</a>
@@ -998,7 +998,7 @@ Figura 1.9: Acréscimo de uma nova coluna através do editor de dados
 2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
 3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
 4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
-5  Francisco    30   59         Ijuí   1,59 23.30     peso normal   Peso Normal
+5  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
   binario
 1       1
 2       0
@@ -1025,7 +1025,7 @@ Attaching package: &#39;dplyr&#39;</code></pre>
 2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
 3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
 4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
-5  Francisco    30   59         Ijuí   1,59 23.30     peso normal   Peso Normal
+5  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
   binario faixa etaria
 1       1       adulto
 2       0   não adulto
@@ -1043,7 +1043,7 @@ Attaching package: &#39;dplyr&#39;</code></pre>
 2       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre  100    18
 3       1     peso normal    1.9 22.16    Marcelo     Soledade   80    19
 4       0 excesso de peso   1.74 26.09      Pedro      Gramado   79    19
-5       1     peso normal   1,59 23.30  Francisco         Ijuí   59    30
+5       1     peso normal   1,59 23.34  Francisco         Ijuí   59    30
         tipoimc
 1   Peso Normal
 2 Obesidade III
@@ -1063,7 +1063,7 @@ excesso de peso     peso normal
 <div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" data-line-number="1"><span class="co"># Ordem decrescente </span></a>
 <a class="sourceLine" id="cb170-2" data-line-number="2">informacoes[<span class="kw">order</span>(informacoes<span class="op">$</span>idade, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>),]</a></code></pre></div>
 <pre><code>        tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
@@ -1081,7 +1081,7 @@ excesso de peso     peso normal
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
-5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
   binario
 2       0
 3       1
@@ -1092,7 +1092,7 @@ excesso de peso     peso normal
 <a class="sourceLine" id="cb174-2" data-line-number="2">informacoes[<span class="kw">order</span>(informacoes<span class="op">$</span>cidades, <span class="dt">decreasing =</span> <span class="ot">FALSE</span>),]</a></code></pre></div>
 <pre><code>        tipoimc idade peso      cidades estudantes   Imc altura   classificacao
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
@@ -1110,7 +1110,7 @@ excesso de peso     peso normal
 2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
   binario rankingImc
 1       1          1
 2       0          5
@@ -1146,7 +1146,7 @@ Levels: Camila Guilherme Marcelo Pedro Francisco</code></pre>
 <p>O arredondamento de valores numéricos pode ser feito utilizando o comando <code>round()</code>, o qual o pesquisador informa o número de casas decimais:</p>
 <div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb194-1" data-line-number="1"><span class="co"># Arredondar para n casas decimais</span></a>
 <a class="sourceLine" id="cb194-2" data-line-number="2"><span class="kw">round</span>(informacoes<span class="op">$</span>Imc, <span class="dv">2</span>)</a></code></pre></div>
-<pre><code>[1] 20.06 44.44 22.16 26.09 23.30</code></pre>
+<pre><code>[1] 20.06 44.44 22.16 26.09 23.34</code></pre>
 <p>Já o comando <code>signif()</code> determina onúmero de algarismos significativos da série escolhida, ou seja, ele arredonda para os valores em seu primeiro argumento com os número de dígitos detemrinados:</p>
 <div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb196-1" data-line-number="1">x2 &lt;-<span class="st"> </span>pi <span class="op">*</span><span class="st"> </span><span class="dv">100</span><span class="op">^</span>(<span class="op">-</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb196-2" data-line-number="2"><span class="kw">round</span>(x2, <span class="dv">3</span>)</a></code></pre></div>
@@ -1206,10 +1206,7 @@ Neste caso, irão utilizar o comando da seguinte forma >Nome_do_banco_de_dados$N
 <p><strong>2.2.</strong> Qual foi o número total de vendas?</p>
 <p><strong>2.3.</strong> Supondo que um vendedor tenha ficado de fora dos dados, insira suas informações no banco de dados que já possuímos.</p>
 <ul>
-<li><p>Vendedor = Silvia</p></li>
-<li><p>Idade = 48</p></li>
-<li><p>Setor = 2</p></li>
-<li><p>N de vendas = 45</p></li>
+<li>Vendedor = Silvia; Idade = 48; Setor = 2; N de vendas = 45.</li>
 </ul>
 <p><strong>2.4.</strong> Crie uma nova coluna classificando os vendedores como:</p>
 <ul>

@@ -129,7 +129,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-08-29}
+    \date{2018-08-30}
 
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -142,7 +142,7 @@
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}
 
-\setlength{\parskip}{1em}
+%\setlength{\parskip}{1em}
 \renewcommand{\baselinestretch}{1.0}
 \setlength{\parindent}{1.25cm}
 \selectlanguage{brazil}
@@ -1867,7 +1867,7 @@ substituído por zero) com o comando \texttt{is.na}:
 4      Pedro    17   79      Gramado   1.74 26.09
 \end{verbatim}
 
-Outro recurso interessante é a substituição de dados em uma columa, que
+Outro recurso interessante é a substituição de dados em uma coluna, que
 pode ser feito de forma automática para uma condição padrão escolhida.
 No exemplo abaixo, substituimos aquelas informações de idade igual a 17
 pelo número 19:
@@ -2006,7 +2006,7 @@ de um objeto já criado pelo pesquisador, sendo que é importante o
 cuidado de que estas novas informações tenham os mesmos campos
 (colunas). A exemplo, pede-se para incluir uma nova pessoa no \emph{data
 frame} informacoes: Francisco, 30 anos de idade, peso 59, natural de
-Ijuí, IMC 21.3387, classificado como peso normal. Lembrando de incluir
+Ijuí, IMC 23,33768, classificado como peso normal. Lembrando de incluir
 os campos ``tipoimc'' e ``binario''.
 
 \begin{Shaded}
@@ -2014,7 +2014,7 @@ os campos ``tipoimc'' e ``binario''.
 \NormalTok{novo1=}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{estudantes=}\StringTok{"Francisco"}\NormalTok{, }\DataTypeTok{idade=}\DecValTok{30}\NormalTok{, }\DataTypeTok{peso=}\DecValTok{59}\NormalTok{, }
                  \DataTypeTok{cidades=}\StringTok{"Ijuí"}\NormalTok{, }
                  \DataTypeTok{altura=}\StringTok{"1,59"}\NormalTok{, }
-                 \DataTypeTok{Imc=} \FloatTok{23.30}\NormalTok{, }
+                 \DataTypeTok{Imc=} \FloatTok{23.33768}\NormalTok{, }
                  \DataTypeTok{classificacao=} \StringTok{"peso normal"}\NormalTok{,}
                  \DataTypeTok{tipoimc=}\StringTok{"Peso Normal"}\NormalTok{, }
                  \DataTypeTok{binario=}\DecValTok{1}\NormalTok{)}
@@ -2029,7 +2029,7 @@ os campos ``tipoimc'' e ``binario''.
 2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
 3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
 4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
-5  Francisco    30   59         Ijuí   1,59 23.30     peso normal   Peso Normal
+5  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
   binario
 1       1
 2       0
@@ -2085,7 +2085,7 @@ The following objects are masked from 'package:base':
 2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
 3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
 4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
-5  Francisco    30   59         Ijuí   1,59 23.30     peso normal   Peso Normal
+5  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
   binario faixa etaria
 1       1       adulto
 2       0   não adulto
@@ -2121,7 +2121,7 @@ o comando \texttt{rev()} pode ser útil:
 2       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre  100    18
 3       1     peso normal    1.9 22.16    Marcelo     Soledade   80    19
 4       0 excesso de peso   1.74 26.09      Pedro      Gramado   79    19
-5       1     peso normal   1,59 23.30  Francisco         Ijuí   59    30
+5       1     peso normal   1,59 23.34  Francisco         Ijuí   59    30
         tipoimc
 1   Peso Normal
 2 Obesidade III
@@ -2172,7 +2172,7 @@ das cidades).
 
 \begin{verbatim}
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
@@ -2198,7 +2198,7 @@ das cidades).
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
-5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
   binario
 2       0
 3       1
@@ -2217,7 +2217,7 @@ das cidades).
 \begin{verbatim}
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
@@ -2246,7 +2246,7 @@ dos valores do IMC, pode ser utilizado:
 2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-5   Peso Normal    30   59         Ijuí  Francisco 23.30   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
   binario rankingImc
 1       1          1
 2       0          5
@@ -2370,7 +2370,7 @@ decimais:
 \end{Shaded}
 
 \begin{verbatim}
-[1] 20.06 44.44 22.16 26.09 23.30
+[1] 20.06 44.44 22.16 26.09 23.34
 \end{verbatim}
 
 Já o comando \texttt{signif()} determina onúmero de algarismos
@@ -2545,14 +2545,9 @@ com menor número de vendas?
 insira suas informações no banco de dados que já possuímos.
 
 \begin{itemize}
+\tightlist
 \item
-  Vendedor = Silvia
-\item
-  Idade = 48
-\item
-  Setor = 2
-\item
-  N de vendas = 45
+  Vendedor = Silvia; Idade = 48; Setor = 2; N de vendas = 45.
 \end{itemize}
 
 \textbf{2.4.} Crie uma nova coluna classificando os vendedores como:
@@ -2765,8 +2760,8 @@ Sabor :  chr [1:348] "Otimo" "Pessimo" "Bom" "Otimo" "Otimo" "Regular" "Ruim" "B
 Sexo :  chr [1:348] "Feminino" "Feminino" "Feminino" "Feminino" "Masculino" ...
 \end{verbatim}
 
-\hypertarget{tabelas-e-graficos}{%
-\section{Tabelas e Gráficos}\label{tabelas-e-graficos}}
+\hypertarget{tabelas}{%
+\section{Tabelas}\label{tabelas}}
 
 Segundo BARBETTA (\protect\hyperlink{ref-barbetta1988}{2010}), dados
 representados em tabelas e gráficos adequados, permitem observar
@@ -2830,7 +2825,7 @@ das variáveis \textbf{Sexo} e \textbf{Divulgacao}.
 \subsection{Tabela cruzada para apresentação das frequências
 relativas}\label{tabela-cruzada-para-apresentacao-das-frequencias-relativas}}
 
-Com a introdução do comando `prop.table\textbar{} é possível gerar,
+Com a introdução do comando \texttt{prop.table} é possível gerar,
 facilmente, tabelas de frequências relativas para as variáveis de
 interesse. As medidas relativas são importantes para comparar
 distribuições de frequências (BARBETTA,
@@ -3293,7 +3288,7 @@ vários altos e baixos mostra o percurso de um fenômeno específico.
 Ex. Considere os dados que descrevem os valores do número de empresas
 fiscalizadas na fiscalização do trabalho na área rural Brasil 1998-2010.
 
-\begin{longtable}[]{@{}rc@{}}
+\begin{longtable}[]{@{}cc@{}}
 \caption{\label{tab:evolres}Evolução dos resultados da fiscalização do
 trabalho na área rural Brasil 1998-2010}\tabularnewline
 \toprule
@@ -3328,8 +3323,7 @@ Para construir um gráfico de linhas, utilizamos o seguinte comando:
 
 Neste gráfico, podemos utilizar comandos já utilizados anteriormente,
 para inserir título, nomes dos eixos, etc. Para escolher o formato das
-linhas, com o uso do argumento ```type''\textbar{}, seguem algumas
-opções:
+linhas, com o uso do argumento \texttt{type}, seguem algumas opções:
 
 \begin{itemize}
 \tightlist
@@ -3926,7 +3920,7 @@ IC (limite inferior \(\leq\) \(\pi\) \(\leq\) limite superior) = (1 -
 
 \textbf{Exemplo 2}: (adaptado de
 \url{https://www.passeidireto.com/arquivo/3802950/capitulo7---intervalos-de-confianca})
-Entre 500 pessoas entrevistas a respeito de suas preferências
+Entre 500 pessoas entrevistadas a respeito de suas preferências
 eleitorais, 260 mostraram-se favoráveis ao candidato B. Qual é a
 proporção amostral dos favoráveis ao candidato B? E a proporção
 populacional dos favoráveis?
@@ -4052,9 +4046,9 @@ H0: \(\mu\) \(=\) \ldots{}\ldots{}
 
 H1: \(\mu\) \(<\) \ldots{}\ldots{}
 
-No software RStudio, usa-se o `t.test\textbar{} para a realização do
-teste de hipóteses para uma média populacional, levando-se em conta o
-valor de p-value para aceitar ou rejeitar H0.
+No software RStudio, usa-se o \texttt{t.test} para a realização do teste
+de hipóteses para uma média populacional, levando-se em conta o valor de
+p-value para aceitar ou rejeitar H0.
 
 De acordo com as hipóteses, temos variações do \texttt{t.test}, conforme
 segue:
@@ -4429,9 +4423,9 @@ Peso depois do treinamento & 94 & 62 & 66 & 58 & 70 & 76\\
 \end{tabular}
 \end{table}
 
-No software RStudio, usa-se o `t.test\textbar{} para a realização do
-teste de hipóteses para uma média populacional, levando-se em conta o
-valor de p-value para aceitar ou rejeitar H0.
+No software RStudio, usa-se o \texttt{t.test} para a realização do teste
+de hipóteses para uma média populacional, levando-se em conta o valor de
+p-value para aceitar ou rejeitar H0.
 
 Hipóteses:
 

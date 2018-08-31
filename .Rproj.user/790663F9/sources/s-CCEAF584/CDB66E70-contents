@@ -712,7 +712,7 @@ informacoes[is.na(informacoes)] = 0
 informacoes
 ```
 
-Outro recurso interessante é a substituição de dados em uma columa, que pode ser feito de forma automática para uma condição padrão escolhida. No exemplo abaixo, substituimos aquelas informações de idade igual a 17 pelo número 19:
+Outro recurso interessante é a substituição de dados em uma coluna, que pode ser feito de forma automática para uma condição padrão escolhida. No exemplo abaixo, substituimos aquelas informações de idade igual a 17 pelo número 19:
 
 ```{r}
 # Substituir números na coluna
@@ -772,13 +772,13 @@ informacoes$binario= ifelse(informacoes$classificacao
 informacoes
 ```
 
-O comando `rbind()` é utilizado para incluir linhas novas abaixo de um objeto já criado pelo pesquisador, sendo que é importante o cuidado de que estas novas informações tenham os mesmos campos (colunas). A exemplo, pede-se para incluir uma nova pessoa no *data frame* informacoes: Francisco, 30 anos de idade, peso 59, natural de Ijuí, IMC 21.3387, classificado como peso normal. Lembrando de incluir os campos "tipoimc" e "binario".
+O comando `rbind()` é utilizado para incluir linhas novas abaixo de um objeto já criado pelo pesquisador, sendo que é importante o cuidado de que estas novas informações tenham os mesmos campos (colunas). A exemplo, pede-se para incluir uma nova pessoa no *data frame* informacoes: Francisco, 30 anos de idade, peso 59, natural de Ijuí, IMC 23,33768, classificado como peso normal. Lembrando de incluir os campos "tipoimc" e "binario".
 
 ```{r}
 novo1=data.frame(estudantes="Francisco", idade=30, peso=59, 
                  cidades="Ijuí", 
                  altura="1,59", 
-                 Imc= 23.30, 
+                 Imc= 23.33768, 
                  classificacao= "peso normal",
                  tipoimc="Peso Normal", 
                  binario=1)
@@ -961,13 +961,7 @@ Grande porte = árvores com altura superior a 10 metros.
 
 **2.3.**	Supondo que um vendedor tenha ficado de fora dos dados, insira suas informações no banco de dados que já possuímos.
 
-- Vendedor = Silvia
-
-- Idade = 48
-
-- Setor = 2
-
-- N de vendas = 45
+- Vendedor = Silvia; Idade = 48; Setor = 2; N de vendas = 45.
 
 **2.4.**	Crie uma nova coluna classificando os vendedores como:
 
@@ -1082,7 +1076,7 @@ attach(pesquisa_dados)
 ls.str(pesquisa_dados)
 ```
   
-## Tabelas e Gráficos
+## Tabelas
 
 Segundo @barbetta1988, dados representados em tabelas e gráficos adequados, permitem observar determinados aspectos relevantes, bem como delinear hipóteses a respeito da estrutura dos dados em estudo, o que conhecemos como análise exploratória de dados. Isto pode ser feito inicialmente com a representação em forma de tabelas.
 
