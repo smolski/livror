@@ -26,7 +26,7 @@
 <meta name="author" content="Iara Denise Endruweit Battisti">
 
 
-<meta name="date" content="2018-08-29">
+<meta name="date" content="2018-08-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -362,7 +362,7 @@ W = 0.98, p-value = 0.9</code></pre>
 <div id="intervalo-de-confianca-para-uma-proporcao-populacional" class="section level3">
 <h3><span class="header-section-number">3.1.3</span> Intervalo de confiança para uma proporção populacional</h3>
 <p>IC (limite inferior <span class="math inline">\(\leq\)</span> <span class="math inline">\(\pi\)</span> <span class="math inline">\(\leq\)</span> limite superior) = (1 - <span class="math inline">\(\alpha\)</span>)%</p>
-<p><strong>Exemplo 2</strong>: (adaptado de <a href="https://www.passeidireto.com/arquivo/3802950/capitulo7---intervalos-de-confianca" class="uri">https://www.passeidireto.com/arquivo/3802950/capitulo7---intervalos-de-confianca</a>) Entre 500 pessoas entrevistas a respeito de suas preferências eleitorais, 260 mostraram-se favoráveis ao candidato B. Qual é a proporção amostral dos favoráveis ao candidato B? E a proporção populacional dos favoráveis?</p>
+<p><strong>Exemplo 2</strong>: (adaptado de <a href="https://www.passeidireto.com/arquivo/3802950/capitulo7---intervalos-de-confianca" class="uri">https://www.passeidireto.com/arquivo/3802950/capitulo7---intervalos-de-confianca</a>) Entre 500 pessoas entrevistadas a respeito de suas preferências eleitorais, 260 mostraram-se favoráveis ao candidato B. Qual é a proporção amostral dos favoráveis ao candidato B? E a proporção populacional dos favoráveis?</p>
 <p>Sintaxe no software RStudio:</p>
 <p><code>prop.test(x,n,conf.level=nível de confiança)</code></p>
 <p>Em que:</p>
@@ -429,7 +429,7 @@ sample estimates:
 <p>H1: <span class="math inline">\(\mu\)</span> <span class="math inline">\(&gt;\)</span> ……..</p>
 <p>H0: <span class="math inline">\(\mu\)</span> <span class="math inline">\(=\)</span> ……</p>
 <p>H1: <span class="math inline">\(\mu\)</span> <span class="math inline">\(&lt;\)</span> ……</p>
-<p>No software RStudio, usa-se o `t.test| para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.</p>
+<p>No software RStudio, usa-se o <code>t.test</code> para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.</p>
 <p>De acordo com as hipóteses, temos variações do <code>t.test</code>, conforme segue:</p>
 <p>sintaxe: <code>t.test(amostra, opções)</code></p>
 <ul>
@@ -627,7 +627,7 @@ Figura 3.3: Teste de hipótese para dois grupos
 </tr>
 </tbody>
 </table>
-<p>No software RStudio, usa-se o `t.test| para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.</p>
+<p>No software RStudio, usa-se o <code>t.test</code> para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.</p>
 <p>Hipóteses:</p>
 <p><strong>H0</strong>: média antes <span class="math inline">\(=\)</span> média depois</p>
 <p><strong>H1</strong>: média antes <span class="math inline">\(\neq\)</span> média depois</p>

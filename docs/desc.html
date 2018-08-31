@@ -26,7 +26,7 @@
 <meta name="author" content="Iara Denise Endruweit Battisti">
 
 
-<meta name="date" content="2018-08-29">
+<meta name="date" content="2018-08-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -368,7 +368,7 @@ Sexo :  chr [1:348] &quot;Feminino&quot; &quot;Feminino&quot; &quot;Feminino&quo
 </div>
 <div id="tabela-cruzada-para-apresentacao-das-frequencias-relativas" class="section level3">
 <h3><span class="header-section-number">2.2.3</span> Tabela cruzada para apresentação das frequências relativas</h3>
-<p>Com a introdução do comando `prop.table| é possível gerar, facilmente, tabelas de frequências relativas para as variáveis de interesse. As medidas relativas são importantes para comparar distribuições de frequências <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>.</p>
+<p>Com a introdução do comando <code>prop.table</code> é possível gerar, facilmente, tabelas de frequências relativas para as variáveis de interesse. As medidas relativas são importantes para comparar distribuições de frequências <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>.</p>
 <p><code>prop.table(table(nome_variável1,nome_variável2))</code></p>
 <p>Ex. Construir uma tabela cruzada apresentando as frequências relativas das variáveis <strong>Sexo</strong> e <strong>Divulgacao</strong>.</p>
 <div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb222-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Divulgacao,Sexo))</a></code></pre></div>
@@ -615,61 +615,61 @@ Table: (\#tab:unnamed-chunk-77)Evolução dos resultados da fiscalização do tr
 <caption><span id="tab:evolres">Tabela 2.1: </span>Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010</caption>
 <thead>
 <tr class="header">
-<th align="right"><strong>Ano</strong></th>
+<th align="center"><strong>Ano</strong></th>
 <th align="center"><strong>Empresas Fiscalizadas</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">1998</td>
+<td align="center">1998</td>
 <td align="center">7.042</td>
 </tr>
 <tr class="even">
-<td align="right">1999</td>
+<td align="center">1999</td>
 <td align="center">6.561</td>
 </tr>
 <tr class="odd">
-<td align="right">2000</td>
+<td align="center">2000</td>
 <td align="center">8.585</td>
 </tr>
 <tr class="even">
-<td align="right">2001</td>
+<td align="center">2001</td>
 <td align="center">9.641</td>
 </tr>
 <tr class="odd">
-<td align="right">2002</td>
+<td align="center">2002</td>
 <td align="center">8.873</td>
 </tr>
 <tr class="even">
-<td align="right">2003</td>
+<td align="center">2003</td>
 <td align="center">9.367</td>
 </tr>
 <tr class="odd">
-<td align="right">2004</td>
+<td align="center">2004</td>
 <td align="center">13.856</td>
 </tr>
 <tr class="even">
-<td align="right">2005</td>
+<td align="center">2005</td>
 <td align="center">12.192</td>
 </tr>
 <tr class="odd">
-<td align="right">2006</td>
+<td align="center">2006</td>
 <td align="center">13.326</td>
 </tr>
 <tr class="even">
-<td align="right">2007</td>
+<td align="center">2007</td>
 <td align="center">13.390</td>
 </tr>
 <tr class="odd">
-<td align="right">2008</td>
+<td align="center">2008</td>
 <td align="center">10.839</td>
 </tr>
 <tr class="even">
-<td align="right">2009</td>
+<td align="center">2009</td>
 <td align="center">13.379</td>
 </tr>
 <tr class="odd">
-<td align="right">2010</td>
+<td align="center">2010</td>
 <td align="center">11.978</td>
 </tr>
 </tbody>
@@ -677,7 +677,7 @@ Table: (\#tab:unnamed-chunk-77)Evolução dos resultados da fiscalização do tr
 <p>Fonte: MTE. SFIT. Elaboração: DIEESE.</p>
 <p>Para construir um gráfico de linhas, utilizamos o seguinte comando:</p>
 <p><code>plot(x,y,type= &quot;Tipo de símbolo&quot;)</code></p>
-<p>Neste gráfico, podemos utilizar comandos já utilizados anteriormente, para inserir título, nomes dos eixos, etc. Para escolher o formato das linhas, com o uso do argumento `“type”|, seguem algumas opções:</p>
+<p>Neste gráfico, podemos utilizar comandos já utilizados anteriormente, para inserir título, nomes dos eixos, etc. Para escolher o formato das linhas, com o uso do argumento <code>type</code>, seguem algumas opções:</p>
 <ul>
 <li><code>&quot;p&quot;</code> para pontos,</li>
 <li><code>&quot;l&quot;</code> para linhas,</li>

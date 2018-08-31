@@ -1119,7 +1119,7 @@ table(pesquisa_dados$Sexo,pesquisa_dados$Divulgacao)
 
 ### Tabela cruzada para apresentação das frequências relativas
 
-Com a introdução do comando `prop.table| é possível gerar, facilmente, tabelas de frequências relativas para as variáveis de interesse. As medidas relativas são importantes para comparar distribuições de frequências [@barbetta1988].
+Com a introdução do comando `prop.table` é possível gerar, facilmente, tabelas de frequências relativas para as variáveis de interesse. As medidas relativas são importantes para comparar distribuições de frequências [@barbetta1988].
 
 `prop.table(table(nome_variável1,nome_variável2))`
 
@@ -1364,7 +1364,7 @@ knitr::kable(emp, caption = 'Evolução dos resultados da fiscalização do trab
 Table: (\#tab:evolres)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
 
 |**Ano**|**Empresas Fiscalizadas**|
-|----:|:---------------------:|
+|:----:|:---------------------:|
 | 1998|7.042                  |
 | 1999|6.561                  |
 | 2000|8.585                  | 
@@ -1385,7 +1385,7 @@ Para construir um gráfico de linhas, utilizamos o seguinte comando:
 
 `plot(x,y,type= "Tipo de símbolo")`
 
-Neste gráfico, podemos utilizar comandos já utilizados anteriormente, para inserir título, nomes dos eixos, etc. Para escolher o formato das linhas, com o uso do argumento `"type"|, seguem algumas opções:
+Neste gráfico, podemos utilizar comandos já utilizados anteriormente, para inserir título, nomes dos eixos, etc. Para escolher o formato das linhas, com o uso do argumento `type`, seguem algumas opções:
 
 - `"p"` para pontos,
 - `"l"` para linhas,
@@ -1685,7 +1685,7 @@ IC (limite inferior $\leq$ $\pi$ $\leq$ limite superior) = (1 - $\alpha$)\%
 
 
 
-**Exemplo 2**:  (adaptado de <https://www.passeidireto.com/arquivo/3802950/capitulo7---intervalos-de-confianca>) Entre 500 pessoas entrevistas a respeito de suas preferências eleitorais, 260 mostraram-se favoráveis ao candidato B. Qual é a proporção amostral dos favoráveis ao candidato B? E a proporção populacional dos favoráveis?
+**Exemplo 2**:  (adaptado de <https://www.passeidireto.com/arquivo/3802950/capitulo7---intervalos-de-confianca>) Entre 500 pessoas entrevistadas a respeito de suas preferências eleitorais, 260 mostraram-se favoráveis ao candidato B. Qual é a proporção amostral dos favoráveis ao candidato B? E a proporção populacional dos favoráveis?
 
 
 Sintaxe no software RStudio:
@@ -1759,7 +1759,7 @@ H0: $\mu$ $=$ ......
 
 H1: $\mu$ $<$ ......
 
-No software RStudio, usa-se o `t.test| para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.
+No software RStudio, usa-se o `t.test` para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.
 
 De acordo com as hipóteses, temos variações do `t.test`, conforme segue:
 
@@ -1949,7 +1949,7 @@ amostdep=data.frame(
 knitr::kable(amostdep, caption = 'Amostras dependentes')
 ```
 
-No software RStudio, usa-se o `t.test| para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.
+No software RStudio, usa-se o `t.test` para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.
 
 
 Hipóteses:
