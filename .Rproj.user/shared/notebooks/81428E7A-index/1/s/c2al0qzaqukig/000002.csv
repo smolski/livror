@@ -1,4 +1,0 @@
-"0","#Carregando dados da base do RSdudio iris."
-"0","data(iris)"
-"0","#Visualizando as primeiras 6 colunas"
-"0","head(iris)"

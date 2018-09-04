@@ -1,0 +1,1 @@
+"0","lines(inmet$hora,inmet$temp_min,col=""green"",type = ""b"")"

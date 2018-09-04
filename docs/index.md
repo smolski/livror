@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Felipe Micail da Silva Smolski
 - Iara Denise Endruweit Battisti
-date: "2018-08-30"
+date: "2018-09-04"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -50,10 +50,14 @@ Boa leitura!
 
 # Introdução{#intro}
 
-\begin{flushright}
-\emph{Felipe Micail da Silva Smolski}
+*Felipe Micail da Silva Smolski*
 
-\emph{Djaina Sibiani Rieger}
+*Djaina Sibiani Rieger*
+
+\begin{flushright}
+\emph{}
+
+\emph{}
 \end{flushright}
 
 O R é um ambiente voltado para análise de dados com o uso de uma linguagem de programação, frente a isso um conhecimento prévio dos príncipios de programação facilita a compreensão da condução das análises aplicadas no software. Entretanto, não é pré-requisito. Neste capítulo abordaremos os primeiros passos para o emprego da linguagem de programação R utilizando uma interface "amigável" - o software RStudio. Além disso, serão apresentados os comandos básicos para a manipulação de dados dentro do RStudio.
@@ -1781,8 +1785,10 @@ Grande porte = árvores com altura superior a 10 metros.
 
 # Estatística Descritiva{#desc}
 
+*Denize Ivete Reis*
+
 \begin{flushright}
-\emph{Denize Ivete Reis}
+\emph{}
 \end{flushright}
 
 A Estatística é uma ciência cujo campo de aplicação estende-se a diferentes áreas do conhecimento humano. Tem por objetivo fornecer métodos e técnicas que permitem lidar, racionalmente, com situações sujeitas a incertezas. Apresenta um conjunto de técnicas e métodos de pesquisa que envolvem o planejamento de estudos (experimentais e observacionais), a coleta e organização de dados, a inferência, a análise e a disseminação de informação.
@@ -2646,8 +2652,10 @@ Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a
 
 # Estatística Inferencial{#inf}
 
+*Tatiane Chassot*
+
 \begin{flushright}
-\emph{Tatiane Chassot}
+\emph{}
 \end{flushright}
 
 A inferência estatística, ou estatística inferencial, tem por objetivo concluir e tomar decisões, com base em amostras (Figura \@ref(fig:infestat)). Usam-se dados extraídos de uma amostra para produzir inferência sobre a população [@lopes2008].
@@ -3368,8 +3376,10 @@ Conclusão: Não rejeita-se H0 e conclui-se que a média de peso do tecido A é 
 
 # Teste de Qui-Quadrado{#qui}
 
+*Iara Denise Endruweit Battisti*
+
 \begin{flushright}
-\emph{Iara Denise Endruweit Battisti}
+\emph{}
 \end{flushright}
 
 Quando existem duas variáveis de interesse, a representação tabular das frequências observadas pode ser feita através de uma tabela de contingência<!--(Tabela \@ref(tab:qui2))-->, também chamada de tabela cruzada ou tabela de dupla entrada. Cada interseção de uma linha com uma coluna é chamada de casela e o valor que aparece em cada casela é a frequência observada, nomeada como $O_{ij}$, em que i corresponde a linha e j corresponde a coluna.
@@ -3962,10 +3972,14 @@ X-squared = 8.1, df = 6, p-value = 0.2
 
 # Modelos de Regressão{#reg}
 
-\begin{flushright}
-\emph{Iara Denise Endruweit Battisti}
+*Iara Denise Endruweit Battisti*
 
-\emph{Erikson Kaszubowski}
+*Erikson Kaszubowski*
+
+\begin{flushright}
+\emph{}
+
+\emph{}
 \end{flushright}
 
 Muitas vezes há a necessidade de estudar duas ou mais variáveis ao mesmo tempo com o objetivo de predizer uma variável em função da(s) outra(s). Por exemplo, verificar se sólidos removidos de um material relaciona-se com o tempo de secagem e qual é a forma dessa relação. Outros exemplos: relação entre tempo de estudo e desempenho a uma avaliação; relação entre investimento em comunicação e vendas; entre outros.
@@ -4735,8 +4749,10 @@ predict(regressao, x0, interval="prediction")
 
 # RMarkdown{#rmark}
 
+*Felipe Micail da Silva Smolski}*
+
 \begin{flushright}
-\emph{Felipe Micail da Silva Smolski}
+\emph{
 \end{flushright}
 
 

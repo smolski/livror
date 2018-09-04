@@ -1,11 +1,15 @@
 "0","require(readxl)"
-"2","Carregando pacotes exigidos: readxl
-"
 "0","url <- ""https://goo.gl/37Fdzz"""
 "0","destfile <- ""pesquisa_dados.xlsx"""
 "0","curl::curl_download(url, destfile)"
 "0","pesquisa_dados <- read_excel(destfile)"
 "0","attach(pesquisa_dados)"
+"2","The following objects are masked from pesquisa_dados (pos = 6):
+
+    Altura_(m), Caso, consumo_anterior, consumo_pos, Divulgacao, Idade,
+    Peso_(Kg), Pessoas_familia, Praticidade, Preço, Renda_h, Sabor, Sexo
+
+"
 "0","ls.str(pesquisa_dados)"
 "1","Altura_(m)"
 "1"," "
