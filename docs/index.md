@@ -4749,10 +4749,10 @@ predict(regressao, x0, interval="prediction")
 
 # RMarkdown{#rmark}
 
-*Felipe Micail da Silva Smolski}*
+*Felipe Micail da Silva Smolski*
 
 \begin{flushright}
-\emph{
+\emph{}
 \end{flushright}
 
 
