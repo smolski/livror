@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Felipe Micail da Silva Smolski
 - Iara Denise Endruweit Battisti
-date: "2018-09-04"
+date: "2018-09-08"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -80,10 +80,14 @@ Lembrando que:
 
 O RStudio é a interface que faz com que seja mais fácil a utilização da programação em R. 
 
-<div class="figure" style="text-align: center">
-<img src="paineis.png" alt="Painéis do Rstudio" width="80%" />
-<p class="caption">(\#fig:paineis1)Painéis do Rstudio</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{paineis} 
+
+}
+
+\caption{Painéis do Rstudio}(\#fig:paineis1)
+\end{figure}
 Fonte: Elaborado pelo(s) autor(es).
 
 - **Fonte/Editor de Scripts**: se constitui do ambiente onde serão abertos os scripts previamente salvos nos mais diversos formatos ou mesmo sendo o local de visualização das bases de dados.
@@ -100,17 +104,25 @@ Acessamos a ajuda do RStudio por meio do comando `help()`, através da aba "Help
 Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, e para isso se faz necessário efetuar a sua instalação. Precisamos ir até o painel dos pacotes em *packages*, selecionar a opção instalar e inserir o nome do pacote desejado na janela indicada. Ao selecionar a opção instalar, no console receberemos informações do procedimento e do sucesso do mesmo. 
 
 
-<div class="figure" style="text-align: center">
-<img src="pacotes1.png" alt="Instalação de pacotes" width="80%" />
-<p class="caption">(\#fig:pacotes1)Instalação de pacotes</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{pacotes1} 
+
+}
+
+\caption{Instalação de pacotes}(\#fig:pacotes1)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
-<div class="figure" style="text-align: center">
-<img src="pacotes2.png" alt="Caixa de informação de pacote a ser instalado" width="80%" />
-<p class="caption">(\#fig:pacotes2)Caixa de informação de pacote a ser instalado</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{pacotes2} 
+
+}
+
+\caption{Caixa de informação de pacote a ser instalado}(\#fig:pacotes2)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es)
 
@@ -149,33 +161,45 @@ Outras opções podem ser comandadas dentro destes comando para abertura de arqu
 
 O comando `header=TRUE` diz que a primeira linha do arquivo contém o cabeçalho; `skip=4` faz com que sejam ignoradas as 4 primeiras linhas.
 
-A opção `load()` (exemplo: `load("base.RData")`) pode ser utilizada para carregar as bases de dados salvas com a função `save()`, que será descrita no subcapítulo a seguir.
+A função `load()` (exemplo: `load("base.RData")`) pode ser utilizada para carregar as bases de dados salvas com a função `save()`, que será descrita no subcapítulo a seguir.
 
 Outra opção é o carregamento das bases de dados manualmente pelo caminho *Envoirment $>$ Import Dataset*, escolhendo o tipo de arquivo:
 
-<div class="figure" style="text-align: center">
-<img src="r3.png" alt="Aba Import Dataset" width="80%" />
-<p class="caption">(\#fig:r3)Aba Import Dataset</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{r3} 
+
+}
+
+\caption{Aba Import Dataset}(\#fig:r3)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 Na caixa correspondente a File/Url se insere o endereço virtual ou o local onde se encontra o arquivo. Ao importar os dados, carrega-se um objeto criado com as informações contidas no arquivo. No nosso exeplo, carregamos a planilha arvores (arquivo .xls) como mostra a Figura \@ref(fig:r4), derivado do caminho "Import Dataset $>$ From Excel" do Environment.
 
-<div class="figure" style="text-align: center">
-<img src="r4.png" alt="Caixa de informações do Import Data" width="80%" />
-<p class="caption">(\#fig:r4)Caixa de informações do Import Data</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{r4} 
+
+}
+
+\caption{Caixa de informações do Import Data}(\#fig:r4)
+\end{figure}
 Fonte: Elaborado pelo(s) autor(es).
 
 O campo *Code Preview* mostra o comando que está sendo criado para a importação destes dados. Em *Import Options*, delimita-se opções do objeto como o nome (*name*), o número máximo de linhas (*Max Rows*), quantas linhas serão puladas na importação do arquivo (*Skip*), o tratamento das células em branco (*NA*) e se a primeira linha contém os nomes (*Firts Row as Names*).
 
 Com relação à importação de arquivos de texto separado por caracteres (.csv), ela se dá via "Import Dataset $>$ From Text (readr)" do Environment. Constam algumas solicitações diferentes a serem determinadas pelo usuário no campo *Import Options*, conforme mostra a Figura \@ref(fig:r4csv). Uma questão importante é a opção *Delimiter*, a qual o pesquisador tem que prestar atenção quando o arquivo está separado por vírgulas (*Comma*), ponto e vírgula (*Semicolon*) ou outro tipo de caractere. A opção *Locale $>$ Configure...* oportuniza determinar os tipos de marca decimal e codificação de textos, por exemplo.
 
-<div class="figure" style="text-align: center">
-<img src="r4csv.png" alt="Opções da importação de arquivos .csv" width="80%" />
-<p class="caption">(\#fig:r4csv)Opções da importação de arquivos .csv</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{r4csv} 
+
+}
+
+\caption{Opções da importação de arquivos .csv}(\#fig:r4csv)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es)
 
@@ -192,14 +216,20 @@ Alguns tipos de dados:
 - **Time**: vetor para séries de tempo.
 - **Factor**: variável nominal, inclusive como fator ordenado, representam categorias.
 
+Ainda, é possível importar objetos utilizando arquivos hospedados em links da internet, por exemplo o comando  `source("http://www.openintro.org/stat/data/cdc.R")` utiliza a função `source()` para carregar um objeto do R denominado cdc ("cdc.R").
+
 ## Salvar arquivo de dados
 
 O banco de dados que o R armazena na memória pode ser salvo, junto com todo o ambiente, usando o ícone de disquete na aba "Environment" (salva como arquivo .RData), e depois carregado pelo ícone de pasta (Abrir dados...) na mesma aba. Desta forma, salvará todos os objetos criados no ambiente de trabalho.
 
-<div class="figure" style="text-align: center">
-<img src="r6.png" alt="Atalho para abrir e salvar arquivo de dados" width="80%" />
-<p class="caption">(\#fig:r6)Atalho para abrir e salvar arquivo de dados</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{r6} 
+
+}
+
+\caption{Atalho para abrir e salvar arquivo de dados}(\#fig:r6)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es)
 
@@ -413,7 +443,7 @@ Seguem alguns exemplos da aplicação das operações lógicas:
 [1] TRUE
 ```
 
-## Criação de variáveis
+## Criação de objetos
 
 A linguagem de programação R se configura em uma linguagem orientada a objetos, ou seja, a todo tempo estamos criando diversos tipos de objetos e efetuando operações com os mesmos. Por exemplo, a criação de listas, bases de dados, união de bases de dados, data.frames e até mesmo mapas!
 
@@ -456,7 +486,7 @@ ls()
 rm(a)
 ```
 
-### Conversão de uma variável
+**Conversão de uma variável**
 
 Para a aplicação de algumas funções é importante que cada variável esteja corretamente classificada, o que em alguns casos não ocorre durante o reconhecimento automático do R. Precisamos então reconhecê-la como variável texto, numérica ou fator. Além disso, a classe ordered se aplica a variáveis categóricas que podem ser consideradas ordenáveis.
 
@@ -482,7 +512,7 @@ cep
 [1] "98700000" "98701000" "98702000"
 ```
 
-## Alguns comandos essenciais
+## Algumas funções e comandos essenciais
 
 A função `head()` mostra as 6 primeiras colunas do arquivo para se ter uma noção do conteúdo. No caso do mesmo ser um data.frame, podemos solicitar o número de valores ou linhas a serem mostrados no console através do parâmetro n ou na ausência deste, todas as linhas serão impressas, como exemplo `head(x ,n=2)` para ver as duas primeiras linhas. 
 
@@ -644,9 +674,9 @@ summary(Especie)
 ```
 
 
-### Comando *tapply*
+### Função *tapply*
 
-O comando `taply()` agrega os dados pelos níveis das variáveis qualitativas. Note que a coluna "Especie" possui dados em forma de fatores. Assim, para filtrarmos a informação (coluna "Sepal.Length") média por Especie, podemos utilizar:
+O comando `tapply()` agrega os dados pelos níveis das variáveis qualitativas. Note que a coluna "Especie" possui dados em forma de fatores. Assim, para filtrarmos a informação (coluna "Sepal.Length") média por Especie, podemos utilizar:
 
 
 ```r
@@ -682,7 +712,7 @@ tapply(Sepal.Length, Especie, mean, na.rm=T)
      5.006      5.936      6.588 
 ```
 
-### Comando *subset*
+### Função *subset*
 
 Utiliza-se o comando `subset()` para formar um subconjunto de dados o qual desejamos selecionar de um objeto. Por exemplo, se quisermos criar um novo objeto com somente os dados da "Especie" setosa:
 
@@ -720,6 +750,46 @@ head(dadossetosa2)
 17          5.4         3.9          1.3         0.4  setosa
 ```
 
+### Função *table*
+
+Para contar elementos em cada nível de um fator, usa-se a função `table()`. A função pode fazer tabulações cruzadas, gerando uma tabela de contingência, esse tipo de tabela é usado para registrar observações independentes de duas ou mais variáveis aleatórias.
+
+Para exemplo da utilização da função `table` agora com dados qualitativos (gênero e saúde), vamos utilizar a base de dados `cdc`:
+
+
+```r
+# Carregando a base
+source("http://www.openintro.org/stat/data/cdc.R")
+#Vizualizamos as primeiras linhas
+head(cdc)
+```
+
+```
+    genhlth exerany hlthplan smoke100 height weight wtdesire age gender
+1      good       0        1        0     70    175      175  77      m
+2      good       0        1        1     64    125      115  33      f
+3      good       1        1        1     60    105      105  49      f
+4      good       1        1        0     66    132      124  42      f
+5 very good       0        1        0     61    150      130  55      f
+6 very good       1        1        0     64    114      114  55      f
+```
+
+```r
+# Efetuamos a contagem dos dados qualitativos com a função table
+table(cdc$genhlth,cdc$gender)
+```
+
+```
+           
+               m    f
+  excellent 2298 2359
+  very good 3382 3590
+  good      2722 2953
+  fair       884 1135
+  poor       283  394
+```
+
+
 ## Estrutura de dados
 
 ### Vetores
@@ -729,8 +799,7 @@ Os fatores são uma classe especial de vetores, que definem variáveis categóri
 
 ```r
 # Criação de um vetor
-x= c(2, 4, 6)
-x
+c(2, 4, 6)
 ```
 
 ```
@@ -741,8 +810,7 @@ Os vetores podem ser criados a partir de uma sequência numérica ou mesmo de um
 
 
 ```r
-x= c(2:6)
-x
+c(2:6)
 ```
 
 ```
@@ -752,8 +820,7 @@ x
 ```r
 # Criação de um vetor a partir do intervalo entre cada elemento e valores
 #mínimo e máximo
-x= seq(2, 3, by=0.5)
-x
+seq(2, 3, by=0.5)
 ```
 
 ```
@@ -764,8 +831,7 @@ Criação de um vetor atráves de uma repetição também é útil em várias si
 
 
 ```r
-x= rep(1:3, times=4)
-x
+rep(1:3, times=4)
 ```
 
 ```
@@ -773,8 +839,7 @@ x
 ```
 
 ```r
-y= rep(1:3, each=3)
-y
+rep(1:3, each=3)
 ```
 
 ```
@@ -853,7 +918,7 @@ participantes
  [9] mulheres mulheres
 Levels: mulheres homens
 ```
-
+<!--
 Também é possível aplicar uma função aos subconjuntos de um vetor definidos por um fator utilizando a função `tapply()`. Criamos um objeto com o sexo das pessoas, seguido pela dieta e peso (que caracterizamos como numérico). Depois, determinamos a média de peso frente ao sexo e a dieta
 
 
@@ -893,36 +958,8 @@ tapply(peso,list(sexo,dieta), mean)
 F  85.67 74.33   82
 M  71.33 76.00   77
 ```
+-->
 
-#### Função *table*
-
-Para contar elementos em cada nível de um fator, usa-se a função table:
-
-
-```r
-table(participantes)
-```
-
-```
-participantes
-mulheres   homens 
-      10        0 
-```
-
-A função pode fazer tabulações cruzadas, gerando uma tabela de contingência, esse tipo de tabela é usado para registrar observações independentes de duas ou mais variáveis aleatórias: 
-
-
-
-```r
-table(sexo,dieta)
-```
-
-```
-    dieta
-sexo normal light diet
-   F      3     3    3
-   M      3     3    3
-```
 
 ### Matrizes
 
@@ -999,7 +1036,7 @@ $vetor
 [1] 1 2 3 4 5 6
 ```
 
-#### Comandos para manipulação de listas
+**Comandos para manipulação de listas**
 
 Para descobrirmos de maneira rápida o números de objetos que há na lista, utilizamos o comando `length(nomedalista)`.
 
@@ -1121,7 +1158,9 @@ length(subset(informacoes$cidades, informacoes$cidades=="Soledade"))
 
 ## Manipulação de banco de dados
 
+<!--
 ## Funções
+-->
 
 A função `edit()` abre uma interface simples de edição de dados em formato planilha, e é útil para pequenas modificações. Mas para salvar as modificações atribua o resultado da função `edit` a um objeto.
 
@@ -1135,17 +1174,25 @@ Utiliza-se o comando da seguinte forma:
 informacoes.2=edit(informacoes)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="95.png" alt="Editor de dados" width="80%" />
-<p class="caption">(\#fig:95)Editor de dados</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{95} 
+
+}
+
+\caption{Editor de dados}(\#fig:95)
+\end{figure}
 
 Basta clicar no retângulo correspondente a variável que deseja ser modificada, excluir ou adicionar novas colunas.
 
-<div class="figure" style="text-align: center">
-<img src="10.png" alt="Acréscimo de uma nova coluna através do editor de dados" width="80%" />
-<p class="caption">(\#fig:10)Acréscimo de uma nova coluna através do editor de dados</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{10} 
+
+}
+
+\caption{Acréscimo de uma nova coluna através do editor de dados}(\#fig:10)
+\end{figure}
 
 Logo, chamando o novo banco de dados, teremos:
 
@@ -1167,8 +1214,7 @@ As funções a seguir são aplicáveis a vetores, data.frames e listas, e em mui
 
 
 ```r
-# União de um banco de dados (existencia de uma váriavel em comum)
-
+# Crição do data frame
 estudantes=c("Guilherme", "Marcelo", "Pedro", "Camila")
 altura= c(1.50, 1.9, 1.74, 1.80)
 informacoes.3=data.frame(estudantes, altura)
@@ -1178,6 +1224,8 @@ Já o comando `merge()` serve para juntar dois *data frames* que possuam uma col
 
 
 ```r
+# União de um banco de dados (existencia de uma váriavel em comum)
+
 informacoes=merge(informacoes.2,informacoes.3, by="estudantes")
 ```
 
@@ -1268,18 +1316,30 @@ informacoes
 4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso
 ```
 
+\begin{table}
 
-Table: (\#tab:imct)Valores padrão para o IMC
-
-Resultado            Significado             
--------------------  ------------------------
-Abaixo de 17         Muito abaixo do peso    
-Entre 17 e 18,49     Abaixo do peso          
-Entre 18,5 e 24,99   Peso normal             
-Entre 25 e 29,99     Acima do peso           
-Entre 30 e 34,99     Obesidade I             
-Entre 35 e 39,99     Obesidade II (severa)   
-Acima de 40          Obesidade III (mórbida) 
+\caption{(\#tab:imct)Valores padrão para o IMC}
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+Resultado & Significado\\
+\hline
+Abaixo de 17 & Muito abaixo do peso\\
+\hline
+Entre 17 e 18,49 & Abaixo do peso\\
+\hline
+Entre 18,5 e 24,99 & Peso normal\\
+\hline
+Entre 25 e 29,99 & Acima do peso\\
+\hline
+Entre 30 e 34,99 & Obesidade I\\
+\hline
+Entre 35 e 39,99 & Obesidade II (severa)\\
+\hline
+Acima de 40 & Obesidade III (mórbida)\\
+\hline
+\end{tabular}
+\end{table}
 
 No entanto, o IMC possui várias classificações de acordo com o seu resultado (Tabela \@ref(tab:imct)), sendo que, por exemplo, resultados abaixo de 17 informam que o indivíduo se encontra como Muito abaixo do peso, e acima de 40, se encontra em Obesidade III. Para efetuar a classificação desta maneira utilizando o comando `ifelse`, ou seja, com mais de uma condição, pode ser efetuada a estruturação com a aglutinação do comando:
 
@@ -1411,7 +1471,7 @@ A (re)ordenação das colunas de um *data frame* pode ser muito útil em alguns 
 
 ```r
 # Reordenar colunas
-informacoes=informacoes[c(8,2,3,4,1,6,5,7,9)]
+informacoes=informacoes[c(8,2,3,4,1,6,5,7,9,10)]
 ```
 
 Caso se queira a inversão total da ordem das colunas do objeto estudado, o comando `rev()` pode ser útil:
@@ -1423,18 +1483,18 @@ rev(informacoes)
 ```
 
 ```
-  binario   classificacao altura   Imc estudantes      cidades peso idade
-1       1     peso normal    1.8 20.06     Camila   Nova Hartz   65    21
-2       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre  100    18
-3       1     peso normal    1.9 22.16    Marcelo     Soledade   80    19
-4       0 excesso de peso   1.74 26.09      Pedro      Gramado   79    19
-5       1     peso normal   1,59 23.34  Francisco         Ijuí   59    30
-        tipoimc
-1   Peso Normal
-2 Obesidade III
-3   Peso Normal
-4 Acima do Peso
-5   Peso Normal
+  faixa etaria binario   classificacao altura   Imc estudantes      cidades
+1       adulto       1     peso normal    1.8 20.06     Camila   Nova Hartz
+2   não adulto       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre
+3   não adulto       1     peso normal    1.9 22.16    Marcelo     Soledade
+4   não adulto       0 excesso de peso   1.74 26.09      Pedro      Gramado
+5       adulto       1     peso normal   1,59 23.34  Francisco         Ijuí
+  peso idade       tipoimc
+1   65    21   Peso Normal
+2  100    18 Obesidade III
+3   80    19   Peso Normal
+4   79    19 Acima do Peso
+5   59    30   Peso Normal
 ```
 
 A  função `table()` faz a contagem os dados; já o comando `sort()` ordena os objetos em ordem crescente (caso queira no formato decrescente, informar `decreasing=TRUE`).
@@ -1475,12 +1535,12 @@ informacoes[order(informacoes$idade, decreasing = TRUE),]
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
-  binario
-5       1
-1       1
-3       1
-4       0
-2       0
+  binario faixa etaria
+5       1       adulto
+1       1       adulto
+3       1   não adulto
+4       0   não adulto
+2       0   não adulto
 ```
 
 ```r
@@ -1495,12 +1555,12 @@ informacoes[order(informacoes$idade, decreasing = FALSE),]
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
-  binario
-2       0
-3       1
-4       0
-1       1
-5       1
+  binario faixa etaria
+2       0   não adulto
+3       1   não adulto
+4       0   não adulto
+1       1       adulto
+5       1       adulto
 ```
 
 ```r
@@ -1515,12 +1575,12 @@ informacoes[order(informacoes$cidades, decreasing = FALSE),]
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
-  binario
-4       0
-5       1
-1       1
-2       0
-3       1
+  binario faixa etaria
+4       0   não adulto
+5       1       adulto
+1       1       adulto
+2       0   não adulto
+3       1   não adulto
 ```
 
 O comando `rank()` cria uma ranqueamento crescente das informações. Se pretende-se, por exemplo, criar uma coluna com o ranking dos valores do IMC, pode ser utilizado:
@@ -1538,13 +1598,25 @@ informacoes
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
-  binario rankingImc
-1       1          1
-2       0          5
-3       1          2
-4       0          4
-5       1          3
+  binario faixa etaria rankingImc
+1       1       adulto          1
+2       0   não adulto          5
+3       1   não adulto          2
+4       0   não adulto          4
+5       1       adulto          3
 ```
+
+Para utilizar a função `rank` com os maiores valores em primeiro lugar:
+
+
+```r
+rank(-informacoes$Imc)
+```
+
+```
+[1] 5 1 4 2 3
+```
+
 
 ## Funções Matemáticas
 
@@ -1639,7 +1711,7 @@ round(informacoes$Imc, 2)
 [1] 20.06 44.44 22.16 26.09 23.34
 ```
 
-Já o comando `signif()` determina onúmero de algarismos significativos da série escolhida, ou seja, ele arredonda para os valores em seu primeiro argumento com os número de dígitos detemrinados: 
+Já o comando `signif()` determina o número de algarismos significativos da série escolhida, ou seja, ele arredonda para os valores em seu primeiro argumento com os número de dígitos detemrinados: 
 
 
 ```r
@@ -2015,10 +2087,14 @@ Ex. Construir um gráfico de colunas para a variável **Sexo**.
 barplot(table(Sexo))
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/unnamed-chunk-67-1.png" alt="Gráfico de colunas com a variável Sexo" width="80%" />
-<p class="caption">(\#fig:unnamed-chunk-67)Gráfico de colunas com a variável Sexo</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-67-1} 
+
+}
+
+\caption{Gráfico de colunas com a variável Sexo}(\#fig:unnamed-chunk-67)
+\end{figure}
 
 **Obs**.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
 
@@ -2038,10 +2114,14 @@ barplot(table(`Pessoas_familia`), col=c("blue"),
         border = "red")
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/unnamed-chunk-68-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="80%" />
-<p class="caption">(\#fig:unnamed-chunk-68)Gráfico de colunas com a variável `Pessoas familia`</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-68-1} 
+
+}
+
+\caption{Gráfico de colunas com a variável `Pessoas familia`}(\#fig:unnamed-chunk-68)
+\end{figure}
 
 **Ex.2)** Construir uma tabela de dupla entrada para as variáveis **Sexo** e **Divulgação**.
 
@@ -2052,10 +2132,14 @@ barplot(table(Sexo,Divulgacao),
         main = "Frequência de pessoas por Sexo e Divulgacao")
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/unnamed-chunk-69-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="80%" />
-<p class="caption">(\#fig:unnamed-chunk-69)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-69-1} 
+
+}
+
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}(\#fig:unnamed-chunk-69)
+\end{figure}
 
 
 **Ex.3)** Na sequência utiliza o sinal de atribuição <- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).
@@ -2077,10 +2161,14 @@ barplot(Resultado,col=c("blue","red"),main="Título",
         args.legend = list(x = "topleft"))
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/unnamed-chunk-71-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="80%" />
-<p class="caption">(\#fig:unnamed-chunk-71)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-71-1} 
+
+}
+
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}(\#fig:unnamed-chunk-71)
+\end{figure}
 
 
 Observe que o uso do argumento `beside=T` evita que as barras fiquem empilhadas e o arguemnto `legend`' insere a legenda conforme as cores das colunas.
@@ -2125,10 +2213,14 @@ legend(x="topright", # Determina posição da legenda
 # - cm.colors(n)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/unnamed-chunk-72-1.png" alt="Gráfico de pizza com a variável Sabor" width="80%" />
-<p class="caption">(\#fig:unnamed-chunk-72)Gráfico de pizza com a variável Sabor</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-72-1} 
+
+}
+
+\caption{Gráfico de pizza com a variável Sabor}(\#fig:unnamed-chunk-72)
+\end{figure}
 
 ### Histograma
 
@@ -2143,10 +2235,14 @@ Ex. Construa um histograma com a variável **Renda\_h**.
 hist(as.numeric(`Renda_h`))
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/unnamed-chunk-73-1.png" alt="Histograma com a variável `Renda h`" width="80%" />
-<p class="caption">(\#fig:unnamed-chunk-73)Histograma com a variável `Renda h`</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-73-1} 
+
+}
+
+\caption{Histograma com a variável `Renda h`}(\#fig:unnamed-chunk-73)
+\end{figure}
 
 **Obs**. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
 
@@ -2160,10 +2256,14 @@ hist(as.numeric(`Renda_h`))
 hist(as.numeric(`Renda_h`), breaks=5)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/unnamed-chunk-74-1.png" alt="Histograma com a variável Renda h com breaks=5" width="80%" />
-<p class="caption">(\#fig:unnamed-chunk-74)Histograma com a variável Renda h com breaks=5</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-74-1} 
+
+}
+
+\caption{Histograma com a variável Renda h com breaks=5}(\#fig:unnamed-chunk-74)
+\end{figure}
 Use o argumento `main=NULL` para remover o título.
 
 ### Boxplot ou diagrama em caixas
@@ -2184,10 +2284,14 @@ Para obter o boxplot para um conjunto de dados:
 boxplot(Idade,horizontal = T)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/unnamed-chunk-75-1.png" alt="Boxplot com a variável Idade" width="80%" />
-<p class="caption">(\#fig:unnamed-chunk-75)Boxplot com a variável Idade</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-75-1} 
+
+}
+
+\caption{Boxplot com a variável Idade}(\#fig:unnamed-chunk-75)
+\end{figure}
 
 
 **Ex.2)** Construir um boxplot das variáveis **Peso\_(Kg)** e **Altura\_(m)**.    
@@ -2290,24 +2394,42 @@ Apresenta a evolução de um dado, geralmente ao longo do tempo. Eixos na vertic
 Ex. Considere os dados que descrevem os valores do número de empresas fiscalizadas na fiscalização do trabalho na área rural Brasil 1998-2010.
 
 <!--
+\begin{table}
 
-Table: (\#tab:unnamed-chunk-77)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
-
-  Ano  Empresas.Fiscalizadas 
------  ----------------------
- 1998  7.042                 
- 1999  6.561                 
- 2000  8.585                 
- 2001  9.641                 
- 2002  8.873                 
- 2003  9.367                 
- 2004  13.856                
- 2005  12.192                
- 2006  13.326                
- 2007  13.390                
- 2008  10.839                
- 2009  13.379                
- 2010  11.978                
+\caption{(\#tab:unnamed-chunk-77)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010}
+\centering
+\begin{tabular}[t]{r|l}
+\hline
+Ano & Empresas.Fiscalizadas\\
+\hline
+1998 & 7.042\\
+\hline
+1999 & 6.561\\
+\hline
+2000 & 8.585\\
+\hline
+2001 & 9.641\\
+\hline
+2002 & 8.873\\
+\hline
+2003 & 9.367\\
+\hline
+2004 & 13.856\\
+\hline
+2005 & 12.192\\
+\hline
+2006 & 13.326\\
+\hline
+2007 & 13.390\\
+\hline
+2008 & 10.839\\
+\hline
+2009 & 13.379\\
+\hline
+2010 & 11.978\\
+\hline
+\end{tabular}
+\end{table}
 -->
 
 Table: (\#tab:evolres)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
@@ -2358,10 +2480,14 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
      col="blue",xlim=c(1998,2010))
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/unnamed-chunk-78-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="80%" />
-<p class="caption">(\#fig:unnamed-chunk-78)Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-78-1} 
+
+}
+
+\caption{Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010}(\#fig:unnamed-chunk-78)
+\end{figure}
 
 onde, no argumento `ylim`, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
 
@@ -2419,10 +2545,14 @@ legend(0,40,c("temp_inst","temp_max","temp_min"),
   col =c("blue","red","green"),pch=4.1,cex = 0.75)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/unnamed-chunk-80-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="80%" />
-<p class="caption">(\#fig:unnamed-chunk-80)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-80-1} 
+
+}
+
+\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}(\#fig:unnamed-chunk-80)
+\end{figure}
 
 ## Estatísticas Descritivas
 
@@ -2660,10 +2790,14 @@ Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a
 
 A inferência estatística, ou estatística inferencial, tem por objetivo concluir e tomar decisões, com base em amostras (Figura \@ref(fig:infestat)). Usam-se dados extraídos de uma amostra para produzir inferência sobre a população [@lopes2008].
 
-<div class="figure" style="text-align: center">
-<img src="infestat.png" alt="Inferência Estatística" width="80%" />
-<p class="caption">(\#fig:infestat)Inferência Estatística</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{infestat} 
+
+}
+
+\caption{Inferência Estatística}(\#fig:infestat)
+\end{figure}
 
 Em Estatística, o termo **população** é definido como conjunto de indivíduos, ou itens, com pelo menos uma característica em comum, podendo ser finita ou infinita [@lopes2008]. Por exemplo, água de um rio, sangue de uma pessoa, lote de peças produzidas por uma indústria, eleitores de um município.
 
@@ -2778,10 +2912,14 @@ Hipóteses do teste:
 
 O **valor p** reflete a plausibilidade de se obter tais resultados  no caso de H0 ser de fato verdadeira.
 
-<div class="figure" style="text-align: center">
-<img src="testehip1.png" alt="Teste de hipóteses" width="80%" />
-<p class="caption">(\#fig:testehip1)Teste de hipóteses</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{testehip1} 
+
+}
+
+\caption{Teste de hipóteses}(\#fig:testehip1)
+\end{figure}
 
 
 
@@ -3209,10 +3347,14 @@ Conclusão: Rejeita-se H0 com nível de significância de 1\% e conclui-se que a
 
 O teste de hipótese para duas médias aplica-se quando se deseja comparar dois grupos:
 
-<div class="figure" style="text-align: center">
-<img src="testehip2.png" alt="Teste de hipótese para dois grupos" width="80%" />
-<p class="caption">(\#fig:testehip2)Teste de hipótese para dois grupos</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{testehip2} 
+
+}
+
+\caption{Teste de hipótese para dois grupos}(\#fig:testehip2)
+\end{figure}
 
 Podemos comparar duas médias de duas amostras dependentes, também chamadas de pareadas, ou médias de duas amostras independentes.
 
@@ -3220,13 +3362,20 @@ Podemos comparar duas médias de duas amostras dependentes, também chamadas de 
 
 **Exemplo 10**: Foi obtido o peso de seis indivíduos antes e após um treinamento de exercício físico. Teste a hipótese de que a média antes do treinamento é diferente da média após o treinamento.
 
+\begin{table}
 
-Table: (\#tab:unnamed-chunk-108)Amostras dependentes
-
-Indivíduo                      A    B    C    D    E    F
----------------------------  ---  ---  ---  ---  ---  ---
-Peso antes do treinamento     99   62   74   59   70   73
-Peso depois do treinamento    94   62   66   58   70   76
+\caption{(\#tab:unnamed-chunk-108)Amostras dependentes}
+\centering
+\begin{tabular}[t]{l|r|r|r|r|r|r}
+\hline
+Indivíduo & A & B & C & D & E & F\\
+\hline
+Peso antes do treinamento & 99 & 62 & 74 & 59 & 70 & 73\\
+\hline
+Peso depois do treinamento & 94 & 62 & 66 & 58 & 70 & 76\\
+\hline
+\end{tabular}
+\end{table}
 
 No software RStudio, usa-se o `t.test` para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.
 
@@ -3263,13 +3412,20 @@ Conclusão: Não rejeita-se H0 e conclui-se que a média de peso antes do treina
 
 **Exemplo 11**: (adaptado de <www.inf.ufsc.br/~marcelo/testes2.html>) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Podemos concluir que o uso da ração contribuiu para o aumento do peso médio dos animais? 
 
+\begin{table}
 
-Table: (\#tab:unnamed-chunk-110)Amostras dependentes - caso 2
-
-Cobaia      1     2     3     4     5     6     7     8     9    10
--------  ----  ----  ----  ----  ----  ----  ----  ----  ----  ----
-Antes     635   704   662   560   603   745   698   575   633   669
-Depois    640   712   681   558   610   740   707   585   635   682
+\caption{(\#tab:unnamed-chunk-110)Amostras dependentes - caso 2}
+\centering
+\begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
+\hline
+Cobaia & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
+\hline
+Antes & 635 & 704 & 662 & 560 & 603 & 745 & 698 & 575 & 633 & 669\\
+\hline
+Depois & 640 & 712 & 681 & 558 & 610 & 740 & 707 & 585 & 635 & 682\\
+\hline
+\end{tabular}
+\end{table}
 
 **H0**: média antes $=$ média depois
 
@@ -3309,13 +3465,18 @@ Primeiramente precisamos saber se existe homogeneidade de variâncias populacion
 
 
 
+\begin{table}
 
-Table: (\#tab:unnamed-chunk-112)Comparação de dois tipos diferentes de tecidos
-
----------  ---  ---  ---  ---  ---  ---  ---
-Tecido A   36   26   31   38   28   20   37 
-Tecido B   39   27   35   42   31   39   22 
----------  ---  ---  ---  ---  ---  ---  ---
+\caption{(\#tab:unnamed-chunk-112)Comparação de dois tipos diferentes de tecidos}
+\centering
+\begin{tabular}[t]{l|l|l|l|l|l|l|l}
+\hline
+Tecido A & 36 & 26 & 31 & 38 & 28 & 20 & 37\\
+\hline
+Tecido B & 39 & 27 & 35 & 42 & 31 & 39 & 22\\
+\hline
+\end{tabular}
+\end{table}
 
 Teste se um tecido é mais pesado que o outro.
 
@@ -3402,42 +3563,31 @@ H1: existe associação entre tamanho da propriedade e armazenamento seguro (as 
 Carregando pacotes exigidos: kableExtra
 ```
 
-<table>
-<caption>(\#tab:qui2)Tamanho da propriedade e armazenamento seguro dos agrotóxicos, agricultores de Cerro Largo, RS, 2017</caption>
- <thead>
-<tr>
-<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Tamanho da Propriedade</div></th>
-<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Armazenamento seguro</div></th>
-</tr>
-  <tr>
-   <th style="text-align:left;">   </th>
-   <th style="text-align:right;"> Não </th>
-   <th style="text-align:right;"> Sim </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Até 25 ha </td>
-   <td style="text-align:right;"> 59 </td>
-   <td style="text-align:right;"> 8 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 26 ha ou mais </td>
-   <td style="text-align:right;"> 31 </td>
-   <td style="text-align:right;"> 14 </td>
-  </tr>
-</tbody>
-<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
-<span style="font-style: italic;">Fonte:</span> <sup></sup>  @Ristow2017.</td></tr></tfoot>
-</table>
+\begin{table}
+
+\caption{(\#tab:qui2)Tamanho da propriedade e armazenamento seguro dos agrotóxicos, agricultores de Cerro Largo, RS, 2017}
+\centering
+\begin{tabular}[t]{l|r|r}
+\hline
+\multicolumn{1}{c|}{Tamanho da Propriedade} & \multicolumn{2}{|c}{Armazenamento seguro} \\
+\cline{1-1} \cline{2-3}
+  & Não & Sim\\
+\hline
+Até 25 ha & 59 & 8\\
+\hline
+26 ha ou mais & 31 & 14\\
+\hline
+\multicolumn{3}{l}{\textit{Fonte:}  @Ristow2017.}\\
+\end{tabular}
+\end{table}
 -->
 
 Table: (\#tab:tamprop)Tamanho da propriedade e armazenamento seguro dos agrotóxicos, agricultores de Cerro Largo, RS, 2017.
 
   -----------------------------------------------------------------
-  **Tamanho da propriedade**  **Armazenamento seguro**     
+                              **Armazenamento seguro**     
   --------------------------  ------------------------ ------------
-                              Não                        Sim
+  **Tamanho da propriedade**  Não                        Sim
   
   Até 25 ha                   59                         8
   
@@ -3551,47 +3701,36 @@ Então devemos concluir pela rejeição ou não da H0 e interpretar esse resulta
 Caso pelo menos uma casela tenha frequência esperada menor que 5 como por exemplo na tabela abaixo <!--\@ref(tab:qui3)-->, utilizamos o teste exato de Fisher.
 
 <!--
-<table>
-<caption>(\#tab:qui3)Tamanho da propriedade e devolução das embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS, 2017</caption>
- <thead>
-<tr>
-<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Tamanho da Propriedade</div></th>
-<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Devolução</div></th>
-</tr>
-  <tr>
-   <th style="text-align:left;">   </th>
-   <th style="text-align:right;"> Não </th>
-   <th style="text-align:right;"> Sim </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Até 25 ha </td>
-   <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 59 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 26 ha ou mais </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 43 </td>
-  </tr>
-</tbody>
-<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
-<span style="font-style: italic;">Fonte:</span> <sup></sup>  @Ristow2017.</td></tr></tfoot>
-</table>
+\begin{table}
+
+\caption{(\#tab:qui3)Tamanho da propriedade e devolução das embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS, 2017}
+\centering
+\begin{tabular}[t]{l|r|r}
+\hline
+\multicolumn{1}{c|}{Tamanho da Propriedade} & \multicolumn{2}{|c}{Devolução} \\
+\cline{1-1} \cline{2-3}
+  & Não & Sim\\
+\hline
+Até 25 ha & 8 & 59\\
+\hline
+26 ha ou mais & 3 & 43\\
+\hline
+\multicolumn{3}{l}{\textit{Fonte:}  @Ristow2017.}\\
+\end{tabular}
+\end{table}
 -->
 
 Table: (\#tab:tamprop1)Tamanho da propriedade e devolução das embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS, 2017.
 
-  -----------------------------------------------------------------
-  **Tamanho da propriedade**  **Devolução**     
-  --------------------------  -------------------------- -----------
-                              Não                        Sim
+  -------------------------------------------------------------------
+                               **Devolução**     
+  ---------------------------  -------------------------- -----------
+  **Tamanho da propriedade**   Não                        Sim
   
-  Até 25 ha                   8                          59
+  Até 25 ha                    8                          59
   
-  26 ha ou mais               3                          43
-  -----------------------------------------------------------------
+  26 ha ou mais                3                          43
+  -------------------------------------------------------------------
 
 Fonte: @Ristow2017.
 
@@ -3683,34 +3822,23 @@ McNemar's chi-squared = 0.045, df = 1, p-value = 0.8
 Importante observar que para executar o teste de McNemar: no software R os dados na matriz (tabela de contingência) devem ser distribuídos da mesma maneira tanto nas linhas quanto nas colunas. Isto é, "a" e "d" devem expressar o mesmo comportamento. Por exemplo: aprovado, desaprovado, aprovado, desaprovado. 
 
 <!--
-<table>
-<caption>(\#tab:qui4)Tabela de contingência</caption>
- <thead>
-<tr>
-<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Antes</div></th>
-<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Depois</div></th>
-</tr>
-  <tr>
-   <th style="text-align:left;">   </th>
-   <th style="text-align:left;"> Aprovado </th>
-   <th style="text-align:left;"> Desaprovado </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Aprovado </td>
-   <td style="text-align:left;"> a </td>
-   <td style="text-align:left;"> b </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Desaprovado </td>
-   <td style="text-align:left;"> c </td>
-   <td style="text-align:left;"> d </td>
-  </tr>
-</tbody>
-<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
-<span style="font-style: italic;">Fonte:</span> <sup></sup>  Dados simulados.</td></tr></tfoot>
-</table>
+\begin{table}
+
+\caption{(\#tab:qui4)Tabela de contingência}
+\centering
+\begin{tabular}[t]{l|l|l}
+\hline
+\multicolumn{1}{c|}{Antes} & \multicolumn{2}{|c}{Depois} \\
+\cline{1-1} \cline{2-3}
+  & Aprovado & Desaprovado\\
+\hline
+Aprovado & a & b\\
+\hline
+Desaprovado & c & d\\
+\hline
+\multicolumn{3}{l}{\textit{Fonte:}  Dados simulados.}\\
+\end{tabular}
+\end{table}
 -->
 
 
@@ -3734,72 +3862,50 @@ Fonte: Dados simulados.
 Como trata-se de duas amostras dependentes (antes e após) não podemos aplicar o teste de qui-quadrado. O teste adequado é McNemar.
 
 <!--
-<table>
-<caption>(\#tab:qui55)Situação do peso de cobaias do estudo antes e após a intervenção</caption>
- <thead>
-<tr>
-<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Peso Antes</div></th>
-<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Peso Após</div></th>
-</tr>
-  <tr>
-   <th style="text-align:left;">   </th>
-   <th style="text-align:right;"> Adequado </th>
-   <th style="text-align:right;"> Sobrepeso </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Aprovado </td>
-   <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 5 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Desaprovado </td>
-   <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 7 </td>
-  </tr>
-</tbody>
-<tfoot><tr><td style="padding: 0; border: 0;" colspan="100%">
-<span style="font-style: italic;">Fonte:</span> <sup></sup>  Dados simulados.</td></tr></tfoot>
-</table>
+\begin{table}
+
+\caption{(\#tab:qui55)Situação do peso de cobaias do estudo antes e após a intervenção}
+\centering
+\begin{tabular}[t]{l|r|r}
+\hline
+\multicolumn{1}{c|}{Peso Antes} & \multicolumn{2}{|c}{Peso Após} \\
+\cline{1-1} \cline{2-3}
+  & Adequado & Sobrepeso\\
+\hline
+Aprovado & 15 & 5\\
+\hline
+Desaprovado & 18 & 7\\
+\hline
+\multicolumn{3}{l}{\textit{Fonte:}  Dados simulados.}\\
+\end{tabular}
+\end{table}
 -->
 <!--
-<table>
-<caption>(\#tab:unnamed-chunk-123)Situação do peso de cobaias do estudo antes e após a intervenção.</caption>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Antes </th>
-   <th style="text-align:left;"> Após </th>
-   <th style="text-align:left;"> . </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;"> Adequado </td>
-   <td style="text-align:left;"> Sobrepeso </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Aprovado </td>
-   <td style="text-align:left;"> 15 </td>
-   <td style="text-align:left;"> 5 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Desaprovado </td>
-   <td style="text-align:left;"> 18 </td>
-   <td style="text-align:left;"> 7 </td>
-  </tr>
-</tbody>
-</table>
+\begin{table}
+
+\caption{(\#tab:unnamed-chunk-123)Situação do peso de cobaias do estudo antes e após a intervenção.}
+\centering
+\begin{tabular}[t]{l|l|l}
+\hline
+Antes & Após & .\\
+\hline
+ & Adequado & Sobrepeso\\
+\hline
+Aprovado & 15 & 5\\
+\hline
+Desaprovado & 18 & 7\\
+\hline
+\end{tabular}
+\end{table}
 -->
 
 
 Table: (\#tab:sitcob)Situação do peso de cobaias do estudo antes e após a intervenção.
 
   -----------------------------------------------------------------
-  **Peso Antes**              **Peso Após**     
+                              **Peso Após**     
   --------------------------  ------------------- -----------------
-                              Adequado            Sobrepeso
+  **Peso Antes**              Adequado            Sobrepeso
                               
   Aprovado                    15                  5
   
@@ -3865,45 +3971,30 @@ Neste caso usamos o teste de qui-quadrado para verificar se o conjunto de dados 
 
 **Exemplo 3**: Deseja-se verificar se o número de borrachudos é o mesmo em diferentes pontos da margem de um rio. O número de borrachudos observados para cada ponto (local) é apresentado na Tabela \@ref(tab:borrach).
 
-<table>
-<caption>(\#tab:borrach)Número de borrachudos nos diferentes pontos</caption>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Ponto </th>
-   <th style="text-align:right;"> Borrachudos </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Ponto 1 </td>
-   <td style="text-align:right;"> 19 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Ponto 2 </td>
-   <td style="text-align:right;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Ponto 3 </td>
-   <td style="text-align:right;"> 10 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Ponto 4 </td>
-   <td style="text-align:right;"> 17 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Ponto 5 </td>
-   <td style="text-align:right;"> 25 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Ponto 6 </td>
-   <td style="text-align:right;"> 22 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Ponto 7 </td>
-   <td style="text-align:right;"> 15 </td>
-  </tr>
-</tbody>
-</table>
+\begin{table}
+
+\caption{(\#tab:borrach)Número de borrachudos nos diferentes pontos}
+\centering
+\begin{tabular}[t]{l|r}
+\hline
+Ponto & Borrachudos\\
+\hline
+Ponto 1 & 19\\
+\hline
+Ponto 2 & 12\\
+\hline
+Ponto 3 & 10\\
+\hline
+Ponto 4 & 17\\
+\hline
+Ponto 5 & 25\\
+\hline
+Ponto 6 & 22\\
+\hline
+Ponto 7 & 15\\
+\hline
+\end{tabular}
+\end{table}
 
 Fonte: Dados simulados.
 
@@ -3997,10 +4088,14 @@ A análise de correlação permite verificar a relação entre duas variáveis q
 O diagrama de disperção fornece uma visualização gráfica do comportamento conjunto das duas variávei em estudo. Na Figura \@ref(fig:diag) a percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variaveis crescem conjuntamente, já na Figura \@ref(fig:diag)b percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura \@ref(fig:diag)c informa a ausência de relação entre as duas variáveis e, a Figura \@ref(fig:diag)d mostra uma relação não linear, a qual não será objeto de estudo nesta publicação.
 
 
-<div class="figure" style="text-align: center">
-<img src="correlacao1.png" alt="Diagramas de Dispersão" width="80%" />
-<p class="caption">(\#fig:diag)Diagramas de Dispersão</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{correlacao1} 
+
+}
+
+\caption{Diagramas de Dispersão}(\#fig:diag)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4033,10 +4128,14 @@ O diagrama de dispersão do exemplo está representado abaixo.
 plot(tempo,nota)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/unnamed-chunk-128-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="80%" />
-<p class="caption">(\#fig:unnamed-chunk-128)Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-128-1} 
+
+}
+
+\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}(\#fig:unnamed-chunk-128)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4093,20 +4192,28 @@ A análise de regressão é uma técnica muito utilizada em variáveis quantitat
 Na Figura \@ref(fig:regress) é apresentada a variação explicada e não explicada na análise por modelo regressão.
 
 
-<div class="figure" style="text-align: center">
-<img src="regress1.png" alt="Variação explicada e não explicada na análise de regressão" width="80%" />
-<p class="caption">(\#fig:regress)Variação explicada e não explicada na análise de regressão</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{regress1} 
+
+}
+
+\caption{Variação explicada e não explicada na análise de regressão}(\#fig:regress)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 
 Observa-se na Figura \@ref(fig:regress), uma identidade na regressão, conforme a seguinte expressão:
 
-<div class="figure" style="text-align: center">
-<img src="regress2.png" alt="Identidade da Regressão" width="80%" />
-<p class="caption">(\#fig:regress2)Identidade da Regressão</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{regress2} 
+
+}
+
+\caption{Identidade da Regressão}(\#fig:regress2)
+\end{figure}
 Fonte: Elaborado pelo(s) autor(es).
 
 Assim, a partir da expressão apresentada que o modelo de regressão será mais adequado na medida em que a proporção de "Soma de Quadrados de Regressão" é mais alta em relação à "Soma de Quadrado Total" do que a "Soma de Quadrado do Resíduo".
@@ -4356,10 +4463,14 @@ plot(nota~tempo)
 abline(coef(regressao))
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/unnamed-chunk-132-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="80%" />
-<p class="caption">(\#fig:unnamed-chunk-132)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-132-1} 
+
+}
+
+\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}(\#fig:unnamed-chunk-132)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4396,10 +4507,14 @@ distribuídos de forma aleatória no gráfico dos resíduos, conforme Figura \@r
 
 Além da análise gráfica, existem testes para avaliar a homocedasticidade como o Teste de Bartlett e para avaliar a normalidade aplicam-se os testes de Shapiro Wilks ou Kolmogorov-Smirnov.
 
-<div class="figure" style="text-align: center">
-<img src="residuos1.png" alt="Gráficos para análise de resíduos em regressão" width="80%" />
-<p class="caption">(\#fig:residuos)Gráficos para análise de resíduos em regressão</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{residuos1} 
+
+}
+
+\caption{Gráficos para análise de resíduos em regressão}(\#fig:residuos)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4424,10 +4539,14 @@ xlab="Valores ajustados", ylab="Residuos")
 abline(h=0)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/residuos1-1.png" alt="Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo" width="80%" />
-<p class="caption">(\#fig:residuos1)Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/residuos1-1} 
+
+}
+
+\caption{Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo}(\#fig:residuos1)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4455,10 +4574,14 @@ ylab="Residuos")
 abline(h=0)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/residuos2-1.png" alt="Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente" width="80%" />
-<p class="caption">(\#fig:residuos2)Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/residuos2-1} 
+
+}
+
+\caption{Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente}(\#fig:residuos2)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4502,10 +4625,14 @@ Sintaxe no software R:
 qqnorm(residuals(regressao))
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/qqnorm-1.png" alt="Gráfico de probabilidade normal para verificar normalidade dos resíduos" width="80%" />
-<p class="caption">(\#fig:qqnorm)Gráfico de probabilidade normal para verificar normalidade dos resíduos</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/qqnorm-1} 
+
+}
+
+\caption{Gráfico de probabilidade normal para verificar normalidade dos resíduos}(\#fig:qqnorm)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4522,10 +4649,14 @@ hist(x = regressao$residuals,
 lines(density(regressao$residuals))
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/unnamed-chunk-135-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="80%" />
-<p class="caption">(\#fig:unnamed-chunk-135)Histograma de distribuição da probabilidade para os resíduos</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-135-1} 
+
+}
+
+\caption{Histograma de distribuição da probabilidade para os resíduos}(\#fig:unnamed-chunk-135)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4602,10 +4733,14 @@ abline(h=2,col="red")
 abline(h=-2,col="red")
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/residpad-1.png" alt="Resíduos padronizados para o exemplo" width="80%" />
-<p class="caption">(\#fig:residpad)Resíduos padronizados para o exemplo</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/residpad-1} 
+
+}
+
+\caption{Resíduos padronizados para o exemplo}(\#fig:residpad)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4618,10 +4753,14 @@ abline(h=2,col="red")
 abline(h=-2,col="red")
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/residst-1.png" alt="Resíduos studentizados para o exemplo" width="80%" />
-<p class="caption">(\#fig:residst)Resíduos studentizados para o exemplo</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/residst-1} 
+
+}
+
+\caption{Resíduos studentizados para o exemplo}(\#fig:residst)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4669,10 +4808,14 @@ abline(h=-0.73,col="red")
 abline(h=0.73,col="red")
 ```
 
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/ptoinf-1.png" alt="Pontos influentes para o exemplo" width="80%" />
-<p class="caption">(\#fig:ptoinf)Pontos influentes para o exemplo</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/ptoinf-1} 
+
+}
+
+\caption{Pontos influentes para o exemplo}(\#fig:ptoinf)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4760,10 +4903,14 @@ predict(regressao, x0, interval="prediction")
 
 **Markdown** é uma linguagem de marcação de textos utilizada para a criação de diversos documentos, incluindo artigos, livros e apresentações. A grande inovação do **RMarkdown** no RStudio neste sentido é a utilização desta linguagem por meio do pacote `rmarkdown` (arquivos .Rmd) para integrar a criação de documentos com a análise e manipulação de dados em um único documento (Figura \@ref(fig:rmark)). Desta forma, é possível efetuar  pesquisas científicas que podem ser reproduzidas de forma muito mais fácil.
 
-<div class="figure" style="text-align: center">
-<img src="rmarkdown.png" alt="Processo de criação de documentos no RMarkdown" width="80%" />
-<p class="caption">(\#fig:rmark)Processo de criação de documentos no RMarkdown</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkdown} 
+
+}
+
+\caption{Processo de criação de documentos no RMarkdown}(\#fig:rmark)
+\end{figure}
 
 Fonte: Adaptado de @R-rmarkdown.
 
@@ -4776,10 +4923,14 @@ Para criação do documento RMarkdown, no RStudio clique em "File $>$ New File $
 Neste exemplo será criado um documento em Word, onde são preenchidos os campos com o título do documento, o nome do autor e escolha o tipo de documento.
 
 
-<div class="figure" style="text-align: center">
-<img src="criararq1.png" alt="Criar documento RMarkdown" width="80%" />
-<p class="caption">(\#fig:criararq1)Criar documento RMarkdown</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{criararq1} 
+
+}
+
+\caption{Criar documento RMarkdown}(\#fig:criararq1)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4788,19 +4939,27 @@ Fonte: Elaborado pelo(s) autor(es).
 
 O **RMarkdown** cria um documento incial padrão, contendo alguns exemplos básicos de inserção de textos e de formatação, que serão vistos adiante. Para compilação do documento para o formato desejado (neste caso Word), o usuário deve clicar na aba "Knit $>$ Knit to Word", ou pelo atalho no teclado CTRL+SHIFT+K.
 
-<div class="figure" style="text-align: center">
-<img src="compilar.png" alt="Compilado o documento RMarkdown" width="80%" />
-<p class="caption">(\#fig:compil)Compilado o documento RMarkdown</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{compilar} 
+
+}
+
+\caption{Compilado o documento RMarkdown}(\#fig:compil)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 Caso ocorram erros com relação à codificação do documento, no que diz respeito aos caracteres de acentuação da língua portuguesa, este pode ser resolvido salvando o documento criado com a codificação UTF-8. Para isto, clique em "File $>$ Save with Encoding $>$ UTF-8". Deve ser feito este procedimento para cada tipo de arquivo: Word, HTML e PDF.
 
-<div class="figure" style="text-align: center">
-<img src="errocodif.png" alt="Erro de codificação do documento RMarkdown" width="80%" />
-<p class="caption">(\#fig:errocodif)Erro de codificação do documento RMarkdown</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{errocodif} 
+
+}
+
+\caption{Erro de codificação do documento RMarkdown}(\#fig:errocodif)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4811,10 +4970,14 @@ A configuração básica de um arquivo RMarkdown divide-se entre a YAML Header e
 
 Já abaixo do YAML, situa-se o local onde o pesquisador digitará o texto, bem como integrará a inserção de códigos do R e também efetuará as análises posteriores (análises descritivas, regressões, tabelas, fórmulas, etc.). Por sua vez, os códigos do R (para manipulação de dados, como visto até o capítulo anterior deste livro) são "embutidos" no texto por meio das **Code Chunks**. Já o texto é inserido normalmente em forma de parágrafos ("fora" dos Chunks), sendo que o novo parágrafo é iniciado após pressionar a tecla "Enter" entre os textos informados.
 
-<div class="figure" style="text-align: center">
-<img src="rmark2.png" alt="Tela inicial do arquivo RMarkdown" width="80%" />
-<p class="caption">(\#fig:rmark2)Tela inicial do arquivo RMarkdown</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmark2} 
+
+}
+
+\caption{Tela inicial do arquivo RMarkdown}(\#fig:rmark2)
+\end{figure}
 
 Elaborado pelo(s) autor(es).
 
@@ -4829,65 +4992,93 @@ Dentro do documento **RMarkdown**, depois dos metadados, começa o espaço desti
 
 Os níveis de títulos dos documentos RMarkdown são definidos pelo símbolo `#`:
 
-<div class="figure" style="text-align: center">
-<img src="rmarktit.png" alt="Títulos no RMarkdown" width="80%" />
-<p class="caption">(\#fig:rmarktit)Títulos no RMarkdown</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarktit} 
+
+}
+
+\caption{Títulos no RMarkdown}(\#fig:rmarktit)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 A acentuação das palavras, dentro do texto, é feita normalmente pelo teclado do usuário. Os caracteres `*#/()[]<>` podem ser escritos normalmente dentro do texto, no entanto os demais (exemplo do cifrão `$`) devem ser escritos precedidos de uma barra: `\$`. Por outro lado, a formatação em itálico, negrito, subscrito, sobrescrito, links e demais formatações são feitas no documento (Figura \@ref(fig:rmarkform)).
 
-<div class="figure" style="text-align: center">
-<img src="rmarkform.png" alt="Formatação no RMarkdown" width="80%" />
-<p class="caption">(\#fig:rmarkform)Formatação no RMarkdown</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkform} 
+
+}
+
+\caption{Formatação no RMarkdown}(\#fig:rmarkform)
+\end{figure}
 Fonte: Elaborado pelo(s) autor(es).
 
 Como visto, é possível escrever as fórmulas em notação matemática, o que facilita e muito a vida do pesquisador. No ambiente matemático do **RMarkdown**, elas são escritas por meio da linguagem de marcação de textos LaTeX. Existem muitos manuais sobre esta linguagem, e para facilitar a escrita, sites como <https://www.codecogs.com/latex/eqneditor.php?lang=pt-br> ajudam o pesquisador nesta empreitada.
 
 É possível efetuar a inserção de links nos documentos, para páginas externas ou mesmo internas ao documento (Figura \@ref(fig:rmarklinks)).
 
-<div class="figure" style="text-align: center">
-<img src="rmarklinks.png" alt="Links no RMarkdown" width="80%" />
-<p class="caption">(\#fig:rmarklinks)Links no RMarkdown</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarklinks} 
+
+}
+
+\caption{Links no RMarkdown}(\#fig:rmarklinks)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 A inserção de imagens externas no documento, em diversos formatos (aqui no exemplo .png) é feita a partir do direcionamento do nome da imagem salva na mesma pasta do arquivo .Rmd criado, ou mesmo pelo link na internet (Figura \@ref(fig:rmarkimg)).
 
-<div class="figure" style="text-align: center">
-<img src="rmarkimg.png" alt="Imagens no RMarkdown" width="80%" />
-<p class="caption">(\#fig:rmarkimg)Imagens no RMarkdown</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkimg} 
+
+}
+
+\caption{Imagens no RMarkdown}(\#fig:rmarkimg)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 A Figura \@ref(fig:rmarklist) demonstra algumas formas de criar listas e itens no decorrer do corpo de texto no **RMarkdown**.
 
-<div class="figure" style="text-align: center">
-<img src="rmarklist.png" alt="Listas no RMarkdown" width="80%" />
-<p class="caption">(\#fig:rmarklist)Listas no RMarkdown</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarklist} 
+
+}
+
+\caption{Listas no RMarkdown}(\#fig:rmarklist)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 A criação de tabelas simples segue a disposição dos elementos pré-definidos, sendo que o alinhamento da coluna se dá pelo caractere "`:`" (dois pontos) conforme a Figura \@ref(fig:rmarktab):
 
-<div class="figure" style="text-align: center">
-<img src="rmarktab.png" alt="Tabelas simples no RMarkdown" width="80%" />
-<p class="caption">(\#fig:rmarktab)Tabelas simples no RMarkdown</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarktab} 
+
+}
+
+\caption{Tabelas simples no RMarkdown}(\#fig:rmarktab)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 As notas de rodapé são inseridas no texto dentro das chaves precedidas do acento circunflexo `^[ ]`. O pesquisador adiciona-os durante o texto, e o programa enumera automaticamente no documento final em Word (Figura \@ref(fig:rmarkrodape)).
 
-<div class="figure" style="text-align: center">
-<img src="rmarkrodape.png" alt="Notas de rodapé no RMarkdown" width="80%" />
-<p class="caption">(\#fig:rmarkrodape)Notas de rodapé no RMarkdown</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkrodape} 
+
+}
+
+\caption{Notas de rodapé no RMarkdown}(\#fig:rmarkrodape)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4896,10 +5087,14 @@ Fonte: Elaborado pelo(s) autor(es).
 
 O YAML, ou os metadados do documento, são informações básicas do documento que podem ser alteradas (Figura \@ref(fig:rmarkautor)). Dentre elas *title* define o título do documento; em *author* é inserido o autor ou autores e as informações do currículo do pesquisador são inseridas via nota de rodapé dentro do símbolo `^[  ]`; o campo *date* é opcional.
 
-<div class="figure" style="text-align: center">
-<img src="rmarkautor.png" alt="Configuração do YAML" width="80%" />
-<p class="caption">(\#fig:rmarkautor)Configuração do YAML</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkautor} 
+
+}
+
+\caption{Configuração do YAML}(\#fig:rmarkautor)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4930,10 +5125,14 @@ Os campos `fig_height` e `fig_width` determinam a altura e largura padrão de to
 
 Também é possível incluir um campo `abstract` para o resumo, no caso de artigo e suas respectivas palavras-chave:
 
-<div class="figure" style="text-align: center">
-<img src="abstract.png" alt="Abstract no YAML" width="80%" />
-<p class="caption">(\#fig:abstract)Abstract no YAML</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{abstract} 
+
+}
+
+\caption{Abstract no YAML}(\#fig:abstract)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4945,10 +5144,14 @@ Os **Code Chunks**, como já visto, são espaços destinados à inclusão de có
 A criação das Chunks é feita manualmente no corpo do documento .Rmd pela inclusão do código  ??? , ou via plataforma RStudio, no menu "Insert $>$ Insert a new R chunk", conforme demonstra a Figura \@ref(fig:rmarkchunk1):
 
 
-<div class="figure" style="text-align: center">
-<img src="rmarkchunk1.png" alt="Criação de Chunks" width="80%" />
-<p class="caption">(\#fig:rmarkchunk1)Criação de Chunks</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkchunk1} 
+
+}
+
+\caption{Criação de Chunks}(\#fig:rmarkchunk1)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4958,10 +5161,14 @@ No exemplo abaixo, o nome da Chunk criada foi "r nomedochunk". E no campo das op
 
 A primeira opção, `echo=FALSE`, informa que no arquivo compilado, somente será mostrado o resultado da rotina inserida na Chunk (1+1), portanto será mostrado somente o valor 2. Caso o usuário almejasse inserir, no arquivo final, o código do R escrito (1+1) juntamente com o resultado da operação, marcaria `echo=TRUE`.
 
-<div class="figure" style="text-align: center">
-<img src="rmarkchunk2.png" alt="Criação de Chunks" width="80%" />
-<p class="caption">(\#fig:rmarkchunk2)Criação de Chunks</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkchunk2} 
+
+}
+
+\caption{Criação de Chunks}(\#fig:rmarkchunk2)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4970,10 +5177,14 @@ As opções `fig.height` e `fig.width` referem-se à altura e largura caso o res
 
 Para padronizar todas as Chunks para que tenham as mesmas opções, uma maneira utilizada usualmente é a inserção de uma `Chunk global`. Ela é incluída no início do texto, sendo que a sua inclusão é facultativa. No entanto, contribui para padronizar o texto, ao mesmo tempo que se existir uma Chunk durante o texto que deva ser configurada de forma diferente (por exemplo, o tamanho da imagem), pode ser efetuado em cada Chunk individual.
 
-<div class="figure" style="text-align: center">
-<img src="rmarkchunkopt.png" alt="Chunk global" width="80%" />
-<p class="caption">(\#fig:rmarkchunkopt)Chunk global</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkchunkopt} 
+
+}
+
+\caption{Chunk global}(\#fig:rmarkchunkopt)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4995,10 +5206,14 @@ Como mencionado no início deste capítulo, a grande vantagem do **RMarkdown** �
 
 No exemplo abaixo, foi criado um *data frame* nomeado "amost" diretamente no console dentro da Chunk. Em um segundo momento, para utilizarmos um determinado pacote instalado no RStudio, utiliza-se, dentro da Chunk, o comando `require ()` juntamente com o pacote necessário. Podem ser inseridos tantos pacotes quanto forem utilizados no documento, conforme a Figura \@ref(fig:rmarkchunk3).
 
-<div class="figure" style="text-align: center">
-<img src="rmarkchunk3.png" alt="Exemplo de criação de Chunk e carregamento de pacote" width="80%" />
-<p class="caption">(\#fig:rmarkchunk3)Exemplo de criação de Chunk e carregamento de pacote</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkchunk3} 
+
+}
+
+\caption{Exemplo de criação de Chunk e carregamento de pacote}(\#fig:rmarkchunk3)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -5007,20 +5222,28 @@ Fonte: Elaborado pelo(s) autor(es).
 
 Como visto, algumas ações extremamente úteis podem ser efetuadas por meio das Chunks. Dentre elas, inclui-se a plotagem de tabelas no texto final, derivadas de objetos criados pelo pesquisador no RStudio. Os exemplos trazidos abaixo incluem a utilização dos pacotes `kable`, `xtable` e `flextable` para a criação das tabelas. 
 
-<div class="figure" style="text-align: center">
-<img src="rmarkchunktab1.png" alt="Exemplo de criação de tabelas com os pacotes kable, xtable e flextable" width="80%" />
-<p class="caption">(\#fig:rmarkchunk31)Exemplo de criação de tabelas com os pacotes kable, xtable e flextable</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkchunktab1} 
+
+}
+
+\caption{Exemplo de criação de tabelas com os pacotes kable, xtable e flextable}(\#fig:rmarkchunk31)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 
 Além disso, o pacote `stargazer` é extremamente útil para geração de tabelas com resultados de regressões com a saída dos documentos em PDF.
 
-<div class="figure" style="text-align: center">
-<img src="rmarkchunktab2.png" alt="Exemplo de criação de tabelas com stargazer" width="80%" />
-<p class="caption">(\#fig:rmarkchunk33)Exemplo de criação de tabelas com stargazer</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkchunktab2} 
+
+}
+
+\caption{Exemplo de criação de tabelas com stargazer}(\#fig:rmarkchunk33)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -5032,10 +5255,14 @@ Outra forma de passar as tabelas para o Word é criando-a no formato HTML e copi
 Da mesma forma que as tabelas, as imagens também podem ser inseridas com o auxílio de Chunks. Lembrando que a imagem deve estar na mesma pasta do arquivo ou na pasta indicada:
 
 
-<div class="figure" style="text-align: center">
-<img src="rmarkchunkimg.png" alt="Exemplo de inserção de imagens pelos Chunks" width="80%" />
-<p class="caption">(\#fig:rmarkchunk333)Exemplo de inserção de imagens pelos Chunks</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkchunkimg} 
+
+}
+
+\caption{Exemplo de inserção de imagens pelos Chunks}(\#fig:rmarkchunk333)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -5055,19 +5282,27 @@ Como já visto, para criação de documentos .Rmd clique em "File $>$ New File $
 
 Abra o arquivo em Word (denominamos ``modelo.docx''). Atente para a caixa de seleção de estilos do Word, que será trabalhado nesta etapa (Figura \@ref(fig:rmarkestilos)). 
 
-<div class="figure" style="text-align: center">
-<img src="rmarkestilos.png" alt="Caixa estilos no Word" width="80%" />
-<p class="caption">(\#fig:rmarkestilos)Caixa estilos no Word</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkestilos} 
+
+}
+
+\caption{Caixa estilos no Word}(\#fig:rmarkestilos)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 Note que para o resultado desta compilação, o menu estilos traz várias formatações das diferentes partes do texto, entre elas "Abstract", "Author", "Normal", "Titulo", "Titulo 1", etc. Estes estilos serão alterados pelo usuário, para adequar às necessidades do pesquisador na criação do documento padrão. Clique com o botão direito nos estilos e em ``Modificar'' para definir a formatação padrão para cada parte do texto.
 
-<div class="figure" style="text-align: center">
-<img src="rmarkestilos1.png" alt="Modificação de estilos no Word" width="80%" />
-<p class="caption">(\#fig:rmarkestilos1)Modificação de estilos no Word</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkestilos1} 
+
+}
+
+\caption{Modificação de estilos no Word}(\#fig:rmarkestilos1)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -5077,10 +5312,14 @@ Fonte: Elaborado pelo(s) autor(es).
 Após detemrinar as alterações em todos os campos de estilos do documento modelo no Word, o pesquisador deve vincular este modelo ao documento .Rmd principal. Além de deixar salvo o modelo em Word na mesma pasta, deve-se incluir a seguinte informação no YAML mostrada na Figura  \@ref(fig:rmarkestilos2) (`reference_docx`). Lembrando que para arquivos em Open/Libre Office, deve ser inserida a opção `reference_odt` seguida do arquivo (.odt) do modelo.
 
 
-<div class="figure" style="text-align: center">
-<img src="rmarkestilos2.png" alt="Vinculação do modelo" width="80%" />
-<p class="caption">(\#fig:rmarkestilos2)Vinculação do modelo</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkestilos2} 
+
+}
+
+\caption{Vinculação do modelo}(\#fig:rmarkestilos2)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -5097,10 +5336,14 @@ Dentro deste arquivo serão armazenadas as referências biliográficas, não dev
 
 A primeira (`@article`), demonstra que é um artigo de uma revista enquanto a segunda (`@book`) se trata de um livro. Dentro das chaves estão os dados das referências, como o título (`title`), autores (`author`) e o ano (`year`) por exemplo.
 
-<div class="figure" style="text-align: center">
-<img src="rmarkbib.png" alt="Arquivo .bib" width="80%" />
-<p class="caption">(\#fig:rmarkbib)Arquivo .bib</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkbib} 
+
+}
+
+\caption{Arquivo .bib}(\#fig:rmarkbib)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -5126,10 +5369,14 @@ O BibLateX gerencia todos os tipos de bibliografias sendo que, como visto acima,
 Estas configurações do BibLateX são comuns nos programas de gerenciamento de bibliografias, como por exemplo no *software* Mendeley. Os usuários deste programa tem uma facilidade na exportação para o formato do BibLateX, pois podem copiar as entradas com as informações de um trabalho e inserí-las dentro do arquivo .bib (Figura \@ref(fig:rmarkmendeley)).
 
 
-<div class="figure" style="text-align: center">
-<img src="rmarkmendeley.png" alt="Utilização do Mendeley para exportação de dados de bibliografias" width="80%" />
-<p class="caption">(\#fig:rmarkmendeley)Utilização do Mendeley para exportação de dados de bibliografias</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkmendeley} 
+
+}
+
+\caption{Utilização do Mendeley para exportação de dados de bibliografias}(\#fig:rmarkmendeley)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -5138,10 +5385,14 @@ Fonte: Elaborado pelo(s) autor(es).
 Após escolhidas as bibliografias a serem utilizadas no trabalho, o pesquisador deve inserir estas entradas como referências dentro do texto. Para isto, utiliza o nome da bibliografia inserida no arquivo .bib, no nosso exemplo `bresser` e `Forstater2008`, como mostra a Figura \@ref(fig:rmarkcitar).
 
 
-<div class="figure" style="text-align: center">
-<img src="rmarkcitar.png" alt="Inserção de citações no arquivo .Rmd" width="80%" />
-<p class="caption">(\#fig:rmarkcitar)Inserção de citações no arquivo .Rmd</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkcitar} 
+
+}
+
+\caption{Inserção de citações no arquivo .Rmd}(\#fig:rmarkcitar)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -5153,10 +5404,14 @@ Mas qual norma será utilizada para as citações e a criação de referências 
 Estes arquivos podem ser encontrados em diversos locais, como por exemplo em <https://github.com/citation-style-language/styles> (copie [este](https://raw.githubusercontent.com/citation-style-language/styles/44808db510152943c5d9dc471a9c8982a3edfbea/associacao-brasileira-de-normas-tecnicas-ipea.csl) conteúdo para um arquivo ".txt" e o renomeie para ".csl"). Lembrando que o arquivo ".csl" deve ser salvo na mesma pasta do arquivo ".Rmd". O arquivo csl aqui utilizado refere-se às normas da ABNT (Associação Brasileira de Normas Técnicas) utilizados pelo IPEA (Instituto de Pesquisa Econômica Aplicada). Verifica-se na Figura \@ref(fig:rmarkcitar1) a configuração final do YAML. Neste site <http://editor.citationstyles.org/searchByName/>
 também são encontrados arquivos para várias normas bibliográficas.
 
-<div class="figure" style="text-align: center">
-<img src="rmarkcitar1.png" alt="Configurando YAML para citações e fererências" width="80%" />
-<p class="caption">(\#fig:rmarkcitar1)Configurando YAML para citações e fererências</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkcitar1} 
+
+}
+
+\caption{Configurando YAML para citações e fererências}(\#fig:rmarkcitar1)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -5169,10 +5424,14 @@ A partir de então fica muito mais fácil alterar a norma necessária para a pro
 Segue o resultado do arquivo final:
 
 
-<div class="figure" style="text-align: center">
-<img src="rmarkcitarf.png" alt="Resultado final das citações e referências com RMarkdown" width="80%" />
-<p class="caption">(\#fig:rmarkcitarf)Resultado final das citações e referências com RMarkdown</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.8\linewidth]{rmarkcitarf} 
+
+}
+
+\caption{Resultado final das citações e referências com RMarkdown}(\#fig:rmarkcitarf)
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 

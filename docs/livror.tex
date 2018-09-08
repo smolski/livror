@@ -129,7 +129,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-08-30}
+    \date{2018-09-08}
 
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -265,10 +265,14 @@ Boa leitura!
 \hypertarget{intro}{%
 \chapter{Introdução}\label{intro}}
 
-\begin{flushright}
 \emph{Felipe Micail da Silva Smolski}
 
 \emph{Djaina Sibiani Rieger}
+
+\begin{flushright}
+\emph{}
+
+\emph{}
 \end{flushright}
 
 O R é um ambiente voltado para análise de dados com o uso de uma
@@ -440,7 +444,7 @@ O comando \texttt{header=TRUE} diz que a primeira linha do arquivo
 contém o cabeçalho; \texttt{skip=4} faz com que sejam ignoradas as 4
 primeiras linhas.
 
-A opção \texttt{load()} (exemplo: \texttt{load("base.RData")}) pode ser
+A função \texttt{load()} (exemplo: \texttt{load("base.RData")}) pode ser
 utilizada para carregar as bases de dados salvas com a função
 \texttt{save()}, que será descrita no subcapítulo a seguir.
 
@@ -538,6 +542,12 @@ Alguns tipos de dados:
   \textbf{Factor}: variável nominal, inclusive como fator ordenado,
   representam categorias.
 \end{itemize}
+
+Ainda, é possível importar objetos utilizando arquivos hospedados em
+links da internet, por exemplo o comando
+\texttt{source("http://www.openintro.org/stat/data/cdc.R")} utiliza a
+função \texttt{source()} para carregar um objeto do R denominado cdc
+(``cdc.R'').
 
 \hypertarget{salvar-arquivo-de-dados}{%
 \section{Salvar arquivo de dados}\label{salvar-arquivo-de-dados}}
@@ -846,8 +856,8 @@ Seguem alguns exemplos da aplicação das operações lógicas:
 [1] TRUE
 \end{verbatim}
 
-\hypertarget{criacao-de-variaveis}{%
-\section{Criação de variáveis}\label{criacao-de-variaveis}}
+\hypertarget{criacao-de-objetos}{%
+\section{Criação de objetos}\label{criacao-de-objetos}}
 
 A linguagem de programação R se configura em uma linguagem orientada a
 objetos, ou seja, a todo tempo estamos criando diversos tipos de objetos
@@ -901,8 +911,7 @@ todos os objetos de uma só vez utiliza-se \texttt{rm(list=ls())}.
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{conversao-de-uma-variavel}{%
-\subsection{Conversão de uma variável}\label{conversao-de-uma-variavel}}
+\textbf{Conversão de uma variável}
 
 Para a aplicação de algumas funções é importante que cada variável
 esteja corretamente classificada, o que em alguns casos não ocorre
@@ -935,8 +944,9 @@ aplica a variáveis categóricas que podem ser consideradas ordenáveis.
 [1] "98700000" "98701000" "98702000"
 \end{verbatim}
 
-\hypertarget{alguns-comandos-essenciais}{%
-\section{Alguns comandos essenciais}\label{alguns-comandos-essenciais}}
+\hypertarget{algumas-funcoes-e-comandos-essenciais}{%
+\section{Algumas funções e comandos
+essenciais}\label{algumas-funcoes-e-comandos-essenciais}}
 
 A função \texttt{head()} mostra as 6 primeiras colunas do arquivo para
 se ter uma noção do conteúdo. No caso do mesmo ser um data.frame,
@@ -1146,11 +1156,11 @@ efetuar o sumário da coluna ``Petal.Width'':
         50         50         50 
 \end{verbatim}
 
-\hypertarget{comando-tapply}{%
-\subsection{\texorpdfstring{Comando
-\emph{tapply}}{Comando tapply}}\label{comando-tapply}}
+\hypertarget{funcao-tapply}{%
+\subsection{\texorpdfstring{Função
+\emph{tapply}}{Função tapply}}\label{funcao-tapply}}
 
-O comando \texttt{taply()} agrega os dados pelos níveis das variáveis
+O comando \texttt{tapply()} agrega os dados pelos níveis das variáveis
 qualitativas. Note que a coluna ``Especie'' possui dados em forma de
 fatores. Assim, para filtrarmos a informação (coluna ``Sepal.Length'')
 média por Especie, podemos utilizar:
@@ -1196,9 +1206,9 @@ faltantes para calcular-se a média:
      5.006      5.936      6.588 
 \end{verbatim}
 
-\hypertarget{comando-subset}{%
-\subsection{\texorpdfstring{Comando
-\emph{subset}}{Comando subset}}\label{comando-subset}}
+\hypertarget{funcao-subset}{%
+\subsection{\texorpdfstring{Função
+\emph{subset}}{Função subset}}\label{funcao-subset}}
 
 Utiliza-se o comando \texttt{subset()} para formar um subconjunto de
 dados o qual desejamos selecionar de um objeto. Por exemplo, se
@@ -1244,6 +1254,55 @@ criamos um novo objeto com estas condições:
 17          5.4         3.9          1.3         0.4  setosa
 \end{verbatim}
 
+\hypertarget{funcao-table}{%
+\subsection{\texorpdfstring{Função
+\emph{table}}{Função table}}\label{funcao-table}}
+
+Para contar elementos em cada nível de um fator, usa-se a função
+\texttt{table()}. A função pode fazer tabulações cruzadas, gerando uma
+tabela de contingência, esse tipo de tabela é usado para registrar
+observações independentes de duas ou mais variáveis aleatórias.
+
+Para exemplo da utilização da função \texttt{table} agora com dados
+qualitativos (gênero e saúde), vamos utilizar a base de dados
+\texttt{cdc}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Carregando a base}
+\KeywordTok{source}\NormalTok{(}\StringTok{"http://www.openintro.org/stat/data/cdc.R"}\NormalTok{)}
+\CommentTok{#Vizualizamos as primeiras linhas}
+\KeywordTok{head}\NormalTok{(cdc)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    genhlth exerany hlthplan smoke100 height weight wtdesire age gender
+1      good       0        1        0     70    175      175  77      m
+2      good       0        1        1     64    125      115  33      f
+3      good       1        1        1     60    105      105  49      f
+4      good       1        1        0     66    132      124  42      f
+5 very good       0        1        0     61    150      130  55      f
+6 very good       1        1        0     64    114      114  55      f
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Efetuamos a contagem dos dados qualitativos com a função table}
+\KeywordTok{table}\NormalTok{(cdc}\OperatorTok{$}\NormalTok{genhlth,cdc}\OperatorTok{$}\NormalTok{gender)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+           
+               m    f
+  excellent 2298 2359
+  very good 3382 3590
+  good      2722 2953
+  fair       884 1135
+  poor       283  394
+\end{verbatim}
+
 \hypertarget{estrutura-de-dados}{%
 \section{Estrutura de dados}\label{estrutura-de-dados}}
 
@@ -1257,8 +1316,7 @@ fatorial, ou categorias em uma tabela de contingência.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# Criação de um vetor}
-\NormalTok{x=}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{)}
-\NormalTok{x}
+\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1271,8 +1329,7 @@ de um intervalo entre valores:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x=}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\OperatorTok{:}\DecValTok{6}\NormalTok{)}
-\NormalTok{x}
+\KeywordTok{c}\NormalTok{(}\DecValTok{2}\OperatorTok{:}\DecValTok{6}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1284,8 +1341,7 @@ de um intervalo entre valores:
 \begin{Highlighting}[]
 \CommentTok{# Criação de um vetor a partir do intervalo entre cada elemento e valores}
 \CommentTok{#mínimo e máximo}
-\NormalTok{x=}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DataTypeTok{by=}\FloatTok{0.5}\NormalTok{)}
-\NormalTok{x}
+\KeywordTok{seq}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DataTypeTok{by=}\FloatTok{0.5}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1299,8 +1355,7 @@ segundo exemplo, a cada 3 vezes:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x=}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{3}\NormalTok{, }\DataTypeTok{times=}\DecValTok{4}\NormalTok{)}
-\NormalTok{x}
+\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{3}\NormalTok{, }\DataTypeTok{times=}\DecValTok{4}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1310,8 +1365,7 @@ segundo exemplo, a cada 3 vezes:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{y=}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{3}\NormalTok{, }\DataTypeTok{each=}\DecValTok{3}\NormalTok{)}
-\NormalTok{y}
+\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{3}\NormalTok{, }\DataTypeTok{each=}\DecValTok{3}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1402,90 +1456,6 @@ Fatores podem conter níveis não usados (vazios):
  [1] mulheres mulheres mulheres mulheres mulheres mulheres mulheres mulheres
  [9] mulheres mulheres
 Levels: mulheres homens
-\end{verbatim}
-
-Também é possível aplicar uma função aos subconjuntos de um vetor
-definidos por um fator utilizando a função \texttt{tapply()}. Criamos um
-objeto com o sexo das pessoas, seguido pela dieta e peso (que
-caracterizamos como numérico). Depois, determinamos a média de peso
-frente ao sexo e a dieta
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{sexo=}\KeywordTok{factor}\NormalTok{(}\KeywordTok{rep}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"F"}\NormalTok{,}\StringTok{"M"}\NormalTok{),}\DataTypeTok{each=}\DecValTok{9}\NormalTok{))}
-\NormalTok{dieta=}\KeywordTok{factor}\NormalTok{(}\KeywordTok{rep}\NormalTok{(}\KeywordTok{rep}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"normal"}\NormalTok{,}\StringTok{"light"}\NormalTok{,}\StringTok{"diet"}\NormalTok{), }\DataTypeTok{each=}\DecValTok{3}\NormalTok{),}\DecValTok{2}\NormalTok{), }
-\DataTypeTok{levels=}\KeywordTok{c}\NormalTok{(}\StringTok{"normal"}\NormalTok{, }\StringTok{"light"}\NormalTok{,}\StringTok{"diet"}\NormalTok{))}
-\NormalTok{peso=}\KeywordTok{c}\NormalTok{(}\DecValTok{90}\NormalTok{, }\DecValTok{89}\NormalTok{, }\DecValTok{78}\NormalTok{, }\DecValTok{69}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{69}\NormalTok{, }\DecValTok{77}\NormalTok{, }\DecValTok{89}\NormalTok{, }\DecValTok{80}\NormalTok{, }\DecValTok{60}\NormalTok{, }\DecValTok{75}\NormalTok{, }\DecValTok{79}\NormalTok{, }\DecValTok{65}\NormalTok{, }\DecValTok{94}\NormalTok{,}
-       \DecValTok{69}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{69}\NormalTok{, }\DecValTok{77}\NormalTok{)}
-\NormalTok{sexo}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
- [1] F F F F F F F F F M M M M M M M M M
-Levels: F M
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{dieta}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
- [1] normal normal normal light  light  light  diet   diet   diet   normal
-[11] normal normal light  light  light  diet   diet   diet  
-Levels: normal light diet
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{peso=}\KeywordTok{as.numeric}\NormalTok{(peso)}
-
-\CommentTok{# média de peso frente ao sexo e dieta}
-\KeywordTok{tapply}\NormalTok{(peso,}\KeywordTok{list}\NormalTok{(sexo,dieta), mean)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-  normal light diet
-F  85.67 74.33   82
-M  71.33 76.00   77
-\end{verbatim}
-
-\hypertarget{funcao-table}{%
-\subsubsection{\texorpdfstring{Função
-\emph{table}}{Função table}}\label{funcao-table}}
-
-Para contar elementos em cada nível de um fator, usa-se a função table:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{table}\NormalTok{(participantes)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-participantes
-mulheres   homens 
-      10        0 
-\end{verbatim}
-
-A função pode fazer tabulações cruzadas, gerando uma tabela de
-contingência, esse tipo de tabela é usado para registrar observações
-independentes de duas ou mais variáveis aleatórias:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{table}\NormalTok{(sexo,dieta)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-    dieta
-sexo normal light diet
-   F      3     3    3
-   M      3     3    3
 \end{verbatim}
 
 \hypertarget{matrizes}{%
@@ -1581,9 +1551,7 @@ $vetor
 [1] 1 2 3 4 5 6
 \end{verbatim}
 
-\hypertarget{comandos-para-manipulacao-de-listas}{%
-\subsubsection{Comandos para manipulação de
-listas}\label{comandos-para-manipulacao-de-listas}}
+\textbf{Comandos para manipulação de listas}
 
 Para descobrirmos de maneira rápida o números de objetos que há na
 lista, utilizamos o comando \texttt{length(nomedalista)}.
@@ -1726,9 +1694,6 @@ Soledade.
 \section{Manipulação de banco de
 dados}\label{manipulacao-de-banco-de-dados}}
 
-\hypertarget{funcoes}{%
-\section{Funções}\label{funcoes}}
-
 A função \texttt{edit()} abre uma interface simples de edição de dados
 em formato planilha, e é útil para pequenas modificações. Mas para
 salvar as modificações atribua o resultado da função \texttt{edit} a um
@@ -1790,8 +1755,7 @@ ordem dos dados esteja correta:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# União de um banco de dados (existencia de uma váriavel em comum)}
-
+\CommentTok{# Crição do data frame}
 \NormalTok{estudantes=}\KeywordTok{c}\NormalTok{(}\StringTok{"Guilherme"}\NormalTok{, }\StringTok{"Marcelo"}\NormalTok{, }\StringTok{"Pedro"}\NormalTok{, }\StringTok{"Camila"}\NormalTok{)}
 \NormalTok{altura=}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{1.50}\NormalTok{, }\FloatTok{1.9}\NormalTok{, }\FloatTok{1.74}\NormalTok{, }\FloatTok{1.80}\NormalTok{)}
 \NormalTok{informacoes}\FloatTok{.3}\NormalTok{=}\KeywordTok{data.frame}\NormalTok{(estudantes, altura)}
@@ -1805,6 +1769,8 @@ nome dos estudantes (informação em comum):
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{# União de um banco de dados (existencia de uma váriavel em comum)}
+
 \NormalTok{informacoes=}\KeywordTok{merge}\NormalTok{(informacoes}\FloatTok{.2}\NormalTok{,informacoes}\FloatTok{.3}\NormalTok{, }\DataTypeTok{by=}\StringTok{"estudantes"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -2101,7 +2067,7 @@ representa o número da respectiva coluna:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# Reordenar colunas}
-\NormalTok{informacoes=informacoes[}\KeywordTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{)]}
+\NormalTok{informacoes=informacoes[}\KeywordTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{10}\NormalTok{)]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2116,18 +2082,18 @@ o comando \texttt{rev()} pode ser útil:
 \end{Shaded}
 
 \begin{verbatim}
-  binario   classificacao altura   Imc estudantes      cidades peso idade
-1       1     peso normal    1.8 20.06     Camila   Nova Hartz   65    21
-2       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre  100    18
-3       1     peso normal    1.9 22.16    Marcelo     Soledade   80    19
-4       0 excesso de peso   1.74 26.09      Pedro      Gramado   79    19
-5       1     peso normal   1,59 23.34  Francisco         Ijuí   59    30
-        tipoimc
-1   Peso Normal
-2 Obesidade III
-3   Peso Normal
-4 Acima do Peso
-5   Peso Normal
+  faixa etaria binario   classificacao altura   Imc estudantes      cidades
+1       adulto       1     peso normal    1.8 20.06     Camila   Nova Hartz
+2   não adulto       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre
+3   não adulto       1     peso normal    1.9 22.16    Marcelo     Soledade
+4   não adulto       0 excesso de peso   1.74 26.09      Pedro      Gramado
+5       adulto       1     peso normal   1,59 23.34  Francisco         Ijuí
+  peso idade       tipoimc
+1   65    21   Peso Normal
+2  100    18 Obesidade III
+3   80    19   Peso Normal
+4   79    19 Acima do Peso
+5   59    30   Peso Normal
 \end{verbatim}
 
 A função \texttt{table()} faz a contagem os dados; já o comando
@@ -2177,12 +2143,12 @@ das cidades).
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
-  binario
-5       1
-1       1
-3       1
-4       0
-2       0
+  binario faixa etaria
+5       1       adulto
+1       1       adulto
+3       1   não adulto
+4       0   não adulto
+2       0   não adulto
 \end{verbatim}
 
 \begin{Shaded}
@@ -2199,12 +2165,12 @@ das cidades).
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
-  binario
-2       0
-3       1
-4       0
-1       1
-5       1
+  binario faixa etaria
+2       0   não adulto
+3       1   não adulto
+4       0   não adulto
+1       1       adulto
+5       1       adulto
 \end{verbatim}
 
 \begin{Shaded}
@@ -2221,12 +2187,12 @@ das cidades).
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
-  binario
-4       0
-5       1
-1       1
-2       0
-3       1
+  binario faixa etaria
+4       0   não adulto
+5       1       adulto
+1       1       adulto
+2       0   não adulto
+3       1   não adulto
 \end{verbatim}
 
 O comando \texttt{rank()} cria uma ranqueamento crescente das
@@ -2247,12 +2213,25 @@ dos valores do IMC, pode ser utilizado:
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
-  binario rankingImc
-1       1          1
-2       0          5
-3       1          2
-4       0          4
-5       1          3
+  binario faixa etaria rankingImc
+1       1       adulto          1
+2       0   não adulto          5
+3       1   não adulto          2
+4       0   não adulto          4
+5       1       adulto          3
+\end{verbatim}
+
+Para utilizar a função \texttt{rank} com os maiores valores em primeiro
+lugar:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rank}\NormalTok{(}\OperatorTok{-}\NormalTok{informacoes}\OperatorTok{$}\NormalTok{Imc)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 5 1 4 2 3
 \end{verbatim}
 
 \hypertarget{funcoes-matematicas}{%
@@ -2373,7 +2352,7 @@ decimais:
 [1] 20.06 44.44 22.16 26.09 23.34
 \end{verbatim}
 
-Já o comando \texttt{signif()} determina onúmero de algarismos
+Já o comando \texttt{signif()} determina o número de algarismos
 significativos da série escolhida, ou seja, ele arredonda para os
 valores em seu primeiro argumento com os número de dígitos detemrinados:
 
@@ -2565,8 +2544,10 @@ diárias''.
 \hypertarget{desc}{%
 \chapter{Estatística Descritiva}\label{desc}}
 
-\begin{flushright}
 \emph{Denize Ivete Reis}
+
+\begin{flushright}
+\emph{}
 \end{flushright}
 
 A Estatística é uma ciência cujo campo de aplicação estende-se a
@@ -3709,8 +3690,10 @@ consultar outras referências ou até mesmo as já citadas neste capítulo.
 \hypertarget{inf}{%
 \chapter{Estatística Inferencial}\label{inf}}
 
-\begin{flushright}
 \emph{Tatiane Chassot}
+
+\begin{flushright}
+\emph{}
 \end{flushright}
 
 A inferência estatística, ou estatística inferencial, tem por objetivo
@@ -4604,8 +4587,10 @@ A é igual à média de peso do tecido B.
 \hypertarget{qui}{%
 \chapter{Teste de Qui-Quadrado}\label{qui}}
 
-\begin{flushright}
 \emph{Iara Denise Endruweit Battisti}
+
+\begin{flushright}
+\emph{}
 \end{flushright}
 
 Quando existem duas variáveis de interesse, a representação tabular das
@@ -4644,7 +4629,7 @@ seguro (as variáveis são dependentes)
 dos agrotóxicos, agricultores de Cerro Largo, RS, 2017.}\tabularnewline
 \toprule
 \begin{minipage}[b]{0.35\columnwidth}\raggedright
-\textbf{Tamanho da propriedade}\strut
+\strut
 \end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
 \textbf{Armazenamento seguro}\strut
 \end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright
@@ -4654,7 +4639,7 @@ dos agrotóxicos, agricultores de Cerro Largo, RS, 2017.}\tabularnewline
 \endfirsthead
 \toprule
 \begin{minipage}[b]{0.35\columnwidth}\raggedright
-\textbf{Tamanho da propriedade}\strut
+\strut
 \end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
 \textbf{Armazenamento seguro}\strut
 \end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright
@@ -4663,7 +4648,7 @@ dos agrotóxicos, agricultores de Cerro Largo, RS, 2017.}\tabularnewline
 \midrule
 \endhead
 \begin{minipage}[t]{0.35\columnwidth}\raggedright
-\strut
+\textbf{Tamanho da propriedade}\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 Não\strut
 \end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
@@ -4853,8 +4838,8 @@ por exemplo na tabela abaixo , utilizamos o teste exato de Fisher.
 embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS,
 2017.}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.35\columnwidth}\raggedright
-\textbf{Tamanho da propriedade}\strut
+\begin{minipage}[b]{0.37\columnwidth}\raggedright
+\strut
 \end{minipage} & \begin{minipage}[b]{0.34\columnwidth}\raggedright
 \textbf{Devolução}\strut
 \end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
@@ -4863,8 +4848,8 @@ embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS,
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.35\columnwidth}\raggedright
-\textbf{Tamanho da propriedade}\strut
+\begin{minipage}[b]{0.37\columnwidth}\raggedright
+\strut
 \end{minipage} & \begin{minipage}[b]{0.34\columnwidth}\raggedright
 \textbf{Devolução}\strut
 \end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
@@ -4872,21 +4857,21 @@ embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS,
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.35\columnwidth}\raggedright
-\strut
+\begin{minipage}[t]{0.37\columnwidth}\raggedright
+\textbf{Tamanho da propriedade}\strut
 \end{minipage} & \begin{minipage}[t]{0.34\columnwidth}\raggedright
 Não\strut
 \end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
 Sim\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.35\columnwidth}\raggedright
+\begin{minipage}[t]{0.37\columnwidth}\raggedright
 Até 25 ha\strut
 \end{minipage} & \begin{minipage}[t]{0.34\columnwidth}\raggedright
 8\strut
 \end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
 59\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.35\columnwidth}\raggedright
+\begin{minipage}[t]{0.37\columnwidth}\raggedright
 26 ha ou mais\strut
 \end{minipage} & \begin{minipage}[t]{0.34\columnwidth}\raggedright
 3\strut
@@ -5064,7 +5049,7 @@ aplicar o teste de qui-quadrado. O teste adequado é McNemar.
 após a intervenção.}\tabularnewline
 \toprule
 \begin{minipage}[b]{0.35\columnwidth}\raggedright
-\textbf{Peso Antes}\strut
+\strut
 \end{minipage} & \begin{minipage}[b]{0.25\columnwidth}\raggedright
 \textbf{Peso Após}\strut
 \end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright
@@ -5074,7 +5059,7 @@ após a intervenção.}\tabularnewline
 \endfirsthead
 \toprule
 \begin{minipage}[b]{0.35\columnwidth}\raggedright
-\textbf{Peso Antes}\strut
+\strut
 \end{minipage} & \begin{minipage}[b]{0.25\columnwidth}\raggedright
 \textbf{Peso Após}\strut
 \end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright
@@ -5083,7 +5068,7 @@ após a intervenção.}\tabularnewline
 \midrule
 \endhead
 \begin{minipage}[t]{0.35\columnwidth}\raggedright
-\strut
+\textbf{Peso Antes}\strut
 \end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
 Adequado\strut
 \end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
@@ -5264,10 +5249,14 @@ X-squared = 8.1, df = 6, p-value = 0.2
 \hypertarget{reg}{%
 \chapter{Modelos de Regressão}\label{reg}}
 
-\begin{flushright}
 \emph{Iara Denise Endruweit Battisti}
 
 \emph{Erikson Kaszubowski}
+
+\begin{flushright}
+\emph{}
+
+\emph{}
 \end{flushright}
 
 Muitas vezes há a necessidade de estudar duas ou mais variáveis ao mesmo
@@ -6415,8 +6404,10 @@ Para o exemplo R:
 \hypertarget{rmark}{%
 \chapter{RMarkdown}\label{rmark}}
 
-\begin{flushright}
 \emph{Felipe Micail da Silva Smolski}
+
+\begin{flushright}
+\emph{}
 \end{flushright}
 
 \textbf{Markdown} é uma linguagem de marcação de textos utilizada para a
