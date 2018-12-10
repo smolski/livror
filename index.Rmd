@@ -1455,7 +1455,7 @@ Exemplo: Segue exemplo de um gráfico de linhas para as temperaturas registradas
 
 ```{r}
 library(readr)
-inmet <- read_delim("https://goo.gl/se71v2", 
+inmet <- read_delim("https://goo.gl/2p11WS", 
     ";", escape_double = FALSE, 
     col_types = cols(data = col_date(format = "%m/%d/%Y")), 
     trim_ws = TRUE)
@@ -3276,6 +3276,21 @@ knitr::include_graphics("rmarkchunktab2.png")
 
 Fonte: Elaborado pelo(s) autor(es).
 
+Existem diversos pacotes dentro do RStudio com a função de gerarem tabelas a partir dos dados analisados (neste caso sendo gerados dentro de chunks). Por sua vez, abaixo segue um resumo testado por este autor, em que os pacotes criam corretamente as tabelas no RMarkdown para cada saída de arquivo (HMTL, PDF, Word). Por exemplo, o pacote `kable` consegue gerar as tabelas para as três saídas de arquivos; já o pacote `xtable` não está configurado para criar a referida tabela com a saída do documento em Word.
+
+
+Table: (\#tab:tabelasrmk)Pacotes para elaboração de tabelas no RMarkdown
+
+||**HTML**|**PDF**|**Word**|
+|:----|:------:|:------:|:------:|
+|kable|ok|ok|ok|
+|pander|ok|ok|ok|
+|stargazer|ok|ok|-|
+|xtable|ok|ok|-|
+
+Fonte: Elaborado pelo(s) autor(es).
+
+
 
 Outra forma de passar as tabelas para o Word é criando-a no formato HTML e copiando para o arquivo em Word (veja em <https://cran.r-project.org/web/packages/kableExtra/vignettes/kableExtra_and_word.html>.).
 
@@ -3323,7 +3338,7 @@ Fonte: Elaborado pelo(s) autor(es).
 
 ### Terceiro passo: vinculação do modelo ao arquivo em RMarkdown
 
-Após detemrinar as alterações em todos os campos de estilos do documento modelo no Word, o pesquisador deve vincular este modelo ao documento .Rmd principal. Além de deixar salvo o modelo em Word na mesma pasta, deve-se incluir a seguinte informação no YAML mostrada na Figura  \@ref(fig:rmarkestilos2) (`reference_docx`). Lembrando que para arquivos em Open/Libre Office, deve ser inserida a opção `reference_odt` seguida do arquivo (.odt) do modelo.
+Após determinar as alterações em todos os campos de estilos do documento modelo no Word, o pesquisador deve vincular este modelo ao documento .Rmd principal. Além de deixar salvo o modelo em Word na mesma pasta, deve-se incluir a seguinte informação no YAML mostrada na Figura  \@ref(fig:rmarkestilos2) (`reference_docx`). Lembrando que para arquivos em Open/Libre Office, deve ser inserida a opção `reference_odt` seguida do arquivo (.odt) do modelo.
 
 
 ```{r rmarkestilos2, echo=FALSE, fig.cap="Vinculação do modelo"}
@@ -3341,7 +3356,7 @@ Na escrita de trabalhos acadêmicos com o RMarkdown é possível efetuar um gere
 
 O exemplo abaixo será utilizado com o formato BibLaTeX (extensão .bib). Primeiramente crie um documento .bib, que será o local onde o pesquisador armazenará as bibliografias, que serão posteriormente utilizadas. Crie um novo arquivo de texto ("File $>$ New File $>$ Text file") e depois salve-o na mesma pasta do arquivo .Rmd em que serão inseridas as citações (salve com a extensão ".bib" - exemplo: "bibliografia.bib").
 
-Dentro deste arquivo serão armazenadas as referências biliográficas, não deve-se preocupar neste momento com a ordem das referências. Como mostra a Figura \@ref(fig:rmarkbib), inserimos duas bibliografias a serem citadas posteriormente. 
+Dentro deste arquivo serão armazenadas as referências bibliográficas, não deve-se preocupar neste momento com a ordem das referências. Como mostra a Figura \@ref(fig:rmarkbib), inserimos duas bibliografias a serem citadas posteriormente. 
 
 A primeira (`@article`), demonstra que é um artigo de uma revista enquanto a segunda (`@book`) se trata de um livro. Dentro das chaves estão os dados das referências, como o título (`title`), autores (`author`) e o ano (`year`) por exemplo.
 
@@ -3370,7 +3385,7 @@ O BibLateX gerencia todos os tipos de bibliografias sendo que, como visto acima,
 
 `@phdthesis` - Tese de doutorado. **OBRIGATÓRIOS**: author, title, school, year. **OPCIONAIS**:  type, address, month, note, key.
 
-Estas configurações do BibLateX são comuns nos programas de gerenciamento de bibliografias, como por exemplo no *software* Mendeley. Os usuários deste programa tem uma facilidade na exportação para o formato do BibLateX, pois podem copiar as entradas com as informações de um trabalho e inserí-las dentro do arquivo .bib (Figura \@ref(fig:rmarkmendeley)).
+Estas configurações do BibLateX são comuns nos programas de gerenciamento de bibliografias, como por exemplo no *software* Mendeley. Os usuários deste programa tem uma facilidade na exportação para o formato do BibLateX, pois podem copiar as entradas com as informações de um trabalho e as inserir dentro do arquivo .bib (Figura \@ref(fig:rmarkmendeley)).
 
 
 ```{r rmarkmendeley, echo=FALSE, fig.cap="Utilização do Mendeley para exportação de dados de bibliografias"}

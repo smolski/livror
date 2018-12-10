@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Felipe Micail da Silva Smolski
 - Iara Denise Endruweit Battisti
-date: "2018-09-08"
+date: "2018-12-10"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -32,7 +32,7 @@ Outra questão importante é que o R possui uma comunidade ativa de desenvolvedo
 
 Outro progresso significativo na utilização do R foi a criação do *software* RStudio, a partir de 2010. Este, por sua vez, se configura em um ambiente integrado com o R e com inúmeras linguagens de marcação de texto (exemplos LaTeX, Markdown, HTML). Possui igualmente versão livre que disponibiliza ao pesquisador a execução, guarda, retomada e manipulação dos códigos de programação diretamente em seu console, bem como a administração de diretórios de trabalhos e projetos.
 
-O material aqui criado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no *software* RStudio. O sistema operacional aqui utilizado é o Windows 10.
+O material aqui criado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no *software* RStudio. O sistema operacional aqui utilizado é o Windows 10. Importante mencionar que este livro origionu-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Nº 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).
 
 Este livro está organizado da seguinte maneira: no capítulo [1](#intro) [**Primeiros Passos com o R**], busca-se instruir o pesquisador para a instalação dos programas necessários para acessar o ambiente de programação, bem como orientar sobre a usabilidade do programa em suas funções básicas de carregamento de bases de dados, criação de objetos e princípios de manipulação. 
 
@@ -1953,15 +1953,8 @@ Pede-se:
   
 
 ```r
-require(readxl)
-```
-
-```
-Carregando pacotes exigidos: readxl
-```
-
-```r
-url <- "https://goo.gl/37Fdzz"
+library(readxl)
+url <- "https://github.com/Smolski/livror/raw/master/pesquisa_dados.xlsx"
 destfile <- "pesquisa_dados.xlsx"
 curl::curl_download(url, destfile)
 pesquisa_dados <- read_excel(destfile)
@@ -2253,7 +2246,14 @@ hist(as.numeric(`Renda_h`))
 
 
 ```r
-hist(as.numeric(`Renda_h`), breaks=5)
+hist(as.numeric(`Renda_h`), 
+     breaks=5, 
+     labels=TRUE, 
+     ylim=c(0,200), 
+     xlab = 'Renda',
+     ylab = 'Frequência',
+     main = 'Histograma da Renda',
+     col = '#BBDEFB')
 ```
 
 \begin{figure}[H]
@@ -2264,7 +2264,31 @@ hist(as.numeric(`Renda_h`), breaks=5)
 
 \caption{Histograma com a variável Renda h com breaks=5}(\#fig:unnamed-chunk-74)
 \end{figure}
-Use o argumento `main=NULL` para remover o título.
+O comando `ylim` determina os limites do eixo y a serem mostrados; `xlab` e `ylab` determinam o nome das variáveis dos eixos x e y; `main` determina o nome do título e `col` determina a cor do gráfico. Use o argumento `main=NULL` para remover o título.
+
+Inserindo as opções `$counts` e `$breaks` retomamos os valores da contagem dos dados e dos intervalos do histograma:
+
+
+```r
+hist(as.numeric(`Renda_h`), breaks=5)$counts
+```
+
+```
+[1] 106 167  62  11   2
+```
+
+```r
+hist(as.numeric(`Renda_h`), breaks=5)$breaks
+```
+
+
+
+\begin{center}\includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-75-1} \end{center}
+
+```
+[1]  0  5 10 15 20 25
+```
+
 
 ### Boxplot ou diagrama em caixas
 
@@ -2286,11 +2310,11 @@ boxplot(Idade,horizontal = T)
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-75-1} 
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-76-1} 
 
 }
 
-\caption{Boxplot com a variável Idade}(\#fig:unnamed-chunk-75)
+\caption{Boxplot com a variável Idade}(\#fig:unnamed-chunk-76)
 \end{figure}
 
 
@@ -2396,7 +2420,7 @@ Ex. Considere os dados que descrevem os valores do número de empresas fiscaliza
 <!--
 \begin{table}
 
-\caption{(\#tab:unnamed-chunk-77)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010}
+\caption{(\#tab:unnamed-chunk-78)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010}
 \centering
 \begin{tabular}[t]{r|l}
 \hline
@@ -2482,11 +2506,11 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-78-1} 
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-79-1} 
 
 }
 
-\caption{Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010}(\#fig:unnamed-chunk-78)
+\caption{Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010}(\#fig:unnamed-chunk-79)
 \end{figure}
 
 onde, no argumento `ylim`, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
@@ -2508,7 +2532,7 @@ Exemplo: Segue exemplo de um gráfico de linhas para as temperaturas registradas
 
 ```r
 library(readr)
-inmet <- read_delim("https://goo.gl/se71v2", 
+inmet <- read_delim("https://goo.gl/2p11WS", 
     ";", escape_double = FALSE, 
     col_types = cols(data = col_date(format = "%m/%d/%Y")), 
     trim_ws = TRUE)
@@ -2518,7 +2542,7 @@ head(inmet)
 ```
 # A tibble: 6 x 6
   codigo_estacao data        hora temp_inst temp_max temp_min
-  <chr>          <date>     <int>     <dbl>    <dbl>    <dbl>
+  <chr>          <date>     <dbl>     <dbl>    <dbl>    <dbl>
 1 A852           2018-04-11     0      26.2     27.1     26.2
 2 A852           2018-04-11     1      26       26.2     26  
 3 A852           2018-04-11     2      25.5     26.1     25.5
@@ -2547,11 +2571,11 @@ legend(0,40,c("temp_inst","temp_max","temp_min"),
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-80-1} 
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-81-1} 
 
 }
 
-\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}(\#fig:unnamed-chunk-80)
+\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}(\#fig:unnamed-chunk-81)
 \end{figure}
 
 ## Estatísticas Descritivas
@@ -3364,7 +3388,7 @@ Podemos comparar duas médias de duas amostras dependentes, também chamadas de 
 
 \begin{table}
 
-\caption{(\#tab:unnamed-chunk-108)Amostras dependentes}
+\caption{(\#tab:unnamed-chunk-109)Amostras dependentes}
 \centering
 \begin{tabular}[t]{l|r|r|r|r|r|r}
 \hline
@@ -3414,7 +3438,7 @@ Conclusão: Não rejeita-se H0 e conclui-se que a média de peso antes do treina
 
 \begin{table}
 
-\caption{(\#tab:unnamed-chunk-110)Amostras dependentes - caso 2}
+\caption{(\#tab:unnamed-chunk-111)Amostras dependentes - caso 2}
 \centering
 \begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
 \hline
@@ -3467,7 +3491,7 @@ Primeiramente precisamos saber se existe homogeneidade de variâncias populacion
 
 \begin{table}
 
-\caption{(\#tab:unnamed-chunk-112)Comparação de dois tipos diferentes de tecidos}
+\caption{(\#tab:unnamed-chunk-113)Comparação de dois tipos diferentes de tecidos}
 \centering
 \begin{tabular}[t]{l|l|l|l|l|l|l|l}
 \hline
@@ -3883,7 +3907,7 @@ Desaprovado & 18 & 7\\
 <!--
 \begin{table}
 
-\caption{(\#tab:unnamed-chunk-123)Situação do peso de cobaias do estudo antes e após a intervenção.}
+\caption{(\#tab:unnamed-chunk-124)Situação do peso de cobaias do estudo antes e após a intervenção.}
 \centering
 \begin{tabular}[t]{l|l|l}
 \hline
@@ -4130,11 +4154,11 @@ plot(tempo,nota)
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-128-1} 
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-129-1} 
 
 }
 
-\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}(\#fig:unnamed-chunk-128)
+\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}(\#fig:unnamed-chunk-129)
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4465,11 +4489,11 @@ abline(coef(regressao))
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-132-1} 
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-133-1} 
 
 }
 
-\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}(\#fig:unnamed-chunk-132)
+\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}(\#fig:unnamed-chunk-133)
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4651,11 +4675,11 @@ lines(density(regressao$residuals))
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-135-1} 
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-136-1} 
 
 }
 
-\caption{Histograma de distribuição da probabilidade para os resíduos}(\#fig:unnamed-chunk-135)
+\caption{Histograma de distribuição da probabilidade para os resíduos}(\#fig:unnamed-chunk-136)
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -5247,6 +5271,21 @@ Além disso, o pacote `stargazer` é extremamente útil para geração de tabela
 
 Fonte: Elaborado pelo(s) autor(es).
 
+Existem diversos pacotes dentro do RStudio com a função de gerarem tabelas a partir dos dados analisados (neste caso sendo gerados dentro de chunks). Por sua vez, abaixo segue um resumo testado por este autor, em que os pacotes criam corretamente as tabelas no RMarkdown para cada saída de arquivo (HMTL, PDF, Word). Por exemplo, o pacote `kable` consegue gerar as tabelas para as três saídas de arquivos; já o pacote `xtable` não está configurado para criar a referida tabela com a saída do documento em Word.
+
+
+Table: (\#tab:tabelasrmk)Pacotes para elaboração de tabelas no RMarkdown
+
+||**HTML**|**PDF**|**Word**|
+|:----|:------:|:------:|:------:|
+|kable|ok|ok|ok|
+|pander|ok|ok|ok|
+|stargazer|ok|ok|-|
+|xtable|ok|ok|-|
+
+Fonte: Elaborado pelo(s) autor(es).
+
+
 
 Outra forma de passar as tabelas para o Word é criando-a no formato HTML e copiando para o arquivo em Word (veja em <https://cran.r-project.org/web/packages/kableExtra/vignettes/kableExtra_and_word.html>.).
 
@@ -5309,7 +5348,7 @@ Fonte: Elaborado pelo(s) autor(es).
 
 ### Terceiro passo: vinculação do modelo ao arquivo em RMarkdown
 
-Após detemrinar as alterações em todos os campos de estilos do documento modelo no Word, o pesquisador deve vincular este modelo ao documento .Rmd principal. Além de deixar salvo o modelo em Word na mesma pasta, deve-se incluir a seguinte informação no YAML mostrada na Figura  \@ref(fig:rmarkestilos2) (`reference_docx`). Lembrando que para arquivos em Open/Libre Office, deve ser inserida a opção `reference_odt` seguida do arquivo (.odt) do modelo.
+Após determinar as alterações em todos os campos de estilos do documento modelo no Word, o pesquisador deve vincular este modelo ao documento .Rmd principal. Além de deixar salvo o modelo em Word na mesma pasta, deve-se incluir a seguinte informação no YAML mostrada na Figura  \@ref(fig:rmarkestilos2) (`reference_docx`). Lembrando que para arquivos em Open/Libre Office, deve ser inserida a opção `reference_odt` seguida do arquivo (.odt) do modelo.
 
 
 \begin{figure}[H]
@@ -5332,7 +5371,7 @@ Na escrita de trabalhos acadêmicos com o RMarkdown é possível efetuar um gere
 
 O exemplo abaixo será utilizado com o formato BibLaTeX (extensão .bib). Primeiramente crie um documento .bib, que será o local onde o pesquisador armazenará as bibliografias, que serão posteriormente utilizadas. Crie um novo arquivo de texto ("File $>$ New File $>$ Text file") e depois salve-o na mesma pasta do arquivo .Rmd em que serão inseridas as citações (salve com a extensão ".bib" - exemplo: "bibliografia.bib").
 
-Dentro deste arquivo serão armazenadas as referências biliográficas, não deve-se preocupar neste momento com a ordem das referências. Como mostra a Figura \@ref(fig:rmarkbib), inserimos duas bibliografias a serem citadas posteriormente. 
+Dentro deste arquivo serão armazenadas as referências bibliográficas, não deve-se preocupar neste momento com a ordem das referências. Como mostra a Figura \@ref(fig:rmarkbib), inserimos duas bibliografias a serem citadas posteriormente. 
 
 A primeira (`@article`), demonstra que é um artigo de uma revista enquanto a segunda (`@book`) se trata de um livro. Dentro das chaves estão os dados das referências, como o título (`title`), autores (`author`) e o ano (`year`) por exemplo.
 
@@ -5366,7 +5405,7 @@ O BibLateX gerencia todos os tipos de bibliografias sendo que, como visto acima,
 
 `@phdthesis` - Tese de doutorado. **OBRIGATÓRIOS**: author, title, school, year. **OPCIONAIS**:  type, address, month, note, key.
 
-Estas configurações do BibLateX são comuns nos programas de gerenciamento de bibliografias, como por exemplo no *software* Mendeley. Os usuários deste programa tem uma facilidade na exportação para o formato do BibLateX, pois podem copiar as entradas com as informações de um trabalho e inserí-las dentro do arquivo .bib (Figura \@ref(fig:rmarkmendeley)).
+Estas configurações do BibLateX são comuns nos programas de gerenciamento de bibliografias, como por exemplo no *software* Mendeley. Os usuários deste programa tem uma facilidade na exportação para o formato do BibLateX, pois podem copiar as entradas com as informações de um trabalho e as inserir dentro do arquivo .bib (Figura \@ref(fig:rmarkmendeley)).
 
 
 \begin{figure}[H]
