@@ -1,0 +1,2 @@
+"0","# União de um banco de dados (existencia de uma váriavel em comum)"
+"0","informacoes=merge(informacoes.2,informacoes.3, by=""estudantes"")"

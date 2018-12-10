@@ -1,0 +1,4 @@
+"0","# Classificar informações usando o código binário"
+"0","informacoes$binario= ifelse(informacoes$classificacao "
+"0","                            == 'peso normal', 1, 0) "
+"0","informacoes"

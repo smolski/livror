@@ -1,23 +1,5 @@
 "0","lista.1= list(matriz=matrix(c(1,2,1,5,7,9), nrow=3, ncol=2),"
 "0","              vetor=1:6)"
-"2","Warning messages:
-"
-"2","1: "
-"2","In readLines(input, encoding = ""UTF-8"") :"
-"2","
- "
-"2"," incomplete final line found on 'D:/Github/livror/_output.yml'
-"
-"2","2: "
-"2","In readLines(input, encoding = ""UTF-8"") :"
-"2","
- "
-"2"," incomplete final line found on '_output.yml'
-"
-"2","3: "
-"2","In readLines(con) :"
-"2"," incomplete final line found on '_bookdown.yml'
-"
 "0","lista.2= list(nomes=c(""Marcelo"", ""Fábio"", ""Felipe""), "
 "0","              idade=c(25, 34, 26))"
 "0","c(lista.1,lista.2)"

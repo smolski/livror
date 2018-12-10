@@ -1,0 +1,8 @@
+"0","hist(as.numeric(`Renda_h`), "
+"0","     breaks=5, "
+"0","     labels=TRUE, "
+"0","     ylim=c(0,200), "
+"0","     xlab = 'Renda',"
+"0","     ylab = 'Frequência',"
+"0","     main = 'Histograma da Renda',"
+"0","     col = '#BBDEFB')"
