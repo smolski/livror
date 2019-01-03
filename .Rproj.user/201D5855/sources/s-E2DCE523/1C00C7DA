@@ -4,17 +4,17 @@
     "created" : 1545591426980.000,
     "dirty" : false,
     "encoding" : "UTF-8",
-    "folds" : "1615|31|2073|0|\n",
+    "folds" : "1616|31|2074|0|\n",
     "hash" : "0",
     "id" : "1C00C7DA",
-    "lastKnownWriteTime" : 1546474902,
-    "last_content_update" : 1546474902533,
+    "lastKnownWriteTime" : 1546476311,
+    "last_content_update" : 1546476311229,
     "path" : "D:/Github/livror/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "53,103",
+        "cursorPosition" : "2420,0",
         "docOutlineVisible" : "1",
-        "scrollLine" : "50"
+        "scrollLine" : "2408"
     },
     "relative_order" : 1,
     "source_on_save" : false,

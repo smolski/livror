@@ -66,9 +66,9 @@ O R é um ambiente voltado para análise de dados com o uso de uma linguagem de 
 ## Download e instalação do R e Rstudio
 
 
-**R**: <http://www.r-project.org>. Clique em Download (CRAN) - escolha o link de um repositório - clique no link do sistema operacional (Linux, Mac ou Windows) - clique em *install R for de first time - Download*. 
+**R**: <http://www.r-project.org>. Clique em Download (CRAN) - escolha o link de um repositório - clique no link do sistema operacional (Linux, Mac ou Windows) - clique em *install R for de first time - Download* [@rcore]. 
 
-**RStudio**: <http://www.rstudio.com/products/rstudio/download>. Em RStudio Desktop, escolha a versão *free*, seguidas da opção do sistema operacional do usuário.
+**RStudio**: <http://www.rstudio.com/products/rstudio/download>. Em RStudio Desktop, escolha a versão *free*, seguidas da opção do sistema operacional do usuário [@teamrstudio].
 
 Lembrando que:
 
@@ -1344,6 +1344,7 @@ Acima de 40 & Obesidade III (mórbida)\\
 \hline
 \end{tabular}
 \end{table}
+Fonte: Adaptado de @brasil2014.
 
 No entanto, o IMC possui várias classificações de acordo com o seu resultado (Tabela \@ref(tab:imct)), sendo que, por exemplo, resultados abaixo de 17 informam que o indivíduo se encontra como Muito abaixo do peso, e acima de 40, se encontra em Obesidade III. Para efetuar a classificação desta maneira utilizando o comando `ifelse`, ou seja, com mais de uma condição, pode ser efetuada a estruturação com a aglutinação do comando:
 
@@ -4068,7 +4069,7 @@ O coeficiente de correlação linear de Pearson (Karl Pearson 1857-1936) mede o 
 
 
 $$
-r = p_{xy} = \frac{{}\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
+r = p_{xy} = \frac{\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
 {\sqrt{\sum_{i=1}^{n} (x_i - \overline{x})^2(y_i - \overline{y})^2}}
 $$
 

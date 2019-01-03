@@ -271,8 +271,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>O R é um ambiente voltado para análise de dados com o uso de uma linguagem de programação, frente a isso um conhecimento prévio dos príncipios de programação facilita a compreensão da condução das análises aplicadas no software. Entretanto, não é pré-requisito. Neste capítulo abordaremos os primeiros passos para o emprego da linguagem de programação R utilizando uma interface “amigável” - o software RStudio. Além disso, serão apresentados os comandos básicos para a manipulação de dados dentro do RStudio.</p>
 <div id="download-e-instalacao-do-r-e-rstudio" class="section level2">
 <h2><span class="header-section-number">1.1</span> Download e instalação do R e Rstudio</h2>
-<p><strong>R</strong>: <a href="http://www.r-project.org" class="uri">http://www.r-project.org</a>. Clique em Download (CRAN) - escolha o link de um repositório - clique no link do sistema operacional (Linux, Mac ou Windows) - clique em <em>install R for de first time - Download</em>.</p>
-<p><strong>RStudio</strong>: <a href="http://www.rstudio.com/products/rstudio/download" class="uri">http://www.rstudio.com/products/rstudio/download</a>. Em RStudio Desktop, escolha a versão <em>free</em>, seguidas da opção do sistema operacional do usuário.</p>
+<p><strong>R</strong>: <a href="http://www.r-project.org" class="uri">http://www.r-project.org</a>. Clique em Download (CRAN) - escolha o link de um repositório - clique no link do sistema operacional (Linux, Mac ou Windows) - clique em <em>install R for de first time - Download</em> <span class="citation">(R Core Team <a href="#ref-rcore">2018</a><a href="#ref-rcore">a</a>)</span>.</p>
+<p><strong>RStudio</strong>: <a href="http://www.rstudio.com/products/rstudio/download" class="uri">http://www.rstudio.com/products/rstudio/download</a>. Em RStudio Desktop, escolha a versão <em>free</em>, seguidas da opção do sistema operacional do usuário <span class="citation">(R Core Team <a href="#ref-teamrstudio">2018</a><a href="#ref-teamrstudio">b</a>)</span>.</p>
 <p>Lembrando que:</p>
 <ul>
 <li>R é o software;</li>
@@ -976,6 +976,10 @@ informacoes</code></pre>
 <td align="left">Acima de 40</td>
 <td align="left">Obesidade III (mórbida)</td>
 </tr>
+<tr class="even">
+<td align="left">Fonte: Adaptado de <span class="citation">(<span class="citeproc-not-found" data-reference-id="b"><strong>???</strong></span>)</span></td>
+<td align="left">rasil2014.</td>
+</tr>
 </tbody>
 </table>
 <p>No entanto, o IMC possui várias classificações de acordo com o seu resultado (Tabela <a href="intro.html#tab:imct">1.1</a>), sendo que, por exemplo, resultados abaixo de 17 informam que o indivíduo se encontra como Muito abaixo do peso, e acima de 40, se encontra em Obesidade III. Para efetuar a classificação desta maneira utilizando o comando <code>ifelse</code>, ou seja, com mais de uma condição, pode ser efetuada a estruturação com a aglutinação do comando:</p>
@@ -1241,6 +1245,15 @@ Neste caso, irão utilizar o comando da seguinte forma >Nome_do_banco_de_dados$N
 <li><p>25 <span class="math inline">\(&gt;\)</span> vendas = “Ótimo”</p></li>
 </ul>
 <p><strong>2.5</strong> Renomeie a coluna “vendas mensais” para “vendas diárias”.</p>
+</div>
+</div>
+<h3>Referências</h3>
+<div id="refs" class="references">
+<div id="ref-rcore">
+<p>R Core Team. 2018a. «R: A Language and Environment for Statistical Computing». Vienna, Áustria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
+</div>
+<div id="ref-teamrstudio">
+<p>R Core Team. 2018b. «RStudio: integrated development for R». <a href="http://www.rstudio.com">http://www.rstudio.com</a>.</p>
 </div>
 </div>
             </section>
