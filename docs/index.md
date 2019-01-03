@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Felipe Micail da Silva Smolski
 - Iara Denise Endruweit Battisti
-date: "2019-01-02"
+date: "2019-01-03"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -1818,7 +1818,8 @@ Time differences in days
 
 ## Exercícios
 
-**1.**	Baixe o arquivo "arvores" que se encontra no endereço <https://smolski.github.io/softwarelivrer/atividades>. Este é um banco de dados com informações cedido pela professora Tatiane Chassot. Abra o arquivo no Rstudio tomando os cuidados necessários (importar no formato correto, prestar atenção nas vírgulas e nomes...). Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.
+
+**1.**	Baixe o arquivo "arvores" que se encontra no endereço <https://smolski.github.io/softwarelivrer/livro.html>. Este é um banco de dados com informações cedido pela professora Tatiane Chassot. Abra o arquivo no Rstudio tomando os cuidados necessários (importar no formato correto, prestar atenção nas vírgulas e nomes...). Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.
 
 **1.1.**	Qual é a espécie de árvore que possui o maior e menor diâmetro?  E quais são estes valores de diâmetro?
 
@@ -1841,7 +1842,7 @@ Pequeno porte = árvores com altura inferior a 10 metros.
 Grande porte = árvores com altura superior a 10 metros. 
 
 
-**2.**	Baixe o arquivo "bancodedados1" que se encontra no endereço <https://smolski.github.io/softwarelivrer/atividades>. Este é um banco de dados com informações fictícias que usaremos a fim de aprendizado. Abra o arquivo no Rstudio tomando os cuidados necessários. Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.
+**2.**	Baixe o arquivo "bancodedados1" que se encontra no endereço <https://smolski.github.io/softwarelivrer/livro.html>. Este é um banco de dados com informações fictícias que usaremos a fim de aprendizado. Abra o arquivo no Rstudio tomando os cuidados necessários. Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.
 
 **2.1.** Qual é o vendedor com mais sucesso de vendas?  E o vendedor com menor número de vendas?
 
@@ -1858,6 +1859,7 @@ Grande porte = árvores com altura superior a 10 metros.
 - 25 $>$ vendas = "Ótimo"
 
 **2.5** Renomeie a coluna "vendas mensais" para "vendas diárias".
+
 
 # Estatística Descritiva{#desc}
 
@@ -4833,6 +4835,10 @@ predict(regressao, x0, interval="prediction")
 1 7.432 6.189 8.675
 ```
 
+## Exercícios
+
+**1.** No site do livro de extensão (https://smolski.github.io/softwarelivrer/livro.html) está disponível uma planilha de dados com o nome "peixes1", na primeira coluna consta a quantidade de ovos (m$^3$) e na segunda coluna consta a quantidade de oxigênio no rio. O objetivo da pesquisa é comparar alguns ambientes do rio sobre a desova e o crescimento das larvas de peixes.  Analisar a relação da quantidade de ovos com a quantidade de oxigênio no rio. Para isso utilize coeficiente de correlação linear e regressão linear simples.
+
 # RMarkdown{#rmark}
 
 *Felipe Micail da Silva Smolski*
@@ -4840,8 +4846,6 @@ predict(regressao, x0, interval="prediction")
 \begin{flushright}
 \emph{}
 \end{flushright}
-
-
 
 
 **Markdown** é uma linguagem de marcação de textos utilizada para a criação de diversos documentos, incluindo artigos, livros e apresentações. A grande inovação do **RMarkdown** no RStudio neste sentido é a utilização desta linguagem por meio do pacote `rmarkdown` (arquivos .Rmd) para integrar a criação de documentos com a análise e manipulação de dados em um único documento (Figura \@ref(fig:rmark)). Desta forma, é possível efetuar  pesquisas científicas que podem ser reproduzidas de forma muito mais fácil.
@@ -5393,7 +5397,9 @@ Segue o resultado do arquivo final:
 
 Fonte: Elaborado pelo(s) autor(es).
 
+## Exercícios
 
+**1.** Ao final deste livro, você aprendeu a linguagem de programação em R no console RStudio, passando posteriormente para a aprendizagem dos comandos para efetuar estatísticas descritivas, análises com estatística inferencial, teste de qui-quadrado e chegando ao modelo de regressão simples. Desta forma, escolha algum dos exercícios que constam nos capítulos anteriores e com seu código de programação crie um arquivo em RMarkdown (.rmd, como aprendido no presente capítulo) com todos os passos efetuados na análise e seus resultados. Crie um documento dinâmico testando os formatos de saída HTML, Word e PDF.
 
 
 
