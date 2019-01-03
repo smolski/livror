@@ -1,0 +1,5 @@
+"0","length(subset(Sexo,Sexo==""Feminino"" & `Peso_(Kg)`<60))"
+"1","[1]"
+"1"," 94"
+"1","
+"

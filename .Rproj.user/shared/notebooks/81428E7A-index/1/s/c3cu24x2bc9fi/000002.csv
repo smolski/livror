@@ -1,0 +1,6 @@
+"0","require(kableExtra)"
+"0","cob=data.frame(Cobaia=c(""Antes"",""Depois""))"
+"0","cobaiaantes=c(635,704,662,560,603,745,698,575,633,669)"
+"0","cobaiadepois=c(640,712,681,558,610,740,707,585,635,682)"
+"0","amostdep2=cbind(cob,rbind(cobaiaantes,cobaiadepois))"
+"0","kable(amostdep2, caption = 'Amostras dependentes - caso 2',row.names = FALSE)"

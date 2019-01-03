@@ -26,7 +26,7 @@
 <meta name="author" content="Iara Denise Endruweit Battisti">
 
 
-<meta name="date" content="2018-12-10">
+<meta name="date" content="2019-01-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,7 +49,6 @@
 
 
 
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112034801-4"></script>
 <script>
@@ -62,41 +61,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -112,11 +137,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Livro R</a></li>
+<li><a href="./">UFFS - Cerro Largo</a></li>
+<img src="logo1.png" alt="R" align="midle">
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Apresentação</a></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Primeiros Passos com o R</a><ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#download-e-instalacao-do-r-e-rstudio"><i class="fa fa-check"></i><b>1.1</b> Download e instalação do R e Rstudio</a></li>
 <li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#paineis"><i class="fa fa-check"></i><b>1.2</b> Painéis</a></li>
 <li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#help"><i class="fa fa-check"></i><b>1.3</b> Help</a></li>
@@ -241,7 +267,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Capítulo 5</span> Modelos de Regressão</h1>
 <p><em>Iara Denise Endruweit Battisti</em></p>
 <p><em>Erikson Kaszubowski</em></p>
-
 <p>Muitas vezes há a necessidade de estudar duas ou mais variáveis ao mesmo tempo com o objetivo de predizer uma variável em função da(s) outra(s). Por exemplo, verificar se sólidos removidos de um material relaciona-se com o tempo de secagem e qual é a forma dessa relação. Outros exemplos: relação entre tempo de estudo e desempenho a uma avaliação; relação entre investimento em comunicação e vendas; entre outros.</p>
 <p>A análise de correlação permite verificar a relação entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Estudaremos os modelos de regressão linear na qual a variáveis resposta (<span class="math inline">\(Y\)</span>) é quantitativa e as variáveis preditoras (<span class="math inline">\(X_i\)</span>) são quantitativas ou qualitativas.</p>
 <div id="correlacao-linear" class="section level2">
@@ -251,7 +276,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="diagrama-de-dispersao" class="section level2">
 <h2><span class="header-section-number">5.2</span> Diagrama de dispersão</h2>
 <p>É um gráfico para verificar a existência de relação entre as variáveis X e Y. É composto por pontos, os quais correspondem aos pares de valores (<span class="math inline">\(xi, y_i\)</span>), sendo a variável X representada no eixo horizontal e a variável Y representada no eixo vertical.</p>
-<p>O diagrama de disperção fornece uma visualização gráfica do comportamento conjunto das duas variávei em estudo. Na Figura <a href="reg.html#fig:diag">5.1</a> a percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variaveis crescem conjuntamente, já na Figura <a href="reg.html#fig:diag">5.1</a>b percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura <a href="reg.html#fig:diag">5.1</a>c informa a ausência de relação entre as duas variáveis e, a Figura <a href="reg.html#fig:diag">5.1</a>d mostra uma relação não linear, a qual não será objeto de estudo nesta publicação.</p>
+<p>O diagrama de dispersão fornece uma visualização gráfica do comportamento conjunto das duas variávei em estudo. Na Figura <a href="reg.html#fig:diag">5.1</a>a percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variáveis crescem conjuntamente. Já na Figura <a href="reg.html#fig:diag">5.1</a>b percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura <a href="reg.html#fig:diag">5.1</a>c informa a ausência de relação entre as duas variáveis e, a Figura <a href="reg.html#fig:diag">5.1</a>d mostra uma relação não linear, a qual não será objeto de estudo nesta publicação.</p>
 <div class="figure" style="text-align: center"><span id="fig:diag"></span>
 <img src="correlacao1.png" alt="Diagramas de Dispersão" width="80%" />
 <p class="caption">
@@ -260,10 +285,11 @@ Figura 5.1: Diagramas de Dispersão
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p><strong>Exemplo</strong>: Suponha que 15 alunos foram selecionados aleatoriamente na turma de Estatística, sendo registrado o tempo de estudo e nota da atividade avaliativa. O objetivo da pesquisa é verificar se existe relação entre tempo de estudo e nota.</p>
-<table style="width:93%;">
+<table style="width:97%;">
 <caption><span id="tab:reg1">Tabela 5.1: </span>Relação entre o tempo de estudo e a nota.</caption>
 <colgroup>
 <col width="15%" />
+<col width="5%" />
 <col width="5%" />
 <col width="5%" />
 <col width="5%" />
@@ -296,6 +322,7 @@ Figura 5.1: Diagramas de Dispersão
 <th>6,5</th>
 <th>7,7</th>
 <th>7,5</th>
+<th>5,8</th>
 </tr>
 </thead>
 <tbody>
@@ -314,6 +341,7 @@ Figura 5.1: Diagramas de Dispersão
 <td>7,8</td>
 <td>8,0</td>
 <td>9,1</td>
+<td>9,5</td>
 <td>8,0</td>
 </tr>
 </tbody>
@@ -321,12 +349,12 @@ Figura 5.1: Diagramas de Dispersão
 <p>Fonte: Dados simulados.</p>
 <p>Sintaxe no software R:</p>
 <p><code>plot(x,y)</code></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tempo=<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="fl">5.5</span>,<span class="dv">5</span>,<span class="fl">6.8</span>,<span class="fl">6.5</span>,<span class="fl">3.5</span>,<span class="fl">4.5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="fl">5.4</span>,<span class="fl">6.5</span>,<span class="fl">7.7</span>,<span class="fl">7.5</span>,<span class="fl">5.8</span>)
-nota=<span class="kw">c</span>(<span class="fl">5.5</span>,<span class="fl">7.5</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="fl">8.1</span>,<span class="fl">8.6</span>,<span class="fl">4.7</span>,<span class="fl">7.5</span>,<span class="fl">9.5</span>,<span class="fl">9.5</span>,<span class="fl">7.8</span>,<span class="dv">8</span>,<span class="fl">9.1</span>,<span class="fl">9.5</span>,<span class="dv">8</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">tempo=<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="fl">5.5</span>,<span class="dv">5</span>,<span class="fl">6.8</span>,<span class="fl">6.5</span>,<span class="fl">3.5</span>,<span class="fl">4.5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="fl">5.4</span>,<span class="fl">6.5</span>,<span class="fl">7.7</span>,<span class="fl">7.5</span>,<span class="fl">5.8</span>)
+nota=<span class="kw">c</span>(<span class="fl">5.5</span>,<span class="fl">7.5</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="fl">8.1</span>,<span class="fl">8.6</span>,<span class="fl">4.7</span>,<span class="fl">7.5</span>,<span class="fl">9.5</span>,<span class="fl">9.5</span>,<span class="fl">7.8</span>,<span class="dv">8</span>,<span class="fl">9.1</span>,<span class="fl">9.5</span>,<span class="dv">8</span>)</code></pre>
 <p>O diagrama de dispersão do exemplo está representado abaixo.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(tempo,nota)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-129"></span>
-<img src="index_files/figure-html/unnamed-chunk-129-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="80%" />
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(tempo,nota)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-128"></span>
+<img src="index_files/figure-html/unnamed-chunk-128-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="80%" />
 <p class="caption">
 Figura 5.2: Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo
 </p>
@@ -337,25 +365,26 @@ Figura 5.2: Diagrama de dispersão da nota em relação ao tempo de estudo dos p
 <h2><span class="header-section-number">5.3</span> Coeficiente de Correlação Linear de Pearson</h2>
 <p>O coeficiente de correlação linear de Pearson (Karl Pearson 1857-1936) mede o grau de relacionamento linear entre os valores pareados <span class="math inline">\(x_i\)</span> e <span class="math inline">\(y_i\)</span> em uma amostra. O coeficiente linear de Pearson é obtido da seguinte forma:</p>
 <p><span class="math display">\[
-r=\frac{n\sum xy-(\sum x)(\sum y)}{\sqrt{n(\sum x^2)-(\sum x)^2} \sqrt{(\sum  y^2)-(\sum y)^2}}
+r = p_{xy} = \frac{{}\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
+{\sqrt{\sum_{i=1}^{n} (x_i - \overline{x})^2(y_i - \overline{y})^2}}
 \]</span></p>
 <p>em que:</p>
 <ul>
-<li>n = número de pares na amostra</li>
+<li>n: número de pares na amostra</li>
 <li>x: valores da variável x</li>
 <li>y: valores da variável y</li>
 </ul>
-<p>O coeficiente de correlação linear (r) é uma estatística amostral, representando a magnitude da relação entre duas variáveis na amostra. O parâmetro populacional é representado por <span class="math inline">\(\rho\)</span>. O coeficiente de correlação linear assume valores entre -1 e +1, inclusive. Se o valor de r está próximo de 0, conclui-se que não há correlação linear entre as variáveis X e Y. Seo valor de r está próximo de -1 ou +1, conclui-se pela existência de correlação linear significativa entre as variáveis X e Y, sendo que o sinal indica uma relação linear positiva (direta) ou negativa (inversa).</p>
+<p>O coeficiente de correlação linear (r) é uma estatística amostral, representando a magnitude da relação entre duas variáveis na amostra. O parâmetro populacional é representado por <span class="math inline">\(\rho\)</span>. O coeficiente de correlação linear assume valores entre -1 e +1, inclusive. Se o valor de r está próximo de 0, conclui-se que não há correlação linear entre as variáveis X e Y. Se o valor de r está próximo de -1 ou +1, conclui-se pela existência de correlação linear significativa entre as variáveis X e Y, sendo que o sinal indica uma relação linear positiva (direta) ou negativa (inversa).</p>
 <p>Sintaxe no software R:</p>
 <p><code>cor(x,y)</code></p>
 <p>Obs: x e y são numéricos.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(tempo,nota)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(tempo,nota)</code></pre>
 <pre><code>[1] 0.9224</code></pre>
 </div>
 <div id="modelo-de-regressao" class="section level2">
 <h2><span class="header-section-number">5.4</span> Modelo de Regressão</h2>
 <p>O estudo de regressão refere-se aos casos em que se pretende estabelecer uma relação entre uma variável Y considerada dependente (variável resposta ou desfecho) e uma ou mais variáveis <span class="math inline">\(x_1, x_2,\cdots, x_k\)</span> (variáveis explicativas ou preditoras) consideradas independentes.</p>
-<p>O objetivo da análise de regressão é ajustar uma equação que permita explicar o comportamento da variável resposta de maneira que o valor previsto possa estar próximo do que seria observado. A forma do modelo de regressão depende da relação entre as variáveis, expressa visualmente pelo diagrama de dispersão, conforme Figura <a href="reg.html#fig:diag">5.1</a>.</p>
+<p>O objetivo da análise de regressão é ajustar uma equação que permita explicar o comportamento da variável resposta de maneira que o valor previsto possa estar próximo do que seria observado. A forma do modelo de regressão depende da relação entre as variáveis, expressa visualmente pelo diagrama de dispersão, conforme exemplificado na Figura <a href="reg.html#fig:diag">5.1</a>.</p>
 <p>A análise de regressão é uma técnica muito utilizada em variáveis quantitativas, como por exemplo:</p>
 <ul>
 <li><p>Vendas em função do investimento em comunicação;</p></li>
@@ -372,18 +401,25 @@ Figura 5.3: Variação explicada e não explicada na análise de regressão
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>Observa-se na Figura <a href="reg.html#fig:regress">5.3</a>, uma identidade na regressão, conforme a seguinte expressão:</p>
-<div class="figure" style="text-align: center"><span id="fig:regress2"></span>
+<!--
+<div class="figure" style="text-align: center">
 <img src="regress2.png" alt="Identidade da Regressão" width="80%" />
-<p class="caption">
-Figura 5.4: Identidade da Regressão
-</p>
+<p class="caption">(\#fig:regress2)Identidade da Regressão</p>
 </div>
-<p>Fonte: Elaborado pelo(s) autor(es).</p>
+Fonte: Elaborado pelo(s) autor(es).
+-->
+<p><span class="math display">\[
+\begin{matrix}
+\sum (y_i-\overline{y}) ^{2} = \sum (\hat{y}_i-\overline{y})^2 + \sum (y_i-\hat{y}_i)^2 \\
+\\
+\text{SQTotal = SQRegressão + SQResíduo}
+\end{matrix}
+\]</span></p>
 <p>Assim, a partir da expressão apresentada que o modelo de regressão será mais adequado na medida em que a proporção de “Soma de Quadrados de Regressão” é mais alta em relação à “Soma de Quadrado Total” do que a “Soma de Quadrado do Resíduo”.</p>
 </div>
 <div id="modelo-de-regressao-linear-simples" class="section level2">
 <h2><span class="header-section-number">5.5</span> Modelo de Regressão Linear Simples</h2>
-<p>O modelo de regressão linear simples é usado quando a resposta da variável dependente se expressa de forma linear (Figura <a href="reg.html#fig:regress">5.3</a> e neste caso com apenas uma variável explicativa, expresso da seguinte maneira <span class="citation">(Hoffmann e others <a href="#ref-hoffmann1998">1998</a>)</span>:</p>
+<p>O modelo de regressão linear simples é usado quando a resposta da variável dependente se expressa de forma linear (Figura <a href="reg.html#fig:regress">5.3</a> e neste caso com apenas uma variável explicativa, expresso da seguinte maneira <span class="citation">(Hoffmann e Vieira <a href="#ref-hoffmann1998">1998</a>)</span>:</p>
 <p><span class="math display">\[
 y_i=\beta_0+\beta_1x_i+\varepsilon _i
 \]</span></p>
@@ -400,7 +436,7 @@ y_i=\beta_0+\beta_1x_i+\varepsilon _i
 <p><span class="math display">\[
 \sum (y_i-\hat y_i)^2=\sum (y_i-b_0-b_1x_i^2)
 \]</span></p>
-<p>As expressões para os coeficientes, que minimizam SQResíduos são obtidas pela derivadas desta soma de quadrados em relação a <span class="math inline">\(b_0\)</span> e em relação a <span class="math inline">\(b_1\)</span> e podem ser descritas por <span class="citation">(Hoffmann e others <a href="#ref-hoffmann1998">1998</a>)</span>:</p>
+<p>As expressões para os coeficientes, que minimizam SQResíduos são obtidas pela derivadas desta soma de quadrados em relação a <span class="math inline">\(b_0\)</span> e em relação a <span class="math inline">\(b_1\)</span> e podem ser descritas por <span class="citation">(Hoffmann e Vieira <a href="#ref-hoffmann1998">1998</a>)</span>:</p>
 <p><span class="math display">\[
 b_1=\frac{\sum xy-\frac{\sum x \sum y}{n}}{\sum x^2 - \frac{(\sum x)^2}{n}}
 \]</span></p>
@@ -424,13 +460,15 @@ b_0=\bar{y}-b_1\bar{x}
 <p><span class="math inline">\(b_0\)</span>: coeficiente linear estimado;</p>
 <p><span class="math inline">\(b_1\)</span>: coeficiente angular estimado;</p>
 <p><span class="math inline">\(x\)</span>: valores da variável explicativa.</p>
-<p>Esta equação refere-se a reta de regressão, se <span class="math inline">\(b_1\)</span> é um valor positivo a reta é crescente, demonstrando uma relação positiva entre as variáveis e se <span class="math inline">\(b_1\)</span> é um o valor negativo, a reta é decrescente, demonstrando uma relação inversa entre as variáveis.</p>
+<p>Esta equação refere-se a reta de regressão, sendo que se <span class="math inline">\(b_1\)</span> é um valor positivo a reta é crescente, demonstrando uma relação positiva entre as variáveis; mas se <span class="math inline">\(b_1\)</span> é um valor negativo, a reta é decrescente, demonstrando uma relação inversa entre as variáveis.</p>
 <p>Sintaxe no software R:</p>
 <p><code>regressao=lm(y~x)</code></p>
-<p>Obs: y são valores numéricos da variável resposta e x são valores numéricos da variável preditora.</p>
+<p>ou</p>
+<p><code>regressao=lm(y~x, data=base)</code></p>
+<p>Obs: y são valores numéricos da variável resposta e x são valores numéricos da variável preditora e a base corresponde ao nome da base de dados em que estão armazenadas as variáveis.</p>
 <p>Por exemplo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">regressao=<span class="kw">lm</span>(nota<span class="op">~</span>tempo)
-regressao</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">regressao=<span class="kw">lm</span>(nota<span class="op">~</span>tempo)
+regressao</code></pre>
 <pre><code>
 Call:
 lm(formula = nota ~ tempo)
@@ -444,18 +482,19 @@ Coefficients:
 <p>A análise de variância (técnica introduzida por Fisher, na década de 20) testa o ajuste da equação como um todo, ou seja, um teste para verificar se a equação de regressão obtida é significativa ou não. No caso de regressão linear simples, a análise de variância é definida como apresentada na Tabela <a href="reg.html#tab:varian">5.2</a>.</p>
 <p>As hipóteses testadas na Análise de Variância da Regressão são:</p>
 <p><span class="math display">\[
-H_0:\beta_1=0 \textrm{(a regressao não é significativa)} 
-\]</span> <span class="math display">\[
-H_1:\beta_1 \neq 0 \textrm{(a regressão é significativa)}
+H_0:\beta_1=0 \textrm{ (a regressao não é significativa)} 
 \]</span></p>
-<table style="width:79%;">
+<p><span class="math display">\[
+H_1:\beta_1 \neq 0 \textrm{ (a regressão é significativa)}
+\]</span></p>
+<table style="width:81%;">
 <caption><span id="tab:varian">Tabela 5.2: </span>Análise de variância para a regressão linear.</caption>
 <colgroup>
 <col width="22%" />
 <col width="11%" />
 <col width="18%" />
 <col width="19%" />
-<col width="8%" />
+<col width="9%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -493,22 +532,23 @@ H_1:\beta_1 \neq 0 \textrm{(a regressão é significativa)}
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>em que:</p>
 <p><span class="math display">\[
-SQ \textrm{Regressao} = \frac{(\sum xy - \frac{(\sum x \sum y)^2}{n})}{\sum x^2 - \frac{(\sum x)^2}{n}}
+SQ \textrm{Regressão} = \frac{(\sum xy - \frac{(\sum x \sum y)^2}{n})}{\sum x^2 - \frac{(\sum x)^2}{n}}
 \]</span></p>
 <p><span class="math display">\[
 SQ \textrm{Total} = \sum y^2 - \frac{(\sum y)^2}{n}
 \]</span></p>
 <p>SQResíduo = SQTotal - SQRegressão</p>
-<p>QMRegressão = SQRegressão <span class="math inline">\(/\)</span> GLregressão</p>
-<p>QMResíduo = SQResíduo <span class="math inline">\(/\)</span> GLresíduo</p>
+<p>QMRegressão = SQRegressão <span class="math inline">\(/\)</span> GLRegressão</p>
+<p>QMResíduo = SQResíduo <span class="math inline">\(/\)</span> GLResíduo</p>
 <p>Fc = QMRegressão <span class="math inline">\(/\)</span> QMResíduo</p>
-<p>Espera-se que o QMResíduo seja mínimo, assim o modelo de regressão estará bem ajustado.</p>
-<p>A distribuição de probabilidade para a razão de duas variâncias é conhecida como a distribuição F. Se a hipótese nula for rejeitada ao nível de signicância <span class="math inline">\(\alpha\)</span>, rejeita-se H0, portanto a regressão é significativa.</p>
+<p>Espera-se que o QMResíduo seja mínimo, assim o modelo de regressão estará
+bem ajustado.</p>
+<p>A distribuição de probabilidade para a razão de duas variâncias é conhecida como a distribuição F. Se a hipótese nula for rejeitada ao nível de signicância <span class="math inline">\(\alpha\)</span>, rejeita-se <span class="math inline">\(H_0\)</span>, portanto a regressão é significativa.</p>
 <p>Sintaze no software R:</p>
 <p><code>anova(regressao)</code></p>
 <p>Obs: regressao é o nome dado ao modelo de regressão.</p>
 <p>Por exemplo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(regressao)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(regressao)</code></pre>
 <pre><code>Analysis of Variance Table
 
 Response: nota
@@ -522,14 +562,14 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <h2><span class="header-section-number">5.8</span> Coeficiente de Determinação</h2>
 <p>Representa o percentual de variação total que é explicada pela equação de regressão, sendo obtido da seguinte forma:</p>
 <p><span class="math display">\[
-R^2 = \frac{\textrm{SQRegressao}}{SQTotal}
+R^2 = \frac{\textrm{SQRegressão}}{SQTotal}
 \]</span></p>
 <p>Quanto mais próximo de 1 (ou 100%), melhor será o ajuste da equação de regressão. Também utiliza-se o coeficiente de determinação ajustado (R<span class="math inline">\(^2\)</span> ajustado), o qual considera o número de variáveis e o tamanho da amostra, sendo este o mais indicado para regressão múltipla.</p>
 <p>Sintaxe no software R:</p>
 <p><code>summary(regressao)</code></p>
 <p>Obs: regressao é o nome dado ao modelo de regressão.</p>
 <p>Por exemplo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(regressao)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(regressao)</code></pre>
 <pre><code>
 Call:
 lm(formula = nota ~ tempo)
@@ -553,12 +593,12 @@ F-statistic: 74.2 on 1 and 13 DF,  p-value: 9.88e-07</code></pre>
 <p><code>abline(regressao)</code></p>
 <p>Obs: regressao é o nome dado ao modelo de regressão.</p>
 <p>Para o exemplo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(nota<span class="op">~</span>tempo)
-<span class="kw">abline</span>(<span class="kw">coef</span>(regressao))</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-133"></span>
-<img src="index_files/figure-html/unnamed-chunk-133-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="80%" />
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(nota<span class="op">~</span>tempo)
+<span class="kw">abline</span>(<span class="kw">coef</span>(regressao))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-132"></span>
+<img src="index_files/figure-html/unnamed-chunk-132-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="80%" />
 <p class="caption">
-Figura 5.5: Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa
+Figura 5.4: Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa
 </p>
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
@@ -567,7 +607,7 @@ Figura 5.5: Reta de regressão ajustada da nota em relação ao tempo de estudo 
 <p><code>confint(regressao)</code></p>
 <p>Obs: regressao é o nome dado ao modelo de regressão.</p>
 <p>Para o exemplo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(regressao)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(regressao)</code></pre>
 <pre><code>             2.5 % 97.5 %
 (Intercept) 0.7671  3.676
 tempo       0.7097  1.185</code></pre>
@@ -576,59 +616,60 @@ tempo       0.7097  1.185</code></pre>
 <h2><span class="header-section-number">5.9</span> Análise dos Resíduos</h2>
 <p>Para a validade dos intervalos de confiança e teste de hipótese torna-se necessário supor que as observações de Y sejam independentes e o termo de erro tenha distribuição aproximadamente normal com média 0 e variância constante.</p>
 <p>O método gráfico pode ser utilizado para testar estas suposições, descrevendo que após a estimação dos parâmetros do modelo, pode-se calcular os resíduos, através da diferença entre os valores observados y e os valores preditos <span class="math inline">\(\hat{y}\)</span>, associados a cada x usado na análise. Faz-se então um gráfico com os pares (<span class="math inline">\(x,\varepsilon\)</span>), sendo <span class="math inline">\(\varepsilon = y -\hat{y}\)</span> <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>.</p>
-<p>Se o modelo ajustado for apropriado para os dados, os pontos devem estar distribuídos de forma aleatória no gráfico dos resíduos, conforme Figura <a href="reg.html#fig:residuos">5.6</a>a. Caso a suposição não seja satisfeita, métodos alternativos podem ser utilizados como: método dos mínimos quadrados ponderados para o caso de não homocedasticidade; o método dos mínimos quadrados generalizados para o caso de erros correlacionados; e, métodos não-paramétricos para o caso de não normalidade.</p>
+<p>Se o modelo ajustado for apropriado para os dados, os pontos devem estar
+distribuídos de forma aleatória no gráfico dos resíduos, conforme Figura <a href="reg.html#fig:residuos">5.5</a>a. Caso a suposição não seja satisfeita, métodos alternativos podem ser utilizados como: método dos mínimos quadrados ponderados para o caso de não homocedasticidade; o método dos mínimos quadrados generalizados para o caso de erros correlacionados; e, métodos não-paramétricos para o caso de não normalidade.</p>
 <p>Além da análise gráfica, existem testes para avaliar a homocedasticidade como o Teste de Bartlett e para avaliar a normalidade aplicam-se os testes de Shapiro Wilks ou Kolmogorov-Smirnov.</p>
 <div class="figure" style="text-align: center"><span id="fig:residuos"></span>
 <img src="residuos1.png" alt="Gráficos para análise de resíduos em regressão" width="80%" />
 <p class="caption">
-Figura 5.6: Gráficos para análise de resíduos em regressão
+Figura 5.5: Gráficos para análise de resíduos em regressão
 </p>
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>O primeiro gráfico de resíduos que podemos elaborar é para representar os valores ajustados pela equação de regressão ajustada no eixo x e os valores dos resíduos no eixo y, conforme segue.</p>
 <p>Sintaxe no software R:</p>
 <p><code>plot(fitted(regressao),residuals(regressao),</code></p>
-<p><code>xlab=&quot;Valores ajustados&quot;,ylab=&quot;Resíduos&quot;)</code></p>
+<p><code>xlab="Valores ajustados",ylab="Resíduos")</code></p>
 <p>Obs: <code>regressao</code> é o nome dado ao modelo de regressão, fitted define os valores ajustados no eixo x; <code>residuals</code> define os valores ajustados no eixo Y; <code>xlab</code> indica o nome do eixo x e <code>ylab</code> indica o nome do eixo y.</p>
 <p><code>abline(h=0)</code> (obs: adicionar uma linha constante em y=0).</p>
-<p>Na Figura <a href="reg.html#fig:residuos1">5.7</a> é apresentado o gráfico de resíduo, no qual os resíduos são apresentados no eixo y e os valores ajustados são apresentados no eixo x.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">fitted</span>(regressao), <span class="kw">residuals</span>(regressao),
+<p>Na Figura <a href="reg.html#fig:residuos1">5.6</a> é apresentado o gráfico de resíduo, no qual os resíduos são apresentados no eixo y e os valores ajustados são apresentados no eixo x.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">fitted</span>(regressao), <span class="kw">residuals</span>(regressao),
 <span class="dt">xlab=</span><span class="st">&quot;Valores ajustados&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Residuos&quot;</span>)
-<span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>)</code></pre></div>
+<span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:residuos1"></span>
 <img src="index_files/figure-html/residuos1-1.png" alt="Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo" width="80%" />
 <p class="caption">
-Figura 5.7: Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo
+Figura 5.6: Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo
 </p>
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>Outro gráfico de resíduos que é possível elaborar na análise de resíduos representa a variável preditora (x) no eixo x e o resíduos no eixo Y.</p>
 <p>Sintaxe no software R:</p>
 <p><code>plot(tempo,residuals(regressao),</code></p>
-<p><code>xlab=&quot;Valores independente&quot;, ylab=&quot;Resíduos&quot;)</code></p>
+<p><code>xlab="Valores independente", ylab="Resíduos")</code></p>
 <p>Obs: <code>regressao</code> é o nome dado ao modelo de regressão; a variável x define os valores do eixo x e residuals define os valores ajustados no eixo Y; <code>xlab</code> indica o nome do eixo x e ylab indica o nome do eixo y.</p>
 <p><code>abline(h=0)</code></p>
 <p>Obs: adicionar uma linha constante em y=0.</p>
 <p>Por exemplo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(tempo, <span class="kw">residuals</span>(regressao), <span class="dt">xlab =</span> <span class="st">&quot;Valores independentes&quot;</span>,
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(tempo, <span class="kw">residuals</span>(regressao), <span class="dt">xlab =</span> <span class="st">&quot;Valores independentes&quot;</span>,
 <span class="dt">ylab=</span><span class="st">&quot;Residuos&quot;</span>)
-<span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>)</code></pre></div>
+<span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:residuos2"></span>
 <img src="index_files/figure-html/residuos2-1.png" alt="Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente" width="80%" />
 <p class="caption">
-Figura 5.8: Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente
+Figura 5.7: Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente
 </p>
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
-<p>Na Figura <a href="reg.html#fig:residuos2">5.8</a> é apresentado o gráfico de resíduo, em que no eixo y constam os valores dos resíduos e no eixo x constam os valores da variável independente.</p>
+<p>Na Figura <a href="reg.html#fig:residuos2">5.7</a> é apresentado o gráfico de resíduo, em que no eixo y constam os valores dos resíduos e no eixo x constam os valores da variável independente.</p>
 <p>Considerando os dados do exemplo, suponha que um aluno estudou 6,5 horas (x=6,5), então o valor ajustado da nota (y ) é dado por 2,2214+0,9474*6,5, resultando em 8,38. Para esse caso, o resíduo é:</p>
-<p>Yobservado – Yestimado =8 –8,38 = -0,38</p>
+<p>Yobservado – Yestimado = 8 – 8,38 = - 0,38</p>
 <p>Para exibir os valores ajustados e os resíduos da equação de regressão utilizam-se os seguintes comandos:</p>
 <p>Sintaxe no software R:</p>
 <p><code>regressao$residuals</code> (exibe os resíduos do modelo regressao).</p>
 <p><code>regressao$fitted.values</code> (exibe os valores ajustados do modelo regressao).</p>
 <p>Por exemplo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">regressao<span class="op">$</span>residuals</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">regressao<span class="op">$</span>residuals</code></pre>
 <pre><code>       1        2        3        4        5        6        7        8 
 -0.51087 -0.40561  0.56807  0.04176 -0.56351  0.22070 -0.83718  1.01544 
        9       10       11       12       13       14       15 
@@ -636,26 +677,26 @@ Figura 5.8: Gráfico gerado pelo RStudio para análise dos resíduos com os valo
 <p>Para testar a suposição que os erros aleatórios têm distribuição normal, pode-se elaborar o gráfico de probabilidade normal, conforme segue:</p>
 <p>Sintaxe no software R:</p>
 <p><code>qqnorm(residuals(regressao))</code></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qqnorm</span>(<span class="kw">residuals</span>(regressao))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qqnorm</span>(<span class="kw">residuals</span>(regressao))</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:qqnorm"></span>
 <img src="index_files/figure-html/qqnorm-1.png" alt="Gráfico de probabilidade normal para verificar normalidade dos resíduos" width="80%" />
 <p class="caption">
-Figura 5.9: Gráfico de probabilidade normal para verificar normalidade dos resíduos
+Figura 5.8: Gráfico de probabilidade normal para verificar normalidade dos resíduos
 </p>
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
-<p>Ainda, pode-se construir o gráfico com a distribuiçõa da probabilidade dos resíduos, através de um histograma, verificando assim se a cauda é simétrica ou não:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(<span class="dt">x =</span> regressao<span class="op">$</span>residuals,
+<p>Ainda, pode-se construir o gráfico com a distribuição da probabilidade dos resíduos, através de um histograma, verificando assim se a cauda é simétrica ou não:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(<span class="dt">x =</span> regressao<span class="op">$</span>residuals,
       <span class="dt">xlab =</span> <span class="st">&quot;Resíduos&quot;</span>,
       <span class="dt">ylab =</span> <span class="st">&quot;Densidade&quot;</span>,
       <span class="dt">main =</span> <span class="st">&quot;&quot;</span>,
       <span class="dt">col =</span> <span class="st">&quot;lightgreen&quot;</span>,
       <span class="dt">probability =</span> <span class="ot">TRUE</span>)
-<span class="kw">lines</span>(<span class="kw">density</span>(regressao<span class="op">$</span>residuals))</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-136"></span>
-<img src="index_files/figure-html/unnamed-chunk-136-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="80%" />
+<span class="kw">lines</span>(<span class="kw">density</span>(regressao<span class="op">$</span>residuals))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-135"></span>
+<img src="index_files/figure-html/unnamed-chunk-135-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="80%" />
 <p class="caption">
-Figura 5.10: Histograma de distribuição da probabilidade para os resíduos
+Figura 5.9: Histograma de distribuição da probabilidade para os resíduos
 </p>
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
@@ -663,7 +704,7 @@ Figura 5.10: Histograma de distribuição da probabilidade para os resíduos
 <p><code>shapiro.test(residuals(regressao))</code></p>
 <p>Obs: <code>residuals(regressão)</code> indica os resíduos do modelo de regressão.</p>
 <p>Por exemplo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">shapiro.test</span>(<span class="kw">residuals</span>(regressao))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">shapiro.test</span>(<span class="kw">residuals</span>(regressao))</code></pre>
 <pre><code>
     Shapiro-Wilk normality test
 
@@ -675,12 +716,12 @@ W = 0.96, p-value = 0.6</code></pre>
 <p>Sintaxe no software R:</p>
 <p><code>rstudent(regressao)</code></p>
 <p><code>rstandard(regressao)</code></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rstudent</span>(regressao)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rstudent</span>(regressao)</code></pre>
 <pre><code>       1        2        3        4        5        6        7        8 
 -1.04742 -0.74389  1.07142  0.07646 -1.07311  0.40066 -2.01860  2.29138 
        9       10       11       12       13       14       15 
  1.26283 -0.60069  0.86125 -0.69777 -0.81958  0.32859  0.51493 </code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rstandard</span>(regressao)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rstandard</span>(regressao)</code></pre>
 <pre><code>       1        2        3        4        5        6        7        8 
 -1.04353 -0.75701  1.06538  0.07956 -1.06691  0.41426 -1.81531  1.98916 
        9       10       11       12       13       14       15 
@@ -689,26 +730,26 @@ W = 0.96, p-value = 0.6</code></pre>
 <p>Sintaxe no software R:</p>
 <p><code>plot(rstudent(regressao))</code></p>
 <p><code>plot(rstandard(regressao))</code></p>
-<p>Os gráficos dos resíduos padronizados (standard) e studentizados (student) estão apresentados nas Figuras <a href="reg.html#fig:residpad">5.11</a> e <a href="reg.html#fig:residst">5.12</a>, respectivamente.</p>
+<p>Os gráficos dos resíduos padronizados (standard) e studentizados (student) estão apresentados nas Figuras <a href="reg.html#fig:residpad">5.10</a> e <a href="reg.html#fig:residst">5.11</a>, respectivamente.</p>
 <p>Para o exemplo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">rstandard</span>(regressao))
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">rstandard</span>(regressao))
 <span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
-<span class="kw">abline</span>(<span class="dt">h=</span><span class="op">-</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
+<span class="kw">abline</span>(<span class="dt">h=</span><span class="op">-</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:residpad"></span>
 <img src="index_files/figure-html/residpad-1.png" alt="Resíduos padronizados para o exemplo" width="80%" />
 <p class="caption">
-Figura 5.11: Resíduos padronizados para o exemplo
+Figura 5.10: Resíduos padronizados para o exemplo
 </p>
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
-<p>Aqueles valores fora do intervalo (-2,+2) são possíveis outliers.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">rstudent</span>(regressao)) 
+<p>Aqueles valores fora do intervalo (-2, +2) são possíveis outliers.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">rstudent</span>(regressao)) 
 <span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
-<span class="kw">abline</span>(<span class="dt">h=</span><span class="op">-</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
+<span class="kw">abline</span>(<span class="dt">h=</span><span class="op">-</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:residst"></span>
 <img src="index_files/figure-html/residst-1.png" alt="Resíduos studentizados para o exemplo" width="80%" />
 <p class="caption">
-Figura 5.12: Resíduos studentizados para o exemplo
+Figura 5.11: Resíduos studentizados para o exemplo
 </p>
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
@@ -719,23 +760,23 @@ Figura 5.12: Resíduos studentizados para o exemplo
 <p>Sintaxe no software R:</p>
 <p><code>dffits(regressao)</code></p>
 <p>Para esse exemplo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dffits</span>(regressao)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dffits</span>(regressao)</code></pre>
 <pre><code>       1        2        3        4        5        6        7        8 
 -0.55767 -0.19884  0.30669  0.02611 -0.34386  0.11597 -1.34854  0.97320 
        9       10       11       12       13       14       15 
  0.43848 -0.32566  0.25379 -0.20196 -0.38792  0.14210  0.13902 </code></pre>
-<p>Aqueles valores maiores que <span class="math inline">\(2*(p/n)^(1/2)\)</span> são possíveis pontos influentes. Em que, p = número de parâmetros do modelo e n = tamanho da amostra.</p>
+<p>Aqueles valores maiores que <span class="math inline">\(2*(p/n)^{(1/2)}\)</span> são possíveis pontos influentes. Em que, p = número de parâmetros do modelo e n = tamanho da amostra.</p>
 <p>Para esse exemplo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">*</span>(<span class="dv">2</span><span class="op">/</span><span class="dv">15</span>)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">*</span>(<span class="dv">2</span><span class="op">/</span><span class="dv">15</span>)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</code></pre>
 <pre><code>[1] 0.7303</code></pre>
-<p>O gráfico para detectar pontos influentes pode ser elaborado pelo comando (o gráfico está apresentado na Figura <a href="reg.html#fig:ptoinf">5.13</a>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">dffits</span>(regressao))
+<p>O gráfico para detectar pontos influentes pode ser elaborado pelo comando (o gráfico está apresentado na Figura <a href="reg.html#fig:ptoinf">5.12</a>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">dffits</span>(regressao))
 <span class="kw">abline</span>(<span class="dt">h=</span><span class="op">-</span><span class="fl">0.73</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
-<span class="kw">abline</span>(<span class="dt">h=</span><span class="fl">0.73</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
+<span class="kw">abline</span>(<span class="dt">h=</span><span class="fl">0.73</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:ptoinf"></span>
 <img src="index_files/figure-html/ptoinf-1.png" alt="Pontos influentes para o exemplo" width="80%" />
 <p class="caption">
-Figura 5.13: Pontos influentes para o exemplo
+Figura 5.12: Pontos influentes para o exemplo
 </p>
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
@@ -765,20 +806,20 @@ Figura 5.13: Pontos influentes para o exemplo
 <p><span class="math inline">\(x_p\)</span>: o valor dado para x</p>
 <p><span class="math inline">\(S_e\)</span>: o erro padrão da estimativa, definido por:</p>
 <p><span class="math display">\[
-S_e=\sqrt {\textrm{QMResiduo}}=\sqrt\frac{\sum(y-\hat{y})^2}{n-2}
+S_e=\sqrt {\textrm{QMResíduo}}=\sqrt\frac{\sum(y-\hat{y})^2}{n-2}
 \]</span></p>
 <p>Assim, obtêm-se o intervalo de predição para um determinado Y, que também pode ser expresso da seguinte forma:</p>
 <p><span class="math display">\[
-(\hat{y} - \varepsilon;\hat{y} + \varepsilon)
+(\hat{y} - \varepsilon; \hat{y} + \varepsilon)
 \]</span></p>
 <p>Sintaxe no software R:</p>
 <p><code>x0=data.frame(x=valor_numérico)</code></p>
 <p>Obs: x0 recebe o valor de x.</p>
-<p><code>predict(regressao,x0,interval=&quot;prediction&quot;)</code></p>
+<p><code>predict(regressao,x0,interval="prediction")</code></p>
 <p>Obs: regressao é o nome dado ao modelo de regressão.</p>
 <p>Para o exemplo R:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x0=<span class="kw">data.frame</span>(<span class="dt">tempo=</span><span class="fl">5.5</span>)
-<span class="kw">predict</span>(regressao, x0, <span class="dt">interval=</span><span class="st">&quot;prediction&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">x0=<span class="kw">data.frame</span>(<span class="dt">tempo=</span><span class="fl">5.5</span>)
+<span class="kw">predict</span>(regressao, x0, <span class="dt">interval=</span><span class="st">&quot;prediction&quot;</span>)</code></pre>
 <pre><code>    fit   lwr   upr
 1 7.432 6.189 8.675</code></pre>
 </div>
@@ -786,10 +827,10 @@ S_e=\sqrt {\textrm{QMResiduo}}=\sqrt\frac{\sum(y-\hat{y})^2}{n-2}
 <h3>Referências</h3>
 <div id="refs" class="references">
 <div id="ref-hoffmann1998">
-<p>Hoffmann, Rodolfo, e others. 1998. <em>Análise de regressão: uma introdução à econometria</em>. São Paulo: Hucitec.</p>
+<p>Hoffmann, Rodolfo, e Sônia Vieira. 1998. <em>Análise de regressão: uma introdução à econometria</em>. São Paulo: Hucitec.</p>
 </div>
 <div id="ref-barbetta1988">
-<p>Barbetta, Pedro Alberto. 2010. <em>Estatística aplicada às ciências sociais</em>. 7 ed. Florianópolis: Ed. UFSC.</p>
+<p>Barbetta, Pedro Alberto. 2010. <em>Estatı́stica aplicada às ciências sociais</em>. 7 ed. Florianópolis: Ed. UFSC.</p>
 </div>
 </div>
             </section>
@@ -847,7 +888,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

@@ -26,7 +26,7 @@
 <meta name="author" content="Iara Denise Endruweit Battisti">
 
 
-<meta name="date" content="2018-12-10">
+<meta name="date" content="2019-01-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,7 +49,6 @@
 
 
 
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112034801-4"></script>
 <script>
@@ -62,41 +61,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -112,11 +137,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Livro R</a></li>
+<li><a href="./">UFFS - Cerro Largo</a></li>
+<img src="logo1.png" alt="R" align="midle">
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Apresentação</a></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Primeiros Passos com o R</a><ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#download-e-instalacao-do-r-e-rstudio"><i class="fa fa-check"></i><b>1.1</b> Download e instalação do R e Rstudio</a></li>
 <li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#paineis"><i class="fa fa-check"></i><b>1.2</b> Painéis</a></li>
 <li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#help"><i class="fa fa-check"></i><b>1.3</b> Help</a></li>
@@ -457,12 +483,12 @@ Figura 6.20: Exemplo de criação de tabelas com stargazer
 </p>
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
-<p>Existem diversos pacotes dentro do RStudio com a função de gerarem tabelas a partir dos dados analisados (neste caso sendo gerados dentro de chunks). Por sua vez, abaixo segue um resumo testado por este autor, em que os pacotes criam corretamente as tabelas no RMarkdown para cada saída de arquivo (HMTL, PDF, Word). Por exemplo, o pacote <code>kable</code> consegue gerar as tabelas para as três saídas de arquivos; já o pacote <code>xtable</code> não está configurado para criar a referida tabela com a saída do documento em Word.</p>
+<p>Existem diversos pacotes dentro do RStudio com a função de gerarem tabelas a partir dos dados analisados (neste caso sendo gerados dentro de chunks). Por sua vez, abaixo segue um resumo testado por este autor, em que os pacotes criam corretamente as tabelas no RMarkdown para cada saída de arquivo (HMTL, PDF, Word). Por exemplo, o pacote <code>knitr</code> (com a função <code>kable</code>) consegue gerar as tabelas para as três saídas de arquivos; já o pacote <code>xtable</code> não está configurado para criar a referida tabela com a saída do documento em Word.</p>
 <table>
 <caption><span id="tab:tabelasrmk">Tabela 6.1: </span>Pacotes para elaboração de tabelas no RMarkdown</caption>
 <thead>
 <tr class="header">
-<th align="left"></th>
+<th align="left">Pacote</th>
 <th align="center"><strong>HTML</strong></th>
 <th align="center"><strong>PDF</strong></th>
 <th align="center"><strong>Word</strong></th>
@@ -470,7 +496,7 @@ Figura 6.20: Exemplo de criação de tabelas com stargazer
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">kable</td>
+<td align="left">knitr(função <code>kable</code>)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></td>
 <td align="center">ok</td>
 <td align="center">ok</td>
 <td align="center">ok</td>
@@ -565,7 +591,8 @@ Figura 6.25: Arquivo .bib
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
 <p>O BibLateX gerencia todos os tipos de bibliografias sendo que, como visto acima, as bibliografias possuem campos padrão a serem informados no arquivo “.bib”. Por exemplo, a categoria de artigos, possui como campos obrigatórios <code>author</code>, <code>title</code>, <code>journal</code> e <code>year</code>. Abaixo seguem algumas especificações dos tipos de bibliografias (adaptado de <span class="citation">Lehman e Kime (<a href="#ref-biblatex">2006</a>)</span>), explicitando os itens obrigatórios e opcionais que devem ou podem constar em cada registro:</p>
 <p><code>@article</code> - Artigo de revista. <strong>OBRIGATÓRIOS</strong>: author, title, journal, year. <strong>OPCIONAIS</strong>: volume, number, pages, month, note, key.</p>
-<p><code>@book</code> - Livro. <strong>OBRIGATÓRIOS</strong>: author/editor, title, publisher, year. <strong>OPCIONAIS</strong>: volume/number, series, address, edition, month, note, key.</p>
+<p><code>@book</code> - Livro. <strong>OBRIGATÓRIOS</strong>: author/editor, title, publisher, year.
+<strong>OPCIONAIS</strong>: volume/number, series, address, edition, month, note, key.</p>
 <p><code>@inbook</code> - Parte de livro. <strong>OBRIGATÓRIOS</strong>: author/editor, title, chapter/pages, publisher, year. <strong>OPCIONAIS</strong>: volume/number, series, type, address, edition, month, note, key.</p>
 <p><code>@incollection</code> - Parte de livro com título próprio. <strong>OBRIGATÓRIOS</strong>: author, title, booktitle, publisher, year. <strong>OPCIONAIS</strong>: editor, volume/number, series, type, chapter, pages, address, edition, month, note, key.</p>
 <p><code>@inproceedings</code> - Trabalho de anais de conferência. <strong>OBRIGATÓRIOS</strong>: author, title, booktitle, year. <strong>OPCIONAIS</strong>: editor, volume/number, series, pages, address, month, organization, publisher, note, key.</p>
@@ -587,8 +614,10 @@ Figura 6.27: Inserção de citações no arquivo .Rmd
 </p>
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
-<p>Para que o arquivo que foi criado com as referências bibliográficas (bibliografia.bib) seja utilizado, o pesquisador deve informar o seu nome dentro do YAML no campo <code>bibliography</code>. Mas qual norma será utilizada para as citações e a criação de referências bibliográficas neste trabalho, já que existem diversas delas? Uma solução é a utilização de arquivos “.csl” (Citation Style Language), que nada mais são do que arquivos com as descrições de cada estilo das diversas normas existentes, para ajudar o pesquisador a citar e gerenciar suas referências.</p>
-<p>Estes arquivos podem ser encontrados em diversos locais, como por exemplo em <a href="https://github.com/citation-style-language/styles" class="uri">https://github.com/citation-style-language/styles</a> (copie <a href="https://raw.githubusercontent.com/citation-style-language/styles/44808db510152943c5d9dc471a9c8982a3edfbea/associacao-brasileira-de-normas-tecnicas-ipea.csl">este</a> conteúdo para um arquivo “.txt” e o renomeie para “.csl”). Lembrando que o arquivo “.csl” deve ser salvo na mesma pasta do arquivo “.Rmd”. O arquivo csl aqui utilizado refere-se às normas da ABNT (Associação Brasileira de Normas Técnicas) utilizados pelo IPEA (Instituto de Pesquisa Econômica Aplicada). Verifica-se na Figura <a href="rmark.html#fig:rmarkcitar1">6.28</a> a configuração final do YAML. Neste site <a href="http://editor.citationstyles.org/searchByName/" class="uri">http://editor.citationstyles.org/searchByName/</a> também são encontrados arquivos para várias normas bibliográficas.</p>
+<p>Para que o arquivo que foi criado com as referências bibliográficas (bibliografia.bib) seja utilizado, o pesquisador deve informar o seu nome dentro do YAML no campo <code>bibliography</code>.
+Mas qual norma será utilizada para as citações e a criação de referências bibliográficas neste trabalho, já que existem diversas delas? Uma solução é a utilização de arquivos “.csl” (Citation Style Language), que nada mais são do que arquivos com as descrições de cada estilo das diversas normas existentes, para ajudar o pesquisador a citar e gerenciar suas referências.</p>
+<p>Estes arquivos podem ser encontrados em diversos locais, como por exemplo em <a href="https://github.com/citation-style-language/styles" class="uri">https://github.com/citation-style-language/styles</a> (copie <a href="https://raw.githubusercontent.com/citation-style-language/styles/44808db510152943c5d9dc471a9c8982a3edfbea/associacao-brasileira-de-normas-tecnicas-ipea.csl">este</a> conteúdo para um arquivo “.txt” e o renomeie para “.csl”). Lembrando que o arquivo “.csl” deve ser salvo na mesma pasta do arquivo “.Rmd”. O arquivo csl aqui utilizado refere-se às normas da ABNT (Associação Brasileira de Normas Técnicas) utilizados pelo IPEA (Instituto de Pesquisa Econômica Aplicada). Verifica-se na Figura <a href="rmark.html#fig:rmarkcitar1">6.28</a> a configuração final do YAML. Neste site <a href="http://editor.citationstyles.org/searchByName/" class="uri">http://editor.citationstyles.org/searchByName/</a>
+também são encontrados arquivos para várias normas bibliográficas.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkcitar1"></span>
 <img src="rmarkcitar1.png" alt="Configurando YAML para citações e fererências" width="80%" />
 <p class="caption">
@@ -611,11 +640,17 @@ Figura 6.29: Resultado final das citações e referências com RMarkdown
 <h3>Referências</h3>
 <div id="refs" class="references">
 <div id="ref-R-rmarkdown">
-<p>Allaire, J. J., Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, e Winston Chang. 2017. «rmarkdown: Dynamic Documents for R». <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+<p>Allaire, J. J., Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, e Winston Chang. 2017. «rmarkdown: Dynamic Documents for R». <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
 </div>
 <div id="ref-biblatex">
-<p>Lehman, Philipp, e Philip Kime. 2006. «BibLATEX – Sophisticated Bibliographies in LATEX». <a href="https://ctan.org/pkg/biblatex" class="uri">https://ctan.org/pkg/biblatex</a>.</p>
+<p>Lehman, Philipp, e Philip Kime. 2006. «BibLATEX – Sophisticated Bibliographies in LATEX». <a href="https://ctan.org/pkg/biblatex">https://ctan.org/pkg/biblatex</a>.</p>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Mais informações em <a href="https://www.rdocumentation.org/packages/knitr/versions/1.21/topics/kable" class="uri">https://www.rdocumentation.org/packages/knitr/versions/1.21/topics/kable</a>. <a href="rmark.html#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -672,7 +707,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

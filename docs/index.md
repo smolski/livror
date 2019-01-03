@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Felipe Micail da Silva Smolski
 - Iara Denise Endruweit Battisti
-date: "2018-12-10"
+date: "2019-01-02"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -48,7 +48,7 @@ A criação de documentos dinâmicos utilizando o RStudio será tratada no capí
 
 Boa leitura!
 
-# Introdução{#intro}
+# Primeiros Passos com o R{#intro}
 
 *Felipe Micail da Silva Smolski*
 
@@ -1302,8 +1302,7 @@ No nosso exemplo, cria-se um objeto "classificacao" e se a coluna IMC conter dad
 
 ```r
 # Classificar qualitativamente informações em um determinado intervalo 
-classificacao=ifelse(informacoes$Imc<25, "peso normal", 
-                     "excesso de peso")
+classificacao=ifelse(informacoes$Imc<25, "peso normal","excesso de peso")
 informacoes=cbind(informacoes, classificacao)
 informacoes
 ```
@@ -1314,6 +1313,11 @@ informacoes
 2  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso
 3    Marcelo    19   80     Soledade   1.90 22.16     peso normal
 4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso
+```
+
+
+```
+Carregando pacotes exigidos: knitr
 ```
 
 \begin{table}
@@ -1854,7 +1858,6 @@ Grande porte = árvores com altura superior a 10 metros.
 
 **2.5** Renomeie a coluna "vendas mensais" para "vendas diárias".
 
-
 # Estatística Descritiva{#desc}
 
 *Denize Ivete Reis*
@@ -1958,6 +1961,16 @@ url <- "https://github.com/Smolski/livror/raw/master/pesquisa_dados.xlsx"
 destfile <- "pesquisa_dados.xlsx"
 curl::curl_download(url, destfile)
 pesquisa_dados <- read_excel(destfile)
+```
+
+```
+readxl works best with a newer version of the tibble package.
+You currently have tibble v1.4.2.
+Falling back to column name repair from tibble <= v1.4.2.
+Message displays once per session.
+```
+
+```r
 attach(pesquisa_dados)
 ls.str(pesquisa_dados)
 ```
@@ -2803,7 +2816,6 @@ table(subset(Sexo, Sabor=="Pessimo"))
 
 Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a serem aplicados na estatística descritiva (veja help do R), nem tampouco os conceitos estatísticos necessários à compreensão. Para mais detalhes sobre os conceitos de estatística descritiva, você pode consultar outras referências ou até mesmo as já citadas neste capítulo.
 
-
 # Estatística Inferencial{#inf}
 
 *Tatiane Chassot*
@@ -2930,11 +2942,11 @@ Algumas técnicas de inferência estatística têm como requisitos a normalidade
 
 Hipóteses do teste:
 
--	**H0**: os dados seguem uma distribuição normal
-- **H1**: os dados não seguem uma distribuição normal
+-	**$H_0$**: os dados seguem uma distribuição normal
+- **$H_1$**: os dados não seguem uma distribuição normal
 
 
-O **valor p** reflete a plausibilidade de se obter tais resultados  no caso de H0 ser de fato verdadeira.
+O **valor p** reflete a plausibilidade de se obter tais resultados  no caso de $H_0$ ser de fato verdadeira.
 
 \begin{figure}[H]
 
@@ -2961,7 +2973,7 @@ data:  horasestudo
 W = 0.98, p-value = 0.9
 ```
 
-Como p $>$ 0,05, não rejeita-se H0 e conclui-se que os dados seguem uma distribuição normal.
+Como p $>$ 0,05, não rejeita-se $H_0$ e conclui-se que os dados seguem uma distribuição normal.
 
 ### Intervalo de confiança para uma proporção populacional
 
@@ -3066,29 +3078,29 @@ Com 99\% de confiança, a proporção populacional dos eleitores favoráveis ao 
 ## Teste de hipóteses
 
 
-O teste de hipóteses é uma outra forma de fazer inferência estatística. Formula-se uma hipótese (H0) para um parâmetro populacional e, partir de uma amostra dessa população, aceita-se ou rejeita-se esta hipótese.
+O teste de hipóteses é uma outra forma de fazer inferência estatística. Formula-se uma hipótese ($H_0$) para um parâmetro populacional e, partir de uma amostra dessa população, aceita-se ou rejeita-se esta hipótese.
 
 
-**H0**: hipótese nula (sempre tem a condição de igualdade)
+**$H_0$**: hipótese nula (sempre tem a condição de igualdade)
 
-**H1**: hipótese alternativa (tem o sinal de $\neq$, $>$ ou $<$)
+**$H_1$**: hipótese alternativa (tem o sinal de $\neq$, $>$ ou $<$)
 
 ### Teste de hipóteses para uma média populacional
 
 
-H0: $\mu$ $=$ ......
+$H_0$: $\mu$ $=$ ......
 
-H1: $\mu$ $\neq$ ......
+$H_1$: $\mu$ $\neq$ ......
 
-H0: $\mu$ $=$ .......
+$H_0$: $\mu$ $=$ .......
 
-H1: $\mu$ $>$ ........
+$H_1$: $\mu$ $>$ ........
 
-H0: $\mu$ $=$ ......
+$H_0$: $\mu$ $=$ ......
 
-H1: $\mu$ $<$ ......
+$H_1$: $\mu$ $<$ ......
 
-No software RStudio, usa-se o `t.test` para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.
+No software RStudio, usa-se o `t.test` para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar $H_0$.
 
 De acordo com as hipóteses, temos variações do `t.test`, conforme segue:
 
@@ -3110,9 +3122,9 @@ sintaxe: `t.test(amostra, opções)`
 
 Construa um teste de hipóteses para saber se a média da precipitação pluviométrica mensal é igual a 30,0 mm. 
 
-**H0**: $\mu$ $=$ 30 mm
+**$H_0$**: $\mu$ $=$ 30 mm
 
-**H1**: $\mu$ $\neq$ 30 mm
+**$H_1$**: $\mu$ $\neq$ 30 mm
 
 
 
@@ -3144,7 +3156,7 @@ mean of x
 ```
 
 
-Conclusão: Aceita-se H0 e conclui-se que a precipitação pluviométrica é igual a 30mm.
+Conclusão: Aceita-se $H_0$ e conclui-se que a precipitação pluviométrica é igual a 30mm.
 
 
 
@@ -3154,9 +3166,9 @@ Conclusão: Aceita-se H0 e conclui-se que a precipitação pluviométrica é igu
 
 Teste a hipótese de que o tempo de espera é superior a 20 minutos.
 
-**H0**: $\mu$ $=$ 20 minutos
+**$H_0$**: $\mu$ $=$ 20 minutos
 
-**H1**: $\mu$ $>$ 20 minutos
+**$H_1$**: $\mu$ $>$ 20 minutos
 
 
 ```r
@@ -3187,7 +3199,7 @@ mean of x
 ```
 
 
-Conclusão: Rejeita-se H0 com nível de significância de 1\% e conclui-se que o tempo de espera é superior a 20 minutos.
+Conclusão: Rejeita-se $H_0$ com nível de significância de 1\% e conclui-se que o tempo de espera é superior a 20 minutos.
 
 
 
@@ -3198,9 +3210,9 @@ Conclusão: Rejeita-se H0 com nível de significância de 1\% e conclui-se que o
 Estes dados são evidência para afirmar que o conteúdo de oxigênio é menor que 5 partes por milhão? 
 
 
-**H0**: $\mu$ $=$ 5 ppm
+**$H_0$**: $\mu$ $=$ 5 ppm
 
-**H1**: $\mu$ $<$ 5 ppm
+**$H_1$**: $\mu$ $<$ 5 ppm
 
 
 ```r
@@ -3223,23 +3235,23 @@ mean of x
 ```
 
 
-Conclusão: Aceita-se H0 e conclui-se que o conteúdo de oxigênio é igual a 5 ppm.
+Conclusão: Aceita-se $H_0$ e conclui-se que o conteúdo de oxigênio é igual a 5 ppm.
 
 ### Teste de hipóteses para uma proporção populacional
 
-H0: $\pi$ $=$ ......
+$H_0$: $\pi$ $=$ ......
 
-H1: $\pi$ $\neq$ ......
+$H_1$: $\pi$ $\neq$ ......
 
-H0: $\pi$ $=$ .......
+$H_0$: $\pi$ $=$ .......
 
-H1: $\pi$ $>$ ........
+$H_1$: $\pi$ $>$ ........
 
-H0: $\pi$ $=$ ......
+$H_0$: $\pi$ $=$ ......
 
-H1: $\pi$ $<$ ......
+$H_1$: $\pi$ $<$ ......
 
-No software RStudio, usa-se o prop.test para a realização do teste de hipóteses para uma proporção populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.
+No software RStudio, usa-se o prop.test para a realização do teste de hipóteses para uma proporção populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar $H_0$.
 
 Sintaxe:
 
@@ -3249,7 +3261,7 @@ em que:
 
 x = número de sucessos;
 
-n= tamanho da amostra;
+n = tamanho da amostra;
 
 p = proporção a ser testada;
 
@@ -3258,9 +3270,9 @@ alt = `"two.sided"`, `"greater"` ou `"less"`.
 **Exemplo 6**: (adaptado de <https://docs.ufpr.br/~soniaisoldi/TP707/Aula8.pdf>) Uma máquina está regulada quanto produz 3\% de peças defeituosas. Uma amostra aleatória de 80 peças selecionadas ao acaso apresentou 3 peças defeituosas. Teste a hipótese de que a máquina está regulada.
 
 
-**H0**: $\pi$ $=$ 3\%
+**$H_0$**: $\pi$ $=$ 3\%
 
-**H1**: $\pi$ $\neq$ 3\%
+**$H_1$**: $\pi$ $\neq$ 3\%
 
 
 
@@ -3283,13 +3295,13 @@ sample estimates:
 ```
 
 
-Conclusão: Aceita-se H0 e conclui-se que a máquina produz 3\% de peças defeituosas, ou seja, a máquina está regulada.
+Conclusão: Aceita-se $H_0$ e conclui-se que a máquina produz 3\% de peças defeituosas, ou seja, a máquina está regulada.
 
 **Exemplo 7**: (adaptado de <www.ebah.com.br/content/ABAAAAdLkAI/metodos-estatistico-und-v-lista-resolvida>) As condições de mortalidade de uma região são tais que a proporção de nascidos que sobrevivem até 60 anos é de 0,6. Testar essa hipótese se em 1.000 nascimentos amostrados aleatoriamente, verificou-se 530 sobreviventes até 60 anos.
 
-**H0**: $\pi$ $=$ 0,6
+**$H_0$**: $\pi$ $=$ 0,6
 
-**H1**: $\pi$ $\neq$ 0,6
+**$H_1$**: $\pi$ $\neq$ 0,6
 
 
 ```r
@@ -3310,13 +3322,13 @@ sample estimates:
 0.53 
 ```
 
-Conclusão: Rejeita-se H0 com nível de significância de 1\% e conclui-se que a proporção de nascidos que sobrevivem até os 60 anos é diferente de 0,6.
+Conclusão: Rejeita-se $H_0$ com nível de significância de 1\% e conclui-se que a proporção de nascidos que sobrevivem até os 60 anos é diferente de 0,6.
 
 **Exemplo 8**: (adaptado de <https://docs.ufpr.br/~jomarc/intervaloeteste.pdf>) Uma empresa retira periodicamente amostras aleatórias de 500 peças de sua linha de produção para análise da qualidade. As peças da amostra são classificadas como defeituosas ou não, sendo que a política da empresa exige que o processo produtivo seja revisto se houver evidência de mais de 1,5\% de peças defeituosas. Na última amostra, foram encontradas nove peças defeituosas. O processo precisa ser revisto?
 
-**H0**: $\pi$ $=$ 1,5\%
+**$H_0$**: $\pi$ $=$ 1,5\%
 
-**H1**: $\pi$ $>$ 1,5\%
+**$H_1$**: $\pi$ $>$ 1,5\%
 
 
 ```r
@@ -3337,13 +3349,13 @@ sample estimates:
 0.018 
 ```
 
-Conclusão: Não rejeita H0 e conclui-se que a proporção de peças defeituosas é igual a 1,5\%, ou seja, o processo não precisa ser revisto.
+Conclusão: Não rejeita $H_0$ e conclui-se que a proporção de peças defeituosas é igual a 1,5\%, ou seja, o processo não precisa ser revisto.
 
 **Exemplo 9**: (adaptado de <https://www.passeidireto.com/arquivo/25297344/aula-19---testes-para-proporcao>) Uma pesquisa conclui que 90\% dos médicos recomendam aspirina a pacientes que têm filhos. Teste a afirmação contra a alternativa de que a percentagem é inferior a 90\%, se numa amostra aleatória de 100 médicos, 80 recomendam aspirina.
 
-**H0**: $\pi$ $=$ 90\%
+**$H_0$**: $\pi$ $=$ 90\%
 
-**H1**: $\pi$ $<$ 90\%
+**$H_1$**: $\pi$ $<$ 90\%
 
 
 ```r
@@ -3365,7 +3377,7 @@ sample estimates:
 ```
 
 
-Conclusão: Rejeita-se H0 com nível de significância de 1\% e conclui-se que a proporção de médicos que recomendam aaspirina é inferior a 90\%.
+Conclusão: Rejeita-se $H_0$ com nível de significância de 1\% e conclui-se que a proporção de médicos que recomendam aaspirina é inferior a 90\%.
 
 ### Teste de hipótese para duas médias
 
@@ -3401,15 +3413,15 @@ Peso depois do treinamento & 94 & 62 & 66 & 58 & 70 & 76\\
 \end{tabular}
 \end{table}
 
-No software RStudio, usa-se o `t.test` para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar H0.
+No software RStudio, usa-se o `t.test` para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar $H_0$.
 
 
 Hipóteses:
 
 
-**H0**: média antes $=$ média depois
+**$H_0$**: média antes $=$ média depois
 
-**H1**: média antes $\neq$ média depois
+**$H_1$**: média antes $\neq$ média depois
 
 
 ```r
@@ -3432,7 +3444,7 @@ mean of the differences
                   1.833 
 ```
 
-Conclusão: Não rejeita-se H0 e conclui-se que a média de peso antes do treinamento é igual à média de peso depois do treinamento.
+Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso antes do treinamento é igual à média de peso depois do treinamento.
 
 **Exemplo 11**: (adaptado de <www.inf.ufsc.br/~marcelo/testes2.html>) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Podemos concluir que o uso da ração contribuiu para o aumento do peso médio dos animais? 
 
@@ -3451,9 +3463,9 @@ Depois & 640 & 712 & 681 & 558 & 610 & 740 & 707 & 585 & 635 & 682\\
 \end{tabular}
 \end{table}
 
-**H0**: média antes $=$ média depois
+**$H_0$**: média antes $=$ média depois
 
-**H1**: média antes $\neq$ média depois
+**$H_1$**: média antes $\neq$ média depois
 
 
 ```r
@@ -3476,7 +3488,7 @@ mean of the differences
                    -6.6 
 ```
 
-Conclusão: Rejeita-se H0 com nível de significância de 5\% e conclui-se que a média antes da engorda é diferente da média depois da engorda.
+Conclusão: Rejeita-se $H_0$ com nível de significância de 5\% e conclui-se que a média antes da engorda é diferente da média depois da engorda.
 
 
 #### Teste de hipóteses duas amostras independentes
@@ -3504,9 +3516,9 @@ Tecido B & 39 & 27 & 35 & 42 & 31 & 39 & 22\\
 
 Teste se um tecido é mais pesado que o outro.
 
-**H0**: as variâncias são homogêneas
+**$H_0$**: as variâncias são homogêneas
 
-**H1**: as variâncias são heterogêneas
+**$H_1$**: as variâncias são heterogêneas
 
 
 ```r
@@ -3529,13 +3541,13 @@ ratio of variances
             0.8389 
 ```
 
-Conclusão: Não rejeita-se H0 e conclui-se que as variâncias são homogêneas.
+Conclusão: Não rejeita-se $H_0$ e conclui-se que as variâncias são homogêneas.
 
 Agora podemos realizar o teste de comparação de duas amostras independentes.
 
-**H0**: média tecido A $=$ média tecido B
+**$H_0$**: média tecido A $=$ média tecido B
 
-**H1**: média tecido A $\neq$ média tecido B
+**$H_1$**: média tecido A $\neq$ média tecido B
 
 
 ```r
@@ -3556,8 +3568,7 @@ mean of x mean of y
     30.86     33.57 
 ```
 
-Conclusão: Não rejeita-se H0 e conclui-se que a média de peso do tecido A é igual à média de peso do tecido B.
-
+Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso do tecido A é igual à média de peso do tecido B.
 
 # Teste de Qui-Quadrado{#qui}
 
@@ -3577,45 +3588,21 @@ Quando existem duas variáveis de interesse, a representação tabular das frequ
 
 Primeiramente definimos as seguintes hipóteses estatísticas:
 
-H0: não existe associação entre tamanho da propriedade e armazenamento seguro (as variáveis são independentes)
+$H_0$: não existe associação entre tamanho da propriedade e armazenamento seguro (as variáveis são independentes)
 
-H1: existe associação entre tamanho da propriedade e armazenamento seguro (as variáveis são dependentes)
+$H_1$: existe associação entre tamanho da propriedade e armazenamento seguro (as variáveis são dependentes)
 
-<!--
-
-```
-Carregando pacotes exigidos: kableExtra
-```
-
-\begin{table}
-
-\caption{(\#tab:qui2)Tamanho da propriedade e armazenamento seguro dos agrotóxicos, agricultores de Cerro Largo, RS, 2017}
-\centering
-\begin{tabular}[t]{l|r|r}
-\hline
-\multicolumn{1}{c|}{Tamanho da Propriedade} & \multicolumn{2}{|c}{Armazenamento seguro} \\
-\cline{1-1} \cline{2-3}
-  & Não & Sim\\
-\hline
-Até 25 ha & 59 & 8\\
-\hline
-26 ha ou mais & 31 & 14\\
-\hline
-\multicolumn{3}{l}{\textit{Fonte:}  @Ristow2017.}\\
-\end{tabular}
-\end{table}
--->
 
 Table: (\#tab:tamprop)Tamanho da propriedade e armazenamento seguro dos agrotóxicos, agricultores de Cerro Largo, RS, 2017.
 
   -----------------------------------------------------------------
                               **Armazenamento seguro**     
   --------------------------  ------------------------ ------------
-  **Tamanho da propriedade**  Não                        Sim
+  **Tamanho da propriedade**  Não                      Sim
   
-  Até 25 ha                   59                         8
+  Até 25 ha                   59                       8
   
-  26 ha ou mais               31                         14
+  26 ha ou mais               31                       14
   -----------------------------------------------------------------
 
 Fonte: @Ristow2017.
@@ -3720,29 +3707,10 @@ data:  quiquadrado1
 X-squared = 5.1, df = 1, p-value = 0.02
 ```
 
-Então devemos concluir pela rejeição ou não da H0 e interpretar esse resultados.
+Então devemos concluir pela rejeição ou não da $H_0$ e interpretar esse resultados.
 
 Caso pelo menos uma casela tenha frequência esperada menor que 5 como por exemplo na tabela abaixo <!--\@ref(tab:qui3)-->, utilizamos o teste exato de Fisher.
 
-<!--
-\begin{table}
-
-\caption{(\#tab:qui3)Tamanho da propriedade e devolução das embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS, 2017}
-\centering
-\begin{tabular}[t]{l|r|r}
-\hline
-\multicolumn{1}{c|}{Tamanho da Propriedade} & \multicolumn{2}{|c}{Devolução} \\
-\cline{1-1} \cline{2-3}
-  & Não & Sim\\
-\hline
-Até 25 ha & 8 & 59\\
-\hline
-26 ha ou mais & 3 & 43\\
-\hline
-\multicolumn{3}{l}{\textit{Fonte:}  @Ristow2017.}\\
-\end{tabular}
-\end{table}
--->
 
 Table: (\#tab:tamprop1)Tamanho da propriedade e devolução das embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS, 2017.
 
@@ -3760,9 +3728,9 @@ Fonte: @Ristow2017.
 
 Definindo as hipóteses estatísticas:
 
-H0: não existe associação entre tamanho da propriedade e devolução das embalagens (as variáveis são independentes);
+$H_0$: não existe associação entre tamanho da propriedade e devolução das embalagens (as variáveis são independentes);
 
-H1: existe associação entre tamanho da propriedade e devolução das embalagens (as variáveis são dependentes).
+$H_1$: existe associação entre tamanho da propriedade e devolução das embalagens (as variáveis são dependentes).
 
 Incluindo os valores:
 
@@ -3812,7 +3780,7 @@ odds ratio
      1.933 
 ```
 
-Então devemos concluir, através do valor p, pela rejeição ou não da H0 e interpretar esse resultados.
+Então devemos concluir, através do valor p, pela rejeição ou não da $H_0$ e interpretar esse resultados.
 
 ## Teste de associação com duas amostras dependentes
 
@@ -3845,25 +3813,6 @@ McNemar's chi-squared = 0.045, df = 1, p-value = 0.8
 
 Importante observar que para executar o teste de McNemar: no software R os dados na matriz (tabela de contingência) devem ser distribuídos da mesma maneira tanto nas linhas quanto nas colunas. Isto é, "a" e "d" devem expressar o mesmo comportamento. Por exemplo: aprovado, desaprovado, aprovado, desaprovado. 
 
-<!--
-\begin{table}
-
-\caption{(\#tab:qui4)Tabela de contingência}
-\centering
-\begin{tabular}[t]{l|l|l}
-\hline
-\multicolumn{1}{c|}{Antes} & \multicolumn{2}{|c}{Depois} \\
-\cline{1-1} \cline{2-3}
-  & Aprovado & Desaprovado\\
-\hline
-Aprovado & a & b\\
-\hline
-Desaprovado & c & d\\
-\hline
-\multicolumn{3}{l}{\textit{Fonte:}  Dados simulados.}\\
-\end{tabular}
-\end{table}
--->
 
 
 Table: (\#tab:tabcont)Tabela de Contingência.
@@ -3885,43 +3834,6 @@ Fonte: Dados simulados.
 
 Como trata-se de duas amostras dependentes (antes e após) não podemos aplicar o teste de qui-quadrado. O teste adequado é McNemar.
 
-<!--
-\begin{table}
-
-\caption{(\#tab:qui55)Situação do peso de cobaias do estudo antes e após a intervenção}
-\centering
-\begin{tabular}[t]{l|r|r}
-\hline
-\multicolumn{1}{c|}{Peso Antes} & \multicolumn{2}{|c}{Peso Após} \\
-\cline{1-1} \cline{2-3}
-  & Adequado & Sobrepeso\\
-\hline
-Aprovado & 15 & 5\\
-\hline
-Desaprovado & 18 & 7\\
-\hline
-\multicolumn{3}{l}{\textit{Fonte:}  Dados simulados.}\\
-\end{tabular}
-\end{table}
--->
-<!--
-\begin{table}
-
-\caption{(\#tab:unnamed-chunk-124)Situação do peso de cobaias do estudo antes e após a intervenção.}
-\centering
-\begin{tabular}[t]{l|l|l}
-\hline
-Antes & Após & .\\
-\hline
- & Adequado & Sobrepeso\\
-\hline
-Aprovado & 15 & 5\\
-\hline
-Desaprovado & 18 & 7\\
-\hline
-\end{tabular}
-\end{table}
--->
 
 
 Table: (\#tab:sitcob)Situação do peso de cobaias do estudo antes e após a intervenção.
@@ -3937,23 +3849,13 @@ Table: (\#tab:sitcob)Situação do peso de cobaias do estudo antes e após a int
   -----------------------------------------------------------------
 
 Fonte: Dados simulados.
-<!--
 
-Table: (\#tab:qui5)Situação do peso de cobaias do estudo antes e após a intervenção
-
----------------  --------------  ----------
-**Peso Antes**   **Peso Após**             
-                 Adequado        Sobrepeso 
-Aprovado         15              5         
-Desaprovado      18              7         
----------------  --------------  ----------
--->
 
 Hipóteses estatísticas: 
 
-H0: As frequências das diferentes categorias ocorrem na mesma proporção (Frequências b e c ocorrem na mesma proporção);
+$H_0$: As frequências das diferentes categorias ocorrem na mesma proporção (Frequências b e c ocorrem na mesma proporção);
 
-H1: As frequências b e c ocorrem em proporções diferentes, ou seja, as mudanças são significativas.
+$H_1$: As frequências b e c ocorrem em proporções diferentes, ou seja, as mudanças são significativas.
 
 
 ```r
@@ -4022,15 +3924,11 @@ Ponto 7 & 15\\
 
 Fonte: Dados simulados.
 
-
-
-
-
 Para um nível de 5\% de significância, as hipóteses a serem testadas: 
 
-H0: O número de borrachudos não muda conforme o ponto;
+$H_0$: O número de borrachudos não muda conforme o ponto;
 
-H1: Pelo menos um dos pontos tem número de borrachudos diferente dos demais. 
+$H_1$: Pelo menos um dos pontos tem número de borrachudos diferente dos demais. 
 
 
 ```r
@@ -4057,9 +3955,9 @@ X-squared = 24, df = 6, p-value = 6e-04
 **Exemplo 4**: Suponha que desejamos verificar se o número de borrachudos segue uma distribuição específica, informado em "dist". Lembrando que os valores no vetor "dist" devem estar no formato de proporção (por exemplo, 0,35).
 
 
-H0: O número de borrachudos segue a distribuição teórica informada;
+$H_0$: O número de borrachudos segue a distribuição teórica informada;
 
-H1: O número de borrachudos não segue a distribuição teórica informada.
+$H_1$: O número de borrachudos não segue a distribuição teórica informada.
 
 
 
@@ -4085,17 +3983,18 @@ data:  borrachudos
 X-squared = 8.1, df = 6, p-value = 0.2
 ```
 
+
+
+
+
+
+
 # Modelos de Regressão{#reg}
 
 *Iara Denise Endruweit Battisti*
 
 *Erikson Kaszubowski*
 
-\begin{flushright}
-\emph{}
-
-\emph{}
-\end{flushright}
 
 Muitas vezes há a necessidade de estudar duas ou mais variáveis ao mesmo tempo com o objetivo de predizer uma variável em função da(s) outra(s). Por exemplo, verificar se sólidos removidos de um material relaciona-se com o tempo de secagem e qual é a forma dessa relação. Outros exemplos: relação entre tempo de estudo e desempenho a uma avaliação; relação entre investimento em comunicação e vendas; entre outros.
 
@@ -4109,7 +4008,7 @@ A análise de correlação permite verificar a relação entre duas variáveis q
 
 É um gráfico para verificar a existência de relação entre as variáveis X e Y. É composto por pontos, os quais correspondem aos pares de valores ($xi, y_i$), sendo a variável X representada no eixo horizontal e a variável Y representada no eixo vertical.
 
-O diagrama de disperção fornece uma visualização gráfica do comportamento conjunto das duas variávei em estudo. Na Figura \@ref(fig:diag) a percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variaveis crescem conjuntamente, já na Figura \@ref(fig:diag)b percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura \@ref(fig:diag)c informa a ausência de relação entre as duas variáveis e, a Figura \@ref(fig:diag)d mostra uma relação não linear, a qual não será objeto de estudo nesta publicação.
+O diagrama de dispersão fornece uma visualização gráfica do comportamento conjunto das duas variávei em estudo. Na Figura \@ref(fig:diag)a percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variáveis crescem conjuntamente. Já na Figura \@ref(fig:diag)b percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura \@ref(fig:diag)c informa a ausência de relação entre as duas variáveis e, a Figura \@ref(fig:diag)d mostra uma relação não linear, a qual não será objeto de estudo nesta publicação.
 
 
 \begin{figure}[H]
@@ -4127,11 +4026,11 @@ Fonte: Elaborado pelo(s) autor(es).
 
 Table: (\#tab:reg1)Relação entre o tempo de estudo e a nota.
 
-  ------------------------------------------------------------------
-  **Tempo**  4,0 6,0 5,5 5,0 6,8 6,5 3,5 4,5 7,5 8,0 5,4 6,5 7,7 7,5
-  ---------- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-  **Nota**   5,5 7,5 8,0 7,0 8,1 8,6 4,7 7,5 9,5 9,5 7,8 8,0 9,1 8,0
-  ------------------------------------------------------------------
+  ----------------------------------------------------------------------
+  **Tempo**  4,0 6,0 5,5 5,0 6,8 6,5 3,5 4,5 7,5 8,0 5,4 6,5 7,7 7,5 5,8
+  ---------- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+  **Nota**   5,5 7,5 8,0 7,0 8,1 8,6 4,7 7,5 9,5 9,5 7,8 8,0 9,1 9,5 8,0
+  ----------------------------------------------------------------------
   
 Fonte: Dados simulados.
 
@@ -4154,11 +4053,11 @@ plot(tempo,nota)
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-129-1} 
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-128-1} 
 
 }
 
-\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}(\#fig:unnamed-chunk-129)
+\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}(\#fig:unnamed-chunk-128)
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4169,16 +4068,17 @@ O coeficiente de correlação linear de Pearson (Karl Pearson 1857-1936) mede o 
 
 
 $$
-r=\frac{n\sum xy-(\sum x)(\sum y)}{\sqrt{n(\sum x^2)-(\sum x)^2} \sqrt{(\sum  y^2)-(\sum y)^2}}
+r = p_{xy} = \frac{{}\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
+{\sqrt{\sum_{i=1}^{n} (x_i - \overline{x})^2(y_i - \overline{y})^2}}
 $$
 
 em que:
 
-- n = número de pares na amostra
+- n: número de pares na amostra
 - x: valores da variável x
 - y: valores da variável y
 
-O coeficiente de correlação linear (r) é uma estatística amostral, representando a magnitude da relação entre duas variáveis na amostra. O parâmetro populacional é representado por $\rho$. O coeficiente de correlação linear assume valores entre -1 e +1, inclusive. Se o valor de r está próximo de 0, conclui-se que não há correlação linear entre as variáveis X e Y. Seo valor de r está próximo de -1 ou +1, conclui-se pela existência de correlação linear significativa entre as variáveis X e Y, sendo que o sinal indica uma relação linear positiva (direta) ou negativa (inversa).
+O coeficiente de correlação linear (r) é uma estatística amostral, representando a magnitude da relação entre duas variáveis na amostra. O parâmetro populacional é representado por $\rho$. O coeficiente de correlação linear assume valores entre -1 e +1, inclusive. Se o valor de r está próximo de 0, conclui-se que não há correlação linear entre as variáveis X e Y. Se o valor de r está próximo de -1 ou +1, conclui-se pela existência de correlação linear significativa entre as variáveis X e Y, sendo que o sinal indica uma relação linear positiva (direta) ou negativa (inversa).
 
 Sintaxe no software R:
 
@@ -4201,7 +4101,7 @@ cor(tempo,nota)
 
 O estudo de regressão refere-se aos casos em que se pretende estabelecer uma relação entre uma variável Y considerada dependente (variável resposta ou desfecho) e uma ou mais variáveis $x_1, x_2,\cdots, x_k$ (variáveis explicativas ou preditoras) consideradas independentes.
 
-O objetivo da análise de regressão é ajustar uma equação que permita explicar o comportamento da variável resposta de maneira que o valor previsto possa estar próximo do que seria observado. A forma do modelo de regressão depende da relação entre as variáveis, expressa visualmente pelo diagrama de dispersão, conforme Figura \@ref(fig:diag).
+O objetivo da análise de regressão é ajustar uma equação que permita explicar o comportamento da variável resposta de maneira que o valor previsto possa estar próximo do que seria observado. A forma do modelo de regressão depende da relação entre as variáveis, expressa visualmente pelo diagrama de dispersão, conforme exemplificado na Figura \@ref(fig:diag).
 
 A análise de regressão é uma técnica muito utilizada em variáveis quantitativas, como por exemplo:
 
@@ -4230,6 +4130,7 @@ Fonte: Elaborado pelo(s) autor(es).
 
 Observa-se na Figura \@ref(fig:regress), uma identidade na regressão, conforme a seguinte expressão:
 
+<!--
 \begin{figure}[H]
 
 {\centering \includegraphics[width=0.8\linewidth]{regress2} 
@@ -4239,6 +4140,17 @@ Observa-se na Figura \@ref(fig:regress), uma identidade na regressão, conforme 
 \caption{Identidade da Regressão}(\#fig:regress2)
 \end{figure}
 Fonte: Elaborado pelo(s) autor(es).
+-->
+
+$$
+\begin{matrix}
+\sum (y_i-\overline{y}) ^{2} = \sum (\hat{y}_i-\overline{y})^2 + \sum (y_i-\hat{y}_i)^2 \\
+\\
+\text{SQTotal = SQRegressão + SQResíduo}
+\end{matrix}
+$$
+
+
 
 Assim, a partir da expressão apresentada que o modelo de regressão será mais adequado na medida em que a proporção de "Soma de Quadrados de Regressão" é mais alta em relação à "Soma de Quadrado Total" do que a "Soma de Quadrado do Resíduo".
 
@@ -4322,13 +4234,17 @@ $b_1$: coeficiente angular estimado;
 
 $x$: valores da variável explicativa.
 
-Esta equação refere-se a reta de regressão, se $b_1$ é um valor positivo a reta é crescente, demonstrando uma relação positiva entre as variáveis e se $b_1$ é um o valor negativo, a reta é decrescente, demonstrando uma relação inversa entre as variáveis.
+Esta equação refere-se a reta de regressão, sendo que se $b_1$ é um valor positivo a reta é crescente, demonstrando uma relação positiva entre as variáveis; mas se $b_1$ é um valor negativo, a reta é decrescente, demonstrando uma relação inversa entre as variáveis.
 
 Sintaxe no software R:
 
 `regressao=lm(y~x)`
 
-Obs: y são valores numéricos da variável resposta e x são valores numéricos da variável preditora.
+ou
+
+`regressao=lm(y~x, data=base)`
+
+Obs: y são valores numéricos da variável resposta e x são valores numéricos da variável preditora e a base corresponde ao nome da base de dados em que estão armazenadas as variáveis.
 
 Por exemplo:
 
@@ -4356,10 +4272,11 @@ A análise de variância (técnica introduzida por Fisher, na década de 20) tes
 As hipóteses testadas na Análise de Variância da Regressão são:
 
 $$
-H_0:\beta_1=0 \textrm{(a regressao não é significativa)} 
+H_0:\beta_1=0 \textrm{ (a regressao não é significativa)} 
 $$
+
 $$
-H_1:\beta_1 \neq 0 \textrm{(a regressão é significativa)}
+H_1:\beta_1 \neq 0 \textrm{ (a regressão é significativa)}
 $$
 
 
@@ -4380,7 +4297,7 @@ Fonte: Elaborado pelo(s) autor(es).
 em que:
 
 $$
-SQ \textrm{Regressao} = \frac{(\sum xy - \frac{(\sum x \sum y)^2}{n})}{\sum x^2 - \frac{(\sum x)^2}{n}}
+SQ \textrm{Regressão} = \frac{(\sum xy - \frac{(\sum x \sum y)^2}{n})}{\sum x^2 - \frac{(\sum x)^2}{n}}
 $$
 
 
@@ -4391,16 +4308,16 @@ $$
 
 SQResíduo = SQTotal - SQRegressão
 
-QMRegressão = SQRegressão $/$ GLregressão
+QMRegressão = SQRegressão $/$ GLRegressão
 
-QMResíduo = SQResíduo $/$ GLresíduo
+QMResíduo = SQResíduo $/$ GLResíduo
 
 Fc = QMRegressão $/$ QMResíduo
 
 Espera-se que o QMResíduo seja mínimo, assim o modelo de regressão estará
 bem ajustado. 
 
-A distribuição de probabilidade para a razão de duas variâncias é conhecida como a distribuição F. Se a hipótese nula for rejeitada ao nível de signicância $\alpha$, rejeita-se H0, portanto a regressão é significativa.
+A distribuição de probabilidade para a razão de duas variâncias é conhecida como a distribuição F. Se a hipótese nula for rejeitada ao nível de signicância $\alpha$, rejeita-se $H_0$, portanto a regressão é significativa.
 
 Sintaze no software R:
 
@@ -4431,7 +4348,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 Representa o percentual de variação total que é explicada pela equação de regressão, sendo obtido da seguinte forma:
 
 $$
-R^2 = \frac{\textrm{SQRegressao}}{SQTotal}
+R^2 = \frac{\textrm{SQRegressão}}{SQTotal}
 $$
 
 
@@ -4489,11 +4406,11 @@ abline(coef(regressao))
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-133-1} 
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-132-1} 
 
 }
 
-\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}(\#fig:unnamed-chunk-133)
+\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}(\#fig:unnamed-chunk-132)
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4545,6 +4462,8 @@ Fonte: Elaborado pelo(s) autor(es).
 O primeiro gráfico de resíduos que podemos elaborar é para representar os valores ajustados pela equação de regressão ajustada no eixo x e os valores dos resíduos no eixo y, conforme segue.
 
 Sintaxe no software R:
+
+
 
 `plot(fitted(regressao),residuals(regressao),`
 
@@ -4614,7 +4533,7 @@ Na Figura \@ref(fig:residuos2) é apresentado o gráfico de resíduo, em que no 
 
 Considerando os dados do exemplo, suponha que um aluno estudou 6,5 horas (x=6,5), então o valor ajustado da nota (y ) é dado por 2,2214+0,9474*6,5, resultando em 8,38. Para esse caso, o resíduo é:
 
-Yobservado – Yestimado =8 –8,38 = -0,38
+Yobservado – Yestimado = 8 – 8,38 = - 0,38
 
 Para exibir os valores ajustados e os resíduos da equação de regressão utilizam-se os seguintes comandos:
 
@@ -4660,7 +4579,7 @@ qqnorm(residuals(regressao))
 
 Fonte: Elaborado pelo(s) autor(es).
 
-Ainda, pode-se construir o gráfico com a distribuiçõa da probabilidade dos resíduos, através de um histograma, verificando assim se a cauda é simétrica ou não:
+Ainda, pode-se construir o gráfico com a distribuição da probabilidade dos resíduos, através de um histograma, verificando assim se a cauda é simétrica ou não:
 
 
 ```r
@@ -4675,11 +4594,11 @@ lines(density(regressao$residuals))
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-136-1} 
+{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-135-1} 
 
 }
 
-\caption{Histograma de distribuição da probabilidade para os resíduos}(\#fig:unnamed-chunk-136)
+\caption{Histograma de distribuição da probabilidade para os resíduos}(\#fig:unnamed-chunk-135)
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4768,7 +4687,7 @@ abline(h=-2,col="red")
 
 Fonte: Elaborado pelo(s) autor(es).
 
-Aqueles valores fora do intervalo (-2,+2) são possíveis outliers. 
+Aqueles valores fora do intervalo (-2, +2) são possíveis outliers. 
 
 
 ```r
@@ -4810,7 +4729,7 @@ dffits(regressao)
  0.43848 -0.32566  0.25379 -0.20196 -0.38792  0.14210  0.13902 
 ```
 
-Aqueles valores maiores que $2*(p/n)^(1/2)$ são possíveis pontos influentes. Em que, p = número de parâmetros do modelo e n = tamanho da amostra.
+Aqueles valores maiores que $2*(p/n)^{(1/2)}$ são possíveis pontos influentes. Em que, p = número de parâmetros do modelo e n = tamanho da amostra.
 
 Para esse exemplo:
 
@@ -4880,13 +4799,13 @@ $x_p$: o valor dado para x
 $S_e$: o erro padrão da estimativa, definido por:
 
 $$
-S_e=\sqrt {\textrm{QMResiduo}}=\sqrt\frac{\sum(y-\hat{y})^2}{n-2}
+S_e=\sqrt {\textrm{QMResíduo}}=\sqrt\frac{\sum(y-\hat{y})^2}{n-2}
 $$
 
 Assim, obtêm-se o intervalo de predição para um determinado Y, que também pode ser expresso da seguinte forma:
 
 $$
-(\hat{y} - \varepsilon;\hat{y} + \varepsilon)
+(\hat{y} - \varepsilon; \hat{y} + \varepsilon)
 $$
 
 
@@ -4912,7 +4831,6 @@ predict(regressao, x0, interval="prediction")
     fit   lwr   upr
 1 7.432 6.189 8.675
 ```
-
 
 # RMarkdown{#rmark}
 
@@ -5271,14 +5189,14 @@ Além disso, o pacote `stargazer` é extremamente útil para geração de tabela
 
 Fonte: Elaborado pelo(s) autor(es).
 
-Existem diversos pacotes dentro do RStudio com a função de gerarem tabelas a partir dos dados analisados (neste caso sendo gerados dentro de chunks). Por sua vez, abaixo segue um resumo testado por este autor, em que os pacotes criam corretamente as tabelas no RMarkdown para cada saída de arquivo (HMTL, PDF, Word). Por exemplo, o pacote `kable` consegue gerar as tabelas para as três saídas de arquivos; já o pacote `xtable` não está configurado para criar a referida tabela com a saída do documento em Word.
+Existem diversos pacotes dentro do RStudio com a função de gerarem tabelas a partir dos dados analisados (neste caso sendo gerados dentro de chunks). Por sua vez, abaixo segue um resumo testado por este autor, em que os pacotes criam corretamente as tabelas no RMarkdown para cada saída de arquivo (HMTL, PDF, Word). Por exemplo, o pacote `knitr` (com a função `kable`) consegue gerar as tabelas para as três saídas de arquivos; já o pacote `xtable` não está configurado para criar a referida tabela com a saída do documento em Word.
 
 
 Table: (\#tab:tabelasrmk)Pacotes para elaboração de tabelas no RMarkdown
 
-||**HTML**|**PDF**|**Word**|
+|Pacote|**HTML**|**PDF**|**Word**|
 |:----|:------:|:------:|:------:|
-|kable|ok|ok|ok|
+|knitr(função `kable`)^[Mais informações em <https://www.rdocumentation.org/packages/knitr/versions/1.21/topics/kable>. ]|ok|ok|ok|
 |pander|ok|ok|ok|
 |stargazer|ok|ok|-|
 |xtable|ok|ok|-|
@@ -5491,6 +5409,12 @@ Fonte: Elaborado pelo(s) autor(es).
 **Iara Denise Endruweit Battisti**: Possui graduação em Informática pela Universidade Regional do Noroeste do Estado do Rio Grande do Sul (1996), mestrado em Estatística e Experimentação Agropecuária pela Universidade Federal de Lavras (2001) e doutorado em Epidemiologia pela Universidade Federal do Rio Grande do Sul (2008). Atualmente é professora adjunta na Universidade Federal da Fronteira Sul, campus Cerro Largo (RS). Atua principalmente nos seguintes temas: amostragem complexa, modelagem multinível, estatística computacional, estatística aplicada, relação ambiente e saúde utilizando modelagem estatística. E-mail: iara.battisti@uffs.edu.br.
 
 **Tatiane Chassot**: Possui graduação em Engenharia Florestal pela Universidade Federal de Santa Maria (2008), mestrado (2009) e doutorado em Engenharia Florestal também pela Universidade Federal de Santa Maria (2013). Atualmente é professora adjunta da Universidade Federal da Fronteira Sul - Campus Cerro Largo onde ministra as disciplinas de Introdução à Informática, Estatística Básica, Experimentação Agrícola, Sistemas Agroflorestais, Silvicultura e Práticas Integradoras de Campo. E-mail: tatianechassot@uffs.edu.br.
+
+\setlength{\parindent}{0.0cm}
+
+\RaggedRight
+
+\frenchspacing 
 
 # Referências {-}
 

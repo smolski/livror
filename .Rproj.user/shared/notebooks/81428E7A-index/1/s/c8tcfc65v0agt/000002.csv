@@ -1,0 +1,8 @@
+"0","require(kableExtra)"
+"2","Carregando pacotes exigidos: kableExtra
+"
+"0","cob2=c(""Tecido A"",""Tecido B"")"
+"0","tecidoa=c(36,26,31,38,28,20,37)"
+"0","tecidob=c(39,27,35,42,31,39,22)"
+"0","amostdep3=cbind(c(""Tecido A"", ""Tecido B""),rbind(tecidoa,tecidob))"
+"0","kable(amostdep3, caption = 'Comparação de dois tipos diferentes de tecidos', row.names = FALSE)"
