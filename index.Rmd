@@ -1616,6 +1616,15 @@ table(subset(Sexo, Sabor=="Pessimo"))
 
 Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a serem aplicados na estatística descritiva (veja help do R), nem tampouco os conceitos estatísticos necessários à compreensão. Para mais detalhes sobre os conceitos de estatística descritiva, você pode consultar outras referências ou até mesmo as já citadas neste capítulo.
 
+## Exercícios
+
+**1.**
+
+
+
+
+
+
 # Estatística Inferencial{#inf}
 
 *Tatiane Chassot*
