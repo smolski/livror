@@ -1,0 +1,21 @@
+"0","regressao=lm(nota~tempo)"
+"0","regressao"
+"1","
+Call:
+"
+"1","lm(formula = nota ~ tempo)"
+"1","
+
+"
+"1","Coefficients:
+"
+"1","(Intercept)  "
+"1","      tempo  "
+"1","
+"
+"1","      2.221  "
+"1","      0.947  "
+"1","
+"
+"1","
+"

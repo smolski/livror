@@ -1,8 +1,8 @@
 --- 
 title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
-- Felipe Micail da Silva Smolski
 - Iara Denise Endruweit Battisti
+- Felipe Micail da Silva Smolski
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -29,7 +29,7 @@ options(width = 80, digits = 4,
 knitr::opts_chunk$set(
   tidy = FALSE, 
   fig.align = "center", 
-  out.width = '80%',
+  out.width = '70%',
   comment = NA,
   fig.pos = 'H'
   )
@@ -133,7 +133,7 @@ A mesma função, para instalação de um pacote, pode ser efetuada diretamente 
 
 ## Abrir arquivo de dados
 
-Dispondo de um banco de dados em uma planilha eletrônica (LibreOffice Calc ou EXCEL), neste caso será utilizado o arquivo  [árvores](https://github.com/Smolski/softwarelivrer/raw/master/basico/arvores.xlsx) como exemplo o banco de dados. Os dados derivam de uma pesquisa com espécies de árvores registrando as variáveis diâmetro altura do peito (DAP) e altura. Dados cedidos pela professora Tatiane Chassot.
+Dispondo de um banco de dados em uma planilha eletrônica (LibreOffice Calc ou Excel), neste caso será utilizado o arquivo  [árvores](https://github.com/Smolski/livror/raw/master/arvores.xlsx) como exemplo de banco de dados. Os dados derivam de uma pesquisa com espécies de árvores registrando as variáveis diâmetro altura do peito (DAP) e altura. Dados cedidos pela professora Tatiane Chassot.
 
 Pode-se utilizar a linha de comando para carregar os arquivos de dados, da seguinte forma:
 
@@ -975,9 +975,8 @@ Grande porte = árvores com altura superior a 10 metros.
 
 **2.**	Baixe o arquivo "bancodedados1" que se encontra no endereço <https://smolski.github.io/softwarelivrer/livro.html>. Este é um banco de dados com informações fictícias que usaremos a fim de aprendizado. Abra o arquivo no Rstudio tomando os cuidados necessários. Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.
 
-**2.1.** Qual é o vendedor com mais sucesso de vendas?  E o vendedor com menor número de vendas?
-
-**2.2.**	Qual foi o número total de vendas?
+**2.1.** Qual é o vendedor com mais sucesso de vendas? E o vendedor com menor número de vendas?
+Qual foi o número total de vendas?
 
 **2.3.**	Supondo que um vendedor tenha ficado de fora dos dados, insira suas informações no banco de dados que já possuímos.
 
@@ -985,9 +984,7 @@ Grande porte = árvores com altura superior a 10 metros.
 
 **2.4.**	Crie uma nova coluna classificando os vendedores como:
 
-- vendas $<$ 25 = "Regular"
-
-- 25 $>$ vendas = "Ótimo"
+- vendas $<$ 25 = "Regular" ; 25 $>$ vendas = "Ótimo"
 
 **2.5** Renomeie a coluna "vendas mensais" para "vendas diárias".
 
@@ -1176,8 +1173,19 @@ barplot(table(Sexo))
 
 **Obs**.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
 
-
 `barplot(table(nome_variável), col=c("blue","red"), main="Título", xlab="Variável do eixo x", ylab = "Informação que consta no eixo y",border="red")`
+
+Para colocar o gráfico na horizontal, pode ser utilizado o comando `horiz=T`:
+
+
+```{r,  fig.cap='Gráfico de colunas com a variável Sexo (Horizontal)', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+par(las=2) # Altera a direção dos nomes Masculino e Feminino
+par(mar=c(5,8,4,2)) # Aumenta a margem do eixo x
+barplot(table(Sexo), horiz=T)
+```
+
+
+
 
 
 **Ex.1)** Construir um gráfico de colunas para a variável **Pessoas\_familia**.
@@ -1321,8 +1329,6 @@ Para obter o boxplot para um conjunto de dados:
 boxplot(Idade,horizontal = T)
 ```
 
-
-**Ex.2)** Construir um boxplot das variáveis **Peso\_(Kg)** e **Altura\_(m)**.    
 
 
 
@@ -1618,10 +1624,41 @@ Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a
 
 ## Exercícios
 
-**1.**
+**1.** Carregue a base de dados denominada "arvores" disponível no site do livro (<https://smolski.github.io/softwarelivrer/livro.html>) e respontaas questões abaixo:
 
-https://github.com/Smolski/softwarelivrer/raw/master/basico/arvores.xlsx
 
+```{r, include=FALSE}
+library(readxl)
+url <- "https://github.com/Smolski/livror/raw/master/arvores.xlsx"
+destfile <- "arvores.xlsx"
+curl::curl_download(url, destfile)
+arvores <- read_excel(destfile)
+#View(arvores)
+```
+
+**1.1** Utilize a função `summary` para identificar os principais indicadores da base de dados. Com a função `table` encontre a contagem das espécies que constam na planilha a partir da variável "Nomecientifico":
+
+```{r, include=FALSE}
+summary(arvores)
+```
+
+
+```{r, include=FALSE}
+table(arvores$Nomecientifico)
+```
+**1.2** Utilizando a função `tapply` calcule a média do diâmetro por cada espécie.
+
+```{r, include=FALSE}
+tapply(arvores$diametro_cm, arvores$Nomecientifico, mean)
+```
+
+**1.3** Utilizando as funções `table` e `barplot` construa um gráfico de barras com a quantidade de itens por espécies que constam na base de dados. Não esqueça de utilizar o comando `horiz=TRUE` para melhor visualização.
+
+```{r, include=FALSE}
+par(las=2)
+par(mar=c(5,15,4,2)) 
+barplot(table(arvores$Nomecientifico), horiz=TRUE)
+```
 
 
 
@@ -2086,6 +2123,8 @@ t.test(tecidoa, tecidob, var.equal = TRUE, paired=FALSE)
 
 Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso do tecido A é igual à média de peso do tecido B.
 
+## Exercícios
+
 # Teste de Qui-Quadrado{#qui}
 
 *Iara Denise Endruweit Battisti*
@@ -2350,7 +2389,7 @@ chisq.test(borrachudos, p=dist)
 
 
 
-
+## Exercícios
 
 
 # Modelos de Regressão{#reg}
@@ -2976,7 +3015,7 @@ predict(regressao, x0, interval="prediction")
 
 ## Exercícios
 
-**1.** No site do livro de extensão (https://smolski.github.io/softwarelivrer/livro.html) está disponível uma planilha de dados com o nome "peixes1", na primeira coluna consta a quantidade de ovos (m$^3$) e na segunda coluna consta a quantidade de oxigênio no rio. O objetivo da pesquisa é comparar alguns ambientes do rio sobre a desova e o crescimento das larvas de peixes.  Analisar a relação da quantidade de ovos com a quantidade de oxigênio no rio. Para isso utilize coeficiente de correlação linear e regressão linear simples.
+**1.** No site do livro (https://smolski.github.io/softwarelivrer/livro.html) está disponível uma planilha de dados com o nome "peixes1", na primeira coluna consta a quantidade de ovos (m$^3$) e na segunda coluna consta a quantidade de oxigênio no rio. O objetivo da pesquisa é comparar alguns ambientes do rio sobre a desova e o crescimento das larvas de peixes.  Analisar a relação da quantidade de ovos com a quantidade de oxigênio no rio. Para isso utilize coeficiente de correlação linear e regressão linear simples.
 
 # RMarkdown{#rmark}
 
@@ -3015,7 +3054,7 @@ Fonte: Elaborado pelo(s) autor(es).
 
 O **RMarkdown** cria um documento incial padrão, contendo alguns exemplos básicos de inserção de textos e de formatação, que serão vistos adiante. Para compilação do documento para o formato desejado (neste caso Word), o usuário deve clicar na aba "Knit $>$ Knit to Word", ou pelo atalho no teclado CTRL+SHIFT+K.
 
-```{r compil,  echo=FALSE, fig.cap="Compilado o documento RMarkdown"}
+```{r compil, echo=FALSE, fig.cap="Compilando o documento RMarkdown"}
 knitr::include_graphics("compilar.png")
 ```
 
@@ -3157,7 +3196,7 @@ Fonte: Elaborado pelo(s) autor(es).
 
 Os **Code Chunks**, como já visto, são espaços destinados à inclusão de códigos diretamente do RStudio, como se inseríssemos a informação em seu Console. Desta forma, por exemplo, se efetuarmos uma operação matemática ou se carregarmos uma base de dados para ser trabalhada, as rotinas serão efetuadas no momento em que for compilado o arquivo .Rmd trabalhado.
 
-A criação das Chunks é feita manualmente no corpo do documento .Rmd pela inclusão do código  ??? , ou via plataforma RStudio, no menu "Insert $>$ Insert a new R chunk", conforme demonstra a Figura \@ref(fig:rmarkchunk1):
+A criação das Chunks é feita manualmente no corpo do documento .Rmd pela inclusão do código demonstrado abaixo, ou via plataforma RStudio, no menu "Insert $>$ Insert a new R chunk", conforme demonstra a Figura \@ref(fig:rmarkchunk1):
 
 
 ```{r rmarkchunk1, echo=FALSE, fig.cap="Criação de Chunks"}

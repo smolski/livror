@@ -1,9 +1,9 @@
 --- 
 title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
-- Felipe Micail da Silva Smolski
 - Iara Denise Endruweit Battisti
-date: "2019-01-03"
+- Felipe Micail da Silva Smolski
+date: "2019-01-04"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -82,7 +82,7 @@ O RStudio é a interface que faz com que seja mais fácil a utilização da prog
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{paineis} 
+{\centering \includegraphics[width=0.7\linewidth]{paineis} 
 
 }
 
@@ -106,7 +106,7 @@ Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, e
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{pacotes1} 
+{\centering \includegraphics[width=0.7\linewidth]{pacotes1} 
 
 }
 
@@ -117,7 +117,7 @@ Fonte: Elaborado pelo(s) autor(es).
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{pacotes2} 
+{\centering \includegraphics[width=0.7\linewidth]{pacotes2} 
 
 }
 
@@ -133,7 +133,7 @@ A mesma função, para instalação de um pacote, pode ser efetuada diretamente 
 
 ## Abrir arquivo de dados
 
-Dispondo de um banco de dados em uma planilha eletrônica (LibreOffice Calc ou EXCEL), neste caso será utilizado o arquivo  [árvores](https://github.com/Smolski/softwarelivrer/raw/master/basico/arvores.xlsx) como exemplo o banco de dados. Os dados derivam de uma pesquisa com espécies de árvores registrando as variáveis diâmetro altura do peito (DAP) e altura. Dados cedidos pela professora Tatiane Chassot.
+Dispondo de um banco de dados em uma planilha eletrônica (LibreOffice Calc ou Excel), neste caso será utilizado o arquivo  [árvores](https://github.com/Smolski/livror/raw/master/arvores.xlsx) como exemplo de banco de dados. Os dados derivam de uma pesquisa com espécies de árvores registrando as variáveis diâmetro altura do peito (DAP) e altura. Dados cedidos pela professora Tatiane Chassot.
 
 Pode-se utilizar a linha de comando para carregar os arquivos de dados, da seguinte forma:
 
@@ -167,7 +167,7 @@ Outra opção é o carregamento das bases de dados manualmente pelo caminho *Env
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{r3} 
+{\centering \includegraphics[width=0.7\linewidth]{r3} 
 
 }
 
@@ -180,7 +180,7 @@ Na caixa correspondente a File/Url se insere o endereço virtual ou o local onde
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{r4} 
+{\centering \includegraphics[width=0.7\linewidth]{r4} 
 
 }
 
@@ -194,7 +194,7 @@ Com relação à importação de arquivos de texto separado por caracteres (.csv
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{r4csv} 
+{\centering \includegraphics[width=0.7\linewidth]{r4csv} 
 
 }
 
@@ -224,7 +224,7 @@ O banco de dados que o R armazena na memória pode ser salvo, junto com todo o a
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{r6} 
+{\centering \includegraphics[width=0.7\linewidth]{r6} 
 
 }
 
@@ -1176,7 +1176,7 @@ informacoes.2=edit(informacoes)
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{95} 
+{\centering \includegraphics[width=0.7\linewidth]{95} 
 
 }
 
@@ -1187,7 +1187,7 @@ Basta clicar no retângulo correspondente a variável que deseja ser modificada,
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{10} 
+{\centering \includegraphics[width=0.7\linewidth]{10} 
 
 }
 
@@ -1844,9 +1844,8 @@ Grande porte = árvores com altura superior a 10 metros.
 
 **2.**	Baixe o arquivo "bancodedados1" que se encontra no endereço <https://smolski.github.io/softwarelivrer/livro.html>. Este é um banco de dados com informações fictícias que usaremos a fim de aprendizado. Abra o arquivo no Rstudio tomando os cuidados necessários. Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.
 
-**2.1.** Qual é o vendedor com mais sucesso de vendas?  E o vendedor com menor número de vendas?
-
-**2.2.**	Qual foi o número total de vendas?
+**2.1.** Qual é o vendedor com mais sucesso de vendas? E o vendedor com menor número de vendas?
+Qual foi o número total de vendas?
 
 **2.3.**	Supondo que um vendedor tenha ficado de fora dos dados, insira suas informações no banco de dados que já possuímos.
 
@@ -1854,9 +1853,7 @@ Grande porte = árvores com altura superior a 10 metros.
 
 **2.4.**	Crie uma nova coluna classificando os vendedores como:
 
-- vendas $<$ 25 = "Regular"
-
-- 25 $>$ vendas = "Ótimo"
+- vendas $<$ 25 = "Regular" ; 25 $>$ vendas = "Ótimo"
 
 **2.5** Renomeie a coluna "vendas mensais" para "vendas diárias".
 
@@ -2098,7 +2095,7 @@ barplot(table(Sexo))
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-67-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-67-1} 
 
 }
 
@@ -2107,8 +2104,29 @@ barplot(table(Sexo))
 
 **Obs**.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
 
-
 `barplot(table(nome_variável), col=c("blue","red"), main="Título", xlab="Variável do eixo x", ylab = "Informação que consta no eixo y",border="red")`
+
+Para colocar o gráfico na horizontal, pode ser utilizado o comando `horiz=T`:
+
+
+
+```r
+par(las=2) # Altera a direção dos nomes Masculino e Feminino
+par(mar=c(5,8,4,2)) # Aumenta a margem do eixo x
+barplot(table(Sexo), horiz=T)
+```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-68-1} 
+
+}
+
+\caption{Gráfico de colunas com a variável Sexo (Horizontal)}(\#fig:unnamed-chunk-68)
+\end{figure}
+
+
+
 
 
 **Ex.1)** Construir um gráfico de colunas para a variável **Pessoas\_familia**.
@@ -2125,11 +2143,11 @@ barplot(table(`Pessoas_familia`), col=c("blue"),
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-68-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-69-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável `Pessoas familia`}(\#fig:unnamed-chunk-68)
+\caption{Gráfico de colunas com a variável `Pessoas familia`}(\#fig:unnamed-chunk-69)
 \end{figure}
 
 **Ex.2)** Construir uma tabela de dupla entrada para as variáveis **Sexo** e **Divulgação**.
@@ -2143,11 +2161,11 @@ barplot(table(Sexo,Divulgacao),
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-69-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-70-1} 
 
 }
 
-\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}(\#fig:unnamed-chunk-69)
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}(\#fig:unnamed-chunk-70)
 \end{figure}
 
 
@@ -2172,11 +2190,11 @@ barplot(Resultado,col=c("blue","red"),main="Título",
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-71-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-72-1} 
 
 }
 
-\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}(\#fig:unnamed-chunk-71)
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}(\#fig:unnamed-chunk-72)
 \end{figure}
 
 
@@ -2224,11 +2242,11 @@ legend(x="topright", # Determina posição da legenda
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-72-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-73-1} 
 
 }
 
-\caption{Gráfico de pizza com a variável Sabor}(\#fig:unnamed-chunk-72)
+\caption{Gráfico de pizza com a variável Sabor}(\#fig:unnamed-chunk-73)
 \end{figure}
 
 ### Histograma
@@ -2246,11 +2264,11 @@ hist(as.numeric(`Renda_h`))
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-73-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-74-1} 
 
 }
 
-\caption{Histograma com a variável `Renda h`}(\#fig:unnamed-chunk-73)
+\caption{Histograma com a variável `Renda h`}(\#fig:unnamed-chunk-74)
 \end{figure}
 
 **Obs**. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -2274,11 +2292,11 @@ hist(as.numeric(`Renda_h`),
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-74-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-75-1} 
 
 }
 
-\caption{Histograma com a variável Renda h com breaks=5}(\#fig:unnamed-chunk-74)
+\caption{Histograma com a variável Renda h com breaks=5}(\#fig:unnamed-chunk-75)
 \end{figure}
 O comando `ylim` determina os limites do eixo y a serem mostrados; `xlab` e `ylab` determinam o nome das variáveis dos eixos x e y; `main` determina o nome do título e `col` determina a cor do gráfico. Use o argumento `main=NULL` para remover o título.
 
@@ -2299,7 +2317,7 @@ hist(as.numeric(`Renda_h`), breaks=5)$breaks
 
 
 
-\begin{center}\includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-75-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-76-1} \end{center}
 
 ```
 [1]  0  5 10 15 20 25
@@ -2326,15 +2344,13 @@ boxplot(Idade,horizontal = T)
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-76-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-77-1} 
 
 }
 
-\caption{Boxplot com a variável Idade}(\#fig:unnamed-chunk-76)
+\caption{Boxplot com a variável Idade}(\#fig:unnamed-chunk-77)
 \end{figure}
 
-
-**Ex.2)** Construir um boxplot das variáveis **Peso\_(Kg)** e **Altura\_(m)**.    
 
 
 
@@ -2436,7 +2452,7 @@ Ex. Considere os dados que descrevem os valores do número de empresas fiscaliza
 <!--
 \begin{table}
 
-\caption{(\#tab:unnamed-chunk-78)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010}
+\caption{(\#tab:unnamed-chunk-79)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010}
 \centering
 \begin{tabular}[t]{r|l}
 \hline
@@ -2522,11 +2538,11 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-79-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-80-1} 
 
 }
 
-\caption{Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010}(\#fig:unnamed-chunk-79)
+\caption{Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010}(\#fig:unnamed-chunk-80)
 \end{figure}
 
 onde, no argumento `ylim`, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
@@ -2587,11 +2603,11 @@ legend(0,40,c("temp_inst","temp_max","temp_min"),
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-81-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-82-1} 
 
 }
 
-\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}(\#fig:unnamed-chunk-81)
+\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}(\#fig:unnamed-chunk-82)
 \end{figure}
 
 ## Estatísticas Descritivas
@@ -2819,6 +2835,31 @@ table(subset(Sexo, Sabor=="Pessimo"))
 
 Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a serem aplicados na estatística descritiva (veja help do R), nem tampouco os conceitos estatísticos necessários à compreensão. Para mais detalhes sobre os conceitos de estatística descritiva, você pode consultar outras referências ou até mesmo as já citadas neste capítulo.
 
+## Exercícios
+
+**1.** Carregue a base de dados denominada "arvores" disponível no site do livro (<https://smolski.github.io/softwarelivrer/livro.html>) e respontaas questões abaixo:
+
+
+
+
+**1.1** Utilize a função `summary` para identificar os principais indicadores da base de dados. Com a função `table` encontre a contagem das espécies que constam na planilha a partir da variável "Nomecientifico":
+
+
+
+
+
+**1.2** Utilizando a função `tapply` calcule a média do diâmetro por cada espécie.
+
+
+
+**1.3** Utilizando as funções `table` e `barplot` construa um gráfico de barras com a quantidade de itens por espécies que constam na base de dados. Não esqueça de utilizar o comando `horiz=TRUE` para melhor visualização.
+
+
+
+
+
+
+
 # Estatística Inferencial{#inf}
 
 *Tatiane Chassot*
@@ -2831,7 +2872,7 @@ A inferência estatística, ou estatística inferencial, tem por objetivo conclu
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{infestat} 
+{\centering \includegraphics[width=0.7\linewidth]{infestat} 
 
 }
 
@@ -2953,7 +2994,7 @@ O **valor p** reflete a plausibilidade de se obter tais resultados  no caso de $
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{testehip1} 
+{\centering \includegraphics[width=0.7\linewidth]{testehip1} 
 
 }
 
@@ -3388,7 +3429,7 @@ O teste de hipótese para duas médias aplica-se quando se deseja comparar dois 
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{testehip2} 
+{\centering \includegraphics[width=0.7\linewidth]{testehip2} 
 
 }
 
@@ -3403,7 +3444,7 @@ Podemos comparar duas médias de duas amostras dependentes, também chamadas de 
 
 \begin{table}
 
-\caption{(\#tab:unnamed-chunk-109)Amostras dependentes}
+\caption{(\#tab:unnamed-chunk-115)Amostras dependentes}
 \centering
 \begin{tabular}[t]{l|r|r|r|r|r|r}
 \hline
@@ -3453,7 +3494,7 @@ Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso antes do tre
 
 \begin{table}
 
-\caption{(\#tab:unnamed-chunk-111)Amostras dependentes - caso 2}
+\caption{(\#tab:unnamed-chunk-117)Amostras dependentes - caso 2}
 \centering
 \begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
 \hline
@@ -3506,7 +3547,7 @@ Primeiramente precisamos saber se existe homogeneidade de variâncias populacion
 
 \begin{table}
 
-\caption{(\#tab:unnamed-chunk-113)Comparação de dois tipos diferentes de tecidos}
+\caption{(\#tab:unnamed-chunk-119)Comparação de dois tipos diferentes de tecidos}
 \centering
 \begin{tabular}[t]{l|l|l|l|l|l|l|l}
 \hline
@@ -3572,6 +3613,8 @@ mean of x mean of y
 ```
 
 Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso do tecido A é igual à média de peso do tecido B.
+
+## Exercícios
 
 # Teste de Qui-Quadrado{#qui}
 
@@ -3989,7 +4032,7 @@ X-squared = 8.1, df = 6, p-value = 0.2
 
 
 
-
+## Exercícios
 
 
 # Modelos de Regressão{#reg}
@@ -4016,7 +4059,7 @@ O diagrama de dispersão fornece uma visualização gráfica do comportamento co
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{correlacao1} 
+{\centering \includegraphics[width=0.7\linewidth]{correlacao1} 
 
 }
 
@@ -4056,11 +4099,11 @@ plot(tempo,nota)
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-128-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-134-1} 
 
 }
 
-\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}(\#fig:unnamed-chunk-128)
+\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}(\#fig:unnamed-chunk-134)
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4121,7 +4164,7 @@ Na Figura \@ref(fig:regress) é apresentada a variação explicada e não explic
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{regress1} 
+{\centering \includegraphics[width=0.7\linewidth]{regress1} 
 
 }
 
@@ -4136,7 +4179,7 @@ Observa-se na Figura \@ref(fig:regress), uma identidade na regressão, conforme 
 <!--
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{regress2} 
+{\centering \includegraphics[width=0.7\linewidth]{regress2} 
 
 }
 
@@ -4409,11 +4452,11 @@ abline(coef(regressao))
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-132-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-138-1} 
 
 }
 
-\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}(\#fig:unnamed-chunk-132)
+\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}(\#fig:unnamed-chunk-138)
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4453,7 +4496,7 @@ Além da análise gráfica, existem testes para avaliar a homocedasticidade como
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{residuos1} 
+{\centering \includegraphics[width=0.7\linewidth]{residuos1} 
 
 }
 
@@ -4487,7 +4530,7 @@ abline(h=0)
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/residuos1-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/residuos1-1} 
 
 }
 
@@ -4522,7 +4565,7 @@ abline(h=0)
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/residuos2-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/residuos2-1} 
 
 }
 
@@ -4573,7 +4616,7 @@ qqnorm(residuals(regressao))
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/qqnorm-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/qqnorm-1} 
 
 }
 
@@ -4597,11 +4640,11 @@ lines(density(regressao$residuals))
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/unnamed-chunk-135-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-141-1} 
 
 }
 
-\caption{Histograma de distribuição da probabilidade para os resíduos}(\#fig:unnamed-chunk-135)
+\caption{Histograma de distribuição da probabilidade para os resíduos}(\#fig:unnamed-chunk-141)
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4681,7 +4724,7 @@ abline(h=-2,col="red")
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/residpad-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/residpad-1} 
 
 }
 
@@ -4701,7 +4744,7 @@ abline(h=-2,col="red")
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/residst-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/residst-1} 
 
 }
 
@@ -4756,7 +4799,7 @@ abline(h=0.73,col="red")
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{index_files/figure-latex/ptoinf-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/ptoinf-1} 
 
 }
 
@@ -4837,7 +4880,7 @@ predict(regressao, x0, interval="prediction")
 
 ## Exercícios
 
-**1.** No site do livro de extensão (https://smolski.github.io/softwarelivrer/livro.html) está disponível uma planilha de dados com o nome "peixes1", na primeira coluna consta a quantidade de ovos (m$^3$) e na segunda coluna consta a quantidade de oxigênio no rio. O objetivo da pesquisa é comparar alguns ambientes do rio sobre a desova e o crescimento das larvas de peixes.  Analisar a relação da quantidade de ovos com a quantidade de oxigênio no rio. Para isso utilize coeficiente de correlação linear e regressão linear simples.
+**1.** No site do livro (https://smolski.github.io/softwarelivrer/livro.html) está disponível uma planilha de dados com o nome "peixes1", na primeira coluna consta a quantidade de ovos (m$^3$) e na segunda coluna consta a quantidade de oxigênio no rio. O objetivo da pesquisa é comparar alguns ambientes do rio sobre a desova e o crescimento das larvas de peixes.  Analisar a relação da quantidade de ovos com a quantidade de oxigênio no rio. Para isso utilize coeficiente de correlação linear e regressão linear simples.
 
 # RMarkdown{#rmark}
 
@@ -4852,7 +4895,7 @@ predict(regressao, x0, interval="prediction")
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkdown} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkdown} 
 
 }
 
@@ -4872,7 +4915,7 @@ Neste exemplo será criado um documento em Word, onde são preenchidos os campos
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{criararq1} 
+{\centering \includegraphics[width=0.7\linewidth]{criararq1} 
 
 }
 
@@ -4888,11 +4931,11 @@ O **RMarkdown** cria um documento incial padrão, contendo alguns exemplos bási
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{compilar} 
+{\centering \includegraphics[width=0.7\linewidth]{compilar} 
 
 }
 
-\caption{Compilado o documento RMarkdown}(\#fig:compil)
+\caption{Compilando o documento RMarkdown}(\#fig:compil)
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4901,7 +4944,7 @@ Caso ocorram erros com relação à codificação do documento, no que diz respe
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{errocodif} 
+{\centering \includegraphics[width=0.7\linewidth]{errocodif} 
 
 }
 
@@ -4919,7 +4962,7 @@ Já abaixo do YAML, situa-se o local onde o pesquisador digitará o texto, bem c
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmark2} 
+{\centering \includegraphics[width=0.7\linewidth]{rmark2} 
 
 }
 
@@ -4941,7 +4984,7 @@ Os níveis de títulos dos documentos RMarkdown são definidos pelo símbolo `#`
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarktit} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarktit} 
 
 }
 
@@ -4954,7 +4997,7 @@ A acentuação das palavras, dentro do texto, é feita normalmente pelo teclado 
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkform} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkform} 
 
 }
 
@@ -4968,7 +5011,7 @@ Como visto, é possível escrever as fórmulas em notação matemática, o que f
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarklinks} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarklinks} 
 
 }
 
@@ -4981,7 +5024,7 @@ A inserção de imagens externas no documento, em diversos formatos (aqui no exe
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkimg} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkimg} 
 
 }
 
@@ -4994,7 +5037,7 @@ A Figura \@ref(fig:rmarklist) demonstra algumas formas de criar listas e itens n
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarklist} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarklist} 
 
 }
 
@@ -5007,7 +5050,7 @@ A criação de tabelas simples segue a disposição dos elementos pré-definidos
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarktab} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarktab} 
 
 }
 
@@ -5020,7 +5063,7 @@ As notas de rodapé são inseridas no texto dentro das chaves precedidas do acen
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkrodape} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkrodape} 
 
 }
 
@@ -5036,7 +5079,7 @@ O YAML, ou os metadados do documento, são informações básicas do documento q
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkautor} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkautor} 
 
 }
 
@@ -5074,7 +5117,7 @@ Também é possível incluir um campo `abstract` para o resumo, no caso de artig
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{abstract} 
+{\centering \includegraphics[width=0.7\linewidth]{abstract} 
 
 }
 
@@ -5088,12 +5131,12 @@ Fonte: Elaborado pelo(s) autor(es).
 
 Os **Code Chunks**, como já visto, são espaços destinados à inclusão de códigos diretamente do RStudio, como se inseríssemos a informação em seu Console. Desta forma, por exemplo, se efetuarmos uma operação matemática ou se carregarmos uma base de dados para ser trabalhada, as rotinas serão efetuadas no momento em que for compilado o arquivo .Rmd trabalhado.
 
-A criação das Chunks é feita manualmente no corpo do documento .Rmd pela inclusão do código  ??? , ou via plataforma RStudio, no menu "Insert $>$ Insert a new R chunk", conforme demonstra a Figura \@ref(fig:rmarkchunk1):
+A criação das Chunks é feita manualmente no corpo do documento .Rmd pela inclusão do código demonstrado abaixo, ou via plataforma RStudio, no menu "Insert $>$ Insert a new R chunk", conforme demonstra a Figura \@ref(fig:rmarkchunk1):
 
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkchunk1} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkchunk1} 
 
 }
 
@@ -5110,7 +5153,7 @@ A primeira opção, `echo=FALSE`, informa que no arquivo compilado, somente ser�
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkchunk2} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkchunk2} 
 
 }
 
@@ -5126,7 +5169,7 @@ Para padronizar todas as Chunks para que tenham as mesmas opções, uma maneira 
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkchunkopt} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkchunkopt} 
 
 }
 
@@ -5155,7 +5198,7 @@ No exemplo abaixo, foi criado um *data frame* nomeado "amost" diretamente no con
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkchunk3} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkchunk3} 
 
 }
 
@@ -5171,7 +5214,7 @@ Como visto, algumas ações extremamente úteis podem ser efetuadas por meio das
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkchunktab1} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkchunktab1} 
 
 }
 
@@ -5185,7 +5228,7 @@ Além disso, o pacote `stargazer` é extremamente útil para geração de tabela
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkchunktab2} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkchunktab2} 
 
 }
 
@@ -5219,7 +5262,7 @@ Da mesma forma que as tabelas, as imagens também podem ser inseridas com o aux�
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkchunkimg} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkchunkimg} 
 
 }
 
@@ -5246,7 +5289,7 @@ Abra o arquivo em Word (denominamos ``modelo.docx''). Atente para a caixa de sel
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkestilos} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkestilos} 
 
 }
 
@@ -5259,7 +5302,7 @@ Note que para o resultado desta compilação, o menu estilos traz várias format
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkestilos1} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkestilos1} 
 
 }
 
@@ -5276,7 +5319,7 @@ Após determinar as alterações em todos os campos de estilos do documento mode
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkestilos2} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkestilos2} 
 
 }
 
@@ -5300,7 +5343,7 @@ A primeira (`@article`), demonstra que é um artigo de uma revista enquanto a se
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkbib} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkbib} 
 
 }
 
@@ -5333,7 +5376,7 @@ Estas configurações do BibLateX são comuns nos programas de gerenciamento de 
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkmendeley} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkmendeley} 
 
 }
 
@@ -5349,7 +5392,7 @@ Após escolhidas as bibliografias a serem utilizadas no trabalho, o pesquisador 
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkcitar} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkcitar} 
 
 }
 
@@ -5368,7 +5411,7 @@ também são encontrados arquivos para várias normas bibliográficas.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkcitar1} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkcitar1} 
 
 }
 
@@ -5388,7 +5431,7 @@ Segue o resultado do arquivo final:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.8\linewidth]{rmarkcitarf} 
+{\centering \includegraphics[width=0.7\linewidth]{rmarkcitarf} 
 
 }
 

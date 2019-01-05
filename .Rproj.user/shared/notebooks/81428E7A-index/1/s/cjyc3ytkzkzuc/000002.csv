@@ -1,0 +1,6 @@
+"0","hist(x = regressao$residuals,"
+"0","      xlab = ""Resíduos"","
+"0","      ylab = ""Densidade"","
+"0","      main = """","
+"0","      col = ""lightgreen"","
+"0","      probability = TRUE)"

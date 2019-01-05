@@ -1,0 +1,21 @@
+"0","require(dplyr)"
+"2","Carregando pacotes exigidos: dplyr
+"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","informacoes= mutate(informacoes, "
+"0","                    ""faixa etaria""= ifelse(informacoes$idade<21,"
+"0","                                           ""nÃ£o adulto"", ""adulto""))"
+"0","informacoes"

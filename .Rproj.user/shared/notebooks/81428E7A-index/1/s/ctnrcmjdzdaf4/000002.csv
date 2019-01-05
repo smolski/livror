@@ -1,0 +1,4 @@
+"0","# Classificar qualitativamente informações em um determinado intervalo "
+"0","classificacao=ifelse(informacoes$Imc<25, ""peso normal"",""excesso de peso"")"
+"0","informacoes=cbind(informacoes, classificacao)"
+"0","informacoes"

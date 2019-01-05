@@ -1,0 +1,4 @@
+"0","legend(x=""topright"", # Determina posição da legenda"
+"0","       legend=nomesleg, # Insere nomes da legenda"
+"0","       cex = 0.65, # Tamanho do texto"
+"0","       fill = terrain.colors(5)) # Determina cores "
