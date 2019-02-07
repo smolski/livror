@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Iara Denise Endruweit Battisti
 - Felipe Micail da Silva Smolski
-date: "2019-02-06"
+date: "2019-02-07"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -1295,7 +1295,8 @@ Entre 25 e 29,99     Acima do peso
 Entre 30 e 34,99     Obesidade I             
 Entre 35 e 39,99     Obesidade II (severa)   
 Acima de 40          Obesidade III (mórbida) 
-Fonte: Adaptado de @brasil2014.
+
+Fonte: Adaptado de @brasil2014 .
 
 No entanto, o IMC possui várias classificações de acordo com o seu resultado (Tabela \@ref(tab:imct)), sendo que, por exemplo, resultados abaixo de 17 informam que o indivíduo se encontra como Muito abaixo do peso, e acima de 40, se encontra em Obesidade III. Para efetuar a classificação desta maneira utilizando o comando `ifelse`, ou seja, com mais de uma condição, pode ser efetuada a estruturação com a aglutinação do comando:
 
@@ -1898,7 +1899,7 @@ b) Variável ordinal: envolve variáveis representadas por nomes que podem ser d
 
 A Estatística subdivide-se em descritiva e inferencial. A estatística descritiva se preocupa em descrever os dados. A estatística inferencial, fundamentada na teoria das probabilidades, se preocupa com a análise destes dados e sua interpretação.
 
-Informações estatísticas em jornais, relatórios e outras publicações que consistem de dados reunidos e apresentados de forma clara e resumida, na forma de tabelas, gráficos ou numéricos, são conhecidos como estatísticas descritivas (ANDERSON, 2002).
+Informações estatísticas em jornais, relatórios e outras publicações que consistem de dados reunidos e apresentados de forma clara e resumida, na forma de tabelas, gráficos ou numéricos, são conhecidos como estatísticas descritivas [@anderson2002].
 
 
 **Exemplo 1**

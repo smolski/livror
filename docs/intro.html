@@ -981,12 +981,9 @@ informacoes</code></pre>
 <td align="left">Acima de 40</td>
 <td align="left">Obesidade III (mórbida)</td>
 </tr>
-<tr class="even">
-<td align="left">Fonte: Adaptado de <span class="citation">(<span class="citeproc-not-found" data-reference-id="b"><strong>???</strong></span>)</span></td>
-<td align="left">rasil2014.</td>
-</tr>
 </tbody>
 </table>
+<p>Fonte: Adaptado de <span class="citation">Brasil (<a href="#ref-brasil2014">2014</a>)</span> .</p>
 <p>No entanto, o IMC possui várias classificações de acordo com o seu resultado (Tabela <a href="intro.html#tab:imct">1.1</a>), sendo que, por exemplo, resultados abaixo de 17 informam que o indivíduo se encontra como Muito abaixo do peso, e acima de 40, se encontra em Obesidade III. Para efetuar a classificação desta maneira utilizando o comando <code>ifelse</code>, ou seja, com mais de uma condição, pode ser efetuada a estruturação com a aglutinação do comando:</p>
 <pre class="sourceCode r"><code class="sourceCode r">informacoes<span class="op">$</span>tipoimc=<span class="kw">ifelse</span>(informacoes<span class="op">$</span>Imc<span class="op">&lt;</span><span class="dv">17</span>, <span class="st">&quot;Muito abaixo do peso&quot;</span>,
 <span class="kw">ifelse</span>(informacoes<span class="op">$</span>Imc<span class="op">&gt;=</span><span class="dv">17</span><span class="op">&amp;</span>informacoes<span class="op">$</span>Imc<span class="op">&lt;=</span><span class="fl">18.49</span>,<span class="st">&quot;Abaixo do peso&quot;</span>,
@@ -1269,6 +1266,9 @@ Qual foi o número total de vendas?</p>
 <div id="ref-teamrstudio">
 <p>RStudio Team. 2018. «RStudio: Integrated Development Environment for R». Boston, MA: RStudio, Inc. 2018. <a href="http://www.rstudio.com/">http://www.rstudio.com/</a>.</p>
 </div>
+<div id="ref-brasil2014">
+<p>Brasil, Ministério da Saúde - Secretaria de Atenção à Saúde. 2014. <em>Estratégias para o cuidado da pessoa com doença crônica: obesidade</em>. Brasília: Ministério da Saúde.</p>
+</div>
 </div>
             </section>
 
@@ -1311,7 +1311,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["livror.pdf", "livror.epub"],
+"download": ["livror.pdf"],
 "toc": {
 "collapse": "subsection"
 },
