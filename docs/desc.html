@@ -9,7 +9,7 @@
   <meta name="description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Capítulo 2 Estatística Descritiva | Software R: Análise estatística de dados utilizando um programa livre />
+  <meta property="og:title" content="Capítulo 2 Estatística Descritiva | Software R: Análise estatística de dados utilizando um programa livre" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://rstub.github.io/bookdown-chapterbib/" />
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstub/bookdown-chapterbib" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 2 Estatística Descritiva | Software R: Análise estatística de dados utilizando um programa livre />
+  <meta name="twitter:title" content="Capítulo 2 Estatística Descritiva | Software R: Análise estatística de dados utilizando um programa livre" />
   
   <meta name="twitter:description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS" />
   
@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-01-04">
+<meta name="date" content="2019-02-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -326,12 +326,8 @@ Parâmetro é a medida numérica que descreve uma característica de uma popula�
 url &lt;-<span class="st"> &quot;https://github.com/Smolski/livror/raw/master/pesquisa_dados.xlsx&quot;</span>
 destfile &lt;-<span class="st"> &quot;pesquisa_dados.xlsx&quot;</span>
 curl<span class="op">::</span><span class="kw">curl_download</span>(url, destfile)
-pesquisa_dados &lt;-<span class="st"> </span><span class="kw">read_excel</span>(destfile)</code></pre>
-<pre><code>readxl works best with a newer version of the tibble package.
-You currently have tibble v1.4.2.
-Falling back to column name repair from tibble &lt;= v1.4.2.
-Message displays once per session.</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attach</span>(pesquisa_dados)
+pesquisa_dados &lt;-<span class="st"> </span><span class="kw">read_excel</span>(destfile)
+<span class="kw">attach</span>(pesquisa_dados)
 <span class="kw">ls.str</span>(pesquisa_dados)</code></pre>
 <pre><code>Altura_(m) :  num [1:348] 1.82 1.9 1.69 1.89 1.9 1.76 1.83 1.81 1.67 1.55 ...
 Caso :  num [1:348] 1 2 3 4 5 6 7 8 9 10 ...
@@ -400,8 +396,8 @@ Divulgacao   Feminino Masculino
 <p><code>barplot(table(nome_variável))</code></p>
 <p>Ex. Construir um gráfico de colunas para a variável <strong>Sexo</strong>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-67"></span>
-<img src="index_files/figure-html/unnamed-chunk-67-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-68"></span>
+<img src="index_files/figure-html/unnamed-chunk-68-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
 <p class="caption">
 Figura 2.1: Gráfico de colunas com a variável Sexo
 </p>
@@ -412,8 +408,8 @@ Figura 2.1: Gráfico de colunas com a variável Sexo
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">las=</span><span class="dv">2</span>) <span class="co"># Altera a direção dos nomes Masculino e Feminino</span>
 <span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">4</span>,<span class="dv">2</span>)) <span class="co"># Aumenta a margem do eixo x</span>
 <span class="kw">barplot</span>(<span class="kw">table</span>(Sexo), <span class="dt">horiz=</span>T)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-68"></span>
-<img src="index_files/figure-html/unnamed-chunk-68-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-69"></span>
+<img src="index_files/figure-html/unnamed-chunk-69-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
 <p class="caption">
 Figura 2.2: Gráfico de colunas com a variável Sexo (Horizontal)
 </p>
@@ -424,8 +420,8 @@ Figura 2.2: Gráfico de colunas com a variável Sexo (Horizontal)
         <span class="dt">xlab =</span> <span class="st">&quot;Frequência&quot;, </span>
 <span class="st">        ylab = &quot;</span>Pessoas<span class="st">&quot;, </span>
 <span class="st">        border = &quot;</span>red<span class="st">&quot;)</span></code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-69"></span>
-<img src="index_files/figure-html/unnamed-chunk-69-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-70"></span>
+<img src="index_files/figure-html/unnamed-chunk-70-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
 <p class="caption">
 Figura 2.3: Gráfico de colunas com a variável <code>Pessoas familia</code>
 </p>
@@ -434,8 +430,8 @@ Figura 2.3: Gráfico de colunas com a variável <code>Pessoas familia</code>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo,Divulgacao), 
         <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>), 
         <span class="dt">main =</span> <span class="st">&quot;Frequência de pessoas por Sexo e Divulgacao&quot;</span>)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-70"></span>
-<img src="index_files/figure-html/unnamed-chunk-70-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-71"></span>
+<img src="index_files/figure-html/unnamed-chunk-71-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
 <p class="caption">
 Figura 2.4: Gráfico de colunas com as variáveis Sexo e Divulgacao
 </p>
@@ -449,8 +445,8 @@ Figura 2.4: Gráfico de colunas com as variáveis Sexo e Divulgacao
         <span class="dt">border=</span><span class="st">&#39;red&#39;</span>, 
         <span class="dt">beside=</span>T,<span class="dt">legend=</span><span class="kw">rownames</span>(Resultado),
         <span class="dt">args.legend =</span> <span class="kw">list</span>(<span class="dt">x =</span> <span class="st">&quot;topleft&quot;</span>))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-72"></span>
-<img src="index_files/figure-html/unnamed-chunk-72-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-73"></span>
+<img src="index_files/figure-html/unnamed-chunk-73-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
 <p class="caption">
 Figura 2.5: Gráfico de colunas com as variáveis Sexo e Divulgacao (2)
 </p>
@@ -488,8 +484,8 @@ nomesleg=<span class="kw">c</span>(<span class="st">&quot;Bom&quot;</span>,<span
 <span class="co"># - terrain.colors(n) </span>
 <span class="co"># - topo.colors(n)</span>
 <span class="co"># - cm.colors(n)</span></code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-73"></span>
-<img src="index_files/figure-html/unnamed-chunk-73-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-74"></span>
+<img src="index_files/figure-html/unnamed-chunk-74-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
 <p class="caption">
 Figura 2.6: Gráfico de pizza com a variável Sabor
 </p>
@@ -501,8 +497,8 @@ Figura 2.6: Gráfico de pizza com a variável Sabor
 <p><code>hist(nome_variável)</code></p>
 <p>Ex. Construa um histograma com a variável <strong>Renda_h</strong>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(<span class="kw">as.numeric</span>(<span class="st">`</span><span class="dt">Renda_h</span><span class="st">`</span>))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-74"></span>
-<img src="index_files/figure-html/unnamed-chunk-74-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-75"></span>
+<img src="index_files/figure-html/unnamed-chunk-75-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
 <p class="caption">
 Figura 2.7: Histograma com a variável <code>Renda h</code>
 </p>
@@ -518,8 +514,8 @@ Figura 2.7: Histograma com a variável <code>Renda h</code>
      <span class="dt">ylab =</span> <span class="st">&#39;Frequência&#39;,</span>
 <span class="st">     main = &#39;</span>Histograma da Renda<span class="st">&#39;,</span>
 <span class="st">     col = &#39;</span><span class="co">#BBDEFB&#39;)</span></code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-75"></span>
-<img src="index_files/figure-html/unnamed-chunk-75-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-76"></span>
+<img src="index_files/figure-html/unnamed-chunk-76-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
 <p class="caption">
 Figura 2.8: Histograma com a variável Renda h com breaks=5
 </p>
@@ -529,7 +525,7 @@ Figura 2.8: Histograma com a variável Renda h com breaks=5
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(<span class="kw">as.numeric</span>(<span class="st">`</span><span class="dt">Renda_h</span><span class="st">`</span>), <span class="dt">breaks=</span><span class="dv">5</span>)<span class="op">$</span>counts</code></pre>
 <pre><code>[1] 106 167  62  11   2</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(<span class="kw">as.numeric</span>(<span class="st">`</span><span class="dt">Renda_h</span><span class="st">`</span>), <span class="dt">breaks=</span><span class="dv">5</span>)<span class="op">$</span>breaks</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-76-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-77-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <pre><code>[1]  0  5 10 15 20 25</code></pre>
 </div>
 <div id="boxplot-ou-diagrama-em-caixas" class="section level3">
@@ -540,8 +536,8 @@ Figura 2.8: Histograma com a variável Renda h com breaks=5
 <p><code>boxplot(variávelA, variávelB, names=c("A","B"))</code></p>
 <p><strong>Ex.1)</strong> Construir um boxplot da variável <strong>Idade</strong>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(Idade,<span class="dt">horizontal =</span> T)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-77"></span>
-<img src="index_files/figure-html/unnamed-chunk-77-1.png" alt="Boxplot com a variável Idade" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-78"></span>
+<img src="index_files/figure-html/unnamed-chunk-78-1.png" alt="Boxplot com a variável Idade" width="70%" />
 <p class="caption">
 Figura 2.9: Boxplot com a variável Idade
 </p>
@@ -621,7 +617,7 @@ Figura 2.9: Boxplot com a variável Idade
 <p>Ex. Considere os dados que descrevem os valores do número de empresas fiscalizadas na fiscalização do trabalho na área rural Brasil 1998-2010.</p>
 <!--
 
-Table: (\#tab:unnamed-chunk-79)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
+Table: (\#tab:unnamed-chunk-80)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
 
   Ano  Empresas.Fiscalizadas 
 -----  ----------------------
@@ -723,8 +719,8 @@ Table: (\#tab:unnamed-chunk-79)Evolução dos resultados da fiscalização do tr
 <span class="kw">plot</span>(empfisc<span class="op">$</span>ano,empfisc<span class="op">$</span>qtd,<span class="dt">type=</span><span class="st">&quot;b&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Título&quot;</span>,
      <span class="dt">xlab=</span><span class="st">&quot;Nome_eixo_x&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Nome_eixo_y&quot;</span>, 
      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1998</span>,<span class="dv">2010</span>))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-80"></span>
-<img src="index_files/figure-html/unnamed-chunk-80-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-81"></span>
+<img src="index_files/figure-html/unnamed-chunk-81-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
 <p class="caption">
 Figura 2.10: Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010
 </p>
@@ -765,8 +761,8 @@ inmet &lt;-<span class="st"> </span><span class="kw">read_delim</span>(<span cla
 
 <span class="kw">legend</span>(<span class="dv">0</span>,<span class="dv">40</span>,<span class="kw">c</span>(<span class="st">&quot;temp_inst&quot;</span>,<span class="st">&quot;temp_max&quot;</span>,<span class="st">&quot;temp_min&quot;</span>),
   <span class="dt">col =</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;green&quot;</span>),<span class="dt">pch=</span><span class="fl">4.1</span>,<span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-82"></span>
-<img src="index_files/figure-html/unnamed-chunk-82-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-83"></span>
+<img src="index_files/figure-html/unnamed-chunk-83-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
 <p class="caption">
 Figura 2.11: Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS
 </p>
@@ -875,7 +871,7 @@ pesquisa_dados<span class="op">$</span>Renda_h=<span class="kw">as.numeric</span
 <p>Almeida, L, e T Freire. 2000. <em>Metodologia da investigação em psicologia e educação</em>. 2 ed. Braga: Psiquilíbrios.</p>
 </div>
 <div id="ref-barbetta1988">
-<p>Barbetta, Pedro Alberto. 2010. <em>Estatı́stica aplicada às ciências sociais</em>. 7 ed. Florianópolis: Ed. UFSC.</p>
+<p>Barbetta, Pedro Alberto. 2010. <em>Estatı́stica aplicada às ciências sociais</em>. 7 ed. Florianópolis: Editora UFSC.</p>
 </div>
 </div>
             </section>
@@ -919,7 +915,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["livror.pdf"],
+"download": ["livror.pdf", "livror.epub"],
 "toc": {
 "collapse": "subsection"
 },

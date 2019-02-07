@@ -9,7 +9,7 @@
   <meta name="description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Capítulo 4 Teste de Qui-Quadrado | Software R: Análise estatística de dados utilizando um programa livre />
+  <meta property="og:title" content="Capítulo 4 Teste de Qui-Quadrado | Software R: Análise estatística de dados utilizando um programa livre" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://rstub.github.io/bookdown-chapterbib/" />
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstub/bookdown-chapterbib" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 4 Teste de Qui-Quadrado | Software R: Análise estatística de dados utilizando um programa livre />
+  <meta name="twitter:title" content="Capítulo 4 Teste de Qui-Quadrado | Software R: Análise estatística de dados utilizando um programa livre" />
   
   <meta name="twitter:description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS" />
   
@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-01-04">
+<meta name="date" content="2019-02-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -276,7 +276,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!--Observando-se a Tabela \@ref(tab:qui2), o valor 33 corresponde ao sexo masculino e a opinião favorável (masculino $\bigcap $ favorável), é chamada de $O_{11}$.-->
 <div id="teste-de-qui-quadrado-para-verificar-associacao-entre-duas-variaveis-qualitativas" class="section level2">
 <h2><span class="header-section-number">4.1</span> Teste de qui-quadrado para verificar associação entre duas variáveis qualitativas</h2>
-<p><strong>Exemplo 1</strong>: Uma pesquisa sobre “a exposição a agrotóxicos entre trabalhadores rurais no município de Cerro Largo/RS” foi desenvolvida por Letiane Peccin Ristow, no ano de 2017 (dissertação e mestrado no Programa de Pós-Graduação em Desenvolvimento e Políticas Públicas da UFFS, Campus Cerro Largo. Na Tabela <a href="qui.html#tab:tamprop">4.1</a><!--\@ref(tab:qui2)--> são apresentados os resultados do “tamanho da propriedade” e “armazenamento seguro do EPI”. Para verificar a existência de associação significativa entre essas duas variáveis utilizamos o teste de qui-quadrado, dado que são duas variáveis qualitativas: variável 1 - tamanho da propriedade (até 25ha; 26ha ou mais) e variável 2 – armazenamento seguro (sim; não).</p>
+<p><strong>Exemplo 1</strong>: Uma pesquisa sobre “a exposição a agrotóxicos entre trabalhadores rurais no município de Cerro Largo/RS” foi desenvolvida por Letiane Peccin Ristow, no ano de 2017 (dissertação e mestrado no Programa de Pós-Graduação em Desenvolvimento e Políticas Públicas da UFFS, Campus Cerro Largo. Na Tabela <a href="qui.html#tab:tamprop">4.1</a><!--\@ref(tab:qui2)--> são apresentados os resultados do “tamanho da propriedade” e “armazenamento seguro do EPI”. Para verificar a existência de associação significativa entre essas duas variáveis utilizamos o teste de qui-quadrado, dado que são duas variáveis qualitativas: variável 1 - tamanho da propriedade (até 25 ha; 26 ha ou mais) e variável 2 – armazenamento seguro (sim; não).</p>
 <p>Primeiramente definimos as seguintes hipóteses estatísticas:</p>
 <p><span class="math inline">\(H_0\)</span>: não existe associação entre tamanho da propriedade e armazenamento seguro (as variáveis são independentes)</p>
 <p><span class="math inline">\(H_1\)</span>: existe associação entre tamanho da propriedade e armazenamento seguro (as variáveis são dependentes)</p>
@@ -323,7 +323,7 @@ em que:</p>
 <p><span class="math inline">\(O_{ij}\)</span>: frequência observada na linha i e coluna j</p>
 <p><span class="math inline">\(E_{ij}\)</span>: frequência esperada na linha i e coluna j</p>
 <p>com grau de liberdade = <span class="math inline">\(gl = (c-1)(l-1)\)</span>.</p>
-<p>A frequência esperada de uma casela é obtida pela multiplicação do total da linha pelo total da coluna dividido pelo total geral. Por exemplo, a frequência esperada é igual ao total da coluna 1 multiplicada pelo total da linha 1 dividido pelo total geral, ou seja, (68x90)/112.</p>
+<p>A frequência esperada de uma casela é obtida pela multiplicação do total da linha pelo total da coluna dividido pelo total geral. Por exemplo, a frequência esperada é igual ao total da coluna 1 multiplicada pelo total da linha 1 dividido pelo total geral, ou seja, (67x90)/112.</p>
 <p>Porém, é importante conhecermos as pressuposições do teste de qui-quadrado de Pearson. Para auxiliar no encaminhamento do teste adequado para verificar a relação de duas variáveis qualitativas, seguimos o seguinte check-list.</p>
 </div>
 <div id="check-list-para-escolher-o-teste-adequado-para-verificar-a-relacao-entre-duas-variaveis-qualitativas" class="section level2">
@@ -608,15 +608,53 @@ X-squared = 8.1, df = 6, p-value = 0.2</code></pre>
 </div>
 <div id="exercicios-3" class="section level2">
 <h2><span class="header-section-number">4.6</span> Exercícios</h2>
+<p><strong>1.</strong> Uma pesquisa com consumidores foi realizada para verificar a aceitação de um novo produto. Utilize o teste apropriado para avaliar a aceitação do produto em relação ao sexo dos consumidores que participaram da pesquisa.</p>
+<table style="width:94%;">
+<caption><span id="tab:exercqui">Tabela 4.6: </span> Aceitação do produto em relação ao sexo dos clientes.</caption>
+<colgroup>
+<col width="38%" />
+<col width="27%" />
+<col width="27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left"><strong>Sexo</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Aceitação </strong></td>
+<td align="left">F</td>
+<td>M</td>
+</tr>
+<tr class="even">
+<td>Comprariam</td>
+<td align="left">43</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>Não Comprariam</td>
+<td align="left">37</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<p>Fonte: Dados simulados.</p>
+<p><strong>1.1</strong> Apresente as hipóteses estatísticas para esta pesquisa.</p>
+<p><strong>1.2</strong> Analise o resultado do teste adequado a partir do resultado do software R.</p>
+<p><strong>1.3</strong> Justifique a escolha do deste utilizado em 1.2.</p>
+<p><strong>1.4</strong> Apresente o valor p e interprete os resultados do teste considerando nível de 5% de significância.</p>
 </div>
 </div>
 <h3>Referências</h3>
 <div id="refs" class="references">
 <div id="ref-Ristow2017">
-<p>Ristow, Letiane Peccin. 2017. <em>Exposição ocupacional de trabalhadores rurais a agrotóxicos e relação com políticas públicas</em>. 139 f.: Dissertação (Mestrado em Desenvolvimento e Políticas Públicas) - Universidade Federal da Fronteira Sul, Cerro Largo.</p>
+<p>Ristow, Letiane Peccin. 2017. «Exposição ocupacional de trabalhadores rurais a agrotóxicos e relação com políticas públicas». 139 f.: Dissertação (Mestrado em Desenvolvimento e Políticas Públicas) - Universidade Federal da Fronteira Sul, Cerro Largo.</p>
 </div>
 <div id="ref-barbetta1988">
-<p>Barbetta, Pedro Alberto. 2010. <em>Estatı́stica aplicada às ciências sociais</em>. 7 ed. Florianópolis: Ed. UFSC.</p>
+<p>Barbetta, Pedro Alberto. 2010. <em>Estatı́stica aplicada às ciências sociais</em>. 7 ed. Florianópolis: Editora UFSC.</p>
 </div>
 </div>
             </section>
@@ -660,7 +698,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["livror.pdf"],
+"download": ["livror.pdf", "livror.epub"],
 "toc": {
 "collapse": "subsection"
 },

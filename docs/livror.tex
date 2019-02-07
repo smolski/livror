@@ -129,7 +129,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-01-04}
+    \date{2019-02-06}
 
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -203,8 +203,6 @@ Boa leitura!
 
 \begin{flushright}
 \emph{}
-
-\emph{}
 \end{flushright}
 
 O R é um ambiente voltado para análise de dados com o uso de uma linguagem de programação, frente a isso um conhecimento prévio dos príncipios de programação facilita a compreensão da condução das análises aplicadas no software. Entretanto, não é pré-requisito. Neste capítulo abordaremos os primeiros passos para o emprego da linguagem de programação R utilizando uma interface ``amigável'' - o software RStudio. Além disso, serão apresentados os comandos básicos para a manipulação de dados dentro do RStudio.
@@ -212,9 +210,9 @@ O R é um ambiente voltado para análise de dados com o uso de uma linguagem de 
 \hypertarget{download-e-instalacao-do-r-e-rstudio}{%
 \section{Download e instalação do R e Rstudio}\label{download-e-instalacao-do-r-e-rstudio}}
 
-\textbf{R}: \url{http://www.r-project.org}. Clique em Download (CRAN) - escolha o link de um repositório - clique no link do sistema operacional (Linux, Mac ou Windows) - clique em \emph{install R for de first time - Download} (R CORE TEAM, \protect\hyperlink{ref-rcore}{2018}).
+\textbf{R}: \url{http://www.r-project.org}. Clique em Download (CRAN) - escolha o link de um repositório - clique no link do sistema operacional (Linux, Mac ou Windows) - clique em \emph{install R for de first time - Download} (R Core Team, \protect\hyperlink{ref-rcore}{2018}).
 
-\textbf{RStudio}: \url{http://www.rstudio.com/products/rstudio/download}. Em RStudio Desktop, escolha a versão \emph{free}, seguidas da opção do sistema operacional do usuário (RSTUDIO TEAM, \protect\hyperlink{ref-teamrstudio}{2018}).
+\textbf{RStudio}: \url{http://www.rstudio.com/products/rstudio/download}. Em RStudio Desktop, escolha a versão \emph{free}, seguidas da opção do sistema operacional do usuário (RStudio Team, \protect\hyperlink{ref-teamrstudio}{2018}).
 
 Lembrando que:
 
@@ -1586,11 +1584,11 @@ No nosso exemplo, cria-se um objeto ``classificacao'' e se a coluna IMC conter d
 Carregando pacotes exigidos: knitr
 \end{verbatim}
 
-\begin{table}
+\begin{table}[t]
 
 \caption{\label{tab:imct}Valores padrão para o IMC}
 \centering
-\begin{tabular}[t]{l|l}
+\begin{tabular}{l|l}
 \hline
 Resultado & Significado\\
 \hline
@@ -1611,7 +1609,7 @@ Acima de 40 & Obesidade III (mórbida)\\
 \end{tabular}
 \end{table}
 
-Fonte: Adaptado de BRASIL (\protect\hyperlink{ref-brasil2014}{2014}).
+Fonte: Adaptado de Brasil (\protect\hyperlink{ref-brasil2014}{2014}).
 
 No entanto, o IMC possui várias classificações de acordo com o seu resultado (Tabela \ref{tab:imct}), sendo que, por exemplo, resultados abaixo de 17 informam que o indivíduo se encontra como Muito abaixo do peso, e acima de 40, se encontra em Obesidade III. Para efetuar a classificação desta maneira utilizando o comando \texttt{ifelse}, ou seja, com mais de uma condição, pode ser efetuada a estruturação com a aglutinação do comando:
 
@@ -2110,23 +2108,74 @@ O comando \texttt{quantile()} oferece a possibilidade de obter os quartis dos da
 \hypertarget{conversao-de-datas}{%
 \section{Conversão de datas}\label{conversao-de-datas}}
 
-A configuração e padronização dos formato de datas no RStudio podem ser efetuadas pelo pesquisador, primeiramente ao carregar a base de dados no programa e em um segundo momento durante a manipulação das informações. Assim, seguem alguns dos procedimentos para a correta alteração dos padrões de datas:
+A configuração e padronização dos formato de datas no RStudio podem ser efetuadas pelo pesquisador, primeiramente ao carregar a base de dados no programa e em um segundo momento durante a manipulação das informações. Por padrão o RStudio trabalha com o formato ANO-MÊS-DIA, sendo possível ainda ler e incluir dados de alta frequência como horas, minutos e segundos com utilização de outros pacotes. Assim, seguem alguns dos procedimentos para a correta alteração dos padrões de datas:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{abertura <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"03/02/69"}\NormalTok{, }\StringTok{"17/08/67"}\NormalTok{)}
-\NormalTok{fechamento <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"2000-20-01"}\NormalTok{, }\StringTok{"1999-14-08"}\NormalTok{)}
-\NormalTok{abertura <-}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(abertura, }\DataTypeTok{format =} \StringTok{"%d/%m/%y"}\NormalTok{)}
-\NormalTok{fechamento <-}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(fechamento, }\DataTypeTok{format =} \StringTok{"%Y-%d-%m"}\NormalTok{)}
-
-\CommentTok{# Diferença de dias dos intervalos informados}
-\NormalTok{abertura}\OperatorTok{-}\NormalTok{fechamento}
+\NormalTok{abertura <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"03/02/69"}\NormalTok{) }\CommentTok{# Exemplo de criação de data inicial}
+\NormalTok{fechamento <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"2000-20-01"}\NormalTok{) }\CommentTok{# Criação de data final}
+\NormalTok{abertura <-}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(abertura, }\DataTypeTok{format =} \StringTok{"%d/%m/%y"}\NormalTok{) }\CommentTok{# Formatação da data}
+\NormalTok{fechamento <-}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(fechamento, }\DataTypeTok{format =} \StringTok{"%Y-%d-%m"}\NormalTok{) }
+\KeywordTok{class}\NormalTok{(abertura) }\CommentTok{# Verificando a classe do objeto}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-Time differences in days
-[1] -11308  24840
+[1] "Date"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(fechamento)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "Date"
+\end{verbatim}
+
+É possível efetuar cálculos entre datas como segue:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Diferença de dias dos intervalos informados}
+\NormalTok{dif=abertura}\OperatorTok{-}\NormalTok{fechamento }\CommentTok{# Efetua o cálculo da diferença entre as datas}
+\NormalTok{dif}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Time difference of -11308 days
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(dif) }\CommentTok{# Verifica a classe do objeto}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "difftime"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{as.numeric}\NormalTok{(dif) }\CommentTok{# Retoma o valor numérico da diferença}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] -11308
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{units}\NormalTok{(dif) }\CommentTok{# Retoma a unidade da diferença entre as datas}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "days"
 \end{verbatim}
 
 \hypertarget{exercicios}{%
@@ -2184,7 +2233,7 @@ Qual foi o número total de vendas?
 
 A Estatística é uma ciência cujo campo de aplicação estende-se a diferentes áreas do conhecimento humano. Tem por objetivo fornecer métodos e técnicas que permitem lidar, racionalmente, com situações sujeitas a incertezas. Apresenta um conjunto de técnicas e métodos de pesquisa que envolvem o planejamento de estudos (experimentais e observacionais), a coleta e organização de dados, a inferência, a análise e a disseminação de informação.
 
-Alguns termos extensamente utilizados em estatística, são definidos a seguir (TRIOLA, \protect\hyperlink{ref-triola1999}{2011}):
+Alguns termos extensamente utilizados em estatística, são definidos a seguir (Triola, \protect\hyperlink{ref-triola1999}{2011}):
 
 \textbf{População}: é uma coleção completa de todos os elementos (valores, pessoas, medidas etc.) a serem estudados.
 
@@ -2198,7 +2247,7 @@ Parâmetro é a medida numérica que descreve uma característica de uma popula�
 \hypertarget{natureza-da-medida-das-variaveis}{%
 \section{Natureza da medida das variáveis}\label{natureza-da-medida-das-variaveis}}
 
-Variáveis reporta-se a características ou atributos que podem tomar diferentes valores ou categorias, o que se opõe ao conceito de constante (ALMEIDA; FREIRE, \protect\hyperlink{ref-almeida2000}{2000}). Assim, variável pode ser definida como sendo a característica dos elementos da amostra ou da população que nos interessa estudar estatisticamente.
+Variáveis reporta-se a características ou atributos que podem tomar diferentes valores ou categorias, o que se opõe ao conceito de constante (Almeida e Freire, \protect\hyperlink{ref-almeida2000}{2000}). Assim, variável pode ser definida como sendo a característica dos elementos da amostra ou da população que nos interessa estudar estatisticamente.
 
 Variáveis podem ser classificadas da seguinte forma:
 
@@ -2219,7 +2268,7 @@ Variáveis podem ser classificadas da seguinte forma:
 \item
   Variável nominal: caracterizada por dados que consistem apenas em nomes, rótulos ou categorias. Os dados não podem ser dispostos segundo um esquema ordenado (como de baixo para cima). Ex. nacionalidade
 \item
-  Variável ordinal: envolve variáveis representadas por nomes que podem ser dispostos em alguma ordem, mas as diferenças entre os valores dos dados não podem ser determinadas, ou não tem sentido. Esse nível dá informações sobre comparações relativas, mas os graus de diferença não servem para cálculos (TRIOLA, \protect\hyperlink{ref-triola1999}{2011}). Ex. Grau de escolaridade.
+  Variável ordinal: envolve variáveis representadas por nomes que podem ser dispostos em alguma ordem, mas as diferenças entre os valores dos dados não podem ser determinadas, ou não tem sentido. Esse nível dá informações sobre comparações relativas, mas os graus de diferença não servem para cálculos (Triola, \protect\hyperlink{ref-triola1999}{2011}). Ex. Grau de escolaridade.
 \end{enumerate}
 
 \textbf{Dado}: é o valor assumido por uma variável aleatória em um experimento.
@@ -2286,18 +2335,6 @@ Pede-se:
 \NormalTok{destfile <-}\StringTok{ "pesquisa_dados.xlsx"}
 \NormalTok{curl}\OperatorTok{::}\KeywordTok{curl_download}\NormalTok{(url, destfile)}
 \NormalTok{pesquisa_dados <-}\StringTok{ }\KeywordTok{read_excel}\NormalTok{(destfile)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-readxl works best with a newer version of the tibble package.
-You currently have tibble v1.4.2.
-Falling back to column name repair from tibble <= v1.4.2.
-Message displays once per session.
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \KeywordTok{attach}\NormalTok{(pesquisa_dados)}
 \KeywordTok{ls.str}\NormalTok{(pesquisa_dados)}
 \end{Highlighting}
@@ -2322,7 +2359,7 @@ Sexo :  chr [1:348] "Feminino" "Feminino" "Feminino" "Feminino" "Masculino" ...
 \hypertarget{tabelas}{%
 \section{Tabelas}\label{tabelas}}
 
-Segundo BARBETTA (\protect\hyperlink{ref-barbetta1988}{2010}), dados representados em tabelas e gráficos adequados, permitem observar determinados aspectos relevantes, bem como delinear hipóteses a respeito da estrutura dos dados em estudo, o que conhecemos como análise exploratória de dados. Isto pode ser feito inicialmente com a representação em forma de tabelas.
+Segundo Barbetta (\protect\hyperlink{ref-barbetta1988}{2010}), dados representados em tabelas e gráficos adequados, permitem observar determinados aspectos relevantes, bem como delinear hipóteses a respeito da estrutura dos dados em estudo, o que conhecemos como análise exploratória de dados. Isto pode ser feito inicialmente com a representação em forma de tabelas.
 
 O comando \texttt{table()} é utilizado para elaborarmos tabelas de frequências absolutas. Dependendo da variável a ser representada, podemos usar esse comando de diferentes formas:
 
@@ -2372,7 +2409,7 @@ Ex. Construir uma tabela cruzada apresentando as frequências absolutas das vari
 \hypertarget{tabela-cruzada-para-apresentacao-das-frequencias-relativas}{%
 \subsection{Tabela cruzada para apresentação das frequências relativas}\label{tabela-cruzada-para-apresentacao-das-frequencias-relativas}}
 
-Com a introdução do comando \texttt{prop.table} é possível gerar, facilmente, tabelas de frequências relativas para as variáveis de interesse. As medidas relativas são importantes para comparar distribuições de frequências (BARBETTA, \protect\hyperlink{ref-barbetta1988}{2010}).
+Com a introdução do comando \texttt{prop.table} é possível gerar, facilmente, tabelas de frequências relativas para as variáveis de interesse. As medidas relativas são importantes para comparar distribuições de frequências (Barbetta, \protect\hyperlink{ref-barbetta1988}{2010}).
 
 \texttt{prop.table(table(nome\_variável1,nome\_variável2))}
 
@@ -2425,11 +2462,11 @@ Ex. Construir um gráfico de colunas para a variável \textbf{Sexo}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-67-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-68-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável Sexo}\label{fig:unnamed-chunk-67}
+\caption{Gráfico de colunas com a variável Sexo}\label{fig:unnamed-chunk-68}
 \end{figure}
 
 \textbf{Obs}.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -2448,11 +2485,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-68-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-69-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável Sexo (Horizontal)}\label{fig:unnamed-chunk-68}
+\caption{Gráfico de colunas com a variável Sexo (Horizontal)}\label{fig:unnamed-chunk-69}
 \end{figure}
 
 \textbf{Ex.1)} Construir um gráfico de colunas para a variável \textbf{Pessoas\_familia}.
@@ -2469,11 +2506,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-69-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-70-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável `Pessoas familia`}\label{fig:unnamed-chunk-69}
+\caption{Gráfico de colunas com a variável `Pessoas familia`}\label{fig:unnamed-chunk-70}
 \end{figure}
 
 \textbf{Ex.2)} Construir uma tabela de dupla entrada para as variáveis \textbf{Sexo} e \textbf{Divulgação}.
@@ -2488,11 +2525,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-70-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-71-1} 
 
 }
 
-\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}\label{fig:unnamed-chunk-70}
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}\label{fig:unnamed-chunk-71}
 \end{figure}
 
 \textbf{Ex.3)} Na sequência utiliza o sinal de atribuição \textless{}- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).
@@ -2518,11 +2555,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-72-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-73-1} 
 
 }
 
-\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}\label{fig:unnamed-chunk-72}
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}\label{fig:unnamed-chunk-73}
 \end{figure}
 
 Observe que o uso do argumento \texttt{beside=T} evita que as barras fiquem empilhadas e o arguemnto \texttt{legend}' insere a legenda conforme as cores das colunas.
@@ -2532,7 +2569,7 @@ Observe que o uso do argumento \texttt{beside=T} evita que as barras fiquem empi
 \hypertarget{setograma-ou-grafico-de-pizza}{%
 \subsection{Setograma ou gráfico de pizza}\label{setograma-ou-grafico-de-pizza}}
 
-Os gráficos em setores são utilizados para ilustrar dados qualitativos de modo mais compreensível. Quando a variável é ordinal, gráficos de colunas são mais indicados pelo fato de permitirem manter a ordem das categorias. Isto também vale para os casos em que se tem muitas categorias ou quanto se pretende dar mais destaque às categorias mais frequentes (BARBETTA, \protect\hyperlink{ref-barbetta1988}{2010}).
+Os gráficos em setores são utilizados para ilustrar dados qualitativos de modo mais compreensível. Quando a variável é ordinal, gráficos de colunas são mais indicados pelo fato de permitirem manter a ordem das categorias. Isto também vale para os casos em que se tem muitas categorias ou quanto se pretende dar mais destaque às categorias mais frequentes (Barbetta, \protect\hyperlink{ref-barbetta1988}{2010}).
 
 \texttt{pie(table(nome\_variável),main="nome")}
 
@@ -2570,17 +2607,17 @@ Ex. Construa um gráfico na forma de Setograma para a variável \textbf{Sabor}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-73-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-74-1} 
 
 }
 
-\caption{Gráfico de pizza com a variável Sabor}\label{fig:unnamed-chunk-73}
+\caption{Gráfico de pizza com a variável Sabor}\label{fig:unnamed-chunk-74}
 \end{figure}
 
 \hypertarget{histograma}{%
 \subsection{Histograma}\label{histograma}}
 
-No histograma, utilizado em geral quando temos variáveis quantitativas contínuas, a altura dos retângulos representa a frequência de ocorrência de valores no intervalo (deve iniciar sempre em zero), devem ter sempre a mesma largura podendo ser justapostos. O eixo horizontal (dos valores da variável) pode iniciar próximo ao menor valor da variável (BARBETTA, \protect\hyperlink{ref-barbetta1988}{2010}). Para confecção do histograma devemos usar:
+No histograma, utilizado em geral quando temos variáveis quantitativas contínuas, a altura dos retângulos representa a frequência de ocorrência de valores no intervalo (deve iniciar sempre em zero), devem ter sempre a mesma largura podendo ser justapostos. O eixo horizontal (dos valores da variável) pode iniciar próximo ao menor valor da variável (Barbetta, \protect\hyperlink{ref-barbetta1988}{2010}). Para confecção do histograma devemos usar:
 
 \texttt{hist(nome\_variável)}
 
@@ -2594,11 +2631,11 @@ Ex. Construa um histograma com a variável \textbf{Renda\_h}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-74-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-75-1} 
 
 }
 
-\caption{Histograma com a variável `Renda h`}\label{fig:unnamed-chunk-74}
+\caption{Histograma com a variável `Renda h`}\label{fig:unnamed-chunk-75}
 \end{figure}
 
 \textbf{Obs}. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -2622,11 +2659,11 @@ Ex. Construa um histograma com a variável \textbf{Renda\_h}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-75-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-76-1} 
 
 }
 
-\caption{Histograma com a variável Renda h com breaks=5}\label{fig:unnamed-chunk-75}
+\caption{Histograma com a variável Renda h com breaks=5}\label{fig:unnamed-chunk-76}
 \end{figure}
 
 O comando \texttt{ylim} determina os limites do eixo y a serem mostrados; \texttt{xlab} e \texttt{ylab} determinam o nome das variáveis dos eixos x e y; \texttt{main} determina o nome do título e \texttt{col} determina a cor do gráfico. Use o argumento \texttt{main=NULL} para remover o título.
@@ -2649,7 +2686,7 @@ Inserindo as opções \texttt{\$counts} e \texttt{\$breaks} retomamos os valores
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-76-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-77-1} \end{center}
 
 \begin{verbatim}
 [1]  0  5 10 15 20 25
@@ -2658,9 +2695,9 @@ Inserindo as opções \texttt{\$counts} e \texttt{\$breaks} retomamos os valores
 \hypertarget{boxplot-ou-diagrama-em-caixas}{%
 \subsection{Boxplot ou diagrama em caixas}\label{boxplot-ou-diagrama-em-caixas}}
 
-Os diagramas em caixa são convenientes para revelar tendências centrais, dispersão, distribuição dos dados e a presença de outliers (valores extremos). Como as medianas revelam uma tendência central, ao passo que os quartis indicam a dispersão dos dados, os diagramas em caixa têm a vantagem de não serem tão sensíveis a valores extremos como outras medidas baseadas na média e no desvio-padrão. Por outro lado, os diagramas em caixa (boxplots) não dão informação tão detalhada quanto os histogramas ou os gráficos ramo-e-folhas, podendo não ser, assim, a melhor escolha quando lidamos com um único conjunto de dados. Os diagramas em caixa são, entretanto, mais convenientes na comparação de dois ou mais conjuntos de dados (TRIOLA, \protect\hyperlink{ref-triola1999}{2011}).
+Os diagramas em caixa são convenientes para revelar tendências centrais, dispersão, distribuição dos dados e a presença de outliers (valores extremos). Como as medianas revelam uma tendência central, ao passo que os quartis indicam a dispersão dos dados, os diagramas em caixa têm a vantagem de não serem tão sensíveis a valores extremos como outras medidas baseadas na média e no desvio-padrão. Por outro lado, os diagramas em caixa (boxplots) não dão informação tão detalhada quanto os histogramas ou os gráficos ramo-e-folhas, podendo não ser, assim, a melhor escolha quando lidamos com um único conjunto de dados. Os diagramas em caixa são, entretanto, mais convenientes na comparação de dois ou mais conjuntos de dados (Triola, \protect\hyperlink{ref-triola1999}{2011}).
 
-No diagrama de caixas, torna-se fácil identificar \textbf{outliers} (ou valores extremos), que são valores extremamente raros, no sentido de que estão muito afastados da maioria dos dados. Ao explorarmos um conjunto de dados, não podem deixar de considerar os outliers, porque eles podem revelar informações importantes (TRIOLA, \protect\hyperlink{ref-triola1999}{2011}).
+No diagrama de caixas, torna-se fácil identificar \textbf{outliers} (ou valores extremos), que são valores extremamente raros, no sentido de que estão muito afastados da maioria dos dados. Ao explorarmos um conjunto de dados, não podem deixar de considerar os outliers, porque eles podem revelar informações importantes (Triola, \protect\hyperlink{ref-triola1999}{2011}).
 
 Para obter o boxplot para um conjunto de dados:
 
@@ -2676,11 +2713,11 @@ Para obter o boxplot para um conjunto de dados:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-77-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-78-1} 
 
 }
 
-\caption{Boxplot com a variável Idade}\label{fig:unnamed-chunk-77}
+\caption{Boxplot com a variável Idade}\label{fig:unnamed-chunk-78}
 \end{figure}
 
 \hypertarget{grafico-ramo-e-folhas}{%
@@ -2688,7 +2725,7 @@ Para obter o boxplot para um conjunto de dados:
 
 Em um gráfico ramo-e-folhas, classificamos os dados segundo um padrão que revela a distribuição subjacente. O padrão consiste em separar um número em duas partes em geral: o ramo consiste nos algarismos mais à esquerda e as folhas consistem nos algarismos mais à direita.
 
-No gráfico Ramo-e-folhas, podemos ver a distribuição desses dados, que é uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a informação da lista original; se necessário, podemos recompor a relação original de valores. Note que as linhas de algarismos em um gráfico ramo-e-folhas são análogas, em natureza, às barras de um histograma (TRIOLA, \protect\hyperlink{ref-triola1999}{2011}).
+No gráfico Ramo-e-folhas, podemos ver a distribuição desses dados, que é uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a informação da lista original; se necessário, podemos recompor a relação original de valores. Note que as linhas de algarismos em um gráfico ramo-e-folhas são análogas, em natureza, às barras de um histograma (Triola, \protect\hyperlink{ref-triola1999}{2011}).
 
 \texttt{stem(nome\_variável)} - comando que permite obter um gráfico Ramo e Folhas.
 
@@ -2861,11 +2898,11 @@ Para o caso de representação no mesmo gráfico, de duas ou mais variáveis, o 
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-80-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-81-1} 
 
 }
 
-\caption{Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010}\label{fig:unnamed-chunk-80}
+\caption{Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010}\label{fig:unnamed-chunk-81}
 \end{figure}
 
 onde, no argumento \texttt{ylim}, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
@@ -2927,11 +2964,11 @@ Segue a sequência de comandos, para obtenção do gráfico de linhas:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-82-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-83-1} 
 
 }
 
-\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}\label{fig:unnamed-chunk-82}
+\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}\label{fig:unnamed-chunk-83}
 \end{figure}
 
 \hypertarget{estatisticas-descritivas}{%
@@ -3195,7 +3232,7 @@ Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a
 \emph{}
 \end{flushright}
 
-A inferência estatística, ou estatística inferencial, tem por objetivo concluir e tomar decisões, com base em amostras (Figura \ref{fig:infestat}). Usam-se dados extraídos de uma amostra para produzir inferência sobre a população (LOPES et al., \protect\hyperlink{ref-lopes2008}{2008}).
+A inferência estatística, ou estatística inferencial, tem por objetivo concluir e tomar decisões, com base em amostras (Figura \ref{fig:infestat}). Usam-se dados extraídos de uma amostra para produzir inferência sobre a população (Lopes \emph{et al.}, \protect\hyperlink{ref-lopes2008}{2008}).
 
 \begin{figure}[H]
 
@@ -3206,7 +3243,7 @@ A inferência estatística, ou estatística inferencial, tem por objetivo conclu
 \caption{Inferência Estatística}\label{fig:infestat}
 \end{figure}
 
-Em Estatística, o termo \textbf{população} é definido como conjunto de indivíduos, ou itens, com pelo menos uma característica em comum, podendo ser finita ou infinita (LOPES et al., \protect\hyperlink{ref-lopes2008}{2008}). Por exemplo, água de um rio, sangue de uma pessoa, lote de peças produzidas por uma indústria, eleitores de um município.
+Em Estatística, o termo \textbf{população} é definido como conjunto de indivíduos, ou itens, com pelo menos uma característica em comum, podendo ser finita ou infinita (Lopes \emph{et al.}, \protect\hyperlink{ref-lopes2008}{2008}). Por exemplo, água de um rio, sangue de uma pessoa, lote de peças produzidas por uma indústria, eleitores de um município.
 
 A \textbf{amostra} é um subconjunto, necessariamente finito, de uma população e é selecionada de forma que todos os elementos da população tenham a mesma chance de serem escolhidos.
 
@@ -3771,11 +3808,11 @@ Podemos comparar duas médias de duas amostras dependentes, também chamadas de 
 
 \textbf{Exemplo 10}: Foi obtido o peso de seis indivíduos antes e após um treinamento de exercício físico. Teste a hipótese de que a média antes do treinamento é diferente da média após o treinamento.
 
-\begin{table}
+\begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-115}Amostras dependentes}
+\caption{\label{tab:unnamed-chunk-116}Amostras dependentes}
 \centering
-\begin{tabular}[t]{l|r|r|r|r|r|r}
+\begin{tabular}{l|r|r|r|r|r|r}
 \hline
 Indivíduo & A & B & C & D & E & F\\
 \hline
@@ -3820,11 +3857,11 @@ Conclusão: Não rejeita-se \(H_0\) e conclui-se que a média de peso antes do t
 
 \textbf{Exemplo 11}: (adaptado de \textless{}www.inf.ufsc.br/\textasciitilde{}marcelo/testes2.html\textgreater{}) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Podemos concluir que o uso da ração contribuiu para o aumento do peso médio dos animais?
 
-\begin{table}
+\begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-117}Amostras dependentes - caso 2}
+\caption{\label{tab:unnamed-chunk-118}Amostras dependentes - caso 2}
 \centering
-\begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
+\begin{tabular}{l|r|r|r|r|r|r|r|r|r|r}
 \hline
 Cobaia & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
 \hline
@@ -3873,11 +3910,11 @@ Primeiramente precisamos saber se existe homogeneidade de variâncias populacion
 
 \textbf{Exemplo 12}: (adaptado de \url{https://www.ime.unicamp.br/~hildete/Aula_p12.pdf}) Dois tipos diferentes de tecido devem ser comparados. Uma máquina de testes pode comparar duas amostras ao mesmo tempo. O peso (em miligramas) para sete experimentos foram:
 
-\begin{table}
+\begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-119}Comparação de dois tipos diferentes de tecidos}
+\caption{\label{tab:unnamed-chunk-120}Comparação de dois tipos diferentes de tecidos}
 \centering
-\begin{tabular}[t]{l|l|l|l|l|l|l|l}
+\begin{tabular}{l|l|l|l|l|l|l|l}
 \hline
 Tecido A & 36 & 26 & 31 & 38 & 28 & 20 & 37\\
 \hline
@@ -3961,7 +3998,7 @@ Quando existem duas variáveis de interesse, a representação tabular das frequ
 \hypertarget{teste-de-qui-quadrado-para-verificar-associacao-entre-duas-variaveis-qualitativas}{%
 \section{Teste de qui-quadrado para verificar associação entre duas variáveis qualitativas}\label{teste-de-qui-quadrado-para-verificar-associacao-entre-duas-variaveis-qualitativas}}
 
-\textbf{Exemplo 1}: Uma pesquisa sobre ``a exposição a agrotóxicos entre trabalhadores rurais no município de Cerro Largo/RS'' foi desenvolvida por Letiane Peccin Ristow, no ano de 2017 (dissertação e mestrado no Programa de Pós-Graduação em Desenvolvimento e Políticas Públicas da UFFS, Campus Cerro Largo. Na Tabela \ref{tab:tamprop} são apresentados os resultados do ``tamanho da propriedade'' e ``armazenamento seguro do EPI''. Para verificar a existência de associação significativa entre essas duas variáveis utilizamos o teste de qui-quadrado, dado que são duas variáveis qualitativas: variável 1 - tamanho da propriedade (até 25ha; 26ha ou mais) e variável 2 -- armazenamento seguro (sim; não).
+\textbf{Exemplo 1}: Uma pesquisa sobre ``a exposição a agrotóxicos entre trabalhadores rurais no município de Cerro Largo/RS'' foi desenvolvida por Letiane Peccin Ristow, no ano de 2017 (dissertação e mestrado no Programa de Pós-Graduação em Desenvolvimento e Políticas Públicas da UFFS, Campus Cerro Largo. Na Tabela \ref{tab:tamprop} são apresentados os resultados do ``tamanho da propriedade'' e ``armazenamento seguro do EPI''. Para verificar a existência de associação significativa entre essas duas variáveis utilizamos o teste de qui-quadrado, dado que são duas variáveis qualitativas: variável 1 - tamanho da propriedade (até 25 ha; 26 ha ou mais) e variável 2 -- armazenamento seguro (sim; não).
 
 Primeiramente definimos as seguintes hipóteses estatísticas:
 
@@ -4015,7 +4052,7 @@ Até 25 ha\strut
 \bottomrule
 \end{longtable}
 
-Fonte: RISTOW (\protect\hyperlink{ref-Ristow2017}{2017}).
+Fonte: Ristow (\protect\hyperlink{ref-Ristow2017}{2017}).
 
 A estatística de teste para testar as hipóteses apresentadas é o \(\chi^2\) (qui-quadrado):
 
@@ -4034,7 +4071,7 @@ em que:
 
 com grau de liberdade = \(gl = (c-1)(l-1)\).
 
-A frequência esperada de uma casela é obtida pela multiplicação do total da linha pelo total da coluna dividido pelo total geral. Por exemplo, a frequência esperada é igual ao total da coluna 1 multiplicada pelo total da linha 1 dividido pelo total geral, ou seja, (68x90)/112.
+A frequência esperada de uma casela é obtida pela multiplicação do total da linha pelo total da coluna dividido pelo total geral. Por exemplo, a frequência esperada é igual ao total da coluna 1 multiplicada pelo total da linha 1 dividido pelo total geral, ou seja, (67x90)/112.
 
 Porém, é importante conhecermos as pressuposições do teste de qui-quadrado de Pearson. Para auxiliar no encaminhamento do teste adequado para verificar a relação de duas variáveis qualitativas, seguimos o seguinte check-list.
 
@@ -4043,7 +4080,7 @@ Porém, é importante conhecermos as pressuposições do teste de qui-quadrado d
 
 \begin{itemize}
 \item
-  O cálculo do teste de qui-quadrado deve ser somente com valores absolutos. Quando temos uma tabela 2x2, isto é, duas linhas e duas colunas, devemos utilizar o teste de qui-quadrado com correção de continuidade (correção de Yates). O motivo é que a distribuição de frequências observadas é discreta e está sendo aproximada pela distribuição qui-quadrado, que é contínua (BARBETTA, \protect\hyperlink{ref-barbetta1988}{2010}).
+  O cálculo do teste de qui-quadrado deve ser somente com valores absolutos. Quando temos uma tabela 2x2, isto é, duas linhas e duas colunas, devemos utilizar o teste de qui-quadrado com correção de continuidade (correção de Yates). O motivo é que a distribuição de frequências observadas é discreta e está sendo aproximada pela distribuição qui-quadrado, que é contínua (Barbetta, \protect\hyperlink{ref-barbetta1988}{2010}).
 \item
   Não devemos aplicar o teste de qui-quadrado quando a frequência esperada em qualquer casela for menor que 5. Neste caso, devemos usar o teste exato de Fisher, para garantir o grau de certeza do teste.
 \item
@@ -4182,7 +4219,7 @@ Até 25 ha\strut
 \bottomrule
 \end{longtable}
 
-Fonte: RISTOW (\protect\hyperlink{ref-Ristow2017}{2017}).
+Fonte: Ristow (\protect\hyperlink{ref-Ristow2017}{2017}).
 
 Definindo as hipóteses estatísticas:
 
@@ -4429,11 +4466,11 @@ Neste caso usamos o teste de qui-quadrado para verificar se o conjunto de dados 
 
 \textbf{Exemplo 3}: Deseja-se verificar se o número de borrachudos é o mesmo em diferentes pontos da margem de um rio. O número de borrachudos observados para cada ponto (local) é apresentado na Tabela \ref{tab:borrach}.
 
-\begin{table}
+\begin{table}[t]
 
 \caption{\label{tab:borrach}Número de borrachudos nos diferentes pontos}
 \centering
-\begin{tabular}[t]{l|r}
+\begin{tabular}{l|r}
 \hline
 Ponto & Borrachudos\\
 \hline
@@ -4522,12 +4559,74 @@ X-squared = 8.1, df = 6, p-value = 0.2
 \hypertarget{exercicios-3}{%
 \section{Exercícios}\label{exercicios-3}}
 
+\textbf{1.} Uma pesquisa com consumidores foi realizada para verificar a aceitação de um novo produto. Utilize o teste apropriado para avaliar a aceitação do produto em relação ao sexo dos consumidores que participaram da pesquisa.
+
+\begin{longtable}[]{@{}lll@{}}
+\caption{\label{tab:exercqui} Aceitação do produto em relação ao sexo dos clientes.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.35\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.25\columnwidth}\raggedright
+\textbf{Sexo}\strut
+\end{minipage} & \begin{minipage}[b]{0.25\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.35\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.25\columnwidth}\raggedright
+\textbf{Sexo}\strut
+\end{minipage} & \begin{minipage}[b]{0.25\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+\textbf{Aceitação }\strut
+\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
+F\strut
+\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
+M\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+Comprariam\strut
+\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
+43\strut
+\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
+20\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.35\columnwidth}\raggedright
+Não Comprariam\strut
+\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
+37\strut
+\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
+40\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Fonte: Dados simulados.
+
+\textbf{1.1} Apresente as hipóteses estatísticas para esta pesquisa.
+
+\textbf{1.2} Analise o resultado do teste adequado a partir do resultado do software R.
+
+\textbf{1.3} Justifique a escolha do deste utilizado em 1.2.
+
+\textbf{1.4} Apresente o valor p e interprete os resultados do teste considerando nível de 5\% de significância.
+
 \hypertarget{reg}{%
 \chapter{Modelos de Regressão}\label{reg}}
 
 \emph{Iara Denise Endruweit Battisti}
 
 \emph{Erikson Kaszubowski}
+
+\begin{flushright}
+\emph{}
+\end{flushright}
 
 Muitas vezes há a necessidade de estudar duas ou mais variáveis ao mesmo tempo com o objetivo de predizer uma variável em função da(s) outra(s). Por exemplo, verificar se sólidos removidos de um material relaciona-se com o tempo de secagem e qual é a forma dessa relação. Outros exemplos: relação entre tempo de estudo e desempenho a uma avaliação; relação entre investimento em comunicação e vendas; entre outros.
 
@@ -4691,11 +4790,11 @@ O diagrama de dispersão do exemplo está representado abaixo.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-134-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-135-1} 
 
 }
 
-\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}\label{fig:unnamed-chunk-134}
+\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}\label{fig:unnamed-chunk-135}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4788,7 +4887,7 @@ Assim, a partir da expressão apresentada que o modelo de regressão será mais 
 \hypertarget{modelo-de-regressao-linear-simples}{%
 \section{Modelo de Regressão Linear Simples}\label{modelo-de-regressao-linear-simples}}
 
-O modelo de regressão linear simples é usado quando a resposta da variável dependente se expressa de forma linear (Figura \ref{fig:regress} e neste caso com apenas uma variável explicativa, expresso da seguinte maneira (HOFFMANN; VIEIRA, \protect\hyperlink{ref-hoffmann1998}{1998}):
+O modelo de regressão linear simples é usado quando a resposta da variável dependente se expressa de forma linear (Figura \ref{fig:regress} e neste caso com apenas uma variável explicativa, expresso da seguinte maneira (Hoffmann e Vieira, \protect\hyperlink{ref-hoffmann1998}{1998}):
 
 \[
 y_i=\beta_0+\beta_1x_i+\varepsilon _i
@@ -4815,7 +4914,7 @@ O método dos mínimos quadrados (MMQ) é utilizado para a obtenção dos coefic
 \sum (y_i-\hat y_i)^2=\sum (y_i-b_0-b_1x_i^2)
 \]
 
-As expressões para os coeficientes, que minimizam SQResíduos são obtidas pela derivadas desta soma de quadrados em relação a \(b_0\) e em relação a \(b_1\) e podem ser descritas por (HOFFMANN; VIEIRA, \protect\hyperlink{ref-hoffmann1998}{1998}):
+As expressões para os coeficientes, que minimizam SQResíduos são obtidas pela derivadas desta soma de quadrados em relação a \(b_0\) e em relação a \(b_1\) e podem ser descritas por (Hoffmann e Vieira, \protect\hyperlink{ref-hoffmann1998}{1998}):
 
 \[
 b_1=\frac{\sum xy-\frac{\sum x \sum y}{n}}{\sum x^2 - \frac{(\sum x)^2}{n}}
@@ -5084,11 +5183,11 @@ Para o exemplo:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-138-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-139-1} 
 
 }
 
-\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-138}
+\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-139}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -5120,7 +5219,7 @@ tempo       0.7097  1.185
 
 Para a validade dos intervalos de confiança e teste de hipótese torna-se necessário supor que as observações de Y sejam independentes e o termo de erro tenha distribuição aproximadamente normal com média 0 e variância constante.
 
-O método gráfico pode ser utilizado para testar estas suposições, descrevendo que após a estimação dos parâmetros do modelo, pode-se calcular os resíduos, através da diferença entre os valores observados y e os valores preditos \(\hat{y}\), associados a cada x usado na análise. Faz-se então um gráfico com os pares (\(x,\varepsilon\)), sendo \(\varepsilon = y -\hat{y}\) (BARBETTA, \protect\hyperlink{ref-barbetta1988}{2010}).
+O método gráfico pode ser utilizado para testar estas suposições, descrevendo que após a estimação dos parâmetros do modelo, pode-se calcular os resíduos, através da diferença entre os valores observados y e os valores preditos \(\hat{y}\), associados a cada x usado na análise. Faz-se então um gráfico com os pares (\(x,\varepsilon\)), sendo \(\varepsilon = y -\hat{y}\) (Barbetta, \protect\hyperlink{ref-barbetta1988}{2010}).
 
 Se o modelo ajustado for apropriado para os dados, os pontos devem estar
 distribuídos de forma aleatória no gráfico dos resíduos, conforme Figura \ref{fig:residuos}a. Caso a suposição não seja satisfeita, métodos alternativos podem ser utilizados como: método dos mínimos quadrados ponderados para o caso de não homocedasticidade; o método dos mínimos quadrados generalizados para o caso de erros correlacionados; e, métodos não-paramétricos para o caso de não normalidade.
@@ -5274,11 +5373,11 @@ Ainda, pode-se construir o gráfico com a distribuição da probabilidade dos re
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-141-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-142-1} 
 
 }
 
-\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:unnamed-chunk-141}
+\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:unnamed-chunk-142}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -5533,6 +5632,24 @@ Para o exemplo R:
 
 \textbf{1.} No site do livro (\url{https://smolski.github.io/softwarelivrer/livro.html}) está disponível uma planilha de dados com o nome ``peixes1'', na primeira coluna consta a quantidade de ovos (m\(^3\)) e na segunda coluna consta a quantidade de oxigênio no rio. O objetivo da pesquisa é comparar alguns ambientes do rio sobre a desova e o crescimento das larvas de peixes. Analisar a relação da quantidade de ovos com a quantidade de oxigênio no rio. Para isso utilize coeficiente de correlação linear e regressão linear simples.
 
+\textbf{2.} Baixe no site \url{https://www.openintro.org/stat/data/?data=gun_violence_us} a base de dados gun\_violence\_us.csv (GUN VIOLENCE IN THE UNITED STATES), apresentando o relacionamento entre propriedade de armas e violência nos Estados Unidos. A variável dependente é a taxa de propriedade de armas (ownership\_rate: percentual de adultosem cada estado que é proprietário de uma arma em 2013) e a variável independente é a taxa de mortalidade (mortality\_rate: número de mortes por 100.000 em cada estado em 2014).
+
+\textbf{2.1} Faça um diagrama de dispersão para visualizar a relação da taxa e ano. O que você pode concluir?
+
+\textbf{2.2} Calcule o coeficiente de correlação linear. Conclua sobre ele.
+
+\textbf{2.3} Encontre e interprete a equação ajustada.
+
+\textbf{2.4} Apresente e interprete o coeficiente de determinação (R\(^2\)).
+
+\textbf{2.5} Teste a significância da equação de regressão através da ANOVA.
+
+\textbf{2.6} Faça o intervalo de predição para x=0.50.
+
+\textbf{2.7} Trace a reta de regressão ajustada no diagrama de dispersão.
+
+\textbf{2.8} Faça análise de resíduos.
+
 \hypertarget{rmark}{%
 \chapter{RMarkdown}\label{rmark}}
 
@@ -5553,7 +5670,7 @@ Para o exemplo R:
 \caption{Processo de criação de documentos no RMarkdown}\label{fig:rmark}
 \end{figure}
 
-Fonte: Adaptado de ALLAIRE et al. (\protect\hyperlink{ref-R-rmarkdown}{2017}).
+Fonte: Adaptado de Allaire \emph{et al.} ({[}s.d.{]}).
 
 Para criação dos documentos é preciso a instalação dos pacotes \texttt{rmarkdown} e \texttt{knitr} dentro do RStudio, bem como sugere-se a instalação, no Windows, do programa MiKTeX (\url{https://miktex.org/download}), que se encarrega de suporte à configurações da linguagem de marcação de textos LaTeX no caso de criação dos arquivos PDF.
 
@@ -5830,7 +5947,7 @@ Para padronizar todas as Chunks para que tenham as mesmas opções, uma maneira 
 
 Fonte: Elaborado pelo(s) autor(es).
 
-Seguem algumas importantes opções das Chunks dos arquivos RMarkdown (ALLAIRE et al., \protect\hyperlink{ref-R-rmarkdown}{2017}):
+Seguem algumas importantes opções das Chunks dos arquivos RMarkdown (Allaire \emph{et al.}, {[}s.d.{]}):
 
 \begin{itemize}
 \tightlist
@@ -6016,7 +6133,7 @@ A primeira (\texttt{@article}), demonstra que é um artigo de uma revista enquan
 
 Fonte: Elaborado pelo(s) autor(es).
 
-O BibLateX gerencia todos os tipos de bibliografias sendo que, como visto acima, as bibliografias possuem campos padrão a serem informados no arquivo ``.bib''. Por exemplo, a categoria de artigos, possui como campos obrigatórios \texttt{author}, \texttt{title}, \texttt{journal} e \texttt{year}. Abaixo seguem algumas especificações dos tipos de bibliografias (adaptado de LEHMAN; KIME (\protect\hyperlink{ref-biblatex}{2006})), explicitando os itens obrigatórios e opcionais que devem ou podem constar em cada registro:
+O BibLateX gerencia todos os tipos de bibliografias sendo que, como visto acima, as bibliografias possuem campos padrão a serem informados no arquivo ``.bib''. Por exemplo, a categoria de artigos, possui como campos obrigatórios \texttt{author}, \texttt{title}, \texttt{journal} e \texttt{year}. Abaixo seguem algumas especificações dos tipos de bibliografias (adaptado de Lehman e Kime (\protect\hyperlink{ref-biblatex}{2006})), explicitando os itens obrigatórios e opcionais que devem ou podem constar em cada registro:
 
 \texttt{@article} - Artigo de revista. \textbf{OBRIGATÓRIOS}: author, title, journal, year. \textbf{OPCIONAIS}: volume, number, pages, month, note, key.
 
@@ -6126,37 +6243,37 @@ Fonte: Elaborado pelo(s) autor(es).
 
 \hypertarget{refs}{}
 \leavevmode\hypertarget{ref-R-rmarkdown}{}%
-ALLAIRE, J. J. et al. \textbf{rmarkdown: Dynamic Documents for R}. 2017.
+ALLAIRE, J. J. \emph{et al.} \textbf{rmarkdown: Dynamic Documents for R}. Disponível em: \textless{}\url{https://CRAN.R-project.org/package=rmarkdown}\textgreater{}.
 
 \leavevmode\hypertarget{ref-almeida2000}{}%
-ALMEIDA, L.; FREIRE, T. \textbf{Metodologia da investigação em psicologia e educação}. Braga: Psiquilíbrios, 2000.
+ALMEIDA, L.; FREIRE, T. \textbf{Metodologia da investigação em psicologia e educação}.. 2. ed. Braga: Psiquilíbrios, 2000.
 
 \leavevmode\hypertarget{ref-barbetta1988}{}%
-BARBETTA, P. A. \textbf{Estatı́stica aplicada às ciências sociais}. Florianópolis: Ed. UFSC, 2010.
+BARBETTA, P. A. \textbf{Estatı́stica aplicada às ciências sociais}.. 7. ed. Florianópolis: Editora UFSC, 2010.
 
 \leavevmode\hypertarget{ref-brasil2014}{}%
-BRASIL, M. \textbf{Estratégias para o cuidado da pessoa com doença crônica: obesidade}. Brasília: Ministério da Saúde, 2014.
+BRASIL, M. \textbf{Estratégias para o cuidado da pessoa com doença crônica: obesidade}.. Brasília: Ministério da Saúde, 2014.
 
 \leavevmode\hypertarget{ref-hoffmann1998}{}%
-HOFFMANN, R.; VIEIRA, S. \textbf{Análise de regressão: uma introdução à econometria}. São Paulo: Hucitec, 1998.
+HOFFMANN, R.; VIEIRA, S. \textbf{Análise de regressão: uma introdução à econometria}.. São Paulo: Hucitec, 1998.
 
 \leavevmode\hypertarget{ref-biblatex}{}%
-LEHMAN, P.; KIME, P. \textbf{BibLATEX -- Sophisticated Bibliographies in LATEX}. 2006.
+LEHMAN, P.; KIME, P. \textbf{BibLATEX -- Sophisticated Bibliographies in LATEX}. Disponível em: \textless{}\url{https://ctan.org/pkg/biblatex}\textgreater{}.
 
 \leavevmode\hypertarget{ref-lopes2008}{}%
-LOPES, L. F. D. et al. \textbf{Caderno didático: estatística Geral}. Santa Maria: UFSM, 2008.
+LOPES, L. F. D. \emph{et al.} \textbf{Caderno didático: estatística Geral}.. 3. ed. Santa Maria: UFSM, 2008. p. 209
 
 \leavevmode\hypertarget{ref-rcore}{}%
-R CORE TEAM. \textbf{R: A Language and Environment for Statistical Computing}. Vienna, Austria: R Foundation for Statistical Computing, 2018.
+R CORE TEAM. \textbf{R: A Language and Environment for Statistical Computing}. Disponível em: \textless{}\url{https://www.R-project.org}\textgreater{}.
 
 \leavevmode\hypertarget{ref-Ristow2017}{}%
-RISTOW, L. P. \textbf{Exposição ocupacional de trabalhadores rurais a agrotóxicos e relação com políticas públicas}. 139 f.: Dissertação (Mestrado em Desenvolvimento e Políticas Públicas) - Universidade Federal da Fronteira Sul, Cerro Largo, 2017.
+RISTOW, L. P. \textbf{Exposição ocupacional de trabalhadores rurais a agrotóxicos e relação com políticas públicas}139 f.Dissertação (Mestrado em Desenvolvimento e Políticas Públicas) - Universidade Federal da Fronteira Sul, Cerro Largo,, 2017.
 
 \leavevmode\hypertarget{ref-teamrstudio}{}%
-RSTUDIO TEAM. \textbf{RStudio: Integrated Development Environment for R}. Boston, MA: RStudio, Inc., 2018.
+RSTUDIO TEAM. \textbf{RStudio: Integrated Development Environment for R}. Disponível em: \textless{}\url{http://www.rstudio.com/}\textgreater{}.
 
 \leavevmode\hypertarget{ref-triola1999}{}%
-TRIOLA, M. F. \textbf{Introdução à estatística}. Rio de Janeiro: LTC, 2011.
+TRIOLA, M. F. \textbf{Introdução à estatística}.. 10. ed. Rio de Janeiro: LTC, 2011.
 
 
 \end{document}

@@ -9,7 +9,7 @@
   <meta name="description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Capítulo 1 Primeiros Passos com o R | Software R: Análise estatística de dados utilizando um programa livre />
+  <meta property="og:title" content="Capítulo 1 Primeiros Passos com o R | Software R: Análise estatística de dados utilizando um programa livre" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://rstub.github.io/bookdown-chapterbib/" />
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstub/bookdown-chapterbib" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 1 Primeiros Passos com o R | Software R: Análise estatística de dados utilizando um programa livre />
+  <meta name="twitter:title" content="Capítulo 1 Primeiros Passos com o R | Software R: Análise estatística de dados utilizando um programa livre" />
   
   <meta name="twitter:description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS" />
   
@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-01-04">
+<meta name="date" content="2019-02-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1212,16 +1212,26 @@ Levels: Camila Guilherme Marcelo Pedro Francisco</code></pre>
 </div>
 <div id="conversao-de-datas" class="section level2">
 <h2><span class="header-section-number">1.14</span> Conversão de datas</h2>
-<p>A configuração e padronização dos formato de datas no RStudio podem ser efetuadas pelo pesquisador, primeiramente ao carregar a base de dados no programa e em um segundo momento durante a manipulação das informações. Assim, seguem alguns dos procedimentos para a correta alteração dos padrões de datas:</p>
-<pre class="sourceCode r"><code class="sourceCode r">abertura &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;03/02/69&quot;</span>, <span class="st">&quot;17/08/67&quot;</span>)
-fechamento &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2000-20-01&quot;</span>, <span class="st">&quot;1999-14-08&quot;</span>)
-abertura &lt;-<span class="st"> </span><span class="kw">as.Date</span>(abertura, <span class="dt">format =</span> <span class="st">&quot;%d/%m/%y&quot;</span>)
-fechamento &lt;-<span class="st"> </span><span class="kw">as.Date</span>(fechamento, <span class="dt">format =</span> <span class="st">&quot;%Y-%d-%m&quot;</span>)
-
-<span class="co"># Diferença de dias dos intervalos informados</span>
-abertura<span class="op">-</span>fechamento</code></pre>
-<pre><code>Time differences in days
-[1] -11308  24840</code></pre>
+<p>A configuração e padronização dos formato de datas no RStudio podem ser efetuadas pelo pesquisador, primeiramente ao carregar a base de dados no programa e em um segundo momento durante a manipulação das informações. Por padrão o RStudio trabalha com o formato ANO-MÊS-DIA, sendo possível ainda ler e incluir dados de alta frequência como horas, minutos e segundos com utilização de outros pacotes. Assim, seguem alguns dos procedimentos para a correta alteração dos padrões de datas:</p>
+<pre class="sourceCode r"><code class="sourceCode r">abertura &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;03/02/69&quot;</span>) <span class="co"># Exemplo de criação de data inicial</span>
+fechamento &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2000-20-01&quot;</span>) <span class="co"># Criação de data final</span>
+abertura &lt;-<span class="st"> </span><span class="kw">as.Date</span>(abertura, <span class="dt">format =</span> <span class="st">&quot;%d/%m/%y&quot;</span>) <span class="co"># Formatação da data</span>
+fechamento &lt;-<span class="st"> </span><span class="kw">as.Date</span>(fechamento, <span class="dt">format =</span> <span class="st">&quot;%Y-%d-%m&quot;</span>) 
+<span class="kw">class</span>(abertura) <span class="co"># Verificando a classe do objeto</span></code></pre>
+<pre><code>[1] &quot;Date&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(fechamento)</code></pre>
+<pre><code>[1] &quot;Date&quot;</code></pre>
+<p>É possível efetuar cálculos entre datas como segue:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Diferença de dias dos intervalos informados</span>
+dif=abertura<span class="op">-</span>fechamento <span class="co"># Efetua o cálculo da diferença entre as datas</span>
+dif</code></pre>
+<pre><code>Time difference of -11308 days</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(dif) <span class="co"># Verifica a classe do objeto</span></code></pre>
+<pre><code>[1] &quot;difftime&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.numeric</span>(dif) <span class="co"># Retoma o valor numérico da diferença</span></code></pre>
+<pre><code>[1] -11308</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">units</span>(dif) <span class="co"># Retoma a unidade da diferença entre as datas</span></code></pre>
+<pre><code>[1] &quot;days&quot;</code></pre>
 </div>
 <div id="exercicios" class="section level2">
 <h2><span class="header-section-number">1.15</span> Exercícios</h2>
@@ -1254,10 +1264,10 @@ Qual foi o número total de vendas?</p>
 <h3>Referências</h3>
 <div id="refs" class="references">
 <div id="ref-rcore">
-<p>R Core Team. 2018. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org">https://www.R-project.org</a>.</p>
+<p>R Core Team. 2018. «R: A Language and Environment for Statistical Computing». Vienna, Austria: R Foundation for Statistical Computing. 2018. <a href="https://www.R-project.org">https://www.R-project.org</a>.</p>
 </div>
 <div id="ref-teamrstudio">
-<p>RStudio Team. 2018. <em>RStudio: Integrated Development Environment for R</em>. Boston, MA: RStudio, Inc. <a href="http://www.rstudio.com/">http://www.rstudio.com/</a>.</p>
+<p>RStudio Team. 2018. «RStudio: Integrated Development Environment for R». Boston, MA: RStudio, Inc. 2018. <a href="http://www.rstudio.com/">http://www.rstudio.com/</a>.</p>
 </div>
 </div>
             </section>
@@ -1301,7 +1311,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["livror.pdf"],
+"download": ["livror.pdf", "livror.epub"],
 "toc": {
 "collapse": "subsection"
 },

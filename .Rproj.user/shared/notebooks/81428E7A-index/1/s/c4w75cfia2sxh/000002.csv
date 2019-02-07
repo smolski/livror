@@ -1,6 +1,0 @@
-"0","library(readxl)"
-"0","url <- ""https://github.com/Smolski/livror/raw/master/arvores.xlsx"""
-"0","destfile <- ""arvores.xlsx"""
-"0","curl::curl_download(url, destfile)"
-"0","arvores <- read_excel(destfile)"
-"0","View(arvores)"

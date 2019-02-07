@@ -9,7 +9,7 @@
   <meta name="description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Capítulo 5 Modelos de Regressão | Software R: Análise estatística de dados utilizando um programa livre />
+  <meta property="og:title" content="Capítulo 5 Modelos de Regressão | Software R: Análise estatística de dados utilizando um programa livre" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://rstub.github.io/bookdown-chapterbib/" />
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstub/bookdown-chapterbib" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 5 Modelos de Regressão | Software R: Análise estatística de dados utilizando um programa livre />
+  <meta name="twitter:title" content="Capítulo 5 Modelos de Regressão | Software R: Análise estatística de dados utilizando um programa livre" />
   
   <meta name="twitter:description" content="Curso de análise estatística com R da UFFS Cerro Largo - RS" />
   
@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-01-04">
+<meta name="date" content="2019-02-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -272,6 +272,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Capítulo 5</span> Modelos de Regressão</h1>
 <p><em>Iara Denise Endruweit Battisti</em></p>
 <p><em>Erikson Kaszubowski</em></p>
+
 <p>Muitas vezes há a necessidade de estudar duas ou mais variáveis ao mesmo tempo com o objetivo de predizer uma variável em função da(s) outra(s). Por exemplo, verificar se sólidos removidos de um material relaciona-se com o tempo de secagem e qual é a forma dessa relação. Outros exemplos: relação entre tempo de estudo e desempenho a uma avaliação; relação entre investimento em comunicação e vendas; entre outros.</p>
 <p>A análise de correlação permite verificar a relação entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Estudaremos os modelos de regressão linear na qual a variáveis resposta (<span class="math inline">\(Y\)</span>) é quantitativa e as variáveis preditoras (<span class="math inline">\(X_i\)</span>) são quantitativas ou qualitativas.</p>
 <div id="correlacao-linear" class="section level2">
@@ -358,8 +359,8 @@ Figura 5.1: Diagramas de Dispersão
 nota=<span class="kw">c</span>(<span class="fl">5.5</span>,<span class="fl">7.5</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="fl">8.1</span>,<span class="fl">8.6</span>,<span class="fl">4.7</span>,<span class="fl">7.5</span>,<span class="fl">9.5</span>,<span class="fl">9.5</span>,<span class="fl">7.8</span>,<span class="dv">8</span>,<span class="fl">9.1</span>,<span class="fl">9.5</span>,<span class="dv">8</span>)</code></pre>
 <p>O diagrama de dispersão do exemplo está representado abaixo.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(tempo,nota)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-134"></span>
-<img src="index_files/figure-html/unnamed-chunk-134-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-135"></span>
+<img src="index_files/figure-html/unnamed-chunk-135-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
 <p class="caption">
 Figura 5.2: Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo
 </p>
@@ -600,8 +601,8 @@ F-statistic: 74.2 on 1 and 13 DF,  p-value: 9.88e-07</code></pre>
 <p>Para o exemplo:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(nota<span class="op">~</span>tempo)
 <span class="kw">abline</span>(<span class="kw">coef</span>(regressao))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-138"></span>
-<img src="index_files/figure-html/unnamed-chunk-138-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-139"></span>
+<img src="index_files/figure-html/unnamed-chunk-139-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
 <p class="caption">
 Figura 5.4: Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa
 </p>
@@ -698,8 +699,8 @@ Figura 5.8: Gráfico de probabilidade normal para verificar normalidade dos res�
       <span class="dt">col =</span> <span class="st">&quot;lightgreen&quot;</span>,
       <span class="dt">probability =</span> <span class="ot">TRUE</span>)
 <span class="kw">lines</span>(<span class="kw">density</span>(regressao<span class="op">$</span>residuals))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-141"></span>
-<img src="index_files/figure-html/unnamed-chunk-141-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-142"></span>
+<img src="index_files/figure-html/unnamed-chunk-142-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
 <p class="caption">
 Figura 5.9: Histograma de distribuição da probabilidade para os resíduos
 </p>
@@ -831,6 +832,15 @@ S_e=\sqrt {\textrm{QMResíduo}}=\sqrt\frac{\sum(y-\hat{y})^2}{n-2}
 <div id="exercicios-4" class="section level2">
 <h2><span class="header-section-number">5.11</span> Exercícios</h2>
 <p><strong>1.</strong> No site do livro (<a href="https://smolski.github.io/softwarelivrer/livro.html" class="uri">https://smolski.github.io/softwarelivrer/livro.html</a>) está disponível uma planilha de dados com o nome “peixes1”, na primeira coluna consta a quantidade de ovos (m<span class="math inline">\(^3\)</span>) e na segunda coluna consta a quantidade de oxigênio no rio. O objetivo da pesquisa é comparar alguns ambientes do rio sobre a desova e o crescimento das larvas de peixes. Analisar a relação da quantidade de ovos com a quantidade de oxigênio no rio. Para isso utilize coeficiente de correlação linear e regressão linear simples.</p>
+<p><strong>2.</strong> Baixe no site <a href="https://www.openintro.org/stat/data/?data=gun_violence_us" class="uri">https://www.openintro.org/stat/data/?data=gun_violence_us</a> a base de dados gun_violence_us.csv (GUN VIOLENCE IN THE UNITED STATES), apresentando o relacionamento entre propriedade de armas e violência nos Estados Unidos. A variável dependente é a taxa de propriedade de armas (ownership_rate: percentual de adultosem cada estado que é proprietário de uma arma em 2013) e a variável independente é a taxa de mortalidade (mortality_rate: número de mortes por 100.000 em cada estado em 2014).</p>
+<p><strong>2.1</strong> Faça um diagrama de dispersão para visualizar a relação da taxa e ano. O que você pode concluir?</p>
+<p><strong>2.2</strong> Calcule o coeficiente de correlação linear. Conclua sobre ele.</p>
+<p><strong>2.3</strong> Encontre e interprete a equação ajustada.</p>
+<p><strong>2.4</strong> Apresente e interprete o coeficiente de determinação (R<span class="math inline">\(^2\)</span>).</p>
+<p><strong>2.5</strong> Teste a significância da equação de regressão através da ANOVA.</p>
+<p><strong>2.6</strong> Faça o intervalo de predição para x=0.50.</p>
+<p><strong>2.7</strong> Trace a reta de regressão ajustada no diagrama de dispersão.</p>
+<p><strong>2.8</strong> Faça análise de resíduos.</p>
 </div>
 </div>
 <h3>Referências</h3>
@@ -839,7 +849,7 @@ S_e=\sqrt {\textrm{QMResíduo}}=\sqrt\frac{\sum(y-\hat{y})^2}{n-2}
 <p>Hoffmann, Rodolfo, e Sônia Vieira. 1998. <em>Análise de regressão: uma introdução à econometria</em>. São Paulo: Hucitec.</p>
 </div>
 <div id="ref-barbetta1988">
-<p>Barbetta, Pedro Alberto. 2010. <em>Estatı́stica aplicada às ciências sociais</em>. 7 ed. Florianópolis: Ed. UFSC.</p>
+<p>Barbetta, Pedro Alberto. 2010. <em>Estatı́stica aplicada às ciências sociais</em>. 7 ed. Florianópolis: Editora UFSC.</p>
 </div>
 </div>
             </section>
@@ -883,7 +893,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["livror.pdf"],
+"download": ["livror.pdf", "livror.epub"],
 "toc": {
 "collapse": "subsection"
 },

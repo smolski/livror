@@ -1,3 +1,0 @@
-"0","barplot(table(Sexo,Divulgacao), "
-"0","        col=c(""blue""), "
-"0","        main = ""Frequência de pessoas por Sexo e Divulgacao"")"

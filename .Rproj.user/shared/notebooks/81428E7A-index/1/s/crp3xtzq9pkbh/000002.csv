@@ -1,2 +1,0 @@
-"0","plot(fitted(regressao), residuals(regressao),"
-"0","xlab=""Valores ajustados"", ylab=""Residuos"")"
