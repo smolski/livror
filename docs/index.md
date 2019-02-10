@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Iara Denise Endruweit Battisti
 - Felipe Micail da Silva Smolski
-date: "2019-02-07"
+date: "2019-02-10"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -2297,6 +2297,17 @@ boxplot(Idade,horizontal = T)
 <p class="caption">(\#fig:unnamed-chunk-78)Boxplot com a variável Idade</p>
 </div>
 
+Ainda é possível efetuar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:
+
+
+```r
+boxplot(Idade~Sabor, data=pesquisa_dados)
+```
+
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-epub3/unnamed-chunk-79-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-79)Boxplot com as variáveis Idade e Sabor</p>
+</div>
 
 
 
@@ -2397,7 +2408,7 @@ Ex. Considere os dados que descrevem os valores do número de empresas fiscaliza
 
 <!--
 
-Table: (\#tab:unnamed-chunk-80)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
+Table: (\#tab:unnamed-chunk-81)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
 
   Ano  Empresas.Fiscalizadas 
 -----  ----------------------
@@ -2465,8 +2476,8 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-81-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-81)Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
+<img src="index_files/figure-epub3/unnamed-chunk-82-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-82)Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
 </div>
 
 onde, no argumento `ylim`, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
@@ -2526,8 +2537,8 @@ legend(0,40,c("temp_inst","temp_max","temp_min"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-83-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-83)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
+<img src="index_files/figure-epub3/unnamed-chunk-84-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-84)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
 </div>
 
 ## Estatísticas Descritivas
@@ -3351,7 +3362,7 @@ Podemos comparar duas médias de duas amostras dependentes, também chamadas de 
 **Exemplo 10**: Foi obtido o peso de seis indivíduos antes e após um treinamento de exercício físico. Teste a hipótese de que a média antes do treinamento é diferente da média após o treinamento.
 
 
-Table: (\#tab:unnamed-chunk-116)Amostras dependentes
+Table: (\#tab:unnamed-chunk-117)Amostras dependentes
 
 Indivíduo                      A    B    C    D    E    F
 ---------------------------  ---  ---  ---  ---  ---  ---
@@ -3394,7 +3405,7 @@ Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso antes do tre
 **Exemplo 11**: (adaptado de <www.inf.ufsc.br/~marcelo/testes2.html>) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Podemos concluir que o uso da ração contribuiu para o aumento do peso médio dos animais? 
 
 
-Table: (\#tab:unnamed-chunk-118)Amostras dependentes - caso 2
+Table: (\#tab:unnamed-chunk-119)Amostras dependentes - caso 2
 
 Cobaia      1     2     3     4     5     6     7     8     9    10
 -------  ----  ----  ----  ----  ----  ----  ----  ----  ----  ----
@@ -3440,7 +3451,7 @@ Primeiramente precisamos saber se existe homogeneidade de variâncias populacion
 
 
 
-Table: (\#tab:unnamed-chunk-120)Comparação de dois tipos diferentes de tecidos
+Table: (\#tab:unnamed-chunk-121)Comparação de dois tipos diferentes de tecidos
 
 ---------  ---  ---  ---  ---  ---  ---  ---
 Tecido A   36   26   31   38   28   20   37 
@@ -4001,8 +4012,8 @@ plot(tempo,nota)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-135-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-135)Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo</p>
+<img src="index_files/figure-epub3/unnamed-chunk-136-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-136)Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4342,8 +4353,8 @@ abline(coef(regressao))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-139-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-139)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
+<img src="index_files/figure-epub3/unnamed-chunk-140-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-140)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4510,8 +4521,8 @@ lines(density(regressao$residuals))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-142-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-142)Histograma de distribuição da probabilidade para os resíduos</p>
+<img src="index_files/figure-epub3/unnamed-chunk-143-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-143)Histograma de distribuição da probabilidade para os resíduos</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).

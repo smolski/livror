@@ -129,7 +129,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-02-07}
+    \date{2019-02-10}
 
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -2720,6 +2720,23 @@ Para obter o boxplot para um conjunto de dados:
 \caption{Boxplot com a variável Idade}\label{fig:unnamed-chunk-78}
 \end{figure}
 
+Ainda é possível efetuar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{boxplot}\NormalTok{(Idade}\OperatorTok{~}\NormalTok{Sabor, }\DataTypeTok{data=}\NormalTok{pesquisa_dados)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-79-1} 
+
+}
+
+\caption{Boxplot com as variáveis Idade e Sabor}\label{fig:unnamed-chunk-79}
+\end{figure}
+
 \hypertarget{grafico-ramo-e-folhas}{%
 \subsection{Gráfico ramo-e-folhas}\label{grafico-ramo-e-folhas}}
 
@@ -2898,11 +2915,11 @@ Para o caso de representação no mesmo gráfico, de duas ou mais variáveis, o 
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-81-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-82-1} 
 
 }
 
-\caption{Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010}\label{fig:unnamed-chunk-81}
+\caption{Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010}\label{fig:unnamed-chunk-82}
 \end{figure}
 
 onde, no argumento \texttt{ylim}, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
@@ -2964,11 +2981,11 @@ Segue a sequência de comandos, para obtenção do gráfico de linhas:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-83-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-84-1} 
 
 }
 
-\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}\label{fig:unnamed-chunk-83}
+\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}\label{fig:unnamed-chunk-84}
 \end{figure}
 
 \hypertarget{estatisticas-descritivas}{%
@@ -3810,7 +3827,7 @@ Podemos comparar duas médias de duas amostras dependentes, também chamadas de 
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-116}Amostras dependentes}
+\caption{\label{tab:unnamed-chunk-117}Amostras dependentes}
 \centering
 \begin{tabular}{l|r|r|r|r|r|r}
 \hline
@@ -3859,7 +3876,7 @@ Conclusão: Não rejeita-se \(H_0\) e conclui-se que a média de peso antes do t
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-118}Amostras dependentes - caso 2}
+\caption{\label{tab:unnamed-chunk-119}Amostras dependentes - caso 2}
 \centering
 \begin{tabular}{l|r|r|r|r|r|r|r|r|r|r}
 \hline
@@ -3912,7 +3929,7 @@ Primeiramente precisamos saber se existe homogeneidade de variâncias populacion
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-120}Comparação de dois tipos diferentes de tecidos}
+\caption{\label{tab:unnamed-chunk-121}Comparação de dois tipos diferentes de tecidos}
 \centering
 \begin{tabular}{l|l|l|l|l|l|l|l}
 \hline
@@ -4790,11 +4807,11 @@ O diagrama de dispersão do exemplo está representado abaixo.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-135-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-136-1} 
 
 }
 
-\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}\label{fig:unnamed-chunk-135}
+\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}\label{fig:unnamed-chunk-136}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -5183,11 +5200,11 @@ Para o exemplo:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-139-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-140-1} 
 
 }
 
-\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-139}
+\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-140}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -5373,11 +5390,11 @@ Ainda, pode-se construir o gráfico com a distribuição da probabilidade dos re
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-142-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-143-1} 
 
 }
 
-\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:unnamed-chunk-142}
+\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:unnamed-chunk-143}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).

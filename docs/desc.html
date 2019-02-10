@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-02-06">
+<meta name="date" content="2019-02-10">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -542,6 +542,14 @@ Figura 2.8: Histograma com a variável Renda h com breaks=5
 Figura 2.9: Boxplot com a variável Idade
 </p>
 </div>
+<p>Ainda é possível efetuar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(Idade<span class="op">~</span>Sabor, <span class="dt">data=</span>pesquisa_dados)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-79"></span>
+<img src="index_files/figure-html/unnamed-chunk-79-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
+<p class="caption">
+Figura 2.10: Boxplot com as variáveis Idade e Sabor
+</p>
+</div>
 </div>
 <div id="grafico-ramo-e-folhas" class="section level3">
 <h3><span class="header-section-number">2.3.5</span> Gráfico ramo-e-folhas</h3>
@@ -617,7 +625,7 @@ Figura 2.9: Boxplot com a variável Idade
 <p>Ex. Considere os dados que descrevem os valores do número de empresas fiscalizadas na fiscalização do trabalho na área rural Brasil 1998-2010.</p>
 <!--
 
-Table: (\#tab:unnamed-chunk-80)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
+Table: (\#tab:unnamed-chunk-81)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
 
   Ano  Empresas.Fiscalizadas 
 -----  ----------------------
@@ -719,10 +727,10 @@ Table: (\#tab:unnamed-chunk-80)Evolução dos resultados da fiscalização do tr
 <span class="kw">plot</span>(empfisc<span class="op">$</span>ano,empfisc<span class="op">$</span>qtd,<span class="dt">type=</span><span class="st">&quot;b&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Título&quot;</span>,
      <span class="dt">xlab=</span><span class="st">&quot;Nome_eixo_x&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Nome_eixo_y&quot;</span>, 
      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1998</span>,<span class="dv">2010</span>))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-81"></span>
-<img src="index_files/figure-html/unnamed-chunk-81-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-82"></span>
+<img src="index_files/figure-html/unnamed-chunk-82-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
 <p class="caption">
-Figura 2.10: Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010
+Figura 2.11: Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010
 </p>
 </div>
 <p>onde, no argumento <code>ylim</code>, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.</p>
@@ -761,10 +769,10 @@ inmet &lt;-<span class="st"> </span><span class="kw">read_delim</span>(<span cla
 
 <span class="kw">legend</span>(<span class="dv">0</span>,<span class="dv">40</span>,<span class="kw">c</span>(<span class="st">&quot;temp_inst&quot;</span>,<span class="st">&quot;temp_max&quot;</span>,<span class="st">&quot;temp_min&quot;</span>),
   <span class="dt">col =</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;green&quot;</span>),<span class="dt">pch=</span><span class="fl">4.1</span>,<span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-83"></span>
-<img src="index_files/figure-html/unnamed-chunk-83-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-84"></span>
+<img src="index_files/figure-html/unnamed-chunk-84-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
 <p class="caption">
-Figura 2.11: Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS
+Figura 2.12: Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS
 </p>
 </div>
 </div>
@@ -918,7 +926,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["livror.pdf"],
+"download": ["livror.pdf", "livror.epub"],
 "toc": {
 "collapse": "subsection"
 },

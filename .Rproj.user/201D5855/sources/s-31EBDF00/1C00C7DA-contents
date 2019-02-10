@@ -1338,6 +1338,11 @@ Para obter o boxplot para um conjunto de dados:
 boxplot(Idade,horizontal = T)
 ```
 
+Ainda é possível efetuar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:
+
+```{r,  fig.cap='Boxplot com as variáveis Idade e Sabor', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+boxplot(Idade~Sabor, data=pesquisa_dados)
+```
 
 
 
