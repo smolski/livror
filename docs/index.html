@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-02-10">
+<meta name="date" content="2019-02-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -169,7 +169,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a></li>
 <li class="chapter" data-level="1.13" data-path="intro.html"><a href="intro.html#funcoes-matematicas"><i class="fa fa-check"></i><b>1.13</b> Funções Matemáticas</a></li>
-<li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#conversao-de-datas"><i class="fa fa-check"></i><b>1.14</b> Conversão de datas</a></li>
+<li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#conversao-e-manipulacao-de-datas"><i class="fa fa-check"></i><b>1.14</b> Conversão e manipulação de datas</a><ul>
+<li class="chapter" data-level="1.14.1" data-path="intro.html"><a href="intro.html#o-pacote-lubridate"><i class="fa fa-check"></i><b>1.14.1</b> O pacote <em>lubridate</em></a></li>
+</ul></li>
 <li class="chapter" data-level="1.15" data-path="intro.html"><a href="intro.html#exercicios"><i class="fa fa-check"></i><b>1.15</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="desc.html"><a href="desc.html"><i class="fa fa-check"></i><b>2</b> Estatística Descritiva</a><ul>
@@ -272,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">Software R: Análise estatística de dados utilizando um programa livre</h1>
 <p class="author"><em>Iara Denise Endruweit Battisti</em></p>
 <p class="author"><em>Felipe Micail da Silva Smolski</em></p>
-<p class="date"><em>2019-02-10</em></p>
+<p class="date"><em>2019-02-17</em></p>
 </div>
 <div id="apresentacao" class="section level1 unnumbered">
 <h1>Apresentação</h1>
@@ -280,14 +282,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A linguagem de programação R trouxe consigo inúmeras vantagens aos pesquisadores. Dentre elas, pode-se dizer primeiramente que, basicamente o R trabalha com uma extensa relação de modelos estatísticos, que vão desde a modelagem linear e não-linear, a análise de séries temporais, os testes estatísticos clássicos, análise de grupamento e classificação, etc. Não bastasse este fato, é possível a apresentação gráfica dos resultados contando com variadas técnicas, passando também pela criação e manipulação de mapas.</p>
 <p>Outra questão importante é que o R possui uma comunidade ativa de desenvolvedores, que se expande regularmente. Isto faz com que as técnicas de análise de dados atinjam pesquisadores de variadas disciplinas ao longo do planeta. Inclusive, concebe que o desenvolvimento dos pacotes melhorem constantemente. No ano de 2018, já haviam mais de 12.700 pacotes disponibilizados. Não menos importante, talvez o essencial: o programa é livre, ao passo que entrega o estado da arte da estatística ao usuário.</p>
 <p>Outro progresso significativo na utilização do R foi a criação do <em>software</em> RStudio, a partir de 2010. Este, por sua vez, se configura em um ambiente integrado com o R e com inúmeras linguagens de marcação de texto (exemplos LaTeX, Markdown, HTML). Possui igualmente versão livre que disponibiliza ao pesquisador a execução, guarda, retomada e manipulação dos códigos de programação diretamente em seu console, bem como a administração de diretórios de trabalhos e projetos.</p>
-<p>O material aqui criado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no <em>software</em> RStudio. O sistema operacional aqui utilizado é o Windows 10. Importante mencionar que este livro origionu-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Nº 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).</p>
+<p>O material aqui criado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no <em>software</em> RStudio. O sistema operacional aqui utilizado é o Windows 10. Importante mencionar que este livro originou-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Nº 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).</p>
 <p>Este livro está organizado da seguinte maneira: no capítulo <a href="intro.html#intro">1</a> [<strong>Primeiros Passos com o R</strong>], busca-se instruir o pesquisador para a instalação dos programas necessários para acessar o ambiente de programação, bem como orientar sobre a usabilidade do programa em suas funções básicas de carregamento de bases de dados, criação de objetos e princípios de manipulação.</p>
-<p>Já no capítulo <a href="desc.html#desc">2</a> [<strong>Estatística Descritiva</strong>], leva o leitor ao encontro das técnicas básicas para descrever as variáveis em bancos de dados, como exemplos a média, mínima, máxima, desvio padrão, os quartis e também, apresentar os princípios dos elementos gráficos de apresentação dos dados.</p>
-<p>O capítulo <a href="inf.html#inf">3</a> [<strong>Estatística Inferencial</strong>] tratará dos métodos de determinação de intervalos de confiança (média e proporção), testes de hipóteses (verificar a normalidade dos dados) e das comparações entre médias de amostras dependentes e independentes.</p>
+<p>Já no capítulo <a href="desc.html#desc">2</a> [<strong>Estatística Descritiva</strong>], leva o leitor ao encontro das técnicas básicas para descrever as variáveis em bancos de dados, como exemplos a média, desvio-padrão, os quartis e também, apresentar os princípios dos elementos gráficos de apresentação dos dados.</p>
+<p>O capítulo <a href="inf.html#inf">3</a> [<strong>Estatística Inferencial</strong>] tratará dos métodos de determinação de intervalos de confiança (média e proporção), testes de hipóteses para verificar a normalidade dos dados e a comparação entre médias de duas amostras dependentes ou independentes.</p>
 <p>No capítulo <a href="qui.html#qui">4</a> [<strong>Teste de Qui-Quadrado</strong>], serão abordadas as referidas técnicas para verificação de asssociação entre duas variáveis qualitativas e de aderência a uma distribuição.</p>
-<p>No capítulo <a href="reg.html#reg">5</a> [<strong>Modelos de Regressão</strong>] serão introduzidos os conhecimentos sobre as técnicas de análise de correlação e regressão linear simples, bem como sobre o diagrama de dispersão, método dos mínimos quadrados, análise de variância, coeficiente e intervalo de predição, da análise dos resíduos e dos princípios de regressão múltipla.</p>
+<p>No capítulo <a href="reg.html#reg">5</a> [<strong>Modelos de Regressão</strong>] serão introduzidos os conhecimentos sobre as técnicas de análise de correlação e regressão linear simples, bem como sobre o diagrama de dispersão, método dos mínimos quadrados, análise de variância, coeficiente de determinação e intervalo de predição, da análise dos resíduos e dos princípios de regressão múltipla.</p>
 <p>A criação de documentos dinâmicos utilizando o RStudio será tratada no capítulo <a href="rmark.html#rmark">6</a> [<strong>RMarkdown</strong>]. O pesquisador poderá conhecer as formas de integrar a programação no R e a manipulação de bases de dados, criando, compilando e configurando relatórios finais em diversos formatos (HTML, PDF e Word/Libre/Open Office).</p>
-<p>Boa leitura!</p>
+<p>Bons estudos!</p>
 </div>
             </section>
 

@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Iara Denise Endruweit Battisti
 - Felipe Micail da Silva Smolski
-date: "2019-02-10"
+date: "2019-02-17"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -32,21 +32,23 @@ Outra questão importante é que o R possui uma comunidade ativa de desenvolvedo
 
 Outro progresso significativo na utilização do R foi a criação do *software* RStudio, a partir de 2010. Este, por sua vez, se configura em um ambiente integrado com o R e com inúmeras linguagens de marcação de texto (exemplos LaTeX, Markdown, HTML). Possui igualmente versão livre que disponibiliza ao pesquisador a execução, guarda, retomada e manipulação dos códigos de programação diretamente em seu console, bem como a administração de diretórios de trabalhos e projetos.
 
-O material aqui criado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no *software* RStudio. O sistema operacional aqui utilizado é o Windows 10. Importante mencionar que este livro origionu-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Nº 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).
+O material aqui criado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no *software* RStudio. O sistema operacional aqui utilizado é o Windows 10. Importante mencionar que este livro originou-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Nº 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).
 
 Este livro está organizado da seguinte maneira: no capítulo [1](#intro) [**Primeiros Passos com o R**], busca-se instruir o pesquisador para a instalação dos programas necessários para acessar o ambiente de programação, bem como orientar sobre a usabilidade do programa em suas funções básicas de carregamento de bases de dados, criação de objetos e princípios de manipulação. 
 
-Já no capítulo [2](#desc) [**Estatística Descritiva**], leva o leitor ao encontro das técnicas básicas para descrever as variáveis em bancos de dados, como exemplos a média, mínima, máxima, desvio padrão, os quartis e também, apresentar os princípios dos elementos gráficos de apresentação dos dados. 
+Já no capítulo [2](#desc) [**Estatística Descritiva**], leva o leitor ao encontro das técnicas básicas para descrever as variáveis em bancos de dados, como exemplos a média, desvio-padrão, os quartis e também, apresentar os princípios dos elementos gráficos de apresentação dos dados.
 
-O capítulo [3](#inf) [**Estatística Inferencial**] tratará dos métodos de determinação de intervalos de confiança (média e proporção), testes de hipóteses (verificar a normalidade dos dados) e das comparações entre médias de amostras dependentes e independentes. 
+
+O capítulo [3](#inf) [**Estatística Inferencial**] tratará dos métodos de determinação de intervalos de confiança (média e proporção), testes de hipóteses para verificar a normalidade dos dados e a comparação entre médias de duas amostras dependentes ou independentes.
 
 No capítulo [4](#qui) [**Teste de Qui-Quadrado**], serão abordadas as referidas técnicas para verificação de asssociação entre duas variáveis qualitativas e de aderência a uma distribuição.
 
-No capítulo [5](#reg) [**Modelos de Regressão**] serão introduzidos os conhecimentos sobre as técnicas de análise de correlação e regressão linear simples, bem como sobre o diagrama de dispersão, método dos mínimos quadrados, análise de variância, coeficiente e intervalo de predição, da análise dos resíduos e dos princípios de regressão múltipla.
+No capítulo [5](#reg) [**Modelos de Regressão**] serão introduzidos os conhecimentos sobre as técnicas de análise de correlação e regressão linear simples, bem como sobre o diagrama de dispersão, método dos mínimos quadrados, análise de variância, coeficiente de determinação e intervalo de predição, da análise dos resíduos e dos princípios de regressão múltipla.
 
 A criação de documentos dinâmicos utilizando o RStudio será tratada no capítulo [6](#rmark) [**RMarkdown**]. O pesquisador poderá conhecer as formas de integrar a programação no R e a manipulação de bases de dados, criando, compilando e configurando relatórios finais em diversos formatos (HTML, PDF e Word/Libre/Open Office).
 
-Boa leitura!
+
+Bons estudos!
 
 # Primeiros Passos com o R{#intro}
 
@@ -1144,6 +1146,10 @@ Utiliza-se o comando da seguinte forma:
 informacoes.2=edit(informacoes)
 ```
 
+```
+Warning in edit.data.frame(informacoes): added factor levels in 'estudantes'
+```
+
 <div class="figure" style="text-align: center">
 <img src="95.png" alt="Editor de dados" width="70%" />
 <p class="caption">(\#fig:95)Editor de dados</p>
@@ -1165,7 +1171,7 @@ informacoes.2
 
 ```
   estudantes idade peso      cidades
-1     Camila    21   65   Nova Hartz
+1       qoop    21   65   Nova Hartz
 2      Pedro    17   79      Gramado
 3    Marcelo    17   80     Soledade
 4  Guilherme    18  100 Porto Alegre
@@ -1201,10 +1207,9 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 20.06
-2  Guilherme    18  100 Porto Alegre   1.50 44.44
-3    Marcelo    17   80     Soledade   1.90 22.16
-4      Pedro    17   79      Gramado   1.74 26.09
+1  Guilherme    18  100 Porto Alegre   1.50 44.44
+2    Marcelo    17   80     Soledade   1.90 22.16
+3      Pedro    17   79      Gramado   1.74 26.09
 ```
 
 Ainda, se houver linhas que tenham pelo menos uma informação faltante (NA), estas podem ser excluídas com o comando `na.omit()`, ou mesmo os NAs serem substituídos por outro caractere (neste caso foi substituído por zero) com o comando `is.na`:
@@ -1219,10 +1224,9 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 20.06
-2  Guilherme    18  100 Porto Alegre   1.50 44.44
-3    Marcelo    17   80     Soledade   1.90 22.16
-4      Pedro    17   79      Gramado   1.74 26.09
+1  Guilherme    18  100 Porto Alegre   1.50 44.44
+2    Marcelo    17   80     Soledade   1.90 22.16
+3      Pedro    17   79      Gramado   1.74 26.09
 ```
 
 ```r
@@ -1234,10 +1238,9 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 20.06
-2  Guilherme    18  100 Porto Alegre   1.50 44.44
-3    Marcelo    17   80     Soledade   1.90 22.16
-4      Pedro    17   79      Gramado   1.74 26.09
+1  Guilherme    18  100 Porto Alegre   1.50 44.44
+2    Marcelo    17   80     Soledade   1.90 22.16
+3      Pedro    17   79      Gramado   1.74 26.09
 ```
 
 Outro recurso interessante é a substituição de dados em uma coluna, que pode ser feito de forma automática para uma condição padrão escolhida. No exemplo abaixo, substituimos aquelas informações de idade igual a 17 pelo número 19:
@@ -1251,10 +1254,9 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 20.06
-2  Guilherme    18  100 Porto Alegre   1.50 44.44
-3    Marcelo    19   80     Soledade   1.90 22.16
-4      Pedro    19   79      Gramado   1.74 26.09
+1  Guilherme    18  100 Porto Alegre   1.50 44.44
+2    Marcelo    19   80     Soledade   1.90 22.16
+3      Pedro    19   79      Gramado   1.74 26.09
 ```
 
 A classificação qualitativa das informações, com base em condições definidas pelo usuário podem ser facilmente efetuadas pelo comando `ifelse`. Para quem não tem intimidade com atributos de programação, este comando seleciona "se" (*if*) uma informação desejada é atendida, e cria uma rotina (*else*) que será aplicada "então". 
@@ -1271,10 +1273,9 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc   classificacao
-1     Camila    21   65   Nova Hartz   1.80 20.06     peso normal
-2  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso
-3    Marcelo    19   80     Soledade   1.90 22.16     peso normal
-4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso
+1  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso
+2    Marcelo    19   80     Soledade   1.90 22.16     peso normal
+3      Pedro    19   79      Gramado   1.74 26.09 excesso de peso
 ```
 
 
@@ -1314,10 +1315,9 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1     Camila    21   65   Nova Hartz   1.80 20.06     peso normal   Peso Normal
-2  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso Obesidade III
-3    Marcelo    19   80     Soledade   1.90 22.16     peso normal   Peso Normal
-4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
+1  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso Obesidade III
+2    Marcelo    19   80     Soledade   1.90 22.16     peso normal   Peso Normal
+3      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
 ```
 
 A classificação binária dos dados (0,1) também é relevante para o estudo da manipulação dos dados trabalhados pelo pesquisador. Neste exemplo, classificou-se aqueles valores da coluna "classificacao" com o "peso normal" iguais a 1, do contrário classificou-se 0 (zero).
@@ -1332,15 +1332,13 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1     Camila    21   65   Nova Hartz   1.80 20.06     peso normal   Peso Normal
-2  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso Obesidade III
-3    Marcelo    19   80     Soledade   1.90 22.16     peso normal   Peso Normal
-4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
+1  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso Obesidade III
+2    Marcelo    19   80     Soledade   1.90 22.16     peso normal   Peso Normal
+3      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
   binario
-1       1
-2       0
-3       1
-4       0
+1       0
+2       1
+3       0
 ```
 
 O comando `rbind()` é utilizado para incluir linhas novas abaixo de um objeto já criado pelo pesquisador, sendo que é importante o cuidado de que estas novas informações tenham os mesmos campos (colunas). A exemplo, pede-se para incluir uma nova pessoa no *data frame* informacoes: Francisco, 30 anos de idade, peso 59, natural de Ijuí, IMC 23,33768, classificado como peso normal. Lembrando de incluir os campos "tipoimc" e "binario".
@@ -1360,17 +1358,15 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1     Camila    21   65   Nova Hartz    1.8 20.06     peso normal   Peso Normal
-2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
-3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
-4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
-5  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
+1  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
+2    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
+3      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
+4  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
   binario
-1       1
-2       0
-3       1
-4       0
-5       1
+1       0
+2       1
+3       0
+4       1
 ```
 
 Outra forma de incluir informações adicionais nos *data frames* através de atributos é utilizando o pacote `dplyr`. Decide-se criar um campo "faixa etária", sendo que aqueles indivíduos com idade acima de 21 chamaremos de "adulto" e do contrário "não adulto".
@@ -1410,17 +1406,15 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1     Camila    21   65   Nova Hartz    1.8 20.06     peso normal   Peso Normal
-2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
-3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
-4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
-5  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
+1  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
+2    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
+3      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
+4  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
   binario faixa etaria
-1       1       adulto
-2       0   não adulto
-3       1   não adulto
-4       0   não adulto
-5       1       adulto
+1       0   não adulto
+2       1   não adulto
+3       0   não adulto
+4       1       adulto
 ```
 
 A (re)ordenação das colunas de um *data frame* pode ser muito útil em alguns casos, sendo extremamente fácil efetuá-la, cada número representa o número da respectiva coluna:
@@ -1441,17 +1435,15 @@ rev(informacoes)
 
 ```
   faixa etaria binario   classificacao altura   Imc estudantes      cidades
-1       adulto       1     peso normal    1.8 20.06     Camila   Nova Hartz
-2   não adulto       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre
-3   não adulto       1     peso normal    1.9 22.16    Marcelo     Soledade
-4   não adulto       0 excesso de peso   1.74 26.09      Pedro      Gramado
-5       adulto       1     peso normal   1,59 23.34  Francisco         Ijuí
+1   não adulto       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre
+2   não adulto       1     peso normal    1.9 22.16    Marcelo     Soledade
+3   não adulto       0 excesso de peso   1.74 26.09      Pedro      Gramado
+4       adulto       1     peso normal   1,59 23.34  Francisco         Ijuí
   peso idade       tipoimc
-1   65    21   Peso Normal
-2  100    18 Obesidade III
-3   80    19   Peso Normal
-4   79    19 Acima do Peso
-5   59    30   Peso Normal
+1  100    18 Obesidade III
+2   80    19   Peso Normal
+3   79    19 Acima do Peso
+4   59    30   Peso Normal
 ```
 
 A  função `table()` faz a contagem os dados; já o comando `sort()` ordena os objetos em ordem crescente (caso queira no formato decrescente, informar `decreasing=TRUE`).
@@ -1465,7 +1457,7 @@ table(informacoes$classificacao)
 ```
 
 excesso de peso     peso normal 
-              2               3 
+              2               2 
 ```
 
 ```r
@@ -1474,7 +1466,7 @@ sort(informacoes$idade)
 ```
 
 ```
-[1] 18 19 19 21 30
+[1] 18 19 19 30
 ```
 
 A ordenação de todo o *data frame* a partir de uma variável, pode ser realizada utilizando o comando `order`, sendo que pode ser realizada inclusive com variáveis categóricas (no exemplo abaixo o nome das cidades).
@@ -1487,17 +1479,15 @@ informacoes[order(informacoes$idade, decreasing = TRUE),]
 
 ```
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
-1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
-3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
-4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
+4   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+2   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
+3 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
+1 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
   binario faixa etaria
-5       1       adulto
-1       1       adulto
-3       1   não adulto
-4       0   não adulto
-2       0   não adulto
+4       1       adulto
+2       1   não adulto
+3       0   não adulto
+1       0   não adulto
 ```
 
 ```r
@@ -1507,17 +1497,15 @@ informacoes[order(informacoes$idade, decreasing = FALSE),]
 
 ```
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
-3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
-4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
-5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+1 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
+2   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
+3 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
+4   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
   binario faixa etaria
-2       0   não adulto
-3       1   não adulto
-4       0   não adulto
-1       1       adulto
-5       1       adulto
+1       0   não adulto
+2       1   não adulto
+3       0   não adulto
+4       1       adulto
 ```
 
 ```r
@@ -1527,17 +1515,15 @@ informacoes[order(informacoes$cidades, decreasing = FALSE),]
 
 ```
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
-1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
-2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
-3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
+3 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
+4   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+1 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
+2   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
   binario faixa etaria
-4       0   não adulto
-5       1       adulto
-1       1       adulto
-2       0   não adulto
-3       1   não adulto
+3       0   não adulto
+4       1       adulto
+1       0   não adulto
+2       1   não adulto
 ```
 
 O comando `rank()` cria uma ranqueamento crescente das informações. Se pretende-se, por exemplo, criar uma coluna com o ranking dos valores do IMC, pode ser utilizado:
@@ -1550,17 +1536,15 @@ informacoes
 
 ```
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
-2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
-3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
-4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+1 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
+2   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
+3 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
+4   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
   binario faixa etaria rankingImc
-1       1       adulto          1
-2       0   não adulto          5
-3       1   não adulto          2
-4       0   não adulto          4
-5       1       adulto          3
+1       0   não adulto          4
+2       1   não adulto          1
+3       0   não adulto          3
+4       1       adulto          2
 ```
 
 Para utilizar a função `rank` com os maiores valores em primeiro lugar:
@@ -1571,7 +1555,7 @@ rank(-informacoes$Imc)
 ```
 
 ```
-[1] 5 1 4 2 3
+[1] 1 4 2 3
 ```
 
 
@@ -1624,7 +1608,7 @@ which.min(informacoes$peso)
 ```
 
 ```
-[1] 5
+[1] 4
 ```
 
 ```r
@@ -1632,7 +1616,7 @@ which.max(informacoes$peso)
 ```
 
 ```
-[1] 2
+[1] 1
 ```
 
 Para descobrir qual é o estutande que possui o peso mínimo, por exemplo, ou o Imc máximo, utiliza-se o seguinte comando (notem que os resultados trazem a lista de todos os estudantes comparados):
@@ -1644,7 +1628,7 @@ informacoes$estudantes[which.min(informacoes$peso)]
 
 ```
 [1] Francisco
-Levels: Camila Guilherme Marcelo Pedro Francisco
+Levels: Camila Guilherme Marcelo Pedro qoop Francisco
 ```
 
 ```r
@@ -1653,7 +1637,7 @@ informacoes$estudantes[which.max(informacoes$Imc)]
 
 ```
 [1] Guilherme
-Levels: Camila Guilherme Marcelo Pedro Francisco
+Levels: Camila Guilherme Marcelo Pedro qoop Francisco
 ```
 
 O arredondamento de valores numéricos pode ser feito utilizando o comando `round()`, o qual o pesquisador informa o número de casas decimais:
@@ -1665,7 +1649,7 @@ round(informacoes$Imc, 2)
 ```
 
 ```
-[1] 20.06 44.44 22.16 26.09 23.34
+[1] 44.44 22.16 26.09 23.34
 ```
 
 Já o comando `signif()` determina o número de algarismos significativos da série escolhida, ou seja, ele arredonda para os valores em seu primeiro argumento com os número de dígitos detemrinados: 
@@ -1697,7 +1681,7 @@ sum(informacoes$idade)
 ```
 
 ```
-[1] 107
+[1] 86
 ```
 
 ```r
@@ -1706,7 +1690,7 @@ sd(informacoes$idade)
 ```
 
 ```
-[1] 4.93
+[1] 5.686
 ```
 
 ```r
@@ -1715,7 +1699,7 @@ var(informacoes$idade)
 ```
 
 ```
-[1] 24.3
+[1] 32.33
 ```
 
 ```r
@@ -1724,7 +1708,7 @@ mean(informacoes$idade)
 ```
 
 ```
-[1] 21.4
+[1] 21.5
 ```
 
 ```r
@@ -1745,10 +1729,10 @@ quantile(informacoes$idade,  probs = c(0.5, 1, 2, 5, 10, 50)/100)
 
 ```
  0.5%    1%    2%    5%   10%   50% 
-18.02 18.04 18.08 18.20 18.40 19.00 
+18.01 18.03 18.06 18.15 18.30 19.00 
 ```
 
-## Conversão de datas
+## Conversão e manipulação de datas
 
 A configuração e padronização dos formato de datas no RStudio podem ser efetuadas pelo pesquisador, primeiramente ao carregar a base de dados no programa e em um segundo momento durante a manipulação das informações. Por padrão o RStudio trabalha com o formato ANO-MÊS-DIA, sendo possível ainda ler e incluir dados de alta frequência como horas, minutos e segundos com utilização de outros pacotes. Assim, seguem alguns dos procedimentos para a correta alteração dos padrões de datas:
 
@@ -1809,6 +1793,220 @@ units(dif) # Retoma a unidade da diferença entre as datas
 ```
 [1] "days"
 ```
+
+### O pacote *lubridate*
+
+O pacote `lubridate` é responsável por contribuir de forma eficaz para a manipulação e transformação de variáveis sob o formato de datas e horas. No caso abaixo, os comandos `ymd()` e `mdy()` codificam corretamente parao R as datas que anteriormente não estavam neste padrão.
+
+
+```r
+library(lubridate)
+```
+
+```
+
+Attaching package: 'lubridate'
+```
+
+```
+The following object is masked from 'package:base':
+
+    date
+```
+
+```r
+ymd(20190215)
+```
+
+```
+[1] "2019-02-15"
+```
+
+```r
+mdy("2/15/19")
+```
+
+```
+[1] "2019-02-15"
+```
+
+Para o exemplo posterior para a manipulação de datas, foi criado um objeto denominado "data" com as variáveis data, quant e valor, representando a quantidade e valor de vendas em  determinados dias do ano:
+
+
+```r
+# Criando uma base de dados
+data=data.frame(data=c("01/01/2018","02/02/2019",
+                       "02/02/2019","05/02/2019","06/02/2019"),
+                quant=c(100,200,100,150,300),
+                valor=c(550.00,600.00,100.00,150.00,250.00))
+head(data)
+```
+
+```
+        data quant valor
+1 01/01/2018   100   550
+2 02/02/2019   200   600
+3 02/02/2019   100   100
+4 05/02/2019   150   150
+5 06/02/2019   300   250
+```
+
+Em primeiro lugar é efetuada a normalização da variável data:
+
+
+```r
+# Configurando a variável data
+data$data=dmy(data$data)
+```
+
+Depois, são criadas novas variáveis representando o ano, mês, dia e dia da semana de cada venda realizada, incrementando o poder de análise dos objetos:
+
+
+```r
+# Criando uma nova variável do ano da venda
+data$ano=year(data$data)
+data
+```
+
+```
+        data quant valor  ano
+1 2018-01-01   100   550 2018
+2 2019-02-02   200   600 2019
+3 2019-02-02   100   100 2019
+4 2019-02-05   150   150 2019
+5 2019-02-06   300   250 2019
+```
+
+```r
+# Criando uma nova variável do mês da venda
+data$mes=month(data$data)
+data
+```
+
+```
+        data quant valor  ano mes
+1 2018-01-01   100   550 2018   1
+2 2019-02-02   200   600 2019   2
+3 2019-02-02   100   100 2019   2
+4 2019-02-05   150   150 2019   2
+5 2019-02-06   300   250 2019   2
+```
+
+```r
+# Criando nova variável do dia da venda
+data$dia=day(data$data)
+data
+```
+
+```
+        data quant valor  ano mes dia
+1 2018-01-01   100   550 2018   1   1
+2 2019-02-02   200   600 2019   2   2
+3 2019-02-02   100   100 2019   2   2
+4 2019-02-05   150   150 2019   2   5
+5 2019-02-06   300   250 2019   2   6
+```
+
+```r
+# Criando nova variável do dia da semana da venda
+data$diasem=wday(data$data, label=TRUE)
+data
+```
+
+```
+        data quant valor  ano mes dia diasem
+1 2018-01-01   100   550 2018   1   1    seg
+2 2019-02-02   200   600 2019   2   2    sáb
+3 2019-02-02   100   100 2019   2   2    sáb
+4 2019-02-05   150   150 2019   2   5    ter
+5 2019-02-06   300   250 2019   2   6    qua
+```
+
+Com isso é possível realizar várias análises após a normalização das datas e extração de demais informações, como a sumarização de vendas por exemplo:
+
+
+
+```r
+# Valor das vendas por mês
+aggregate(data$valor, list(Var = data$mes), sum)
+```
+
+```
+  Var    x
+1   1  550
+2   2 1100
+```
+
+```r
+# Quantidade de vendas por mês
+aggregate(data$quant, list(Var = data$mes), sum)
+```
+
+```
+  Var   x
+1   1 100
+2   2 750
+```
+
+```r
+# Valor das vendas por dia
+aggregate(data$valor, list(Var = data$dia), sum)
+```
+
+```
+  Var   x
+1   1 550
+2   2 700
+3   5 150
+4   6 250
+```
+
+```r
+# Valor das vendas por dia
+aggregate(data$valor, list(Var = data$diasem), sum)
+```
+
+```
+  Var   x
+1 seg 550
+2 ter 150
+3 qua 250
+4 sáb 700
+```
+
+```r
+# Valor das vendas por mês e dia da semana 
+aggregate(valor ~ mes + diasem, data = data, sum)
+```
+
+```
+  mes diasem valor
+1   1    seg   550
+2   2    ter   150
+3   2    qua   250
+4   2    sáb   700
+```
+
+```r
+# Utilizando o pacote dplyr
+library(dplyr)
+
+data %>%
+  group_by(diasem) %>%
+  summarise(total = sum(valor))
+```
+
+```
+# A tibble: 4 x 2
+  diasem total
+  <ord>  <dbl>
+1 seg      550
+2 ter      150
+3 qua      250
+4 sáb      700
+```
+
+
 
 ## Exercícios
 
@@ -2078,8 +2276,8 @@ barplot(table(Sexo))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-68-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-68)Gráfico de colunas com a variável Sexo</p>
+<img src="index_files/figure-epub3/unnamed-chunk-73-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-73)Gráfico de colunas com a variável Sexo</p>
 </div>
 
 **Obs**.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -2097,8 +2295,8 @@ barplot(table(Sexo), horiz=T)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-69-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-69)Gráfico de colunas com a variável Sexo (Horizontal)</p>
+<img src="index_files/figure-epub3/unnamed-chunk-74-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-74)Gráfico de colunas com a variável Sexo (Horizontal)</p>
 </div>
 
 
@@ -2118,8 +2316,8 @@ barplot(table(`Pessoas_familia`), col=c("blue"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-70-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-70)Gráfico de colunas com a variável `Pessoas familia`</p>
+<img src="index_files/figure-epub3/unnamed-chunk-75-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-75)Gráfico de colunas com a variável `Pessoas familia`</p>
 </div>
 
 **Ex.2)** Construir uma tabela de dupla entrada para as variáveis **Sexo** e **Divulgação**.
@@ -2132,8 +2330,8 @@ barplot(table(Sexo,Divulgacao),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-71-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-71)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
+<img src="index_files/figure-epub3/unnamed-chunk-76-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-76)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
 </div>
 
 
@@ -2157,8 +2355,8 @@ barplot(Resultado,col=c("blue","red"),main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-73-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-73)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
+<img src="index_files/figure-epub3/unnamed-chunk-78-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-78)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
 </div>
 
 
@@ -2205,8 +2403,8 @@ legend(x="topright", # Determina posição da legenda
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-74-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-74)Gráfico de pizza com a variável Sabor</p>
+<img src="index_files/figure-epub3/unnamed-chunk-79-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-79)Gráfico de pizza com a variável Sabor</p>
 </div>
 
 ### Histograma
@@ -2223,8 +2421,8 @@ hist(as.numeric(`Renda_h`))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-75-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-75)Histograma com a variável `Renda h`</p>
+<img src="index_files/figure-epub3/unnamed-chunk-80-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-80)Histograma com a variável `Renda h`</p>
 </div>
 
 **Obs**. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -2247,8 +2445,8 @@ hist(as.numeric(`Renda_h`),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-76-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-76)Histograma com a variável Renda h com breaks=5</p>
+<img src="index_files/figure-epub3/unnamed-chunk-81-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-81)Histograma com a variável Renda h com breaks=5</p>
 </div>
 O comando `ylim` determina os limites do eixo y a serem mostrados; `xlab` e `ylab` determinam o nome das variáveis dos eixos x e y; `main` determina o nome do título e `col` determina a cor do gráfico. Use o argumento `main=NULL` para remover o título.
 
@@ -2267,7 +2465,7 @@ hist(as.numeric(`Renda_h`), breaks=5)$counts
 hist(as.numeric(`Renda_h`), breaks=5)$breaks
 ```
 
-<img src="index_files/figure-epub3/unnamed-chunk-77-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="index_files/figure-epub3/unnamed-chunk-82-1.png" width="70%" style="display: block; margin: auto;" />
 
 ```
 [1]  0  5 10 15 20 25
@@ -2293,8 +2491,8 @@ boxplot(Idade,horizontal = T)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-78-1.png" alt="Boxplot com a variável Idade" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-78)Boxplot com a variável Idade</p>
+<img src="index_files/figure-epub3/unnamed-chunk-83-1.png" alt="Boxplot com a variável Idade" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-83)Boxplot com a variável Idade</p>
 </div>
 
 Ainda é possível efetuar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:
@@ -2305,8 +2503,8 @@ boxplot(Idade~Sabor, data=pesquisa_dados)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-79-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-79)Boxplot com as variáveis Idade e Sabor</p>
+<img src="index_files/figure-epub3/unnamed-chunk-84-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-84)Boxplot com as variáveis Idade e Sabor</p>
 </div>
 
 
@@ -2408,7 +2606,7 @@ Ex. Considere os dados que descrevem os valores do número de empresas fiscaliza
 
 <!--
 
-Table: (\#tab:unnamed-chunk-81)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
+Table: (\#tab:unnamed-chunk-86)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
 
   Ano  Empresas.Fiscalizadas 
 -----  ----------------------
@@ -2476,8 +2674,8 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-82-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-82)Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
+<img src="index_files/figure-epub3/unnamed-chunk-87-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-87)Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
 </div>
 
 onde, no argumento `ylim`, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
@@ -2537,8 +2735,8 @@ legend(0,40,c("temp_inst","temp_max","temp_min"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-84-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-84)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
+<img src="index_files/figure-epub3/unnamed-chunk-89-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-89)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
 </div>
 
 ## Estatísticas Descritivas
@@ -3362,7 +3560,7 @@ Podemos comparar duas médias de duas amostras dependentes, também chamadas de 
 **Exemplo 10**: Foi obtido o peso de seis indivíduos antes e após um treinamento de exercício físico. Teste a hipótese de que a média antes do treinamento é diferente da média após o treinamento.
 
 
-Table: (\#tab:unnamed-chunk-117)Amostras dependentes
+Table: (\#tab:unnamed-chunk-122)Amostras dependentes
 
 Indivíduo                      A    B    C    D    E    F
 ---------------------------  ---  ---  ---  ---  ---  ---
@@ -3405,7 +3603,7 @@ Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso antes do tre
 **Exemplo 11**: (adaptado de <www.inf.ufsc.br/~marcelo/testes2.html>) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Podemos concluir que o uso da ração contribuiu para o aumento do peso médio dos animais? 
 
 
-Table: (\#tab:unnamed-chunk-119)Amostras dependentes - caso 2
+Table: (\#tab:unnamed-chunk-124)Amostras dependentes - caso 2
 
 Cobaia      1     2     3     4     5     6     7     8     9    10
 -------  ----  ----  ----  ----  ----  ----  ----  ----  ----  ----
@@ -3451,7 +3649,7 @@ Primeiramente precisamos saber se existe homogeneidade de variâncias populacion
 
 
 
-Table: (\#tab:unnamed-chunk-121)Comparação de dois tipos diferentes de tecidos
+Table: (\#tab:unnamed-chunk-126)Comparação de dois tipos diferentes de tecidos
 
 ---------  ---  ---  ---  ---  ---  ---  ---
 Tecido A   36   26   31   38   28   20   37 
@@ -3955,6 +4153,8 @@ Fonte: Dados simulados.
 
 *Erikson Kaszubowski*
 
+*Felipe Micail da Silva Smolski*
+
 \begin{flushright}
 \emph{}
 \end{flushright}
@@ -4012,8 +4212,8 @@ plot(tempo,nota)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-136-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-136)Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo</p>
+<img src="index_files/figure-epub3/unnamed-chunk-141-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-141)Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4353,8 +4553,8 @@ abline(coef(regressao))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-140-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-140)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
+<img src="index_files/figure-epub3/unnamed-chunk-145-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-145)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4521,8 +4721,8 @@ lines(density(regressao$residuals))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-143-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-143)Histograma de distribuição da probabilidade para os resíduos</p>
+<img src="index_files/figure-epub3/unnamed-chunk-148-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-148)Histograma de distribuição da probabilidade para os resíduos</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).

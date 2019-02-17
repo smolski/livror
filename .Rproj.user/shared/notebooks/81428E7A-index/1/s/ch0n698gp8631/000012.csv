@@ -1,0 +1,3 @@
+"0","# Criando uma nova variável do ano da venda"
+"0","data$ano=year(data$data)"
+"0","data"

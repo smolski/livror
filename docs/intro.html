@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-02-10">
+<meta name="date" content="2019-02-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -169,7 +169,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a></li>
 <li class="chapter" data-level="1.13" data-path="intro.html"><a href="intro.html#funcoes-matematicas"><i class="fa fa-check"></i><b>1.13</b> Funções Matemáticas</a></li>
-<li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#conversao-de-datas"><i class="fa fa-check"></i><b>1.14</b> Conversão de datas</a></li>
+<li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#conversao-e-manipulacao-de-datas"><i class="fa fa-check"></i><b>1.14</b> Conversão e manipulação de datas</a><ul>
+<li class="chapter" data-level="1.14.1" data-path="intro.html"><a href="intro.html#o-pacote-lubridate"><i class="fa fa-check"></i><b>1.14.1</b> O pacote <em>lubridate</em></a></li>
+</ul></li>
 <li class="chapter" data-level="1.15" data-path="intro.html"><a href="intro.html#exercicios"><i class="fa fa-check"></i><b>1.15</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="desc.html"><a href="desc.html"><i class="fa fa-check"></i><b>2</b> Estatística Descritiva</a><ul>
@@ -1207,8 +1209,8 @@ Levels: Camila Guilherme Marcelo Pedro Francisco</code></pre>
 <pre><code> 0.5%    1%    2%    5%   10%   50% 
 18.02 18.04 18.08 18.20 18.40 19.00 </code></pre>
 </div>
-<div id="conversao-de-datas" class="section level2">
-<h2><span class="header-section-number">1.14</span> Conversão de datas</h2>
+<div id="conversao-e-manipulacao-de-datas" class="section level2">
+<h2><span class="header-section-number">1.14</span> Conversão e manipulação de datas</h2>
 <p>A configuração e padronização dos formato de datas no RStudio podem ser efetuadas pelo pesquisador, primeiramente ao carregar a base de dados no programa e em um segundo momento durante a manipulação das informações. Por padrão o RStudio trabalha com o formato ANO-MÊS-DIA, sendo possível ainda ler e incluir dados de alta frequência como horas, minutos e segundos com utilização de outros pacotes. Assim, seguem alguns dos procedimentos para a correta alteração dos padrões de datas:</p>
 <pre class="sourceCode r"><code class="sourceCode r">abertura &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;03/02/69&quot;</span>) <span class="co"># Exemplo de criação de data inicial</span>
 fechamento &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;2000-20-01&quot;</span>) <span class="co"># Criação de data final</span>
@@ -1229,6 +1231,118 @@ dif</code></pre>
 <pre><code>[1] -11308</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">units</span>(dif) <span class="co"># Retoma a unidade da diferença entre as datas</span></code></pre>
 <pre><code>[1] &quot;days&quot;</code></pre>
+<div id="o-pacote-lubridate" class="section level3">
+<h3><span class="header-section-number">1.14.1</span> O pacote <em>lubridate</em></h3>
+<p>O pacote <code>lubridate</code> é responsável por contribuir de forma eficaz para a manipulação e transformação de variáveis sob o formato de datas e horas. No caso abaixo, os comandos <code>ymd()</code> e <code>mdy()</code> codificam corretamente parao R as datas que anteriormente não estavam neste padrão.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lubridate)</code></pre>
+<pre><code>
+Attaching package: &#39;lubridate&#39;</code></pre>
+<pre><code>The following object is masked from &#39;package:base&#39;:
+
+    date</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ymd</span>(<span class="dv">20190215</span>)</code></pre>
+<pre><code>[1] &quot;2019-02-15&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mdy</span>(<span class="st">&quot;2/15/19&quot;</span>)</code></pre>
+<pre><code>[1] &quot;2019-02-15&quot;</code></pre>
+<p>Para o exemplo posterior para a manipulação de datas, foi criado um objeto denominado “data” com as variáveis data, quant e valor, representando a quantidade e valor de vendas em determinados dias do ano:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Criando uma base de dados</span>
+data=<span class="kw">data.frame</span>(<span class="dt">data=</span><span class="kw">c</span>(<span class="st">&quot;01/01/2018&quot;</span>,<span class="st">&quot;02/02/2019&quot;</span>,
+                       <span class="st">&quot;02/02/2019&quot;</span>,<span class="st">&quot;05/02/2019&quot;</span>,<span class="st">&quot;06/02/2019&quot;</span>),
+                <span class="dt">quant=</span><span class="kw">c</span>(<span class="dv">100</span>,<span class="dv">200</span>,<span class="dv">100</span>,<span class="dv">150</span>,<span class="dv">300</span>),
+                <span class="dt">valor=</span><span class="kw">c</span>(<span class="fl">550.00</span>,<span class="fl">600.00</span>,<span class="fl">100.00</span>,<span class="fl">150.00</span>,<span class="fl">250.00</span>))
+<span class="kw">head</span>(data)</code></pre>
+<pre><code>        data quant valor
+1 01/01/2018   100   550
+2 02/02/2019   200   600
+3 02/02/2019   100   100
+4 05/02/2019   150   150
+5 06/02/2019   300   250</code></pre>
+<p>Em primeiro lugar é efetuada a normalização da variável data:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Configurando a variável data</span>
+data<span class="op">$</span>data=<span class="kw">dmy</span>(data<span class="op">$</span>data)</code></pre>
+<p>Depois, são criadas novas variáveis representando o ano, mês, dia e dia da semana de cada venda realizada, incrementando o poder de análise dos objetos:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Criando uma nova variável do ano da venda</span>
+data<span class="op">$</span>ano=<span class="kw">year</span>(data<span class="op">$</span>data)
+data</code></pre>
+<pre><code>        data quant valor  ano
+1 2018-01-01   100   550 2018
+2 2019-02-02   200   600 2019
+3 2019-02-02   100   100 2019
+4 2019-02-05   150   150 2019
+5 2019-02-06   300   250 2019</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Criando uma nova variável do mês da venda</span>
+data<span class="op">$</span>mes=<span class="kw">month</span>(data<span class="op">$</span>data)
+data</code></pre>
+<pre><code>        data quant valor  ano mes
+1 2018-01-01   100   550 2018   1
+2 2019-02-02   200   600 2019   2
+3 2019-02-02   100   100 2019   2
+4 2019-02-05   150   150 2019   2
+5 2019-02-06   300   250 2019   2</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Criando nova variável do dia da venda</span>
+data<span class="op">$</span>dia=<span class="kw">day</span>(data<span class="op">$</span>data)
+data</code></pre>
+<pre><code>        data quant valor  ano mes dia
+1 2018-01-01   100   550 2018   1   1
+2 2019-02-02   200   600 2019   2   2
+3 2019-02-02   100   100 2019   2   2
+4 2019-02-05   150   150 2019   2   5
+5 2019-02-06   300   250 2019   2   6</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Criando nova variável do dia da semana da venda</span>
+data<span class="op">$</span>diasem=<span class="kw">wday</span>(data<span class="op">$</span>data, <span class="dt">label=</span><span class="ot">TRUE</span>)
+data</code></pre>
+<pre><code>        data quant valor  ano mes dia diasem
+1 2018-01-01   100   550 2018   1   1    seg
+2 2019-02-02   200   600 2019   2   2    sáb
+3 2019-02-02   100   100 2019   2   2    sáb
+4 2019-02-05   150   150 2019   2   5    ter
+5 2019-02-06   300   250 2019   2   6    qua</code></pre>
+<p>Com isso é possível realizar várias análises após a normalização das datas e extração de demais informações, como a sumarização de vendas por exemplo:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Valor das vendas por mês</span>
+<span class="kw">aggregate</span>(data<span class="op">$</span>valor, <span class="kw">list</span>(<span class="dt">Var =</span> data<span class="op">$</span>mes), sum)</code></pre>
+<pre><code>  Var    x
+1   1  550
+2   2 1100</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Quantidade de vendas por mês</span>
+<span class="kw">aggregate</span>(data<span class="op">$</span>quant, <span class="kw">list</span>(<span class="dt">Var =</span> data<span class="op">$</span>mes), sum)</code></pre>
+<pre><code>  Var   x
+1   1 100
+2   2 750</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Valor das vendas por dia</span>
+<span class="kw">aggregate</span>(data<span class="op">$</span>valor, <span class="kw">list</span>(<span class="dt">Var =</span> data<span class="op">$</span>dia), sum)</code></pre>
+<pre><code>  Var   x
+1   1 550
+2   2 700
+3   5 150
+4   6 250</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Valor das vendas por dia</span>
+<span class="kw">aggregate</span>(data<span class="op">$</span>valor, <span class="kw">list</span>(<span class="dt">Var =</span> data<span class="op">$</span>diasem), sum)</code></pre>
+<pre><code>  Var   x
+1 seg 550
+2 ter 150
+3 qua 250
+4 sáb 700</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Valor das vendas por mês e dia da semana </span>
+<span class="kw">aggregate</span>(valor <span class="op">~</span><span class="st"> </span>mes <span class="op">+</span><span class="st"> </span>diasem, <span class="dt">data =</span> data, sum)</code></pre>
+<pre><code>  mes diasem valor
+1   1    seg   550
+2   2    ter   150
+3   2    qua   250
+4   2    sáb   700</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Utilizando o pacote dplyr</span>
+<span class="kw">library</span>(dplyr)
+
+data <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(diasem) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total =</span> <span class="kw">sum</span>(valor))</code></pre>
+<pre><code># A tibble: 4 x 2
+  diasem total
+  &lt;ord&gt;  &lt;dbl&gt;
+1 seg      550
+2 ter      150
+3 qua      250
+4 sáb      700</code></pre>
+</div>
 </div>
 <div id="exercicios" class="section level2">
 <h2><span class="header-section-number">1.15</span> Exercícios</h2>

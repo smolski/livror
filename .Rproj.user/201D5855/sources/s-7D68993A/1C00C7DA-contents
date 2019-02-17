@@ -47,21 +47,23 @@ Outra questão importante é que o R possui uma comunidade ativa de desenvolvedo
 
 Outro progresso significativo na utilização do R foi a criação do *software* RStudio, a partir de 2010. Este, por sua vez, se configura em um ambiente integrado com o R e com inúmeras linguagens de marcação de texto (exemplos LaTeX, Markdown, HTML). Possui igualmente versão livre que disponibiliza ao pesquisador a execução, guarda, retomada e manipulação dos códigos de programação diretamente em seu console, bem como a administração de diretórios de trabalhos e projetos.
 
-O material aqui criado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no *software* RStudio. O sistema operacional aqui utilizado é o Windows 10. Importante mencionar que este livro origionu-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Nº 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).
+O material aqui criado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no *software* RStudio. O sistema operacional aqui utilizado é o Windows 10. Importante mencionar que este livro originou-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Nº 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).
 
 Este livro está organizado da seguinte maneira: no capítulo [1](#intro) [**Primeiros Passos com o R**], busca-se instruir o pesquisador para a instalação dos programas necessários para acessar o ambiente de programação, bem como orientar sobre a usabilidade do programa em suas funções básicas de carregamento de bases de dados, criação de objetos e princípios de manipulação. 
 
-Já no capítulo [2](#desc) [**Estatística Descritiva**], leva o leitor ao encontro das técnicas básicas para descrever as variáveis em bancos de dados, como exemplos a média, mínima, máxima, desvio padrão, os quartis e também, apresentar os princípios dos elementos gráficos de apresentação dos dados. 
+Já no capítulo [2](#desc) [**Estatística Descritiva**], leva o leitor ao encontro das técnicas básicas para descrever as variáveis em bancos de dados, como exemplos a média, desvio-padrão, os quartis e também, apresentar os princípios dos elementos gráficos de apresentação dos dados.
 
-O capítulo [3](#inf) [**Estatística Inferencial**] tratará dos métodos de determinação de intervalos de confiança (média e proporção), testes de hipóteses (verificar a normalidade dos dados) e das comparações entre médias de amostras dependentes e independentes. 
+
+O capítulo [3](#inf) [**Estatística Inferencial**] tratará dos métodos de determinação de intervalos de confiança (média e proporção), testes de hipóteses para verificar a normalidade dos dados e a comparação entre médias de duas amostras dependentes ou independentes.
 
 No capítulo [4](#qui) [**Teste de Qui-Quadrado**], serão abordadas as referidas técnicas para verificação de asssociação entre duas variáveis qualitativas e de aderência a uma distribuição.
 
-No capítulo [5](#reg) [**Modelos de Regressão**] serão introduzidos os conhecimentos sobre as técnicas de análise de correlação e regressão linear simples, bem como sobre o diagrama de dispersão, método dos mínimos quadrados, análise de variância, coeficiente e intervalo de predição, da análise dos resíduos e dos princípios de regressão múltipla.
+No capítulo [5](#reg) [**Modelos de Regressão**] serão introduzidos os conhecimentos sobre as técnicas de análise de correlação e regressão linear simples, bem como sobre o diagrama de dispersão, método dos mínimos quadrados, análise de variância, coeficiente de determinação e intervalo de predição, da análise dos resíduos e dos princípios de regressão múltipla.
 
 A criação de documentos dinâmicos utilizando o RStudio será tratada no capítulo [6](#rmark) [**RMarkdown**]. O pesquisador poderá conhecer as formas de integrar a programação no R e a manipulação de bases de dados, criando, compilando e configurando relatórios finais em diversos formatos (HTML, PDF e Word/Libre/Open Office).
 
-Boa leitura!
+
+Bons estudos!
 
 # Primeiros Passos com o R{#intro}
 
@@ -932,7 +934,7 @@ quantile(informacoes$idade,  probs = c(0.5, 1, 2, 5, 10, 50)/100)
 
 ```
 
-## Conversão de datas
+## Conversão e manipulação de datas
 
 A configuração e padronização dos formato de datas no RStudio podem ser efetuadas pelo pesquisador, primeiramente ao carregar a base de dados no programa e em um segundo momento durante a manipulação das informações. Por padrão o RStudio trabalha com o formato ANO-MÊS-DIA, sendo possível ainda ler e incluir dados de alta frequência como horas, minutos e segundos com utilização de outros pacotes. Assim, seguem alguns dos procedimentos para a correta alteração dos padrões de datas:
 
@@ -955,6 +957,88 @@ class(dif) # Verifica a classe do objeto
 as.numeric(dif) # Retoma o valor numérico da diferença
 units(dif) # Retoma a unidade da diferença entre as datas
 ```
+
+### O pacote *lubridate*
+
+O pacote `lubridate` é responsável por contribuir de forma eficaz para a manipulação e transformação de variáveis sob o formato de datas e horas. No caso abaixo, os comandos `ymd()` e `mdy()` codificam corretamente parao R as datas que anteriormente não estavam neste padrão.
+
+```{r}
+library(lubridate)
+
+ymd(20190215)
+
+mdy("2/15/19")
+
+```
+
+Para o exemplo posterior para a manipulação de datas, foi criado um objeto denominado "data" com as variáveis data, quant e valor, representando a quantidade e valor de vendas em  determinados dias do ano:
+
+```{r}
+# Criando uma base de dados
+data=data.frame(data=c("01/01/2018","02/02/2019",
+                       "02/02/2019","05/02/2019","06/02/2019"),
+                quant=c(100,200,100,150,300),
+                valor=c(550.00,600.00,100.00,150.00,250.00))
+head(data)
+```
+
+Em primeiro lugar é efetuada a normalização da variável data:
+
+```{r}
+# Configurando a variável data
+data$data=dmy(data$data)
+```
+
+Depois, são criadas novas variáveis representando o ano, mês, dia e dia da semana de cada venda realizada, incrementando o poder de análise dos objetos:
+
+```{r}
+# Criando uma nova variável do ano da venda
+data$ano=year(data$data)
+data
+
+# Criando uma nova variável do mês da venda
+data$mes=month(data$data)
+data
+
+# Criando nova variável do dia da venda
+data$dia=day(data$data)
+data
+
+# Criando nova variável do dia da semana da venda
+data$diasem=wday(data$data, label=TRUE)
+data
+
+```
+
+Com isso é possível realizar várias análises após a normalização das datas e extração de demais informações, como a sumarização de vendas por exemplo:
+
+
+```{r}
+# Valor das vendas por mês
+aggregate(data$valor, list(Var = data$mes), sum)
+
+# Quantidade de vendas por mês
+aggregate(data$quant, list(Var = data$mes), sum)
+
+# Valor das vendas por dia
+aggregate(data$valor, list(Var = data$dia), sum)
+
+# Valor das vendas por dia
+aggregate(data$valor, list(Var = data$diasem), sum)
+
+# Valor das vendas por mês e dia da semana 
+aggregate(valor ~ mes + diasem, data = data, sum)
+
+# Utilizando o pacote dplyr
+library(dplyr)
+
+data %>%
+  group_by(diasem) %>%
+  summarise(total = sum(valor))
+
+```
+
+
 
 ## Exercícios
 
@@ -2437,6 +2521,8 @@ Fonte: Dados simulados.
 *Iara Denise Endruweit Battisti*
 
 *Erikson Kaszubowski*
+
+*Felipe Micail da Silva Smolski*
 
 \begin{flushright}
 \emph{}

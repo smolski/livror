@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-02-10">
+<meta name="date" content="2019-02-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -169,7 +169,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a></li>
 <li class="chapter" data-level="1.13" data-path="intro.html"><a href="intro.html#funcoes-matematicas"><i class="fa fa-check"></i><b>1.13</b> Funções Matemáticas</a></li>
-<li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#conversao-de-datas"><i class="fa fa-check"></i><b>1.14</b> Conversão de datas</a></li>
+<li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#conversao-e-manipulacao-de-datas"><i class="fa fa-check"></i><b>1.14</b> Conversão e manipulação de datas</a><ul>
+<li class="chapter" data-level="1.14.1" data-path="intro.html"><a href="intro.html#o-pacote-lubridate"><i class="fa fa-check"></i><b>1.14.1</b> O pacote <em>lubridate</em></a></li>
+</ul></li>
 <li class="chapter" data-level="1.15" data-path="intro.html"><a href="intro.html#exercicios"><i class="fa fa-check"></i><b>1.15</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="desc.html"><a href="desc.html"><i class="fa fa-check"></i><b>2</b> Estatística Descritiva</a><ul>
@@ -396,8 +398,8 @@ Divulgacao   Feminino Masculino
 <p><code>barplot(table(nome_variável))</code></p>
 <p>Ex. Construir um gráfico de colunas para a variável <strong>Sexo</strong>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-68"></span>
-<img src="index_files/figure-html/unnamed-chunk-68-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-73"></span>
+<img src="index_files/figure-html/unnamed-chunk-73-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
 <p class="caption">
 Figura 2.1: Gráfico de colunas com a variável Sexo
 </p>
@@ -408,8 +410,8 @@ Figura 2.1: Gráfico de colunas com a variável Sexo
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">las=</span><span class="dv">2</span>) <span class="co"># Altera a direção dos nomes Masculino e Feminino</span>
 <span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">4</span>,<span class="dv">2</span>)) <span class="co"># Aumenta a margem do eixo x</span>
 <span class="kw">barplot</span>(<span class="kw">table</span>(Sexo), <span class="dt">horiz=</span>T)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-69"></span>
-<img src="index_files/figure-html/unnamed-chunk-69-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-74"></span>
+<img src="index_files/figure-html/unnamed-chunk-74-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
 <p class="caption">
 Figura 2.2: Gráfico de colunas com a variável Sexo (Horizontal)
 </p>
@@ -420,8 +422,8 @@ Figura 2.2: Gráfico de colunas com a variável Sexo (Horizontal)
         <span class="dt">xlab =</span> <span class="st">&quot;Frequência&quot;, </span>
 <span class="st">        ylab = &quot;</span>Pessoas<span class="st">&quot;, </span>
 <span class="st">        border = &quot;</span>red<span class="st">&quot;)</span></code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-70"></span>
-<img src="index_files/figure-html/unnamed-chunk-70-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-75"></span>
+<img src="index_files/figure-html/unnamed-chunk-75-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
 <p class="caption">
 Figura 2.3: Gráfico de colunas com a variável <code>Pessoas familia</code>
 </p>
@@ -430,8 +432,8 @@ Figura 2.3: Gráfico de colunas com a variável <code>Pessoas familia</code>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo,Divulgacao), 
         <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>), 
         <span class="dt">main =</span> <span class="st">&quot;Frequência de pessoas por Sexo e Divulgacao&quot;</span>)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-71"></span>
-<img src="index_files/figure-html/unnamed-chunk-71-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-76"></span>
+<img src="index_files/figure-html/unnamed-chunk-76-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
 <p class="caption">
 Figura 2.4: Gráfico de colunas com as variáveis Sexo e Divulgacao
 </p>
@@ -445,8 +447,8 @@ Figura 2.4: Gráfico de colunas com as variáveis Sexo e Divulgacao
         <span class="dt">border=</span><span class="st">&#39;red&#39;</span>, 
         <span class="dt">beside=</span>T,<span class="dt">legend=</span><span class="kw">rownames</span>(Resultado),
         <span class="dt">args.legend =</span> <span class="kw">list</span>(<span class="dt">x =</span> <span class="st">&quot;topleft&quot;</span>))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-73"></span>
-<img src="index_files/figure-html/unnamed-chunk-73-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-78"></span>
+<img src="index_files/figure-html/unnamed-chunk-78-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
 <p class="caption">
 Figura 2.5: Gráfico de colunas com as variáveis Sexo e Divulgacao (2)
 </p>
@@ -484,8 +486,8 @@ nomesleg=<span class="kw">c</span>(<span class="st">&quot;Bom&quot;</span>,<span
 <span class="co"># - terrain.colors(n) </span>
 <span class="co"># - topo.colors(n)</span>
 <span class="co"># - cm.colors(n)</span></code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-74"></span>
-<img src="index_files/figure-html/unnamed-chunk-74-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-79"></span>
+<img src="index_files/figure-html/unnamed-chunk-79-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
 <p class="caption">
 Figura 2.6: Gráfico de pizza com a variável Sabor
 </p>
@@ -497,8 +499,8 @@ Figura 2.6: Gráfico de pizza com a variável Sabor
 <p><code>hist(nome_variável)</code></p>
 <p>Ex. Construa um histograma com a variável <strong>Renda_h</strong>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(<span class="kw">as.numeric</span>(<span class="st">`</span><span class="dt">Renda_h</span><span class="st">`</span>))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-75"></span>
-<img src="index_files/figure-html/unnamed-chunk-75-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-80"></span>
+<img src="index_files/figure-html/unnamed-chunk-80-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
 <p class="caption">
 Figura 2.7: Histograma com a variável <code>Renda h</code>
 </p>
@@ -514,8 +516,8 @@ Figura 2.7: Histograma com a variável <code>Renda h</code>
      <span class="dt">ylab =</span> <span class="st">&#39;Frequência&#39;,</span>
 <span class="st">     main = &#39;</span>Histograma da Renda<span class="st">&#39;,</span>
 <span class="st">     col = &#39;</span><span class="co">#BBDEFB&#39;)</span></code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-76"></span>
-<img src="index_files/figure-html/unnamed-chunk-76-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-81"></span>
+<img src="index_files/figure-html/unnamed-chunk-81-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
 <p class="caption">
 Figura 2.8: Histograma com a variável Renda h com breaks=5
 </p>
@@ -525,7 +527,7 @@ Figura 2.8: Histograma com a variável Renda h com breaks=5
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(<span class="kw">as.numeric</span>(<span class="st">`</span><span class="dt">Renda_h</span><span class="st">`</span>), <span class="dt">breaks=</span><span class="dv">5</span>)<span class="op">$</span>counts</code></pre>
 <pre><code>[1] 106 167  62  11   2</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(<span class="kw">as.numeric</span>(<span class="st">`</span><span class="dt">Renda_h</span><span class="st">`</span>), <span class="dt">breaks=</span><span class="dv">5</span>)<span class="op">$</span>breaks</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-77-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-82-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <pre><code>[1]  0  5 10 15 20 25</code></pre>
 </div>
 <div id="boxplot-ou-diagrama-em-caixas" class="section level3">
@@ -536,16 +538,16 @@ Figura 2.8: Histograma com a variável Renda h com breaks=5
 <p><code>boxplot(variávelA, variávelB, names=c("A","B"))</code></p>
 <p><strong>Ex.1)</strong> Construir um boxplot da variável <strong>Idade</strong>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(Idade,<span class="dt">horizontal =</span> T)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-78"></span>
-<img src="index_files/figure-html/unnamed-chunk-78-1.png" alt="Boxplot com a variável Idade" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-83"></span>
+<img src="index_files/figure-html/unnamed-chunk-83-1.png" alt="Boxplot com a variável Idade" width="70%" />
 <p class="caption">
 Figura 2.9: Boxplot com a variável Idade
 </p>
 </div>
 <p>Ainda é possível efetuar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(Idade<span class="op">~</span>Sabor, <span class="dt">data=</span>pesquisa_dados)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-79"></span>
-<img src="index_files/figure-html/unnamed-chunk-79-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-84"></span>
+<img src="index_files/figure-html/unnamed-chunk-84-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
 <p class="caption">
 Figura 2.10: Boxplot com as variáveis Idade e Sabor
 </p>
@@ -625,7 +627,7 @@ Figura 2.10: Boxplot com as variáveis Idade e Sabor
 <p>Ex. Considere os dados que descrevem os valores do número de empresas fiscalizadas na fiscalização do trabalho na área rural Brasil 1998-2010.</p>
 <!--
 
-Table: (\#tab:unnamed-chunk-81)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
+Table: (\#tab:unnamed-chunk-86)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
 
   Ano  Empresas.Fiscalizadas 
 -----  ----------------------
@@ -727,8 +729,8 @@ Table: (\#tab:unnamed-chunk-81)Evolução dos resultados da fiscalização do tr
 <span class="kw">plot</span>(empfisc<span class="op">$</span>ano,empfisc<span class="op">$</span>qtd,<span class="dt">type=</span><span class="st">&quot;b&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Título&quot;</span>,
      <span class="dt">xlab=</span><span class="st">&quot;Nome_eixo_x&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Nome_eixo_y&quot;</span>, 
      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1998</span>,<span class="dv">2010</span>))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-82"></span>
-<img src="index_files/figure-html/unnamed-chunk-82-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-87"></span>
+<img src="index_files/figure-html/unnamed-chunk-87-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
 <p class="caption">
 Figura 2.11: Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010
 </p>
@@ -769,8 +771,8 @@ inmet &lt;-<span class="st"> </span><span class="kw">read_delim</span>(<span cla
 
 <span class="kw">legend</span>(<span class="dv">0</span>,<span class="dv">40</span>,<span class="kw">c</span>(<span class="st">&quot;temp_inst&quot;</span>,<span class="st">&quot;temp_max&quot;</span>,<span class="st">&quot;temp_min&quot;</span>),
   <span class="dt">col =</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;green&quot;</span>),<span class="dt">pch=</span><span class="fl">4.1</span>,<span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-84"></span>
-<img src="index_files/figure-html/unnamed-chunk-84-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-89"></span>
+<img src="index_files/figure-html/unnamed-chunk-89-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
 <p class="caption">
 Figura 2.12: Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS
 </p>

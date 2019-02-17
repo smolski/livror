@@ -129,7 +129,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-02-10}
+    \date{2019-02-17}
 
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -178,21 +178,21 @@ Outra questão importante é que o R possui uma comunidade ativa de desenvolvedo
 
 Outro progresso significativo na utilização do R foi a criação do \emph{software} RStudio, a partir de 2010. Este, por sua vez, se configura em um ambiente integrado com o R e com inúmeras linguagens de marcação de texto (exemplos LaTeX, Markdown, HTML). Possui igualmente versão livre que disponibiliza ao pesquisador a execução, guarda, retomada e manipulação dos códigos de programação diretamente em seu console, bem como a administração de diretórios de trabalhos e projetos.
 
-O material aqui criado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no \emph{software} RStudio. O sistema operacional aqui utilizado é o Windows 10. Importante mencionar que este livro origionu-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Nº 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).
+O material aqui criado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no \emph{software} RStudio. O sistema operacional aqui utilizado é o Windows 10. Importante mencionar que este livro originou-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Nº 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).
 
 Este livro está organizado da seguinte maneira: no capítulo \protect\hyperlink{intro}{1} {[}\textbf{Primeiros Passos com o R}{]}, busca-se instruir o pesquisador para a instalação dos programas necessários para acessar o ambiente de programação, bem como orientar sobre a usabilidade do programa em suas funções básicas de carregamento de bases de dados, criação de objetos e princípios de manipulação.
 
-Já no capítulo \protect\hyperlink{desc}{2} {[}\textbf{Estatística Descritiva}{]}, leva o leitor ao encontro das técnicas básicas para descrever as variáveis em bancos de dados, como exemplos a média, mínima, máxima, desvio padrão, os quartis e também, apresentar os princípios dos elementos gráficos de apresentação dos dados.
+Já no capítulo \protect\hyperlink{desc}{2} {[}\textbf{Estatística Descritiva}{]}, leva o leitor ao encontro das técnicas básicas para descrever as variáveis em bancos de dados, como exemplos a média, desvio-padrão, os quartis e também, apresentar os princípios dos elementos gráficos de apresentação dos dados.
 
-O capítulo \protect\hyperlink{inf}{3} {[}\textbf{Estatística Inferencial}{]} tratará dos métodos de determinação de intervalos de confiança (média e proporção), testes de hipóteses (verificar a normalidade dos dados) e das comparações entre médias de amostras dependentes e independentes.
+O capítulo \protect\hyperlink{inf}{3} {[}\textbf{Estatística Inferencial}{]} tratará dos métodos de determinação de intervalos de confiança (média e proporção), testes de hipóteses para verificar a normalidade dos dados e a comparação entre médias de duas amostras dependentes ou independentes.
 
 No capítulo \protect\hyperlink{qui}{4} {[}\textbf{Teste de Qui-Quadrado}{]}, serão abordadas as referidas técnicas para verificação de asssociação entre duas variáveis qualitativas e de aderência a uma distribuição.
 
-No capítulo \protect\hyperlink{reg}{5} {[}\textbf{Modelos de Regressão}{]} serão introduzidos os conhecimentos sobre as técnicas de análise de correlação e regressão linear simples, bem como sobre o diagrama de dispersão, método dos mínimos quadrados, análise de variância, coeficiente e intervalo de predição, da análise dos resíduos e dos princípios de regressão múltipla.
+No capítulo \protect\hyperlink{reg}{5} {[}\textbf{Modelos de Regressão}{]} serão introduzidos os conhecimentos sobre as técnicas de análise de correlação e regressão linear simples, bem como sobre o diagrama de dispersão, método dos mínimos quadrados, análise de variância, coeficiente de determinação e intervalo de predição, da análise dos resíduos e dos princípios de regressão múltipla.
 
 A criação de documentos dinâmicos utilizando o RStudio será tratada no capítulo \protect\hyperlink{rmark}{6} {[}\textbf{RMarkdown}{]}. O pesquisador poderá conhecer as formas de integrar a programação no R e a manipulação de bases de dados, criando, compilando e configurando relatórios finais em diversos formatos (HTML, PDF e Word/Libre/Open Office).
 
-Boa leitura!
+Bons estudos!
 
 \hypertarget{intro}{%
 \chapter{Primeiros Passos com o R}\label{intro}}
@@ -2105,8 +2105,8 @@ O comando \texttt{quantile()} oferece a possibilidade de obter os quartis dos da
 18.02 18.04 18.08 18.20 18.40 19.00 
 \end{verbatim}
 
-\hypertarget{conversao-de-datas}{%
-\section{Conversão de datas}\label{conversao-de-datas}}
+\hypertarget{conversao-e-manipulacao-de-datas}{%
+\section{Conversão e manipulação de datas}\label{conversao-e-manipulacao-de-datas}}
 
 A configuração e padronização dos formato de datas no RStudio podem ser efetuadas pelo pesquisador, primeiramente ao carregar a base de dados no programa e em um segundo momento durante a manipulação das informações. Por padrão o RStudio trabalha com o formato ANO-MÊS-DIA, sendo possível ainda ler e incluir dados de alta frequência como horas, minutos e segundos com utilização de outros pacotes. Assim, seguem alguns dos procedimentos para a correta alteração dos padrões de datas:
 
@@ -2176,6 +2176,243 @@ Time difference of -11308 days
 
 \begin{verbatim}
 [1] "days"
+\end{verbatim}
+
+\hypertarget{o-pacote-lubridate}{%
+\subsection{\texorpdfstring{O pacote \emph{lubridate}}{O pacote lubridate}}\label{o-pacote-lubridate}}
+
+O pacote \texttt{lubridate} é responsável por contribuir de forma eficaz para a manipulação e transformação de variáveis sob o formato de datas e horas. No caso abaixo, os comandos \texttt{ymd()} e \texttt{mdy()} codificam corretamente parao R as datas que anteriormente não estavam neste padrão.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(lubridate)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Attaching package: 'lubridate'
+\end{verbatim}
+
+\begin{verbatim}
+The following object is masked from 'package:base':
+
+    date
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ymd}\NormalTok{(}\DecValTok{20190215}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "2019-02-15"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{mdy}\NormalTok{(}\StringTok{"2/15/19"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "2019-02-15"
+\end{verbatim}
+
+Para o exemplo posterior para a manipulação de datas, foi criado um objeto denominado ``data'' com as variáveis data, quant e valor, representando a quantidade e valor de vendas em determinados dias do ano:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Criando uma base de dados}
+\NormalTok{data=}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{data=}\KeywordTok{c}\NormalTok{(}\StringTok{"01/01/2018"}\NormalTok{,}\StringTok{"02/02/2019"}\NormalTok{,}
+                       \StringTok{"02/02/2019"}\NormalTok{,}\StringTok{"05/02/2019"}\NormalTok{,}\StringTok{"06/02/2019"}\NormalTok{),}
+                \DataTypeTok{quant=}\KeywordTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{,}\DecValTok{200}\NormalTok{,}\DecValTok{100}\NormalTok{,}\DecValTok{150}\NormalTok{,}\DecValTok{300}\NormalTok{),}
+                \DataTypeTok{valor=}\KeywordTok{c}\NormalTok{(}\FloatTok{550.00}\NormalTok{,}\FloatTok{600.00}\NormalTok{,}\FloatTok{100.00}\NormalTok{,}\FloatTok{150.00}\NormalTok{,}\FloatTok{250.00}\NormalTok{))}
+\KeywordTok{head}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        data quant valor
+1 01/01/2018   100   550
+2 02/02/2019   200   600
+3 02/02/2019   100   100
+4 05/02/2019   150   150
+5 06/02/2019   300   250
+\end{verbatim}
+
+Em primeiro lugar é efetuada a normalização da variável data:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Configurando a variável data}
+\NormalTok{data}\OperatorTok{$}\NormalTok{data=}\KeywordTok{dmy}\NormalTok{(data}\OperatorTok{$}\NormalTok{data)}
+\end{Highlighting}
+\end{Shaded}
+
+Depois, são criadas novas variáveis representando o ano, mês, dia e dia da semana de cada venda realizada, incrementando o poder de análise dos objetos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Criando uma nova variável do ano da venda}
+\NormalTok{data}\OperatorTok{$}\NormalTok{ano=}\KeywordTok{year}\NormalTok{(data}\OperatorTok{$}\NormalTok{data)}
+\NormalTok{data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        data quant valor  ano
+1 2018-01-01   100   550 2018
+2 2019-02-02   200   600 2019
+3 2019-02-02   100   100 2019
+4 2019-02-05   150   150 2019
+5 2019-02-06   300   250 2019
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Criando uma nova variável do mês da venda}
+\NormalTok{data}\OperatorTok{$}\NormalTok{mes=}\KeywordTok{month}\NormalTok{(data}\OperatorTok{$}\NormalTok{data)}
+\NormalTok{data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        data quant valor  ano mes
+1 2018-01-01   100   550 2018   1
+2 2019-02-02   200   600 2019   2
+3 2019-02-02   100   100 2019   2
+4 2019-02-05   150   150 2019   2
+5 2019-02-06   300   250 2019   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Criando nova variável do dia da venda}
+\NormalTok{data}\OperatorTok{$}\NormalTok{dia=}\KeywordTok{day}\NormalTok{(data}\OperatorTok{$}\NormalTok{data)}
+\NormalTok{data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        data quant valor  ano mes dia
+1 2018-01-01   100   550 2018   1   1
+2 2019-02-02   200   600 2019   2   2
+3 2019-02-02   100   100 2019   2   2
+4 2019-02-05   150   150 2019   2   5
+5 2019-02-06   300   250 2019   2   6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Criando nova variável do dia da semana da venda}
+\NormalTok{data}\OperatorTok{$}\NormalTok{diasem=}\KeywordTok{wday}\NormalTok{(data}\OperatorTok{$}\NormalTok{data, }\DataTypeTok{label=}\OtherTok{TRUE}\NormalTok{)}
+\NormalTok{data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        data quant valor  ano mes dia diasem
+1 2018-01-01   100   550 2018   1   1    seg
+2 2019-02-02   200   600 2019   2   2    sáb
+3 2019-02-02   100   100 2019   2   2    sáb
+4 2019-02-05   150   150 2019   2   5    ter
+5 2019-02-06   300   250 2019   2   6    qua
+\end{verbatim}
+
+Com isso é possível realizar várias análises após a normalização das datas e extração de demais informações, como a sumarização de vendas por exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Valor das vendas por mês}
+\KeywordTok{aggregate}\NormalTok{(data}\OperatorTok{$}\NormalTok{valor, }\KeywordTok{list}\NormalTok{(}\DataTypeTok{Var =}\NormalTok{ data}\OperatorTok{$}\NormalTok{mes), sum)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Var    x
+1   1  550
+2   2 1100
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Quantidade de vendas por mês}
+\KeywordTok{aggregate}\NormalTok{(data}\OperatorTok{$}\NormalTok{quant, }\KeywordTok{list}\NormalTok{(}\DataTypeTok{Var =}\NormalTok{ data}\OperatorTok{$}\NormalTok{mes), sum)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Var   x
+1   1 100
+2   2 750
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Valor das vendas por dia}
+\KeywordTok{aggregate}\NormalTok{(data}\OperatorTok{$}\NormalTok{valor, }\KeywordTok{list}\NormalTok{(}\DataTypeTok{Var =}\NormalTok{ data}\OperatorTok{$}\NormalTok{dia), sum)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Var   x
+1   1 550
+2   2 700
+3   5 150
+4   6 250
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Valor das vendas por dia}
+\KeywordTok{aggregate}\NormalTok{(data}\OperatorTok{$}\NormalTok{valor, }\KeywordTok{list}\NormalTok{(}\DataTypeTok{Var =}\NormalTok{ data}\OperatorTok{$}\NormalTok{diasem), sum)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Var   x
+1 seg 550
+2 ter 150
+3 qua 250
+4 sáb 700
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Valor das vendas por mês e dia da semana }
+\KeywordTok{aggregate}\NormalTok{(valor }\OperatorTok{~}\StringTok{ }\NormalTok{mes }\OperatorTok{+}\StringTok{ }\NormalTok{diasem, }\DataTypeTok{data =}\NormalTok{ data, sum)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  mes diasem valor
+1   1    seg   550
+2   2    ter   150
+3   2    qua   250
+4   2    sáb   700
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Utilizando o pacote dplyr}
+\KeywordTok{library}\NormalTok{(dplyr)}
+
+\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(diasem) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{total =} \KeywordTok{sum}\NormalTok{(valor))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+# A tibble: 4 x 2
+  diasem total
+  <ord>  <dbl>
+1 seg      550
+2 ter      150
+3 qua      250
+4 sáb      700
 \end{verbatim}
 
 \hypertarget{exercicios}{%
@@ -2462,11 +2699,11 @@ Ex. Construir um gráfico de colunas para a variável \textbf{Sexo}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-68-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-73-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável Sexo}\label{fig:unnamed-chunk-68}
+\caption{Gráfico de colunas com a variável Sexo}\label{fig:unnamed-chunk-73}
 \end{figure}
 
 \textbf{Obs}.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -2485,11 +2722,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-69-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-74-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável Sexo (Horizontal)}\label{fig:unnamed-chunk-69}
+\caption{Gráfico de colunas com a variável Sexo (Horizontal)}\label{fig:unnamed-chunk-74}
 \end{figure}
 
 \textbf{Ex.1)} Construir um gráfico de colunas para a variável \textbf{Pessoas\_familia}.
@@ -2506,11 +2743,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-70-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-75-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável `Pessoas familia`}\label{fig:unnamed-chunk-70}
+\caption{Gráfico de colunas com a variável `Pessoas familia`}\label{fig:unnamed-chunk-75}
 \end{figure}
 
 \textbf{Ex.2)} Construir uma tabela de dupla entrada para as variáveis \textbf{Sexo} e \textbf{Divulgação}.
@@ -2525,11 +2762,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-71-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-76-1} 
 
 }
 
-\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}\label{fig:unnamed-chunk-71}
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}\label{fig:unnamed-chunk-76}
 \end{figure}
 
 \textbf{Ex.3)} Na sequência utiliza o sinal de atribuição \textless{}- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).
@@ -2555,11 +2792,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-73-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-78-1} 
 
 }
 
-\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}\label{fig:unnamed-chunk-73}
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}\label{fig:unnamed-chunk-78}
 \end{figure}
 
 Observe que o uso do argumento \texttt{beside=T} evita que as barras fiquem empilhadas e o arguemnto \texttt{legend}' insere a legenda conforme as cores das colunas.
@@ -2607,11 +2844,11 @@ Ex. Construa um gráfico na forma de Setograma para a variável \textbf{Sabor}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-74-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-79-1} 
 
 }
 
-\caption{Gráfico de pizza com a variável Sabor}\label{fig:unnamed-chunk-74}
+\caption{Gráfico de pizza com a variável Sabor}\label{fig:unnamed-chunk-79}
 \end{figure}
 
 \hypertarget{histograma}{%
@@ -2631,11 +2868,11 @@ Ex. Construa um histograma com a variável \textbf{Renda\_h}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-75-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-80-1} 
 
 }
 
-\caption{Histograma com a variável `Renda h`}\label{fig:unnamed-chunk-75}
+\caption{Histograma com a variável `Renda h`}\label{fig:unnamed-chunk-80}
 \end{figure}
 
 \textbf{Obs}. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -2659,11 +2896,11 @@ Ex. Construa um histograma com a variável \textbf{Renda\_h}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-76-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-81-1} 
 
 }
 
-\caption{Histograma com a variável Renda h com breaks=5}\label{fig:unnamed-chunk-76}
+\caption{Histograma com a variável Renda h com breaks=5}\label{fig:unnamed-chunk-81}
 \end{figure}
 
 O comando \texttt{ylim} determina os limites do eixo y a serem mostrados; \texttt{xlab} e \texttt{ylab} determinam o nome das variáveis dos eixos x e y; \texttt{main} determina o nome do título e \texttt{col} determina a cor do gráfico. Use o argumento \texttt{main=NULL} para remover o título.
@@ -2686,7 +2923,7 @@ Inserindo as opções \texttt{\$counts} e \texttt{\$breaks} retomamos os valores
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-77-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-82-1} \end{center}
 
 \begin{verbatim}
 [1]  0  5 10 15 20 25
@@ -2713,11 +2950,11 @@ Para obter o boxplot para um conjunto de dados:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-78-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-83-1} 
 
 }
 
-\caption{Boxplot com a variável Idade}\label{fig:unnamed-chunk-78}
+\caption{Boxplot com a variável Idade}\label{fig:unnamed-chunk-83}
 \end{figure}
 
 Ainda é possível efetuar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:
@@ -2730,11 +2967,11 @@ Ainda é possível efetuar um boxplot analisando a relação da variável contí
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-79-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-84-1} 
 
 }
 
-\caption{Boxplot com as variáveis Idade e Sabor}\label{fig:unnamed-chunk-79}
+\caption{Boxplot com as variáveis Idade e Sabor}\label{fig:unnamed-chunk-84}
 \end{figure}
 
 \hypertarget{grafico-ramo-e-folhas}{%
@@ -2915,11 +3152,11 @@ Para o caso de representação no mesmo gráfico, de duas ou mais variáveis, o 
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-82-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-87-1} 
 
 }
 
-\caption{Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010}\label{fig:unnamed-chunk-82}
+\caption{Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010}\label{fig:unnamed-chunk-87}
 \end{figure}
 
 onde, no argumento \texttt{ylim}, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
@@ -2981,11 +3218,11 @@ Segue a sequência de comandos, para obtenção do gráfico de linhas:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-84-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-89-1} 
 
 }
 
-\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}\label{fig:unnamed-chunk-84}
+\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}\label{fig:unnamed-chunk-89}
 \end{figure}
 
 \hypertarget{estatisticas-descritivas}{%
@@ -3827,7 +4064,7 @@ Podemos comparar duas médias de duas amostras dependentes, também chamadas de 
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-117}Amostras dependentes}
+\caption{\label{tab:unnamed-chunk-122}Amostras dependentes}
 \centering
 \begin{tabular}{l|r|r|r|r|r|r}
 \hline
@@ -3876,7 +4113,7 @@ Conclusão: Não rejeita-se \(H_0\) e conclui-se que a média de peso antes do t
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-119}Amostras dependentes - caso 2}
+\caption{\label{tab:unnamed-chunk-124}Amostras dependentes - caso 2}
 \centering
 \begin{tabular}{l|r|r|r|r|r|r|r|r|r|r}
 \hline
@@ -3929,7 +4166,7 @@ Primeiramente precisamos saber se existe homogeneidade de variâncias populacion
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-121}Comparação de dois tipos diferentes de tecidos}
+\caption{\label{tab:unnamed-chunk-126}Comparação de dois tipos diferentes de tecidos}
 \centering
 \begin{tabular}{l|l|l|l|l|l|l|l}
 \hline
@@ -4641,6 +4878,8 @@ Fonte: Dados simulados.
 
 \emph{Erikson Kaszubowski}
 
+\emph{Felipe Micail da Silva Smolski}
+
 \begin{flushright}
 \emph{}
 \end{flushright}
@@ -4807,11 +5046,11 @@ O diagrama de dispersão do exemplo está representado abaixo.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-136-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-141-1} 
 
 }
 
-\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}\label{fig:unnamed-chunk-136}
+\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}\label{fig:unnamed-chunk-141}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -5200,11 +5439,11 @@ Para o exemplo:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-140-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-145-1} 
 
 }
 
-\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-140}
+\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-145}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -5390,11 +5629,11 @@ Ainda, pode-se construir o gráfico com a distribuição da probabilidade dos re
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-143-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-148-1} 
 
 }
 
-\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:unnamed-chunk-143}
+\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:unnamed-chunk-148}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).

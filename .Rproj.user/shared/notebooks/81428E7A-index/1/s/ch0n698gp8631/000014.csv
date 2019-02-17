@@ -1,0 +1,3 @@
+"0","# Criando uma nova variável do mês da venda"
+"0","data$mes=month(data$data)"
+"0","data"
