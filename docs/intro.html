@@ -1175,7 +1175,7 @@ Figura 1.10: Convenção sobre variáveis, observações e valores
 </div>
 <div id="funcao-spread" class="section level4">
 <h4><span class="header-section-number">1.12.1.1</span> Função <em>spread</em></h4>
-<p>A função <em>spread</em> é utilizada para transformar os valores constantes em uma coluna em nova configuração de colunas. Ainda, é possível determinar a transformação dos valores com o comando <code>convert = TRUE</code> informando o tipo de valores (doubles (numerics), integers, logicals, complexes, ou factors) nas colunas a serem criadas (comando <code>type.convert()</code>).</p>
+<p>A função <code>spread()</code> é utilizada para transformar os valores constantes em uma coluna em nova configuração de colunas. Ainda, é possível determinar a transformação dos valores com o comando <code>convert = TRUE</code> informando o tipo de valores (doubles (numerics), integers, logicals, complexes, ou factors) nas colunas a serem criadas (comando <code>type.convert()</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(tidyr)</code></pre>
 <pre><code>Carregando pacotes exigidos: tidyr</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">table2</code></pre>
@@ -1194,7 +1194,7 @@ Figura 1.10: Convenção sobre variáveis, observações e valores
 10 China        1999 population 1272915272
 11 China        2000 cases          213766
 12 China        2000 population 1280428583</code></pre>
-<p>Neste exemplo, a coluna <code>type</code> abriga os valores <code>cases</code> e <code>population</code>, as quais terão suas próprias colunas com seus respectivos valores:</p>
+<p>Neste exemplo, a coluna “type” abriga os valores “cases” e “population”, as quais terão suas próprias colunas com seus respectivos valores:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">spread</span>(table2, type, count)</code></pre>
 <pre><code># A tibble: 6 x 4
   country      year  cases population
@@ -1208,7 +1208,7 @@ Figura 1.10: Convenção sobre variáveis, observações e valores
 </div>
 <div id="funcao-gather" class="section level4">
 <h4><span class="header-section-number">1.12.1.2</span> Função <em>gather</em></h4>
-<p>Já a função <em>gather</em> realiza o processo oposto do comando <em>spread</em>, pois agrupa o valor de determinadas variável em uma chave comum.</p>
+<p>Já a função <code>gather()</code> realiza o processo oposto do comando <code>spread()</code>, pois agrupa o valor de determinadas variável em uma chave comum.</p>
 <pre class="sourceCode r"><code class="sourceCode r">table4a</code></pre>
 <pre><code># A tibble: 3 x 3
   country     `1999` `2000`
@@ -1216,7 +1216,7 @@ Figura 1.10: Convenção sobre variáveis, observações e valores
 1 Afghanistan    745   2666
 2 Brazil       37737  80488
 3 China       212258 213766</code></pre>
-<p>Abaixo a transformação das variáveis <code>1999</code> e <code>2000</code> em uma única variável <code>year</code>, mantendo os valores inseridos na variável <code>cases</code>:</p>
+<p>Abaixo a transformação das variáveis “1999” e “2000” em uma única variável “year”, mantendo os valores inseridos na variável “cases”:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gather</span>(table4a, <span class="st">&quot;year&quot;</span>, <span class="st">&quot;cases&quot;</span>, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>)</code></pre>
 <pre><code># A tibble: 6 x 3
   country     year   cases
@@ -1230,7 +1230,7 @@ Figura 1.10: Convenção sobre variáveis, observações e valores
 </div>
 <div id="funcao-separate" class="section level4">
 <h4><span class="header-section-number">1.12.1.3</span> Função <em>separate</em></h4>
-<p>A função <em>separate</em> é utilizada para partir uma determinada variável em novas variáveis da base de dados.</p>
+<p>A função <code>separate()</code> é utilizada para partir uma determinada variável em novas variáveis da base de dados.</p>
 <pre class="sourceCode r"><code class="sourceCode r">table3</code></pre>
 <pre><code># A tibble: 6 x 3
   country      year rate             
@@ -1241,7 +1241,7 @@ Figura 1.10: Convenção sobre variáveis, observações e valores
 4 Brazil       2000 80488/174504898  
 5 China        1999 212258/1272915272
 6 China        2000 213766/1280428583</code></pre>
-<p>Neste exemplo, a variável <code>rate</code>, que está composta de duas informações separadas pelo caractere “<span class="math inline">\(/\)</span>”, será separada nas novas variáveis <code>cases</code> e <code>population</code>:</p>
+<p>Neste exemplo, a variável “rate”, que está composta de duas informações separadas pelo caractere “<span class="math inline">\(/\)</span>”, será separada nas novas variáveis “cases” e “population”:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">separate</span>(table3, rate, <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;cases&quot;</span>, <span class="st">&quot;population&quot;</span>),<span class="dt">sep =</span> <span class="st">&quot;/&quot;</span>)</code></pre>
 <pre><code># A tibble: 6 x 4
   country      year cases  population
@@ -1266,7 +1266,7 @@ Figura 1.10: Convenção sobre variáveis, observações e valores
 </div>
 <div id="funcao-unite" class="section level4">
 <h4><span class="header-section-number">1.12.1.4</span> Função <em>unite</em></h4>
-<p>A função <code>unite</code> é oposta à função <em>separate</em>:</p>
+<p>A função <code>unite()</code> é oposta à função <code>separate()</code>:</p>
 <pre class="sourceCode r"><code class="sourceCode r">table5</code></pre>
 <pre><code># A tibble: 6 x 4
   country     century year  rate             
@@ -1277,7 +1277,7 @@ Figura 1.10: Convenção sobre variáveis, observações e valores
 4 Brazil      20      00    80488/174504898  
 5 China       19      99    212258/1272915272
 6 China       20      00    213766/1280428583</code></pre>
-<p>Neste exemplo, recria a variável <code>new</code> a partir dos dados de <code>century</code> e <code>year</code>:</p>
+<p>Neste exemplo, recria a variável “new” a partir dos dados de “century” e “year”:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unite</span>(table5, <span class="st">&quot;new&quot;</span>, century, year, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</code></pre>
 <pre><code># A tibble: 6 x 3
   country     new   rate             
@@ -1584,20 +1584,6 @@ data</code></pre>
 <pre><code>  Var   x
 1   1 100
 2   2 750</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Valor das vendas por dia</span>
-<span class="kw">aggregate</span>(data<span class="op">$</span>valor, <span class="kw">list</span>(<span class="dt">Var =</span> data<span class="op">$</span>dia), sum)</code></pre>
-<pre><code>  Var   x
-1   1 550
-2   2 700
-3   5 150
-4   6 250</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Valor das vendas por dia</span>
-<span class="kw">aggregate</span>(data<span class="op">$</span>valor, <span class="kw">list</span>(<span class="dt">Var =</span> data<span class="op">$</span>diasem), sum)</code></pre>
-<pre><code>  Var   x
-1 seg 550
-2 ter 150
-3 qua 250
-4 sáb 700</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Valor das vendas por mês e dia da semana </span>
 <span class="kw">aggregate</span>(valor <span class="op">~</span><span class="st"> </span>mes <span class="op">+</span><span class="st"> </span>diasem, <span class="dt">data =</span> data, sum)</code></pre>
 <pre><code>  mes diasem valor

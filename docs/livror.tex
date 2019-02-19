@@ -1924,7 +1924,7 @@ Abaixo segue uma demonstração das convenções a respeito das bases de dados. 
 \hypertarget{funcao-spread}{%
 \subsubsection{\texorpdfstring{Função \emph{spread}}{Função spread}}\label{funcao-spread}}
 
-A função \emph{spread} é utilizada para transformar os valores constantes em uma coluna em nova configuração de colunas. Ainda, é possível determinar a transformação dos valores com o comando \texttt{convert\ =\ TRUE} informando o tipo de valores (doubles (numerics), integers, logicals, complexes, ou factors) nas colunas a serem criadas (comando \texttt{type.convert()}).
+A função \texttt{spread()} é utilizada para transformar os valores constantes em uma coluna em nova configuração de colunas. Ainda, é possível determinar a transformação dos valores com o comando \texttt{convert\ =\ TRUE} informando o tipo de valores (doubles (numerics), integers, logicals, complexes, ou factors) nas colunas a serem criadas (comando \texttt{type.convert()}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1960,7 +1960,7 @@ Carregando pacotes exigidos: tidyr
 12 China        2000 population 1280428583
 \end{verbatim}
 
-Neste exemplo, a coluna \texttt{type} abriga os valores \texttt{cases} e \texttt{population}, as quais terão suas próprias colunas com seus respectivos valores:
+Neste exemplo, a coluna ``type'' abriga os valores ``cases'' e ``population'', as quais terão suas próprias colunas com seus respectivos valores:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1983,7 +1983,7 @@ Neste exemplo, a coluna \texttt{type} abriga os valores \texttt{cases} e \texttt
 \hypertarget{funcao-gather}{%
 \subsubsection{\texorpdfstring{Função \emph{gather}}{Função gather}}\label{funcao-gather}}
 
-Já a função \emph{gather} realiza o processo oposto do comando \emph{spread}, pois agrupa o valor de determinadas variável em uma chave comum.
+Já a função \texttt{gather()} realiza o processo oposto do comando \texttt{spread()}, pois agrupa o valor de determinadas variável em uma chave comum.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2000,7 +2000,7 @@ Já a função \emph{gather} realiza o processo oposto do comando \emph{spread},
 3 China       212258 213766
 \end{verbatim}
 
-Abaixo a transformação das variáveis \texttt{1999} e \texttt{2000} em uma única variável \texttt{year}, mantendo os valores inseridos na variável \texttt{cases}:
+Abaixo a transformação das variáveis ``1999'' e ``2000'' em uma única variável ``year'', mantendo os valores inseridos na variável ``cases'':
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2023,7 +2023,7 @@ Abaixo a transformação das variáveis \texttt{1999} e \texttt{2000} em uma ún
 \hypertarget{funcao-separate}{%
 \subsubsection{\texorpdfstring{Função \emph{separate}}{Função separate}}\label{funcao-separate}}
 
-A função \emph{separate} é utilizada para partir uma determinada variável em novas variáveis da base de dados.
+A função \texttt{separate()} é utilizada para partir uma determinada variável em novas variáveis da base de dados.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2043,7 +2043,7 @@ A função \emph{separate} é utilizada para partir uma determinada variável em
 6 China        2000 213766/1280428583
 \end{verbatim}
 
-Neste exemplo, a variável \texttt{rate}, que está composta de duas informações separadas pelo caractere ``\(/\)'', será separada nas novas variáveis \texttt{cases} e \texttt{population}:
+Neste exemplo, a variável ``rate'', que está composta de duas informações separadas pelo caractere ``\(/\)'', será separada nas novas variáveis ``cases'' e ``population'':
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2086,7 +2086,7 @@ Da mesma forma é possível criar duas novas variáveis a partir do segundo cara
 \hypertarget{funcao-unite}{%
 \subsubsection{\texorpdfstring{Função \emph{unite}}{Função unite}}\label{funcao-unite}}
 
-A função \texttt{unite} é oposta à função \emph{separate}:
+A função \texttt{unite()} é oposta à função \texttt{separate()}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2106,7 +2106,7 @@ A função \texttt{unite} é oposta à função \emph{separate}:
 6 China       20      00    213766/1280428583
 \end{verbatim}
 
-Neste exemplo, recria a variável \texttt{new} a partir dos dados de \texttt{century} e \texttt{year}:
+Neste exemplo, recria a variável ``new'' a partir dos dados de ``century'' e ``year'':
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2814,36 +2814,6 @@ Com isso é possível realizar várias análises após a normalização das data
   Var   x
 1   1 100
 2   2 750
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# Valor das vendas por dia}
-\KeywordTok{aggregate}\NormalTok{(data}\OperatorTok{$}\NormalTok{valor, }\KeywordTok{list}\NormalTok{(}\DataTypeTok{Var =}\NormalTok{ data}\OperatorTok{$}\NormalTok{dia), sum)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-  Var   x
-1   1 550
-2   2 700
-3   5 150
-4   6 250
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# Valor das vendas por dia}
-\KeywordTok{aggregate}\NormalTok{(data}\OperatorTok{$}\NormalTok{valor, }\KeywordTok{list}\NormalTok{(}\DataTypeTok{Var =}\NormalTok{ data}\OperatorTok{$}\NormalTok{diasem), sum)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-  Var   x
-1 seg 550
-2 ter 150
-3 qua 250
-4 sáb 700
 \end{verbatim}
 
 \begin{Shaded}

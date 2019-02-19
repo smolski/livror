@@ -1597,7 +1597,7 @@ Abaixo segue uma demonstração das convenções a respeito das bases de dados. 
 
 #### Função *spread*
 
-A função *spread* é utilizada para transformar os valores constantes em uma coluna em nova configuração de colunas. Ainda, é possível determinar a transformação dos valores com o comando `convert = TRUE` informando o tipo de valores (doubles (numerics), integers, logicals, complexes, ou factors) nas colunas a serem criadas (comando `type.convert()`).
+A função `spread()` é utilizada para transformar os valores constantes em uma coluna em nova configuração de colunas. Ainda, é possível determinar a transformação dos valores com o comando `convert = TRUE` informando o tipo de valores (doubles (numerics), integers, logicals, complexes, ou factors) nas colunas a serem criadas (comando `type.convert()`).
 
 
 
@@ -1631,7 +1631,7 @@ table2
 12 China        2000 population 1280428583
 ```
 
-Neste exemplo, a coluna `type` abriga os valores `cases` e `population`, as quais terão suas próprias colunas com seus respectivos valores:
+Neste exemplo, a coluna "type" abriga os valores "cases" e "population", as quais terão suas próprias colunas com seus respectivos valores:
 
 
 ```r
@@ -1653,7 +1653,7 @@ spread(table2, type, count)
 
 #### Função *gather*
 
-Já a função *gather* realiza o processo oposto do comando *spread*, pois agrupa o valor de determinadas variável em uma chave comum.
+Já a função `gather()` realiza o processo oposto do comando `spread()`, pois agrupa o valor de determinadas variável em uma chave comum.
 
 
 ```r
@@ -1669,7 +1669,7 @@ table4a
 3 China       212258 213766
 ```
 
-Abaixo a transformação das variáveis `1999` e `2000` em uma única variável `year`, mantendo os valores inseridos na variável `cases`:
+Abaixo a transformação das variáveis "1999" e "2000" em uma única variável "year", mantendo os valores inseridos na variável "cases":
 
 
 ```r
@@ -1692,7 +1692,7 @@ gather(table4a, "year", "cases", 2:3)
 
 #### Função *separate*
 
-A função *separate* é utilizada para partir uma determinada variável em novas variáveis da base de dados.
+A função `separate()` é utilizada para partir uma determinada variável em novas variáveis da base de dados.
 
 
 ```r
@@ -1711,7 +1711,7 @@ table3
 6 China        2000 213766/1280428583
 ```
 
-Neste exemplo, a variável `rate`, que está composta de duas informações separadas pelo caractere "$/$", será separada nas novas variáveis `cases` e `population`:
+Neste exemplo, a variável "rate", que está composta de duas informações separadas pelo caractere "$/$", será separada nas novas variáveis "cases" e "population":
 
 
 
@@ -1752,7 +1752,7 @@ separate(table3, year, into = c("century", "year"), sep = 2)
 
 #### Função *unite*
 
-A função `unite` é oposta à função *separate*:
+A função `unite()` é oposta à função `separate()`:
 
 
 ```r
@@ -1771,7 +1771,7 @@ table5
 6 China       20      00    213766/1280428583
 ```
 
-Neste exemplo, recria a variável `new` a partir dos dados de `century` e `year`:
+Neste exemplo, recria a variável "new" a partir dos dados de "century" e "year":
 
 
 ```r
@@ -2415,32 +2415,6 @@ aggregate(data$quant, list(Var = data$mes), sum)
   Var   x
 1   1 100
 2   2 750
-```
-
-```r
-# Valor das vendas por dia
-aggregate(data$valor, list(Var = data$dia), sum)
-```
-
-```
-  Var   x
-1   1 550
-2   2 700
-3   5 150
-4   6 250
-```
-
-```r
-# Valor das vendas por dia
-aggregate(data$valor, list(Var = data$diasem), sum)
-```
-
-```
-  Var   x
-1 seg 550
-2 ter 150
-3 qua 250
-4 sáb 700
 ```
 
 ```r
@@ -5895,6 +5869,7 @@ Fonte: Elaborado pelo(s) autor(es).
 **Iara Denise Endruweit Battisti**: Possui graduação em Informática pela Universidade Regional do Noroeste do Estado do Rio Grande do Sul (1996), mestrado em Estatística e Experimentação Agropecuária pela Universidade Federal de Lavras (2001) e doutorado em Epidemiologia pela Universidade Federal do Rio Grande do Sul (2008). Atualmente é professora adjunta na Universidade Federal da Fronteira Sul, campus Cerro Largo (RS). Atua principalmente nos seguintes temas: amostragem complexa, modelagem multinível, estatística computacional, estatística aplicada, relação ambiente e saúde utilizando modelagem estatística. E-mail: iara.battisti@uffs.edu.br.
 
 **Tatiane Chassot**: Possui graduação em Engenharia Florestal pela Universidade Federal de Santa Maria (2008), mestrado (2009) e doutorado em Engenharia Florestal também pela Universidade Federal de Santa Maria (2013). Atualmente é professora adjunta da Universidade Federal da Fronteira Sul - Campus Cerro Largo onde ministra as disciplinas de Introdução à Informática, Estatística Básica, Experimentação Agrícola, Sistemas Agroflorestais, Silvicultura e Práticas Integradoras de Campo. E-mail: tatianechassot@uffs.edu.br.
+
 
 \setlength{\parindent}{0.0cm}
 
