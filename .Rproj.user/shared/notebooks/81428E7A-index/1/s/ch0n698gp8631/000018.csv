@@ -1,3 +1,0 @@
-"0","# Criando nova variável do dia da semana da venda"
-"0","data$diasem=wday(data$data, label=TRUE)"
-"0","data"

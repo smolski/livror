@@ -1,2 +1,0 @@
-"0","# Quantidade de vendas por mês"
-"0","aggregate(data$quant, list(Var = data$mes), sum)"

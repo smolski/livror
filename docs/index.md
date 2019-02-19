@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Iara Denise Endruweit Battisti
 - Felipe Micail da Silva Smolski
-date: "2019-02-17"
+date: "2019-02-18"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -60,7 +60,7 @@ Bons estudos!
 \emph{}
 \end{flushright}
 
-O R é um ambiente voltado para análise de dados com o uso de uma linguagem de programação, frente a isso um conhecimento prévio dos príncipios de programação facilita a compreensão da condução das análises aplicadas no software. Entretanto, não é pré-requisito. Neste capítulo abordaremos os primeiros passos para o emprego da linguagem de programação R utilizando uma interface "amigável" - o software RStudio. Além disso, serão apresentados os comandos básicos para a manipulação de dados dentro do RStudio.
+O R é um ambiente voltado para análise de dados com o uso de uma linguagem de programação, frente a isso um conhecimento prévio dos príncipios de programação facilita a compreensão da condução das análises aplicadas no software. Entretanto, não é pré-requisito. Neste capítulo serão abordados os primeiros passos para o emprego da linguagem de programação R utilizando uma interface "amigável" - o software RStudio. Além disso, serão apresentados os comandos básicos para a manipulação de dados dentro do RStudio.
 
 
 ## Download e instalação do R e Rstudio
@@ -93,11 +93,11 @@ Fonte: Elaborado pelo(s) autor(es).
 
 ## Help
 
-Acessamos a ajuda do RStudio por meio do comando `help()`, através da aba "Help" ou ao clicar no nome do pacote. Pode-se digitar a ajuda que usuário necessita (exemplo `help("summary")`), ou diretamente no colsole digitamos ? e a função desejada, exemplo: `?mean`.
+A ajuda do RStudio é acessada por meio do comando `help()`, através da aba "Help" ou ao clicar no nome do pacote. Pode-se digitar a ajuda que usuário necessita (exemplo `help("summary")`), ou diretamente no console digita-se ? e a função desejada, exemplo: `?mean`.
 
 ## Instalação de pacotes
 
-Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, e para isso se faz necessário efetuar a sua instalação. Precisamos ir até o painel dos pacotes em *packages*, selecionar a opção instalar e inserir o nome do pacote desejado na janela indicada. Ao selecionar a opção instalar, no console receberemos informações do procedimento e do sucesso do mesmo. 
+Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, e para isso se faz necessário efetuar a sua instalação. É preciso ir até o painel dos pacotes em *packages*, selecionar a opção instalar e inserir o nome do pacote desejado na janela indicada. Ao selecionar a opção instalar, no console são demonstradas informações do procedimento e do sucesso do mesmo. 
 
 
 <div class="figure" style="text-align: center">
@@ -160,7 +160,7 @@ Outra opção é o carregamento das bases de dados manualmente pelo caminho *Env
 
 Fonte: Elaborado pelo(s) autor(es).
 
-Na caixa correspondente a File/Url se insere o endereço virtual ou o local onde se encontra o arquivo. Ao importar os dados, carrega-se um objeto criado com as informações contidas no arquivo. No nosso exeplo, carregamos a planilha arvores (arquivo .xls) como mostra a Figura \@ref(fig:r4), derivado do caminho "Import Dataset $>$ From Excel" do Environment.
+Na caixa correspondente a File/Url se insere o endereço virtual ou o local onde se encontra o arquivo. Ao importar os dados, carrega-se um objeto criado com as informações contidas no arquivo. Neste exemplo, é carregada a planilha `arvores` (arquivo .xls) como mostra a Figura \@ref(fig:r4), derivado do caminho "Import Dataset $>$ From Excel" do Environment.
 
 <div class="figure" style="text-align: center">
 <img src="r4.png" alt="Caixa de informações do Import Data" width="70%" />
@@ -236,7 +236,7 @@ onde o usuário escolhe a pasta desejada que ficará como padrão. O comando `di
 
 ### Operações Aritméticas
 
-A realização de uma operação aritmética no R acontece da seguinte forma: onde a resolução das operações segue o padrão, ou seja, primeiro exponenciações, seguido de multiplicações e divisões, deixando por ultimo adições e subtrações, de acordo com a ordem que estão dispostas. Para alterar a prioridade da resolução de operações fazemos o uso do parenteses para destacar a operação que deve ser prioritária na resolução. Seguem alguns exemplos efetuados diretamente no console do RStudio:
+A realização de uma operação aritmética no R acontece da seguinte forma: onde a resolução das operações segue o padrão, ou seja, primeiro exponenciações, seguido de multiplicações e divisões, deixando por ultimo adições e subtrações, de acordo com a ordem que estão dispostas. Utiliza-se o parênteses para destacar a operação que deve ser prioritária na resolução. Seguem alguns exemplos efetuados diretamente no console do RStudio:
 
 
 ```r
@@ -417,7 +417,7 @@ Seguem alguns exemplos da aplicação das operações lógicas:
 
 ## Criação de objetos
 
-A linguagem de programação R se configura em uma linguagem orientada a objetos, ou seja, a todo tempo estamos criando diversos tipos de objetos e efetuando operações com os mesmos. Por exemplo, a criação de listas, bases de dados, união de bases de dados, data.frames e até mesmo mapas!
+A linguagem de programação R se configura em uma linguagem orientada a objetos, ou seja, a todo tempo estão sendo criados diversos tipos de objetos e sendo efetuadas operações com os mesmos. Por exemplo, a criação de listas, bases de dados, união de bases de dados, data.frames e até mesmo mapas!
 
 
 ```r
@@ -460,7 +460,7 @@ rm(a)
 
 **Conversão de uma variável**
 
-Para a aplicação de algumas funções é importante que cada variável esteja corretamente classificada, o que em alguns casos não ocorre durante o reconhecimento automático do R. Precisamos então reconhecê-la como variável texto, numérica ou fator. Além disso, a classe ordered se aplica a variáveis categóricas que podem ser consideradas ordenáveis.
+Para a aplicação de algumas funções é importante que cada variável esteja corretamente classificada, o que em alguns casos não ocorre durante o reconhecimento automático do R. É preciso então reconhecê-la como variável texto, numérica ou fator. Além disso, a classe `ordered` se aplica a variáveis categóricas que podem ser consideradas ordenáveis.
 
 
 ```r
@@ -486,9 +486,9 @@ cep
 
 ## Algumas funções e comandos essenciais
 
-A função `head()` mostra as 6 primeiras colunas do arquivo para se ter uma noção do conteúdo. No caso do mesmo ser um data.frame, podemos solicitar o número de valores ou linhas a serem mostrados no console através do parâmetro n ou na ausência deste, todas as linhas serão impressas, como exemplo `head(x ,n=2)` para ver as duas primeiras linhas. 
+A função `head()` mostra as 6 primeiras colunas do arquivo para se ter uma noção do conteúdo. No caso do mesmo ser um data.frame, é possível solicitar o número de valores ou linhas a serem mostrados no console através do parâmetro `n` ou na ausência deste, todas as linhas serão impressas, como exemplo `head(x ,n=2)` para ver as duas primeiras linhas. 
 
-O comando `summary()` efetua o resumo dos dados, se for qualitativa mostra a frequência absoluta das categorias e se for quantitativa apresenta as categorias. No exemplo abaixo trabalharemos com uma base de dados de treinamento denominada "iris" que está acessível no *software* RStudio através do comando que carrega dados específicos `data()`:
+O comando `summary()` efetua o resumo dos dados, se for qualitativa mostra a frequência absoluta das categorias e se for quantitativa apresenta as categorias. No exemplo abaixo é utilizada uma base de dados de treinamento denominada "iris" que está acessível no *software* RStudio através do comando que carrega dados específicos `data()`:
 
 
 ```r
@@ -609,7 +609,7 @@ dim(iris)
 [1] 150   5
 ```
 
-Para alterar um nome de uma variável pode ser utilizado o comando colnames. No exemplo acima, vamos alterar o nome da coluna "Species" para "Especie". 
+Para alterar um nome de uma variável pode ser utilizado o comando colnames. No exemplo, é alterado o nome da coluna "Species" para "Especie". 
 
 
 ```r
@@ -617,9 +617,9 @@ Para alterar um nome de uma variável pode ser utilizado o comando colnames. No 
 colnames(iris)[5]='Especie'
 ```
 
-Para selecionarmos uma coluna do objeto "iris", por exemplo a coluna "Sepal.Length", poderíamos digitar no console o comando **iris\$Sepal.Length**. O padrão de carregamento da base de dados nos obriga a dizer ao R qual é a base que quer selecionar (iris), inserindo o símbolo `$` e após o nome da coluna a qual deseja as informações. Para criar um novo objeto com esta informação, basta dizer ao R, como já visto acima, por exemplo: **novoobjeto=iris\$novacoluna**.
+Para selecionar uma coluna do objeto "iris", por exemplo a coluna "Sepal.Length", pode-se digitar no console o comando **iris\$Sepal.Length**. O padrão de carregamento da base de dados nos obriga a dizer ao R qual é a base que quer selecionar (iris), inserindo o símbolo `$` e após o nome da coluna a qual deseja as informações. Para criar um novo objeto com esta informação, basta dizer ao R, como já visto acima, por exemplo: **novoobjeto=iris\$novacoluna**.
 
-No entanto, para acessar os dados sem o uso do símbolo `$`, podemos usar o seguinte comando: **attach(iris)**. Assim, podemos efetuar o sumário da coluna "Petal.Width":
+No entanto, para acessar os dados sem o uso do símbolo `$`, é utilizado o seguinte comando: **attach(iris)**. Assim, é possível efetuar o sumário da coluna "Petal.Width":
 
 
 ```r
@@ -648,7 +648,7 @@ summary(Especie)
 
 ### Função *tapply*
 
-O comando `tapply()` agrega os dados pelos níveis das variáveis qualitativas. Note que a coluna "Especie" possui dados em forma de fatores. Assim, para filtrarmos a informação (coluna "Sepal.Length") média por Especie, podemos utilizar:
+O comando `tapply()` agrega os dados pelos níveis das variáveis qualitativas. Note que a coluna "Especie" possui dados em forma de fatores. Assim, para filtrar a informação (coluna "Sepal.Length") média por `Especie`, é possível utilizar:
 
 
 ```r
@@ -686,7 +686,7 @@ tapply(Sepal.Length, Especie, mean, na.rm=T)
 
 ### Função *subset*
 
-Utiliza-se o comando `subset()` para formar um subconjunto de dados o qual desejamos selecionar de um objeto. Por exemplo, se quisermos criar um novo objeto com somente os dados da "Especie" setosa:
+Utiliza-se o comando `subset()` para formar um subconjunto de dados o qual deseja-se selecionar de um objeto. Por exemplo, se a intensão é criar um novo objeto com somente os dados filtrados da "Especie" denominada "setosa":
 
 
 ```r
@@ -704,7 +704,7 @@ head(dadossetosa)
 6          5.4         3.9          1.7         0.4  setosa
 ```
 
-Pode ser configurado mais de uma condição para a filtragem dos dados, por exemplo, além de serem filtrados os dados referentes a Especie setosa, aquelas na qual o Sepal.Length é superior a 5. Como no exemplo, criamos um novo objeto com estas condições:
+Pode ser configurado mais de uma condição para a filtragem dos dados, por exemplo, além de serem filtrados os dados referentes a Especie setosa, aquelas na qual o Sepal.Length é superior a 5. Como no exemplo, é criado um novo objeto com estas condições:
 
 
 ```r
@@ -726,13 +726,13 @@ head(dadossetosa2)
 
 Para contar elementos em cada nível de um fator, usa-se a função `table()`. A função pode fazer tabulações cruzadas, gerando uma tabela de contingência, esse tipo de tabela é usado para registrar observações independentes de duas ou mais variáveis aleatórias.
 
-Para exemplo da utilização da função `table` agora com dados qualitativos (gênero e saúde), vamos utilizar a base de dados `cdc`:
+Para exemplo da utilização da função `table` agora com dados qualitativos (gênero e saúde), é utilizada a base de dados `cdc`:
 
 
 ```r
 # Carregando a base
 source("http://www.openintro.org/stat/data/cdc.R")
-#Vizualizamos as primeiras linhas
+#Vizualiza-se as primeiras linhas
 head(cdc)
 ```
 
@@ -747,7 +747,7 @@ head(cdc)
 ```
 
 ```r
-# Efetuamos a contagem dos dados qualitativos com a função table
+# Efetua-se a contagem dos dados qualitativos com a função table
 table(cdc$genhlth,cdc$gender)
 ```
 
@@ -1010,7 +1010,7 @@ $vetor
 
 **Comandos para manipulação de listas**
 
-Para descobrirmos de maneira rápida o números de objetos que há na lista, utilizamos o comando `length(nomedalista)`.
+Para descobrir de maneira rápida o números de objetos que há na lista, utiliza-se o comando `length(nomedalista)`.
 
 
 ```r
@@ -1047,7 +1047,7 @@ names(lista)
 [1] "matriz" "vetor" 
 ```
 
-Para chamar várias listas através usamos o comando da seguinte forma:
+Para chamar várias listas utiliza-se o comando da seguinte forma:
 
 `c(nome1, nome2)`
 
@@ -1079,7 +1079,7 @@ $idade
 
 ### Data frames
 
-Com a função `data.frame()` reunimos vetores de mesmo comprimento em um só objeto. Neste caso são criadas tabelas de dados. Cada observação é descrita por um conjunto de propriedades. Abaixo podemos ver como inserir os dados para criar a "tabela". Similar como matrizes, porem diferentes colunas podem possuir elementos de natureza diferentes .
+Com a função `data.frame()` reunimos vetores de mesmo comprimento em um só objeto. Neste caso são criadas tabelas de dados. Cada observação é descrita por um conjunto de propriedades. No exemplo abaixo é possível verificar como inserir os dados para criar a "tabela". São similares como as matrizes, porém diferentes colunas podem possuir elementos de natureza diferentes. 
 
 
 ```r
@@ -1146,10 +1146,6 @@ Utiliza-se o comando da seguinte forma:
 informacoes.2=edit(informacoes)
 ```
 
-```
-Warning in edit.data.frame(informacoes): added factor levels in 'estudantes'
-```
-
 <div class="figure" style="text-align: center">
 <img src="95.png" alt="Editor de dados" width="70%" />
 <p class="caption">(\#fig:95)Editor de dados</p>
@@ -1162,7 +1158,7 @@ Basta clicar no retângulo correspondente a variável que deseja ser modificada,
 <p class="caption">(\#fig:10)Acréscimo de uma nova coluna através do editor de dados</p>
 </div>
 
-Logo, chamando o novo banco de dados, teremos:
+Logo, chamando o novo banco de dados, é obtido:
 
 
 ```r
@@ -1171,7 +1167,7 @@ informacoes.2
 
 ```
   estudantes idade peso      cidades
-1       qoop    21   65   Nova Hartz
+1     Camila    21   65   Nova Hartz
 2      Pedro    17   79      Gramado
 3    Marcelo    17   80     Soledade
 4  Guilherme    18  100 Porto Alegre
@@ -1207,9 +1203,10 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc
-1  Guilherme    18  100 Porto Alegre   1.50 44.44
-2    Marcelo    17   80     Soledade   1.90 22.16
-3      Pedro    17   79      Gramado   1.74 26.09
+1     Camila    21   65   Nova Hartz   1.80 20.06
+2  Guilherme    18  100 Porto Alegre   1.50 44.44
+3    Marcelo    17   80     Soledade   1.90 22.16
+4      Pedro    17   79      Gramado   1.74 26.09
 ```
 
 Ainda, se houver linhas que tenham pelo menos uma informação faltante (NA), estas podem ser excluídas com o comando `na.omit()`, ou mesmo os NAs serem substituídos por outro caractere (neste caso foi substituído por zero) com o comando `is.na`:
@@ -1224,9 +1221,10 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc
-1  Guilherme    18  100 Porto Alegre   1.50 44.44
-2    Marcelo    17   80     Soledade   1.90 22.16
-3      Pedro    17   79      Gramado   1.74 26.09
+1     Camila    21   65   Nova Hartz   1.80 20.06
+2  Guilherme    18  100 Porto Alegre   1.50 44.44
+3    Marcelo    17   80     Soledade   1.90 22.16
+4      Pedro    17   79      Gramado   1.74 26.09
 ```
 
 ```r
@@ -1238,9 +1236,10 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc
-1  Guilherme    18  100 Porto Alegre   1.50 44.44
-2    Marcelo    17   80     Soledade   1.90 22.16
-3      Pedro    17   79      Gramado   1.74 26.09
+1     Camila    21   65   Nova Hartz   1.80 20.06
+2  Guilherme    18  100 Porto Alegre   1.50 44.44
+3    Marcelo    17   80     Soledade   1.90 22.16
+4      Pedro    17   79      Gramado   1.74 26.09
 ```
 
 Outro recurso interessante é a substituição de dados em uma coluna, que pode ser feito de forma automática para uma condição padrão escolhida. No exemplo abaixo, substituimos aquelas informações de idade igual a 17 pelo número 19:
@@ -1254,14 +1253,15 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc
-1  Guilherme    18  100 Porto Alegre   1.50 44.44
-2    Marcelo    19   80     Soledade   1.90 22.16
-3      Pedro    19   79      Gramado   1.74 26.09
+1     Camila    21   65   Nova Hartz   1.80 20.06
+2  Guilherme    18  100 Porto Alegre   1.50 44.44
+3    Marcelo    19   80     Soledade   1.90 22.16
+4      Pedro    19   79      Gramado   1.74 26.09
 ```
 
 A classificação qualitativa das informações, com base em condições definidas pelo usuário podem ser facilmente efetuadas pelo comando `ifelse`. Para quem não tem intimidade com atributos de programação, este comando seleciona "se" (*if*) uma informação desejada é atendida, e cria uma rotina (*else*) que será aplicada "então". 
 
-No nosso exemplo, cria-se um objeto "classificacao" e se a coluna IMC conter dados acima de 25, será marcado como "peso normal", sendo que do contrário, constará como "excesso de peso". Após utilizamos o comando `cbind()` para unir os dois objetos pelas colunas. caso não queira utilizar o comando `cbind()`, poderia ser criado uma nova coluna com o nome do obetjo sendo "informacoes\$classificacao".
+No nosso exemplo, cria-se um objeto "classificacao" e se a coluna IMC conter dados acima de 25, será marcado como "peso normal", sendo que do contrário, constará como "excesso de peso". Após, utilizar o comando `cbind()` para unir os dois objetos pelas colunas. Caso não se deseje utilizar o comando `cbind()`, poderia ser criado uma nova coluna com o nome do obetjo sendo "informacoes\$classificacao".
 
 
 ```r
@@ -1273,9 +1273,10 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc   classificacao
-1  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso
-2    Marcelo    19   80     Soledade   1.90 22.16     peso normal
-3      Pedro    19   79      Gramado   1.74 26.09 excesso de peso
+1     Camila    21   65   Nova Hartz   1.80 20.06     peso normal
+2  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso
+3    Marcelo    19   80     Soledade   1.90 22.16     peso normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso
 ```
 
 
@@ -1315,9 +1316,10 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso Obesidade III
-2    Marcelo    19   80     Soledade   1.90 22.16     peso normal   Peso Normal
-3      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
+1     Camila    21   65   Nova Hartz   1.80 20.06     peso normal   Peso Normal
+2  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso Obesidade III
+3    Marcelo    19   80     Soledade   1.90 22.16     peso normal   Peso Normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
 ```
 
 A classificação binária dos dados (0,1) também é relevante para o estudo da manipulação dos dados trabalhados pelo pesquisador. Neste exemplo, classificou-se aqueles valores da coluna "classificacao" com o "peso normal" iguais a 1, do contrário classificou-se 0 (zero).
@@ -1332,13 +1334,15 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso Obesidade III
-2    Marcelo    19   80     Soledade   1.90 22.16     peso normal   Peso Normal
-3      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
+1     Camila    21   65   Nova Hartz   1.80 20.06     peso normal   Peso Normal
+2  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso Obesidade III
+3    Marcelo    19   80     Soledade   1.90 22.16     peso normal   Peso Normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
   binario
-1       0
-2       1
-3       0
+1       1
+2       0
+3       1
+4       0
 ```
 
 O comando `rbind()` é utilizado para incluir linhas novas abaixo de um objeto já criado pelo pesquisador, sendo que é importante o cuidado de que estas novas informações tenham os mesmos campos (colunas). A exemplo, pede-se para incluir uma nova pessoa no *data frame* informacoes: Francisco, 30 anos de idade, peso 59, natural de Ijuí, IMC 23,33768, classificado como peso normal. Lembrando de incluir os campos "tipoimc" e "binario".
@@ -1358,18 +1362,20 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
-2    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
-3      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
-4  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
+1     Camila    21   65   Nova Hartz    1.8 20.06     peso normal   Peso Normal
+2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
+3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
+5  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
   binario
-1       0
-2       1
-3       0
-4       1
+1       1
+2       0
+3       1
+4       0
+5       1
 ```
 
-Outra forma de incluir informações adicionais nos *data frames* através de atributos é utilizando o pacote `dplyr`. Decide-se criar um campo "faixa etária", sendo que aqueles indivíduos com idade acima de 21 chamaremos de "adulto" e do contrário "não adulto".
+Outra forma de incluir informações adicionais nos *data frames* através de atributos é utilizando o pacote `dplyr`. Decide-se criar um campo "faixa etária", sendo que aqueles indivíduos com idade acima de 21 serão chamados de "adulto" e do contrário "não adulto".
 
 
 ```r
@@ -1406,15 +1412,17 @@ informacoes
 
 ```
   estudantes idade peso      cidades altura   Imc   classificacao       tipoimc
-1  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
-2    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
-3      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
-4  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
+1     Camila    21   65   Nova Hartz    1.8 20.06     peso normal   Peso Normal
+2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
+3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
+4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
+5  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
   binario faixa etaria
-1       0   não adulto
-2       1   não adulto
-3       0   não adulto
-4       1       adulto
+1       1       adulto
+2       0   não adulto
+3       1   não adulto
+4       0   não adulto
+5       1       adulto
 ```
 
 A (re)ordenação das colunas de um *data frame* pode ser muito útil em alguns casos, sendo extremamente fácil efetuá-la, cada número representa o número da respectiva coluna:
@@ -1435,15 +1443,17 @@ rev(informacoes)
 
 ```
   faixa etaria binario   classificacao altura   Imc estudantes      cidades
-1   não adulto       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre
-2   não adulto       1     peso normal    1.9 22.16    Marcelo     Soledade
-3   não adulto       0 excesso de peso   1.74 26.09      Pedro      Gramado
-4       adulto       1     peso normal   1,59 23.34  Francisco         Ijuí
+1       adulto       1     peso normal    1.8 20.06     Camila   Nova Hartz
+2   não adulto       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre
+3   não adulto       1     peso normal    1.9 22.16    Marcelo     Soledade
+4   não adulto       0 excesso de peso   1.74 26.09      Pedro      Gramado
+5       adulto       1     peso normal   1,59 23.34  Francisco         Ijuí
   peso idade       tipoimc
-1  100    18 Obesidade III
-2   80    19   Peso Normal
-3   79    19 Acima do Peso
-4   59    30   Peso Normal
+1   65    21   Peso Normal
+2  100    18 Obesidade III
+3   80    19   Peso Normal
+4   79    19 Acima do Peso
+5   59    30   Peso Normal
 ```
 
 A  função `table()` faz a contagem os dados; já o comando `sort()` ordena os objetos em ordem crescente (caso queira no formato decrescente, informar `decreasing=TRUE`).
@@ -1457,7 +1467,7 @@ table(informacoes$classificacao)
 ```
 
 excesso de peso     peso normal 
-              2               2 
+              2               3 
 ```
 
 ```r
@@ -1466,7 +1476,7 @@ sort(informacoes$idade)
 ```
 
 ```
-[1] 18 19 19 30
+[1] 18 19 19 21 30
 ```
 
 A ordenação de todo o *data frame* a partir de uma variável, pode ser realizada utilizando o comando `order`, sendo que pode ser realizada inclusive com variáveis categóricas (no exemplo abaixo o nome das cidades).
@@ -1479,15 +1489,17 @@ informacoes[order(informacoes$idade, decreasing = TRUE),]
 
 ```
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-4   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
-2   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
-3 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-1 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
+3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
+4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
   binario faixa etaria
-4       1       adulto
-2       1   não adulto
-3       0   não adulto
-1       0   não adulto
+5       1       adulto
+1       1       adulto
+3       1   não adulto
+4       0   não adulto
+2       0   não adulto
 ```
 
 ```r
@@ -1497,15 +1509,17 @@ informacoes[order(informacoes$idade, decreasing = FALSE),]
 
 ```
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-1 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
-2   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
-3 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-4   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
+3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
+4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
   binario faixa etaria
-1       0   não adulto
-2       1   não adulto
-3       0   não adulto
-4       1       adulto
+2       0   não adulto
+3       1   não adulto
+4       0   não adulto
+1       1       adulto
+5       1       adulto
 ```
 
 ```r
@@ -1515,15 +1529,17 @@ informacoes[order(informacoes$cidades, decreasing = FALSE),]
 
 ```
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-3 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-4   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
-1 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
-2   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
+4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
+3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
   binario faixa etaria
-3       0   não adulto
-4       1       adulto
-1       0   não adulto
-2       1   não adulto
+4       0   não adulto
+5       1       adulto
+1       1       adulto
+2       0   não adulto
+3       1   não adulto
 ```
 
 O comando `rank()` cria uma ranqueamento crescente das informações. Se pretende-se, por exemplo, criar uma coluna com o ranking dos valores do IMC, pode ser utilizado:
@@ -1536,15 +1552,17 @@ informacoes
 
 ```
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-1 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
-2   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
-3 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-4   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
+3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
+4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
   binario faixa etaria rankingImc
-1       0   não adulto          4
-2       1   não adulto          1
-3       0   não adulto          3
-4       1       adulto          2
+1       1       adulto          1
+2       0   não adulto          5
+3       1   não adulto          2
+4       0   não adulto          4
+5       1       adulto          3
 ```
 
 Para utilizar a função `rank` com os maiores valores em primeiro lugar:
@@ -1555,8 +1573,459 @@ rank(-informacoes$Imc)
 ```
 
 ```
-[1] 1 4 2 3
+[1] 5 1 4 2 3
 ```
+<!--
+# Manipulando bases de dados
+
+
+O objetivo deste capítulo é retomar alguns pacotes importantes no RStudio para a
+manipulação e transformação de grandes bases de dados que o pesquisador terá que manejar ao longo dos processos de análise.
+
+-->
+
+### O pacote *tidyr*
+
+Nesta subseção será utilizado o pacote `tidyr` para demonstrar algumas funções que contribuem para a manipulação das bases de dados, tão importante no processo de preperação das informações para posterior análise. Serão utilizadas para demonstração as bases de dados existentes no próprio pacote.
+
+Abaixo segue uma demonstração das convenções a respeito das bases de dados. Desta forma verifica-se que cada variável é apresentada em sua respectiva coluna, bem como as observações são apresentadas em sua própria linha e portanto os valores constam em sua própria célula.
+
+<div class="figure" style="text-align: center">
+<img src="tidy-1.png" alt="Convenção sobre variáveis, observações e valores" width="70%" />
+<p class="caption">(\#fig:dados)Convenção sobre variáveis, observações e valores</p>
+</div>
+
+#### Função *spread*
+
+A função *spread* é utilizada para transformar os valores constantes em uma coluna em nova configuração de colunas. Ainda, é possível determinar a transformação dos valores com o comando `convert = TRUE` informando o tipo de valores (doubles (numerics), integers, logicals, complexes, ou factors) nas colunas a serem criadas (comando `type.convert()`).
+
+
+
+```r
+require(tidyr)
+```
+
+```
+Carregando pacotes exigidos: tidyr
+```
+
+```r
+table2
+```
+
+```
+# A tibble: 12 x 4
+   country      year type            count
+   <chr>       <int> <chr>           <int>
+ 1 Afghanistan  1999 cases             745
+ 2 Afghanistan  1999 population   19987071
+ 3 Afghanistan  2000 cases            2666
+ 4 Afghanistan  2000 population   20595360
+ 5 Brazil       1999 cases           37737
+ 6 Brazil       1999 population  172006362
+ 7 Brazil       2000 cases           80488
+ 8 Brazil       2000 population  174504898
+ 9 China        1999 cases          212258
+10 China        1999 population 1272915272
+11 China        2000 cases          213766
+12 China        2000 population 1280428583
+```
+
+Neste exemplo, a coluna `type` abriga os valores `cases` e `population`, as quais terão suas próprias colunas com seus respectivos valores:
+
+
+```r
+spread(table2, type, count)
+```
+
+```
+# A tibble: 6 x 4
+  country      year  cases population
+  <chr>       <int>  <int>      <int>
+1 Afghanistan  1999    745   19987071
+2 Afghanistan  2000   2666   20595360
+3 Brazil       1999  37737  172006362
+4 Brazil       2000  80488  174504898
+5 China        1999 212258 1272915272
+6 China        2000 213766 1280428583
+```
+
+
+#### Função *gather*
+
+Já a função *gather* realiza o processo oposto do comando *spread*, pois agrupa o valor de determinadas variável em uma chave comum.
+
+
+```r
+table4a
+```
+
+```
+# A tibble: 3 x 3
+  country     `1999` `2000`
+* <chr>        <int>  <int>
+1 Afghanistan    745   2666
+2 Brazil       37737  80488
+3 China       212258 213766
+```
+
+Abaixo a transformação das variáveis `1999` e `2000` em uma única variável `year`, mantendo os valores inseridos na variável `cases`:
+
+
+```r
+gather(table4a, "year", "cases", 2:3)
+```
+
+```
+# A tibble: 6 x 3
+  country     year   cases
+  <chr>       <chr>  <int>
+1 Afghanistan 1999     745
+2 Brazil      1999   37737
+3 China       1999  212258
+4 Afghanistan 2000    2666
+5 Brazil      2000   80488
+6 China       2000  213766
+```
+
+
+
+#### Função *separate*
+
+A função *separate* é utilizada para partir uma determinada variável em novas variáveis da base de dados.
+
+
+```r
+table3
+```
+
+```
+# A tibble: 6 x 3
+  country      year rate             
+* <chr>       <int> <chr>            
+1 Afghanistan  1999 745/19987071     
+2 Afghanistan  2000 2666/20595360    
+3 Brazil       1999 37737/172006362  
+4 Brazil       2000 80488/174504898  
+5 China        1999 212258/1272915272
+6 China        2000 213766/1280428583
+```
+
+Neste exemplo, a variável `rate`, que está composta de duas informações separadas pelo caractere "$/$", será separada nas novas variáveis `cases` e `population`:
+
+
+
+```r
+separate(table3, rate, into = c("cases", "population"),sep = "/")
+```
+
+```
+# A tibble: 6 x 4
+  country      year cases  population
+  <chr>       <int> <chr>  <chr>     
+1 Afghanistan  1999 745    19987071  
+2 Afghanistan  2000 2666   20595360  
+3 Brazil       1999 37737  172006362 
+4 Brazil       2000 80488  174504898 
+5 China        1999 212258 1272915272
+6 China        2000 213766 1280428583
+```
+
+Da mesma forma é possível criar duas novas variáveis a partir do segundo caractere do valor que consta nas células utilizando o comando `sep=2`:
+
+
+```r
+separate(table3, year, into = c("century", "year"), sep = 2)
+```
+
+```
+# A tibble: 6 x 4
+  country     century year  rate             
+  <chr>       <chr>   <chr> <chr>            
+1 Afghanistan 19      99    745/19987071     
+2 Afghanistan 20      00    2666/20595360    
+3 Brazil      19      99    37737/172006362  
+4 Brazil      20      00    80488/174504898  
+5 China       19      99    212258/1272915272
+6 China       20      00    213766/1280428583
+```
+
+#### Função *unite*
+
+A função `unite` é oposta à função *separate*:
+
+
+```r
+table5
+```
+
+```
+# A tibble: 6 x 4
+  country     century year  rate             
+* <chr>       <chr>   <chr> <chr>            
+1 Afghanistan 19      99    745/19987071     
+2 Afghanistan 20      00    2666/20595360    
+3 Brazil      19      99    37737/172006362  
+4 Brazil      20      00    80488/174504898  
+5 China       19      99    212258/1272915272
+6 China       20      00    213766/1280428583
+```
+
+Neste exemplo, recria a variável `new` a partir dos dados de `century` e `year`:
+
+
+```r
+unite(table5, "new", century, year, sep = "")
+```
+
+```
+# A tibble: 6 x 3
+  country     new   rate             
+  <chr>       <chr> <chr>            
+1 Afghanistan 1999  745/19987071     
+2 Afghanistan 2000  2666/20595360    
+3 Brazil      1999  37737/172006362  
+4 Brazil      2000  80488/174504898  
+5 China       1999  212258/1272915272
+6 China       2000  213766/1280428583
+```
+
+### O pacote *dplyr*
+
+O pacote `dplyr` é uma poderosa ferramenta para manipulação, criação e transformação de dados no RStudio, agregando agilidade e robustez para o processo de análise e preparação dos dados. Seguem a seguir algumas das principais funções do pacote com a utilização da base de dados nativa do RStudio `mtcars`.
+
+
+```r
+head(mtcars)
+```
+
+```
+                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+```
+
+
+
+#### Função *select*
+
+A função `select()` é utilizada para selecionar as variáveis de interesse do pesquisador, a partir de uma base de dados, neste caso a partir da base `mtcars`:
+
+
+```r
+library(dplyr)
+
+novo=select(mtcars, mpg, cyl)
+head(novo)
+```
+
+```
+                   mpg cyl
+Mazda RX4         21.0   6
+Mazda RX4 Wag     21.0   6
+Datsun 710        22.8   4
+Hornet 4 Drive    21.4   6
+Hornet Sportabout 18.7   8
+Valiant           18.1   6
+```
+
+No exemplo são selecionadas todas as variáveis excluindo `mpg`:
+
+
+```r
+novo=select(mtcars, -c(mpg))
+head(novo)
+```
+
+```
+                  cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4           6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag       6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710          4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive      6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant             6  225 105 2.76 3.460 20.22  1  0    3    1
+```
+
+É possível selecionar uma sequência de variáveis a partir de seus nomes (utilidade semelhante a `select(mtcars, 2:5)`):
+
+
+```r
+novo=select(mtcars, cyl:drat)
+head(novo)
+```
+
+```
+                  cyl disp  hp drat
+Mazda RX4           6  160 110 3.90
+Mazda RX4 Wag       6  160 110 3.90
+Datsun 710          4  108  93 3.85
+Hornet 4 Drive      6  258 110 3.08
+Hornet Sportabout   8  360 175 3.15
+Valiant             6  225 105 2.76
+```
+
+
+#### Função *filter*
+
+A Função `filter()` seleciona as variáveis da base de dados conforme atributos determinados pelo pesquisador:
+
+
+```r
+novo=filter(mtcars, hp>146)
+head(novo)
+```
+
+```
+   mpg cyl  disp  hp drat   wt  qsec vs am gear carb
+1 18.7   8 360.0 175 3.15 3.44 17.02  0  0    3    2
+2 14.3   8 360.0 245 3.21 3.57 15.84  0  0    3    4
+3 16.4   8 275.8 180 3.07 4.07 17.40  0  0    3    3
+4 17.3   8 275.8 180 3.07 3.73 17.60  0  0    3    3
+5 15.2   8 275.8 180 3.07 3.78 18.00  0  0    3    3
+6 10.4   8 472.0 205 2.93 5.25 17.98  0  0    3    4
+```
+
+Abaixo o exemplo da utilização de mais de um critério de filtragem de dados:
+
+
+```r
+novo=filter(mtcars, hp>146 & am==1)
+head(novo)
+```
+
+```
+   mpg cyl disp  hp drat   wt qsec vs am gear carb
+1 15.8   8  351 264 4.22 3.17 14.5  0  1    5    4
+2 19.7   6  145 175 3.62 2.77 15.5  0  1    5    6
+3 15.0   8  301 335 3.54 3.57 14.6  0  1    5    8
+```
+
+#### Função *mutate*
+
+A função `mutate()` é utilizada para incluir informações ou variáveis na base de dados, como no exemplo abaixo a criação de uma nova variável denominada "novacol", multiplicando por 100 a variável "mpg" que já consta na base:
+
+
+
+```r
+novo=mutate(mtcars, novacol=(mpg*100))
+head(novo)
+```
+
+```
+   mpg cyl disp  hp drat    wt  qsec vs am gear carb novacol
+1 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4    2100
+2 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4    2100
+3 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1    2280
+4 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1    2140
+5 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2    1870
+6 18.1   6  225 105 2.76 3.460 20.22  1  0    3    1    1810
+```
+
+
+#### Função *summarise*
+
+A função `summarise()` é uma poderosa ferrarmenta para agregar sumarizações unindo diversos cálculos ao longo de uma base de dados:
+
+
+```r
+summarise(mtcars, 
+          media.hp=mean(hp), 
+          qtd.hp=length(hp),
+          qtdunico.hp=length(unique(hp)))
+```
+
+```
+  media.hp qtd.hp qtdunico.hp
+1    146.7     32          22
+```
+
+Ainda, é possível agrupar as informações com a função `group_by()` ao mesmo tempo em que são efetuados cálculos adjacentes. No exemplo abaixo, agrupa-se o valor médio das variáveis "hp" e "wt", bem como a quantidade de informações de cada variável (função `n()`), com relação ao agrupamento formado pela variável "cyl":
+
+
+```r
+summarise(group_by(mtcars, cyl.agrup=cyl), 
+          hp.medio=mean(hp), 
+          wt.medio=mean(wt),
+          qtd=n())
+```
+
+```
+# A tibble: 3 x 4
+  cyl.agrup hp.medio wt.medio   qtd
+      <dbl>    <dbl>    <dbl> <int>
+1         4     82.6     2.29    11
+2         6    122.      3.12     7
+3         8    209.      4.00    14
+```
+
+
+#### Função *count*
+
+A função `count()` é utilizada para sumarizar a contagem de determinados objetos dentro de uma variável do banco de dados:
+
+
+```r
+count(mtcars, cyl)
+```
+
+```
+# A tibble: 3 x 2
+    cyl     n
+  <dbl> <int>
+1     4    11
+2     6     7
+3     8    14
+```
+
+
+
+#### Função *arrange*
+
+A função `arrange` ordena a base de dados de acordo com o ordenamento da variável escolhida:
+
+
+```r
+novo=arrange(mtcars, cyl)
+head(novo)
+```
+
+```
+   mpg cyl  disp hp drat    wt  qsec vs am gear carb
+1 22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
+2 24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
+3 22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
+4 32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
+5 30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
+6 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
+```
+
+Ainda é possível indicar mais de uma variável para este ordenamento, bem como utilizar a função `desc()` para organizar em ordem descrescente:
+
+
+```r
+novo=arrange(mtcars, mpg, desc(disp))
+head(novo)
+```
+
+```
+   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+1 10.4   8  472 205 2.93 5.250 17.98  0  0    3    4
+2 10.4   8  460 215 3.00 5.424 17.82  0  0    3    4
+3 13.3   8  350 245 3.73 3.840 15.41  0  0    3    4
+4 14.3   8  360 245 3.21 3.570 15.84  0  0    3    4
+5 14.7   8  440 230 3.23 5.345 17.42  0  0    3    4
+6 15.0   8  301 335 3.54 3.570 14.60  0  1    5    8
+```
+
+#### Operador *pipe*
+
+
+
 
 
 ## Funções Matemáticas
@@ -1608,7 +2077,7 @@ which.min(informacoes$peso)
 ```
 
 ```
-[1] 4
+[1] 5
 ```
 
 ```r
@@ -1616,7 +2085,7 @@ which.max(informacoes$peso)
 ```
 
 ```
-[1] 1
+[1] 2
 ```
 
 Para descobrir qual é o estutande que possui o peso mínimo, por exemplo, ou o Imc máximo, utiliza-se o seguinte comando (notem que os resultados trazem a lista de todos os estudantes comparados):
@@ -1628,7 +2097,7 @@ informacoes$estudantes[which.min(informacoes$peso)]
 
 ```
 [1] Francisco
-Levels: Camila Guilherme Marcelo Pedro qoop Francisco
+Levels: Camila Guilherme Marcelo Pedro Francisco
 ```
 
 ```r
@@ -1637,7 +2106,7 @@ informacoes$estudantes[which.max(informacoes$Imc)]
 
 ```
 [1] Guilherme
-Levels: Camila Guilherme Marcelo Pedro qoop Francisco
+Levels: Camila Guilherme Marcelo Pedro Francisco
 ```
 
 O arredondamento de valores numéricos pode ser feito utilizando o comando `round()`, o qual o pesquisador informa o número de casas decimais:
@@ -1649,7 +2118,7 @@ round(informacoes$Imc, 2)
 ```
 
 ```
-[1] 44.44 22.16 26.09 23.34
+[1] 20.06 44.44 22.16 26.09 23.34
 ```
 
 Já o comando `signif()` determina o número de algarismos significativos da série escolhida, ou seja, ele arredonda para os valores em seu primeiro argumento com os número de dígitos detemrinados: 
@@ -1681,7 +2150,7 @@ sum(informacoes$idade)
 ```
 
 ```
-[1] 86
+[1] 107
 ```
 
 ```r
@@ -1690,7 +2159,7 @@ sd(informacoes$idade)
 ```
 
 ```
-[1] 5.686
+[1] 4.93
 ```
 
 ```r
@@ -1699,7 +2168,7 @@ var(informacoes$idade)
 ```
 
 ```
-[1] 32.33
+[1] 24.3
 ```
 
 ```r
@@ -1708,7 +2177,7 @@ mean(informacoes$idade)
 ```
 
 ```
-[1] 21.5
+[1] 21.4
 ```
 
 ```r
@@ -1729,7 +2198,7 @@ quantile(informacoes$idade,  probs = c(0.5, 1, 2, 5, 10, 50)/100)
 
 ```
  0.5%    1%    2%    5%   10%   50% 
-18.01 18.03 18.06 18.15 18.30 19.00 
+18.02 18.04 18.08 18.20 18.40 19.00 
 ```
 
 ## Conversão e manipulação de datas
@@ -2034,7 +2503,7 @@ Pequeno porte = árvores com altura inferior a 10 metros.
 Grande porte = árvores com altura superior a 10 metros. 
 
 
-**2.**	Baixe o arquivo "bancodedados1" que se encontra no endereço <https://smolski.github.io/softwarelivrer/livro.html>. Este é um banco de dados com informações fictícias que usaremos a fim de aprendizado. Abra o arquivo no Rstudio tomando os cuidados necessários. Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.
+**2.**	Baixe o arquivo "bancodedados1" que se encontra no endereço <https://smolski.github.io/softwarelivrer/livro.html>. Este é um banco de dados com informações fictícias que serão utilizados a fim de aprendizado. Abra o arquivo no Rstudio tomando os cuidados necessários. Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.
 
 **2.1.** Qual é o vendedor com mais sucesso de vendas? E o vendedor com menor número de vendas?
 Qual foi o número total de vendas?
@@ -2075,7 +2544,7 @@ Alguns termos extensamente utilizados em estatística, são definidos a seguir [
 ## Natureza da medida das variáveis
 
 
-Variáveis reporta-se a características ou atributos que podem tomar diferentes valores ou categorias, o que se opõe ao conceito de constante [@almeida2000]. Assim, variável pode ser definida como sendo a característica dos elementos da amostra ou da população que nos interessa estudar estatisticamente.
+O termo "variáveis" se reporta à características ou atributos que podem tomar diferentes valores ou categorias, o que se opõe ao conceito de constante [@almeida2000]. Assim, variável pode ser definida como sendo a característica dos elementos da amostra ou da população que nos interessa estudar estatisticamente.
 
 Variáveis podem ser classificadas da seguinte forma:
 
@@ -2102,7 +2571,7 @@ Informações estatísticas em jornais, relatórios e outras publicações que c
 
 **Exemplo 1**
 
-Estaremos utilizando como exemplo os dados de uma pesquisa (dados simulados), cujo banco de dados está intitulado "Dados\_pesquisa.ods". Os dados são referentes aos resultados obtidos por ocasião de uma pesquisa realizada entre os consumidores a fim de analisar características associadas ao mercado consumidor de sucos, sendo que a amostra é composta de 348 entrevistados aleatoriamente selecionados.
+Serão utilizados como exemplo os dados de uma pesquisa (dados simulados), cujo banco de dados está intitulado "Dados\_pesquisa.ods". Os dados são referentes aos resultados obtidos por ocasião de uma pesquisa realizada entre os consumidores a fim de analisar características associadas ao mercado consumidor de sucos, sendo que a amostra é composta de 348 entrevistados aleatoriamente selecionados.
 
 
 - O objetivo primário do estudo foi determinar variáveis que seriam úteis para caracterizar os consumidores que já conhecem o suco e a possibilidade potencial de futuros consumidores. Há também interesse nas relações entre variáveis das características pessoais desses consumidores ou futuros consumidores.
@@ -2175,10 +2644,10 @@ Sexo :  chr [1:348] "Feminino" "Feminino" "Feminino" "Feminino" "Masculino" ...
   
 ## Tabelas
 
-Segundo @barbetta1988, dados representados em tabelas e gráficos adequados, permitem observar determinados aspectos relevantes, bem como delinear hipóteses a respeito da estrutura dos dados em estudo, o que conhecemos como análise exploratória de dados. Isto pode ser feito inicialmente com a representação em forma de tabelas.
+Segundo @barbetta1988, dados representados em tabelas e gráficos adequados, permitem observar determinados aspectos relevantes, bem como delinear hipóteses a respeito da estrutura dos dados em estudo, o que é conhecido como análise exploratória de dados. Isto pode ser feito inicialmente com a representação em forma de tabelas.
 
 
-O comando `table()` é utilizado para elaborarmos tabelas de frequências absolutas. Dependendo da variável a ser representada, podemos usar esse comando de diferentes formas:
+O comando `table()` é utilizado para elaborar tabelas de frequências absolutas. Dependendo da variável a ser representada, é possível utilizar esse comando de diferentes formas, como segue nas próximas subseções.
 
 ### Tabela simples para apresentação das frequências absolutas
 
@@ -2253,7 +2722,7 @@ A função `tapply` serve para calcular um valor usando uma variável categóric
 
 `tapply(variavel_quantitativa,variavel_qualitativa, mean)`
 
-Se um registro possui `NA`, isto é, dados perdidos: com o parâmetro na.rm=T, indicamos para o comando ignorar os NAs nos dados e calcular a média. 
+Se um registro possui `NA`, isto é, dados perdidos: com o parâmetro na.rm=T, indica-se para o comando ignorar os NAs nos dados e calcular a média. 
 
 
 `tapply(variavel_quanti, variavel_quali, mean, na.rm=T)`
@@ -2264,7 +2733,7 @@ Se um registro possui `NA`, isto é, dados perdidos: com o parâmetro na.rm=T, i
 
 As frequências podem ser visualizadas graficamente, usando gráficos de barras elementares, que se aplicam à descrição de qualquer variável qualitativa ou quantitativa discreta, vetor de dados ou tabelas.
 
-No entanto, no caso de dados em banco de dados, quando não utilizamos outros mecanismos de atribuição, precisamos usar o comando table.
+No entanto, no caso de dados em banco de dados, quando não são utilizados outros mecanismos de atribuição, é preciso usar o comando `table()`.
 
 `barplot(table(nome_variável))`
 
@@ -2276,8 +2745,8 @@ barplot(table(Sexo))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-73-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-73)Gráfico de colunas com a variável Sexo</p>
+<img src="index_files/figure-epub3/unnamed-chunk-94-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-94)Gráfico de colunas com a variável Sexo</p>
 </div>
 
 **Obs**.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -2295,8 +2764,8 @@ barplot(table(Sexo), horiz=T)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-74-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-74)Gráfico de colunas com a variável Sexo (Horizontal)</p>
+<img src="index_files/figure-epub3/unnamed-chunk-95-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-95)Gráfico de colunas com a variável Sexo (Horizontal)</p>
 </div>
 
 
@@ -2316,8 +2785,8 @@ barplot(table(`Pessoas_familia`), col=c("blue"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-75-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-75)Gráfico de colunas com a variável `Pessoas familia`</p>
+<img src="index_files/figure-epub3/unnamed-chunk-96-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-96)Gráfico de colunas com a variável `Pessoas familia`</p>
 </div>
 
 **Ex.2)** Construir uma tabela de dupla entrada para as variáveis **Sexo** e **Divulgação**.
@@ -2330,12 +2799,12 @@ barplot(table(Sexo,Divulgacao),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-76-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-76)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
+<img src="index_files/figure-epub3/unnamed-chunk-97-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-97)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
 </div>
 
 
-**Ex.3)** Na sequência utiliza o sinal de atribuição <- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).
+**Ex.3)** Na sequência utiliza-se o sinal de atribuição <- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).
 
 
 ```r
@@ -2355,8 +2824,8 @@ barplot(Resultado,col=c("blue","red"),main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-78-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-78)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
+<img src="index_files/figure-epub3/unnamed-chunk-99-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-99)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
 </div>
 
 
@@ -2403,13 +2872,13 @@ legend(x="topright", # Determina posição da legenda
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-79-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-79)Gráfico de pizza com a variável Sabor</p>
+<img src="index_files/figure-epub3/unnamed-chunk-100-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-100)Gráfico de pizza com a variável Sabor</p>
 </div>
 
 ### Histograma
 
-No histograma, utilizado em geral quando temos variáveis quantitativas contínuas, a altura dos retângulos representa a frequência de ocorrência de valores no intervalo (deve iniciar sempre em zero), devem ter sempre a mesma largura podendo ser justapostos. O eixo horizontal (dos valores da variável) pode iniciar próximo ao menor valor da variável [@barbetta1988]. Para confecção do histograma devemos usar:
+No histograma, utilizado em geral quando têm-se variáveis quantitativas contínuas, a altura dos retângulos representa a frequência de ocorrência de valores no intervalo (deve iniciar sempre em zero), que devem ter sempre a mesma largura podendo ser justapostos. O eixo horizontal (dos valores da variável) pode iniciar próximo ao menor valor da variável [@barbetta1988]. Para confecção do histograma pode ser utilizado:
 
 `hist(nome_variável)`
 
@@ -2421,13 +2890,13 @@ hist(as.numeric(`Renda_h`))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-80-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-80)Histograma com a variável `Renda h`</p>
+<img src="index_files/figure-epub3/unnamed-chunk-101-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-101)Histograma com a variável `Renda h`</p>
 </div>
 
-**Obs**. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
+**Obs**. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixo y (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
 
-**Obs**. II: Para definir o número de intervalos no Histograma, usamos:
+**Obs**. II: Para definir o número de intervalos no Histograma, utiliza-se:
 
 
 `hist(nome_variável, breaks = 5)`
@@ -2445,12 +2914,12 @@ hist(as.numeric(`Renda_h`),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-81-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-81)Histograma com a variável Renda h com breaks=5</p>
+<img src="index_files/figure-epub3/unnamed-chunk-102-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-102)Histograma com a variável Renda h com breaks=5</p>
 </div>
 O comando `ylim` determina os limites do eixo y a serem mostrados; `xlab` e `ylab` determinam o nome das variáveis dos eixos x e y; `main` determina o nome do título e `col` determina a cor do gráfico. Use o argumento `main=NULL` para remover o título.
 
-Inserindo as opções `$counts` e `$breaks` retomamos os valores da contagem dos dados e dos intervalos do histograma:
+Inserindo as opções `$counts` e `$breaks` retomam-se os valores da contagem dos dados e dos intervalos do histograma:
 
 
 ```r
@@ -2465,7 +2934,7 @@ hist(as.numeric(`Renda_h`), breaks=5)$counts
 hist(as.numeric(`Renda_h`), breaks=5)$breaks
 ```
 
-<img src="index_files/figure-epub3/unnamed-chunk-82-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="index_files/figure-epub3/unnamed-chunk-103-1.png" width="70%" style="display: block; margin: auto;" />
 
 ```
 [1]  0  5 10 15 20 25
@@ -2474,9 +2943,9 @@ hist(as.numeric(`Renda_h`), breaks=5)$breaks
 
 ### Boxplot ou diagrama em caixas
 
-Os diagramas em caixa são convenientes para revelar tendências centrais, dispersão, distribuição dos dados e a presença de outliers (valores extremos). Como as medianas revelam uma tendência central, ao passo que os quartis indicam a dispersão dos dados, os diagramas em caixa têm a vantagem de não serem tão sensíveis a valores extremos como outras medidas baseadas na média e no desvio-padrão. Por outro lado, os diagramas em caixa (boxplots) não dão informação tão detalhada quanto os histogramas ou os gráficos ramo-e-folhas, podendo não ser, assim, a melhor escolha quando lidamos com um único conjunto de dados. Os diagramas em caixa são, entretanto, mais convenientes na comparação de dois ou mais conjuntos de dados [@triola1999]. 
+Os diagramas em caixa são convenientes para revelar tendências centrais, dispersão, distribuição dos dados e a presença de outliers (valores extremos). Como as medianas revelam uma tendência central, ao passo que os quartis indicam a dispersão dos dados, os diagramas em caixa têm a vantagem de não serem tão sensíveis a valores extremos como outras medidas baseadas na média e no desvio-padrão. Por outro lado, os diagramas em caixa (boxplots) não fornecem informação tão detalhada quanto os histogramas ou os gráficos ramo-e-folhas, podendo não ser, assim, a melhor escolha quando lida-se com um único conjunto de dados. Os diagramas em caixa são, entretanto, mais convenientes na comparação de dois ou mais conjuntos de dados [@triola1999]. 
 
-No diagrama de caixas, torna-se fácil identificar **outliers** (ou valores extremos), que são valores extremamente  raros, no sentido de que estão muito afastados da maioria dos dados. Ao explorarmos um conjunto de dados, não podem deixar de considerar os outliers, porque eles podem revelar informações importantes [@triola1999].
+No diagrama de caixas, torna-se fácil identificar **outliers** (ou valores extremos), que são valores extremamente  raros, no sentido de que estão muito afastados da maioria dos dados. Ao explorar um conjunto de dados, é preciso considerar os *outliers*, porque eles podem revelar informações importantes [@triola1999].
 
 Para obter o boxplot para um conjunto de dados:
 
@@ -2491,11 +2960,11 @@ boxplot(Idade,horizontal = T)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-83-1.png" alt="Boxplot com a variável Idade" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-83)Boxplot com a variável Idade</p>
+<img src="index_files/figure-epub3/unnamed-chunk-104-1.png" alt="Boxplot com a variável Idade" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-104)Boxplot com a variável Idade</p>
 </div>
 
-Ainda é possível efetuar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:
+Ainda é possível criar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:
 
 
 ```r
@@ -2503,17 +2972,17 @@ boxplot(Idade~Sabor, data=pesquisa_dados)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-84-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-84)Boxplot com as variáveis Idade e Sabor</p>
+<img src="index_files/figure-epub3/unnamed-chunk-105-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-105)Boxplot com as variáveis Idade e Sabor</p>
 </div>
 
 
 
 ### Gráfico ramo-e-folhas
 
-Em um gráfico ramo-e-folhas, classificamos os dados segundo um padrão que revela a distribuição subjacente. O padrão consiste em separar um número em duas partes em geral: o ramo consiste nos algarismos mais à esquerda e as folhas consistem nos algarismos mais à direita.
+Em um gráfico ramo-e-folhas, são classificados os dados segundo um padrão que revela a distribuição subjacente. O padrão consiste em separar um número em duas partes em geral: o ramo consiste nos algarismos mais à esquerda e as folhas consistem nos algarismos mais à direita.
 
-No gráfico Ramo-e-folhas, podemos ver a distribuição desses dados, que é uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a informação da lista original; se necessário, podemos recompor a relação original de valores. Note que as linhas de algarismos em um gráfico ramo-e-folhas são análogas, em natureza, às barras de um histograma [@triola1999].
+No gráfico Ramo-e-folhas, é posível ver a distribuição desses dados, que é uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a informação da lista original; se necessário, pode-se recompor a relação original de valores. Note que as linhas de algarismos em um gráfico ramo-e-folhas são análogas, em natureza, às barras de um histograma [@triola1999].
 
 
 `stem(nome_variável)` - comando que permite obter um gráfico Ramo e Folhas. 
@@ -2538,7 +3007,7 @@ a) `stem(nome_variável,scale=0.5)`
 
 b) `stem(nome_variável,scale=2)`
 
-**Obs.**: Quando uma folha relacionada com certo ramo tem uma quantidade tão grande de valores que ele sintetiza essa quantidade usando a denominação +n, e invade a linha seguinte. Isso pode ser melhorado usando **width**.
+**Obs.**: Quando uma folha relacionada com certo ramo tem uma quantidade tão grande de valores que ele sintetiza essa quantidade usando a denominação +n, e invade a linha seguinte, isso pode ser melhorado usando **width**.
 
 c) `stem(nome_variável,scale=0.5,width=120)`
 
@@ -2590,7 +3059,7 @@ stem(Idade,scale=2)
 
 ### Gráficos de dispersão
 
-Às vezes temos dados emparelhados de forma que associa cada valor de um conjunto a um determinado valor de um segundo conjunto. Um diagrama de dispersão é um gráfico dos dados emparelhados (x, y), com um eixo x horizontal e um eixo y vertical. O diagrama de dispersão, apresenta no eixo horizontal os valores da primeira variável e um eixo vertical para os valores da segunda variável. O padrão dos pontos assim marcados costuma ajudar a determinar se existe algum relacionamento entre as duas variáveis A e B.
+Às vezes dispõe-se de dados emparelhados de forma que associa cada valor de um conjunto a um determinado valor de um segundo conjunto. Um diagrama de dispersão é um gráfico dos dados emparelhados (x, y), com um eixo x horizontal e um eixo y vertical. O diagrama de dispersão, apresenta no eixo horizontal os valores da primeira variável e um eixo vertical para os valores da segunda variável. O padrão dos pontos assim marcados costuma ajudar a determinar se existe algum relacionamento entre as duas variáveis A e B.
 
 `plot(variável_independente,Variável_dependente)`
 
@@ -2606,7 +3075,7 @@ Ex. Considere os dados que descrevem os valores do número de empresas fiscaliza
 
 <!--
 
-Table: (\#tab:unnamed-chunk-86)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
+Table: (\#tab:unnamed-chunk-107)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
 
   Ano  Empresas.Fiscalizadas 
 -----  ----------------------
@@ -2643,13 +3112,13 @@ Table: (\#tab:evolres)Evolução dos resultados da fiscalização do trabalho na
 | 2009|13.379                 |
 | 2010|11.978                 |
 
-Fonte: MTE. SFIT. Elaboração: DIEESE.
+Fonte: MTE. SFIT.
 
-Para construir um gráfico de linhas, utilizamos o seguinte comando:
+Para construir um gráfico de linhas, é utilizado o seguinte comando:
 
 `plot(x,y,type= "Tipo de símbolo")`
 
-Neste gráfico, podemos utilizar comandos já utilizados anteriormente, para inserir título, nomes dos eixos, etc. Para escolher o formato das linhas, com o uso do argumento `type`, seguem algumas opções:
+Neste gráfico, é possível utilizar comandos já inseridos anteriormente, para inserir título, nomes dos eixos, etc. Para escolher o formato das linhas, com o uso do argumento `type`, seguem algumas opções:
 
 - `"p"` para pontos,
 - `"l"` para linhas,
@@ -2674,13 +3143,14 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-87-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-87)Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
+<img src="index_files/figure-epub3/unnamed-chunk-108-1.png" alt="Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-108)Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
 </div>
+Fonte: Fonte: Elaborado pelo(s) autor(es) a partir de MTE. SFIT. 
 
-onde, no argumento `ylim`, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
+onde, no argumento `ylim`, deve-se indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
 
-Na sequência adicionamos as instruções para as demais variáveis:
+Na sequência são adicionadas as instruções para as demais variáveis:
 
 `lines(x, y2,col="cor_desejada", type="b")`
 
@@ -2735,13 +3205,13 @@ legend(0,40,c("temp_inst","temp_max","temp_min"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-89-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-89)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
+<img src="index_files/figure-epub3/unnamed-chunk-110-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-110)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
 </div>
 
 ## Estatísticas Descritivas
 
-Para determinar o valor máximo de um conjunto de dados, utilizamos: 
+Para determinar o valor máximo de um conjunto de dados, utiliza-se: 
 
 `max(nome_da_variável)`
 
@@ -2760,7 +3230,7 @@ max(Renda_h)
 [1] 21.83
 ```
 
-De forma análoga, para determinar o valor mínimo de um conjunto de dados, utilizamos:
+De forma análoga, para determinar o valor mínimo de um conjunto de dados, utiliza-se:
 
 `min(nome_da_variável)`
 
@@ -2775,7 +3245,7 @@ min(Renda_h)
 [1] 1.02
 ```
 
-**Obs.**: Para determinar a amplitude total de um conjunto de dados, utilizamos: 
+**Obs.**: Para determinar a amplitude total de um conjunto de dados, utiliza-se: 
 
 `max(nome_da_variável)-min(nome_da_variável)`
 
@@ -2897,7 +3367,7 @@ sd(Pessoas_familia)
 
 A função `subset()`:
 
-Com esta função podemos fazer cálculos utilizando filtros, simultaneamente. A aplicação de filtros é extremamente útil quando queremos explorar os dados de forma rápida e eficiente. 
+Com esta função é possível fazer cálculos utilizando filtros, simultaneamente. A aplicação de filtros é extremamente útil quando a intensão é de explorar os dados de forma rápida e eficiente. 
 
 Exemplos:
 
@@ -2915,7 +3385,7 @@ subset(`Altura_(m)`, Sexo=="Masculino")
 [46] 1.81 1.73 1.80 1.66 1.71 1.60 1.72 1.81 1.55 1.60 1.80
 ```
 
-Ex. 2) Média das alturas das pessoas do sexo masculino: inserindo o comando `mean()` ao subconjunto anterior, teremos como resultado a média das alturas das pessoas do sexo masculino.
+Ex. 2) Média das alturas das pessoas do sexo masculino: inserindo o comando `mean()` ao subconjunto anterior, é obtido como resultado a média das alturas das pessoas do sexo masculino.
 
 
 
@@ -2966,7 +3436,7 @@ Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a
 
 ## Exercícios
 
-**1.** Carregue a base de dados denominada "arvores" disponível no site do livro (<https://smolski.github.io/softwarelivrer/livro.html>) e respontaas questões abaixo:
+**1.** Carregue a base de dados denominada "arvores" disponível no site do livro (<https://smolski.github.io/softwarelivrer/livro.html>) e responda as questões abaixo:
 
 
 
@@ -3010,7 +3480,7 @@ A **amostra** é um subconjunto, necessariamente finito, de uma população e é
 
 ## Intervalo de Confiança
 
-Entre as diferentes técnicas de Inferência Estatística, temos a Estimação de Parâmetros, que consiste na determinação de um **Intervalo de Confiança (IC)** para uma média ou proporção populacional, ao um nível (1 - $\alpha$)\% de confiança.
+Entre as diferentes técnicas de Inferência Estatística, têm-se a Estimação de Parâmetros, que consiste na determinação de um **Intervalo de Confiança (IC)** para uma média ou proporção populacional, ao um nível (1 - $\alpha$)\% de confiança.
 
 O nível de confiança (1 - $\alpha$)\% normalmente varia de 90\% a 99\%.
 
@@ -3055,7 +3525,7 @@ IC (17,6 $\leq$ $\mu$ $\leq$ 20,2) = 95\%
 
 Com 95\% de confiança, a média populacional das horas semanais de estudo para a disciplina de Estatística Básica está entre 17,6 e 20,2 horas. Ou seja, qualquer aluno (de onde essa amostra foi retirada) estuda em média, de 17,6 a 20,2 horas por semana.
 
-Se não informarmos o nível de confiança, o software R considera 95\%. No entanto, para mudar o nível de confiança para 90\%, acrescentamos a informação `conf.level = 0.90` após o nome da variável:
+Se não for informado o nível de confiança, o software R considera 95\%. No entanto, para mudar o nível de confiança para 90\%, é acrescentada a informação `conf.level = 0.90` após o nome da variável:
 
 
 ```r
@@ -3107,7 +3577,7 @@ Com 99\% de confiança, a média populacional das horas semanais de estudo para 
 
 ### Para verificar normalidade dos dados
 
-Algumas técnicas de inferência estatística têm como requisitos a normalidade dos dados. Para verificar se os dados seguem uma distribuição normal, podemos, inicialmente usar o histograma e depois confirmar com um teste estatístico para testar normalidade como Shapiro-Wilk ou Kolmogorov-Smirnov.
+Algumas técnicas de inferência estatística têm como requisitos a normalidade dos dados. Para verificar se os dados seguem uma distribuição normal, é possível, inicialmente usar o histograma e depois confirmar com um teste estatístico para testar normalidade como Shapiro-Wilk ou Kolmogorov-Smirnov.
 
 Hipóteses do teste:
 
@@ -3157,7 +3627,7 @@ Em que:
 
 x = número de sucessos 
 
-n= tamanho da amostra
+n = tamanho da amostra
 
 nível de confiança = 0,90 a 0,99
 
@@ -3267,7 +3737,7 @@ $H_1$: $\mu$ $<$ ......
 
 No software RStudio, usa-se o `t.test` para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar $H_0$.
 
-De acordo com as hipóteses, temos variações do `t.test`, conforme segue:
+De acordo com as hipóteses, constam variações do `t.test`, conforme segue:
 
 
 sintaxe: `t.test(amostra, opções)`
@@ -3553,21 +4023,21 @@ O teste de hipótese para duas médias aplica-se quando se deseja comparar dois 
 <p class="caption">(\#fig:testehip2)Teste de hipótese para dois grupos</p>
 </div>
 
-Podemos comparar duas médias de duas amostras dependentes, também chamadas de pareadas, ou médias de duas amostras independentes.
+É possível comparar duas médias de duas amostras dependentes, também chamadas de pareadas, ou médias de duas amostras independentes.
 
 #### Teste de hipóteses duas amostras dependentes
 
 **Exemplo 10**: Foi obtido o peso de seis indivíduos antes e após um treinamento de exercício físico. Teste a hipótese de que a média antes do treinamento é diferente da média após o treinamento.
 
 
-Table: (\#tab:unnamed-chunk-122)Amostras dependentes
+Table: (\#tab:unnamed-chunk-143)Amostras dependentes
 
 Indivíduo                      A    B    C    D    E    F
 ---------------------------  ---  ---  ---  ---  ---  ---
 Peso antes do treinamento     99   62   74   59   70   73
 Peso depois do treinamento    94   62   66   58   70   76
 
-No software RStudio, usa-se o `t.test` para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar $H_0$.
+No software RStudio, é utilizado o `t.test` para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de *p-value* para aceitar ou rejeitar $H_0$.
 
 
 Hipóteses:
@@ -3600,10 +4070,10 @@ mean of the differences
 
 Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso antes do treinamento é igual à média de peso depois do treinamento.
 
-**Exemplo 11**: (adaptado de <www.inf.ufsc.br/~marcelo/testes2.html>) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Podemos concluir que o uso da ração contribuiu para o aumento do peso médio dos animais? 
+**Exemplo 11**: (adaptado de <www.inf.ufsc.br/~marcelo/testes2.html>) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Pode-se concluir que o uso da ração contribuiu para o aumento do peso médio dos animais? 
 
 
-Table: (\#tab:unnamed-chunk-124)Amostras dependentes - caso 2
+Table: (\#tab:unnamed-chunk-145)Amostras dependentes - caso 2
 
 Cobaia      1     2     3     4     5     6     7     8     9    10
 -------  ----  ----  ----  ----  ----  ----  ----  ----  ----  ----
@@ -3640,7 +4110,7 @@ Conclusão: Rejeita-se $H_0$ com nível de significância de 5\% e conclui-se qu
 
 #### Teste de hipóteses duas amostras independentes
 
-Primeiramente precisamos saber se existe homogeneidade de variâncias populacionais, a qual poderá ser verificada por meio de um teste de homogeneidade de variâncias utilizando os dados das duas amostras.
+Primeiramente é preciso saber se existe homogeneidade de variâncias populacionais, a qual poderá ser verificada por meio de um teste de homogeneidade de variâncias utilizando os dados das duas amostras.
 
 #### Teste para verificar homogeneidade de variâncias
 
@@ -3649,7 +4119,7 @@ Primeiramente precisamos saber se existe homogeneidade de variâncias populacion
 
 
 
-Table: (\#tab:unnamed-chunk-126)Comparação de dois tipos diferentes de tecidos
+Table: (\#tab:unnamed-chunk-147)Comparação de dois tipos diferentes de tecidos
 
 ---------  ---  ---  ---  ---  ---  ---  ---
 Tecido A   36   26   31   38   28   20   37 
@@ -3685,7 +4155,7 @@ ratio of variances
 
 Conclusão: Não rejeita-se $H_0$ e conclui-se que as variâncias são homogêneas.
 
-Agora podemos realizar o teste de comparação de duas amostras independentes.
+Agora é possível realizar o teste de comparação de duas amostras independentes.
 
 **$H_0$**: média tecido A $=$ média tecido B
 
@@ -3728,7 +4198,7 @@ Quando existem duas variáveis de interesse, a representação tabular das frequ
 
 ## Teste de qui-quadrado para verificar associação entre duas variáveis qualitativas
 
-**Exemplo 1**: Uma pesquisa sobre "a exposição a agrotóxicos entre trabalhadores rurais no município de Cerro Largo/RS" foi desenvolvida por Letiane Peccin Ristow, no ano de 2017 (dissertação e mestrado no Programa de Pós-Graduação em Desenvolvimento e Políticas Públicas da UFFS, Campus Cerro Largo. Na Tabela \@ref(tab:tamprop)<!--\@ref(tab:qui2)--> são apresentados os resultados do "tamanho da propriedade" e "armazenamento seguro do EPI". Para verificar a existência de associação significativa entre essas duas variáveis utilizamos o teste de qui-quadrado, dado que são duas variáveis qualitativas: variável 1 - tamanho da propriedade (até 25 ha; 26 ha ou mais) e variável 2 – armazenamento seguro (sim; não).
+**Exemplo 1**: Uma pesquisa sobre "a exposição a agrotóxicos entre trabalhadores rurais no município de Cerro Largo/RS" foi desenvolvida por Letiane Peccin Ristow, no ano de 2017 (dissertação e mestrado no Programa de Pós-Graduação em Desenvolvimento e Políticas Públicas da UFFS, Campus Cerro Largo. Na Tabela \@ref(tab:tamprop)<!--\@ref(tab:qui2)--> são apresentados os resultados do "tamanho da propriedade" e "armazenamento seguro do EPI". Para verificar a existência de associação significativa entre essas duas variáveis é utilizado o teste de qui-quadrado, dado que são duas variáveis qualitativas: variável 1 - tamanho da propriedade (até 25 ha; 26 ha ou mais) e variável 2 – armazenamento seguro (sim; não).
 
 Primeiramente definimos as seguintes hipóteses estatísticas:
 
@@ -3770,17 +4240,17 @@ com grau de liberdade = $gl = (c-1)(l-1)$.
 
 A frequência esperada de uma casela é obtida pela multiplicação do total da linha pelo total da coluna dividido pelo total geral. Por exemplo, a frequência esperada  é igual ao total da coluna 1 multiplicada pelo total da linha 1 dividido pelo total geral, ou seja, (67x90)/112.
 
-Porém, é importante conhecermos as pressuposições do teste de qui-quadrado de Pearson. Para auxiliar no encaminhamento do teste adequado para verificar a relação de duas variáveis qualitativas, seguimos o seguinte check-list.
+Porém, é importante conhecer as pressuposições do teste de qui-quadrado de Pearson. Para auxiliar no encaminhamento do teste adequado para verificar a relação de duas variáveis qualitativas, seguimos o seguinte check-list.
 
 ## Check list para escolher o teste adequado para verificar a relação entre duas variáveis qualitativas
 
--	O cálculo do teste de qui-quadrado deve ser somente com valores absolutos.	Quando temos uma tabela 2x2, isto é, duas linhas e duas colunas, devemos utilizar o teste de qui-quadrado com correção de continuidade (correção de Yates). O motivo é que a distribuição de frequências observadas é discreta e está sendo aproximada pela distribuição qui-quadrado, que é contínua [@barbetta1988].
+-	O cálculo do teste de qui-quadrado deve ser somente com valores absolutos.	Quando se dispõe de uma tabela 2x2, isto é, duas linhas e duas colunas, deve-se utilizar o teste de qui-quadrado com correção de continuidade (correção de Yates). O motivo é que a distribuição de frequências observadas é discreta e está sendo aproximada pela distribuição qui-quadrado, que é contínua [@barbetta1988].
 
--	Não devemos aplicar o teste de qui-quadrado quando a frequência esperada em qualquer casela for menor que 5. Neste caso, devemos usar o teste exato de Fisher, para garantir o grau de certeza do teste. 
--	Quando temos duas amostras pareadas (duas amostras dependentes), utilizamos o teste de McNemar.
--	Caso tenhamos interesse em avaliar a força da associação entre as duas variáveis, devemos utilizar algumas medidas de magnitude dessa força, como por exemplo, coeficiente de contingência, razão de prevalência, risco relativo e razão de chances (*odds ratio*). Porém, essas medidas de magnitude são  dependentes do tipo de delineamento do estudo.
+-	Não se deve aplicar o teste de qui-quadrado quando a frequência esperada em qualquer casela for menor que 5. Neste caso, deve-se usar o teste exato de Fisher, para garantir o grau de certeza do teste. 
+-	Quando se dispõe de duas amostras pareadas (duas amostras dependentes), utiliza-se o teste de McNemar.
+-	Caso se tenha interesse em avaliar a força da associação entre as duas variáveis, deve-se utilizar algumas medidas de magnitude dessa força, como por exemplo, coeficiente de contingência, razão de prevalência, risco relativo e razão de chances (*odds ratio*). Porém, essas medidas de magnitude são  dependentes do tipo de delineamento do estudo.
 
-Para aplicar o teste de qui-quadrado ou um alternativo no software R, primeiramente precisamos informar os dados, podemos fazer isso de duas formas:
+Para aplicar o teste de qui-quadrado ou um alternativo no software R, primeiramente é preciso informar os dados, é possível efetuar isso de duas formas:
 
 (a) incluindo os valores no formatado de tabela;
 
@@ -3836,7 +4306,7 @@ data:  quiquadrado1
 X-squared = 5.1, df = 1, p-value = 0.02
 ```
 
-Observa-se que o software R identificou a tabela 2x2 e aplicou a correção de continuidade. Porém, podemos informar isso na linha de comando, incluindo opção `correct = TRUE`:
+Observa-se que o software R identificou a tabela 2x2 e aplicou a correção de continuidade. Porém, é possível informar isso na linha de comando, incluindo opção `correct = TRUE`:
 
 
 ```r
@@ -3851,9 +4321,9 @@ data:  quiquadrado1
 X-squared = 5.1, df = 1, p-value = 0.02
 ```
 
-Então devemos concluir pela rejeição ou não da $H_0$ e interpretar esse resultados.
+Então deve-se concluir pela rejeição ou não da $H_0$ e interpretar esse resultados.
 
-Caso pelo menos uma casela tenha frequência esperada menor que 5 como por exemplo na tabela abaixo <!--\@ref(tab:qui3)-->, utilizamos o teste exato de Fisher.
+Caso pelo menos uma casela tenha frequência esperada menor que 5 como por exemplo na tabela abaixo <!--\@ref(tab:qui3)-->, é utilizado o teste exato de Fisher.
 
 
 Table: (\#tab:tamprop1)Tamanho da propriedade e devolução das embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS, 2017.
@@ -3903,7 +4373,7 @@ chisq.test(quiquadrado2)$expected
 [2,] 4.478 41.52
 ```
 
-Neste caso, o software R apresenta um "aviso" pois observa-se uma frequência esperada menor que 5. Então devemos optar pelo teste exato de Fisher.
+Neste caso, o software R apresenta um "aviso" pois observa-se uma frequência esperada menor que 5. Então, se deve optar pelo teste exato de Fisher.
 
 
 ```r
@@ -3924,7 +4394,7 @@ odds ratio
      1.933 
 ```
 
-Então devemos concluir, através do valor p, pela rejeição ou não da $H_0$ e interpretar esse resultados.
+É possível concluir, através do valor *p*, pela rejeição ou não da $H_0$ e interpretar esse resultados.
 
 ## Teste de associação com duas amostras dependentes
 
@@ -3976,7 +4446,7 @@ Fonte: Dados simulados.
 
 **Exemplo 2**: Uma pesquisa foi realizada para verificar o efeito de um medicamento para perda de peso. O estudo foi realizado com 45 cobaias com características semelhantes. Na Tabela abaixo <!--\@ref(tab:qui5)--> são apresentadas a situação do peso antes e após a intervenção (utilização do medicamento). 
 
-Como trata-se de duas amostras dependentes (antes e após) não podemos aplicar o teste de qui-quadrado. O teste adequado é McNemar.
+Como trata-se de duas amostras dependentes (antes e após) não se deve aplicar o teste de qui-quadrado. O teste adequado é McNemar.
 
 
 
@@ -4037,7 +4507,7 @@ McNemar's chi-squared = 6.3, df = 1, p-value = 0.01
 
 ## Teste de qui-quadrado para verificar aderência a uma distribuição
 
-Neste caso usamos o teste de qui-quadrado para verificar se o conjunto de dados segue uma distribuição teórica especificada.
+Neste caso é utilizado o teste de qui-quadrado para verificar se o conjunto de dados segue uma distribuição teórica especificada.
 
 **Exemplo 3**: Deseja-se verificar se o número de borrachudos é o mesmo em diferentes pontos da margem de um rio. O número de borrachudos observados para cada ponto (local) é apresentado na Tabela \@ref(tab:borrach).
 
@@ -4084,7 +4554,7 @@ data:  borrach
 X-squared = 24, df = 6, p-value = 6e-04
 ```
 
-**Exemplo 4**: Suponha que desejamos verificar se o número de borrachudos segue uma distribuição específica, informado em "dist". Lembrando que os valores no vetor "dist" devem estar no formato de proporção (por exemplo, 0,35).
+**Exemplo 4**: Suponha que deseja-se verificar se o número de borrachudos segue uma distribuição específica, informado em "dist". Lembrando que os valores no vetor "dist" devem estar no formato de proporção (por exemplo, 0,35).
 
 
 $H_0$: O número de borrachudos segue a distribuição teórica informada;
@@ -4162,7 +4632,7 @@ Fonte: Dados simulados.
 
 Muitas vezes há a necessidade de estudar duas ou mais variáveis ao mesmo tempo com o objetivo de predizer uma variável em função da(s) outra(s). Por exemplo, verificar se sólidos removidos de um material relaciona-se com o tempo de secagem e qual é a forma dessa relação. Outros exemplos: relação entre tempo de estudo e desempenho a uma avaliação; relação entre investimento em comunicação e vendas; entre outros.
 
-A análise de correlação permite verificar a relação entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Estudaremos os modelos de regressão linear na qual a variáveis resposta ($Y$) é quantitativa e as variáveis preditoras ($X_i$) são quantitativas ou qualitativas.
+A análise de correlação permite verificar a relação entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Serão estudados os modelos de regressão linear na qual a variáveis resposta ($Y$) é quantitativa e as variáveis preditoras ($X_i$) são quantitativas ou qualitativas.
 
 ## Correlação linear
 
@@ -4212,8 +4682,8 @@ plot(tempo,nota)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-141-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-141)Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo</p>
+<img src="index_files/figure-epub3/unnamed-chunk-162-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-162)Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4553,8 +5023,8 @@ abline(coef(regressao))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-145-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-145)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
+<img src="index_files/figure-epub3/unnamed-chunk-166-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-166)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4599,11 +5069,9 @@ Além da análise gráfica, existem testes para avaliar a homocedasticidade como
 
 Fonte: Elaborado pelo(s) autor(es).
 
-O primeiro gráfico de resíduos que podemos elaborar é para representar os valores ajustados pela equação de regressão ajustada no eixo x e os valores dos resíduos no eixo y, conforme segue.
+O primeiro gráfico de resíduos que é possível elaborar é para representar os valores ajustados pela equação de regressão ajustada no eixo x e os valores dos resíduos no eixo y, conforme segue.
 
 Sintaxe no software R:
-
-
 
 `plot(fitted(regressao),residuals(regressao),`
 
@@ -4721,8 +5189,8 @@ lines(density(regressao$residuals))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-148-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-148)Histograma de distribuição da probabilidade para os resíduos</p>
+<img src="index_files/figure-epub3/unnamed-chunk-169-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-169)Histograma de distribuição da probabilidade para os resíduos</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4878,7 +5346,7 @@ O comando `plot(regressao)` elabora diferentes gráficos para o diagnóstico do 
 
 ## Intervalo de Predição
 
-Após o ajuste da equação de regressão linear simples, verificada a significância da equação (p $<$ 0,05) e verificada que a equação estimada se ajusta bem aos dados pelo valor do coeficiente de determinação então podemos utilizar a para predizer valores da variável Y (resposta) a partir de valores da variável X (explicativa). Caso a regressão não seja significativa a melhor predição para a variável Y é média dos valores de $y$, ou seja, $\hat{y}$.
+Após o ajuste da equação de regressão linear simples, verificada a significância da equação (p $<$ 0,05) e verificada que a equação estimada se ajusta bem aos dados pelo valor do coeficiente de determinação então é possível predizer valores da variável Y (resposta) a partir de valores da variável X (explicativa). Caso a regressão não seja significativa a melhor predição para a variável Y é média dos valores de $y$, ou seja, $\hat{y}$.
 
 
 A predição de valores só tem sentido nos seguintes casos:
@@ -5157,7 +5625,7 @@ Fonte: Elaborado pelo(s) autor(es).
 
 ## Elementos básicos dos Chunks
 
-Os **Code Chunks**, como já visto, são espaços destinados à inclusão de códigos diretamente do RStudio, como se inseríssemos a informação em seu Console. Desta forma, por exemplo, se efetuarmos uma operação matemática ou se carregarmos uma base de dados para ser trabalhada, as rotinas serão efetuadas no momento em que for compilado o arquivo .Rmd trabalhado.
+Os **Code Chunks**, como já visto, são espaços destinados à inclusão de códigos diretamente do RStudio, como se a informação fosse inserida em seu Console. Desta forma, por exemplo, ao efetuar uma operação matemática ou ao ser carregada uma base de dados para ser trabalhada, as rotinas serão efetuadas no momento em que for compilado o arquivo .Rmd trabalhado.
 
 A criação das Chunks é feita manualmente no corpo do documento .Rmd pela inclusão do código demonstrado abaixo, ou via plataforma RStudio, no menu "Insert $>$ Insert a new R chunk", conforme demonstra a Figura \@ref(fig:rmarkchunk1):
 
@@ -5210,7 +5678,7 @@ Seguem algumas importantes opções das Chunks dos arquivos RMarkdown [@R-rmarkd
 
 Como mencionado no início deste capítulo, a grande vantagem do **RMarkdown** é a sua versatilidade na criação de documentos concatenados com as análises estatísticas no RStudio. Desta forma, dentro das Ckunks, podem ser criadas bases de dados, bem como importados de sites ou mesmo carregados de arquivos trabalhados previamente no RStudio. 
 
-No exemplo abaixo, foi criado um *data frame* nomeado "amost" diretamente no console dentro da Chunk. Em um segundo momento, para utilizarmos um determinado pacote instalado no RStudio, utiliza-se, dentro da Chunk, o comando `require ()` juntamente com o pacote necessário. Podem ser inseridos tantos pacotes quanto forem utilizados no documento, conforme a Figura \@ref(fig:rmarkchunk3).
+No exemplo abaixo, foi criado um *data frame* nomeado "amost" diretamente no console dentro da Chunk. Em um segundo momento, para utilizar um determinado pacote instalado no RStudio, se insere, dentro da Chunk, o comando `require()` juntamente com o pacote necessário. Podem ser inseridos tantos pacotes quanto forem utilizados no documento, conforme a Figura \@ref(fig:rmarkchunk3).
 
 <div class="figure" style="text-align: center">
 <img src="rmarkchunk3.png" alt="Exemplo de criação de Chunk e carregamento de pacote" width="70%" />
@@ -5278,14 +5746,14 @@ Para os pesquisadores que trabalham intensamente com o Word ou Libre/Open Office
 
 ### Primeiro passo: criação de um documento modelo
 
-Primeiramente deve-se criar um documento mínimo padrão que será utilizado como modelo. Crie um novo documento (Rmd), aqui denominaremos de ``modelo'' (o usuário pode escolher o nome), que será salvo em .Rmd e gerado o respectivo arquivo Word (ou no formato .odt), na mesma pasta que o pesquisador salvar arquivos a serem formatados.
+Primeiramente deve-se criar um documento mínimo padrão que será utilizado como modelo. Crie um novo documento (Rmd), aqui será denominado de "modelo" (o usuário pode escolher o nome), que será salvo em .Rmd e gerado o respectivo arquivo Word (ou no formato .odt), na mesma pasta que o pesquisador salvar arquivos a serem formatados.
 
 Como já visto, para criação de documentos .Rmd clique em "File $>$ New File $>$ R Markdown". Escolha o nome e salve na pasta escolhida. Gere o documento em Word (.docx) ou em outro arquivo de texto (exemplo .odt) em "File $>$ Knit Document". 
 
 
 ### Segundo passo: formatação do modelo
 
-Abra o arquivo em Word (denominamos ``modelo.docx''). Atente para a caixa de seleção de estilos do Word, que será trabalhado nesta etapa (Figura \@ref(fig:rmarkestilos)). 
+Abra o arquivo em Word (denominado "modelo.docx"). Atente para a caixa de seleção de estilos do Word, que será trabalhado nesta etapa (Figura \@ref(fig:rmarkestilos)). 
 
 <div class="figure" style="text-align: center">
 <img src="rmarkestilos.png" alt="Caixa estilos no Word" width="70%" />

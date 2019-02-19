@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-02-17">
+<meta name="date" content="2019-02-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -167,7 +167,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.11.3" data-path="intro.html"><a href="intro.html#listas"><i class="fa fa-check"></i><b>1.11.3</b> Listas</a></li>
 <li class="chapter" data-level="1.11.4" data-path="intro.html"><a href="intro.html#data-frames"><i class="fa fa-check"></i><b>1.11.4</b> Data frames</a></li>
 </ul></li>
-<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a></li>
+<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a><ul>
+<li class="chapter" data-level="1.12.1" data-path="intro.html"><a href="intro.html#o-pacote-tidyr"><i class="fa fa-check"></i><b>1.12.1</b> O pacote <em>tidyr</em></a></li>
+<li class="chapter" data-level="1.12.2" data-path="intro.html"><a href="intro.html#o-pacote-dplyr"><i class="fa fa-check"></i><b>1.12.2</b> O pacote <em>dplyr</em></a></li>
+</ul></li>
 <li class="chapter" data-level="1.13" data-path="intro.html"><a href="intro.html#funcoes-matematicas"><i class="fa fa-check"></i><b>1.13</b> Funções Matemáticas</a></li>
 <li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#conversao-e-manipulacao-de-datas"><i class="fa fa-check"></i><b>1.14</b> Conversão e manipulação de datas</a><ul>
 <li class="chapter" data-level="1.14.1" data-path="intro.html"><a href="intro.html#o-pacote-lubridate"><i class="fa fa-check"></i><b>1.14.1</b> O pacote <em>lubridate</em></a></li>
@@ -277,7 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Felipe Micail da Silva Smolski</em></p>
 
 <p>Muitas vezes há a necessidade de estudar duas ou mais variáveis ao mesmo tempo com o objetivo de predizer uma variável em função da(s) outra(s). Por exemplo, verificar se sólidos removidos de um material relaciona-se com o tempo de secagem e qual é a forma dessa relação. Outros exemplos: relação entre tempo de estudo e desempenho a uma avaliação; relação entre investimento em comunicação e vendas; entre outros.</p>
-<p>A análise de correlação permite verificar a relação entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Estudaremos os modelos de regressão linear na qual a variáveis resposta (<span class="math inline">\(Y\)</span>) é quantitativa e as variáveis preditoras (<span class="math inline">\(X_i\)</span>) são quantitativas ou qualitativas.</p>
+<p>A análise de correlação permite verificar a relação entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Serão estudados os modelos de regressão linear na qual a variáveis resposta (<span class="math inline">\(Y\)</span>) é quantitativa e as variáveis preditoras (<span class="math inline">\(X_i\)</span>) são quantitativas ou qualitativas.</p>
 <div id="correlacao-linear" class="section level2">
 <h2><span class="header-section-number">5.1</span> Correlação linear</h2>
 <p>É a técnica mais simples para estudar a relação entre duas variáveis. Os dados compõem uma única amostra de pares de valores (<span class="math inline">\(x_i, y_i\)</span>), correspondendo aos valores das variáveis X e Y, respectivamente, feitas em cada elemento da amostra. Para analisar a existência de relação entre as duas variáveis, primeiramente pode-se fazer o Diagrama de Dispersão.</p>
@@ -362,8 +365,8 @@ Figura 5.1: Diagramas de Dispersão
 nota=<span class="kw">c</span>(<span class="fl">5.5</span>,<span class="fl">7.5</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="fl">8.1</span>,<span class="fl">8.6</span>,<span class="fl">4.7</span>,<span class="fl">7.5</span>,<span class="fl">9.5</span>,<span class="fl">9.5</span>,<span class="fl">7.8</span>,<span class="dv">8</span>,<span class="fl">9.1</span>,<span class="fl">9.5</span>,<span class="dv">8</span>)</code></pre>
 <p>O diagrama de dispersão do exemplo está representado abaixo.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(tempo,nota)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-141"></span>
-<img src="index_files/figure-html/unnamed-chunk-141-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-162"></span>
+<img src="index_files/figure-html/unnamed-chunk-162-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
 <p class="caption">
 Figura 5.2: Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo
 </p>
@@ -604,8 +607,8 @@ F-statistic: 74.2 on 1 and 13 DF,  p-value: 9.88e-07</code></pre>
 <p>Para o exemplo:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(nota<span class="op">~</span>tempo)
 <span class="kw">abline</span>(<span class="kw">coef</span>(regressao))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-145"></span>
-<img src="index_files/figure-html/unnamed-chunk-145-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-166"></span>
+<img src="index_files/figure-html/unnamed-chunk-166-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
 <p class="caption">
 Figura 5.4: Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa
 </p>
@@ -635,7 +638,7 @@ Figura 5.5: Gráficos para análise de resíduos em regressão
 </p>
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
-<p>O primeiro gráfico de resíduos que podemos elaborar é para representar os valores ajustados pela equação de regressão ajustada no eixo x e os valores dos resíduos no eixo y, conforme segue.</p>
+<p>O primeiro gráfico de resíduos que é possível elaborar é para representar os valores ajustados pela equação de regressão ajustada no eixo x e os valores dos resíduos no eixo y, conforme segue.</p>
 <p>Sintaxe no software R:</p>
 <p><code>plot(fitted(regressao),residuals(regressao),</code></p>
 <p><code>xlab="Valores ajustados",ylab="Resíduos")</code></p>
@@ -702,8 +705,8 @@ Figura 5.8: Gráfico de probabilidade normal para verificar normalidade dos res�
       <span class="dt">col =</span> <span class="st">&quot;lightgreen&quot;</span>,
       <span class="dt">probability =</span> <span class="ot">TRUE</span>)
 <span class="kw">lines</span>(<span class="kw">density</span>(regressao<span class="op">$</span>residuals))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-148"></span>
-<img src="index_files/figure-html/unnamed-chunk-148-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-169"></span>
+<img src="index_files/figure-html/unnamed-chunk-169-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
 <p class="caption">
 Figura 5.9: Histograma de distribuição da probabilidade para os resíduos
 </p>
@@ -794,7 +797,7 @@ Figura 5.12: Pontos influentes para o exemplo
 </div>
 <div id="intervalo-de-predicao" class="section level2">
 <h2><span class="header-section-number">5.10</span> Intervalo de Predição</h2>
-<p>Após o ajuste da equação de regressão linear simples, verificada a significância da equação (p <span class="math inline">\(&lt;\)</span> 0,05) e verificada que a equação estimada se ajusta bem aos dados pelo valor do coeficiente de determinação então podemos utilizar a para predizer valores da variável Y (resposta) a partir de valores da variável X (explicativa). Caso a regressão não seja significativa a melhor predição para a variável Y é média dos valores de <span class="math inline">\(y\)</span>, ou seja, <span class="math inline">\(\hat{y}\)</span>.</p>
+<p>Após o ajuste da equação de regressão linear simples, verificada a significância da equação (p <span class="math inline">\(&lt;\)</span> 0,05) e verificada que a equação estimada se ajusta bem aos dados pelo valor do coeficiente de determinação então é possível predizer valores da variável Y (resposta) a partir de valores da variável X (explicativa). Caso a regressão não seja significativa a melhor predição para a variável Y é média dos valores de <span class="math inline">\(y\)</span>, ou seja, <span class="math inline">\(\hat{y}\)</span>.</p>
 <p>A predição de valores só tem sentido nos seguintes casos:</p>
 <ul>
 <li>regressão significativa;</li>

@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-02-17">
+<meta name="date" content="2019-02-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -167,7 +167,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.11.3" data-path="intro.html"><a href="intro.html#listas"><i class="fa fa-check"></i><b>1.11.3</b> Listas</a></li>
 <li class="chapter" data-level="1.11.4" data-path="intro.html"><a href="intro.html#data-frames"><i class="fa fa-check"></i><b>1.11.4</b> Data frames</a></li>
 </ul></li>
-<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a></li>
+<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a><ul>
+<li class="chapter" data-level="1.12.1" data-path="intro.html"><a href="intro.html#o-pacote-tidyr"><i class="fa fa-check"></i><b>1.12.1</b> O pacote <em>tidyr</em></a></li>
+<li class="chapter" data-level="1.12.2" data-path="intro.html"><a href="intro.html#o-pacote-dplyr"><i class="fa fa-check"></i><b>1.12.2</b> O pacote <em>dplyr</em></a></li>
+</ul></li>
 <li class="chapter" data-level="1.13" data-path="intro.html"><a href="intro.html#funcoes-matematicas"><i class="fa fa-check"></i><b>1.13</b> Funções Matemáticas</a></li>
 <li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#conversao-e-manipulacao-de-datas"><i class="fa fa-check"></i><b>1.14</b> Conversão e manipulação de datas</a><ul>
 <li class="chapter" data-level="1.14.1" data-path="intro.html"><a href="intro.html#o-pacote-lubridate"><i class="fa fa-check"></i><b>1.14.1</b> O pacote <em>lubridate</em></a></li>
@@ -275,7 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Felipe Micail da Silva Smolski</em></p>
 <p><em>Djaina Sibiani Rieger</em></p>
 
-<p>O R é um ambiente voltado para análise de dados com o uso de uma linguagem de programação, frente a isso um conhecimento prévio dos príncipios de programação facilita a compreensão da condução das análises aplicadas no software. Entretanto, não é pré-requisito. Neste capítulo abordaremos os primeiros passos para o emprego da linguagem de programação R utilizando uma interface “amigável” - o software RStudio. Além disso, serão apresentados os comandos básicos para a manipulação de dados dentro do RStudio.</p>
+<p>O R é um ambiente voltado para análise de dados com o uso de uma linguagem de programação, frente a isso um conhecimento prévio dos príncipios de programação facilita a compreensão da condução das análises aplicadas no software. Entretanto, não é pré-requisito. Neste capítulo serão abordados os primeiros passos para o emprego da linguagem de programação R utilizando uma interface “amigável” - o software RStudio. Além disso, serão apresentados os comandos básicos para a manipulação de dados dentro do RStudio.</p>
 <div id="download-e-instalacao-do-r-e-rstudio" class="section level2">
 <h2><span class="header-section-number">1.1</span> Download e instalação do R e Rstudio</h2>
 <p><strong>R</strong>: <a href="http://www.r-project.org" class="uri">http://www.r-project.org</a>. Clique em Download (CRAN) - escolha o link de um repositório - clique no link do sistema operacional (Linux, Mac ou Windows) - clique em <em>install R for de first time - Download</em> <span class="citation">(R Core Team <a href="#ref-rcore">2018</a>)</span>.</p>
@@ -305,11 +308,11 @@ Figura 1.1: Painéis do Rstudio
 </div>
 <div id="help" class="section level2">
 <h2><span class="header-section-number">1.3</span> Help</h2>
-<p>Acessamos a ajuda do RStudio por meio do comando <code>help()</code>, através da aba “Help” ou ao clicar no nome do pacote. Pode-se digitar a ajuda que usuário necessita (exemplo <code>help("summary")</code>), ou diretamente no colsole digitamos ? e a função desejada, exemplo: <code>?mean</code>.</p>
+<p>A ajuda do RStudio é acessada por meio do comando <code>help()</code>, através da aba “Help” ou ao clicar no nome do pacote. Pode-se digitar a ajuda que usuário necessita (exemplo <code>help("summary")</code>), ou diretamente no console digita-se ? e a função desejada, exemplo: <code>?mean</code>.</p>
 </div>
 <div id="instalacao-de-pacotes" class="section level2">
 <h2><span class="header-section-number">1.4</span> Instalação de pacotes</h2>
-<p>Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, e para isso se faz necessário efetuar a sua instalação. Precisamos ir até o painel dos pacotes em <em>packages</em>, selecionar a opção instalar e inserir o nome do pacote desejado na janela indicada. Ao selecionar a opção instalar, no console receberemos informações do procedimento e do sucesso do mesmo.</p>
+<p>Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, e para isso se faz necessário efetuar a sua instalação. É preciso ir até o painel dos pacotes em <em>packages</em>, selecionar a opção instalar e inserir o nome do pacote desejado na janela indicada. Ao selecionar a opção instalar, no console são demonstradas informações do procedimento e do sucesso do mesmo.</p>
 <div class="figure" style="text-align: center"><span id="fig:pacotes1"></span>
 <img src="pacotes1.png" alt="Instalação de pacotes" width="70%" />
 <p class="caption">
@@ -352,7 +355,7 @@ Figura 1.4: Aba Import Dataset
 </p>
 </div>
 <p>Fonte: Elaborado pelo(s) autor(es).</p>
-<p>Na caixa correspondente a File/Url se insere o endereço virtual ou o local onde se encontra o arquivo. Ao importar os dados, carrega-se um objeto criado com as informações contidas no arquivo. No nosso exeplo, carregamos a planilha arvores (arquivo .xls) como mostra a Figura <a href="intro.html#fig:r4">1.5</a>, derivado do caminho “Import Dataset <span class="math inline">\(&gt;\)</span> From Excel” do Environment.</p>
+<p>Na caixa correspondente a File/Url se insere o endereço virtual ou o local onde se encontra o arquivo. Ao importar os dados, carrega-se um objeto criado com as informações contidas no arquivo. Neste exemplo, é carregada a planilha <code>arvores</code> (arquivo .xls) como mostra a Figura <a href="intro.html#fig:r4">1.5</a>, derivado do caminho “Import Dataset <span class="math inline">\(&gt;\)</span> From Excel” do Environment.</p>
 <div class="figure" style="text-align: center"><span id="fig:r4"></span>
 <img src="r4.png" alt="Caixa de informações do Import Data" width="70%" />
 <p class="caption">
@@ -417,7 +420,7 @@ Figura 1.7: Atalho para abrir e salvar arquivo de dados
 <h2><span class="header-section-number">1.8</span> Operações</h2>
 <div id="operacoes-aritmeticas" class="section level3">
 <h3><span class="header-section-number">1.8.1</span> Operações Aritméticas</h3>
-<p>A realização de uma operação aritmética no R acontece da seguinte forma: onde a resolução das operações segue o padrão, ou seja, primeiro exponenciações, seguido de multiplicações e divisões, deixando por ultimo adições e subtrações, de acordo com a ordem que estão dispostas. Para alterar a prioridade da resolução de operações fazemos o uso do parenteses para destacar a operação que deve ser prioritária na resolução. Seguem alguns exemplos efetuados diretamente no console do RStudio:</p>
+<p>A realização de uma operação aritmética no R acontece da seguinte forma: onde a resolução das operações segue o padrão, ou seja, primeiro exponenciações, seguido de multiplicações e divisões, deixando por ultimo adições e subtrações, de acordo com a ordem que estão dispostas. Utiliza-se o parênteses para destacar a operação que deve ser prioritária na resolução. Seguem alguns exemplos efetuados diretamente no console do RStudio:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># soma</span>
 <span class="dv">19</span><span class="op">+</span><span class="dv">26</span></code></pre>
 <pre><code>[1] 45</code></pre>
@@ -489,7 +492,7 @@ Figura 1.7: Atalho para abrir e salvar arquivo de dados
 </div>
 <div id="criacao-de-objetos" class="section level2">
 <h2><span class="header-section-number">1.9</span> Criação de objetos</h2>
-<p>A linguagem de programação R se configura em uma linguagem orientada a objetos, ou seja, a todo tempo estamos criando diversos tipos de objetos e efetuando operações com os mesmos. Por exemplo, a criação de listas, bases de dados, união de bases de dados, data.frames e até mesmo mapas!</p>
+<p>A linguagem de programação R se configura em uma linguagem orientada a objetos, ou seja, a todo tempo estão sendo criados diversos tipos de objetos e sendo efetuadas operações com os mesmos. Por exemplo, a criação de listas, bases de dados, união de bases de dados, data.frames e até mesmo mapas!</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Criando um objeto simples</span>
 objeto =<span class="st"> &quot;meu primeiro objeto&quot;</span> <span class="co">#enter</span>
 <span class="co">#Agora para retomar o objeto criado:</span>
@@ -506,7 +509,7 @@ a</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Remover um banco de dados</span>
 <span class="kw">rm</span>(a)</code></pre>
 <p><strong>Conversão de uma variável</strong></p>
-<p>Para a aplicação de algumas funções é importante que cada variável esteja corretamente classificada, o que em alguns casos não ocorre durante o reconhecimento automático do R. Precisamos então reconhecê-la como variável texto, numérica ou fator. Além disso, a classe ordered se aplica a variáveis categóricas que podem ser consideradas ordenáveis.</p>
+<p>Para a aplicação de algumas funções é importante que cada variável esteja corretamente classificada, o que em alguns casos não ocorre durante o reconhecimento automático do R. É preciso então reconhecê-la como variável texto, numérica ou fator. Além disso, a classe <code>ordered</code> se aplica a variáveis categóricas que podem ser consideradas ordenáveis.</p>
 <pre class="sourceCode r"><code class="sourceCode r">idade=<span class="kw">c</span>(<span class="st">&#39;11&#39;</span>, <span class="st">&#39;12&#39;</span>, <span class="st">&#39;31&#39;</span>)
 nomes=<span class="kw">c</span>(<span class="st">&quot;Elisa&quot;</span>, <span class="st">&quot;Priscila&quot;</span>, <span class="st">&quot;Carol&quot;</span>)
 cep=<span class="kw">c</span>(<span class="dv">98700000</span>,<span class="dv">98701000</span>,<span class="dv">98702000</span>)
@@ -519,8 +522,8 @@ cep</code></pre>
 </div>
 <div id="algumas-funcoes-e-comandos-essenciais" class="section level2">
 <h2><span class="header-section-number">1.10</span> Algumas funções e comandos essenciais</h2>
-<p>A função <code>head()</code> mostra as 6 primeiras colunas do arquivo para se ter uma noção do conteúdo. No caso do mesmo ser um data.frame, podemos solicitar o número de valores ou linhas a serem mostrados no console através do parâmetro n ou na ausência deste, todas as linhas serão impressas, como exemplo <code>head(x ,n=2)</code> para ver as duas primeiras linhas.</p>
-<p>O comando <code>summary()</code> efetua o resumo dos dados, se for qualitativa mostra a frequência absoluta das categorias e se for quantitativa apresenta as categorias. No exemplo abaixo trabalharemos com uma base de dados de treinamento denominada “iris” que está acessível no <em>software</em> RStudio através do comando que carrega dados específicos <code>data()</code>:</p>
+<p>A função <code>head()</code> mostra as 6 primeiras colunas do arquivo para se ter uma noção do conteúdo. No caso do mesmo ser um data.frame, é possível solicitar o número de valores ou linhas a serem mostrados no console através do parâmetro <code>n</code> ou na ausência deste, todas as linhas serão impressas, como exemplo <code>head(x ,n=2)</code> para ver as duas primeiras linhas.</p>
+<p>O comando <code>summary()</code> efetua o resumo dos dados, se for qualitativa mostra a frequência absoluta das categorias e se for quantitativa apresenta as categorias. No exemplo abaixo é utilizada uma base de dados de treinamento denominada “iris” que está acessível no <em>software</em> RStudio através do comando que carrega dados específicos <code>data()</code>:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Carregando dados da base do RSdudio iris.</span>
 <span class="kw">data</span>(iris)
 
@@ -576,11 +579,11 @@ Species :  Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">View</span>(iris)
 <span class="kw">dim</span>(iris)</code></pre>
 <pre><code>[1] 150   5</code></pre>
-<p>Para alterar um nome de uma variável pode ser utilizado o comando colnames. No exemplo acima, vamos alterar o nome da coluna “Species” para “Especie”.</p>
+<p>Para alterar um nome de uma variável pode ser utilizado o comando colnames. No exemplo, é alterado o nome da coluna “Species” para “Especie”.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Alterar o nome da coluna, sendo que o &#39;[5]&#39; indica que está na quinta coluna.</span>
 <span class="kw">colnames</span>(iris)[<span class="dv">5</span>]=<span class="st">&#39;Especie&#39;</span></code></pre>
-<p>Para selecionarmos uma coluna do objeto “iris”, por exemplo a coluna “Sepal.Length”, poderíamos digitar no console o comando <strong>iris$Sepal.Length</strong>. O padrão de carregamento da base de dados nos obriga a dizer ao R qual é a base que quer selecionar (iris), inserindo o símbolo <code>$</code> e após o nome da coluna a qual deseja as informações. Para criar um novo objeto com esta informação, basta dizer ao R, como já visto acima, por exemplo: <strong>novoobjeto=iris$novacoluna</strong>.</p>
-<p>No entanto, para acessar os dados sem o uso do símbolo <code>$</code>, podemos usar o seguinte comando: <strong>attach(iris)</strong>. Assim, podemos efetuar o sumário da coluna “Petal.Width”:</p>
+<p>Para selecionar uma coluna do objeto “iris”, por exemplo a coluna “Sepal.Length”, pode-se digitar no console o comando <strong>iris$Sepal.Length</strong>. O padrão de carregamento da base de dados nos obriga a dizer ao R qual é a base que quer selecionar (iris), inserindo o símbolo <code>$</code> e após o nome da coluna a qual deseja as informações. Para criar um novo objeto com esta informação, basta dizer ao R, como já visto acima, por exemplo: <strong>novoobjeto=iris$novacoluna</strong>.</p>
+<p>No entanto, para acessar os dados sem o uso do símbolo <code>$</code>, é utilizado o seguinte comando: <strong>attach(iris)</strong>. Assim, é possível efetuar o sumário da coluna “Petal.Width”:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Definindo a função attach para o objeto &#39;dados&#39;.</span>
 <span class="kw">attach</span>(iris)
 <span class="co">#Efetuando o sumário de &#39;pop.total&#39;.</span>
@@ -595,7 +598,7 @@ Species :  Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 
 </div>
 <div id="funcao-tapply" class="section level3">
 <h3><span class="header-section-number">1.10.2</span> Função <em>tapply</em></h3>
-<p>O comando <code>tapply()</code> agrega os dados pelos níveis das variáveis qualitativas. Note que a coluna “Especie” possui dados em forma de fatores. Assim, para filtrarmos a informação (coluna “Sepal.Length”) média por Especie, podemos utilizar:</p>
+<p>O comando <code>tapply()</code> agrega os dados pelos níveis das variáveis qualitativas. Note que a coluna “Especie” possui dados em forma de fatores. Assim, para filtrar a informação (coluna “Sepal.Length”) média por <code>Especie</code>, é possível utilizar:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Função &#39;tapply&#39;, número médio da população total por distrito.</span>
 <span class="kw">tapply</span>(Sepal.Length, Especie, mean)</code></pre>
 <pre><code>    setosa versicolor  virginica 
@@ -612,7 +615,7 @@ Species :  Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 
 </div>
 <div id="funcao-subset" class="section level3">
 <h3><span class="header-section-number">1.10.3</span> Função <em>subset</em></h3>
-<p>Utiliza-se o comando <code>subset()</code> para formar um subconjunto de dados o qual desejamos selecionar de um objeto. Por exemplo, se quisermos criar um novo objeto com somente os dados da “Especie” setosa:</p>
+<p>Utiliza-se o comando <code>subset()</code> para formar um subconjunto de dados o qual deseja-se selecionar de um objeto. Por exemplo, se a intensão é criar um novo objeto com somente os dados filtrados da “Especie” denominada “setosa”:</p>
 <pre class="sourceCode r"><code class="sourceCode r">dadossetosa=<span class="kw">subset</span>(iris, Especie<span class="op">==</span><span class="st">&#39;setosa&#39;</span>)
 <span class="kw">head</span>(dadossetosa)</code></pre>
 <pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Especie
@@ -622,7 +625,7 @@ Species :  Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 
 4          4.6         3.1          1.5         0.2  setosa
 5          5.0         3.6          1.4         0.2  setosa
 6          5.4         3.9          1.7         0.4  setosa</code></pre>
-<p>Pode ser configurado mais de uma condição para a filtragem dos dados, por exemplo, além de serem filtrados os dados referentes a Especie setosa, aquelas na qual o Sepal.Length é superior a 5. Como no exemplo, criamos um novo objeto com estas condições:</p>
+<p>Pode ser configurado mais de uma condição para a filtragem dos dados, por exemplo, além de serem filtrados os dados referentes a Especie setosa, aquelas na qual o Sepal.Length é superior a 5. Como no exemplo, é criado um novo objeto com estas condições:</p>
 <pre class="sourceCode r"><code class="sourceCode r">dadossetosa2=<span class="kw">subset</span>(iris, Especie<span class="op">==</span><span class="st">&#39;setosa&#39;</span><span class="op">&amp;</span><span class="st"> </span>Sepal.Length<span class="op">&gt;</span><span class="dv">5</span>)
 <span class="kw">head</span>(dadossetosa2)</code></pre>
 <pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Especie
@@ -636,10 +639,10 @@ Species :  Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 
 <div id="funcao-table" class="section level3">
 <h3><span class="header-section-number">1.10.4</span> Função <em>table</em></h3>
 <p>Para contar elementos em cada nível de um fator, usa-se a função <code>table()</code>. A função pode fazer tabulações cruzadas, gerando uma tabela de contingência, esse tipo de tabela é usado para registrar observações independentes de duas ou mais variáveis aleatórias.</p>
-<p>Para exemplo da utilização da função <code>table</code> agora com dados qualitativos (gênero e saúde), vamos utilizar a base de dados <code>cdc</code>:</p>
+<p>Para exemplo da utilização da função <code>table</code> agora com dados qualitativos (gênero e saúde), é utilizada a base de dados <code>cdc</code>:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Carregando a base</span>
 <span class="kw">source</span>(<span class="st">&quot;http://www.openintro.org/stat/data/cdc.R&quot;</span>)
-<span class="co">#Vizualizamos as primeiras linhas</span>
+<span class="co">#Vizualiza-se as primeiras linhas</span>
 <span class="kw">head</span>(cdc)</code></pre>
 <pre><code>    genhlth exerany hlthplan smoke100 height weight wtdesire age gender
 1      good       0        1        0     70    175      175  77      m
@@ -648,7 +651,7 @@ Species :  Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 
 4      good       1        1        0     66    132      124  42      f
 5 very good       0        1        0     61    150      130  55      f
 6 very good       1        1        0     64    114      114  55      f</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Efetuamos a contagem dos dados qualitativos com a função table</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Efetua-se a contagem dos dados qualitativos com a função table</span>
 <span class="kw">table</span>(cdc<span class="op">$</span>genhlth,cdc<span class="op">$</span>gender)</code></pre>
 <pre><code>           
                m    f
@@ -795,7 +798,7 @@ lista</code></pre>
 $vetor
 [1] 1 2 3 4 5 6</code></pre>
 <p><strong>Comandos para manipulação de listas</strong></p>
-<p>Para descobrirmos de maneira rápida o números de objetos que há na lista, utilizamos o comando <code>length(nomedalista)</code>.</p>
+<p>Para descobrir de maneira rápida o números de objetos que há na lista, utiliza-se o comando <code>length(nomedalista)</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">lista</code></pre>
 <pre><code>$matriz
      [,1] [,2]
@@ -810,7 +813,7 @@ $vetor
 <p>O uso do comando <code>names(nomedalista)</code> retorna os nomes dos objetos que estão presentes na lista.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(lista)</code></pre>
 <pre><code>[1] &quot;matriz&quot; &quot;vetor&quot; </code></pre>
-<p>Para chamar várias listas através usamos o comando da seguinte forma:</p>
+<p>Para chamar várias listas utiliza-se o comando da seguinte forma:</p>
 <p><code>c(nome1, nome2)</code></p>
 <pre class="sourceCode r"><code class="sourceCode r">lista<span class="fl">.1</span>=<span class="st"> </span><span class="kw">list</span>(<span class="dt">matriz=</span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>), <span class="dt">nrow=</span><span class="dv">3</span>, <span class="dt">ncol=</span><span class="dv">2</span>),
               <span class="dt">vetor=</span><span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)
@@ -834,7 +837,7 @@ $idade
 </div>
 <div id="data-frames" class="section level3">
 <h3><span class="header-section-number">1.11.4</span> Data frames</h3>
-<p>Com a função <code>data.frame()</code> reunimos vetores de mesmo comprimento em um só objeto. Neste caso são criadas tabelas de dados. Cada observação é descrita por um conjunto de propriedades. Abaixo podemos ver como inserir os dados para criar a “tabela”. Similar como matrizes, porem diferentes colunas podem possuir elementos de natureza diferentes .</p>
+<p>Com a função <code>data.frame()</code> reunimos vetores de mesmo comprimento em um só objeto. Neste caso são criadas tabelas de dados. Cada observação é descrita por um conjunto de propriedades. No exemplo abaixo é possível verificar como inserir os dados para criar a “tabela”. São similares como as matrizes, porém diferentes colunas podem possuir elementos de natureza diferentes.</p>
 <pre class="sourceCode r"><code class="sourceCode r">estudantes=<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Camila&quot;</span>, <span class="st">&quot;Pedro&quot;</span>, <span class="st">&quot;Marcelo&quot;</span>,<span class="st">&quot;Guilherme&quot;</span>)
 idade=<span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">17</span>,<span class="dv">17</span>,<span class="dv">18</span>)
 peso=<span class="kw">c</span>(<span class="dv">65</span>,<span class="dv">79</span>,<span class="dv">80</span>,<span class="dv">100</span>)
@@ -882,7 +885,7 @@ Figura 1.8: Editor de dados
 Figura 1.9: Acréscimo de uma nova coluna através do editor de dados
 </p>
 </div>
-<p>Logo, chamando o novo banco de dados, teremos:</p>
+<p>Logo, chamando o novo banco de dados, é obtido:</p>
 <pre class="sourceCode r"><code class="sourceCode r">informacoes<span class="fl">.2</span> </code></pre>
 <pre><code>  estudantes idade peso      cidades
 1     Camila    21   65   Nova Hartz
@@ -935,7 +938,7 @@ informacoes</code></pre>
 3    Marcelo    19   80     Soledade   1.90 22.16
 4      Pedro    19   79      Gramado   1.74 26.09</code></pre>
 <p>A classificação qualitativa das informações, com base em condições definidas pelo usuário podem ser facilmente efetuadas pelo comando <code>ifelse</code>. Para quem não tem intimidade com atributos de programação, este comando seleciona “se” (<em>if</em>) uma informação desejada é atendida, e cria uma rotina (<em>else</em>) que será aplicada “então”.</p>
-<p>No nosso exemplo, cria-se um objeto “classificacao” e se a coluna IMC conter dados acima de 25, será marcado como “peso normal”, sendo que do contrário, constará como “excesso de peso”. Após utilizamos o comando <code>cbind()</code> para unir os dois objetos pelas colunas. caso não queira utilizar o comando <code>cbind()</code>, poderia ser criado uma nova coluna com o nome do obetjo sendo “informacoes$classificacao”.</p>
+<p>No nosso exemplo, cria-se um objeto “classificacao” e se a coluna IMC conter dados acima de 25, será marcado como “peso normal”, sendo que do contrário, constará como “excesso de peso”. Após, utilizar o comando <code>cbind()</code> para unir os dois objetos pelas colunas. Caso não se deseje utilizar o comando <code>cbind()</code>, poderia ser criado uma nova coluna com o nome do obetjo sendo “informacoes$classificacao”.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Classificar qualitativamente informações em um determinado intervalo </span>
 classificacao=<span class="kw">ifelse</span>(informacoes<span class="op">$</span>Imc<span class="op">&lt;</span><span class="dv">25</span>, <span class="st">&quot;peso normal&quot;</span>,<span class="st">&quot;excesso de peso&quot;</span>)
 informacoes=<span class="kw">cbind</span>(informacoes, classificacao)
@@ -1037,7 +1040,7 @@ informacoes</code></pre>
 3       1
 4       0
 5       1</code></pre>
-<p>Outra forma de incluir informações adicionais nos <em>data frames</em> através de atributos é utilizando o pacote <code>dplyr</code>. Decide-se criar um campo “faixa etária”, sendo que aqueles indivíduos com idade acima de 21 chamaremos de “adulto” e do contrário “não adulto”.</p>
+<p>Outra forma de incluir informações adicionais nos <em>data frames</em> através de atributos é utilizando o pacote <code>dplyr</code>. Decide-se criar um campo “faixa etária”, sendo que aqueles indivíduos com idade acima de 21 serão chamados de “adulto” e do contrário “não adulto”.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(dplyr)</code></pre>
 <pre><code>Carregando pacotes exigidos: dplyr</code></pre>
 <pre><code>
@@ -1152,6 +1155,279 @@ informacoes</code></pre>
 <p>Para utilizar a função <code>rank</code> com os maiores valores em primeiro lugar:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rank</span>(<span class="op">-</span>informacoes<span class="op">$</span>Imc)</code></pre>
 <pre><code>[1] 5 1 4 2 3</code></pre>
+<!--
+# Manipulando bases de dados
+
+
+O objetivo deste capítulo é retomar alguns pacotes importantes no RStudio para a
+manipulação e transformação de grandes bases de dados que o pesquisador terá que manejar ao longo dos processos de análise.
+
+-->
+<div id="o-pacote-tidyr" class="section level3">
+<h3><span class="header-section-number">1.12.1</span> O pacote <em>tidyr</em></h3>
+<p>Nesta subseção será utilizado o pacote <code>tidyr</code> para demonstrar algumas funções que contribuem para a manipulação das bases de dados, tão importante no processo de preperação das informações para posterior análise. Serão utilizadas para demonstração as bases de dados existentes no próprio pacote.</p>
+<p>Abaixo segue uma demonstração das convenções a respeito das bases de dados. Desta forma verifica-se que cada variável é apresentada em sua respectiva coluna, bem como as observações são apresentadas em sua própria linha e portanto os valores constam em sua própria célula.</p>
+<div class="figure" style="text-align: center"><span id="fig:dados"></span>
+<img src="tidy-1.png" alt="Convenção sobre variáveis, observações e valores" width="70%" />
+<p class="caption">
+Figura 1.10: Convenção sobre variáveis, observações e valores
+</p>
+</div>
+<div id="funcao-spread" class="section level4">
+<h4><span class="header-section-number">1.12.1.1</span> Função <em>spread</em></h4>
+<p>A função <em>spread</em> é utilizada para transformar os valores constantes em uma coluna em nova configuração de colunas. Ainda, é possível determinar a transformação dos valores com o comando <code>convert = TRUE</code> informando o tipo de valores (doubles (numerics), integers, logicals, complexes, ou factors) nas colunas a serem criadas (comando <code>type.convert()</code>).</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(tidyr)</code></pre>
+<pre><code>Carregando pacotes exigidos: tidyr</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">table2</code></pre>
+<pre><code># A tibble: 12 x 4
+   country      year type            count
+   &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;           &lt;int&gt;
+ 1 Afghanistan  1999 cases             745
+ 2 Afghanistan  1999 population   19987071
+ 3 Afghanistan  2000 cases            2666
+ 4 Afghanistan  2000 population   20595360
+ 5 Brazil       1999 cases           37737
+ 6 Brazil       1999 population  172006362
+ 7 Brazil       2000 cases           80488
+ 8 Brazil       2000 population  174504898
+ 9 China        1999 cases          212258
+10 China        1999 population 1272915272
+11 China        2000 cases          213766
+12 China        2000 population 1280428583</code></pre>
+<p>Neste exemplo, a coluna <code>type</code> abriga os valores <code>cases</code> e <code>population</code>, as quais terão suas próprias colunas com seus respectivos valores:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">spread</span>(table2, type, count)</code></pre>
+<pre><code># A tibble: 6 x 4
+  country      year  cases population
+  &lt;chr&gt;       &lt;int&gt;  &lt;int&gt;      &lt;int&gt;
+1 Afghanistan  1999    745   19987071
+2 Afghanistan  2000   2666   20595360
+3 Brazil       1999  37737  172006362
+4 Brazil       2000  80488  174504898
+5 China        1999 212258 1272915272
+6 China        2000 213766 1280428583</code></pre>
+</div>
+<div id="funcao-gather" class="section level4">
+<h4><span class="header-section-number">1.12.1.2</span> Função <em>gather</em></h4>
+<p>Já a função <em>gather</em> realiza o processo oposto do comando <em>spread</em>, pois agrupa o valor de determinadas variável em uma chave comum.</p>
+<pre class="sourceCode r"><code class="sourceCode r">table4a</code></pre>
+<pre><code># A tibble: 3 x 3
+  country     `1999` `2000`
+* &lt;chr&gt;        &lt;int&gt;  &lt;int&gt;
+1 Afghanistan    745   2666
+2 Brazil       37737  80488
+3 China       212258 213766</code></pre>
+<p>Abaixo a transformação das variáveis <code>1999</code> e <code>2000</code> em uma única variável <code>year</code>, mantendo os valores inseridos na variável <code>cases</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gather</span>(table4a, <span class="st">&quot;year&quot;</span>, <span class="st">&quot;cases&quot;</span>, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>)</code></pre>
+<pre><code># A tibble: 6 x 3
+  country     year   cases
+  &lt;chr&gt;       &lt;chr&gt;  &lt;int&gt;
+1 Afghanistan 1999     745
+2 Brazil      1999   37737
+3 China       1999  212258
+4 Afghanistan 2000    2666
+5 Brazil      2000   80488
+6 China       2000  213766</code></pre>
+</div>
+<div id="funcao-separate" class="section level4">
+<h4><span class="header-section-number">1.12.1.3</span> Função <em>separate</em></h4>
+<p>A função <em>separate</em> é utilizada para partir uma determinada variável em novas variáveis da base de dados.</p>
+<pre class="sourceCode r"><code class="sourceCode r">table3</code></pre>
+<pre><code># A tibble: 6 x 3
+  country      year rate             
+* &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;            
+1 Afghanistan  1999 745/19987071     
+2 Afghanistan  2000 2666/20595360    
+3 Brazil       1999 37737/172006362  
+4 Brazil       2000 80488/174504898  
+5 China        1999 212258/1272915272
+6 China        2000 213766/1280428583</code></pre>
+<p>Neste exemplo, a variável <code>rate</code>, que está composta de duas informações separadas pelo caractere “<span class="math inline">\(/\)</span>”, será separada nas novas variáveis <code>cases</code> e <code>population</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">separate</span>(table3, rate, <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;cases&quot;</span>, <span class="st">&quot;population&quot;</span>),<span class="dt">sep =</span> <span class="st">&quot;/&quot;</span>)</code></pre>
+<pre><code># A tibble: 6 x 4
+  country      year cases  population
+  &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;     
+1 Afghanistan  1999 745    19987071  
+2 Afghanistan  2000 2666   20595360  
+3 Brazil       1999 37737  172006362 
+4 Brazil       2000 80488  174504898 
+5 China        1999 212258 1272915272
+6 China        2000 213766 1280428583</code></pre>
+<p>Da mesma forma é possível criar duas novas variáveis a partir do segundo caractere do valor que consta nas células utilizando o comando <code>sep=2</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">separate</span>(table3, year, <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;century&quot;</span>, <span class="st">&quot;year&quot;</span>), <span class="dt">sep =</span> <span class="dv">2</span>)</code></pre>
+<pre><code># A tibble: 6 x 4
+  country     century year  rate             
+  &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;            
+1 Afghanistan 19      99    745/19987071     
+2 Afghanistan 20      00    2666/20595360    
+3 Brazil      19      99    37737/172006362  
+4 Brazil      20      00    80488/174504898  
+5 China       19      99    212258/1272915272
+6 China       20      00    213766/1280428583</code></pre>
+</div>
+<div id="funcao-unite" class="section level4">
+<h4><span class="header-section-number">1.12.1.4</span> Função <em>unite</em></h4>
+<p>A função <code>unite</code> é oposta à função <em>separate</em>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">table5</code></pre>
+<pre><code># A tibble: 6 x 4
+  country     century year  rate             
+* &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;            
+1 Afghanistan 19      99    745/19987071     
+2 Afghanistan 20      00    2666/20595360    
+3 Brazil      19      99    37737/172006362  
+4 Brazil      20      00    80488/174504898  
+5 China       19      99    212258/1272915272
+6 China       20      00    213766/1280428583</code></pre>
+<p>Neste exemplo, recria a variável <code>new</code> a partir dos dados de <code>century</code> e <code>year</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unite</span>(table5, <span class="st">&quot;new&quot;</span>, century, year, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</code></pre>
+<pre><code># A tibble: 6 x 3
+  country     new   rate             
+  &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;            
+1 Afghanistan 1999  745/19987071     
+2 Afghanistan 2000  2666/20595360    
+3 Brazil      1999  37737/172006362  
+4 Brazil      2000  80488/174504898  
+5 China       1999  212258/1272915272
+6 China       2000  213766/1280428583</code></pre>
+</div>
+</div>
+<div id="o-pacote-dplyr" class="section level3">
+<h3><span class="header-section-number">1.12.2</span> O pacote <em>dplyr</em></h3>
+<p>O pacote <code>dplyr</code> é uma poderosa ferramenta para manipulação, criação e transformação de dados no RStudio, agregando agilidade e robustez para o processo de análise e preparação dos dados. Seguem a seguir algumas das principais funções do pacote com a utilização da base de dados nativa do RStudio <code>mtcars</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(mtcars)</code></pre>
+<pre><code>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+<div id="funcao-select" class="section level4">
+<h4><span class="header-section-number">1.12.2.1</span> Função <em>select</em></h4>
+<p>A função <code>select()</code> é utilizada para selecionar as variáveis de interesse do pesquisador, a partir de uma base de dados, neste caso a partir da base <code>mtcars</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+
+novo=<span class="kw">select</span>(mtcars, mpg, cyl)
+<span class="kw">head</span>(novo)</code></pre>
+<pre><code>                   mpg cyl
+Mazda RX4         21.0   6
+Mazda RX4 Wag     21.0   6
+Datsun 710        22.8   4
+Hornet 4 Drive    21.4   6
+Hornet Sportabout 18.7   8
+Valiant           18.1   6</code></pre>
+<p>No exemplo são selecionadas todas as variáveis excluindo <code>mpg</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">novo=<span class="kw">select</span>(mtcars, <span class="op">-</span><span class="kw">c</span>(mpg))
+<span class="kw">head</span>(novo)</code></pre>
+<pre><code>                  cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4           6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag       6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710          4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive      6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant             6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+<p>É possível selecionar uma sequência de variáveis a partir de seus nomes (utilidade semelhante a <code>select(mtcars, 2:5)</code>):</p>
+<pre class="sourceCode r"><code class="sourceCode r">novo=<span class="kw">select</span>(mtcars, cyl<span class="op">:</span>drat)
+<span class="kw">head</span>(novo)</code></pre>
+<pre><code>                  cyl disp  hp drat
+Mazda RX4           6  160 110 3.90
+Mazda RX4 Wag       6  160 110 3.90
+Datsun 710          4  108  93 3.85
+Hornet 4 Drive      6  258 110 3.08
+Hornet Sportabout   8  360 175 3.15
+Valiant             6  225 105 2.76</code></pre>
+</div>
+<div id="funcao-filter" class="section level4">
+<h4><span class="header-section-number">1.12.2.2</span> Função <em>filter</em></h4>
+<p>A Função <code>filter()</code> seleciona as variáveis da base de dados conforme atributos determinados pelo pesquisador:</p>
+<pre class="sourceCode r"><code class="sourceCode r">novo=<span class="kw">filter</span>(mtcars, hp<span class="op">&gt;</span><span class="dv">146</span>)
+<span class="kw">head</span>(novo)</code></pre>
+<pre><code>   mpg cyl  disp  hp drat   wt  qsec vs am gear carb
+1 18.7   8 360.0 175 3.15 3.44 17.02  0  0    3    2
+2 14.3   8 360.0 245 3.21 3.57 15.84  0  0    3    4
+3 16.4   8 275.8 180 3.07 4.07 17.40  0  0    3    3
+4 17.3   8 275.8 180 3.07 3.73 17.60  0  0    3    3
+5 15.2   8 275.8 180 3.07 3.78 18.00  0  0    3    3
+6 10.4   8 472.0 205 2.93 5.25 17.98  0  0    3    4</code></pre>
+<p>Abaixo o exemplo da utilização de mais de um critério de filtragem de dados:</p>
+<pre class="sourceCode r"><code class="sourceCode r">novo=<span class="kw">filter</span>(mtcars, hp<span class="op">&gt;</span><span class="dv">146</span> <span class="op">&amp;</span><span class="st"> </span>am<span class="op">==</span><span class="dv">1</span>)
+<span class="kw">head</span>(novo)</code></pre>
+<pre><code>   mpg cyl disp  hp drat   wt qsec vs am gear carb
+1 15.8   8  351 264 4.22 3.17 14.5  0  1    5    4
+2 19.7   6  145 175 3.62 2.77 15.5  0  1    5    6
+3 15.0   8  301 335 3.54 3.57 14.6  0  1    5    8</code></pre>
+</div>
+<div id="funcao-mutate" class="section level4">
+<h4><span class="header-section-number">1.12.2.3</span> Função <em>mutate</em></h4>
+<p>A função <code>mutate()</code> é utilizada para incluir informações ou variáveis na base de dados, como no exemplo abaixo a criação de uma nova variável denominada “novacol”, multiplicando por 100 a variável “mpg” que já consta na base:</p>
+<pre class="sourceCode r"><code class="sourceCode r">novo=<span class="kw">mutate</span>(mtcars, <span class="dt">novacol=</span>(mpg<span class="op">*</span><span class="dv">100</span>))
+<span class="kw">head</span>(novo)</code></pre>
+<pre><code>   mpg cyl disp  hp drat    wt  qsec vs am gear carb novacol
+1 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4    2100
+2 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4    2100
+3 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1    2280
+4 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1    2140
+5 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2    1870
+6 18.1   6  225 105 2.76 3.460 20.22  1  0    3    1    1810</code></pre>
+</div>
+<div id="funcao-summarise" class="section level4">
+<h4><span class="header-section-number">1.12.2.4</span> Função <em>summarise</em></h4>
+<p>A função <code>summarise()</code> é uma poderosa ferrarmenta para agregar sumarizações unindo diversos cálculos ao longo de uma base de dados:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summarise</span>(mtcars, 
+          <span class="dt">media.hp=</span><span class="kw">mean</span>(hp), 
+          <span class="dt">qtd.hp=</span><span class="kw">length</span>(hp),
+          <span class="dt">qtdunico.hp=</span><span class="kw">length</span>(<span class="kw">unique</span>(hp)))</code></pre>
+<pre><code>  media.hp qtd.hp qtdunico.hp
+1    146.7     32          22</code></pre>
+<p>Ainda, é possível agrupar as informações com a função <code>group_by()</code> ao mesmo tempo em que são efetuados cálculos adjacentes. No exemplo abaixo, agrupa-se o valor médio das variáveis “hp” e “wt”, bem como a quantidade de informações de cada variável (função <code>n()</code>), com relação ao agrupamento formado pela variável “cyl”:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summarise</span>(<span class="kw">group_by</span>(mtcars, <span class="dt">cyl.agrup=</span>cyl), 
+          <span class="dt">hp.medio=</span><span class="kw">mean</span>(hp), 
+          <span class="dt">wt.medio=</span><span class="kw">mean</span>(wt),
+          <span class="dt">qtd=</span><span class="kw">n</span>())</code></pre>
+<pre><code># A tibble: 3 x 4
+  cyl.agrup hp.medio wt.medio   qtd
+      &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
+1         4     82.6     2.29    11
+2         6    122.      3.12     7
+3         8    209.      4.00    14</code></pre>
+</div>
+<div id="funcao-count" class="section level4">
+<h4><span class="header-section-number">1.12.2.5</span> Função <em>count</em></h4>
+<p>A função <code>count()</code> é utilizada para sumarizar a contagem de determinados objetos dentro de uma variável do banco de dados:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">count</span>(mtcars, cyl)</code></pre>
+<pre><code># A tibble: 3 x 2
+    cyl     n
+  &lt;dbl&gt; &lt;int&gt;
+1     4    11
+2     6     7
+3     8    14</code></pre>
+</div>
+<div id="funcao-arrange" class="section level4">
+<h4><span class="header-section-number">1.12.2.6</span> Função <em>arrange</em></h4>
+<p>A função <code>arrange</code> ordena a base de dados de acordo com o ordenamento da variável escolhida:</p>
+<pre class="sourceCode r"><code class="sourceCode r">novo=<span class="kw">arrange</span>(mtcars, cyl)
+<span class="kw">head</span>(novo)</code></pre>
+<pre><code>   mpg cyl  disp hp drat    wt  qsec vs am gear carb
+1 22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
+2 24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
+3 22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
+4 32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
+5 30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
+6 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1</code></pre>
+<p>Ainda é possível indicar mais de uma variável para este ordenamento, bem como utilizar a função <code>desc()</code> para organizar em ordem descrescente:</p>
+<pre class="sourceCode r"><code class="sourceCode r">novo=<span class="kw">arrange</span>(mtcars, mpg, <span class="kw">desc</span>(disp))
+<span class="kw">head</span>(novo)</code></pre>
+<pre><code>   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+1 10.4   8  472 205 2.93 5.250 17.98  0  0    3    4
+2 10.4   8  460 215 3.00 5.424 17.82  0  0    3    4
+3 13.3   8  350 245 3.73 3.840 15.41  0  0    3    4
+4 14.3   8  360 245 3.21 3.570 15.84  0  0    3    4
+5 14.7   8  440 230 3.23 5.345 17.42  0  0    3    4
+6 15.0   8  301 335 3.54 3.570 14.60  0  1    5    8</code></pre>
+</div>
+<div id="operador-pipe" class="section level4">
+<h4><span class="header-section-number">1.12.2.7</span> Operador <em>pipe</em></h4>
+</div>
+</div>
 </div>
 <div id="funcoes-matematicas" class="section level2">
 <h2><span class="header-section-number">1.13</span> Funções Matemáticas</h2>
@@ -1358,7 +1634,7 @@ Neste caso, irão utilizar o comando da seguinte forma >Nome_do_banco_de_dados$N
 <p><strong>1.6.</strong> Classifique as árvores quanto ao seu porte, em relação à altura, em que:</p>
 <p>Pequeno porte = árvores com altura inferior a 10 metros.</p>
 <p>Grande porte = árvores com altura superior a 10 metros.</p>
-<p><strong>2.</strong> Baixe o arquivo “bancodedados1” que se encontra no endereço <a href="https://smolski.github.io/softwarelivrer/livro.html" class="uri">https://smolski.github.io/softwarelivrer/livro.html</a>. Este é um banco de dados com informações fictícias que usaremos a fim de aprendizado. Abra o arquivo no Rstudio tomando os cuidados necessários. Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.</p>
+<p><strong>2.</strong> Baixe o arquivo “bancodedados1” que se encontra no endereço <a href="https://smolski.github.io/softwarelivrer/livro.html" class="uri">https://smolski.github.io/softwarelivrer/livro.html</a>. Este é um banco de dados com informações fictícias que serão utilizados a fim de aprendizado. Abra o arquivo no Rstudio tomando os cuidados necessários. Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.</p>
 <p><strong>2.1.</strong> Qual é o vendedor com mais sucesso de vendas? E o vendedor com menor número de vendas?
 Qual foi o número total de vendas?</p>
 <p><strong>2.3.</strong> Supondo que um vendedor tenha ficado de fora dos dados, insira suas informações no banco de dados que já possuímos.</p>

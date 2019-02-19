@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-02-17">
+<meta name="date" content="2019-02-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -167,7 +167,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.11.3" data-path="intro.html"><a href="intro.html#listas"><i class="fa fa-check"></i><b>1.11.3</b> Listas</a></li>
 <li class="chapter" data-level="1.11.4" data-path="intro.html"><a href="intro.html#data-frames"><i class="fa fa-check"></i><b>1.11.4</b> Data frames</a></li>
 </ul></li>
-<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a></li>
+<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a><ul>
+<li class="chapter" data-level="1.12.1" data-path="intro.html"><a href="intro.html#o-pacote-tidyr"><i class="fa fa-check"></i><b>1.12.1</b> O pacote <em>tidyr</em></a></li>
+<li class="chapter" data-level="1.12.2" data-path="intro.html"><a href="intro.html#o-pacote-dplyr"><i class="fa fa-check"></i><b>1.12.2</b> O pacote <em>dplyr</em></a></li>
+</ul></li>
 <li class="chapter" data-level="1.13" data-path="intro.html"><a href="intro.html#funcoes-matematicas"><i class="fa fa-check"></i><b>1.13</b> Funções Matemáticas</a></li>
 <li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#conversao-e-manipulacao-de-datas"><i class="fa fa-check"></i><b>1.14</b> Conversão e manipulação de datas</a><ul>
 <li class="chapter" data-level="1.14.1" data-path="intro.html"><a href="intro.html#o-pacote-lubridate"><i class="fa fa-check"></i><b>1.14.1</b> O pacote <em>lubridate</em></a></li>
@@ -285,7 +288,7 @@ Figura 3.1: Inferência Estatística
 <p>A <strong>amostra</strong> é um subconjunto, necessariamente finito, de uma população e é selecionada de forma que todos os elementos da população tenham a mesma chance de serem escolhidos.</p>
 <div id="intervalo-de-confianca" class="section level2">
 <h2><span class="header-section-number">3.1</span> Intervalo de Confiança</h2>
-<p>Entre as diferentes técnicas de Inferência Estatística, temos a Estimação de Parâmetros, que consiste na determinação de um <strong>Intervalo de Confiança (IC)</strong> para uma média ou proporção populacional, ao um nível (1 - <span class="math inline">\(\alpha\)</span>)% de confiança.</p>
+<p>Entre as diferentes técnicas de Inferência Estatística, têm-se a Estimação de Parâmetros, que consiste na determinação de um <strong>Intervalo de Confiança (IC)</strong> para uma média ou proporção populacional, ao um nível (1 - <span class="math inline">\(\alpha\)</span>)% de confiança.</p>
 <p>O nível de confiança (1 - <span class="math inline">\(\alpha\)</span>)% normalmente varia de 90% a 99%.</p>
 <div id="intervalo-de-confianca-para-uma-media-populacional" class="section level3">
 <h3><span class="header-section-number">3.1.1</span> Intervalo de confiança para uma média populacional</h3>
@@ -310,7 +313,7 @@ mean of x
      18.9 </code></pre>
 <p>IC (17,6 <span class="math inline">\(\leq\)</span> <span class="math inline">\(\mu\)</span> <span class="math inline">\(\leq\)</span> 20,2) = 95%</p>
 <p>Com 95% de confiança, a média populacional das horas semanais de estudo para a disciplina de Estatística Básica está entre 17,6 e 20,2 horas. Ou seja, qualquer aluno (de onde essa amostra foi retirada) estuda em média, de 17,6 a 20,2 horas por semana.</p>
-<p>Se não informarmos o nível de confiança, o software R considera 95%. No entanto, para mudar o nível de confiança para 90%, acrescentamos a informação <code>conf.level = 0.90</code> após o nome da variável:</p>
+<p>Se não for informado o nível de confiança, o software R considera 95%. No entanto, para mudar o nível de confiança para 90%, é acrescentada a informação <code>conf.level = 0.90</code> após o nome da variável:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(horasestudo, <span class="dt">conf.level =</span> <span class="fl">0.90</span>)</code></pre>
 <pre><code>
     One Sample t-test
@@ -343,7 +346,7 @@ mean of x
 </div>
 <div id="para-verificar-normalidade-dos-dados" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> Para verificar normalidade dos dados</h3>
-<p>Algumas técnicas de inferência estatística têm como requisitos a normalidade dos dados. Para verificar se os dados seguem uma distribuição normal, podemos, inicialmente usar o histograma e depois confirmar com um teste estatístico para testar normalidade como Shapiro-Wilk ou Kolmogorov-Smirnov.</p>
+<p>Algumas técnicas de inferência estatística têm como requisitos a normalidade dos dados. Para verificar se os dados seguem uma distribuição normal, é possível, inicialmente usar o histograma e depois confirmar com um teste estatístico para testar normalidade como Shapiro-Wilk ou Kolmogorov-Smirnov.</p>
 <p>Hipóteses do teste:</p>
 <ul>
 <li><strong><span class="math inline">\(H_0\)</span></strong>: os dados seguem uma distribuição normal</li>
@@ -372,7 +375,7 @@ W = 0.98, p-value = 0.9</code></pre>
 <p><code>prop.test(x,n,conf.level=nível de confiança)</code></p>
 <p>Em que:</p>
 <p>x = número de sucessos</p>
-<p>n= tamanho da amostra</p>
+<p>n = tamanho da amostra</p>
 <p>nível de confiança = 0,90 a 0,99</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(<span class="dv">260</span>,<span class="dv">500</span>)</code></pre>
 <pre><code>
@@ -435,7 +438,7 @@ sample estimates:
 <p><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu\)</span> <span class="math inline">\(=\)</span> ……</p>
 <p><span class="math inline">\(H_1\)</span>: <span class="math inline">\(\mu\)</span> <span class="math inline">\(&lt;\)</span> ……</p>
 <p>No software RStudio, usa-se o <code>t.test</code> para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar <span class="math inline">\(H_0\)</span>.</p>
-<p>De acordo com as hipóteses, temos variações do <code>t.test</code>, conforme segue:</p>
+<p>De acordo com as hipóteses, constam variações do <code>t.test</code>, conforme segue:</p>
 <p>sintaxe: <code>t.test(amostra, opções)</code></p>
 <ul>
 <li><strong>amostra</strong>: Vetor contendo a amostra da qual se quer testar a média populacional.</li>
@@ -594,12 +597,12 @@ sample estimates:
 Figura 3.3: Teste de hipótese para dois grupos
 </p>
 </div>
-<p>Podemos comparar duas médias de duas amostras dependentes, também chamadas de pareadas, ou médias de duas amostras independentes.</p>
+<p>É possível comparar duas médias de duas amostras dependentes, também chamadas de pareadas, ou médias de duas amostras independentes.</p>
 <div id="teste-de-hipoteses-duas-amostras-dependentes" class="section level4">
 <h4><span class="header-section-number">3.2.3.1</span> Teste de hipóteses duas amostras dependentes</h4>
 <p><strong>Exemplo 10</strong>: Foi obtido o peso de seis indivíduos antes e após um treinamento de exercício físico. Teste a hipótese de que a média antes do treinamento é diferente da média após o treinamento.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-122">Tabela 3.1: </span>Amostras dependentes</caption>
+<caption><span id="tab:unnamed-chunk-143">Tabela 3.1: </span>Amostras dependentes</caption>
 <thead>
 <tr class="header">
 <th align="left">Indivíduo</th>
@@ -632,7 +635,7 @@ Figura 3.3: Teste de hipótese para dois grupos
 </tr>
 </tbody>
 </table>
-<p>No software RStudio, usa-se o <code>t.test</code> para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de p-value para aceitar ou rejeitar <span class="math inline">\(H_0\)</span>.</p>
+<p>No software RStudio, é utilizado o <code>t.test</code> para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de <em>p-value</em> para aceitar ou rejeitar <span class="math inline">\(H_0\)</span>.</p>
 <p>Hipóteses:</p>
 <p><strong><span class="math inline">\(H_0\)</span></strong>: média antes <span class="math inline">\(=\)</span> média depois</p>
 <p><strong><span class="math inline">\(H_1\)</span></strong>: média antes <span class="math inline">\(\neq\)</span> média depois</p>
@@ -651,9 +654,9 @@ sample estimates:
 mean of the differences 
                   1.833 </code></pre>
 <p>Conclusão: Não rejeita-se <span class="math inline">\(H_0\)</span> e conclui-se que a média de peso antes do treinamento é igual à média de peso depois do treinamento.</p>
-<p><strong>Exemplo 11</strong>: (adaptado de &lt;www.inf.ufsc.br/~marcelo/testes2.html&gt;) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Podemos concluir que o uso da ração contribuiu para o aumento do peso médio dos animais?</p>
+<p><strong>Exemplo 11</strong>: (adaptado de &lt;www.inf.ufsc.br/~marcelo/testes2.html&gt;) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Pode-se concluir que o uso da ração contribuiu para o aumento do peso médio dos animais?</p>
 <table>
-<caption><span id="tab:unnamed-chunk-124">Tabela 3.2: </span>Amostras dependentes - caso 2</caption>
+<caption><span id="tab:unnamed-chunk-145">Tabela 3.2: </span>Amostras dependentes - caso 2</caption>
 <thead>
 <tr class="header">
 <th align="left">Cobaia</th>
@@ -718,13 +721,13 @@ mean of the differences
 </div>
 <div id="teste-de-hipoteses-duas-amostras-independentes" class="section level4">
 <h4><span class="header-section-number">3.2.3.2</span> Teste de hipóteses duas amostras independentes</h4>
-<p>Primeiramente precisamos saber se existe homogeneidade de variâncias populacionais, a qual poderá ser verificada por meio de um teste de homogeneidade de variâncias utilizando os dados das duas amostras.</p>
+<p>Primeiramente é preciso saber se existe homogeneidade de variâncias populacionais, a qual poderá ser verificada por meio de um teste de homogeneidade de variâncias utilizando os dados das duas amostras.</p>
 </div>
 <div id="teste-para-verificar-homogeneidade-de-variancias" class="section level4">
 <h4><span class="header-section-number">3.2.3.3</span> Teste para verificar homogeneidade de variâncias</h4>
 <p><strong>Exemplo 12</strong>: (adaptado de <a href="https://www.ime.unicamp.br/~hildete/Aula_p12.pdf" class="uri">https://www.ime.unicamp.br/~hildete/Aula_p12.pdf</a>) Dois tipos diferentes de tecido devem ser comparados. Uma máquina de testes pode comparar duas amostras ao mesmo tempo. O peso (em miligramas) para sete experimentos foram:</p>
 <table>
-<caption><span id="tab:unnamed-chunk-126">Tabela 3.3: </span>Comparação de dois tipos diferentes de tecidos</caption>
+<caption><span id="tab:unnamed-chunk-147">Tabela 3.3: </span>Comparação de dois tipos diferentes de tecidos</caption>
 <tbody>
 <tr class="odd">
 <td align="left">Tecido A</td>
@@ -766,7 +769,7 @@ sample estimates:
 ratio of variances 
             0.8389 </code></pre>
 <p>Conclusão: Não rejeita-se <span class="math inline">\(H_0\)</span> e conclui-se que as variâncias são homogêneas.</p>
-<p>Agora podemos realizar o teste de comparação de duas amostras independentes.</p>
+<p>Agora é possível realizar o teste de comparação de duas amostras independentes.</p>
 <p><strong><span class="math inline">\(H_0\)</span></strong>: média tecido A <span class="math inline">\(=\)</span> média tecido B</p>
 <p><strong><span class="math inline">\(H_1\)</span></strong>: média tecido A <span class="math inline">\(\neq\)</span> média tecido B</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(tecidoa, tecidob, <span class="dt">var.equal =</span> <span class="ot">TRUE</span>, <span class="dt">paired=</span><span class="ot">FALSE</span>)</code></pre>

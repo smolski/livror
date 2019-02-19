@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-02-17">
+<meta name="date" content="2019-02-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -167,7 +167,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.11.3" data-path="intro.html"><a href="intro.html#listas"><i class="fa fa-check"></i><b>1.11.3</b> Listas</a></li>
 <li class="chapter" data-level="1.11.4" data-path="intro.html"><a href="intro.html#data-frames"><i class="fa fa-check"></i><b>1.11.4</b> Data frames</a></li>
 </ul></li>
-<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a></li>
+<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a><ul>
+<li class="chapter" data-level="1.12.1" data-path="intro.html"><a href="intro.html#o-pacote-tidyr"><i class="fa fa-check"></i><b>1.12.1</b> O pacote <em>tidyr</em></a></li>
+<li class="chapter" data-level="1.12.2" data-path="intro.html"><a href="intro.html#o-pacote-dplyr"><i class="fa fa-check"></i><b>1.12.2</b> O pacote <em>dplyr</em></a></li>
+</ul></li>
 <li class="chapter" data-level="1.13" data-path="intro.html"><a href="intro.html#funcoes-matematicas"><i class="fa fa-check"></i><b>1.13</b> Funções Matemáticas</a></li>
 <li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#conversao-e-manipulacao-de-datas"><i class="fa fa-check"></i><b>1.14</b> Conversão e manipulação de datas</a><ul>
 <li class="chapter" data-level="1.14.1" data-path="intro.html"><a href="intro.html#o-pacote-lubridate"><i class="fa fa-check"></i><b>1.14.1</b> O pacote <em>lubridate</em></a></li>
@@ -424,7 +427,7 @@ Figura 6.14: Abstract no YAML
 </div>
 <div id="elementos-basicos-dos-chunks" class="section level2">
 <h2><span class="header-section-number">6.6</span> Elementos básicos dos Chunks</h2>
-<p>Os <strong>Code Chunks</strong>, como já visto, são espaços destinados à inclusão de códigos diretamente do RStudio, como se inseríssemos a informação em seu Console. Desta forma, por exemplo, se efetuarmos uma operação matemática ou se carregarmos uma base de dados para ser trabalhada, as rotinas serão efetuadas no momento em que for compilado o arquivo .Rmd trabalhado.</p>
+<p>Os <strong>Code Chunks</strong>, como já visto, são espaços destinados à inclusão de códigos diretamente do RStudio, como se a informação fosse inserida em seu Console. Desta forma, por exemplo, ao efetuar uma operação matemática ou ao ser carregada uma base de dados para ser trabalhada, as rotinas serão efetuadas no momento em que for compilado o arquivo .Rmd trabalhado.</p>
 <p>A criação das Chunks é feita manualmente no corpo do documento .Rmd pela inclusão do código demonstrado abaixo, ou via plataforma RStudio, no menu “Insert <span class="math inline">\(&gt;\)</span> Insert a new R chunk”, conforme demonstra a Figura <a href="rmark.html#fig:rmarkchunk1">6.15</a>:</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkchunk1"></span>
 <img src="rmarkchunk1.png" alt="Criação de Chunks" width="70%" />
@@ -464,7 +467,7 @@ Figura 6.17: Chunk global
 <li><strong>warning</strong> - Mostra avisos de advertência no documento (padrão = TRUE).</li>
 </ul>
 <p>Como mencionado no início deste capítulo, a grande vantagem do <strong>RMarkdown</strong> é a sua versatilidade na criação de documentos concatenados com as análises estatísticas no RStudio. Desta forma, dentro das Ckunks, podem ser criadas bases de dados, bem como importados de sites ou mesmo carregados de arquivos trabalhados previamente no RStudio.</p>
-<p>No exemplo abaixo, foi criado um <em>data frame</em> nomeado “amost” diretamente no console dentro da Chunk. Em um segundo momento, para utilizarmos um determinado pacote instalado no RStudio, utiliza-se, dentro da Chunk, o comando <code>require ()</code> juntamente com o pacote necessário. Podem ser inseridos tantos pacotes quanto forem utilizados no documento, conforme a Figura <a href="rmark.html#fig:rmarkchunk3">6.18</a>.</p>
+<p>No exemplo abaixo, foi criado um <em>data frame</em> nomeado “amost” diretamente no console dentro da Chunk. Em um segundo momento, para utilizar um determinado pacote instalado no RStudio, se insere, dentro da Chunk, o comando <code>require()</code> juntamente com o pacote necessário. Podem ser inseridos tantos pacotes quanto forem utilizados no documento, conforme a Figura <a href="rmark.html#fig:rmarkchunk3">6.18</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkchunk3"></span>
 <img src="rmarkchunk3.png" alt="Exemplo de criação de Chunk e carregamento de pacote" width="70%" />
 <p class="caption">
@@ -548,12 +551,12 @@ Figura 6.21: Exemplo de inserção de imagens pelos Chunks
 <p>Para os pesquisadores que trabalham intensamente com o Word ou Libre/Open Office, a formatação dos resultados decorrentes das análises compiladas no RMarkdown podem ser incrementadas. Isto porque existe um recurso de criação de modelos vinculados aos editores de texto, estes que serão responsáveis pela definição da formatação de todos os itens (títulos, subtítulos, parágrafos, fontes, etc.), como será visto a seguir.</p>
 <div id="primeiro-passo-criacao-de-um-documento-modelo" class="section level3">
 <h3><span class="header-section-number">6.7.1</span> Primeiro passo: criação de um documento modelo</h3>
-<p>Primeiramente deve-se criar um documento mínimo padrão que será utilizado como modelo. Crie um novo documento (Rmd), aqui denominaremos de ``modelo’’ (o usuário pode escolher o nome), que será salvo em .Rmd e gerado o respectivo arquivo Word (ou no formato .odt), na mesma pasta que o pesquisador salvar arquivos a serem formatados.</p>
+<p>Primeiramente deve-se criar um documento mínimo padrão que será utilizado como modelo. Crie um novo documento (Rmd), aqui será denominado de “modelo” (o usuário pode escolher o nome), que será salvo em .Rmd e gerado o respectivo arquivo Word (ou no formato .odt), na mesma pasta que o pesquisador salvar arquivos a serem formatados.</p>
 <p>Como já visto, para criação de documentos .Rmd clique em “File <span class="math inline">\(&gt;\)</span> New File <span class="math inline">\(&gt;\)</span> R Markdown”. Escolha o nome e salve na pasta escolhida. Gere o documento em Word (.docx) ou em outro arquivo de texto (exemplo .odt) em “File <span class="math inline">\(&gt;\)</span> Knit Document”.</p>
 </div>
 <div id="segundo-passo-formatacao-do-modelo" class="section level3">
 <h3><span class="header-section-number">6.7.2</span> Segundo passo: formatação do modelo</h3>
-<p>Abra o arquivo em Word (denominamos ``modelo.docx’’). Atente para a caixa de seleção de estilos do Word, que será trabalhado nesta etapa (Figura <a href="rmark.html#fig:rmarkestilos">6.22</a>).</p>
+<p>Abra o arquivo em Word (denominado “modelo.docx”). Atente para a caixa de seleção de estilos do Word, que será trabalhado nesta etapa (Figura <a href="rmark.html#fig:rmarkestilos">6.22</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:rmarkestilos"></span>
 <img src="rmarkestilos.png" alt="Caixa estilos no Word" width="70%" />
 <p class="caption">

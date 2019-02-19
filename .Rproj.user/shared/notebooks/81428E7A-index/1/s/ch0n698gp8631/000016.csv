@@ -1,3 +1,0 @@
-"0","# Criando nova variável do dia da venda"
-"0","data$dia=day(data$data)"
-"0","data"

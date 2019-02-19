@@ -1,2 +1,0 @@
-"0","# Valor das vendas por mês e dia da semana "
-"0","aggregate(valor ~ mes + diasem, data = data, sum)"

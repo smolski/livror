@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-02-17">
+<meta name="date" content="2019-02-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -167,7 +167,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.11.3" data-path="intro.html"><a href="intro.html#listas"><i class="fa fa-check"></i><b>1.11.3</b> Listas</a></li>
 <li class="chapter" data-level="1.11.4" data-path="intro.html"><a href="intro.html#data-frames"><i class="fa fa-check"></i><b>1.11.4</b> Data frames</a></li>
 </ul></li>
-<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a></li>
+<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a><ul>
+<li class="chapter" data-level="1.12.1" data-path="intro.html"><a href="intro.html#o-pacote-tidyr"><i class="fa fa-check"></i><b>1.12.1</b> O pacote <em>tidyr</em></a></li>
+<li class="chapter" data-level="1.12.2" data-path="intro.html"><a href="intro.html#o-pacote-dplyr"><i class="fa fa-check"></i><b>1.12.2</b> O pacote <em>dplyr</em></a></li>
+</ul></li>
 <li class="chapter" data-level="1.13" data-path="intro.html"><a href="intro.html#funcoes-matematicas"><i class="fa fa-check"></i><b>1.13</b> Funções Matemáticas</a></li>
 <li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#conversao-e-manipulacao-de-datas"><i class="fa fa-check"></i><b>1.14</b> Conversão e manipulação de datas</a><ul>
 <li class="chapter" data-level="1.14.1" data-path="intro.html"><a href="intro.html#o-pacote-lubridate"><i class="fa fa-check"></i><b>1.14.1</b> O pacote <em>lubridate</em></a></li>
@@ -278,7 +281,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!--Observando-se a Tabela \@ref(tab:qui2), o valor 33 corresponde ao sexo masculino e a opinião favorável (masculino $\bigcap $ favorável), é chamada de $O_{11}$.-->
 <div id="teste-de-qui-quadrado-para-verificar-associacao-entre-duas-variaveis-qualitativas" class="section level2">
 <h2><span class="header-section-number">4.1</span> Teste de qui-quadrado para verificar associação entre duas variáveis qualitativas</h2>
-<p><strong>Exemplo 1</strong>: Uma pesquisa sobre “a exposição a agrotóxicos entre trabalhadores rurais no município de Cerro Largo/RS” foi desenvolvida por Letiane Peccin Ristow, no ano de 2017 (dissertação e mestrado no Programa de Pós-Graduação em Desenvolvimento e Políticas Públicas da UFFS, Campus Cerro Largo. Na Tabela <a href="qui.html#tab:tamprop">4.1</a><!--\@ref(tab:qui2)--> são apresentados os resultados do “tamanho da propriedade” e “armazenamento seguro do EPI”. Para verificar a existência de associação significativa entre essas duas variáveis utilizamos o teste de qui-quadrado, dado que são duas variáveis qualitativas: variável 1 - tamanho da propriedade (até 25 ha; 26 ha ou mais) e variável 2 – armazenamento seguro (sim; não).</p>
+<p><strong>Exemplo 1</strong>: Uma pesquisa sobre “a exposição a agrotóxicos entre trabalhadores rurais no município de Cerro Largo/RS” foi desenvolvida por Letiane Peccin Ristow, no ano de 2017 (dissertação e mestrado no Programa de Pós-Graduação em Desenvolvimento e Políticas Públicas da UFFS, Campus Cerro Largo. Na Tabela <a href="qui.html#tab:tamprop">4.1</a><!--\@ref(tab:qui2)--> são apresentados os resultados do “tamanho da propriedade” e “armazenamento seguro do EPI”. Para verificar a existência de associação significativa entre essas duas variáveis é utilizado o teste de qui-quadrado, dado que são duas variáveis qualitativas: variável 1 - tamanho da propriedade (até 25 ha; 26 ha ou mais) e variável 2 – armazenamento seguro (sim; não).</p>
 <p>Primeiramente definimos as seguintes hipóteses estatísticas:</p>
 <p><span class="math inline">\(H_0\)</span>: não existe associação entre tamanho da propriedade e armazenamento seguro (as variáveis são independentes)</p>
 <p><span class="math inline">\(H_1\)</span>: existe associação entre tamanho da propriedade e armazenamento seguro (as variáveis são dependentes)</p>
@@ -326,17 +329,17 @@ em que:</p>
 <p><span class="math inline">\(E_{ij}\)</span>: frequência esperada na linha i e coluna j</p>
 <p>com grau de liberdade = <span class="math inline">\(gl = (c-1)(l-1)\)</span>.</p>
 <p>A frequência esperada de uma casela é obtida pela multiplicação do total da linha pelo total da coluna dividido pelo total geral. Por exemplo, a frequência esperada é igual ao total da coluna 1 multiplicada pelo total da linha 1 dividido pelo total geral, ou seja, (67x90)/112.</p>
-<p>Porém, é importante conhecermos as pressuposições do teste de qui-quadrado de Pearson. Para auxiliar no encaminhamento do teste adequado para verificar a relação de duas variáveis qualitativas, seguimos o seguinte check-list.</p>
+<p>Porém, é importante conhecer as pressuposições do teste de qui-quadrado de Pearson. Para auxiliar no encaminhamento do teste adequado para verificar a relação de duas variáveis qualitativas, seguimos o seguinte check-list.</p>
 </div>
 <div id="check-list-para-escolher-o-teste-adequado-para-verificar-a-relacao-entre-duas-variaveis-qualitativas" class="section level2">
 <h2><span class="header-section-number">4.2</span> Check list para escolher o teste adequado para verificar a relação entre duas variáveis qualitativas</h2>
 <ul>
-<li><p>O cálculo do teste de qui-quadrado deve ser somente com valores absolutos. Quando temos uma tabela 2x2, isto é, duas linhas e duas colunas, devemos utilizar o teste de qui-quadrado com correção de continuidade (correção de Yates). O motivo é que a distribuição de frequências observadas é discreta e está sendo aproximada pela distribuição qui-quadrado, que é contínua <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>.</p></li>
-<li>Não devemos aplicar o teste de qui-quadrado quando a frequência esperada em qualquer casela for menor que 5. Neste caso, devemos usar o teste exato de Fisher, para garantir o grau de certeza do teste.</li>
-<li>Quando temos duas amostras pareadas (duas amostras dependentes), utilizamos o teste de McNemar.</li>
-<li><p>Caso tenhamos interesse em avaliar a força da associação entre as duas variáveis, devemos utilizar algumas medidas de magnitude dessa força, como por exemplo, coeficiente de contingência, razão de prevalência, risco relativo e razão de chances (<em>odds ratio</em>). Porém, essas medidas de magnitude são dependentes do tipo de delineamento do estudo.</p></li>
+<li><p>O cálculo do teste de qui-quadrado deve ser somente com valores absolutos. Quando se dispõe de uma tabela 2x2, isto é, duas linhas e duas colunas, deve-se utilizar o teste de qui-quadrado com correção de continuidade (correção de Yates). O motivo é que a distribuição de frequências observadas é discreta e está sendo aproximada pela distribuição qui-quadrado, que é contínua <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>.</p></li>
+<li>Não se deve aplicar o teste de qui-quadrado quando a frequência esperada em qualquer casela for menor que 5. Neste caso, deve-se usar o teste exato de Fisher, para garantir o grau de certeza do teste.</li>
+<li>Quando se dispõe de duas amostras pareadas (duas amostras dependentes), utiliza-se o teste de McNemar.</li>
+<li><p>Caso se tenha interesse em avaliar a força da associação entre as duas variáveis, deve-se utilizar algumas medidas de magnitude dessa força, como por exemplo, coeficiente de contingência, razão de prevalência, risco relativo e razão de chances (<em>odds ratio</em>). Porém, essas medidas de magnitude são dependentes do tipo de delineamento do estudo.</p></li>
 </ul>
-<p>Para aplicar o teste de qui-quadrado ou um alternativo no software R, primeiramente precisamos informar os dados, podemos fazer isso de duas formas:</p>
+<p>Para aplicar o teste de qui-quadrado ou um alternativo no software R, primeiramente é preciso informar os dados, é possível efetuar isso de duas formas:</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>incluindo os valores no formatado de tabela;</p></li>
 <li><p>acessando os valores no banco de dados.</p></li>
@@ -365,15 +368,15 @@ quiquadrado1</code></pre>
 
 data:  quiquadrado1
 X-squared = 5.1, df = 1, p-value = 0.02</code></pre>
-<p>Observa-se que o software R identificou a tabela 2x2 e aplicou a correção de continuidade. Porém, podemos informar isso na linha de comando, incluindo opção <code>correct = TRUE</code>:</p>
+<p>Observa-se que o software R identificou a tabela 2x2 e aplicou a correção de continuidade. Porém, é possível informar isso na linha de comando, incluindo opção <code>correct = TRUE</code>:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(quiquadrado1, <span class="dt">correct=</span><span class="ot">TRUE</span>)</code></pre>
 <pre><code>
     Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
 
 data:  quiquadrado1
 X-squared = 5.1, df = 1, p-value = 0.02</code></pre>
-<p>Então devemos concluir pela rejeição ou não da <span class="math inline">\(H_0\)</span> e interpretar esse resultados.</p>
-<p>Caso pelo menos uma casela tenha frequência esperada menor que 5 como por exemplo na tabela abaixo <!--\@ref(tab:qui3)-->, utilizamos o teste exato de Fisher.</p>
+<p>Então deve-se concluir pela rejeição ou não da <span class="math inline">\(H_0\)</span> e interpretar esse resultados.</p>
+<p>Caso pelo menos uma casela tenha frequência esperada menor que 5 como por exemplo na tabela abaixo <!--\@ref(tab:qui3)-->, é utilizado o teste exato de Fisher.</p>
 <table style="width:94%;">
 <caption><span id="tab:tamprop1">Tabela 4.2: </span>Tamanho da propriedade e devolução das embalagens vazias de agrotóxico, agricultores de Cerro Largo, RS, 2017.</caption>
 <colgroup>
@@ -421,7 +424,7 @@ quiquadrado2</code></pre>
 <pre><code>      [,1]  [,2]
 [1,] 6.522 60.48
 [2,] 4.478 41.52</code></pre>
-<p>Neste caso, o software R apresenta um “aviso” pois observa-se uma frequência esperada menor que 5. Então devemos optar pelo teste exato de Fisher.</p>
+<p>Neste caso, o software R apresenta um “aviso” pois observa-se uma frequência esperada menor que 5. Então, se deve optar pelo teste exato de Fisher.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fisher.test</span>(quiquadrado2)</code></pre>
 <pre><code>
     Fisher&#39;s Exact Test for Count Data
@@ -434,7 +437,7 @@ alternative hypothesis: true odds ratio is not equal to 1
 sample estimates:
 odds ratio 
      1.933 </code></pre>
-<p>Então devemos concluir, através do valor p, pela rejeição ou não da <span class="math inline">\(H_0\)</span> e interpretar esse resultados.</p>
+<p>É possível concluir, através do valor <em>p</em>, pela rejeição ou não da <span class="math inline">\(H_0\)</span> e interpretar esse resultados.</p>
 </div>
 <div id="teste-de-associacao-com-duas-amostras-dependentes" class="section level2">
 <h2><span class="header-section-number">4.4</span> Teste de associação com duas amostras dependentes</h2>
@@ -485,7 +488,7 @@ McNemar&#39;s chi-squared = 0.045, df = 1, p-value = 0.8</code></pre>
 </table>
 <p>Fonte: Dados simulados.</p>
 <p><strong>Exemplo 2</strong>: Uma pesquisa foi realizada para verificar o efeito de um medicamento para perda de peso. O estudo foi realizado com 45 cobaias com características semelhantes. Na Tabela abaixo <!--\@ref(tab:qui5)--> são apresentadas a situação do peso antes e após a intervenção (utilização do medicamento).</p>
-<p>Como trata-se de duas amostras dependentes (antes e após) não podemos aplicar o teste de qui-quadrado. O teste adequado é McNemar.</p>
+<p>Como trata-se de duas amostras dependentes (antes e após) não se deve aplicar o teste de qui-quadrado. O teste adequado é McNemar.</p>
 <table style="width:94%;">
 <caption><span id="tab:sitcob">Tabela 4.4: </span>Situação do peso de cobaias do estudo antes e após a intervenção.</caption>
 <colgroup>
@@ -540,7 +543,7 @@ McNemar&#39;s chi-squared = 6.3, df = 1, p-value = 0.01</code></pre>
 </div>
 <div id="teste-de-qui-quadrado-para-verificar-aderencia-a-uma-distribuicao" class="section level2">
 <h2><span class="header-section-number">4.5</span> Teste de qui-quadrado para verificar aderência a uma distribuição</h2>
-<p>Neste caso usamos o teste de qui-quadrado para verificar se o conjunto de dados segue uma distribuição teórica especificada.</p>
+<p>Neste caso é utilizado o teste de qui-quadrado para verificar se o conjunto de dados segue uma distribuição teórica especificada.</p>
 <p><strong>Exemplo 3</strong>: Deseja-se verificar se o número de borrachudos é o mesmo em diferentes pontos da margem de um rio. O número de borrachudos observados para cada ponto (local) é apresentado na Tabela <a href="qui.html#tab:borrach">4.5</a>.</p>
 <table>
 <caption><span id="tab:borrach">Tabela 4.5: </span>Número de borrachudos nos diferentes pontos</caption>
@@ -594,7 +597,7 @@ McNemar&#39;s chi-squared = 6.3, df = 1, p-value = 0.01</code></pre>
 
 data:  borrach
 X-squared = 24, df = 6, p-value = 6e-04</code></pre>
-<p><strong>Exemplo 4</strong>: Suponha que desejamos verificar se o número de borrachudos segue uma distribuição específica, informado em “dist”. Lembrando que os valores no vetor “dist” devem estar no formato de proporção (por exemplo, 0,35).</p>
+<p><strong>Exemplo 4</strong>: Suponha que deseja-se verificar se o número de borrachudos segue uma distribuição específica, informado em “dist”. Lembrando que os valores no vetor “dist” devem estar no formato de proporção (por exemplo, 0,35).</p>
 <p><span class="math inline">\(H_0\)</span>: O número de borrachudos segue a distribuição teórica informada;</p>
 <p><span class="math inline">\(H_1\)</span>: O número de borrachudos não segue a distribuição teórica informada.</p>
 <pre class="sourceCode r"><code class="sourceCode r">borrachudos&lt;-<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">12</span>,<span class="dv">10</span>,<span class="dv">17</span>,<span class="dv">30</span>,<span class="dv">22</span>,<span class="dv">35</span>)

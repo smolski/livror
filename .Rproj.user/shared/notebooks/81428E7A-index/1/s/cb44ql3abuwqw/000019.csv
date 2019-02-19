@@ -1,5 +1,0 @@
-"0","# Utilizando o pacote dplyr"
-"0","library(dplyr)"
-"0","data %>%"
-"0","  group_by(diasem) %>%"
-"0","  summarise(total = sum(valor))"

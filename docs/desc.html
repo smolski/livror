@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-02-17">
+<meta name="date" content="2019-02-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -167,7 +167,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.11.3" data-path="intro.html"><a href="intro.html#listas"><i class="fa fa-check"></i><b>1.11.3</b> Listas</a></li>
 <li class="chapter" data-level="1.11.4" data-path="intro.html"><a href="intro.html#data-frames"><i class="fa fa-check"></i><b>1.11.4</b> Data frames</a></li>
 </ul></li>
-<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a></li>
+<li class="chapter" data-level="1.12" data-path="intro.html"><a href="intro.html#manipulacao-de-banco-de-dados"><i class="fa fa-check"></i><b>1.12</b> Manipulação de banco de dados</a><ul>
+<li class="chapter" data-level="1.12.1" data-path="intro.html"><a href="intro.html#o-pacote-tidyr"><i class="fa fa-check"></i><b>1.12.1</b> O pacote <em>tidyr</em></a></li>
+<li class="chapter" data-level="1.12.2" data-path="intro.html"><a href="intro.html#o-pacote-dplyr"><i class="fa fa-check"></i><b>1.12.2</b> O pacote <em>dplyr</em></a></li>
+</ul></li>
 <li class="chapter" data-level="1.13" data-path="intro.html"><a href="intro.html#funcoes-matematicas"><i class="fa fa-check"></i><b>1.13</b> Funções Matemáticas</a></li>
 <li class="chapter" data-level="1.14" data-path="intro.html"><a href="intro.html#conversao-e-manipulacao-de-datas"><i class="fa fa-check"></i><b>1.14</b> Conversão e manipulação de datas</a><ul>
 <li class="chapter" data-level="1.14.1" data-path="intro.html"><a href="intro.html#o-pacote-lubridate"><i class="fa fa-check"></i><b>1.14.1</b> O pacote <em>lubridate</em></a></li>
@@ -283,7 +286,7 @@ Parâmetro é a medida numérica que descreve uma característica de uma popula�
 <p><strong>Estatística</strong>: é uma medida numérica que descreve uma característica de uma amostra.</p>
 <div id="natureza-da-medida-das-variaveis" class="section level2">
 <h2><span class="header-section-number">2.1</span> Natureza da medida das variáveis</h2>
-<p>Variáveis reporta-se a características ou atributos que podem tomar diferentes valores ou categorias, o que se opõe ao conceito de constante <span class="citation">(Almeida e Freire <a href="#ref-almeida2000">2000</a>)</span>. Assim, variável pode ser definida como sendo a característica dos elementos da amostra ou da população que nos interessa estudar estatisticamente.</p>
+<p>O termo “variáveis” se reporta à características ou atributos que podem tomar diferentes valores ou categorias, o que se opõe ao conceito de constante <span class="citation">(Almeida e Freire <a href="#ref-almeida2000">2000</a>)</span>. Assim, variável pode ser definida como sendo a característica dos elementos da amostra ou da população que nos interessa estudar estatisticamente.</p>
 <p>Variáveis podem ser classificadas da seguinte forma:</p>
 <p><strong>Variáveis quantitativas</strong>: consistem em números que representam contagens ou medidas. Dividem-se em:</p>
 <ol style="list-style-type: lower-alpha">
@@ -299,7 +302,7 @@ Parâmetro é a medida numérica que descreve uma característica de uma popula�
 <p>A Estatística subdivide-se em descritiva e inferencial. A estatística descritiva se preocupa em descrever os dados. A estatística inferencial, fundamentada na teoria das probabilidades, se preocupa com a análise destes dados e sua interpretação.</p>
 <p>Informações estatísticas em jornais, relatórios e outras publicações que consistem de dados reunidos e apresentados de forma clara e resumida, na forma de tabelas, gráficos ou numéricos, são conhecidos como estatísticas descritivas <span class="citation">(Anderson, Sweeney, e Williams <a href="#ref-anderson2002">2002</a>)</span>.</p>
 <p><strong>Exemplo 1</strong></p>
-<p>Estaremos utilizando como exemplo os dados de uma pesquisa (dados simulados), cujo banco de dados está intitulado “Dados_pesquisa.ods”. Os dados são referentes aos resultados obtidos por ocasião de uma pesquisa realizada entre os consumidores a fim de analisar características associadas ao mercado consumidor de sucos, sendo que a amostra é composta de 348 entrevistados aleatoriamente selecionados.</p>
+<p>Serão utilizados como exemplo os dados de uma pesquisa (dados simulados), cujo banco de dados está intitulado “Dados_pesquisa.ods”. Os dados são referentes aos resultados obtidos por ocasião de uma pesquisa realizada entre os consumidores a fim de analisar características associadas ao mercado consumidor de sucos, sendo que a amostra é composta de 348 entrevistados aleatoriamente selecionados.</p>
 <ul>
 <li><p>O objetivo primário do estudo foi determinar variáveis que seriam úteis para caracterizar os consumidores que já conhecem o suco e a possibilidade potencial de futuros consumidores. Há também interesse nas relações entre variáveis das características pessoais desses consumidores ou futuros consumidores.</p></li>
 <li><p>A pesquisa foi realizada, depois que os participantes realizaram uma visita técnica às instalações da empresa e puderam conhecer seus produtos e processos.</p></li>
@@ -347,8 +350,8 @@ Sexo :  chr [1:348] &quot;Feminino&quot; &quot;Feminino&quot; &quot;Feminino&quo
 </div>
 <div id="tabelas" class="section level2">
 <h2><span class="header-section-number">2.2</span> Tabelas</h2>
-<p>Segundo <span class="citation">Barbetta (<a href="#ref-barbetta1988">2010</a>)</span>, dados representados em tabelas e gráficos adequados, permitem observar determinados aspectos relevantes, bem como delinear hipóteses a respeito da estrutura dos dados em estudo, o que conhecemos como análise exploratória de dados. Isto pode ser feito inicialmente com a representação em forma de tabelas.</p>
-<p>O comando <code>table()</code> é utilizado para elaborarmos tabelas de frequências absolutas. Dependendo da variável a ser representada, podemos usar esse comando de diferentes formas:</p>
+<p>Segundo <span class="citation">Barbetta (<a href="#ref-barbetta1988">2010</a>)</span>, dados representados em tabelas e gráficos adequados, permitem observar determinados aspectos relevantes, bem como delinear hipóteses a respeito da estrutura dos dados em estudo, o que é conhecido como análise exploratória de dados. Isto pode ser feito inicialmente com a representação em forma de tabelas.</p>
+<p>O comando <code>table()</code> é utilizado para elaborar tabelas de frequências absolutas. Dependendo da variável a ser representada, é possível utilizar esse comando de diferentes formas, como segue nas próximas subseções.</p>
 <div id="tabela-simples-para-apresentacao-das-frequencias-absolutas" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Tabela simples para apresentação das frequências absolutas</h3>
 <p>Uma tabela simples considera quantas vezes ocorre cada categoria (ou nível).</p>
@@ -385,7 +388,7 @@ Divulgacao   Feminino Masculino
 <p>A função <code>tapply</code> serve para calcular um valor usando uma variável categórica como condição, ou seja, aplica uma função qualquer (como média, por exemplo) a uma variável quantitativa para cada classe de uma variável categórica. Assim, permite obter em um só comando, a medida para cada categoria.</p>
 <p><code>tapply(var_quantitativa,var_categórica, função_desejada)</code></p>
 <p><code>tapply(variavel_quantitativa,variavel_qualitativa, mean)</code></p>
-<p>Se um registro possui <code>NA</code>, isto é, dados perdidos: com o parâmetro na.rm=T, indicamos para o comando ignorar os NAs nos dados e calcular a média.</p>
+<p>Se um registro possui <code>NA</code>, isto é, dados perdidos: com o parâmetro na.rm=T, indica-se para o comando ignorar os NAs nos dados e calcular a média.</p>
 <p><code>tapply(variavel_quanti, variavel_quali, mean, na.rm=T)</code></p>
 </div>
 </div>
@@ -394,12 +397,12 @@ Divulgacao   Feminino Masculino
 <div id="grafico-de-colunas" class="section level3">
 <h3><span class="header-section-number">2.3.1</span> Gráfico de colunas</h3>
 <p>As frequências podem ser visualizadas graficamente, usando gráficos de barras elementares, que se aplicam à descrição de qualquer variável qualitativa ou quantitativa discreta, vetor de dados ou tabelas.</p>
-<p>No entanto, no caso de dados em banco de dados, quando não utilizamos outros mecanismos de atribuição, precisamos usar o comando table.</p>
+<p>No entanto, no caso de dados em banco de dados, quando não são utilizados outros mecanismos de atribuição, é preciso usar o comando <code>table()</code>.</p>
 <p><code>barplot(table(nome_variável))</code></p>
 <p>Ex. Construir um gráfico de colunas para a variável <strong>Sexo</strong>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-73"></span>
-<img src="index_files/figure-html/unnamed-chunk-73-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-94"></span>
+<img src="index_files/figure-html/unnamed-chunk-94-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
 <p class="caption">
 Figura 2.1: Gráfico de colunas com a variável Sexo
 </p>
@@ -410,8 +413,8 @@ Figura 2.1: Gráfico de colunas com a variável Sexo
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">las=</span><span class="dv">2</span>) <span class="co"># Altera a direção dos nomes Masculino e Feminino</span>
 <span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">4</span>,<span class="dv">2</span>)) <span class="co"># Aumenta a margem do eixo x</span>
 <span class="kw">barplot</span>(<span class="kw">table</span>(Sexo), <span class="dt">horiz=</span>T)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-74"></span>
-<img src="index_files/figure-html/unnamed-chunk-74-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-95"></span>
+<img src="index_files/figure-html/unnamed-chunk-95-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
 <p class="caption">
 Figura 2.2: Gráfico de colunas com a variável Sexo (Horizontal)
 </p>
@@ -422,8 +425,8 @@ Figura 2.2: Gráfico de colunas com a variável Sexo (Horizontal)
         <span class="dt">xlab =</span> <span class="st">&quot;Frequência&quot;, </span>
 <span class="st">        ylab = &quot;</span>Pessoas<span class="st">&quot;, </span>
 <span class="st">        border = &quot;</span>red<span class="st">&quot;)</span></code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-75"></span>
-<img src="index_files/figure-html/unnamed-chunk-75-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-96"></span>
+<img src="index_files/figure-html/unnamed-chunk-96-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
 <p class="caption">
 Figura 2.3: Gráfico de colunas com a variável <code>Pessoas familia</code>
 </p>
@@ -432,13 +435,13 @@ Figura 2.3: Gráfico de colunas com a variável <code>Pessoas familia</code>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo,Divulgacao), 
         <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>), 
         <span class="dt">main =</span> <span class="st">&quot;Frequência de pessoas por Sexo e Divulgacao&quot;</span>)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-76"></span>
-<img src="index_files/figure-html/unnamed-chunk-76-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-97"></span>
+<img src="index_files/figure-html/unnamed-chunk-97-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
 <p class="caption">
 Figura 2.4: Gráfico de colunas com as variáveis Sexo e Divulgacao
 </p>
 </div>
-<p><strong>Ex.3)</strong> Na sequência utiliza o sinal de atribuição &lt;- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).</p>
+<p><strong>Ex.3)</strong> Na sequência utiliza-se o sinal de atribuição &lt;- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).</p>
 <pre class="sourceCode r"><code class="sourceCode r">Resultado&lt;-<span class="kw">table</span>(Sexo,Divulgacao)</code></pre>
 <p><strong>Ex.4)</strong> Execute o seguinte comando:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(Resultado,<span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;red&quot;</span>),<span class="dt">main=</span><span class="st">&quot;Título&quot;</span>,
@@ -447,8 +450,8 @@ Figura 2.4: Gráfico de colunas com as variáveis Sexo e Divulgacao
         <span class="dt">border=</span><span class="st">&#39;red&#39;</span>, 
         <span class="dt">beside=</span>T,<span class="dt">legend=</span><span class="kw">rownames</span>(Resultado),
         <span class="dt">args.legend =</span> <span class="kw">list</span>(<span class="dt">x =</span> <span class="st">&quot;topleft&quot;</span>))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-78"></span>
-<img src="index_files/figure-html/unnamed-chunk-78-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-99"></span>
+<img src="index_files/figure-html/unnamed-chunk-99-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
 <p class="caption">
 Figura 2.5: Gráfico de colunas com as variáveis Sexo e Divulgacao (2)
 </p>
@@ -486,8 +489,8 @@ nomesleg=<span class="kw">c</span>(<span class="st">&quot;Bom&quot;</span>,<span
 <span class="co"># - terrain.colors(n) </span>
 <span class="co"># - topo.colors(n)</span>
 <span class="co"># - cm.colors(n)</span></code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-79"></span>
-<img src="index_files/figure-html/unnamed-chunk-79-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-100"></span>
+<img src="index_files/figure-html/unnamed-chunk-100-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
 <p class="caption">
 Figura 2.6: Gráfico de pizza com a variável Sabor
 </p>
@@ -495,18 +498,18 @@ Figura 2.6: Gráfico de pizza com a variável Sabor
 </div>
 <div id="histograma" class="section level3">
 <h3><span class="header-section-number">2.3.3</span> Histograma</h3>
-<p>No histograma, utilizado em geral quando temos variáveis quantitativas contínuas, a altura dos retângulos representa a frequência de ocorrência de valores no intervalo (deve iniciar sempre em zero), devem ter sempre a mesma largura podendo ser justapostos. O eixo horizontal (dos valores da variável) pode iniciar próximo ao menor valor da variável <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>. Para confecção do histograma devemos usar:</p>
+<p>No histograma, utilizado em geral quando têm-se variáveis quantitativas contínuas, a altura dos retângulos representa a frequência de ocorrência de valores no intervalo (deve iniciar sempre em zero), que devem ter sempre a mesma largura podendo ser justapostos. O eixo horizontal (dos valores da variável) pode iniciar próximo ao menor valor da variável <span class="citation">(Barbetta <a href="#ref-barbetta1988">2010</a>)</span>. Para confecção do histograma pode ser utilizado:</p>
 <p><code>hist(nome_variável)</code></p>
 <p>Ex. Construa um histograma com a variável <strong>Renda_h</strong>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(<span class="kw">as.numeric</span>(<span class="st">`</span><span class="dt">Renda_h</span><span class="st">`</span>))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-80"></span>
-<img src="index_files/figure-html/unnamed-chunk-80-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-101"></span>
+<img src="index_files/figure-html/unnamed-chunk-101-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
 <p class="caption">
 Figura 2.7: Histograma com a variável <code>Renda h</code>
 </p>
 </div>
-<p><strong>Obs</strong>. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.</p>
-<p><strong>Obs</strong>. II: Para definir o número de intervalos no Histograma, usamos:</p>
+<p><strong>Obs</strong>. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixo y (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.</p>
+<p><strong>Obs</strong>. II: Para definir o número de intervalos no Histograma, utiliza-se:</p>
 <p><code>hist(nome_variável, breaks = 5)</code></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(<span class="kw">as.numeric</span>(<span class="st">`</span><span class="dt">Renda_h</span><span class="st">`</span>), 
      <span class="dt">breaks=</span><span class="dv">5</span>, 
@@ -516,38 +519,38 @@ Figura 2.7: Histograma com a variável <code>Renda h</code>
      <span class="dt">ylab =</span> <span class="st">&#39;Frequência&#39;,</span>
 <span class="st">     main = &#39;</span>Histograma da Renda<span class="st">&#39;,</span>
 <span class="st">     col = &#39;</span><span class="co">#BBDEFB&#39;)</span></code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-81"></span>
-<img src="index_files/figure-html/unnamed-chunk-81-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-102"></span>
+<img src="index_files/figure-html/unnamed-chunk-102-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
 <p class="caption">
 Figura 2.8: Histograma com a variável Renda h com breaks=5
 </p>
 </div>
 <p>O comando <code>ylim</code> determina os limites do eixo y a serem mostrados; <code>xlab</code> e <code>ylab</code> determinam o nome das variáveis dos eixos x e y; <code>main</code> determina o nome do título e <code>col</code> determina a cor do gráfico. Use o argumento <code>main=NULL</code> para remover o título.</p>
-<p>Inserindo as opções <code>$counts</code> e <code>$breaks</code> retomamos os valores da contagem dos dados e dos intervalos do histograma:</p>
+<p>Inserindo as opções <code>$counts</code> e <code>$breaks</code> retomam-se os valores da contagem dos dados e dos intervalos do histograma:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(<span class="kw">as.numeric</span>(<span class="st">`</span><span class="dt">Renda_h</span><span class="st">`</span>), <span class="dt">breaks=</span><span class="dv">5</span>)<span class="op">$</span>counts</code></pre>
 <pre><code>[1] 106 167  62  11   2</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(<span class="kw">as.numeric</span>(<span class="st">`</span><span class="dt">Renda_h</span><span class="st">`</span>), <span class="dt">breaks=</span><span class="dv">5</span>)<span class="op">$</span>breaks</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-82-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-103-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <pre><code>[1]  0  5 10 15 20 25</code></pre>
 </div>
 <div id="boxplot-ou-diagrama-em-caixas" class="section level3">
 <h3><span class="header-section-number">2.3.4</span> Boxplot ou diagrama em caixas</h3>
-<p>Os diagramas em caixa são convenientes para revelar tendências centrais, dispersão, distribuição dos dados e a presença de outliers (valores extremos). Como as medianas revelam uma tendência central, ao passo que os quartis indicam a dispersão dos dados, os diagramas em caixa têm a vantagem de não serem tão sensíveis a valores extremos como outras medidas baseadas na média e no desvio-padrão. Por outro lado, os diagramas em caixa (boxplots) não dão informação tão detalhada quanto os histogramas ou os gráficos ramo-e-folhas, podendo não ser, assim, a melhor escolha quando lidamos com um único conjunto de dados. Os diagramas em caixa são, entretanto, mais convenientes na comparação de dois ou mais conjuntos de dados <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>.</p>
-<p>No diagrama de caixas, torna-se fácil identificar <strong>outliers</strong> (ou valores extremos), que são valores extremamente raros, no sentido de que estão muito afastados da maioria dos dados. Ao explorarmos um conjunto de dados, não podem deixar de considerar os outliers, porque eles podem revelar informações importantes <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>.</p>
+<p>Os diagramas em caixa são convenientes para revelar tendências centrais, dispersão, distribuição dos dados e a presença de outliers (valores extremos). Como as medianas revelam uma tendência central, ao passo que os quartis indicam a dispersão dos dados, os diagramas em caixa têm a vantagem de não serem tão sensíveis a valores extremos como outras medidas baseadas na média e no desvio-padrão. Por outro lado, os diagramas em caixa (boxplots) não fornecem informação tão detalhada quanto os histogramas ou os gráficos ramo-e-folhas, podendo não ser, assim, a melhor escolha quando lida-se com um único conjunto de dados. Os diagramas em caixa são, entretanto, mais convenientes na comparação de dois ou mais conjuntos de dados <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>.</p>
+<p>No diagrama de caixas, torna-se fácil identificar <strong>outliers</strong> (ou valores extremos), que são valores extremamente raros, no sentido de que estão muito afastados da maioria dos dados. Ao explorar um conjunto de dados, é preciso considerar os <em>outliers</em>, porque eles podem revelar informações importantes <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>.</p>
 <p>Para obter o boxplot para um conjunto de dados:</p>
 <p><code>boxplot(variávelA, variávelB, names=c("A","B"))</code></p>
 <p><strong>Ex.1)</strong> Construir um boxplot da variável <strong>Idade</strong>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(Idade,<span class="dt">horizontal =</span> T)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-83"></span>
-<img src="index_files/figure-html/unnamed-chunk-83-1.png" alt="Boxplot com a variável Idade" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-104"></span>
+<img src="index_files/figure-html/unnamed-chunk-104-1.png" alt="Boxplot com a variável Idade" width="70%" />
 <p class="caption">
 Figura 2.9: Boxplot com a variável Idade
 </p>
 </div>
-<p>Ainda é possível efetuar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:</p>
+<p>Ainda é possível criar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(Idade<span class="op">~</span>Sabor, <span class="dt">data=</span>pesquisa_dados)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-84"></span>
-<img src="index_files/figure-html/unnamed-chunk-84-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-105"></span>
+<img src="index_files/figure-html/unnamed-chunk-105-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
 <p class="caption">
 Figura 2.10: Boxplot com as variáveis Idade e Sabor
 </p>
@@ -555,8 +558,8 @@ Figura 2.10: Boxplot com as variáveis Idade e Sabor
 </div>
 <div id="grafico-ramo-e-folhas" class="section level3">
 <h3><span class="header-section-number">2.3.5</span> Gráfico ramo-e-folhas</h3>
-<p>Em um gráfico ramo-e-folhas, classificamos os dados segundo um padrão que revela a distribuição subjacente. O padrão consiste em separar um número em duas partes em geral: o ramo consiste nos algarismos mais à esquerda e as folhas consistem nos algarismos mais à direita.</p>
-<p>No gráfico Ramo-e-folhas, podemos ver a distribuição desses dados, que é uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a informação da lista original; se necessário, podemos recompor a relação original de valores. Note que as linhas de algarismos em um gráfico ramo-e-folhas são análogas, em natureza, às barras de um histograma <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>.</p>
+<p>Em um gráfico ramo-e-folhas, são classificados os dados segundo um padrão que revela a distribuição subjacente. O padrão consiste em separar um número em duas partes em geral: o ramo consiste nos algarismos mais à esquerda e as folhas consistem nos algarismos mais à direita.</p>
+<p>No gráfico Ramo-e-folhas, é posível ver a distribuição desses dados, que é uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a informação da lista original; se necessário, pode-se recompor a relação original de valores. Note que as linhas de algarismos em um gráfico ramo-e-folhas são análogas, em natureza, às barras de um histograma <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>.</p>
 <p><code>stem(nome_variável)</code> - comando que permite obter um gráfico Ramo e Folhas.</p>
 <p>Ou</p>
 <p><code>stem(nome_variável,scale=1)</code></p>
@@ -571,7 +574,7 @@ Figura 2.10: Boxplot com as variáveis Idade e Sabor
 <li><p><code>stem(nome_variável,scale=0.5)</code></p></li>
 <li><p><code>stem(nome_variável,scale=2)</code></p></li>
 </ol>
-<p><strong>Obs.</strong>: Quando uma folha relacionada com certo ramo tem uma quantidade tão grande de valores que ele sintetiza essa quantidade usando a denominação +n, e invade a linha seguinte. Isso pode ser melhorado usando <strong>width</strong>.</p>
+<p><strong>Obs.</strong>: Quando uma folha relacionada com certo ramo tem uma quantidade tão grande de valores que ele sintetiza essa quantidade usando a denominação +n, e invade a linha seguinte, isso pode ser melhorado usando <strong>width</strong>.</p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li><code>stem(nome_variável,scale=0.5,width=120)</code></li>
 </ol>
@@ -616,7 +619,7 @@ Figura 2.10: Boxplot com as variáveis Idade e Sabor
 </div>
 <div id="graficos-de-dispersao" class="section level3">
 <h3><span class="header-section-number">2.3.6</span> Gráficos de dispersão</h3>
-<p>Às vezes temos dados emparelhados de forma que associa cada valor de um conjunto a um determinado valor de um segundo conjunto. Um diagrama de dispersão é um gráfico dos dados emparelhados (x, y), com um eixo x horizontal e um eixo y vertical. O diagrama de dispersão, apresenta no eixo horizontal os valores da primeira variável e um eixo vertical para os valores da segunda variável. O padrão dos pontos assim marcados costuma ajudar a determinar se existe algum relacionamento entre as duas variáveis A e B.</p>
+<p>Às vezes dispõe-se de dados emparelhados de forma que associa cada valor de um conjunto a um determinado valor de um segundo conjunto. Um diagrama de dispersão é um gráfico dos dados emparelhados (x, y), com um eixo x horizontal e um eixo y vertical. O diagrama de dispersão, apresenta no eixo horizontal os valores da primeira variável e um eixo vertical para os valores da segunda variável. O padrão dos pontos assim marcados costuma ajudar a determinar se existe algum relacionamento entre as duas variáveis A e B.</p>
 <p><code>plot(variável_independente,Variável_dependente)</code></p>
 <p>Ou</p>
 <p><code>plot(variável_dependente~variável_independente)</code></p>
@@ -627,7 +630,7 @@ Figura 2.10: Boxplot com as variáveis Idade e Sabor
 <p>Ex. Considere os dados que descrevem os valores do número de empresas fiscalizadas na fiscalização do trabalho na área rural Brasil 1998-2010.</p>
 <!--
 
-Table: (\#tab:unnamed-chunk-86)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
+Table: (\#tab:unnamed-chunk-107)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
 
   Ano  Empresas.Fiscalizadas 
 -----  ----------------------
@@ -708,10 +711,10 @@ Table: (\#tab:unnamed-chunk-86)Evolução dos resultados da fiscalização do tr
 </tr>
 </tbody>
 </table>
-<p>Fonte: MTE. SFIT. Elaboração: DIEESE.</p>
-<p>Para construir um gráfico de linhas, utilizamos o seguinte comando:</p>
+<p>Fonte: MTE. SFIT.</p>
+<p>Para construir um gráfico de linhas, é utilizado o seguinte comando:</p>
 <p><code>plot(x,y,type= "Tipo de símbolo")</code></p>
-<p>Neste gráfico, podemos utilizar comandos já utilizados anteriormente, para inserir título, nomes dos eixos, etc. Para escolher o formato das linhas, com o uso do argumento <code>type</code>, seguem algumas opções:</p>
+<p>Neste gráfico, é possível utilizar comandos já inseridos anteriormente, para inserir título, nomes dos eixos, etc. Para escolher o formato das linhas, com o uso do argumento <code>type</code>, seguem algumas opções:</p>
 <ul>
 <li><code>"p"</code> para pontos,</li>
 <li><code>"l"</code> para linhas,</li>
@@ -729,14 +732,15 @@ Table: (\#tab:unnamed-chunk-86)Evolução dos resultados da fiscalização do tr
 <span class="kw">plot</span>(empfisc<span class="op">$</span>ano,empfisc<span class="op">$</span>qtd,<span class="dt">type=</span><span class="st">&quot;b&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Título&quot;</span>,
      <span class="dt">xlab=</span><span class="st">&quot;Nome_eixo_x&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Nome_eixo_y&quot;</span>, 
      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1998</span>,<span class="dv">2010</span>))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-87"></span>
-<img src="index_files/figure-html/unnamed-chunk-87-1.png" alt="Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-108"></span>
+<img src="index_files/figure-html/unnamed-chunk-108-1.png" alt="Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
 <p class="caption">
-Figura 2.11: Gráfico de linha sobre a fiscalização do trabalho na área rural Brasil 1998-2010
+Figura 2.11: Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010
 </p>
 </div>
-<p>onde, no argumento <code>ylim</code>, devemos indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.</p>
-<p>Na sequência adicionamos as instruções para as demais variáveis:</p>
+<p>Fonte: Fonte: Elaborado pelo(s) autor(es) a partir de MTE. SFIT.</p>
+<p>onde, no argumento <code>ylim</code>, deve-se indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.</p>
+<p>Na sequência são adicionadas as instruções para as demais variáveis:</p>
 <p><code>lines(x, y2,col="cor_desejada", type="b")</code></p>
 <p>Com o argumento <code>"legend"</code> instruímos a formatação da legenda:</p>
 <p><code>legend(xp,yp,c("representação_variável_1 na legenda", "representação_variável_2 na legenda"),</code>col =c(“Cor1”,“cor2”),pch=Valor entre 0 e 25)`</p>
@@ -771,8 +775,8 @@ inmet &lt;-<span class="st"> </span><span class="kw">read_delim</span>(<span cla
 
 <span class="kw">legend</span>(<span class="dv">0</span>,<span class="dv">40</span>,<span class="kw">c</span>(<span class="st">&quot;temp_inst&quot;</span>,<span class="st">&quot;temp_max&quot;</span>,<span class="st">&quot;temp_min&quot;</span>),
   <span class="dt">col =</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;green&quot;</span>),<span class="dt">pch=</span><span class="fl">4.1</span>,<span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-89"></span>
-<img src="index_files/figure-html/unnamed-chunk-89-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-110"></span>
+<img src="index_files/figure-html/unnamed-chunk-110-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
 <p class="caption">
 Figura 2.12: Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS
 </p>
@@ -781,7 +785,7 @@ Figura 2.12: Gráfico de linha sobre as temperaturas registradas em São Luiz Go
 </div>
 <div id="estatisticas-descritivas" class="section level2">
 <h2><span class="header-section-number">2.4</span> Estatísticas Descritivas</h2>
-<p>Para determinar o valor máximo de um conjunto de dados, utilizamos:</p>
+<p>Para determinar o valor máximo de um conjunto de dados, utiliza-se:</p>
 <p><code>max(nome_da_variável)</code></p>
 <p>Use a variável <strong>Renda_h</strong></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Transforme a variável Renda_h em variável numérica</span>
@@ -790,12 +794,12 @@ pesquisa_dados<span class="op">$</span>Renda_h=<span class="kw">as.numeric</span
 <span class="kw">attach</span>(pesquisa_dados)
 <span class="kw">max</span>(Renda_h)</code></pre>
 <pre><code>[1] 21.83</code></pre>
-<p>De forma análoga, para determinar o valor mínimo de um conjunto de dados, utilizamos:</p>
+<p>De forma análoga, para determinar o valor mínimo de um conjunto de dados, utiliza-se:</p>
 <p><code>min(nome_da_variável)</code></p>
 <p>Use a variável <strong>Renda_h</strong></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">min</span>(Renda_h)</code></pre>
 <pre><code>[1] 1.02</code></pre>
-<p><strong>Obs.</strong>: Para determinar a amplitude total de um conjunto de dados, utilizamos:</p>
+<p><strong>Obs.</strong>: Para determinar a amplitude total de um conjunto de dados, utiliza-se:</p>
 <p><code>max(nome_da_variável)-min(nome_da_variável)</code></p>
 <p>Use a variável <strong>Renda_h</strong></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">max</span>(Renda_h)<span class="op">-</span><span class="kw">min</span>(Renda_h)</code></pre>
@@ -840,7 +844,7 @@ pesquisa_dados<span class="op">$</span>Renda_h=<span class="kw">as.numeric</span
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(Pessoas_familia)</code></pre>
 <pre><code>[1] 1.801</code></pre>
 <p>A função <code>subset()</code>:</p>
-<p>Com esta função podemos fazer cálculos utilizando filtros, simultaneamente. A aplicação de filtros é extremamente útil quando queremos explorar os dados de forma rápida e eficiente.</p>
+<p>Com esta função é possível fazer cálculos utilizando filtros, simultaneamente. A aplicação de filtros é extremamente útil quando a intensão é de explorar os dados de forma rápida e eficiente.</p>
 <p>Exemplos:</p>
 <p>Ex. 1) Altura das pessoas do sexo masculino: com a função abaixo o R gera um subconjunto com as alturas de todas as pessoas do sexo masculino.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">subset</span>(<span class="st">`</span><span class="dt">Altura_(m)</span><span class="st">`</span>, Sexo<span class="op">==</span><span class="st">&quot;Masculino&quot;</span>)</code></pre>
@@ -848,7 +852,7 @@ pesquisa_dados<span class="op">$</span>Renda_h=<span class="kw">as.numeric</span
 [16] 1.80 1.56 1.65 1.60 1.61 1.59 1.75 1.59 1.89 1.62 1.60 1.50 1.65 1.79 1.65
 [31] 1.79 1.67 1.59 1.71 1.60 1.72 1.73 1.65 1.65 1.50 1.57 1.86 1.85 1.80 1.77
 [46] 1.81 1.73 1.80 1.66 1.71 1.60 1.72 1.81 1.55 1.60 1.80</code></pre>
-<p>Ex. 2) Média das alturas das pessoas do sexo masculino: inserindo o comando <code>mean()</code> ao subconjunto anterior, teremos como resultado a média das alturas das pessoas do sexo masculino.</p>
+<p>Ex. 2) Média das alturas das pessoas do sexo masculino: inserindo o comando <code>mean()</code> ao subconjunto anterior, é obtido como resultado a média das alturas das pessoas do sexo masculino.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="kw">subset</span>(<span class="st">`</span><span class="dt">Altura_(m)</span><span class="st">`</span>, Sexo<span class="op">==</span><span class="st">&quot;Masculino&quot;</span>))</code></pre>
 <pre><code>[1] 1.702</code></pre>
 <p>Ex. 3) Média das alturas das pessoas do sexo masculino com mais de 26 anos:</p>
@@ -866,7 +870,7 @@ pesquisa_dados<span class="op">$</span>Renda_h=<span class="kw">as.numeric</span
 </div>
 <div id="exercicios-1" class="section level2">
 <h2><span class="header-section-number">2.5</span> Exercícios</h2>
-<p><strong>1.</strong> Carregue a base de dados denominada “arvores” disponível no site do livro (<a href="https://smolski.github.io/softwarelivrer/livro.html" class="uri">https://smolski.github.io/softwarelivrer/livro.html</a>) e respontaas questões abaixo:</p>
+<p><strong>1.</strong> Carregue a base de dados denominada “arvores” disponível no site do livro (<a href="https://smolski.github.io/softwarelivrer/livro.html" class="uri">https://smolski.github.io/softwarelivrer/livro.html</a>) e responda as questões abaixo:</p>
 <p><strong>1.1</strong> Utilize a função <code>summary</code> para identificar os principais indicadores da base de dados. Com a função <code>table</code> encontre a contagem das espécies que constam na planilha a partir da variável “Nomecientifico”:</p>
 <p><strong>1.2</strong> Utilizando a função <code>tapply</code> calcule a média do diâmetro por cada espécie.</p>
 <p><strong>1.3</strong> Utilizando as funções <code>table</code> e <code>barplot</code> construa um gráfico de barras com a quantidade de itens por espécies que constam na base de dados. Não esqueça de utilizar o comando <code>horiz=TRUE</code> para melhor visualização.</p>
