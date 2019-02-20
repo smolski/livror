@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-02-18">
+<meta name="date" content="2019-02-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -602,7 +602,7 @@ Figura 3.3: Teste de hipótese para dois grupos
 <h4><span class="header-section-number">3.2.3.1</span> Teste de hipóteses duas amostras dependentes</h4>
 <p><strong>Exemplo 10</strong>: Foi obtido o peso de seis indivíduos antes e após um treinamento de exercício físico. Teste a hipótese de que a média antes do treinamento é diferente da média após o treinamento.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-143">Tabela 3.1: </span>Amostras dependentes</caption>
+<caption><span id="tab:unnamed-chunk-147">Tabela 3.1: </span>Amostras dependentes</caption>
 <thead>
 <tr class="header">
 <th align="left">Indivíduo</th>
@@ -656,7 +656,7 @@ mean of the differences
 <p>Conclusão: Não rejeita-se <span class="math inline">\(H_0\)</span> e conclui-se que a média de peso antes do treinamento é igual à média de peso depois do treinamento.</p>
 <p><strong>Exemplo 11</strong>: (adaptado de &lt;www.inf.ufsc.br/~marcelo/testes2.html&gt;) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Pode-se concluir que o uso da ração contribuiu para o aumento do peso médio dos animais?</p>
 <table>
-<caption><span id="tab:unnamed-chunk-145">Tabela 3.2: </span>Amostras dependentes - caso 2</caption>
+<caption><span id="tab:unnamed-chunk-149">Tabela 3.2: </span>Amostras dependentes - caso 2</caption>
 <thead>
 <tr class="header">
 <th align="left">Cobaia</th>
@@ -701,6 +701,7 @@ mean of the differences
 </tr>
 </tbody>
 </table>
+<p>Fonte: &lt;www.inf.ufsc.br/~marcelo/testes2.html&gt;.</p>
 <p><strong><span class="math inline">\(H_0\)</span></strong>: média antes <span class="math inline">\(=\)</span> média depois</p>
 <p><strong><span class="math inline">\(H_1\)</span></strong>: média antes <span class="math inline">\(\neq\)</span> média depois</p>
 <pre class="sourceCode r"><code class="sourceCode r">cobaiaantes=<span class="kw">c</span>(<span class="dv">635</span>,<span class="dv">704</span>,<span class="dv">662</span>,<span class="dv">560</span>,<span class="dv">603</span>,<span class="dv">745</span>,<span class="dv">698</span>,<span class="dv">575</span>,<span class="dv">633</span>,<span class="dv">669</span>)
@@ -727,7 +728,7 @@ mean of the differences
 <h4><span class="header-section-number">3.2.3.3</span> Teste para verificar homogeneidade de variâncias</h4>
 <p><strong>Exemplo 12</strong>: (adaptado de <a href="https://www.ime.unicamp.br/~hildete/Aula_p12.pdf" class="uri">https://www.ime.unicamp.br/~hildete/Aula_p12.pdf</a>) Dois tipos diferentes de tecido devem ser comparados. Uma máquina de testes pode comparar duas amostras ao mesmo tempo. O peso (em miligramas) para sete experimentos foram:</p>
 <table>
-<caption><span id="tab:unnamed-chunk-147">Tabela 3.3: </span>Comparação de dois tipos diferentes de tecidos</caption>
+<caption><span id="tab:unnamed-chunk-151">Tabela 3.3: </span>Comparação de dois tipos diferentes de tecidos</caption>
 <tbody>
 <tr class="odd">
 <td align="left">Tecido A</td>
@@ -751,6 +752,7 @@ mean of the differences
 </tr>
 </tbody>
 </table>
+<p>Fonte: <a href="https://www.ime.unicamp.br/~hildete/Aula_p12.pdf" class="uri">https://www.ime.unicamp.br/~hildete/Aula_p12.pdf</a>.</p>
 <p>Teste se um tecido é mais pesado que o outro.</p>
 <p><strong><span class="math inline">\(H_0\)</span></strong>: as variâncias são homogêneas</p>
 <p><strong><span class="math inline">\(H_1\)</span></strong>: as variâncias são heterogêneas</p>
@@ -790,6 +792,135 @@ mean of x mean of y
 </div>
 <div id="exercicios-2" class="section level2">
 <h2><span class="header-section-number">3.3</span> Exercícios</h2>
+<p><strong>1.</strong> A concentração de compostos químicos do solo foi medida em dez amostras aleatórias de um solo de uma área contaminada. A concentração medida, em mg/Kg, foi 1,4 0,6 1,2 1,6 0,5 0,7 0,3 0,8 0,2 e 0,9. Calcule o intervalo de 99% para a média de concentração.</p>
+<p><strong>2.</strong> Uma pesquisa foi realizada para verificar a satisfação dos alunos de uma escola em relação aos serviços fornecidos pela cantina. Utilizando-se uma amostra aleatória de 25 alunos, as respostas fornecidas foram:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">satisfeito</td>
+<td>não satisfeito</td>
+<td align="left">satisfeito</td>
+<td align="left">satisfeito</td>
+<td align="left">satisfeito</td>
+</tr>
+<tr class="even">
+<td align="left">satisfeito</td>
+<td>satisfeito</td>
+<td align="left">satisfeito</td>
+<td align="left">não satisfeito</td>
+<td align="left">satisfeito</td>
+</tr>
+<tr class="odd">
+<td align="left">não satisfeito</td>
+<td>não satisfeito</td>
+<td align="left">não satisfeito</td>
+<td align="left">satisfeito</td>
+<td align="left">satisfeito</td>
+</tr>
+<tr class="even">
+<td align="left">não satisfeito</td>
+<td>satisfeito</td>
+<td align="left">satisfeito</td>
+<td align="left">não satisfeito</td>
+<td align="left">não satisfeito</td>
+</tr>
+<tr class="odd">
+<td align="left">não satisfeito</td>
+<td>não satisfeito</td>
+<td align="left">satisfeito</td>
+<td align="left">satisfeito</td>
+<td align="left">satisfeito</td>
+</tr>
+</tbody>
+</table>
+<p>Construa o intervalo de confiança para a proporção populacional dos alunos satisfeitos considerando um nível de confiança de 90%.</p>
+<p><strong>3.</strong> (Adaptado de Morettin e Bussab, 2009) Uma companhia de cigarros anuncia que o índice médio de nicotina dos cigarros que fabrica apresenta-se abaixo de 23 mg por cigarro. Um laboratório realiza seis análises desse índice, obtendo: 27, 24, 21, 25, 26, 22. Pode-se aceitar a afirmação do fabricante?</p>
+<p><strong>4.</strong> (Fonseca e Martins, 2010) As estaturas de 20 recém-nascidos foram tomadas no Departamento de Pediatria da FNRP, cujos resultados em cm são: 41 50 52 49 49 54 50 47 52 49 50 52 50 47 49 51 46 50 49 50. Teste a hipótese de que a média desses recém nascidos é 50 cm.</p>
+<p><strong>5.</strong> (<a href="https://www.passeidireto.com/arquivo/25297344/aula-19-testes-para-proporcao" class="uri">https://www.passeidireto.com/arquivo/25297344/aula-19-testes-para-proporcao</a>) Uma pesquisa conclui que 90% dos médicos recomendam aspirina a pacientes que têm filhos. Teste a afirmação contra a alternativa de que a percentagem é inferior a 90%, se numa amostra aleatória de 100 médicos, 80 recomendam aspirina.</p>
+<p><strong>6.</strong> A fim de determinar a eficiência de um medicamento antitérmico, a temperatura corporal (em graus Celsius) de 15 indivíduos foi medida. Em seguida, foi administrado o medicamento e após uma hora a temperatura foi medida novamente. Os resultados podem ser encontrados na tabela abaixo.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Antes</th>
+<th align="right">Depois</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">37.5</td>
+<td align="right">37.8</td>
+</tr>
+<tr class="even">
+<td align="right">36.0</td>
+<td align="right">36.4</td>
+</tr>
+<tr class="odd">
+<td align="right">39.0</td>
+<td align="right">37.6</td>
+</tr>
+<tr class="even">
+<td align="right">38.0</td>
+<td align="right">37.2</td>
+</tr>
+<tr class="odd">
+<td align="right">37.8</td>
+<td align="right">36.9</td>
+</tr>
+<tr class="even">
+<td align="right">38.5</td>
+<td align="right">37.7</td>
+</tr>
+<tr class="odd">
+<td align="right">36.9</td>
+<td align="right">36.8</td>
+</tr>
+<tr class="even">
+<td align="right">39.4</td>
+<td align="right">38.1</td>
+</tr>
+<tr class="odd">
+<td align="right">37.2</td>
+<td align="right">36.7</td>
+</tr>
+<tr class="even">
+<td align="right">38.1</td>
+<td align="right">37.3</td>
+</tr>
+<tr class="odd">
+<td align="right">39.3</td>
+<td align="right">38.0</td>
+</tr>
+<tr class="even">
+<td align="right">37.5</td>
+<td align="right">37.1</td>
+</tr>
+<tr class="odd">
+<td align="right">38.5</td>
+<td align="right">36.6</td>
+</tr>
+<tr class="even">
+<td align="right">37.8</td>
+<td align="right">35.0</td>
+</tr>
+<tr class="odd">
+<td align="right">39.0</td>
+<td align="right">39.0</td>
+</tr>
+</tbody>
+</table>
+<!--
+
+
+-------  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  ---
+Antes    37.5   36     39     38     37.8   38.5   36.9   39.4   37.2   38.1   39.3   37.5   38.5   37.8   39 
+Depois   37.8   36.4   37.6   37.2   36.9   37.7   36.8   38.1   36.7   37.3   38     37.1   36.6   35     39 
+-------  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  ---
+-->
+<p>Houve ou não diminuição da temperatura dos indivíduos?</p>
+<p><strong>7.</strong>(<a href="http://www.im.ufrj.br/probest/Exercicios/C9_Exercicios.pdf" class="uri">http://www.im.ufrj.br/probest/Exercicios/C9_Exercicios.pdf</a>) Foi obtida uma amostra com 20 pilhas elétricas da marca A. Todas elas foram examinadas e sua duração, em horas, foi medida. O mesmo foi feito com uma amostra de 18 pilhas do mesmo tipo, porém da marca B.</p>
+<p>Marca A: 176 162 153 137 140 139 165 128 149 148 159 134 173 171 142 142 173 155 157 139</p>
+<p>Marca B: 183 196 157 180 188 172 159 184 152 180 169 163 191 151 172 192 121 146</p>
+<p>Existe diferença entre as marcas de pilha quanto a sua duração?</p>
 </div>
 </div>
 <h3>Referências</h3>

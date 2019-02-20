@@ -1,0 +1,4 @@
+"0","summarise(group_by(mtcars, cyl.agrup=cyl), "
+"0","          hp.medio=mean(hp), "
+"0","          wt.medio=mean(wt),"
+"0","          qtd=n())"

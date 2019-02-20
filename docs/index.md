@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Iara Denise Endruweit Battisti
 - Felipe Micail da Silva Smolski
-date: "2019-02-18"
+date: "2019-02-19"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -2024,7 +2024,83 @@ head(novo)
 
 #### Operador *pipe*
 
+O operador `pipe` (símbolos `%>%`) contribui para que a manipulação de dados com o pacote `dplyr` fiquem mais organizados no código de programação em linguagem R. Abaixo segue um exemplo, onde o objetivo é filtrar os veículos com transmissão manual (am == 1), agrupando-os pela quantidade de cilindros ("cyl") e em seguida retomando a média das variáveis "drat" e "hp" para cada grupamento:
 
+
+
+```r
+novo = mtcars %>%
+  filter(am == 1) %>%
+  group_by(cyl) %>%
+  summarise(disp.drat=mean(drat), 
+            hp.media=mean(hp))
+
+novo
+```
+
+```
+# A tibble: 3 x 3
+    cyl disp.drat hp.media
+  <dbl>     <dbl>    <dbl>
+1     4      4.18     81.9
+2     6      3.81    132. 
+3     8      3.88    300. 
+```
+
+A função `starts_with()` seleciona as variáveis com base em um critério determinado pelo pesquisador com relação ao nome da variável, no exemplo abaixo, sendo aquelas que iniciam com a leetra "d" (a função inversa é `ends_with()`):
+
+
+
+```r
+mtcars %>%
+  select(starts_with("d")) %>%
+  head
+```
+
+```
+                  disp drat
+Mazda RX4          160 3.90
+Mazda RX4 Wag      160 3.90
+Datsun 710         108 3.85
+Hornet 4 Drive     258 3.08
+Hornet Sportabout  360 3.15
+Valiant            225 2.76
+```
+
+A função `contains()` também filtra aquelas variáveis com algum critério, neste caso de conter:
+
+
+```r
+mtcars %>%
+  select(contains("a")) %>%
+  head
+```
+
+```
+                  drat am gear carb
+Mazda RX4         3.90  1    4    4
+Mazda RX4 Wag     3.90  1    4    4
+Datsun 710        3.85  1    4    1
+Hornet 4 Drive    3.08  0    3    1
+Hornet Sportabout 3.15  0    3    2
+Valiant           2.76  0    3    1
+```
+
+
+A função `aggregate()` também é utilizada para agregação de resultados pelo pacote `dplyr`:
+
+
+```r
+mtcars %>%
+  aggregate(. ~ cyl, ., mean)
+```
+
+```
+  cyl   mpg  disp     hp  drat    wt  qsec     vs     am  gear  carb
+1   4 26.66 105.1  82.64 4.071 2.286 19.14 0.9091 0.7273 4.091 1.545
+2   6 19.74 183.3 122.29 3.586 3.117 17.98 0.5714 0.4286 3.857 3.429
+3   8 15.10 353.1 209.21 3.229 3.999 16.77 0.0000 0.1429 3.286 3.500
+```
 
 
 
@@ -2719,8 +2795,8 @@ barplot(table(Sexo))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-94-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-94)Gráfico de colunas com a variável Sexo</p>
+<img src="index_files/figure-epub3/unnamed-chunk-98-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-98)Gráfico de colunas com a variável Sexo</p>
 </div>
 
 **Obs**.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -2738,8 +2814,8 @@ barplot(table(Sexo), horiz=T)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-95-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-95)Gráfico de colunas com a variável Sexo (Horizontal)</p>
+<img src="index_files/figure-epub3/unnamed-chunk-99-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-99)Gráfico de colunas com a variável Sexo (Horizontal)</p>
 </div>
 
 
@@ -2759,8 +2835,8 @@ barplot(table(`Pessoas_familia`), col=c("blue"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-96-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-96)Gráfico de colunas com a variável `Pessoas familia`</p>
+<img src="index_files/figure-epub3/unnamed-chunk-100-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-100)Gráfico de colunas com a variável `Pessoas familia`</p>
 </div>
 
 **Ex.2)** Construir uma tabela de dupla entrada para as variáveis **Sexo** e **Divulgação**.
@@ -2773,8 +2849,8 @@ barplot(table(Sexo,Divulgacao),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-97-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-97)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
+<img src="index_files/figure-epub3/unnamed-chunk-101-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-101)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
 </div>
 
 
@@ -2798,8 +2874,8 @@ barplot(Resultado,col=c("blue","red"),main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-99-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-99)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
+<img src="index_files/figure-epub3/unnamed-chunk-103-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-103)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
 </div>
 
 
@@ -2846,8 +2922,8 @@ legend(x="topright", # Determina posição da legenda
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-100-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-100)Gráfico de pizza com a variável Sabor</p>
+<img src="index_files/figure-epub3/unnamed-chunk-104-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-104)Gráfico de pizza com a variável Sabor</p>
 </div>
 
 ### Histograma
@@ -2864,8 +2940,8 @@ hist(as.numeric(`Renda_h`))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-101-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-101)Histograma com a variável `Renda h`</p>
+<img src="index_files/figure-epub3/unnamed-chunk-105-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-105)Histograma com a variável `Renda h`</p>
 </div>
 
 **Obs**. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixo y (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -2888,8 +2964,8 @@ hist(as.numeric(`Renda_h`),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-102-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-102)Histograma com a variável Renda h com breaks=5</p>
+<img src="index_files/figure-epub3/unnamed-chunk-106-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-106)Histograma com a variável Renda h com breaks=5</p>
 </div>
 O comando `ylim` determina os limites do eixo y a serem mostrados; `xlab` e `ylab` determinam o nome das variáveis dos eixos x e y; `main` determina o nome do título e `col` determina a cor do gráfico. Use o argumento `main=NULL` para remover o título.
 
@@ -2908,7 +2984,7 @@ hist(as.numeric(`Renda_h`), breaks=5)$counts
 hist(as.numeric(`Renda_h`), breaks=5)$breaks
 ```
 
-<img src="index_files/figure-epub3/unnamed-chunk-103-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="index_files/figure-epub3/unnamed-chunk-107-1.png" width="70%" style="display: block; margin: auto;" />
 
 ```
 [1]  0  5 10 15 20 25
@@ -2934,8 +3010,8 @@ boxplot(Idade,horizontal = T)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-104-1.png" alt="Boxplot com a variável Idade" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-104)Boxplot com a variável Idade</p>
+<img src="index_files/figure-epub3/unnamed-chunk-108-1.png" alt="Boxplot com a variável Idade" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-108)Boxplot com a variável Idade</p>
 </div>
 
 Ainda é possível criar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:
@@ -2946,8 +3022,8 @@ boxplot(Idade~Sabor, data=pesquisa_dados)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-105-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-105)Boxplot com as variáveis Idade e Sabor</p>
+<img src="index_files/figure-epub3/unnamed-chunk-109-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-109)Boxplot com as variáveis Idade e Sabor</p>
 </div>
 
 
@@ -3049,7 +3125,7 @@ Ex. Considere os dados que descrevem os valores do número de empresas fiscaliza
 
 <!--
 
-Table: (\#tab:unnamed-chunk-107)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
+Table: (\#tab:unnamed-chunk-111)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
 
   Ano  Empresas.Fiscalizadas 
 -----  ----------------------
@@ -3117,8 +3193,8 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-108-1.png" alt="Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-108)Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
+<img src="index_files/figure-epub3/unnamed-chunk-112-1.png" alt="Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-112)Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
 </div>
 Fonte: Fonte: Elaborado pelo(s) autor(es) a partir de MTE. SFIT. 
 
@@ -3179,8 +3255,8 @@ legend(0,40,c("temp_inst","temp_max","temp_min"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-110-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-110)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
+<img src="index_files/figure-epub3/unnamed-chunk-114-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-114)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
 </div>
 
 ## Estatísticas Descritivas
@@ -4004,7 +4080,7 @@ O teste de hipótese para duas médias aplica-se quando se deseja comparar dois 
 **Exemplo 10**: Foi obtido o peso de seis indivíduos antes e após um treinamento de exercício físico. Teste a hipótese de que a média antes do treinamento é diferente da média após o treinamento.
 
 
-Table: (\#tab:unnamed-chunk-143)Amostras dependentes
+Table: (\#tab:unnamed-chunk-147)Amostras dependentes
 
 Indivíduo                      A    B    C    D    E    F
 ---------------------------  ---  ---  ---  ---  ---  ---
@@ -4047,12 +4123,14 @@ Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso antes do tre
 **Exemplo 11**: (adaptado de <www.inf.ufsc.br/~marcelo/testes2.html>) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Pode-se concluir que o uso da ração contribuiu para o aumento do peso médio dos animais? 
 
 
-Table: (\#tab:unnamed-chunk-145)Amostras dependentes - caso 2
+Table: (\#tab:unnamed-chunk-149)Amostras dependentes - caso 2
 
 Cobaia      1     2     3     4     5     6     7     8     9    10
 -------  ----  ----  ----  ----  ----  ----  ----  ----  ----  ----
 Antes     635   704   662   560   603   745   698   575   633   669
 Depois    640   712   681   558   610   740   707   585   635   682
+
+Fonte: <www.inf.ufsc.br/~marcelo/testes2.html>.
 
 **$H_0$**: média antes $=$ média depois
 
@@ -4093,12 +4171,14 @@ Primeiramente é preciso saber se existe homogeneidade de variâncias populacion
 
 
 
-Table: (\#tab:unnamed-chunk-147)Comparação de dois tipos diferentes de tecidos
+Table: (\#tab:unnamed-chunk-151)Comparação de dois tipos diferentes de tecidos
 
 ---------  ---  ---  ---  ---  ---  ---  ---
 Tecido A   36   26   31   38   28   20   37 
 Tecido B   39   27   35   42   31   39   22 
 ---------  ---  ---  ---  ---  ---  ---  ---
+
+Fonte: <https://www.ime.unicamp.br/~hildete/Aula_p12.pdf>.
 
 Teste se um tecido é mais pesado que o outro.
 
@@ -4157,6 +4237,67 @@ mean of x mean of y
 Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso do tecido A é igual à média de peso do tecido B.
 
 ## Exercícios
+
+**1.** 	A concentração de compostos químicos do solo foi medida em dez amostras aleatórias de um solo de uma área contaminada. A concentração medida, em mg/Kg, foi 1,4  0,6  1,2  1,6  0,5  0,7  0,3  0,8  0,2  e 0,9. Calcule o intervalo de 99\% para a média de concentração.
+
+**2.**	Uma pesquisa foi realizada para verificar a satisfação dos alunos de uma escola em relação aos serviços fornecidos pela cantina. Utilizando-se uma amostra aleatória de 25 alunos, as respostas fornecidas foram:
+
+  --------------- -------------- --------------- -------------- --------------
+  satisfeito      não satisfeito satisfeito      satisfeito     satisfeito
+  satisfeito      satisfeito     satisfeito      não satisfeito satisfeito
+  não satisfeito  não satisfeito não satisfeito  satisfeito     satisfeito
+  não satisfeito  satisfeito     satisfeito      não satisfeito não satisfeito
+  não satisfeito  não satisfeito satisfeito      satisfeito     satisfeito
+  --------------- -------------- --------------- -------------- --------------
+
+Construa o intervalo de confiança para a proporção populacional dos alunos satisfeitos considerando um nível de confiança de 90\%.
+
+**3.**	(Adaptado de Morettin e Bussab, 2009) Uma companhia de cigarros anuncia que o índice médio de nicotina dos cigarros que fabrica apresenta-se abaixo de 23 mg por cigarro. Um laboratório realiza seis análises desse índice, obtendo: 27, 24, 21, 25, 26, 22. Pode-se aceitar a afirmação do fabricante?
+
+**4.**	(Fonseca e Martins, 2010) As estaturas de 20 recém-nascidos foram tomadas no Departamento de Pediatria da FNRP, cujos resultados em cm são: 41 50 52 49 49 54 50 47 52 49 50 52 50 47 49 51 46 50 49 50. Teste a hipótese de que a média desses recém nascidos é 50 cm.
+
+**5.**	(<https://www.passeidireto.com/arquivo/25297344/aula-19-testes-para-proporcao>) Uma pesquisa conclui que 90\% dos médicos recomendam aspirina a pacientes que têm filhos. Teste a afirmação contra a alternativa de que a percentagem é inferior a 90%, se numa amostra aleatória de 100 médicos, 80 recomendam aspirina.
+
+**6.**	A fim de determinar a eficiência de um medicamento antitérmico, a temperatura corporal (em graus Celsius) de 15 indivíduos foi medida. Em seguida, foi administrado o medicamento e após uma hora a temperatura foi medida novamente. Os resultados podem ser encontrados na tabela abaixo.
+
+
+ Antes   Depois
+------  -------
+  37.5     37.8
+  36.0     36.4
+  39.0     37.6
+  38.0     37.2
+  37.8     36.9
+  38.5     37.7
+  36.9     36.8
+  39.4     38.1
+  37.2     36.7
+  38.1     37.3
+  39.3     38.0
+  37.5     37.1
+  38.5     36.6
+  37.8     35.0
+  39.0     39.0
+
+<!--
+
+
+-------  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  ---
+Antes    37.5   36     39     38     37.8   38.5   36.9   39.4   37.2   38.1   39.3   37.5   38.5   37.8   39 
+Depois   37.8   36.4   37.6   37.2   36.9   37.7   36.8   38.1   36.7   37.3   38     37.1   36.6   35     39 
+-------  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  ---
+-->
+
+Houve ou não diminuição da temperatura dos indivíduos?
+
+**7.**(<http://www.im.ufrj.br/probest/Exercicios/C9_Exercicios.pdf>) Foi obtida uma amostra com 20 pilhas elétricas da marca A. Todas elas foram examinadas e sua duração, em horas, foi medida. O mesmo foi feito com uma amostra de 18 pilhas do mesmo tipo, porém da marca B.
+
+Marca A: 176 162 153 137 140 139 165 128 149 148 159 134 173 171 142 142 173 155 157 139 
+
+Marca B: 183 196 157 180 188 172 159 184 152 180 169 163 191 151 172 192 121 146
+
+Existe diferença entre as marcas de pilha quanto a sua duração?
+
 
 # Teste de Qui-Quadrado{#qui}
 
@@ -4656,8 +4797,8 @@ plot(tempo,nota)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-162-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-162)Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo</p>
+<img src="index_files/figure-epub3/unnamed-chunk-168-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-168)Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -4997,8 +5138,8 @@ abline(coef(regressao))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-166-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-166)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
+<img src="index_files/figure-epub3/unnamed-chunk-172-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-172)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -5163,8 +5304,8 @@ lines(density(regressao$residuals))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-169-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-169)Histograma de distribuição da probabilidade para os resíduos</p>
+<img src="index_files/figure-epub3/unnamed-chunk-175-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-175)Histograma de distribuição da probabilidade para os resíduos</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).

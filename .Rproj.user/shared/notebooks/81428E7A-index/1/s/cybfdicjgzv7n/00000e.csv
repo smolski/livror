@@ -1,0 +1,2 @@
+"0","mtcars %>%"
+"0","  aggregate(. ~ cyl, ., mean)"

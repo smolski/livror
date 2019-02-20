@@ -1059,7 +1059,43 @@ head(novo)
 
 #### Operador *pipe*
 
+O operador `pipe` (símbolos `%>%`) contribui para que a manipulação de dados com o pacote `dplyr` fiquem mais organizados no código de programação em linguagem R. Abaixo segue um exemplo, onde o objetivo é filtrar os veículos com transmissão manual (am == 1), agrupando-os pela quantidade de cilindros ("cyl") e em seguida retomando a média das variáveis "drat" e "hp" para cada grupamento:
 
+
+```{r}
+novo = mtcars %>%
+  filter(am == 1) %>%
+  group_by(cyl) %>%
+  summarise(disp.drat=mean(drat), 
+            hp.media=mean(hp))
+
+novo
+```
+
+A função `starts_with()` seleciona as variáveis com base em um critério determinado pelo pesquisador com relação ao nome da variável, no exemplo abaixo, sendo aquelas que iniciam com a leetra "d" (a função inversa é `ends_with()`):
+
+
+```{r}
+mtcars %>%
+  select(starts_with("d")) %>%
+  head
+```
+
+A função `contains()` também filtra aquelas variáveis com algum critério, neste caso de conter:
+
+```{r}
+mtcars %>%
+  select(contains("a")) %>%
+  head
+```
+
+
+A função `aggregate()` também é utilizada para agregação de resultados pelo pacote `dplyr`:
+
+```{r}
+mtcars %>%
+  aggregate(. ~ cyl, ., mean)
+```
 
 
 
@@ -2358,6 +2394,8 @@ amostdep2=cbind(cob,rbind(cobaiaantes,cobaiadepois))
 knitr::kable(amostdep2, caption = 'Amostras dependentes - caso 2',row.names = FALSE)
 ```  
 
+Fonte: <www.inf.ufsc.br/~marcelo/testes2.html>.
+
 **$H_0$**: média antes $=$ média depois
 
 **$H_1$**: média antes $\neq$ média depois
@@ -2393,6 +2431,8 @@ amostdep3=cbind(c("Tecido A", "Tecido B"),rbind(tecidoa,tecidob))
 knitr::kable(amostdep3, caption = 'Comparação de dois tipos diferentes de tecidos', row.names = FALSE)
 ```  
 
+Fonte: <https://www.ime.unicamp.br/~hildete/Aula_p12.pdf>.
+
 Teste se um tecido é mais pesado que o outro.
 
 **$H_0$**: as variâncias são homogêneas
@@ -2420,6 +2460,63 @@ t.test(tecidoa, tecidob, var.equal = TRUE, paired=FALSE)
 Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso do tecido A é igual à média de peso do tecido B.
 
 ## Exercícios
+
+**1.** 	A concentração de compostos químicos do solo foi medida em dez amostras aleatórias de um solo de uma área contaminada. A concentração medida, em mg/Kg, foi 1,4  0,6  1,2  1,6  0,5  0,7  0,3  0,8  0,2  e 0,9. Calcule o intervalo de 99\% para a média de concentração.
+
+**2.**	Uma pesquisa foi realizada para verificar a satisfação dos alunos de uma escola em relação aos serviços fornecidos pela cantina. Utilizando-se uma amostra aleatória de 25 alunos, as respostas fornecidas foram:
+
+  --------------- -------------- --------------- -------------- --------------
+  satisfeito      não satisfeito satisfeito      satisfeito     satisfeito
+  satisfeito      satisfeito     satisfeito      não satisfeito satisfeito
+  não satisfeito  não satisfeito não satisfeito  satisfeito     satisfeito
+  não satisfeito  satisfeito     satisfeito      não satisfeito não satisfeito
+  não satisfeito  não satisfeito satisfeito      satisfeito     satisfeito
+  --------------- -------------- --------------- -------------- --------------
+
+Construa o intervalo de confiança para a proporção populacional dos alunos satisfeitos considerando um nível de confiança de 90\%.
+
+**3.**	(Adaptado de Morettin e Bussab, 2009) Uma companhia de cigarros anuncia que o índice médio de nicotina dos cigarros que fabrica apresenta-se abaixo de 23 mg por cigarro. Um laboratório realiza seis análises desse índice, obtendo: 27, 24, 21, 25, 26, 22. Pode-se aceitar a afirmação do fabricante?
+
+**4.**	(Fonseca e Martins, 2010) As estaturas de 20 recém-nascidos foram tomadas no Departamento de Pediatria da FNRP, cujos resultados em cm são: 41 50 52 49 49 54 50 47 52 49 50 52 50 47 49 51 46 50 49 50. Teste a hipótese de que a média desses recém nascidos é 50 cm.
+
+**5.**	(<https://www.passeidireto.com/arquivo/25297344/aula-19-testes-para-proporcao>) Uma pesquisa conclui que 90\% dos médicos recomendam aspirina a pacientes que têm filhos. Teste a afirmação contra a alternativa de que a percentagem é inferior a 90%, se numa amostra aleatória de 100 médicos, 80 recomendam aspirina.
+
+**6.**	A fim de determinar a eficiência de um medicamento antitérmico, a temperatura corporal (em graus Celsius) de 15 indivíduos foi medida. Em seguida, foi administrado o medicamento e após uma hora a temperatura foi medida novamente. Os resultados podem ser encontrados na tabela abaixo.
+
+```{r, echo=FALSE, fig.subcap='Fonte: Elaborado pelo(s) autor(es).'}
+
+require(knitr)
+exerc6=data.frame(Antes=c(37.5,36.0,39.0,38.0,37.8,38.5,36.9,39.4,37.2,38.1,39.3,37.5,38.5,37.8,39.0),
+                  Depois=c(37.8,36.4,37.6,37.2,36.9,37.7,36.8,38.1,36.7,37.3,38.0,37.1,36.6,35.0,39.0)
+)
+
+knitr::kable(exerc6)
+```
+
+<!--
+
+```{r, echo=FALSE,size = "tiny"}
+
+require(knitr)
+cob2=c("Antes","Depois")
+tecidoa=c(37.5,36.0,39.0,38.0,37.8,38.5,36.9,39.4,37.2,38.1,39.3,37.5,38.5,37.8,39.0)
+tecidob=c(37.8,36.4,37.6,37.2,36.9,37.7,36.8,38.1,36.7,37.3,38.0,37.1,36.6,35.0,39.0)
+amostdep3=cbind(c("Antes", "Depois"),rbind(tecidoa,tecidob))
+
+knitr::kable(amostdep3, row.names = FALSE)
+```  
+-->
+
+Houve ou não diminuição da temperatura dos indivíduos?
+
+**7.**(<http://www.im.ufrj.br/probest/Exercicios/C9_Exercicios.pdf>) Foi obtida uma amostra com 20 pilhas elétricas da marca A. Todas elas foram examinadas e sua duração, em horas, foi medida. O mesmo foi feito com uma amostra de 18 pilhas do mesmo tipo, porém da marca B.
+
+Marca A: 176 162 153 137 140 139 165 128 149 148 159 134 173 171 142 142 173 155 157 139 
+
+Marca B: 183 196 157 180 188 172 159 184 152 180 169 163 191 151 172 192 121 146
+
+Existe diferença entre as marcas de pilha quanto a sua duração?
+
 
 # Teste de Qui-Quadrado{#qui}
 

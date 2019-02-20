@@ -129,7 +129,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-02-18}
+    \date{2019-02-19}
 
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -2372,6 +2372,85 @@ Ainda é possível indicar mais de uma variável para este ordenamento, bem como
 \hypertarget{operador-pipe}{%
 \subsubsection{\texorpdfstring{Operador \emph{pipe}}{Operador pipe}}\label{operador-pipe}}
 
+O operador \texttt{pipe} (símbolos \texttt{\%\textgreater{}\%}) contribui para que a manipulação de dados com o pacote \texttt{dplyr} fiquem mais organizados no código de programação em linguagem R. Abaixo segue um exemplo, onde o objetivo é filtrar os veículos com transmissão manual (am == 1), agrupando-os pela quantidade de cilindros (``cyl'') e em seguida retomando a média das variáveis ``drat'' e ``hp'' para cada grupamento:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{novo =}\StringTok{ }\NormalTok{mtcars }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(am }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(cyl) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{disp.drat=}\KeywordTok{mean}\NormalTok{(drat), }
+            \DataTypeTok{hp.media=}\KeywordTok{mean}\NormalTok{(hp))}
+
+\NormalTok{novo}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+# A tibble: 3 x 3
+    cyl disp.drat hp.media
+  <dbl>     <dbl>    <dbl>
+1     4      4.18     81.9
+2     6      3.81    132. 
+3     8      3.88    300. 
+\end{verbatim}
+
+A função \texttt{starts\_with()} seleciona as variáveis com base em um critério determinado pelo pesquisador com relação ao nome da variável, no exemplo abaixo, sendo aquelas que iniciam com a leetra ``d'' (a função inversa é \texttt{ends\_with()}):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mtcars }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\KeywordTok{starts_with}\NormalTok{(}\StringTok{"d"}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{head}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                  disp drat
+Mazda RX4          160 3.90
+Mazda RX4 Wag      160 3.90
+Datsun 710         108 3.85
+Hornet 4 Drive     258 3.08
+Hornet Sportabout  360 3.15
+Valiant            225 2.76
+\end{verbatim}
+
+A função \texttt{contains()} também filtra aquelas variáveis com algum critério, neste caso de conter:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mtcars }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\KeywordTok{contains}\NormalTok{(}\StringTok{"a"}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{head}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                  drat am gear carb
+Mazda RX4         3.90  1    4    4
+Mazda RX4 Wag     3.90  1    4    4
+Datsun 710        3.85  1    4    1
+Hornet 4 Drive    3.08  0    3    1
+Hornet Sportabout 3.15  0    3    2
+Valiant           2.76  0    3    1
+\end{verbatim}
+
+A função \texttt{aggregate()} também é utilizada para agregação de resultados pelo pacote \texttt{dplyr}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mtcars }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{aggregate}\NormalTok{(. }\OperatorTok{~}\StringTok{ }\NormalTok{cyl, ., mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  cyl   mpg  disp     hp  drat    wt  qsec     vs     am  gear  carb
+1   4 26.66 105.1  82.64 4.071 2.286 19.14 0.9091 0.7273 4.091 1.545
+2   6 19.74 183.3 122.29 3.586 3.117 17.98 0.5714 0.4286 3.857 3.429
+3   8 15.10 353.1 209.21 3.229 3.999 16.77 0.0000 0.1429 3.286 3.500
+\end{verbatim}
+
 \hypertarget{funcoes-matematicas}{%
 \section{Funções Matemáticas}\label{funcoes-matematicas}}
 
@@ -3136,11 +3215,11 @@ Ex. Construir um gráfico de colunas para a variável \textbf{Sexo}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-94-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-98-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável Sexo}\label{fig:unnamed-chunk-94}
+\caption{Gráfico de colunas com a variável Sexo}\label{fig:unnamed-chunk-98}
 \end{figure}
 
 \textbf{Obs}.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -3159,11 +3238,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-95-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-99-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável Sexo (Horizontal)}\label{fig:unnamed-chunk-95}
+\caption{Gráfico de colunas com a variável Sexo (Horizontal)}\label{fig:unnamed-chunk-99}
 \end{figure}
 
 \textbf{Ex.1)} Construir um gráfico de colunas para a variável \textbf{Pessoas\_familia}.
@@ -3180,11 +3259,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-96-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-100-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável `Pessoas familia`}\label{fig:unnamed-chunk-96}
+\caption{Gráfico de colunas com a variável `Pessoas familia`}\label{fig:unnamed-chunk-100}
 \end{figure}
 
 \textbf{Ex.2)} Construir uma tabela de dupla entrada para as variáveis \textbf{Sexo} e \textbf{Divulgação}.
@@ -3199,11 +3278,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-97-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-101-1} 
 
 }
 
-\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}\label{fig:unnamed-chunk-97}
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}\label{fig:unnamed-chunk-101}
 \end{figure}
 
 \textbf{Ex.3)} Na sequência utiliza-se o sinal de atribuição \textless{}- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).
@@ -3229,11 +3308,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-99-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-103-1} 
 
 }
 
-\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}\label{fig:unnamed-chunk-99}
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}\label{fig:unnamed-chunk-103}
 \end{figure}
 
 Observe que o uso do argumento \texttt{beside=T} evita que as barras fiquem empilhadas e o arguemnto \texttt{legend}' insere a legenda conforme as cores das colunas.
@@ -3281,11 +3360,11 @@ Ex. Construa um gráfico na forma de Setograma para a variável \textbf{Sabor}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-100-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-104-1} 
 
 }
 
-\caption{Gráfico de pizza com a variável Sabor}\label{fig:unnamed-chunk-100}
+\caption{Gráfico de pizza com a variável Sabor}\label{fig:unnamed-chunk-104}
 \end{figure}
 
 \hypertarget{histograma}{%
@@ -3305,11 +3384,11 @@ Ex. Construa um histograma com a variável \textbf{Renda\_h}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-101-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-105-1} 
 
 }
 
-\caption{Histograma com a variável `Renda h`}\label{fig:unnamed-chunk-101}
+\caption{Histograma com a variável `Renda h`}\label{fig:unnamed-chunk-105}
 \end{figure}
 
 \textbf{Obs}. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixo y (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -3333,11 +3412,11 @@ Ex. Construa um histograma com a variável \textbf{Renda\_h}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-102-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-106-1} 
 
 }
 
-\caption{Histograma com a variável Renda h com breaks=5}\label{fig:unnamed-chunk-102}
+\caption{Histograma com a variável Renda h com breaks=5}\label{fig:unnamed-chunk-106}
 \end{figure}
 
 O comando \texttt{ylim} determina os limites do eixo y a serem mostrados; \texttt{xlab} e \texttt{ylab} determinam o nome das variáveis dos eixos x e y; \texttt{main} determina o nome do título e \texttt{col} determina a cor do gráfico. Use o argumento \texttt{main=NULL} para remover o título.
@@ -3360,7 +3439,7 @@ Inserindo as opções \texttt{\$counts} e \texttt{\$breaks} retomam-se os valore
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-103-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-107-1} \end{center}
 
 \begin{verbatim}
 [1]  0  5 10 15 20 25
@@ -3387,11 +3466,11 @@ Para obter o boxplot para um conjunto de dados:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-104-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-108-1} 
 
 }
 
-\caption{Boxplot com a variável Idade}\label{fig:unnamed-chunk-104}
+\caption{Boxplot com a variável Idade}\label{fig:unnamed-chunk-108}
 \end{figure}
 
 Ainda é possível criar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:
@@ -3404,11 +3483,11 @@ Ainda é possível criar um boxplot analisando a relação da variável contínu
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-105-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-109-1} 
 
 }
 
-\caption{Boxplot com as variáveis Idade e Sabor}\label{fig:unnamed-chunk-105}
+\caption{Boxplot com as variáveis Idade e Sabor}\label{fig:unnamed-chunk-109}
 \end{figure}
 
 \hypertarget{grafico-ramo-e-folhas}{%
@@ -3589,11 +3668,11 @@ Para o caso de representação no mesmo gráfico, de duas ou mais variáveis, o 
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-108-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-112-1} 
 
 }
 
-\caption{Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010}\label{fig:unnamed-chunk-108}
+\caption{Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010}\label{fig:unnamed-chunk-112}
 \end{figure}
 
 Fonte: Fonte: Elaborado pelo(s) autor(es) a partir de MTE. SFIT.
@@ -3657,11 +3736,11 @@ Segue a sequência de comandos, para obtenção do gráfico de linhas:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-110-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-114-1} 
 
 }
 
-\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}\label{fig:unnamed-chunk-110}
+\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}\label{fig:unnamed-chunk-114}
 \end{figure}
 
 \hypertarget{estatisticas-descritivas}{%
@@ -4503,7 +4582,7 @@ O teste de hipótese para duas médias aplica-se quando se deseja comparar dois 
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-143}Amostras dependentes}
+\caption{\label{tab:unnamed-chunk-147}Amostras dependentes}
 \centering
 \begin{tabular}{l|r|r|r|r|r|r}
 \hline
@@ -4552,7 +4631,7 @@ Conclusão: Não rejeita-se \(H_0\) e conclui-se que a média de peso antes do t
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-145}Amostras dependentes - caso 2}
+\caption{\label{tab:unnamed-chunk-149}Amostras dependentes - caso 2}
 \centering
 \begin{tabular}{l|r|r|r|r|r|r|r|r|r|r}
 \hline
@@ -4564,6 +4643,8 @@ Depois & 640 & 712 & 681 & 558 & 610 & 740 & 707 & 585 & 635 & 682\\
 \hline
 \end{tabular}
 \end{table}
+
+Fonte: \textless{}www.inf.ufsc.br/\textasciitilde{}marcelo/testes2.html\textgreater{}.
 
 \textbf{\(H_0\)}: média antes \(=\) média depois
 
@@ -4605,7 +4686,7 @@ Primeiramente é preciso saber se existe homogeneidade de variâncias populacion
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-147}Comparação de dois tipos diferentes de tecidos}
+\caption{\label{tab:unnamed-chunk-151}Comparação de dois tipos diferentes de tecidos}
 \centering
 \begin{tabular}{l|l|l|l|l|l|l|l}
 \hline
@@ -4615,6 +4696,8 @@ Tecido B & 39 & 27 & 35 & 42 & 31 & 39 & 22\\
 \hline
 \end{tabular}
 \end{table}
+
+Fonte: \url{https://www.ime.unicamp.br/~hildete/Aula_p12.pdf}.
 
 Teste se um tecido é mais pesado que o outro.
 
@@ -4676,6 +4759,77 @@ Conclusão: Não rejeita-se \(H_0\) e conclui-se que a média de peso do tecido 
 
 \hypertarget{exercicios-2}{%
 \section{Exercícios}\label{exercicios-2}}
+
+\textbf{1.} A concentração de compostos químicos do solo foi medida em dez amostras aleatórias de um solo de uma área contaminada. A concentração medida, em mg/Kg, foi 1,4 0,6 1,2 1,6 0,5 0,7 0,3 0,8 0,2 e 0,9. Calcule o intervalo de 99\% para a média de concentração.
+
+\textbf{2.} Uma pesquisa foi realizada para verificar a satisfação dos alunos de uma escola em relação aos serviços fornecidos pela cantina. Utilizando-se uma amostra aleatória de 25 alunos, as respostas fornecidas foram:
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule
+\endhead
+satisfeito & não satisfeito & satisfeito & satisfeito & satisfeito\tabularnewline
+satisfeito & satisfeito & satisfeito & não satisfeito & satisfeito\tabularnewline
+não satisfeito & não satisfeito & não satisfeito & satisfeito & satisfeito\tabularnewline
+não satisfeito & satisfeito & satisfeito & não satisfeito & não satisfeito\tabularnewline
+não satisfeito & não satisfeito & satisfeito & satisfeito & satisfeito\tabularnewline
+\bottomrule
+\end{longtable}
+
+Construa o intervalo de confiança para a proporção populacional dos alunos satisfeitos considerando um nível de confiança de 90\%.
+
+\textbf{3.} (Adaptado de Morettin e Bussab, 2009) Uma companhia de cigarros anuncia que o índice médio de nicotina dos cigarros que fabrica apresenta-se abaixo de 23 mg por cigarro. Um laboratório realiza seis análises desse índice, obtendo: 27, 24, 21, 25, 26, 22. Pode-se aceitar a afirmação do fabricante?
+
+\textbf{4.} (Fonseca e Martins, 2010) As estaturas de 20 recém-nascidos foram tomadas no Departamento de Pediatria da FNRP, cujos resultados em cm são: 41 50 52 49 49 54 50 47 52 49 50 52 50 47 49 51 46 50 49 50. Teste a hipótese de que a média desses recém nascidos é 50 cm.
+
+\textbf{5.} (\url{https://www.passeidireto.com/arquivo/25297344/aula-19-testes-para-proporcao}) Uma pesquisa conclui que 90\% dos médicos recomendam aspirina a pacientes que têm filhos. Teste a afirmação contra a alternativa de que a percentagem é inferior a 90\%, se numa amostra aleatória de 100 médicos, 80 recomendam aspirina.
+
+\textbf{6.} A fim de determinar a eficiência de um medicamento antitérmico, a temperatura corporal (em graus Celsius) de 15 indivíduos foi medida. Em seguida, foi administrado o medicamento e após uma hora a temperatura foi medida novamente. Os resultados podem ser encontrados na tabela abaixo.
+
+\begin{tabular}{r|r}
+\hline
+Antes & Depois\\
+\hline
+37.5 & 37.8\\
+\hline
+36.0 & 36.4\\
+\hline
+39.0 & 37.6\\
+\hline
+38.0 & 37.2\\
+\hline
+37.8 & 36.9\\
+\hline
+38.5 & 37.7\\
+\hline
+36.9 & 36.8\\
+\hline
+39.4 & 38.1\\
+\hline
+37.2 & 36.7\\
+\hline
+38.1 & 37.3\\
+\hline
+39.3 & 38.0\\
+\hline
+37.5 & 37.1\\
+\hline
+38.5 & 36.6\\
+\hline
+37.8 & 35.0\\
+\hline
+39.0 & 39.0\\
+\hline
+\end{tabular}
+
+Houve ou não diminuição da temperatura dos indivíduos?
+
+\textbf{7.}(\url{http://www.im.ufrj.br/probest/Exercicios/C9_Exercicios.pdf}) Foi obtida uma amostra com 20 pilhas elétricas da marca A. Todas elas foram examinadas e sua duração, em horas, foi medida. O mesmo foi feito com uma amostra de 18 pilhas do mesmo tipo, porém da marca B.
+
+Marca A: 176 162 153 137 140 139 165 128 149 148 159 134 173 171 142 142 173 155 157 139
+
+Marca B: 183 196 157 180 188 172 159 184 152 180 169 163 191 151 172 192 121 146
+
+Existe diferença entre as marcas de pilha quanto a sua duração?
 
 \hypertarget{qui}{%
 \chapter{Teste de Qui-Quadrado}\label{qui}}
@@ -5485,11 +5639,11 @@ O diagrama de dispersão do exemplo está representado abaixo.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-162-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-168-1} 
 
 }
 
-\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}\label{fig:unnamed-chunk-162}
+\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}\label{fig:unnamed-chunk-168}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -5878,11 +6032,11 @@ Para o exemplo:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-166-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-172-1} 
 
 }
 
-\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-166}
+\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-172}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -6068,11 +6222,11 @@ Ainda, pode-se construir o gráfico com a distribuição da probabilidade dos re
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-169-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-175-1} 
 
 }
 
-\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:unnamed-chunk-169}
+\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:unnamed-chunk-175}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
