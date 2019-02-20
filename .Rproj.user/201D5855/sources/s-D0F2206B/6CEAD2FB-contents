@@ -9,12 +9,12 @@ title = {{Reproducible Research with R and R Studio}},
 year = {2013}
 }
 
-@www{biblatex,
+@misc{biblatex,
 title={BibLATEX – Sophisticated Bibliographies in LATEX},
 author={Lehman, Philipp and Kime, Philip},
 year={2006},
 url = {https://ctan.org/pkg/biblatex},
-urlaccessdate = {01-03-2018}
+urldate = {2018-03-01}
 }
 
 
@@ -37,33 +37,35 @@ address={Brasília},
 author={Brasil, {Ministério da Saúde - Secretaria de  Atenção à Saúde}}
 }
 
-@www{rcore,
+@misc{rcore,
 title= {R: A Language and Environment for Statistical
 Computing},
 author={{R Core Team}},
 organization={R Foundation for Statistical Computing},
 address={Vienna, Austria},
-year=2018,
-url= {https://www.R-project.org}
+year=2019,
+url= {https://www.R-project.org},
+urldate = {2019-02-20}
 }
 
-@www{teamrstudio, 
+@misc{teamrstudio, 
 title = {RStudio: Integrated Development Environment for R}, 
 author = {{RStudio Team}}, 
 organization = {RStudio, Inc.}, 
 address = {Boston, MA}, 
-year = {2018}, 
-url = {http://www.rstudio.com/}
+year = {2019}, 
+url = {http://www.rstudio.com/},
+urldate = {2019-02-20}
 }
 
 
-@www{R-rmarkdown,
+@misc{R-rmarkdown,
 title = {rmarkdown: Dynamic Documents for R},
 author = {Allaire, J. J. and Xie, Yihui and McPherson, Jonathan and Luraschi, Javier and Ushey, Kevin and Atkins, Aron  and Wickham, Hadley and Cheng, Joe  and Chang, Winston},
 year = {2017},
 note = {R package version 1.8},
 url = {https://CRAN.R-project.org/package=rmarkdown},
-date  = {01-03-2018}
+urldate = {2018-03-01}
 }
 
 
@@ -83,7 +85,7 @@ booktitle = {R home web site: http://www. r-project. org},
 mendeley-groups = {R Reproduc},
 title = {{The R project for statistical computing}},
 url = {https://www.r-project.org/},
-urlaccessdate = {10-06-2017},
+urldate = {2017-06-10},
 year = {1997}
 }
 
@@ -116,12 +118,12 @@ address={São Paulo}
 
 
 
-@www{ferreira2013,
+@misc{ferreira2013,
 title={Recursos computacionais utilizando {R}},
 author={Ferreira, Daniel Furtado},
 journal={Lavras: UFLA},
 year={2013},
-urlaccessdate = {28-11-2016},
+urldate = {2016-11-28},
 url = {http://www.dex.ufla.br/~danielff/meusarquivospdf/RRC0.pdf}
 }
 
@@ -134,10 +136,10 @@ publisher={Hucitec},
 address={São Paulo}
 }
 
-@www{ecor2016,
+@misc{ecor2016,
 author = {{PINTO JUNIOR}, Jony Arrais},
 title = {Projeto: Métodos computacionais para estatística II. Curso Software R},
-urlaccessdate = {06-02-2018},
+urldate = {2018-02-06},
 url = {http://www.professores.uff.br/jony/wp-content/uploads/sites/113/2017/08/curso_r.pdf}
 }
 
