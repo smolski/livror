@@ -5,17 +5,17 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "1854976216",
     "id" : "6CEAD2FB",
-    "lastKnownWriteTime" : 1550661763,
-    "last_content_update" : 1550661763630,
+    "lastKnownWriteTime" : 1550706420,
+    "last_content_update" : 1550706420066,
     "path" : "D:/Github/livror/book.bib",
     "project_path" : "book.bib",
     "properties" : {
-        "cursorPosition" : "86,0",
-        "scrollLine" : "77"
+        "cursorPosition" : "56,23",
+        "scrollLine" : "49"
     },
-    "relative_order" : 4,
+    "relative_order" : 3,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "text"
