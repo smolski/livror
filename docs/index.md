@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Iara Denise Endruweit Battisti
 - Felipe Micail da Silva Smolski
-date: "2019-02-20"
+date: "2019-02-26"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -60,7 +60,7 @@ Bons estudos!
 \emph{}
 \end{flushright}
 
-O R é um ambiente voltado para análise de dados com o uso de uma linguagem de programação, frente a isso um conhecimento prévio dos príncipios de programação facilita a compreensão da condução das análises aplicadas no software. Entretanto, não é pré-requisito. Neste capítulo serão abordados os primeiros passos para o emprego da linguagem de programação R utilizando uma interface "amigável" - o software RStudio. Além disso, serão apresentados os comandos básicos para a manipulação de dados dentro do RStudio.
+O R é um ambiente voltado para análise de dados com o uso de uma linguagem de programação, frente a isso um conhecimento prévio dos princípios de programação facilita a compreensão da condução das análises aplicadas no software. Entretanto, não é pré-requisito. Neste capítulo serão abordados os primeiros passos para o emprego da linguagem de programação R utilizando uma interface "amigável" - o software RStudio. Além disso, serão apresentados os comandos básicos para a manipulação de dados dentro do RStudio.
 
 
 ## Download e instalação do R e Rstudio
@@ -89,7 +89,7 @@ Fonte: Elaborado pelo(s) autor(es).
 - **Fonte/Editor de Scripts**: se constitui do ambiente onde serão abertos os scripts previamente salvos nos mais diversos formatos ou mesmo sendo o local de visualização das bases de dados.
 - **Console**: local onde será efetuada a digitação das linhas de código que serão interpretadas pelo R.
 - **Ambiente e Histórico**: o ambiente será visualizado os objetos criados ou carregados durante a seção e; a aba History retoma os scripts digitados no console.
-- **Plots/arquivos/Pacotes**: local onde podem ser acessados os arquivos salvos no computador pela aba *files*; a aba *Plots* carrega os gráficos e plotagens; a aba *Packages* contém os pacotes instalados em seu computador, onde são ativados ou instalados novos; em *Help* constam as ajudas e explicações dos pacotes e; *Viewer* vizualiza documentos do tipo html.
+- **Plots/arquivos/Pacotes**: local onde podem ser acessados os arquivos salvos no computador pela aba *files*; a aba *Plots* carrega os gráficos e plotagens; a aba *Packages* contém os pacotes instalados em seu computador, onde são ativados ou instalados novos; em *Help* constam as ajudas e explicações dos pacotes e; *Viewer* visualiza documentos do tipo html.
 
 ## Help
 
@@ -236,7 +236,7 @@ onde o usuário escolhe a pasta desejada que ficará como padrão. O comando `di
 
 ### Operações Aritméticas
 
-A realização de uma operação aritmética no R acontece da seguinte forma: onde a resolução das operações segue o padrão, ou seja, primeiro exponenciações, seguido de multiplicações e divisões, deixando por ultimo adições e subtrações, de acordo com a ordem que estão dispostas. Utiliza-se o parênteses para destacar a operação que deve ser prioritária na resolução. Seguem alguns exemplos efetuados diretamente no console do RStudio:
+A realização de uma operação aritmética no R acontece da seguinte forma: onde a resolução das operações segue o padrão, ou seja, primeiro exponenciações, seguido de multiplicações e divisões, deixando por último adições e subtrações, de acordo com a ordem que estão dispostas. Utiliza-se o parênteses para destacar a operação que deve ser prioritária na resolução. Seguem alguns exemplos efetuados diretamente no console do RStudio:
 
 
 ```r
@@ -3032,7 +3032,7 @@ boxplot(Idade~Sabor, data=pesquisa_dados)
 
 Em um gráfico ramo-e-folhas, são classificados os dados segundo um padrão que revela a distribuição subjacente. O padrão consiste em separar um número em duas partes em geral: o ramo consiste nos algarismos mais à esquerda e as folhas consistem nos algarismos mais à direita.
 
-No gráfico Ramo-e-folhas, é posível ver a distribuição desses dados, que é uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a informação da lista original; se necessário, pode-se recompor a relação original de valores. Note que as linhas de algarismos em um gráfico ramo-e-folhas são análogas, em natureza, às barras de um histograma [@triola1999].
+No gráfico Ramo-e-folhas, é possível ver a distribuição desses dados, que é uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a informação da lista original; se necessário, pode-se recompor a relação original de valores. Note que as linhas de algarismos em um gráfico ramo-e-folhas são análogas, em natureza, às barras de um histograma [@triola1999].
 
 
 `stem(nome_variável)` - comando que permite obter um gráfico Ramo e Folhas. 
@@ -3162,7 +3162,7 @@ Table: (\#tab:evolres)Evolução dos resultados da fiscalização do trabalho na
 | 2009|13.379                 |
 | 2010|11.978                 |
 
-Fonte: MTE. SFIT.
+Fonte: @Dieese2011.
 
 Para construir um gráfico de linhas, é utilizado o seguinte comando:
 
@@ -3196,7 +3196,7 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
 <img src="index_files/figure-epub3/unnamed-chunk-112-1.png" alt="Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
 <p class="caption">(\#fig:unnamed-chunk-112)Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
 </div>
-Fonte: Fonte: Elaborado pelo(s) autor(es) a partir de MTE. SFIT. 
+Fonte: Elaborado pelo(s) autor(es) a partir de @Dieese2011. 
 
 onde, no argumento `ylim`, deve-se indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
 
@@ -4436,7 +4436,7 @@ data:  quiquadrado1
 X-squared = 5.1, df = 1, p-value = 0.02
 ```
 
-Então deve-se concluir pela rejeição ou não da $H_0$ e interpretar esse resultados.
+Então deve-se concluir pela rejeição ou não da $H_0$ e interpretar esse resultado.
 
 Caso pelo menos uma casela tenha frequência esperada menor que 5 como por exemplo na tabela abaixo <!--\@ref(tab:qui3)-->, é utilizado o teste exato de Fisher.
 
@@ -4745,19 +4745,19 @@ Fonte: Dados simulados.
 \end{flushright}
 
 
-Muitas vezes há a necessidade de estudar duas ou mais variáveis ao mesmo tempo com o objetivo de predizer uma variável em função da(s) outra(s). Por exemplo, verificar se sólidos removidos de um material relaciona-se com o tempo de secagem e qual é a forma dessa relação. Outros exemplos: relação entre tempo de estudo e desempenho a uma avaliação; relação entre investimento em comunicação e vendas; entre outros.
+Muitas vezes, há a necessidade de estudar duas ou mais variáveis ao mesmo tempo com o objetivo de predizer uma variável em função da(s) outra(s). Por exemplo, verificar se sólidos removidos de um material se relaciona com o tempo de secagem e qual é a forma dessa relação. Outros exemplos: relação entre tempo de estudo e desempenho a uma avaliação; relação entre investimento em comunicação e vendas; entre outros.
 
-A análise de correlação permite verificar a relação entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Serão estudados os modelos de regressão linear na qual a variáveis resposta ($Y$) é quantitativa e as variáveis preditoras ($X_i$) são quantitativas ou qualitativas.
+A análise de correlação permite quantificar a relação linear entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Neste capítulo, serão estudados os modelos de regressão linear na qual a variáveis resposta ($Y$) é quantitativa e as variáveis preditoras ($X_i$) são quantitativas ou qualitativas.
 
 ## Correlação linear
 
-É a técnica mais simples para estudar a relação entre duas variáveis. Os dados compõem uma única amostra de pares de valores ($x_i, y_i$), correspondendo aos valores das variáveis X e Y, respectivamente, feitas em cada elemento da amostra. Para analisar a existência de relação entre as duas variáveis, primeiramente pode-se fazer o Diagrama de Dispersão.
+A correlação linear é a técnica mais simples para estudar a relação entre duas variáveis. Os dados compõem uma única amostra de pares de valores ($x_i, y_i$), correspondendo aos valores das variáveis X e Y, respectivamente, mensurados em cada elemento de uma amostra ou uma população. Para analisar a existência de relação entre as duas variáveis de forma exploratória, primeiramente pode-se fazer o Diagrama de Dispersão.
 
 ## Diagrama de dispersão
 
-É um gráfico para verificar a existência de relação entre as variáveis X e Y. É composto por pontos, os quais correspondem aos pares de valores ($xi, y_i$), sendo a variável X representada no eixo horizontal e a variável Y representada no eixo vertical.
+O diagrama de dispersão é um gráfico para verificar a existência de relação entre os par de variáveis X e Y. É composto por pontos, os quais correspondem aos pares de valores ($xi, y_i$), sendo a variável X representada no eixo horizontal e a variável Y representada no eixo vertical.
 
-O diagrama de dispersão fornece uma visualização gráfica do comportamento conjunto das duas variávei em estudo. Na Figura \@ref(fig:diag)a percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variáveis crescem conjuntamente. Já na Figura \@ref(fig:diag)b percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura \@ref(fig:diag)c informa a ausência de relação entre as duas variáveis e, a Figura \@ref(fig:diag)d mostra uma relação não linear, a qual não será objeto de estudo nesta publicação.
+O diagrama de dispersão fornece uma visualização gráfica do comportamento conjunto das duas variáveis em estudo. Na Figura \@ref(fig:diag)a, percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variáveis crescem conjuntamente. Na Figura \@ref(fig:diag)b, percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura \@ref(fig:diag)c informa a ausência de relação entre as duas variáveis e, a Figura \@ref(fig:diag)d mostra uma relação não linear, que não será abordada neste capítulo.
 
 
 <div class="figure" style="text-align: center">
@@ -4779,9 +4779,7 @@ Table: (\#tab:reg1)Relação entre o tempo de estudo e a nota.
   
 Fonte: Dados simulados.
 
-Sintaxe no software R:
-
-`plot(x,y)`
+Primeiramente, deve-se digitar os dados para cada variável diretamente na linha de comando ou em um arquivo de dados que será importado. No caso de linha de comando:
 
 
 ```r
@@ -4789,7 +4787,12 @@ tempo=c(4,6,5.5,5,6.8,6.5,3.5,4.5,7,8,5.4,6.5,7.7,7.5,5.8)
 nota=c(5.5,7.5,8,7,8.1,8.6,4.7,7.5,9.5,9.5,7.8,8,9.1,9.5,8)
 ```
 
-O diagrama de dispersão do exemplo está representado abaixo.
+Para elaborar o diagrama de dispersão o compando utilizado é o plot em que x corresponde ao vetor de dados da variável resposta e y corresponde ao vetor de dados da variável preditora.
+
+`plot(variável_preditora, variável_dependente`
+
+Para o exemplo o comando é o seguinte:
+
 
 
 ```r
@@ -4797,11 +4800,14 @@ plot(tempo,nota)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-168-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-168)Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo</p>
+<img src="index_files/figure-epub3/diadisp-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
+<p class="caption">(\#fig:diadisp)Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo</p>
 </div>
 
+
 Fonte: Elaborado pelo(s) autor(es).
+
+Resultando no diagrama de dispersão apresentado na Figura \@ref(fig:diadisp).
 
 ## Coeficiente de Correlação Linear de Pearson
 
@@ -4809,21 +4815,23 @@ O coeficiente de correlação linear de Pearson (Karl Pearson 1857-1936) mede o 
 
 
 $$
-r = p_{xy} = \frac{\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
+r = \frac{\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
 {\sqrt{\sum_{i=1}^{n} (x_i - \overline{x})^2(y_i - \overline{y})^2}}
 $$
 
 em que:
 
-- n: número de pares na amostra
-- x: valores da variável x
-- y: valores da variável y
+- $n$: número de pares na amostra;
+- $x$: valores da variável x;
+- $y$: valores da variável y;
+- $\bar{x}$: média dos valores de x;
+- $\bar{y}$: média dos valores de y;
 
-O coeficiente de correlação linear (r) é uma estatística amostral, representando a magnitude da relação entre duas variáveis na amostra. O parâmetro populacional é representado por $\rho$. O coeficiente de correlação linear assume valores entre -1 e +1, inclusive. Se o valor de r está próximo de 0, conclui-se que não há correlação linear entre as variáveis X e Y. Se o valor de r está próximo de -1 ou +1, conclui-se pela existência de correlação linear significativa entre as variáveis X e Y, sendo que o sinal indica uma relação linear positiva (direta) ou negativa (inversa).
+O coeficiente de correlação linear (r) é uma estatística amostral, representando a magnitude da relação entre duas variáveis na amostra. O parâmetro populacional é representado por $\rho$, que é calculado da mesma forma. O coeficiente de correlação linear assume valores entre -1 e +1, inclusive. Se o valor de r está próximo de 0, conclui-se que não há correlação linear entre as variáveis X e Y. Se o valor de r está próximo de -1 ou +1, conclui-se pela existência de correlação linear significativa entre as variáveis X e Y, sendo que o sinal indica uma relação linear positiva (direta) ou negativa (inversa).
 
 Sintaxe no software R:
 
-`cor(x,y)`
+`cor(variável_preditora,variável_dependente)` ou `cor(x,y)`
 
 Obs: x e y são  numéricos.
 
@@ -4836,13 +4844,13 @@ cor(tempo,nota)
 [1] 0.9224
 ```
 
-
+No resultado é apresentado o valor do coeficiente de correlação linear, que neste caso, está próximo de +1, expressando uma relação forte e direta.
 
 ## Modelo de Regressão
 
-O estudo de regressão refere-se aos casos em que se pretende estabelecer uma relação entre uma variável Y considerada dependente (variável resposta ou desfecho) e uma ou mais variáveis $x_1, x_2,\cdots, x_k$ (variáveis explicativas ou preditoras) consideradas independentes.
+No estudo de regressão estabelece-se aos casos em que se pretende estabelecer uma relação entre uma variável Y considerada dependente (variável resposta ou desfecho) e uma ou mais variáveis $x_1, x_2,\cdots, x_k$ (variáveis explicativas ou preditoras) consideradas independentes.
 
-O objetivo da análise de regressão é ajustar uma equação que permita explicar o comportamento da variável resposta de maneira que o valor previsto possa estar próximo do que seria observado. A forma do modelo de regressão depende da relação entre as variáveis, expressa visualmente pelo diagrama de dispersão, conforme exemplificado na Figura \@ref(fig:diag).
+O objetivo da análise de regressão é ajustar uma equação que permita explicar o comportamento da variável resposta de maneira que o valor previsto possa estar próximo do que seria observado, dado um conjunto de valores observados para as variáveis preditoras. A forma do modelo de regressão depende da relação entre as variáveis, expressa visualmente pelo diagrama de dispersão, conforme exemplificado na Figura \@ref(fig:diag).
 
 A análise de regressão é uma técnica muito utilizada em variáveis quantitativas, como por exemplo:
 
@@ -4879,13 +4887,13 @@ $$
 \begin{matrix}
 \sum (y_i-\overline{y}) ^{2} = \sum (\hat{y}_i-\overline{y})^2 + \sum (y_i-\hat{y}_i)^2 \\
 \\
-\text{SQTotal = SQRegressão + SQResíduo}
+\text{Soma de Quadrado Total = Soma de Quadrado de Regressão + Soma de Quadrado de Resíduo}
 \end{matrix}
 $$
 
 
 
-Assim, a partir da expressão apresentada que o modelo de regressão será mais adequado na medida em que a proporção de "Soma de Quadrados de Regressão" é mais alta em relação à "Soma de Quadrado Total" do que a "Soma de Quadrado do Resíduo".
+Assim, a partir da expressão apresentada e buscando maximizar a variância explicada, o modelo de regressão mais adequado será aquele com maior proporção de "Soma de Quadrado de Regressão" em relação à "Soma de Quadrado Total", minimizando  a "Soma de Quadrado do Resíduo."
 
 ## Modelo de Regressão Linear Simples
 
@@ -4908,7 +4916,7 @@ $\beta_0$: coeficiente linear (intercepto). Interpretado como o valor da variáv
 
 $\beta_1$: coeficiente angular (inclinação). Interpretado como acréscimo/decréscimo na variável dependente para a variação de uma unidade na variável independente;
 
-$\varepsilon_i$: erros aleatórios supostamente de uma população normal, com média 0 e variância constante $\begin{bmatrix}\varepsilon_i N(0, \sigma^2)\end{bmatrix}$.
+$\varepsilon_i$: erros aleatórios costumeiramente assumidos como provenientes de uma população normal, com média 0 e variância constante $\begin{bmatrix}\varepsilon_i N(0, \sigma^2)\end{bmatrix}$.
 
 
 ## Método dos Mínimos Quadrados
@@ -4921,7 +4929,7 @@ $$
 $$
 
 
-As expressões para os coeficientes, que minimizam SQResíduos são obtidas pela derivadas desta soma de quadrados em relação a $b_0$ e em relação a $b_1$ e podem ser descritas por [@hoffmann1998]:
+As expressões para os coeficientes, que minimizam a Soma de Quadrado dos Resíduos são obtidas pela derivada desta soma de quadrados em relação a $b_0$ e em relação a $b_1$ e podem ser descritas por [@hoffmann1998]:
 
 $$
 b_1=\frac{\sum xy-\frac{\sum x \sum y}{n}}{\sum x^2 - \frac{(\sum x)^2}{n}}
@@ -4930,11 +4938,11 @@ $$
 
 em que:
 
-**n**: número de pares na amostra;
+$n$: número de pares na amostra;
 
-**x**: valores da variável x;
+$x$: valores da variável x;
 
-**y**: valores da variável y.
+$y$: valores da variável y.
 
 e
 
@@ -4945,9 +4953,9 @@ $$
 
 em que:
 
-$\bar{x}$: média aritmética dos valores de x;
+$\bar{x}$: média dos valores de x;
 
-$\bar{y}$: média aritmética dos valores de y;
+$\bar{y}$: média dos valores de y;
 
 $b_1$: valor calculado do coeficiente angular.
 
@@ -4969,22 +4977,18 @@ $x$: valores da variável explicativa.
 
 Esta equação refere-se a reta de regressão, sendo que se $b_1$ é um valor positivo a reta é crescente, demonstrando uma relação positiva entre as variáveis; mas se $b_1$ é um valor negativo, a reta é decrescente, demonstrando uma relação inversa entre as variáveis.
 
-Sintaxe no software R:
+No software utiliza-se o comando `lm` para executar a análise de regressão linear, em que y corresponde aos valores numéricos da variável resposta e x são valores numéricos da variável preditora. No caso do segundo comando, "base" corresponde ao nome da base de dados em que estão armazenadas as variáveis. Lembrando que "regressao" é o nome fornecido pelo usuário.
 
-`regressao=lm(y~x)`
 
-ou
+`nome_para_regressao=lm(variável_dependente~variável_preditora)`
 
-`regressao=lm(y~x, data=base)`
-
-Obs: y são valores numéricos da variável resposta e x são valores numéricos da variável preditora e a base corresponde ao nome da base de dados em que estão armazenadas as variáveis.
 
 Por exemplo:
 
 
 ```r
-regressao=lm(nota~tempo)
-regressao
+regressaolinear=lm(nota~tempo)
+regressaolinear
 ```
 
 ```
@@ -4997,15 +5001,18 @@ Coefficients:
       2.221        0.947  
 ```
 
+No resultado observa-se o valor do coeficiente linear (intercept) igual a 2,2214 e o valor do coeficiente angular (tempo).
+
+
 ## Análise de Variância
 
-A análise de variância (técnica introduzida por Fisher, na década de 20) testa o ajuste da equação como um todo, ou seja, um teste para verificar se a equação de regressão obtida é significativa ou não. No caso de regressão linear simples, a análise de variância é definida como apresentada na Tabela \@ref(tab:varian).
+A análise de variância, técnica introduzida por Fisher, na década de 20, testa o ajuste da equação como um todo, ou seja, um teste para verificar se a equação de regressão obtida pode ser exclusivamente fruto do erro amostral em uma situação em que a variável preditiva não possui nenhuma relação linear com o desfecho (isto é, testar a significância da equação ajustada). No caso de regressão linear simples, a análise de variância é definida como apresentada na Tabela \@ref(tab:varian).
 
 
-As hipóteses testadas na Análise de Variância da Regressão são:
+As hipóteses testadas na análise de variância da Regressão são:
 
 $$
-H_0:\beta_1=0 \textrm{ (a regressao não é significativa)} 
+H_0:\beta_1=0 \textrm{ (a regressão não é significativa)} 
 $$
 
 $$
@@ -5013,7 +5020,7 @@ H_1:\beta_1 \neq 0 \textrm{ (a regressão é significativa)}
 $$
 
 
-Table: (\#tab:varian)Análise de variância para a regressão linear.
+Table: (\#tab:varian)Análise de variância para a regressão linear simples.
 
   ---------------------------------------------------------
   **FV**          **GL**  **SQ**       **QM**        **F**
@@ -5050,19 +5057,17 @@ Fc = QMRegressão $/$ QMResíduo
 Espera-se que o QMResíduo seja mínimo, assim o modelo de regressão estará
 bem ajustado. 
 
-A distribuição de probabilidade para a razão de duas variâncias é conhecida como a distribuição F. Se a hipótese nula for rejeitada ao nível de signicância $\alpha$, rejeita-se $H_0$, portanto a regressão é significativa.
+A distribuição de probabilidade para a razão de duas variâncias é conhecida como a distribuição F. Se a hipótese nula for rejeitada ao nível de signicância $\alpha$, rejeita-se $H_0$ e portanto a regressão é significativa ao nível $\alpha$ de significância.
 
-Sintaze no software R:
+No software R, utiliza-se a função `anova()` para obter a análise de variância informando o nome dado ao modelo de regressão, obtido anteriormente.
 
-`anova(regressao)`
-
-Obs: regressao é o nome dado ao modelo de regressão.
+`anova(nome_para_regressão)`
 
 Por exemplo:
 
 
 ```r
-anova(regressao)
+anova(regressaolinear)
 ```
 
 ```
@@ -5076,28 +5081,27 @@ Residuals 13    4.0    0.31
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
+No resultado observa-se as fontes de variação: tempo (variável preditora) e resíduos (residuals); graus de liberdade (Df), soma de quadrado (Sum Sq), quadrado médio (Mean Sq), valor do F calculado (F value) e o valor $p$ (Pr). Neste caso, como $p<0,01$ rejeita-se $H_0$ e, portanto a equação é significativa ($p<0,01$).
+
 ## Coeficiente de Determinação
 
-Representa o percentual de variação total que é explicada pela equação de regressão, sendo obtido da seguinte forma:
+O coeficiente de determinação representa o percentual de variação total que é explicada pela equação de regressão, sendo obtido da seguinte forma:
 
 $$
 R^2 = \frac{\textrm{SQRegressão}}{SQTotal}
 $$
 
 
-Quanto mais próximo de 1 (ou 100\%), melhor será o ajuste da equação de regressão. Também utiliza-se o coeficiente de determinação ajustado (R$^2$ ajustado), o qual considera o número de variáveis e o tamanho da amostra, sendo este o mais indicado para regressão múltipla.
+Quanto mais próximo de 1 (ou 100\%) for o R$^2$, melhor será o ajuste da equação de regressão. Também utiliza-se o coeficiente de determinação ajustado (R$^2$ ajustado), o qual considera o número de variáveis e o tamanho da amostra, sendo que este é o mais indicado para regressão múltipla.
+No software R, o valor do coeficiente de determinação é obtido pelo comando `summary()`, conforme segue:
 
-Sintaxe no software R:
-
-`summary(regressao)`
-
-Obs: regressao é o nome dado ao modelo de regressão.
+`summary(nome_para_regressao)`
 
 Por exemplo:
 
 
 ```r
-summary(regressao)
+summary(regressaolinear)
 ```
 
 ```
@@ -5121,42 +5125,38 @@ Multiple R-squared:  0.851,	Adjusted R-squared:  0.839
 F-statistic: 74.2 on 1 and 13 DF,  p-value: 9.88e-07
 ```
 
-Para traçar a reta de regressão no diagrama de dispersão, utiliza-se o seguinte comando:
+No resultado, observa-se o valor de coeficiente de determinação (multiple R-squared) igual a 0,8509, indicando que 85,09\% da variação da nota (variável resposta) é devido a variação do tempo de estudo (variável preditora).
 
-Sintaxe no software R:
+A reta de regressão pode ser visualizada no diagrama de dispersão com o comando `abline()`, como segue:
 
-`abline(regressao)`
 
-Obs: regressao é o nome dado ao modelo de regressão.
+`abline(nome_para_regressao)`
+
 
 Para o exemplo:
 
 
 ```r
 plot(nota~tempo)
-abline(coef(regressao))
+abline(coef(regressaolinear))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-172-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-172)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
+<img src="index_files/figure-epub3/unnamed-chunk-171-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-171)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
 
-O intervalo de 95\% de confiança para os coeficientes de regressão são obtidos, no software R, da seguinte forma:
+O intervalo de 95\% de confiança para os coeficientes de regressão são obtidos, no software R, pelo comando `confint()`, da seguinte forma:
 
-Sintaxe no software R:
-
-`confint(regressao)`
-
-Obs: regressao é o nome dado ao modelo de regressão.
+`confint(nome_para_regressao)`
 
 Para o exemplo:
 
 
 ```r
-confint(regressao)
+confint(regressaolinear)
 ```
 
 ```
@@ -5167,10 +5167,17 @@ tempo       0.7097  1.185
 
 ## Análise dos Resíduos
 
+O resíduo da análise de regressão é a diferença do valor do Y observado e Y estimado referente a cada par de valores do conjunto de dados, isto é, $E_i = Y_i-\hat{Y}_i$.
 
-Para a validade dos intervalos de confiança e teste de hipótese torna-se necessário supor que as observações de Y sejam independentes e o termo de erro tenha distribuição aproximadamente normal com média 0 e variância constante.
+No software R, pode-se utilizar o comando "residuals", para visualizar os resíduos, lembrando que "regressaolinear" é o nome dado ao modelo executado, como segue:
 
-O método gráfico pode ser utilizado para testar estas suposições, descrevendo que após a estimação dos parâmetros do modelo, pode-se calcular os resíduos, através da diferença entre os valores observados y e os valores preditos $\hat{y}$, associados a cada x usado na análise. Faz-se então um gráfico com os pares ($x,\varepsilon$), sendo $\varepsilon = y -\hat{y}$ [@barbetta1988].
+`residuals(regressaolinear)`
+
+
+A análise dos resíduos é importante para a validade dos intervalos de confiança e testes de hipóteses, uma vez que as suposições   das observações de Y independentes e o erro adere a distribuição aproximadamente normal com média 0 e variância constante devem ser satisfeitas.
+
+O método gráfico pode ser utilizado para testar estas suposições dispondo os valores da variável preditora no eixo x e os respectivos valores dos resíduos no eixo y.  Ainda, pode-se dispor os valores ajustados no eixo x e os respectivos valores dos resíduos do eixo y.
+
 
 Se o modelo ajustado for apropriado para os dados, os pontos devem estar
 distribuídos de forma aleatória no gráfico dos resíduos, conforme Figura \@ref(fig:residuos)a. Caso a suposição não seja satisfeita, métodos alternativos podem ser utilizados como: método dos mínimos quadrados ponderados para o caso de não homocedasticidade; o método dos mínimos quadrados generalizados para o caso de erros correlacionados; e, métodos não-paramétricos para o caso de não normalidade.
@@ -5184,23 +5191,20 @@ Além da análise gráfica, existem testes para avaliar a homocedasticidade como
 
 Fonte: Elaborado pelo(s) autor(es).
 
-O primeiro gráfico de resíduos que é possível elaborar é para representar os valores ajustados pela equação de regressão ajustada no eixo x e os valores dos resíduos no eixo y, conforme segue.
+A seguir é apresentado o gráfico de resíduos apresentando os valores ajustados pela equação de regressão e os resuíduos:
 
-Sintaxe no software R:
 
-`plot(fitted(regressao),residuals(regressao),`
+`plot(fitted(nome_para_regressao),residuals(nome_para_regressao),`
 
 `xlab="Valores ajustados",ylab="Resíduos")`
 
-Obs: `regressao` é o nome dado ao modelo de regressão, fitted define os valores ajustados no eixo x; `residuals` define os valores ajustados no eixo Y; `xlab` indica o nome do eixo x e `ylab` indica o nome do eixo y.
-
-`abline(h=0)` (obs: adicionar uma linha constante em y=0).
+Nesta sintaxe, o termo "regressaolinear" é o nome dado ao modelo de regressão, "fitted" define os valores ajustados no eixo horizontal, "residuals" define os resíduosno eixo vertical, "xlab" indica o nome do eixo horizontal e "ylab" indica o nome do eixo vertical. e "abline(h=0)" apresentauma linha constante em y=0 para facilitar os desvios dos resíduos.
 
 Na Figura \@ref(fig:residuos1) é apresentado o gráfico de resíduo, no qual os resíduos são apresentados no eixo y e os valores ajustados são apresentados no eixo x.
 
 
 ```r
-plot(fitted(regressao), residuals(regressao),
+plot(fitted(regressaolinear), residuals(regressaolinear),
 xlab="Valores ajustados", ylab="Residuos")
 abline(h=0)
 ```
@@ -5217,7 +5221,7 @@ Outro gráfico de resíduos que é possível elaborar na análise de resíduos r
 Sintaxe no software R:
 
 
-`plot(tempo,residuals(regressao),`
+`plot(tempo,residuals(nome_para_regressao),`
 
 `xlab="Valores independente", ylab="Resíduos")`
                                       
@@ -5231,8 +5235,9 @@ Por exemplo:
 
 
 ```r
-plot(tempo, residuals(regressao), xlab = "Valores independentes",
-ylab="Residuos")
+plot(tempo, residuals(regressaolinear), 
+     xlab = "Valores independentes",
+     ylab="Residuos")
 abline(h=0)
 ```
 
@@ -5252,35 +5257,19 @@ Yobservado – Yestimado = 8 – 8,38 = - 0,38
 
 Para exibir os valores ajustados e os resíduos da equação de regressão utilizam-se os seguintes comandos:
 
-Sintaxe no software R:
 
-`regressao$residuals`  (exibe os resíduos do modelo regressao).
+`residuals(regressaolinear)`  (exibe os resíduos do modelo regressao).
 
-`regressao$fitted.values` (exibe os valores ajustados do modelo regressao).
+`fitted(regressaolinear)` (exibe os valores ajustados do modelo regressao).
 
-Por exemplo:
-
-
-```r
-regressao$residuals
-```
-
-```
-       1        2        3        4        5        6        7        8 
--0.51087 -0.40561  0.56807  0.04176 -0.56351  0.22070 -0.83718  1.01544 
-       9       10       11       12       13       14       15 
- 0.64701 -0.30036  0.46281 -0.37930 -0.41615  0.17333  0.28386 
-```
 
 Para testar a suposição que os erros aleatórios têm distribuição normal, pode-se elaborar o gráfico de probabilidade normal, conforme segue:
 
-Sintaxe no software R:
-
-`qqnorm(residuals(regressao))`
+`qqnorm(residuals(nome_para_regressao))`
 
 
 ```r
-qqnorm(residuals(regressao))
+qqnorm(residuals(regressaolinear))
 ```
 
 <div class="figure" style="text-align: center">
@@ -5294,40 +5283,39 @@ Ainda, pode-se construir o gráfico com a distribuição da probabilidade dos re
 
 
 ```r
-hist(x = regressao$residuals,
+hist(x = regressaolinear$residuals,
       xlab = "Resíduos",
       ylab = "Densidade",
       main = "",
       col = "lightgreen",
       probability = TRUE)
-lines(density(regressao$residuals))
+lines(density(regressaolinear$residuals))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-175-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-175)Histograma de distribuição da probabilidade para os resíduos</p>
+<img src="index_files/figure-epub3/unnamed-chunk-173-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-173)Histograma de distribuição da probabilidade para os resíduos</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
 
-Também, pode-se aplicar o teste de normalidade de Shapiro Wilk para verificar a normalidade dos dados, confirmando a simetria ou não da cauda do gráfico acima. O comando utilizado é o seguinte:
+Também, pode-se aplicar o teste de normalidade de Shapiro-Wilk para verificar a normalidade dos dados, confirmando a simetria ou não da cauda do gráfico acima. O comando utilizado é o seguinte:
 
-`shapiro.test(residuals(regressao))`
+`shapiro.test(residuals(nome_para_regressao))`
 
-Obs: `residuals(regressão)` indica os resíduos do modelo de regressão.
 
 Por exemplo:
 
 
 ```r
-shapiro.test(residuals(regressao))
+shapiro.test(residuals(regressaolinear))
 ```
 
 ```
 
 	Shapiro-Wilk normality test
 
-data:  residuals(regressao)
+data:  residuals(regressaolinear)
 W = 0.96, p-value = 0.6
 ```
 
@@ -5335,15 +5323,13 @@ W = 0.96, p-value = 0.6
 
 Para análise dos valores outliers nos resíduos (*residuals standard* e *residuals studentized*), utilizam-se os seguintes comandos:
 
-Sintaxe no software R:
+`rstudent(nome_para_regressao)`
 
-`rstudent(regressao)`
-
-`rstandard(regressao)`
+`rstandard(nome_para_regressao)`
 
 
 ```r
-rstudent(regressao)
+rstudent(regressaolinear)
 ```
 
 ```
@@ -5354,7 +5340,7 @@ rstudent(regressao)
 ```
 
 ```r
-rstandard(regressao)
+rstandard(regressaolinear)
 ```
 
 ```
@@ -5366,11 +5352,9 @@ rstandard(regressao)
 
 E o gráfico para verificar valores outliers nos resíduos:
 
-Sintaxe no software R:
+`plot(rstudent(nome_para_regressao))`
 
-`plot(rstudent(regressao))`
-
-`plot(rstandard(regressao))`
+`plot(rstandard(nome_para_regressao))`
 
 Os gráficos dos resíduos padronizados (standard) e studentizados (student) estão apresentados nas Figuras \@ref(fig:residpad) e \@ref(fig:residst), respectivamente.
 
@@ -5378,7 +5362,7 @@ Para o exemplo:
 
 
 ```r
-plot(rstandard(regressao))
+plot(rstandard(regressaolinear))
 abline(h=2,col="red")
 abline(h=-2,col="red")
 ```
@@ -5394,7 +5378,7 @@ Aqueles valores fora do intervalo (-2, +2) são possíveis outliers.
 
 
 ```r
-plot(rstudent(regressao)) 
+plot(rstudent(regressaolinear)) 
 abline(h=2,col="red")
 abline(h=-2,col="red")
 ```
@@ -5410,15 +5394,15 @@ Fonte: Elaborado pelo(s) autor(es).
 
 Para análise dos valores influentes, utiliza-se:
 
-Sintaxe no software R:
 
-`dffits(regressao)`
+
+`dffits(nome_para_regressao)`
 
 Para esse exemplo:
 
 
 ```r
-dffits(regressao)
+dffits(regressaolinear)
 ```
 
 ```
@@ -5445,7 +5429,7 @@ O gráfico para detectar pontos influentes pode ser elaborado pelo comando (o gr
 
 
 ```r
-plot(dffits(regressao))
+plot(dffits(regressaolinear))
 abline(h=-0.73,col="red")
 abline(h=0.73,col="red")
 ```
@@ -5457,7 +5441,7 @@ abline(h=0.73,col="red")
 
 Fonte: Elaborado pelo(s) autor(es).
 
-O comando `plot(regressao)` elabora diferentes gráficos para o diagnóstico do modelo.
+O comando `plot(nome_para_regressao)` elabora diferentes gráficos para o diagnóstico do modelo.
 
 ## Intervalo de Predição
 
@@ -5519,7 +5503,7 @@ Para o exemplo R:
 
 ```r
 x0=data.frame(tempo=5.5)
-predict(regressao, x0, interval="prediction")
+predict(regressaolinear, x0, interval="prediction")
 ```
 
 ```

@@ -1,0 +1,2 @@
+"0","plot(fitted(regressaolinear), residuals(regressaolinear),"
+"0","xlab=""Valores ajustados"", ylab=""Residuos"")"

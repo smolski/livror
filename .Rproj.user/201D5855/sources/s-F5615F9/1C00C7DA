@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "154281163",
     "id" : "1C00C7DA",
-    "lastKnownWriteTime" : 1550705209,
-    "last_content_update" : 1550705209164,
+    "lastKnownWriteTime" : 1551227164,
+    "last_content_update" : 1551227164438,
     "path" : "D:/Github/livror/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "2477,36",
+        "cursorPosition" : "2826,217",
         "docOutlineVisible" : "1",
-        "scrollLine" : "2471"
+        "scrollLine" : "2818"
     },
     "relative_order" : 1,
     "source_on_save" : false,

@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-02-20">
+<meta name="date" content="2019-02-26">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -559,7 +559,7 @@ Figura 2.10: Boxplot com as variáveis Idade e Sabor
 <div id="grafico-ramo-e-folhas" class="section level3">
 <h3><span class="header-section-number">2.3.5</span> Gráfico ramo-e-folhas</h3>
 <p>Em um gráfico ramo-e-folhas, são classificados os dados segundo um padrão que revela a distribuição subjacente. O padrão consiste em separar um número em duas partes em geral: o ramo consiste nos algarismos mais à esquerda e as folhas consistem nos algarismos mais à direita.</p>
-<p>No gráfico Ramo-e-folhas, é posível ver a distribuição desses dados, que é uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a informação da lista original; se necessário, pode-se recompor a relação original de valores. Note que as linhas de algarismos em um gráfico ramo-e-folhas são análogas, em natureza, às barras de um histograma <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>.</p>
+<p>No gráfico Ramo-e-folhas, é possível ver a distribuição desses dados, que é uma vantagem do gráfico ramo-e-folhas e ainda conservar toda a informação da lista original; se necessário, pode-se recompor a relação original de valores. Note que as linhas de algarismos em um gráfico ramo-e-folhas são análogas, em natureza, às barras de um histograma <span class="citation">(Triola <a href="#ref-triola1999">2011</a>)</span>.</p>
 <p><code>stem(nome_variável)</code> - comando que permite obter um gráfico Ramo e Folhas.</p>
 <p>Ou</p>
 <p><code>stem(nome_variável,scale=1)</code></p>
@@ -711,7 +711,7 @@ Table: (\#tab:unnamed-chunk-111)Evolução dos resultados da fiscalização do t
 </tr>
 </tbody>
 </table>
-<p>Fonte: MTE. SFIT.</p>
+<p>Fonte: <span class="citation">DIEESE (<a href="#ref-Dieese2011">2011</a>)</span>.</p>
 <p>Para construir um gráfico de linhas, é utilizado o seguinte comando:</p>
 <p><code>plot(x,y,type= "Tipo de símbolo")</code></p>
 <p>Neste gráfico, é possível utilizar comandos já inseridos anteriormente, para inserir título, nomes dos eixos, etc. Para escolher o formato das linhas, com o uso do argumento <code>type</code>, seguem algumas opções:</p>
@@ -738,7 +738,7 @@ Table: (\#tab:unnamed-chunk-111)Evolução dos resultados da fiscalização do t
 Figura 2.11: Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010
 </p>
 </div>
-<p>Fonte: Fonte: Elaborado pelo(s) autor(es) a partir de MTE. SFIT.</p>
+<p>Fonte: Elaborado pelo(s) autor(es) a partir de <span class="citation">DIEESE (<a href="#ref-Dieese2011">2011</a>)</span>.</p>
 <p>onde, no argumento <code>ylim</code>, deve-se indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.</p>
 <p>Na sequência são adicionadas as instruções para as demais variáveis:</p>
 <p><code>lines(x, y2,col="cor_desejada", type="b")</code></p>
@@ -889,6 +889,9 @@ pesquisa_dados<span class="op">$</span>Renda_h=<span class="kw">as.numeric</span
 </div>
 <div id="ref-barbetta1988">
 <p>Barbetta, Pedro Alberto. 2010. <em>Estatı́stica aplicada às ciências sociais</em>. 7 ed. Florianópolis: Editora UFSC.</p>
+</div>
+<div id="ref-Dieese2011">
+<p>DIEESE, Departamento Intersindical de Estatística e Estudos Socioeconômicos; Núcleo de Estudos Agrários e Desenvolvimento Rural; Ministério do Desenvolvimento Agrário. 2011. <em>Estatísticas do meio rural 2010-2011</em>. 6 ed. São Paulo: DIEESE.</p>
 </div>
 </div>
             </section>

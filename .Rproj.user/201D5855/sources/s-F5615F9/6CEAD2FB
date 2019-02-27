@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1854976216",
+    "hash" : "0",
     "id" : "6CEAD2FB",
-    "lastKnownWriteTime" : 1550706420,
-    "last_content_update" : 1550706420066,
+    "lastKnownWriteTime" : 1550791957,
+    "last_content_update" : 1550791957480,
     "path" : "D:/Github/livror/book.bib",
     "project_path" : "book.bib",
     "properties" : {
-        "cursorPosition" : "56,23",
-        "scrollLine" : "49"
+        "cursorPosition" : "2,16",
+        "scrollLine" : "0"
     },
     "relative_order" : 3,
     "source_on_save" : false,

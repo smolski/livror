@@ -1,4 +1,15 @@
 
+
+@book{Dieese2011,
+title={Estatísticas do meio rural 2010-2011},
+year={2011},
+edition = {6},
+publisher={{DIEESE}},
+address={São Paulo},
+author={{DIEESE}, {{Departamento Intersindical de Estatística e Estudos Socioeconômicos; Núcleo de Estudos Agrários e Desenvolvimento Rural; Ministério do Desenvolvimento Agrário}}}
+}
+
+
 @book{Morettin2009,
 address = {São Paulo},
 author = {Morettin, Pedro Alberto and Bussab, Wilton de Oliveira},
