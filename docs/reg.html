@@ -26,7 +26,7 @@
 <meta name="author" content="Felipe Micail da Silva Smolski">
 
 
-<meta name="date" content="2019-02-26">
+<meta name="date" content="2019-03-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -396,7 +396,10 @@ r = \frac{\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
 <p>Obs: x e y são numéricos.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(tempo,nota)</code></pre>
 <pre><code>[1] 0.9224</code></pre>
-<p>No resultado é apresentado o valor do coeficiente de correlação linear, que neste caso, está próximo de +1, expressando uma relação forte e direta.</p>
+<p>No resultado é apresentado o valor do coeficiente de correlação linear, que neste caso, está próximo de +1, expressando uma relação forte e direta. Ainda, é possível aprimorar a exibição dos resultados sobre o coeficiente de correlação com as variáveis observadas com o pacote <code>PerformanceAnalytics</code>, que além do coeficientes de correlação, mostra a distribuição das variáveis e o gráfico de dispersão:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;PerformanceAnalytics&quot;</span>)
+<span class="kw">chart.Correlation</span>(<span class="kw">cbind</span>(tempo,nota), <span class="dt">histogram=</span><span class="ot">TRUE</span>, <span class="dt">pch=</span><span class="dv">19</span>)</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-169-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="modelo-de-regressao" class="section level2">
 <h2><span class="header-section-number">5.4</span> Modelo de Regressão</h2>
@@ -608,8 +611,8 @@ F-statistic: 74.2 on 1 and 13 DF,  p-value: 9.88e-07</code></pre>
 <p>Para o exemplo:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(nota<span class="op">~</span>tempo)
 <span class="kw">abline</span>(<span class="kw">coef</span>(regressaolinear))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-171"></span>
-<img src="index_files/figure-html/unnamed-chunk-171-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-172"></span>
+<img src="index_files/figure-html/unnamed-chunk-172-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
 <p class="caption">
 Figura 5.4: Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa
 </p>
@@ -698,8 +701,8 @@ Figura 5.8: Gráfico de probabilidade normal para verificar normalidade dos res�
       <span class="dt">col =</span> <span class="st">&quot;lightgreen&quot;</span>,
       <span class="dt">probability =</span> <span class="ot">TRUE</span>)
 <span class="kw">lines</span>(<span class="kw">density</span>(regressaolinear<span class="op">$</span>residuals))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-173"></span>
-<img src="index_files/figure-html/unnamed-chunk-173-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-174"></span>
+<img src="index_files/figure-html/unnamed-chunk-174-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
 <p class="caption">
 Figura 5.9: Histograma de distribuição da probabilidade para os resíduos
 </p>

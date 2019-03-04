@@ -129,7 +129,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-02-26}
+    \date{2019-03-04}
 
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -5696,7 +5696,16 @@ Obs: x e y são numéricos.
 [1] 0.9224
 \end{verbatim}
 
-No resultado é apresentado o valor do coeficiente de correlação linear, que neste caso, está próximo de +1, expressando uma relação forte e direta.
+No resultado é apresentado o valor do coeficiente de correlação linear, que neste caso, está próximo de +1, expressando uma relação forte e direta. Ainda, é possível aprimorar a exibição dos resultados sobre o coeficiente de correlação com as variáveis observadas com o pacote \texttt{PerformanceAnalytics}, que além do coeficientes de correlação, mostra a distribuição das variáveis e o gráfico de dispersão:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"PerformanceAnalytics"}\NormalTok{)}
+\KeywordTok{chart.Correlation}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(tempo,nota), }\DataTypeTok{histogram=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{pch=}\DecValTok{19}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-169-1} \end{center}
 
 \hypertarget{modelo-de-regressao}{%
 \section{Modelo de Regressão}\label{modelo-de-regressao}}
@@ -6033,11 +6042,11 @@ Para o exemplo:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-171-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-172-1} 
 
 }
 
-\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-171}
+\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-172}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -6203,11 +6212,11 @@ Ainda, pode-se construir o gráfico com a distribuição da probabilidade dos re
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-173-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-174-1} 
 
 }
 
-\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:unnamed-chunk-173}
+\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:unnamed-chunk-174}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).

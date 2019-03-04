@@ -2910,7 +2910,13 @@ Obs: x e y são  numéricos.
 cor(tempo,nota)
 ```
 
-No resultado é apresentado o valor do coeficiente de correlação linear, que neste caso, está próximo de +1, expressando uma relação forte e direta.
+No resultado é apresentado o valor do coeficiente de correlação linear, que neste caso, está próximo de +1, expressando uma relação forte e direta. Ainda, é possível aprimorar a exibição dos resultados sobre o coeficiente de correlação com as variáveis observadas com o pacote `PerformanceAnalytics`, que além do coeficientes de correlação, mostra a distribuição das variáveis e o gráfico de dispersão:
+
+```{r, message=FALSE, warning=FALSE}
+library("PerformanceAnalytics")
+chart.Correlation(cbind(tempo,nota), histogram=TRUE, pch=19)
+```
+
 
 ## Modelo de Regressão
 

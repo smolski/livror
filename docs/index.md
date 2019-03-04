@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Iara Denise Endruweit Battisti
 - Felipe Micail da Silva Smolski
-date: "2019-02-26"
+date: "2019-03-04"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -4844,7 +4844,16 @@ cor(tempo,nota)
 [1] 0.9224
 ```
 
-No resultado é apresentado o valor do coeficiente de correlação linear, que neste caso, está próximo de +1, expressando uma relação forte e direta.
+No resultado é apresentado o valor do coeficiente de correlação linear, que neste caso, está próximo de +1, expressando uma relação forte e direta. Ainda, é possível aprimorar a exibição dos resultados sobre o coeficiente de correlação com as variáveis observadas com o pacote `PerformanceAnalytics`, que além do coeficientes de correlação, mostra a distribuição das variáveis e o gráfico de dispersão:
+
+
+```r
+library("PerformanceAnalytics")
+chart.Correlation(cbind(tempo,nota), histogram=TRUE, pch=19)
+```
+
+<img src="index_files/figure-epub3/unnamed-chunk-169-1.png" width="70%" style="display: block; margin: auto;" />
+
 
 ## Modelo de Regressão
 
@@ -5142,8 +5151,8 @@ abline(coef(regressaolinear))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-171-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-171)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
+<img src="index_files/figure-epub3/unnamed-chunk-172-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-172)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -5293,8 +5302,8 @@ lines(density(regressaolinear$residuals))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-173-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-173)Histograma de distribuição da probabilidade para os resíduos</p>
+<img src="index_files/figure-epub3/unnamed-chunk-174-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-174)Histograma de distribuição da probabilidade para os resíduos</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
