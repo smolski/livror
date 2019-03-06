@@ -1,4 +1,0 @@
-"0","# Carregando a base"
-"0","source(""http://www.openintro.org/stat/data/cdc.R"")"
-"0","#Vizualizamos as primeiras linhas"
-"0","head(cdc)"

@@ -1,3 +1,0 @@
-"0","# Substituir números na coluna"
-"0","informacoes$idade[informacoes$idade == 17] <- 19"
-"0","informacoes"

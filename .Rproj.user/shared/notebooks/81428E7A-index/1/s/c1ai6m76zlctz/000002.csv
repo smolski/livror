@@ -1,4 +1,0 @@
-"0","# Crição do data frame"
-"0","estudantes=c(""Guilherme"", ""Marcelo"", ""Pedro"", ""Camila"")"
-"0","altura= c(1.50, 1.9, 1.74, 1.80)"
-"0","informacoes.3=data.frame(estudantes, altura)"

@@ -1,2 +1,0 @@
-"0","# Ordem decrescente "
-"0","informacoes[order(informacoes$idade, decreasing = TRUE),]"

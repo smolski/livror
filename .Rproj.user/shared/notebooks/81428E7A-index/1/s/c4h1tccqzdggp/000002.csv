@@ -1,8 +1,0 @@
-"0","informacoes$tipoimc=ifelse(informacoes$Imc<17, ""Muito abaixo do peso"","
-"0","ifelse(informacoes$Imc>=17&informacoes$Imc<=18.49,""Abaixo do peso"","
-"0","ifelse(informacoes$Imc>=18.5&informacoes$Imc<=24.99,""Peso Normal"","
-"0","ifelse(informacoes$Imc>=25&informacoes$Imc<=29.99,""Acima do Peso"","
-"0","ifelse(informacoes$Imc>=30&informacoes$Imc<=34.99,""Obesidade I"","
-"0","ifelse(informacoes$Imc>=35&informacoes$Imc<=39.99,""Obesidade II"","
-"0","       ""Obesidade III""))))))"
-"0","informacoes"

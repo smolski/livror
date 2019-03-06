@@ -1,3 +1,0 @@
-"0","mtcars %>%"
-"0","  select(contains(""a"")) %>%"
-"0","  head"

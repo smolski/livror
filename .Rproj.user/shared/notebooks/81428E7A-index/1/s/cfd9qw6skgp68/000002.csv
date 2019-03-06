@@ -1,3 +1,0 @@
-"0","plot(tempo, residuals(regressaolinear), "
-"0","     xlab = ""Valores independentes"","
-"0","     ylab=""Residuos"")"

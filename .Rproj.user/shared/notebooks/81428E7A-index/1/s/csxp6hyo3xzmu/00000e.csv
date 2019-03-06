@@ -1,6 +1,0 @@
-"0","novo = mtcars %>%"
-"0","  filter(am == 1) %>%"
-"0","  group_by(cyl) %>%"
-"0","  summarise(disp.drat=mean(drat), "
-"0","            hp.media=mean(hp))"
-"0","novo"

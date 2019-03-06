@@ -1,3 +1,0 @@
-"0","# Retirar as linhas que tenham pelo menos um NA:"
-"0","informacoes<- na.omit(informacoes)"
-"0","informacoes"

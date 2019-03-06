@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Iara Denise Endruweit Battisti
 - Felipe Micail da Silva Smolski
-date: "2019-03-04"
+date: "2019-03-05"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -232,6 +232,57 @@ Este caminho padrão, por sua vez, pode ser alterado via comando
 
 onde o usuário escolhe a pasta desejada que ficará como padrão. O comando `dir()` mostra ao usuário os documentos que constam no diretório padrão ou o escolhido para a consulta.
 
+## Bases de dados nativas do R e de pacotes
+
+Para estimular a aprendizagem da linguagem de programação R e o uso do software RStudio, bem como para acompanhar muitos manuais e livros, existem bases de dados pré-estabelecidas que podem ser utilizadas para treino e manipulação pelos usuários. Algumas delas são nativas do RStudio, como por exemplo a famosa base `iris`. Para retomar tal base de dados nativa, basta "chamar" seu nome no console do programa:
+
+
+```r
+head(iris)
+```
+
+```
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+```
+
+
+O comando `data()` lista todas as bases nativas do RStudio:
+
+
+```r
+data()
+```
+
+Outras bases de dados, no entanto, vêm acompanhadas dos pacotes que são instalados no RStudio. Para verificar quais bases estão instaladas e disponíveis ao pesquisador, basta efetuar o comando abaixo:
+
+`data(package = .packages(all.available = TRUE))`
+
+É possível carregar uma base de dados de determinado pacote instalado:
+
+
+```r
+data(africa, package="Amelia")
+head(africa)
+```
+
+```
+  year      country gdp_pc  infl trade civlib population
+1 1972 Burkina Faso    377 -2.92 29.69 0.5000    5848380
+2 1973 Burkina Faso    376  7.60 31.31 0.5000    5958700
+3 1974 Burkina Faso    393  8.72 35.22 0.3333    6075700
+4 1975 Burkina Faso    416 18.76 40.11 0.3333    6202000
+5 1976 Burkina Faso    435 -8.40 37.76 0.5000    6341030
+6 1977 Burkina Faso    448 29.99 41.11 0.6667    6486870
+```
+
+
+
 ## Operações
 
 ### Operações Aritméticas
@@ -450,7 +501,7 @@ ls()
 ```
 
 ```
-[1] "a"      "objeto"
+[1] "a"      "africa" "objeto"
 ```
 
 ```r
@@ -2795,8 +2846,8 @@ barplot(table(Sexo))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-98-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-98)Gráfico de colunas com a variável Sexo</p>
+<img src="index_files/figure-epub3/unnamed-chunk-101-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-101)Gráfico de colunas com a variável Sexo</p>
 </div>
 
 **Obs**.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -2814,8 +2865,8 @@ barplot(table(Sexo), horiz=T)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-99-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-99)Gráfico de colunas com a variável Sexo (Horizontal)</p>
+<img src="index_files/figure-epub3/unnamed-chunk-102-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-102)Gráfico de colunas com a variável Sexo (Horizontal)</p>
 </div>
 
 
@@ -2835,8 +2886,8 @@ barplot(table(`Pessoas_familia`), col=c("blue"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-100-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-100)Gráfico de colunas com a variável `Pessoas familia`</p>
+<img src="index_files/figure-epub3/unnamed-chunk-103-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-103)Gráfico de colunas com a variável `Pessoas familia`</p>
 </div>
 
 **Ex.2)** Construir uma tabela de dupla entrada para as variáveis **Sexo** e **Divulgação**.
@@ -2849,8 +2900,8 @@ barplot(table(Sexo,Divulgacao),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-101-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-101)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
+<img src="index_files/figure-epub3/unnamed-chunk-104-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-104)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
 </div>
 
 
@@ -2874,8 +2925,8 @@ barplot(Resultado,col=c("blue","red"),main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-103-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-103)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
+<img src="index_files/figure-epub3/unnamed-chunk-106-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-106)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
 </div>
 
 
@@ -2922,8 +2973,8 @@ legend(x="topright", # Determina posição da legenda
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-104-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-104)Gráfico de pizza com a variável Sabor</p>
+<img src="index_files/figure-epub3/unnamed-chunk-107-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-107)Gráfico de pizza com a variável Sabor</p>
 </div>
 
 ### Histograma
@@ -2940,8 +2991,8 @@ hist(as.numeric(`Renda_h`))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-105-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-105)Histograma com a variável `Renda h`</p>
+<img src="index_files/figure-epub3/unnamed-chunk-108-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-108)Histograma com a variável `Renda h`</p>
 </div>
 
 **Obs**. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixo y (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -2964,8 +3015,8 @@ hist(as.numeric(`Renda_h`),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-106-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-106)Histograma com a variável Renda h com breaks=5</p>
+<img src="index_files/figure-epub3/unnamed-chunk-109-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-109)Histograma com a variável Renda h com breaks=5</p>
 </div>
 O comando `ylim` determina os limites do eixo y a serem mostrados; `xlab` e `ylab` determinam o nome das variáveis dos eixos x e y; `main` determina o nome do título e `col` determina a cor do gráfico. Use o argumento `main=NULL` para remover o título.
 
@@ -2984,7 +3035,7 @@ hist(as.numeric(`Renda_h`), breaks=5)$counts
 hist(as.numeric(`Renda_h`), breaks=5)$breaks
 ```
 
-<img src="index_files/figure-epub3/unnamed-chunk-107-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="index_files/figure-epub3/unnamed-chunk-110-1.png" width="70%" style="display: block; margin: auto;" />
 
 ```
 [1]  0  5 10 15 20 25
@@ -3010,8 +3061,8 @@ boxplot(Idade,horizontal = T)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-108-1.png" alt="Boxplot com a variável Idade" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-108)Boxplot com a variável Idade</p>
+<img src="index_files/figure-epub3/unnamed-chunk-111-1.png" alt="Boxplot com a variável Idade" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-111)Boxplot com a variável Idade</p>
 </div>
 
 Ainda é possível criar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:
@@ -3022,8 +3073,8 @@ boxplot(Idade~Sabor, data=pesquisa_dados)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-109-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-109)Boxplot com as variáveis Idade e Sabor</p>
+<img src="index_files/figure-epub3/unnamed-chunk-112-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-112)Boxplot com as variáveis Idade e Sabor</p>
 </div>
 
 
@@ -3125,7 +3176,7 @@ Ex. Considere os dados que descrevem os valores do número de empresas fiscaliza
 
 <!--
 
-Table: (\#tab:unnamed-chunk-111)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
+Table: (\#tab:unnamed-chunk-114)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
 
   Ano  Empresas.Fiscalizadas 
 -----  ----------------------
@@ -3193,8 +3244,8 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-112-1.png" alt="Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-112)Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
+<img src="index_files/figure-epub3/unnamed-chunk-115-1.png" alt="Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-115)Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
 </div>
 Fonte: Elaborado pelo(s) autor(es) a partir de @Dieese2011. 
 
@@ -3255,8 +3306,8 @@ legend(0,40,c("temp_inst","temp_max","temp_min"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-114-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-114)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
+<img src="index_files/figure-epub3/unnamed-chunk-117-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-117)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
 </div>
 
 ## Estatísticas Descritivas
@@ -4080,7 +4131,7 @@ O teste de hipótese para duas médias aplica-se quando se deseja comparar dois 
 **Exemplo 10**: Foi obtido o peso de seis indivíduos antes e após um treinamento de exercício físico. Teste a hipótese de que a média antes do treinamento é diferente da média após o treinamento.
 
 
-Table: (\#tab:unnamed-chunk-147)Amostras dependentes
+Table: (\#tab:unnamed-chunk-150)Amostras dependentes
 
 Indivíduo                      A    B    C    D    E    F
 ---------------------------  ---  ---  ---  ---  ---  ---
@@ -4123,7 +4174,7 @@ Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso antes do tre
 **Exemplo 11**: (adaptado de <www.inf.ufsc.br/~marcelo/testes2.html>) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Pode-se concluir que o uso da ração contribuiu para o aumento do peso médio dos animais? 
 
 
-Table: (\#tab:unnamed-chunk-149)Amostras dependentes - caso 2
+Table: (\#tab:unnamed-chunk-152)Amostras dependentes - caso 2
 
 Cobaia      1     2     3     4     5     6     7     8     9    10
 -------  ----  ----  ----  ----  ----  ----  ----  ----  ----  ----
@@ -4171,7 +4222,7 @@ Primeiramente é preciso saber se existe homogeneidade de variâncias populacion
 
 
 
-Table: (\#tab:unnamed-chunk-151)Comparação de dois tipos diferentes de tecidos
+Table: (\#tab:unnamed-chunk-154)Comparação de dois tipos diferentes de tecidos
 
 ---------  ---  ---  ---  ---  ---  ---  ---
 Tecido A   36   26   31   38   28   20   37 
@@ -4852,7 +4903,7 @@ library("PerformanceAnalytics")
 chart.Correlation(cbind(tempo,nota), histogram=TRUE, pch=19)
 ```
 
-<img src="index_files/figure-epub3/unnamed-chunk-169-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="index_files/figure-epub3/unnamed-chunk-172-1.png" width="70%" style="display: block; margin: auto;" />
 
 
 ## Modelo de Regressão
@@ -5151,8 +5202,8 @@ abline(coef(regressaolinear))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-172-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-172)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
+<img src="index_files/figure-epub3/unnamed-chunk-175-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-175)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -5302,8 +5353,8 @@ lines(density(regressaolinear$residuals))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-174-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-174)Histograma de distribuição da probabilidade para os resíduos</p>
+<img src="index_files/figure-epub3/unnamed-chunk-177-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-177)Histograma de distribuição da probabilidade para os resíduos</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).

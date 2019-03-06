@@ -129,7 +129,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-03-04}
+    \date{2019-03-05}
 
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -439,6 +439,58 @@ Este caminho padrão, por sua vez, pode ser alterado via comando
 
 onde o usuário escolhe a pasta desejada que ficará como padrão. O comando \texttt{dir()} mostra ao usuário os documentos que constam no diretório padrão ou o escolhido para a consulta.
 
+\hypertarget{bases-de-dados-nativas-do-r-e-de-pacotes}{%
+\section{Bases de dados nativas do R e de pacotes}\label{bases-de-dados-nativas-do-r-e-de-pacotes}}
+
+Para estimular a aprendizagem da linguagem de programação R e o uso do software RStudio, bem como para acompanhar muitos manuais e livros, existem bases de dados pré-estabelecidas que podem ser utilizadas para treino e manipulação pelos usuários. Algumas delas são nativas do RStudio, como por exemplo a famosa base \texttt{iris}. Para retomar tal base de dados nativa, basta ``chamar'' seu nome no console do programa:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(iris)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+\end{verbatim}
+
+O comando \texttt{data()} lista todas as bases nativas do RStudio:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{data}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Outras bases de dados, no entanto, vêm acompanhadas dos pacotes que são instalados no RStudio. Para verificar quais bases estão instaladas e disponíveis ao pesquisador, basta efetuar o comando abaixo:
+
+\texttt{data(package\ =\ .packages(all.available\ =\ TRUE))}
+
+É possível carregar uma base de dados de determinado pacote instalado:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{data}\NormalTok{(africa, }\DataTypeTok{package=}\StringTok{"Amelia"}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(africa)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  year      country gdp_pc  infl trade civlib population
+1 1972 Burkina Faso    377 -2.92 29.69 0.5000    5848380
+2 1973 Burkina Faso    376  7.60 31.31 0.5000    5958700
+3 1974 Burkina Faso    393  8.72 35.22 0.3333    6075700
+4 1975 Burkina Faso    416 18.76 40.11 0.3333    6202000
+5 1976 Burkina Faso    435 -8.40 37.76 0.5000    6341030
+6 1977 Burkina Faso    448 29.99 41.11 0.6667    6486870
+\end{verbatim}
+
 \hypertarget{operacoes}{%
 \section{Operações}\label{operacoes}}
 
@@ -710,7 +762,7 @@ O comando \texttt{ls()} lista todos os objetos que estão criados no ambiente e 
 \end{Shaded}
 
 \begin{verbatim}
-[1] "a"      "objeto"
+[1] "a"      "africa" "objeto"
 \end{verbatim}
 
 \begin{Shaded}
@@ -3215,11 +3267,11 @@ Ex. Construir um gráfico de colunas para a variável \textbf{Sexo}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-98-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-101-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável Sexo}\label{fig:unnamed-chunk-98}
+\caption{Gráfico de colunas com a variável Sexo}\label{fig:unnamed-chunk-101}
 \end{figure}
 
 \textbf{Obs}.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -3238,11 +3290,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-99-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-102-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável Sexo (Horizontal)}\label{fig:unnamed-chunk-99}
+\caption{Gráfico de colunas com a variável Sexo (Horizontal)}\label{fig:unnamed-chunk-102}
 \end{figure}
 
 \textbf{Ex.1)} Construir um gráfico de colunas para a variável \textbf{Pessoas\_familia}.
@@ -3259,11 +3311,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-100-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-103-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável `Pessoas familia`}\label{fig:unnamed-chunk-100}
+\caption{Gráfico de colunas com a variável `Pessoas familia`}\label{fig:unnamed-chunk-103}
 \end{figure}
 
 \textbf{Ex.2)} Construir uma tabela de dupla entrada para as variáveis \textbf{Sexo} e \textbf{Divulgação}.
@@ -3278,11 +3330,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-101-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-104-1} 
 
 }
 
-\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}\label{fig:unnamed-chunk-101}
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}\label{fig:unnamed-chunk-104}
 \end{figure}
 
 \textbf{Ex.3)} Na sequência utiliza-se o sinal de atribuição \textless{}- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).
@@ -3308,11 +3360,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-103-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-106-1} 
 
 }
 
-\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}\label{fig:unnamed-chunk-103}
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}\label{fig:unnamed-chunk-106}
 \end{figure}
 
 Observe que o uso do argumento \texttt{beside=T} evita que as barras fiquem empilhadas e o arguemnto \texttt{legend}' insere a legenda conforme as cores das colunas.
@@ -3360,11 +3412,11 @@ Ex. Construa um gráfico na forma de Setograma para a variável \textbf{Sabor}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-104-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-107-1} 
 
 }
 
-\caption{Gráfico de pizza com a variável Sabor}\label{fig:unnamed-chunk-104}
+\caption{Gráfico de pizza com a variável Sabor}\label{fig:unnamed-chunk-107}
 \end{figure}
 
 \hypertarget{histograma}{%
@@ -3384,11 +3436,11 @@ Ex. Construa um histograma com a variável \textbf{Renda\_h}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-105-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-108-1} 
 
 }
 
-\caption{Histograma com a variável `Renda h`}\label{fig:unnamed-chunk-105}
+\caption{Histograma com a variável `Renda h`}\label{fig:unnamed-chunk-108}
 \end{figure}
 
 \textbf{Obs}. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixo y (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -3412,11 +3464,11 @@ Ex. Construa um histograma com a variável \textbf{Renda\_h}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-106-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-109-1} 
 
 }
 
-\caption{Histograma com a variável Renda h com breaks=5}\label{fig:unnamed-chunk-106}
+\caption{Histograma com a variável Renda h com breaks=5}\label{fig:unnamed-chunk-109}
 \end{figure}
 
 O comando \texttt{ylim} determina os limites do eixo y a serem mostrados; \texttt{xlab} e \texttt{ylab} determinam o nome das variáveis dos eixos x e y; \texttt{main} determina o nome do título e \texttt{col} determina a cor do gráfico. Use o argumento \texttt{main=NULL} para remover o título.
@@ -3439,7 +3491,7 @@ Inserindo as opções \texttt{\$counts} e \texttt{\$breaks} retomam-se os valore
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-107-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-110-1} \end{center}
 
 \begin{verbatim}
 [1]  0  5 10 15 20 25
@@ -3466,11 +3518,11 @@ Para obter o boxplot para um conjunto de dados:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-108-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-111-1} 
 
 }
 
-\caption{Boxplot com a variável Idade}\label{fig:unnamed-chunk-108}
+\caption{Boxplot com a variável Idade}\label{fig:unnamed-chunk-111}
 \end{figure}
 
 Ainda é possível criar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:
@@ -3483,11 +3535,11 @@ Ainda é possível criar um boxplot analisando a relação da variável contínu
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-109-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-112-1} 
 
 }
 
-\caption{Boxplot com as variáveis Idade e Sabor}\label{fig:unnamed-chunk-109}
+\caption{Boxplot com as variáveis Idade e Sabor}\label{fig:unnamed-chunk-112}
 \end{figure}
 
 \hypertarget{grafico-ramo-e-folhas}{%
@@ -3668,11 +3720,11 @@ Para o caso de representação no mesmo gráfico, de duas ou mais variáveis, o 
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-112-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-115-1} 
 
 }
 
-\caption{Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010}\label{fig:unnamed-chunk-112}
+\caption{Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010}\label{fig:unnamed-chunk-115}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es) a partir de DIEESE (\protect\hyperlink{ref-Dieese2011}{2011}).
@@ -3736,11 +3788,11 @@ Segue a sequência de comandos, para obtenção do gráfico de linhas:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-114-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-117-1} 
 
 }
 
-\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}\label{fig:unnamed-chunk-114}
+\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}\label{fig:unnamed-chunk-117}
 \end{figure}
 
 \hypertarget{estatisticas-descritivas}{%
@@ -4582,7 +4634,7 @@ O teste de hipótese para duas médias aplica-se quando se deseja comparar dois 
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-147}Amostras dependentes}
+\caption{\label{tab:unnamed-chunk-150}Amostras dependentes}
 \centering
 \begin{tabular}{l|r|r|r|r|r|r}
 \hline
@@ -4631,7 +4683,7 @@ Conclusão: Não rejeita-se \(H_0\) e conclui-se que a média de peso antes do t
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-149}Amostras dependentes - caso 2}
+\caption{\label{tab:unnamed-chunk-152}Amostras dependentes - caso 2}
 \centering
 \begin{tabular}{l|r|r|r|r|r|r|r|r|r|r}
 \hline
@@ -4686,7 +4738,7 @@ Primeiramente é preciso saber se existe homogeneidade de variâncias populacion
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-151}Comparação de dois tipos diferentes de tecidos}
+\caption{\label{tab:unnamed-chunk-154}Comparação de dois tipos diferentes de tecidos}
 \centering
 \begin{tabular}{l|l|l|l|l|l|l|l}
 \hline
@@ -5705,7 +5757,7 @@ No resultado é apresentado o valor do coeficiente de correlação linear, que n
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-169-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-172-1} \end{center}
 
 \hypertarget{modelo-de-regressao}{%
 \section{Modelo de Regressão}\label{modelo-de-regressao}}
@@ -6042,11 +6094,11 @@ Para o exemplo:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-172-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-175-1} 
 
 }
 
-\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-172}
+\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-175}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -6212,11 +6264,11 @@ Ainda, pode-se construir o gráfico com a distribuição da probabilidade dos re
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-174-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-177-1} 
 
 }
 
-\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:unnamed-chunk-174}
+\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:unnamed-chunk-177}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).

@@ -1,2 +1,0 @@
-"0","dadossetosa=subset(iris, Especie=='setosa')"
-"0","head(dadossetosa)"
