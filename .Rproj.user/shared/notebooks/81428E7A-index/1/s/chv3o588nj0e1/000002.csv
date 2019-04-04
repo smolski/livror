@@ -1,0 +1,10 @@
+"0","informacoes$tipoimc=ifelse(informacoes$Imc<17, ""Muito abaixo do peso"",
+ifelse(informacoes$Imc>=17&informacoes$Imc<=18.49,""Abaixo do peso"",
+ifelse(informacoes$Imc>=18.5&informacoes$Imc<=24.99,""Peso Normal"",
+ifelse(informacoes$Imc>=25&informacoes$Imc<=29.99,""Acima do Peso"",
+ifelse(informacoes$Imc>=30&informacoes$Imc<=34.99,""Obesidade I"",
+ifelse(informacoes$Imc>=35&informacoes$Imc<=39.99,""Obesidade II"",
+       ""Obesidade III""))))))
+informacoes"
+"1","""C:\Users\Felipe\AppData\Local\Temp\Rtmpotcfoj\chunk-code-3b8838741e48.txt""
+"

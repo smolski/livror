@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Iara Denise Endruweit Battisti
 - Felipe Micail da Silva Smolski
-date: "2019-03-05"
+date: "2019-04-04"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -32,7 +32,7 @@ Outra questão importante é que o R possui uma comunidade ativa de desenvolvedo
 
 Outro progresso significativo na utilização do R foi a criação do *software* RStudio, a partir de 2010. Este, por sua vez, se configura em um ambiente integrado com o R e com inúmeras linguagens de marcação de texto (exemplos LaTeX, Markdown, HTML). Possui igualmente versão livre que disponibiliza ao pesquisador a execução, guarda, retomada e manipulação dos códigos de programação diretamente em seu console, bem como a administração de diretórios de trabalhos e projetos.
 
-O material aqui criado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no *software* RStudio. O sistema operacional aqui utilizado é o Windows 10. Importante mencionar que este livro originou-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Nº 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).
+O material aqui elaborado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no *software* RStudio. O sistema operacional aqui utilizado é o Windows 10, o software R versão 3.5.2, RStudio 1.1.463. A solução dos exercícios de cada capítulo está disponibilizada no site <https://smolski.github.io/softwarelivrer/livro.html>. Importante mencionar que este livro originou-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Número 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).
 
 Este livro está organizado da seguinte maneira: no capítulo [1](#intro) [**Primeiros Passos com o R**], busca-se instruir o pesquisador para a instalação dos programas necessários para acessar o ambiente de programação, bem como orientar sobre a usabilidade do programa em suas funções básicas de carregamento de bases de dados, criação de objetos e princípios de manipulação. 
 
@@ -43,18 +43,29 @@ O capítulo [3](#inf) [**Estatística Inferencial**] tratará dos métodos de de
 
 No capítulo [4](#qui) [**Teste de Qui-Quadrado**], serão abordadas as referidas técnicas para verificação de asssociação entre duas variáveis qualitativas e de aderência a uma distribuição.
 
-No capítulo [5](#reg) [**Modelos de Regressão**] serão introduzidos os conhecimentos sobre as técnicas de análise de correlação e regressão linear simples, bem como sobre o diagrama de dispersão, método dos mínimos quadrados, análise de variância, coeficiente de determinação e intervalo de predição, da análise dos resíduos e dos princípios de regressão múltipla.
+No capítulo [5](#reg) [**Modelos de Regressão Linear Simples**] serão introduzidos os conhecimentos sobre as técnicas de análise de correlação e regressão linear simples, bem como sobre o diagrama de dispersão, método dos mínimos quadrados, análise de variância, coeficiente de determinação e intervalo de predição, da análise dos resíduos e dos princípios de regressão múltipla.
 
 A criação de documentos dinâmicos utilizando o RStudio será tratada no capítulo [6](#rmark) [**RMarkdown**]. O pesquisador poderá conhecer as formas de integrar a programação no R e a manipulação de bases de dados, criando, compilando e configurando relatórios finais em diversos formatos (HTML, PDF e Word/Libre/Open Office).
 
 
 Bons estudos!
 
-# Primeiros Passos com o R{#intro}
+Iara Denise Endruweit Battisti, Felipe Micail da Silva Smolski *(Organizadores)*
 
+
+
+
+# Primeiros Passos com o R{#intro}
+<!--
 *Felipe Micail da Silva Smolski*
 
 *Djaina Sibiani Rieger*
+-->
+
+*Felipe Micail da Silva Smolski* 
+
+*Djaina Sibiani Rieger*
+
 
 \begin{flushright}
 \emph{}
@@ -121,7 +132,7 @@ A mesma função, para instalação de um pacote, pode ser efetuada diretamente 
 
 ## Abrir arquivo de dados
 
-Dispondo de um banco de dados em uma planilha eletrônica (LibreOffice Calc ou Excel), neste caso será utilizado o arquivo  [árvores](https://github.com/Smolski/livror/raw/master/arvores.xlsx) como exemplo de banco de dados. Os dados derivam de uma pesquisa com espécies de árvores registrando as variáveis diâmetro altura do peito (DAP) e altura. Dados cedidos pela professora Tatiane Chassot.
+Dispondo de um banco de dados em uma planilha eletrônica (LibreOffice Calc ou Excel), neste caso será utilizado o arquivo  [árvores] (https://github.com/Smolski/livror/raw/master/arvores.xlsx) como exemplo de banco de dados. Os dados derivam de uma pesquisa com espécies de árvores registrando as variáveis diâmetro altura do peito (DAP) e altura. Dados cedidos pela professora Tatiane Chassot<!--Tatiane Chassot-->.
 
 Pode-se utilizar a linha de comando para carregar os arquivos de dados, da seguinte forma:
 
@@ -129,7 +140,7 @@ Pode-se utilizar a linha de comando para carregar os arquivos de dados, da segui
 
 `nome.objeto.xls = read_excel("d:/arvores.xls")`
 
-Outras opções de arquivos podem ser carregados no RStudio, como por exemplo arquivos de texto (.txt ou .csv), arquivos derivados do excel (.xls ou .xlsx), arquivos de dados do SPSS (.sav), do *software* SAS (.sas7bdat) e do STATA (.dta). A instalação de alguns pacotes é requerida, dependendo da origem da base de dados, como por exemplo o `readxl`, `readr` e `haven`, como os exemplos abaixo:
+Outras opções de arquivos podem ser carregados no RStudio, como por exemplo arquivos de texto (.txt ou .csv), arquivos derivados do excel (.xls ou .xlsx), arquivos de dados do SPSS (.sav), do *software* SAS (.sas7bdat) e do STATA (.dta). A instalação de alguns pacotes é requerida, dependendo da origem da base de dados, como por exemplo o `readxl` [@readxl2018] , `readr` [@readr2018] e `haven` [@haven2018], como os exemplos abaixo:
 
 `library(readr)`
 
@@ -192,7 +203,9 @@ Alguns tipos de dados:
 - **Time**: vetor para séries de tempo.
 - **Factor**: variável nominal, inclusive como fator ordenado, representam categorias.
 
-Ainda, é possível importar objetos utilizando arquivos hospedados em links da internet, por exemplo o comando  `source("http://www.openintro.org/stat/data/cdc.R")` utiliza a função `source()` para carregar um objeto do R denominado cdc ("cdc.R").
+Ainda, é possível importar objetos utilizando arquivos hospedados em links da internet, por exemplo o comando  abaixo utiliza a função `source()` para carregar um objeto do R denominado cdc ("cdc.R").
+
+`source("http://www.openintro.org/stat/data/cdc.R")`
 
 ## Salvar arquivo de dados
 
@@ -263,7 +276,7 @@ Outras bases de dados, no entanto, vêm acompanhadas dos pacotes que são instal
 
 `data(package = .packages(all.available = TRUE))`
 
-É possível carregar uma base de dados de determinado pacote instalado:
+É possível carregar uma base de dados de determinado pacote instalado, como exemplo utilizado a partir do pacote `Amelia` [@Amelia2011]:
 
 
 ```r
@@ -622,11 +635,11 @@ class(iris$Sepal.Length)
 ```
 
 ```r
-class(iris$Especie)
+class(iris$Species)
 ```
 
 ```
-[1] "NULL"
+[1] "factor"
 ```
 
 Efeito semelhante possui o comando `ls.str()`:
@@ -811,6 +824,25 @@ table(cdc$genhlth,cdc$gender)
   fair       884 1135
   poor       283  394
 ```
+
+```r
+# Adiciona-se a soma dos valores das linhas e colunas
+addmargins(table(cdc$genhlth,cdc$gender))
+```
+
+```
+           
+                m     f   Sum
+  excellent  2298  2359  4657
+  very good  3382  3590  6972
+  good       2722  2953  5675
+  fair        884  1135  2019
+  poor        283   394   677
+  Sum        9569 10431 20000
+```
+
+
+
 
 
 ## Estrutura de dados
@@ -1021,7 +1053,7 @@ Se a matriz inserida tem menos elementos do que a ordem informada para a matriz,
 
 
 ```r
-lista= list(matriz=matrix(c(1,2,1), nrow=3, ncol=2))
+lista = list(matriz=matrix(c(1,2,1), nrow=3, ncol=2))
 lista
 ```
 
@@ -1044,7 +1076,7 @@ Para ver quais elementos estão em suas listas é só chamar pelo nome que foi d
 
 
 ```r
-lista= list(matriz=matrix(c(1,2,1,5,7,9), nrow=3, ncol=2),vetor=1:6)
+lista = list(matriz=matrix(c(1,2,1,5,7,9), nrow=3, ncol=2),vetor=1:6)
 lista
 ```
 
@@ -1104,9 +1136,9 @@ Para chamar várias listas utiliza-se o comando da seguinte forma:
 
 
 ```r
-lista.1= list(matriz=matrix(c(1,2,1,5,7,9), nrow=3, ncol=2),
+lista.1 = list(matriz=matrix(c(1,2,1,5,7,9), nrow=3, ncol=2),
               vetor=1:6)
-lista.2= list(nomes=c("Marcelo", "Fábio", "Felipe"), 
+lista.2 = list(nomes=c("Marcelo", "Fábio", "Felipe"), 
               idade=c(25, 34, 26))
 c(lista.1,lista.2)
 ```
@@ -1179,6 +1211,203 @@ length(subset(informacoes$cidades, informacoes$cidades=="Soledade"))
 [1] 1
 ```
 
+## Pré tratamento de banco de dados
+
+Os bancos de dados da "vida real" muitas vezes carecem de um tratamento inicial antes de serem destinados para a análise estatística. Isto porque, ao serem carregadas ao R estas bases estão permeadas por dados que podem prejudicar a criação de modelos ou mesmo enviesar as apresentações, como por exemplo a presença de dados faltantes ("NAs"), valores extremos ("outliers") ou também apresentar rótulos das variáveis não adequados. 
+
+Longe de apresentar um conjunto de regras rígidas para estas correções, visto que em muitos casos o tipo de substituição ou correção de variáveis dependerá do problema e da técnica estatística e serem trabalhados, almeja-se mostrar princípios de ações corretivas que podem ser efetuadas no RStudio. Será utilizada a base `starwars` (as 5 primeiras colunas) que consta junto ao pacote `dplyr` [@dplyr2019], como pode ser visto:
+
+
+```r
+library(dplyr)
+starwars=data.frame(starwars[1:5])
+str(starwars)
+```
+
+```
+'data.frame':	87 obs. of  5 variables:
+ $ name      : chr  "Luke Skywalker" "C-3PO" "R2-D2" "Darth Vader" ...
+ $ height    : int  172 167 96 202 150 178 165 97 183 182 ...
+ $ mass      : num  77 75 32 136 49 120 75 32 84 77 ...
+ $ hair_color: chr  "blond" NA NA "none" ...
+ $ skin_color: chr  "fair" "gold" "white, blue" "white" ...
+```
+
+```r
+summary(starwars)
+```
+
+```
+     name               height         mass         hair_color       
+ Length:87          Min.   : 66   Min.   :  15.0   Length:87         
+ Class :character   1st Qu.:167   1st Qu.:  55.6   Class :character  
+ Mode  :character   Median :180   Median :  79.0   Mode  :character  
+                    Mean   :174   Mean   :  97.3                     
+                    3rd Qu.:191   3rd Qu.:  84.5                     
+                    Max.   :264   Max.   :1358.0                     
+                    NA's   :6     NA's   :28                         
+  skin_color       
+ Length:87         
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   
+                   
+```
+
+Nota-se que constam 5 variáveis ("name", "height", "mass", "hair_color", "skin_color") que tratam de personagens dos filmes da franquia Star Wars com algumas características dos mesmos. Constam ainda variáveis com valores ausentes e dos mais variados tipos ("chr", "int", "num", "chr", "chr"). A função `abbreviate()` é utilizada para abreviar observações, sendo que pode ser extremamente útil quando os nomes das variáveis, por exemplo, são muito extensos. Ainda é possível determinar o tamanho dos caracteres, conjuntamente com a função `names()`.
+
+
+```r
+names(starwars)=abbreviate(names(starwars), minlength = 3)
+names(starwars)
+```
+
+```
+[1] "nam" "hgh" "mss" "hr_" "sk_"
+```
+
+Caso o pesquisador deseje renomear todas as variáveis, a função `names()` pode ser utilizada como é mostrado abaixo, em um primeiro momento somente determinando o nome da primeira variável, e no segundo exemplo alterando todas as variáveis do objeto:
+
+
+```r
+names(starwars)[1]="Nome"
+names(starwars)=c("Nome", "Altura", "Peso", "Corcabelo", "Corpele")
+names(starwars) 
+```
+
+```
+[1] "Nome"      "Altura"    "Peso"      "Corcabelo" "Corpele"  
+```
+
+Em sendo pertinente efetuar a alteração de uma variável para fator, utiliza-se a função `as.factor()` como no exemplo abaixo para transformar as variáveis "Corcabelo" e "Corpele".
+
+
+```r
+starwars$Corcabelo=as.factor(starwars$Corcabelo)
+starwars$Corpele=as.factor(starwars$Corpele)
+summary(starwars$Corpele)
+```
+
+```
+               blue          blue, grey               brown        brown mottle 
+                  2                   2                   4                   1 
+       brown, white                dark                fair fair, green, yellow 
+                  1                   6                  17                   1 
+               gold               green    green-tan, brown         green, grey 
+                  1                   6                   1                   1 
+               grey          grey, blue grey, green, yellow           grey, red 
+                  6                   1                   1                   1 
+              light               metal       mottled green                none 
+                 11                   1                   1                   1 
+             orange                pale                 red    red, blue, white 
+                  2                   5                   1                   1 
+        silver, red                 tan             unknown               white 
+                  1                   2                   2                   2 
+        white, blue          white, red              yellow 
+                  2                   1                   2 
+```
+
+Como visto anteriormente este objeto apresenta valores faltantes ("NAs") em diversas variáveis.
+
+
+```r
+head(is.na(starwars))
+```
+
+```
+      Nome Altura  Peso Corcabelo Corpele
+[1,] FALSE  FALSE FALSE     FALSE   FALSE
+[2,] FALSE  FALSE FALSE      TRUE   FALSE
+[3,] FALSE  FALSE FALSE      TRUE   FALSE
+[4,] FALSE  FALSE FALSE     FALSE   FALSE
+[5,] FALSE  FALSE FALSE     FALSE   FALSE
+[6,] FALSE  FALSE FALSE     FALSE   FALSE
+```
+
+Desta forma, é possível quantificar os valores faltantes do objeto:
+
+
+```r
+table(is.na(starwars))
+```
+
+```
+
+FALSE  TRUE 
+  396    39 
+```
+
+Em muitos casos é de interesse ao pesquisador substituir os valores faltantes pelo valor da média da variável em questão, é claro considerando somente o restante dos valores excluídos dos NAs. O exemplo abaixo demonstra o sumário das informações após a normalização pelo valor médio da variável "Altura" (também é possível utilizar outro critério, por exemplo o valor da moda ou mediana):
+
+
+```r
+# Substituindo NAs por média
+starwars$Altura[is.na(starwars$Altura)]=mean(starwars$Altura, na.rm=TRUE)
+summary(starwars$Altura)
+```
+
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+     66     168     178     174     190     264 
+```
+
+É possível substituir os dados faltantes por zero ou por outro caractere, sendo que no exemplo abaixo utilizou-se a correção por zero sobre a variável numérica "Peso":
+
+
+```r
+# Substituindo NAs por zero
+starwars$Peso[is.na(starwars$Peso)]=0
+summary(starwars$Peso)
+```
+
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    0.0     0.0    56.2    66.0    80.0  1358.0 
+```
+
+De igual forma, é possível transformar qualquer valor constante em uma variável em valores faltantes. No exemplo abaixo é desfeita operação anterior sobre a variável "Peso":
+
+
+```r
+starwars$Peso[starwars$Peso==0]=NA
+summary(starwars$Peso)
+```
+
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   15.0    55.6    79.0    97.3    84.5  1358.0      28 
+```
+
+Ainda, se houver no objeto linhas que tenham pelo menos uma informação faltante ("NA"), estas podem ser excluídas com o comando `na.omit()`. Note que com este procedimento o objeto `starwars` passou a ter a dimensão 54x5 ao invés de 87x5 como apresentado inicialmente com a apressentação de valores faltantes:
+
+
+```r
+starwars=na.omit(starwars)
+summary(starwars)
+```
+
+```
+     Nome               Altura         Peso               Corcabelo 
+ Length:54          Min.   : 66   Min.   : 15.0   none         :27  
+ Class :character   1st Qu.:170   1st Qu.: 56.4   brown        :11  
+ Mode  :character   Median :182   Median : 79.0   black        : 7  
+                    Mean   :177   Mean   : 77.2   white        : 3  
+                    3rd Qu.:193   3rd Qu.: 84.8   blond        : 2  
+                    Max.   :234   Max.   :159.0   auburn, white: 1  
+                                                  (Other)      : 3  
+    Corpele  
+ fair   : 9  
+ light  : 7  
+ dark   : 4  
+ green  : 4  
+ grey   : 4  
+ brown  : 3  
+ (Other):23  
+```
+
+
 ## Manipulação de banco de dados
 
 <!--
@@ -1233,6 +1462,15 @@ As funções a seguir são aplicáveis a vetores, data.frames e listas, e em mui
 estudantes=c("Guilherme", "Marcelo", "Pedro", "Camila")
 altura= c(1.50, 1.9, 1.74, 1.80)
 informacoes.3=data.frame(estudantes, altura)
+head(informacoes.3)
+```
+
+```
+  estudantes altura
+1  Guilherme   1.50
+2    Marcelo   1.90
+3      Pedro   1.74
+4     Camila   1.80
 ```
 
 Já o comando `merge()` serve para juntar dois *data frames* que possuam uma coluna em comum. Neste caso, unimos o objeto `informações.2` com o objeto `informações.3` utilizando o nome dos estudantes (informação em comum):
@@ -1242,6 +1480,15 @@ Já o comando `merge()` serve para juntar dois *data frames* que possuam uma col
 # União de um banco de dados (existencia de uma váriavel em comum)
 
 informacoes=merge(informacoes.2,informacoes.3, by="estudantes")
+head(informacoes)
+```
+
+```
+  estudantes idade peso      cidades altura
+1     Camila    21   65   Nova Hartz   1.80
+2  Guilherme    18  100 Porto Alegre   1.50
+3    Marcelo    17   80     Soledade   1.90
+4      Pedro    17   79      Gramado   1.74
 ```
 
 Adicionar um cálculo entre as colunas é muito simples com o RStudio, neste caso com os dados do peso e altura, pode-se calcular o IMC (Índice de Massa Corporal) em uma nova coluna:
@@ -1260,38 +1507,6 @@ informacoes
 4      Pedro    17   79      Gramado   1.74 26.09
 ```
 
-Ainda, se houver linhas que tenham pelo menos uma informação faltante (NA), estas podem ser excluídas com o comando `na.omit()`, ou mesmo os NAs serem substituídos por outro caractere (neste caso foi substituído por zero) com o comando `is.na`:
-
-
-```r
-# Retirar as linhas que tenham pelo menos um NA:
-
-informacoes<- na.omit(informacoes)
-informacoes
-```
-
-```
-  estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 20.06
-2  Guilherme    18  100 Porto Alegre   1.50 44.44
-3    Marcelo    17   80     Soledade   1.90 22.16
-4      Pedro    17   79      Gramado   1.74 26.09
-```
-
-```r
-# Substituir NA's por zero no data.frame
-
-informacoes[is.na(informacoes)] = 0
-informacoes
-```
-
-```
-  estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 20.06
-2  Guilherme    18  100 Porto Alegre   1.50 44.44
-3    Marcelo    17   80     Soledade   1.90 22.16
-4      Pedro    17   79      Gramado   1.74 26.09
-```
 
 Outro recurso interessante é a substituição de dados em uma coluna, que pode ser feito de forma automática para uma condição padrão escolhida. No exemplo abaixo, substituimos aquelas informações de idade igual a 17 pelo número 19:
 
@@ -1331,12 +1546,6 @@ informacoes
 ```
 
 
-```
-Carregando pacotes exigidos: knitr
-```
-
-
-
 Table: (\#tab:imct)Valores padrão para o IMC
 
 Resultado            Significado             
@@ -1373,6 +1582,7 @@ informacoes
 4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
 ```
 
+
 A classificação binária dos dados (0,1) também é relevante para o estudo da manipulação dos dados trabalhados pelo pesquisador. Neste exemplo, classificou-se aqueles valores da coluna "classificacao" com o "peso normal" iguais a 1, do contrário classificou-se 0 (zero).
 
 
@@ -1402,7 +1612,7 @@ O comando `rbind()` é utilizado para incluir linhas novas abaixo de um objeto j
 ```r
 novo1=data.frame(estudantes="Francisco", idade=30, peso=59, 
                  cidades="Ijuí", 
-                 altura="1,59", 
+                 altura="1.59", 
                  Imc= 23.33768, 
                  classificacao= "peso normal",
                  tipoimc="Peso Normal", 
@@ -1417,7 +1627,7 @@ informacoes
 2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
 3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
 4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
-5  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
+5  Francisco    30   59         Ijuí   1.59 23.34     peso normal   Peso Normal
   binario
 1       1
 2       0
@@ -1430,31 +1640,7 @@ Outra forma de incluir informações adicionais nos *data frames* através de at
 
 
 ```r
-require(dplyr)
-```
-
-```
-Carregando pacotes exigidos: dplyr
-```
-
-```
-
-Attaching package: 'dplyr'
-```
-
-```
-The following objects are masked from 'package:stats':
-
-    filter, lag
-```
-
-```
-The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union
-```
-
-```r
+library(dplyr)
 informacoes= mutate(informacoes, 
                     "faixa etaria"= ifelse(informacoes$idade<21,
                                            "não adulto", "adulto"))
@@ -1467,7 +1653,7 @@ informacoes
 2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
 3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
 4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
-5  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
+5  Francisco    30   59         Ijuí   1.59 23.34     peso normal   Peso Normal
   binario faixa etaria
 1       1       adulto
 2       0   não adulto
@@ -1498,7 +1684,7 @@ rev(informacoes)
 2   não adulto       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre
 3   não adulto       1     peso normal    1.9 22.16    Marcelo     Soledade
 4   não adulto       0 excesso de peso   1.74 26.09      Pedro      Gramado
-5       adulto       1     peso normal   1,59 23.34  Francisco         Ijuí
+5       adulto       1     peso normal   1.59 23.34  Francisco         Ijuí
   peso idade       tipoimc
 1   65    21   Peso Normal
 2  100    18 Obesidade III
@@ -1540,7 +1726,7 @@ informacoes[order(informacoes$idade, decreasing = TRUE),]
 
 ```
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1.59     peso normal
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
@@ -1564,7 +1750,7 @@ informacoes[order(informacoes$idade, decreasing = FALSE),]
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
-5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1.59     peso normal
   binario faixa etaria
 2       0   não adulto
 3       1   não adulto
@@ -1581,7 +1767,7 @@ informacoes[order(informacoes$cidades, decreasing = FALSE),]
 ```
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1.59     peso normal
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
@@ -1607,7 +1793,7 @@ informacoes
 2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1.59     peso normal
   binario faixa etaria rankingImc
 1       1       adulto          1
 2       0   não adulto          5
@@ -1637,7 +1823,7 @@ manipulação e transformação de grandes bases de dados que o pesquisador ter�
 
 ### O pacote *tidyr*
 
-Nesta subseção será utilizado o pacote `tidyr` para demonstrar algumas funções que contribuem para a manipulação das bases de dados, tão importante no processo de preperação das informações para posterior análise. Serão utilizadas para demonstração as bases de dados existentes no próprio pacote.
+Nesta subseção será utilizado o pacote `tidyr` [@tidyr2018] para demonstrar algumas funções que contribuem para a manipulação das bases de dados, tão importante no processo de preperação das informações para posterior análise. Serão utilizadas para demonstração as bases de dados existentes no próprio pacote.
 
 Abaixo segue uma demonstração das convenções a respeito das bases de dados. Desta forma verifica-se que cada variável é apresentada em sua respectiva coluna, bem como as observações são apresentadas em sua própria linha e portanto os valores constam em sua própria célula.
 
@@ -1646,6 +1832,8 @@ Abaixo segue uma demonstração das convenções a respeito das bases de dados. 
 <p class="caption">(\#fig:dados)Convenção sobre variáveis, observações e valores</p>
 </div>
 
+Fonte: <http://garrettgman.github.io/tidying/>.
+
 #### Função *spread*
 
 A função `spread()` é utilizada para transformar os valores constantes em uma coluna em nova configuração de colunas. Ainda, é possível determinar a transformação dos valores com o comando `convert = TRUE` informando o tipo de valores (doubles (numerics), integers, logicals, complexes, ou factors) nas colunas a serem criadas (comando `type.convert()`).
@@ -1653,14 +1841,7 @@ A função `spread()` é utilizada para transformar os valores constantes em uma
 
 
 ```r
-require(tidyr)
-```
-
-```
-Carregando pacotes exigidos: tidyr
-```
-
-```r
+library(tidyr)
 table2
 ```
 
@@ -1955,6 +2136,24 @@ head(novo)
 2 19.7   6  145 175 3.62 2.77 15.5  0  1    5    6
 3 15.0   8  301 335 3.54 3.57 14.6  0  1    5    8
 ```
+
+Utilizando o pacote `stringr` [@stringr2018] com sua função `str_detect()`, é possível efetuar a filtragem pelo nome/identificação total ou parcial de um valor contido dentro de uma variável do banco de dados. Utilizou-se o banco de dados "table5" visto no subcapítulo anterior pra filtrar as informações da variável "country" que contém "Bra":
+
+
+```r
+library(stringr)
+table5 %>%
+  filter(str_detect(country, "Bra"))
+```
+
+```
+# A tibble: 2 x 4
+  country century year  rate           
+  <chr>   <chr>   <chr> <chr>          
+1 Brazil  19      99    37737/172006362
+2 Brazil  20      00    80488/174504898
+```
+
 
 #### Função *mutate*
 
@@ -2392,25 +2591,12 @@ units(dif) # Retoma a unidade da diferença entre as datas
 
 ### O pacote *lubridate*
 
-O pacote `lubridate` é responsável por contribuir de forma eficaz para a manipulação e transformação de variáveis sob o formato de datas e horas. No caso abaixo, os comandos `ymd()` e `mdy()` codificam corretamente parao R as datas que anteriormente não estavam neste padrão.
+O pacote `lubridate` [@lubridate2011] é responsável por contribuir de forma eficaz para a manipulação e transformação de variáveis sob o formato de datas e horas. No caso abaixo, os comandos `ymd()` e `mdy()` codificam corretamente parao R as datas que anteriormente não estavam neste padrão.
 
 
 ```r
 library(lubridate)
-```
 
-```
-
-Attaching package: 'lubridate'
-```
-
-```
-The following object is masked from 'package:base':
-
-    date
-```
-
-```r
 ymd(20190215)
 ```
 
@@ -2581,7 +2767,7 @@ data %>%
 ## Exercícios
 
 
-**1.**	Baixe o arquivo "arvores" que se encontra no endereço <https://smolski.github.io/softwarelivrer/livro.html>. Este é um banco de dados com informações cedido pela professora Tatiane Chassot. Abra o arquivo no Rstudio tomando os cuidados necessários (importar no formato correto, prestar atenção nas vírgulas e nomes...). Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.
+**1.**	Baixe o arquivo "arvores" que se encontra no endereço <https://smolski.github.io/softwarelivrer/livro.html>. Este é um banco de dados com informações cedido pela professora Tatiane Chassot<!--Tatiane Chassot-->. Abra o arquivo no Rstudio tomando os cuidados necessários (importar no formato correto, prestar atenção nas vírgulas e nomes...). Por meio dos comandos do R, responda as seguintes perguntas, informando o comando utilizado.
 
 **1.1.**	Qual é a espécie de árvore que possui o maior e menor diâmetro?  E quais são estes valores de diâmetro?
 
@@ -2621,6 +2807,8 @@ Qual foi o número total de vendas?
 
 
 # Estatística Descritiva{#desc}
+
+<!--*Denize Ivete Reis*-->
 
 *Denize Ivete Reis*
 
@@ -2846,8 +3034,8 @@ barplot(table(Sexo))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-101-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-101)Gráfico de colunas com a variável Sexo</p>
+<img src="index_files/figure-epub3/unnamed-chunk-111-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-111)Gráfico de colunas com a variável Sexo</p>
 </div>
 
 **Obs**.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -2865,8 +3053,8 @@ barplot(table(Sexo), horiz=T)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-102-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-102)Gráfico de colunas com a variável Sexo (Horizontal)</p>
+<img src="index_files/figure-epub3/unnamed-chunk-112-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-112)Gráfico de colunas com a variável Sexo (Horizontal)</p>
 </div>
 
 
@@ -2886,8 +3074,8 @@ barplot(table(`Pessoas_familia`), col=c("blue"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-103-1.png" alt="Gráfico de colunas com a variável `Pessoas familia`" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-103)Gráfico de colunas com a variável `Pessoas familia`</p>
+<img src="index_files/figure-epub3/unnamed-chunk-113-1.png" alt="Gráfico de colunas com a variável Pessoas familia" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-113)Gráfico de colunas com a variável Pessoas familia</p>
 </div>
 
 **Ex.2)** Construir uma tabela de dupla entrada para as variáveis **Sexo** e **Divulgação**.
@@ -2900,8 +3088,8 @@ barplot(table(Sexo,Divulgacao),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-104-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-104)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
+<img src="index_files/figure-epub3/unnamed-chunk-114-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-114)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
 </div>
 
 
@@ -2925,8 +3113,8 @@ barplot(Resultado,col=c("blue","red"),main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-106-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-106)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
+<img src="index_files/figure-epub3/unnamed-chunk-116-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-116)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
 </div>
 
 
@@ -2973,8 +3161,8 @@ legend(x="topright", # Determina posição da legenda
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-107-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-107)Gráfico de pizza com a variável Sabor</p>
+<img src="index_files/figure-epub3/unnamed-chunk-117-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-117)Gráfico de pizza com a variável Sabor</p>
 </div>
 
 ### Histograma
@@ -2991,8 +3179,8 @@ hist(as.numeric(`Renda_h`))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-108-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-108)Histograma com a variável `Renda h`</p>
+<img src="index_files/figure-epub3/unnamed-chunk-118-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-118)Histograma com a variável `Renda h`</p>
 </div>
 
 **Obs**. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixo y (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -3015,8 +3203,8 @@ hist(as.numeric(`Renda_h`),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-109-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-109)Histograma com a variável Renda h com breaks=5</p>
+<img src="index_files/figure-epub3/unnamed-chunk-119-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-119)Histograma com a variável Renda h com breaks=5</p>
 </div>
 O comando `ylim` determina os limites do eixo y a serem mostrados; `xlab` e `ylab` determinam o nome das variáveis dos eixos x e y; `main` determina o nome do título e `col` determina a cor do gráfico. Use o argumento `main=NULL` para remover o título.
 
@@ -3035,7 +3223,7 @@ hist(as.numeric(`Renda_h`), breaks=5)$counts
 hist(as.numeric(`Renda_h`), breaks=5)$breaks
 ```
 
-<img src="index_files/figure-epub3/unnamed-chunk-110-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="index_files/figure-epub3/unnamed-chunk-120-1.png" width="70%" style="display: block; margin: auto;" />
 
 ```
 [1]  0  5 10 15 20 25
@@ -3061,8 +3249,8 @@ boxplot(Idade,horizontal = T)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-111-1.png" alt="Boxplot com a variável Idade" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-111)Boxplot com a variável Idade</p>
+<img src="index_files/figure-epub3/unnamed-chunk-121-1.png" alt="Boxplot com a variável Idade" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-121)Boxplot com a variável Idade</p>
 </div>
 
 Ainda é possível criar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:
@@ -3073,8 +3261,8 @@ boxplot(Idade~Sabor, data=pesquisa_dados)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-112-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-112)Boxplot com as variáveis Idade e Sabor</p>
+<img src="index_files/figure-epub3/unnamed-chunk-122-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-122)Boxplot com as variáveis Idade e Sabor</p>
 </div>
 
 
@@ -3176,7 +3364,7 @@ Ex. Considere os dados que descrevem os valores do número de empresas fiscaliza
 
 <!--
 
-Table: (\#tab:unnamed-chunk-114)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
+Table: (\#tab:unnamed-chunk-124)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
 
   Ano  Empresas.Fiscalizadas 
 -----  ----------------------
@@ -3244,8 +3432,8 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-115-1.png" alt="Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-115)Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
+<img src="index_files/figure-epub3/unnamed-chunk-125-1.png" alt="Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-125)Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
 </div>
 Fonte: Elaborado pelo(s) autor(es) a partir de @Dieese2011. 
 
@@ -3263,7 +3451,7 @@ Com o argumento `"legend"` instruímos a formatação da legenda:
 Obs.: `pch`= número (entre 0 e 25). No Help do R (buscando com pch), você encontra a lista completa de símbolos que podem ser utilizados na representação da legenda.
 Neste caso, pode ser importante também alterar o tamanho da fonte da legenda, com o uso do argumento `"cex"`.
 
-Exemplo: Segue exemplo de um gráfico de linhas para as temperaturas registradas durante o dia 11/04/2018, pela Estação Meteorológica de São Luiz Gonzaga, RS, conforme dados obtidos no site do Inmet.
+Exemplo: Segue exemplo de um gráfico de linhas para as temperaturas registradas durante o dia 11/04/2018, pela Estação Meteorológica de São Luiz Gonzaga, RS, conforme dados obtidos no site do @inmet.
 
 
 ```r
@@ -3306,9 +3494,11 @@ legend(0,40,c("temp_inst","temp_max","temp_min"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-117-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-117)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
+<img src="index_files/figure-epub3/unnamed-chunk-127-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-127)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
 </div>
+
+Fonte: Elaborado pelo(s) autor(es) a partir de @inmet.
 
 ## Estatísticas Descritivas
 
@@ -3562,6 +3752,8 @@ Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a
 
 # Estatística Inferencial{#inf}
 
+<!--*Tatiane Chassot*-->
+
 *Tatiane Chassot*
 
 \begin{flushright}
@@ -3688,11 +3880,11 @@ Hipóteses do teste:
 
 O **valor p** reflete a plausibilidade de se obter tais resultados  no caso de $H_0$ ser de fato verdadeira.
 
+
 <div class="figure" style="text-align: center">
 <img src="testehip1.png" alt="Teste de hipóteses" width="70%" />
 <p class="caption">(\#fig:testehip1)Teste de hipóteses</p>
 </div>
-
 
 
 
@@ -3734,7 +3926,7 @@ nível de confiança = 0,90 a 0,99
 
 
 ```r
-prop.test(260,500)
+prop.test(260, 500)
 ```
 
 ```
@@ -3763,7 +3955,7 @@ Para mudar o nível de confiança para 90\%:
 
 
 ```r
-prop.test(260,500,conf.level = 0.90)
+prop.test(260,500, conf.level = 0.90)
 ```
 
 ```
@@ -3789,7 +3981,7 @@ Para mudar o nível de confiança para 99\%:
 
 
 ```r
-prop.test(260,500,conf.level = 0.99)
+prop.test(260, 500, conf.level = 0.99)
 ```
 
 ```
@@ -3917,7 +4109,7 @@ tempo
 ```
 
 ```r
-t.test(tempo,alt="greater",mu=20)
+t.test(tempo, alt="greater", mu=20)
 ```
 
 ```
@@ -3953,7 +4145,7 @@ Estes dados são evidência para afirmar que o conteúdo de oxigênio é menor q
 
 ```r
 amostras=c(4.9,5.1,4.9,5.5,5.0,4.7)
-t.test(amostras,alt="less",mu=5)
+t.test(amostras, alt="less", mu=5)
 ```
 
 ```
@@ -4013,7 +4205,7 @@ alt = `"two.sided"`, `"greater"` ou `"less"`.
 
 
 ```r
-prop.test(3,80,p=0.03,alt="two.sided")
+prop.test(3,80, p=0.03, alt="two.sided")
 ```
 
 ```
@@ -4041,7 +4233,7 @@ Conclusão: Aceita-se $H_0$ e conclui-se que a máquina produz 3\% de peças def
 
 
 ```r
-prop.test(530,1000,p=0.6,alt="two.sided")
+prop.test(530, 1000, p=0.6, alt="two.sided")
 ```
 
 ```
@@ -4068,7 +4260,7 @@ Conclusão: Rejeita-se $H_0$ com nível de significância de 1\% e conclui-se qu
 
 
 ```r
-prop.test(9,500,p=0.015,alt="greater")
+prop.test(9, 500, p=0.015, alt="greater")
 ```
 
 ```
@@ -4095,7 +4287,7 @@ Conclusão: Não rejeita $H_0$ e conclui-se que a proporção de peças defeituo
 
 
 ```r
-prop.test(80,100,p=0.90,alt="less")
+prop.test(80, 100, p=0.90, alt="less")
 ```
 
 ```
@@ -4131,7 +4323,7 @@ O teste de hipótese para duas médias aplica-se quando se deseja comparar dois 
 **Exemplo 10**: Foi obtido o peso de seis indivíduos antes e após um treinamento de exercício físico. Teste a hipótese de que a média antes do treinamento é diferente da média após o treinamento.
 
 
-Table: (\#tab:unnamed-chunk-150)Amostras dependentes
+Table: (\#tab:unnamed-chunk-160)Amostras dependentes
 
 Indivíduo                      A    B    C    D    E    F
 ---------------------------  ---  ---  ---  ---  ---  ---
@@ -4174,7 +4366,7 @@ Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso antes do tre
 **Exemplo 11**: (adaptado de <www.inf.ufsc.br/~marcelo/testes2.html>) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Pode-se concluir que o uso da ração contribuiu para o aumento do peso médio dos animais? 
 
 
-Table: (\#tab:unnamed-chunk-152)Amostras dependentes - caso 2
+Table: (\#tab:unnamed-chunk-162)Amostras dependentes - caso 2
 
 Cobaia      1     2     3     4     5     6     7     8     9    10
 -------  ----  ----  ----  ----  ----  ----  ----  ----  ----  ----
@@ -4222,7 +4414,7 @@ Primeiramente é preciso saber se existe homogeneidade de variâncias populacion
 
 
 
-Table: (\#tab:unnamed-chunk-154)Comparação de dois tipos diferentes de tecidos
+Table: (\#tab:unnamed-chunk-164)Comparação de dois tipos diferentes de tecidos
 
 ---------  ---  ---  ---  ---  ---  ---  ---
 Tecido A   36   26   31   38   28   20   37 
@@ -4241,7 +4433,7 @@ Teste se um tecido é mais pesado que o outro.
 ```r
 tecidoa=c(36,26,31,38,28,20,37)
 tecidob=c(39,27,35,42,31,39,22)
-var.test(tecidoa,tecidob)
+var.test(tecidoa, tecidob)
 ```
 
 ```
@@ -4312,23 +4504,23 @@ Construa o intervalo de confiança para a proporção populacional dos alunos sa
 **6.**	A fim de determinar a eficiência de um medicamento antitérmico, a temperatura corporal (em graus Celsius) de 15 indivíduos foi medida. Em seguida, foi administrado o medicamento e após uma hora a temperatura foi medida novamente. Os resultados podem ser encontrados na tabela abaixo.
 
 
- Antes   Depois
+Antes   Depois 
 ------  -------
-  37.5     37.8
-  36.0     36.4
-  39.0     37.6
-  38.0     37.2
-  37.8     36.9
-  38.5     37.7
-  36.9     36.8
-  39.4     38.1
-  37.2     36.7
-  38.1     37.3
-  39.3     38.0
-  37.5     37.1
-  38.5     36.6
-  37.8     35.0
-  39.0     39.0
+37,5    37,8   
+36,0    36,4   
+39,0    37,6   
+38,0    37,2   
+37,8    36,9   
+38,5    37,7   
+36,9    36,8   
+39,4    38,1   
+37,2    36,7   
+38,1    37,3   
+39,3    38,0   
+37,5    37,1   
+38,5    36,6   
+37,8    35,0   
+39,0    39,0   
 
 <!--
 
@@ -4351,6 +4543,8 @@ Existe diferença entre as marcas de pilha quanto a sua duração?
 
 
 # Teste de Qui-Quadrado{#qui}
+
+<!--*Iara Denise Endruweit Battisti*-->
 
 *Iara Denise Endruweit Battisti*
 
@@ -4783,13 +4977,14 @@ Fonte: Dados simulados.
 
 
 
-# Modelos de Regressão{#reg}
+# Modelos de Regressão Linear Simples{#reg}
+
 
 *Iara Denise Endruweit Battisti*
 
 *Erikson Kaszubowski*
 
-*Felipe Micail da Silva Smolski*
+*Felipe Micail da Silva Smolski* 
 
 \begin{flushright}
 \emph{}
@@ -4798,17 +4993,17 @@ Fonte: Dados simulados.
 
 Muitas vezes, há a necessidade de estudar duas ou mais variáveis ao mesmo tempo com o objetivo de predizer uma variável em função da(s) outra(s). Por exemplo, verificar se sólidos removidos de um material se relaciona com o tempo de secagem e qual é a forma dessa relação. Outros exemplos: relação entre tempo de estudo e desempenho a uma avaliação; relação entre investimento em comunicação e vendas; entre outros.
 
-A análise de correlação permite quantificar a relação linear entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Neste capítulo, serão estudados os modelos de regressão linear na qual a variáveis resposta ($Y$) é quantitativa e as variáveis preditoras ($X_i$) são quantitativas ou qualitativas.
+A análise de correlação permite quantificar a relação linear entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Neste capítulo, serão estudados os modelos de regressão linear simples na qual a variável resposta ($Y$) é quantitativa e a variável preditora ($X_i$) é quantitativa ou qualitativa.
 
 ## Correlação linear
 
-A correlação linear é a técnica mais simples para estudar a relação entre duas variáveis. Os dados compõem uma única amostra de pares de valores ($x_i, y_i$), correspondendo aos valores das variáveis X e Y, respectivamente, mensurados em cada elemento de uma amostra ou uma população. Para analisar a existência de relação entre as duas variáveis de forma exploratória, primeiramente pode-se fazer o Diagrama de Dispersão.
+A correlação linear é a técnica mais simples para estudar a relação entre duas variáveis quantitativas. Os dados compõem uma única amostra de pares de valores ($x_i, y_i$), correspondendo aos valores das variáveis X e Y, respectivamente, mensurados em cada elemento de uma amostra ou uma população. Para analisar a existência de relação entre as duas variáveis de forma exploratória, primeiramente pode-se fazer o Diagrama de Dispersão.
 
 ## Diagrama de dispersão
 
-O diagrama de dispersão é um gráfico para verificar a existência de relação entre os par de variáveis X e Y. É composto por pontos, os quais correspondem aos pares de valores ($xi, y_i$), sendo a variável X representada no eixo horizontal e a variável Y representada no eixo vertical.
+O diagrama de dispersão é um gráfico para verificar a existência de relação entre os pares de variáveis X e Y. É composto por pontos, os quais correspondem aos pares de valores ($xi, y_i$), sendo a variável X representada no eixo horizontal e a variável Y representada no eixo vertical.
 
-O diagrama de dispersão fornece uma visualização gráfica do comportamento conjunto das duas variáveis em estudo. Na Figura \@ref(fig:diag)a, percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variáveis crescem conjuntamente. Na Figura \@ref(fig:diag)b, percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura \@ref(fig:diag)c informa a ausência de relação entre as duas variáveis e, a Figura \@ref(fig:diag)d mostra uma relação não linear, que não será abordada neste capítulo.
+O diagrama de dispersão fornece uma visualização gráfica do comportamento conjunto das duas variáveis em estudo. Na Figura \@ref(fig:diag)a, percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variáveis crescem conjuntamente. Na Figura \@ref(fig:diag)b, percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura \@ref(fig:diag)c informa a ausência de relação entre as duas variáveis e, a Figura \@ref(fig:diag)d mostra uma correlação não linear, que não será abordada neste capítulo.
 
 
 <div class="figure" style="text-align: center">
@@ -4818,9 +5013,9 @@ O diagrama de dispersão fornece uma visualização gráfica do comportamento co
 
 Fonte: Elaborado pelo(s) autor(es).
 
-**Exemplo**: Suponha que 15 alunos foram selecionados aleatoriamente na turma de Estatística, sendo registrado o tempo de estudo e nota da atividade avaliativa. O objetivo da pesquisa é verificar se existe relação entre tempo de estudo e nota.
+**Exemplo**: Suponha que 15 alunos foram selecionados aleatoriamente na turma de Estatística, sendo registrado o tempo de estudo e nota da atividade avaliativa. O objetivo da pesquisa é verificar se existe relação entre o tempo de estudo e a nota.
 
-Table: (\#tab:reg1)Relação entre o tempo de estudo e a nota.
+Table: (\#tab:reg1)Relação entre o tempo (horas) de estudo e a nota.
 
   ----------------------------------------------------------------------
   **Tempo**  4,0 6,0 5,5 5,0 6,8 6,5 3,5 4,5 7,5 8,0 5,4 6,5 7,7 7,5 5,8
@@ -4838,9 +5033,9 @@ tempo=c(4,6,5.5,5,6.8,6.5,3.5,4.5,7,8,5.4,6.5,7.7,7.5,5.8)
 nota=c(5.5,7.5,8,7,8.1,8.6,4.7,7.5,9.5,9.5,7.8,8,9.1,9.5,8)
 ```
 
-Para elaborar o diagrama de dispersão o compando utilizado é o plot em que x corresponde ao vetor de dados da variável resposta e y corresponde ao vetor de dados da variável preditora.
+Para elaborar o diagrama de dispersão o comando utilizado é o `plot` em que y corresponde ao vetor de dados da variável resposta e x corresponde ao vetor de dados da variável preditora.
 
-`plot(variável_preditora, variável_dependente`
+`plot(variável_preditora, variável_resposta)`
 
 Para o exemplo o comando é o seguinte:
 
@@ -4878,13 +5073,13 @@ em que:
 - $\bar{x}$: média dos valores de x;
 - $\bar{y}$: média dos valores de y;
 
-O coeficiente de correlação linear (r) é uma estatística amostral, representando a magnitude da relação entre duas variáveis na amostra. O parâmetro populacional é representado por $\rho$, que é calculado da mesma forma. O coeficiente de correlação linear assume valores entre -1 e +1, inclusive. Se o valor de r está próximo de 0, conclui-se que não há correlação linear entre as variáveis X e Y. Se o valor de r está próximo de -1 ou +1, conclui-se pela existência de correlação linear significativa entre as variáveis X e Y, sendo que o sinal indica uma relação linear positiva (direta) ou negativa (inversa).
+O coeficiente de correlação linear (r) é uma estatística amostral, representando a magnitude da relação entre duas variáveis na amostra. O parâmetro populacional é representado por $\rho$, que é calculado da mesma forma. O coeficiente de correlação linear assume valores entre -1 e +1, inclusive. Se o valor de r está próximo de 0, conclui-se que não há correlação linear entre as variáveis X e Y. Se o valor de r está próximo de -1 ou +1, conclui-se pela existência de correlação linear entre as variáveis X e Y, sendo que o sinal indica uma relação linear positiva (direta) ou negativa (inversa).
 
 Sintaxe no software R:
 
-`cor(variável_preditora,variável_dependente)` ou `cor(x,y)`
+`cor(variável_preditora, variável_resposta)`
 
-Obs: x e y são  numéricos.
+Lembrando que os valores de  x e y são numéricos. No caso do exemplo, segue o comando e a resposta.
 
 
 ```r
@@ -4895,7 +5090,38 @@ cor(tempo,nota)
 [1] 0.9224
 ```
 
-No resultado é apresentado o valor do coeficiente de correlação linear, que neste caso, está próximo de +1, expressando uma relação forte e direta. Ainda, é possível aprimorar a exibição dos resultados sobre o coeficiente de correlação com as variáveis observadas com o pacote `PerformanceAnalytics`, que além do coeficientes de correlação, mostra a distribuição das variáveis e o gráfico de dispersão:
+
+No resultado é apresentado o valor do coeficiente de correlação linear, que neste caso, está próximo de +1, expressando uma correlação forte e direta entre as duas variáveis em análise. 
+
+
+Caso o usuário deseja testar a significância do coeficiente de correlação, isto é, se o resultado do coeficiente de correlação amostral pode ser inferido para a população, utiliza-se o comando:
+
+`cor.test(variável_preditora, variável_resposta)`
+
+Para o exemplo:
+
+
+```r
+cor.test(tempo, nota)
+```
+
+```
+
+	Pearson's product-moment correlation
+
+data:  tempo and nota
+t = 8.6, df = 13, p-value = 1e-06
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.7776 0.9743
+sample estimates:
+   cor 
+0.9224 
+```
+
+Como o valor de $p$ é menor que 0,01 então pode-se afirmar que existe correlação linear positiva significativa, isto é, o resultado pode ser projeto para a população de onde a amostra foi extraida.
+
+Ainda,  com o pacote `PerformanceAnalytics` [@PerformanceAnalytics] é possível aprimorar a exibição dos resultados sobre o coeficiente de correlação com as variáveis observadas, que além do coeficientes de correlação, mostra a distribuição das variáveis e o gráfico de dispersão:
 
 
 ```r
@@ -4903,24 +5129,24 @@ library("PerformanceAnalytics")
 chart.Correlation(cbind(tempo,nota), histogram=TRUE, pch=19)
 ```
 
-<img src="index_files/figure-epub3/unnamed-chunk-172-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="index_files/figure-epub3/unnamed-chunk-183-1.png" width="70%" style="display: block; margin: auto;" />
 
 
-## Modelo de Regressão
+## Regressão Linear Simples
 
-No estudo de regressão estabelece-se aos casos em que se pretende estabelecer uma relação entre uma variável Y considerada dependente (variável resposta ou desfecho) e uma ou mais variáveis $x_1, x_2,\cdots, x_k$ (variáveis explicativas ou preditoras) consideradas independentes.
+O estudo de regressão estabelece-se aos casos em que se pretende estabelecer uma relação entre uma variável Y considerada dependente (variável resposta ou desfecho) e uma ou mais variáveis $X_1, X_2,\cdots, X_k$ (variáveis explicativas ou preditoras) consideradas independentes.
 
 O objetivo da análise de regressão é ajustar uma equação que permita explicar o comportamento da variável resposta de maneira que o valor previsto possa estar próximo do que seria observado, dado um conjunto de valores observados para as variáveis preditoras. A forma do modelo de regressão depende da relação entre as variáveis, expressa visualmente pelo diagrama de dispersão, conforme exemplificado na Figura \@ref(fig:diag).
 
 A análise de regressão é uma técnica muito utilizada em variáveis quantitativas, como por exemplo:
 
-- Vendas em função do investimento em comunicação;
+- vendas em função do investimento em comunicação;
 
-- Altura de crianças em função da idade;
+- altura de crianças em função da idade;
 
-- Nota obtida em função de horas de estudo;
+- nota obtida em função de horas de estudo;
 
-- Produtividade de uma cultura em relação a quantidade de adubação.
+- produtividade de uma cultura em relação a quantidade de adubação.
 
 Na Figura \@ref(fig:regress) é apresentada a variação explicada e não explicada na análise por modelo regressão.
 
@@ -4945,7 +5171,7 @@ Fonte: Elaborado pelo(s) autor(es).
 
 $$
 \begin{matrix}
-\sum (y_i-\overline{y}) ^{2} = \sum (\hat{y}_i-\overline{y})^2 + \sum (y_i-\hat{y}_i)^2 \\
+\sum (y_i-\overline{y}_i) ^{2} = \sum (\hat{y}_i-\overline{y}_i)^2 + \sum (y_i-\hat{y}_i)^2 \\
 \\
 \text{Soma de Quadrado Total = Soma de Quadrado de Regressão + Soma de Quadrado de Resíduo}
 \end{matrix}
@@ -4974,9 +5200,9 @@ $x_i$: valores da variável explicativa (independente, preditora), $i = 1,2,...,
 
 $\beta_0$: coeficiente linear (intercepto). Interpretado como o valor da variável dependente quando a variável independente é igual a 0;
 
-$\beta_1$: coeficiente angular (inclinação). Interpretado como acréscimo/decréscimo na variável dependente para a variação de uma unidade na variável independente;
+$\beta_1$: coeficiente angular (inclinação). Interpretado como acréscimo ou decréscimo na variável dependente para a variação de uma unidade na variável independente;
 
-$\varepsilon_i$: erros aleatórios costumeiramente assumidos como provenientes de uma população normal, com média 0 e variância constante $\begin{bmatrix}\varepsilon_i N(0, \sigma^2)\end{bmatrix}$.
+$\varepsilon_i$: erros aleatórios costumeiramente assumidos como provenientes de uma população normal, com média 0 e variância constante $\begin{bmatrix}\varepsilon_i \text{~} N(0, \sigma^2)\end{bmatrix}$.
 
 
 ## Método dos Mínimos Quadrados
@@ -5037,10 +5263,10 @@ $x$: valores da variável explicativa.
 
 Esta equação refere-se a reta de regressão, sendo que se $b_1$ é um valor positivo a reta é crescente, demonstrando uma relação positiva entre as variáveis; mas se $b_1$ é um valor negativo, a reta é decrescente, demonstrando uma relação inversa entre as variáveis.
 
-No software utiliza-se o comando `lm` para executar a análise de regressão linear, em que y corresponde aos valores numéricos da variável resposta e x são valores numéricos da variável preditora. No caso do segundo comando, "base" corresponde ao nome da base de dados em que estão armazenadas as variáveis. Lembrando que "regressao" é o nome fornecido pelo usuário.
+No software R utiliza-se o comando `lm` para executar a análise de regressão linear, em que y corresponde aos valores numéricos da variável resposta e x são valores numéricos da variável preditora. No caso do segundo comando, "base" corresponde ao nome da base de dados em que estão armazenadas as variáveis. Lembrando que "regressao" é o nome fornecido pelo usuário.
 
 
-`nome_para_regressao=lm(variável_dependente~variável_preditora)`
+`nome_para_regressao=lm(variável_dependente ~ variável_preditora)`
 
 
 Por exemplo:
@@ -5061,15 +5287,17 @@ Coefficients:
       2.221        0.947  
 ```
 
-No resultado observa-se o valor do coeficiente linear (intercept) igual a 2,2214 e o valor do coeficiente angular (tempo).
+No resultado observa-se o valor do coeficiente linear (intercept) igual a 2,2214 e o valor do coeficiente angular (tempo) igual a 0,947 interpretando que a cada aumento de uma unidade de 
+tempo (hora), a nota do aluno aumenta, em média, 0,947 pontos.
 
 
 ## Análise de Variância
 
-A análise de variância, técnica introduzida por Fisher, na década de 20, testa o ajuste da equação como um todo, ou seja, um teste para verificar se a equação de regressão obtida pode ser exclusivamente fruto do erro amostral em uma situação em que a variável preditiva não possui nenhuma relação linear com o desfecho (isto é, testar a significância da equação ajustada). No caso de regressão linear simples, a análise de variância é definida como apresentada na Tabela \@ref(tab:varian).
+
+A Análise de Variância, técnica introduzida por Fisher, na década de 20, testa o ajuste da equação como um todo, ou seja, um teste para verificar se a equação de regressão obtida pode ser exclusivamente fruto do erro amostral em uma situação em que a variável preditiva não possui nenhuma relação linear com o desfecho. Isto é, testar a significância da equação ajustada. 
 
 
-As hipóteses testadas na análise de variância da Regressão são:
+As hipóteses testadas na Análise de Variância da Regressão são:
 
 $$
 H_0:\beta_1=0 \textrm{ (a regressão não é significativa)} 
@@ -5078,7 +5306,8 @@ $$
 $$
 H_1:\beta_1 \neq 0 \textrm{ (a regressão é significativa)}
 $$
-
+No caso de regressão linear simples, a análise de variância é definida como apresentada na 
+Tabela \@ref(tab:varian).
 
 Table: (\#tab:varian)Análise de variância para a regressão linear simples.
 
@@ -5094,7 +5323,19 @@ Table: (\#tab:varian)Análise de variância para a regressão linear simples.
 
 Fonte: Elaborado pelo(s) autor(es).
 
-em que:
+No qual:
+
+**FV**: Fonte de Variação;
+
+**GL**: Grau de Liberdade;
+
+**SQ**: Soma de Quadrados;
+
+**QM**: Quadrados Médios;
+
+**F**: F calculado.
+
+Em que:
 
 $$
 SQ \textrm{Regressão} = \frac{(\sum xy - \frac{(\sum x \sum y)^2}{n})}{\sum x^2 - \frac{(\sum x)^2}{n}}
@@ -5117,9 +5358,9 @@ Fc = QMRegressão $/$ QMResíduo
 Espera-se que o QMResíduo seja mínimo, assim o modelo de regressão estará
 bem ajustado. 
 
-A distribuição de probabilidade para a razão de duas variâncias é conhecida como a distribuição F. Se a hipótese nula for rejeitada ao nível de signicância $\alpha$, rejeita-se $H_0$ e portanto a regressão é significativa ao nível $\alpha$ de significância.
+A distribuição de probabilidade para a razão de duas variâncias é conhecida como a distribuição F. Se a hipótese nula for rejeitada ao nível de signicância $\alpha$ (rejeita-se $H_0$) e, portanto a regressão é significativa ao nível $\alpha$ de significância.
 
-No software R, utiliza-se a função `anova()` para obter a análise de variância informando o nome dado ao modelo de regressão, obtido anteriormente.
+No software R, utiliza-se a função `anova()` para obter a análise de variância informando o nome dado ao modelo de regressão previamente.
 
 `anova(nome_para_regressão)`
 
@@ -5141,7 +5382,7 @@ Residuals 13    4.0    0.31
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
-No resultado observa-se as fontes de variação: tempo (variável preditora) e resíduos (residuals); graus de liberdade (Df), soma de quadrado (Sum Sq), quadrado médio (Mean Sq), valor do F calculado (F value) e o valor $p$ (Pr). Neste caso, como $p<0,01$ rejeita-se $H_0$ e, portanto a equação é significativa ($p<0,01$).
+No resultado observam-se as fontes de variação: tempo (variável preditora) e residuals (resíduos); graus de liberdade (Df), soma de quadrado (Sum Sq), quadrado médio (Mean Sq), valor do F calculado (F value) e o valor $p$ (Pr). Neste caso, como $p<0,01$ rejeita-se $H_0$ ao nível de 1\% de significância e, portanto a equação é significativa ($p<0,01$).
 
 ## Coeficiente de Determinação
 
@@ -5152,8 +5393,8 @@ R^2 = \frac{\textrm{SQRegressão}}{SQTotal}
 $$
 
 
-Quanto mais próximo de 1 (ou 100\%) for o R$^2$, melhor será o ajuste da equação de regressão. Também utiliza-se o coeficiente de determinação ajustado (R$^2$ ajustado), o qual considera o número de variáveis e o tamanho da amostra, sendo que este é o mais indicado para regressão múltipla.
-No software R, o valor do coeficiente de determinação é obtido pelo comando `summary()`, conforme segue:
+Quanto mais próximo de 1 (ou 100\%) for o R$^2$, melhor será o ajuste da equação de regressão. Também, é possível utilizar o coeficiente de determinação ajustado (R$^2$ ajustado), o qual considera o número de variáveis e o tamanho da amostra, sendo que este é o mais indicado para regressão múltipla.
+No software R, o valor do coeficiente de determinação é obtido pelo comando `summary()`, informando o nome dado aomodelo de regressão previamente, conforme segue:
 
 `summary(nome_para_regressao)`
 
@@ -5185,7 +5426,7 @@ Multiple R-squared:  0.851,	Adjusted R-squared:  0.839
 F-statistic: 74.2 on 1 and 13 DF,  p-value: 9.88e-07
 ```
 
-No resultado, observa-se o valor de coeficiente de determinação (multiple R-squared) igual a 0,8509, indicando que 85,09\% da variação da nota (variável resposta) é devido a variação do tempo de estudo (variável preditora).
+No resultado, observa-se o valor de coeficiente de determinação (multiple R-squared) igual a 0,85, indicando que 85\% da variação da nota (variável resposta) é devido a variação do tempo de estudo (variável preditora).
 
 A reta de regressão pode ser visualizada no diagrama de dispersão com o comando `abline()`, como segue:
 
@@ -5198,12 +5439,12 @@ Para o exemplo:
 
 ```r
 plot(nota~tempo)
-abline(coef(regressaolinear))
+abline(regressaolinear)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-175-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-175)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
+<img src="index_files/figure-epub3/unnamed-chunk-186-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
+<p class="caption">(\#fig:unnamed-chunk-186)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -5225,287 +5466,9 @@ confint(regressaolinear)
 tempo       0.7097  1.185
 ```
 
-## Análise dos Resíduos
-
-O resíduo da análise de regressão é a diferença do valor do Y observado e Y estimado referente a cada par de valores do conjunto de dados, isto é, $E_i = Y_i-\hat{Y}_i$.
-
-No software R, pode-se utilizar o comando "residuals", para visualizar os resíduos, lembrando que "regressaolinear" é o nome dado ao modelo executado, como segue:
-
-`residuals(regressaolinear)`
-
-
-A análise dos resíduos é importante para a validade dos intervalos de confiança e testes de hipóteses, uma vez que as suposições   das observações de Y independentes e o erro adere a distribuição aproximadamente normal com média 0 e variância constante devem ser satisfeitas.
-
-O método gráfico pode ser utilizado para testar estas suposições dispondo os valores da variável preditora no eixo x e os respectivos valores dos resíduos no eixo y.  Ainda, pode-se dispor os valores ajustados no eixo x e os respectivos valores dos resíduos do eixo y.
-
-
-Se o modelo ajustado for apropriado para os dados, os pontos devem estar
-distribuídos de forma aleatória no gráfico dos resíduos, conforme Figura \@ref(fig:residuos)a. Caso a suposição não seja satisfeita, métodos alternativos podem ser utilizados como: método dos mínimos quadrados ponderados para o caso de não homocedasticidade; o método dos mínimos quadrados generalizados para o caso de erros correlacionados; e, métodos não-paramétricos para o caso de não normalidade.
-
-Além da análise gráfica, existem testes para avaliar a homocedasticidade como o Teste de Bartlett e para avaliar a normalidade aplicam-se os testes de Shapiro Wilks ou Kolmogorov-Smirnov.
-
-<div class="figure" style="text-align: center">
-<img src="residuos1.png" alt="Gráficos para análise de resíduos em regressão" width="70%" />
-<p class="caption">(\#fig:residuos)Gráficos para análise de resíduos em regressão</p>
-</div>
-
-Fonte: Elaborado pelo(s) autor(es).
-
-A seguir é apresentado o gráfico de resíduos apresentando os valores ajustados pela equação de regressão e os resuíduos:
-
-
-`plot(fitted(nome_para_regressao),residuals(nome_para_regressao),`
-
-`xlab="Valores ajustados",ylab="Resíduos")`
-
-Nesta sintaxe, o termo "regressaolinear" é o nome dado ao modelo de regressão, "fitted" define os valores ajustados no eixo horizontal, "residuals" define os resíduosno eixo vertical, "xlab" indica o nome do eixo horizontal e "ylab" indica o nome do eixo vertical. e "abline(h=0)" apresentauma linha constante em y=0 para facilitar os desvios dos resíduos.
-
-Na Figura \@ref(fig:residuos1) é apresentado o gráfico de resíduo, no qual os resíduos são apresentados no eixo y e os valores ajustados são apresentados no eixo x.
-
-
-```r
-plot(fitted(regressaolinear), residuals(regressaolinear),
-xlab="Valores ajustados", ylab="Residuos")
-abline(h=0)
-```
-
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/residuos1-1.png" alt="Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo" width="70%" />
-<p class="caption">(\#fig:residuos1)Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo</p>
-</div>
-
-Fonte: Elaborado pelo(s) autor(es).
-
-Outro gráfico de resíduos que é possível elaborar na análise de resíduos representa a variável preditora (x) no eixo x e o resíduos no eixo Y.
-	
-Sintaxe no software R:
-
-
-`plot(tempo,residuals(nome_para_regressao),`
-
-`xlab="Valores independente", ylab="Resíduos")`
-                                      
-Obs: `regressao` é o nome dado ao modelo de regressão; a variável x define os valores do eixo x e residuals define os valores ajustados no eixo Y; `xlab` indica o nome do eixo x e ylab indica o nome do eixo y.
-
-`abline(h=0)`
-
-Obs: adicionar uma linha constante em y=0.
-
-Por exemplo:
-
-
-```r
-plot(tempo, residuals(regressaolinear), 
-     xlab = "Valores independentes",
-     ylab="Residuos")
-abline(h=0)
-```
-
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/residuos2-1.png" alt="Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente" width="70%" />
-<p class="caption">(\#fig:residuos2)Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente</p>
-</div>
-
-Fonte: Elaborado pelo(s) autor(es).
-
-Na Figura \@ref(fig:residuos2) é apresentado o gráfico de resíduo, em que no eixo y constam os valores dos resíduos e no eixo x constam os valores da variável independente.
-
-
-Considerando os dados do exemplo, suponha que um aluno estudou 6,5 horas (x=6,5), então o valor ajustado da nota (y ) é dado por 2,2214+0,9474*6,5, resultando em 8,38. Para esse caso, o resíduo é:
-
-Yobservado – Yestimado = 8 – 8,38 = - 0,38
-
-Para exibir os valores ajustados e os resíduos da equação de regressão utilizam-se os seguintes comandos:
-
-
-`residuals(regressaolinear)`  (exibe os resíduos do modelo regressao).
-
-`fitted(regressaolinear)` (exibe os valores ajustados do modelo regressao).
-
-
-Para testar a suposição que os erros aleatórios têm distribuição normal, pode-se elaborar o gráfico de probabilidade normal, conforme segue:
-
-`qqnorm(residuals(nome_para_regressao))`
-
-
-```r
-qqnorm(residuals(regressaolinear))
-```
-
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/qqnorm-1.png" alt="Gráfico de probabilidade normal para verificar normalidade dos resíduos" width="70%" />
-<p class="caption">(\#fig:qqnorm)Gráfico de probabilidade normal para verificar normalidade dos resíduos</p>
-</div>
-
-Fonte: Elaborado pelo(s) autor(es).
-
-Ainda, pode-se construir o gráfico com a distribuição da probabilidade dos resíduos, através de um histograma, verificando assim se a cauda é simétrica ou não:
-
-
-```r
-hist(x = regressaolinear$residuals,
-      xlab = "Resíduos",
-      ylab = "Densidade",
-      main = "",
-      col = "lightgreen",
-      probability = TRUE)
-lines(density(regressaolinear$residuals))
-```
-
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-177-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
-<p class="caption">(\#fig:unnamed-chunk-177)Histograma de distribuição da probabilidade para os resíduos</p>
-</div>
-
-Fonte: Elaborado pelo(s) autor(es).
-
-Também, pode-se aplicar o teste de normalidade de Shapiro-Wilk para verificar a normalidade dos dados, confirmando a simetria ou não da cauda do gráfico acima. O comando utilizado é o seguinte:
-
-`shapiro.test(residuals(nome_para_regressao))`
-
-
-Por exemplo:
-
-
-```r
-shapiro.test(residuals(regressaolinear))
-```
-
-```
-
-	Shapiro-Wilk normality test
-
-data:  residuals(regressaolinear)
-W = 0.96, p-value = 0.6
-```
-
-### Valores outliers na regressão
-
-Para análise dos valores outliers nos resíduos (*residuals standard* e *residuals studentized*), utilizam-se os seguintes comandos:
-
-`rstudent(nome_para_regressao)`
-
-`rstandard(nome_para_regressao)`
-
-
-```r
-rstudent(regressaolinear)
-```
-
-```
-       1        2        3        4        5        6        7        8 
--1.04742 -0.74389  1.07142  0.07646 -1.07311  0.40066 -2.01860  2.29138 
-       9       10       11       12       13       14       15 
- 1.26283 -0.60069  0.86125 -0.69777 -0.81958  0.32859  0.51493 
-```
-
-```r
-rstandard(regressaolinear)
-```
-
-```
-       1        2        3        4        5        6        7        8 
--1.04353 -0.75701  1.06538  0.07956 -1.06691  0.41426 -1.81531  1.98916 
-       9       10       11       12       13       14       15 
- 1.23490 -0.61602  0.86993 -0.71196 -0.83013  0.34048  0.53013 
-```
-
-E o gráfico para verificar valores outliers nos resíduos:
-
-`plot(rstudent(nome_para_regressao))`
-
-`plot(rstandard(nome_para_regressao))`
-
-Os gráficos dos resíduos padronizados (standard) e studentizados (student) estão apresentados nas Figuras \@ref(fig:residpad) e \@ref(fig:residst), respectivamente.
-
-Para o exemplo:
-
-
-```r
-plot(rstandard(regressaolinear))
-abline(h=2,col="red")
-abline(h=-2,col="red")
-```
-
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/residpad-1.png" alt="Resíduos padronizados para o exemplo" width="70%" />
-<p class="caption">(\#fig:residpad)Resíduos padronizados para o exemplo</p>
-</div>
-
-Fonte: Elaborado pelo(s) autor(es).
-
-Aqueles valores fora do intervalo (-2, +2) são possíveis outliers. 
-
-
-```r
-plot(rstudent(regressaolinear)) 
-abline(h=2,col="red")
-abline(h=-2,col="red")
-```
-
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/residst-1.png" alt="Resíduos studentizados para o exemplo" width="70%" />
-<p class="caption">(\#fig:residst)Resíduos studentizados para o exemplo</p>
-</div>
-
-Fonte: Elaborado pelo(s) autor(es).
-
-### Valores influentes na regressão
-
-Para análise dos valores influentes, utiliza-se:
-
-
-
-`dffits(nome_para_regressao)`
-
-Para esse exemplo:
-
-
-```r
-dffits(regressaolinear)
-```
-
-```
-       1        2        3        4        5        6        7        8 
--0.55767 -0.19884  0.30669  0.02611 -0.34386  0.11597 -1.34854  0.97320 
-       9       10       11       12       13       14       15 
- 0.43848 -0.32566  0.25379 -0.20196 -0.38792  0.14210  0.13902 
-```
-
-Aqueles valores maiores que $2*(p/n)^{(1/2)}$ são possíveis pontos influentes. Em que, p = número de parâmetros do modelo e n = tamanho da amostra.
-
-Para esse exemplo:
-
-
-```r
-2*(2/15)^(1/2)
-```
-
-```
-[1] 0.7303
-```
-
-O gráfico para detectar pontos influentes pode ser elaborado pelo comando (o gráfico está apresentado na Figura \@ref(fig:ptoinf):
-
-
-```r
-plot(dffits(regressaolinear))
-abline(h=-0.73,col="red")
-abline(h=0.73,col="red")
-```
-
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/ptoinf-1.png" alt="Pontos influentes para o exemplo" width="70%" />
-<p class="caption">(\#fig:ptoinf)Pontos influentes para o exemplo</p>
-</div>
-
-Fonte: Elaborado pelo(s) autor(es).
-
-O comando `plot(nome_para_regressao)` elabora diferentes gráficos para o diagnóstico do modelo.
-
 ## Intervalo de Predição
 
-Após o ajuste da equação de regressão linear simples, verificada a significância da equação (p $<$ 0,05) e verificada que a equação estimada se ajusta bem aos dados pelo valor do coeficiente de determinação então é possível predizer valores da variável Y (resposta) a partir de valores da variável X (explicativa). Caso a regressão não seja significativa a melhor predição para a variável Y é média dos valores de $y$, ou seja, $\hat{y}$.
+Após o ajuste da equação de regressão linear simples, verificada a significância da equação (p $<$ 0,05). No caso da equação estimada se ajusta bem aos dados pelo valor do coeficiente de determinação então é possível predizer valores da variável Y (resposta) a partir de valores da variável X (explicativa). Caso a regressão não seja significativa a melhor predição para a variável Y é média dos valores de $y$, ou seja, $\hat{y}$.
 
 
 A predição de valores só tem sentido nos seguintes casos:
@@ -5515,9 +5478,7 @@ A predição de valores só tem sentido nos seguintes casos:
 - as inferências referem-se somente a população de onde a amostra aleatória foi extraída;
 - as suposições sobre os resíduos devem ser satisfeitas.
 
-Quando tem-se um equação estimada do tipo $\hat{y} = b_0 + b_1x$, $\hat{y}$ representa o valor predito da variável Y para um dado valor da variável X, ou seja, é uma predição pontual, porém esta não informa a sua precisão, a qual é contemplada no intervalo de predição (da mesma forma do intervalo de confiança, já visto em inferência estatística).
-
-O intervalo de predição para um determinado Y é dado por:
+Quando tem-se uma equação estimada do tipo $\hat{y} = b_0 + b_1x$, $\hat{y}$ representa o valor predito da variável Y para um dado valor da variável X, ou seja, é uma predição pontual, porém esta não informa a sua precisão, a qual é contemplada no intervalo de predição. O intervalo de predição para um determinado Y é dado por:
 
 $$
 \hat{y}\pm \varepsilon
@@ -5548,17 +5509,15 @@ $$
 $$
 
 
-Sintaxe no software R:
+A sintaxe do comando é:
 
 `x0=data.frame(x=valor_numérico)`
 
-Obs: x0 recebe o valor de x.
-
 `predict(regressao,x0,interval="prediction")`
 
-Obs: regressao é o nome dado ao modelo de regressão.
+No comando apresentado o x0 recebe o valor de x e predict calcula o intervalo de predição para o valor de Y dado x0.
 
-Para o exemplo R:
+Para o exemplo:
 
 
 ```r
@@ -5570,6 +5529,288 @@ predict(regressaolinear, x0, interval="prediction")
     fit   lwr   upr
 1 7.432 6.189 8.675
 ```
+
+
+## Análise dos Resíduos
+
+O resíduo da análise de regressão é a diferença do valor do Y observado e Y estimado referente a cada par de valores do conjunto de dados, isto é, $E_i = Y_i-\hat{Y}_i$.
+
+No software R, pode-se utilizar o comando "residuals", para visualizar os resíduos, lembrando que "regressaolinear" é o nome dado ao modelo executado, como segue:
+
+`residuals(regressaolinear)`
+
+
+A análise dos resíduos é importante para a validade dos intervalos de confiança e testes de hipóteses, uma vez que as suposições   das observações de Y independentes e o erro adere a distribuição aproximadamente normal com média 0 e variância constante devem ser satisfeitas.
+
+O método gráfico pode ser utilizado para testar estas suposições dispondo os valores da variável preditora no eixo x e os respectivos valores dos resíduos no eixo y.  Ainda, pode-se dispor os valores ajustados no eixo x e os respectivos valores dos resíduos do eixo y.
+
+
+Se o modelo ajustado for apropriado para os dados, os pontos devem estar
+distribuídos de forma aleatória no gráfico dos resíduos, conforme Figura \@ref(fig:residuos)a. Caso a suposição não seja satisfeita, métodos alternativos podem ser utilizados como: método dos mínimos quadrados ponderados para o caso de não homocedasticidade; o método dos mínimos quadrados generalizados para o caso de erros correlacionados; e, métodos não-paramétricos para o caso de não normalidade.
+
+Além da análise gráfica, existem testes para avaliar a homocedasticidade como o Teste de Bartlett e para avaliar a normalidade aplicam-se os testes de Shapiro Wilks ou Kolmogorov-Smirnov.
+
+<div class="figure" style="text-align: center">
+<img src="residuos1.png" alt="Gráficos para análise de resíduos em regressão" width="70%" />
+<p class="caption">(\#fig:residuos)Gráficos para análise de resíduos em regressão</p>
+</div>
+
+Fonte: Elaborado pelo(s) autor(es).
+
+A seguir é apresentado o comando do gráfico de resíduos apresentando os valores ajustados pela equação de regressão e os resuíduos:
+
+
+`plot(fitted(nome_para_regressao), residuals(nome_para_regressao),`
+
+`xlab="Valores ajustados", ylab="Resíduos")`
+
+`abline(h=0)`
+
+Nesta sintaxe, o termo "nome\_para\_regressao" é o nome dado ao modelo de regressão, "fitted" define os valores ajustados no eixo horizontal, "residuals" define os resíduos no eixo vertical, "xlab" indica o rótulo do eixo horizontal e "ylab" indica o rótulo do eixo vertical. e "abline(h=0)" apresentauma linha constante em y = 0 para facilitar a visualização dos desvios dos resíduos.
+
+Na Figura \@ref(fig:residuos1) é apresentado o gráfico de resíduo do exemplo, no qual os resíduos são apresentados no eixo y e os valores ajustados são apresentados no eixo x. Lembrando que "regressaolinear" é o nome definido para a regressão do exemplo.
+
+
+```r
+plot(fitted(regressaolinear), residuals(regressaolinear),
+xlab="Valores ajustados", ylab="Residuos")
+abline(h=0)
+```
+
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-epub3/residuos1-1.png" alt="Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo" width="70%" />
+<p class="caption">(\#fig:residuos1)Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo</p>
+</div>
+
+Fonte: Elaborado pelo(s) autor(es).
+
+Outro gráfico de resíduos que é possível elaborar na análise de resíduos representa a variável preditora (X) no eixo X e o resíduos no eixo Y, com a seguinte sintaxe:
+
+`plot(tempo, residuals(nome_para_regressao),`
+
+`xlab="Variável Preditora", ylab="Resíduos")`
+                                  
+Para os dados do exemplo:
+
+
+```r
+plot(tempo, residuals(regressaolinear), 
+     xlab = "Tempo",
+     ylab="Residuos")
+abline(h=0)
+```
+
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-epub3/residuos2-1.png" alt="Gráfico gerado para análise dos resíduos com os valores da variável preditora" width="70%" />
+<p class="caption">(\#fig:residuos2)Gráfico gerado para análise dos resíduos com os valores da variável preditora</p>
+</div>
+
+Fonte: Elaborado pelo(s) autor(es).
+
+O resultado desse comando é apresentado na Figura \@ref(fig:residuos2) em que no eixo y constam os valores dos resíduos e no eixo x constam os valores da variável independente.
+
+Considerando os dados do exemplo, suponha que um aluno estudou 6,5 horas (x=6,5), então o valor ajustado da nota (y) é dado por 2,2214+0,9474*6,5, resultando em 8,38. Para esse caso, o resíduo é:
+
+Yobservado – Yestimado = 8 – 8,38 = - 0,38
+
+Para exibir os resíduos e os valores ajustados da equação de regressão utilizam-se os seguintes comandos, respectivamente:
+
+
+`residuals(regressaolinear)`  
+
+`fitted(regressaolinear)`
+
+
+Para testar a suposição que os erros aleatórios têm distribuição normal, pode-se elaborar o gráfico de probabilidade normal, conforme segue:
+
+`qqnorm(residuals(nome_para_regressao))`
+
+Para o exemplo, o comando é o seguinte:
+
+
+```r
+qqnorm(residuals(regressaolinear))
+```
+
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-epub3/qqnorm-1.png" alt="Gráfico de probabilidade normal para verificar normalidade dos resíduos" width="70%" />
+<p class="caption">(\#fig:qqnorm)Gráfico de probabilidade normal para verificar normalidade dos resíduos</p>
+</div>
+
+Fonte: Elaborado pelo(s) autor(es).
+
+E o resultado é apresentado na Figura \@ref(fig:qqnorm).
+
+Ainda, pode-se construir o gráfico com a distribuição da probabilidade dos resíduos, através de um histograma, verificando assim se a cauda é simétrica ou não:
+
+
+```r
+hist(x = regressaolinear$residuals,
+      xlab = "Resíduos",
+      ylab = "Densidade",
+      main = "",
+      col = "lightgreen",
+      probability = TRUE)
+lines(density(regressaolinear$residuals))
+```
+
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-epub3/histresid-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
+<p class="caption">(\#fig:histresid)Histograma de distribuição da probabilidade para os resíduos</p>
+</div>
+
+Fonte: Elaborado pelo(s) autor(es).
+
+O resultado desse comando é apresentado na Figura \@ref(fig:histresid).
+
+Também, pode-se aplicar o teste de normalidade de Shapiro-Wilk para verificar a normalidade dos resíduos. O comando utilizado é o seguinte:
+
+`shapiro.test(residuals(nome_para_regressao))`
+
+
+Para o exemplo:
+
+
+```r
+shapiro.test(residuals(regressaolinear))
+```
+
+```
+
+	Shapiro-Wilk normality test
+
+data:  residuals(regressaolinear)
+W = 0.96, p-value = 0.6
+```
+
+Conclui-se que os resíduos são normais se o valor de $p \geq$ 0,05.
+
+### Valores outliers na regressão
+
+Para análise dos valores outliers nos resíduos (*residuals standard* e *residuals studentized*), utilizam-se os seguintes comandos:
+
+`rstudent(nome_para_regressao)`
+
+`rstandard(nome_para_regressao)`
+
+Para o exemplo:
+
+
+```r
+rstudent(regressaolinear)
+```
+
+```
+       1        2        3        4        5        6        7        8 
+-1.04742 -0.74389  1.07142  0.07646 -1.07311  0.40066 -2.01860  2.29138 
+       9       10       11       12       13       14       15 
+ 1.26283 -0.60069  0.86125 -0.69777 -0.81958  0.32859  0.51493 
+```
+
+```r
+rstandard(regressaolinear)
+```
+
+```
+       1        2        3        4        5        6        7        8 
+-1.04353 -0.75701  1.06538  0.07956 -1.06691  0.41426 -1.81531  1.98916 
+       9       10       11       12       13       14       15 
+ 1.23490 -0.61602  0.86993 -0.71196 -0.83013  0.34048  0.53013 
+```
+
+E o gráfico para verificar valores outliers nos resíduos:
+
+`plot(rstudent(nome_para_regressao))`
+
+`plot(rstandard(nome_para_regressao))`
+
+Os gráficos dos resíduos padronizados (standard) e studentizados (student) para o exemplo estão apresentados nas Figuras \@ref(fig:residpad) e \@ref(fig:residst), respectivamente, utilizando os comandos que segue:
+
+
+```r
+plot(rstandard(regressaolinear))
+abline(h=2,col="red")
+abline(h=-2,col="red")
+```
+
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-epub3/residpad-1.png" alt="Resíduos padronizados para o exemplo" width="70%" />
+<p class="caption">(\#fig:residpad)Resíduos padronizados para o exemplo</p>
+</div>
+
+Fonte: Elaborado pelo(s) autor(es).
+
+Aqueles valores fora do intervalo (-2, +2) são possíveis outliers. 
+
+
+```r
+plot(rstudent(regressaolinear)) 
+abline(h=2,col="red")
+abline(h=-2,col="red")
+```
+
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-epub3/residst-1.png" alt="Resíduos studentizados para o exemplo" width="70%" />
+<p class="caption">(\#fig:residst)Resíduos studentizados para o exemplo</p>
+</div>
+
+
+Fonte: Elaborado pelo(s) autor(es).
+
+### Valores influentes na regressão
+
+Para análise dos valores influentes, utiliza-se:
+
+
+
+`dffits(nome_para_regressao)`
+
+Para os dados do exemplo:
+
+
+```r
+dffits(regressaolinear)
+```
+
+```
+       1        2        3        4        5        6        7        8 
+-0.55767 -0.19884  0.30669  0.02611 -0.34386  0.11597 -1.34854  0.97320 
+       9       10       11       12       13       14       15 
+ 0.43848 -0.32566  0.25379 -0.20196 -0.38792  0.14210  0.13902 
+```
+
+Aqueles valores maiores que $2*(p/n)^{(1/2)}$ são possíveis pontos influentes. Em que, p = número de parâmetros do modelo e n = tamanho da amostra.
+
+Para esse exemplo:
+
+
+```r
+2*(2/15)^(1/2)
+```
+
+```
+[1] 0.7303
+```
+
+O gráfico para detectar pontos influentes para os dados do exemplo:
+
+
+```r
+plot(dffits(regressaolinear))
+abline(h=-0.73,col="red")
+abline(h=0.73,col="red")
+```
+
+<div class="figure" style="text-align: center">
+<img src="index_files/figure-epub3/ptoinf-1.png" alt="Pontos influentes para o exemplo" width="70%" />
+<p class="caption">(\#fig:ptoinf)Pontos influentes para o exemplo</p>
+</div>
+
+Fonte: Elaborado pelo(s) autor(es).
+
+O comando `plot(nome_para_regressao)` elabora diferentes gráficos para o diagnóstico do modelo.
+
+
 
 ## Exercícios
 
@@ -5595,6 +5836,10 @@ predict(regressaolinear, x0, interval="prediction")
 
 # RMarkdown{#rmark}
 
+<!--
+*Felipe Micail da Silva Smolski*
+-->
+
 *Felipe Micail da Silva Smolski*
 
 \begin{flushright}
@@ -5611,7 +5856,7 @@ predict(regressaolinear, x0, interval="prediction")
 
 Fonte: Adaptado de @R-rmarkdown.
 
-Para criação dos documentos é preciso a instalação dos pacotes `rmarkdown` e `knitr` dentro do RStudio, bem como sugere-se a instalação, no Windows, do programa MiKTeX (<https://miktex.org/download>), que se encarrega de suporte à configurações da linguagem de marcação de textos LaTeX no caso de criação dos arquivos PDF.
+Para criação dos documentos é preciso a instalação dos pacotes denominados `rmarkdown` [@R-rmarkdown] e `knitr` [@knitr2018] dentro do RStudio, bem como sugere-se a instalação, no Windows, do programa MiKTeX (<https://miktex.org/download>), que se encarrega de suporte à configurações da linguagem de marcação de textos LaTeX no caso de criação dos arquivos PDF.
 
 ## Criando o documento
 
@@ -5803,8 +6048,8 @@ No exemplo abaixo, o nome da Chunk criada foi "r nomedochunk". E no campo das op
 A primeira opção, `echo=FALSE`, informa que no arquivo compilado, somente será mostrado o resultado da rotina inserida na Chunk (1+1), portanto será mostrado somente o valor 2. Caso o usuário almejasse inserir, no arquivo final, o código do R escrito (1+1) juntamente com o resultado da operação, marcaria `echo=TRUE`.
 
 <div class="figure" style="text-align: center">
-<img src="rmarkchunk2.png" alt="Criação de Chunks" width="70%" />
-<p class="caption">(\#fig:rmarkchunk2)Criação de Chunks</p>
+<img src="rmarkchunk2.png" alt="Criação de Chunks (2)" width="70%" />
+<p class="caption">(\#fig:rmarkchunk2)Criação de Chunks (2)</p>
 </div>
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -5876,9 +6121,9 @@ Table: (\#tab:tabelasrmk)Pacotes para elaboração de tabelas no RMarkdown
 |Pacote|**HTML**|**PDF**|**Word**|
 |:----|:------:|:------:|:------:|
 |knitr(função `kable`)^[Mais informações em <https://www.rdocumentation.org/packages/knitr/versions/1.21/topics/kable>. ]|ok|ok|ok|
-|pander|ok|ok|ok|
-|stargazer|ok|ok|-|
-|xtable|ok|ok|-|
+|pander^[@pander2018.]|ok|ok|ok|
+|stargazer^[@stargazer2018.]|ok|ok|-|
+|xtable^[@xtable2018.]|ok|ok|-|
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -6009,7 +6254,7 @@ Para que o arquivo que foi criado com as referências bibliográficas (bibliogra
 Mas qual norma será utilizada para as citações e a criação de referências bibliográficas neste trabalho, já que existem diversas delas? Uma solução é a utilização de arquivos ".csl" (Citation Style Language), que nada mais são do que arquivos com as descrições de cada estilo das diversas normas existentes, para ajudar o pesquisador a citar e gerenciar suas referências. 
 
 
-Estes arquivos podem ser encontrados em diversos locais, como por exemplo em <https://github.com/citation-style-language/styles> (copie [este](https://raw.githubusercontent.com/citation-style-language/styles/44808db510152943c5d9dc471a9c8982a3edfbea/associacao-brasileira-de-normas-tecnicas-ipea.csl) conteúdo para um arquivo ".txt" e o renomeie para ".csl"). Lembrando que o arquivo ".csl" deve ser salvo na mesma pasta do arquivo ".Rmd". O arquivo csl aqui utilizado refere-se às normas da ABNT (Associação Brasileira de Normas Técnicas) utilizados pelo IPEA (Instituto de Pesquisa Econômica Aplicada). Verifica-se na Figura \@ref(fig:rmarkcitar1) a configuração final do YAML. Neste site <http://editor.citationstyles.org/searchByName/>
+Estes arquivos podem ser encontrados em diversos locais, como por exemplo em <https://github.com/citation-style-language/styles> (copie este^[https://raw.githubusercontent.com/citation-style-language/styles/44808db510152943c5d9dc471a9c8982a3edfbea/associacao-brasileira-de-normas-tecnicas-ipea.csl] conteúdo para um arquivo ".txt" e o renomeie para ".csl"). Lembrando que o arquivo ".csl" deve ser salvo na mesma pasta do arquivo ".Rmd". O arquivo csl aqui utilizado refere-se às normas da ABNT (Associação Brasileira de Normas Técnicas) utilizados pelo IPEA (Instituto de Pesquisa Econômica Aplicada). Verifica-se na Figura \@ref(fig:rmarkcitar1) a configuração final do YAML. Neste site <http://editor.citationstyles.org/searchByName/>
 também são encontrados arquivos para várias normas bibliográficas.
 
 <div class="figure" style="text-align: center">
@@ -6043,17 +6288,20 @@ Fonte: Elaborado pelo(s) autor(es).
 
 # Sobre os autores {-}
 
+
+
 **Denize Ivete Reis**: Possui Licenciatura Plena em Matemática pela Universidade Regional do Noroeste do Estado do Rio Grande do Sul (1994), especialização em Estatística Aplicada pela Universidade de Santa Cruz do Sul (2003), mestrado em Modelagem Matemática pela Universidade Regional do Noroeste do Estado do Rio Grande do Sul (1997) e doutorado em Qualidade Ambiental pela Universidade Feevale (2015). Atualmente é professora adjunta da Universidade Federal da Fronteira Sul, onde atua na área de Probabilidade e Estatística, Estatística Descritiva e Inferência Estatística. E-mail: denizeir@uffs.edu.br.
 
-**Djaina Sibiani Rieger**: Acadêmica do curso de Engenharia Ambiental e Sanitária da Universidade Federal da Fronteira Sul (UFFS) Campus Cerro Largo, aluna bolsista de extensão, integrante e conteudista dos cursos ofertados no Campus sobre o *software* livre R. 
+**Djaina Sibiani Rieger**: Acadêmica do curso de Matemática da Universidade Federal da Fronteira Sul (UFFS) Campus Chapecó, foi aluna bolsista de extensão, integrante e conteudista dos cursos ofertados no Campus Cerro Largo sobre o *software* livre R. 
 
 **Erikson Kaszubowski**: Doutor em Psicologia pela Universidade Federal de Santa Catarina, sob orientação do Prof. Dr. Fernando Aguiar, com a tese ``Modelos de tópicos para associações livres''. Formado em Psicologia pela Universidade Federal de Santa Catarina, nas graduações Bacharelado e Formação de Psicólogo (2006), e Licenciatura (2008). Foi professor de Psicologia da Educação na Universidade Federal da Fronteira Sul, ministrando as disciplinas da área de Psicologia nos cursos de Licenciatura e Pós-Graduação. Trabalha atualmente como psicólogo clínico no Serviço de Atenção Psicológica da UFSC. E-mail: erikson84@yahoo.com.br.
 
 **Felipe Micail da Silva Smolski**: Possui graduação em Ciências Econômicas pela Universidade Regional do Noroeste do Estado do Rio Grande do Sul - UNIJUÍ (2009), pós-graduação em Gestão de Investimentos pela Faculdade Integrada Grande Fortaleza - FGF (2012), mestrado em Desenvolvimento e Políticas Públicas pela Universidade Federal da Fronteira Sul - UFFS, Campus Cerro Largo (2017). E-mail: felipesmolski@hotmail.com. 
 
-**Iara Denise Endruweit Battisti**: Possui graduação em Informática pela Universidade Regional do Noroeste do Estado do Rio Grande do Sul (1996), mestrado em Estatística e Experimentação Agropecuária pela Universidade Federal de Lavras (2001) e doutorado em Epidemiologia pela Universidade Federal do Rio Grande do Sul (2008). Atualmente é professora adjunta na Universidade Federal da Fronteira Sul, campus Cerro Largo (RS). Atua principalmente nos seguintes temas: amostragem complexa, modelagem multinível, estatística computacional, estatística aplicada, relação ambiente e saúde utilizando modelagem estatística. E-mail: iara.battisti@uffs.edu.br.
+**Iara Denise Endruweit Battisti**: Possui graduação em Informática pela Universidade Regional do Noroeste do Estado do Rio Grande do Sul (1996), mestrado em Estatística e Experimentação Agropecuária pela Universidade Federal de Lavras (2001) e doutorado em Epidemiologia pela Universidade Federal do Rio Grande do Sul (2008).  Atualmente  é professora associada na Universidade Federal da Fronteira Sul, campus Cerro Largo (RS). É docente dos Programas de mestrado em Ambiente e Tecnologias Sustentáveis e mestrado em Desenvolvimento e Políticas Públicas. Atua principalmente nos seguintes temas: amostragem complexa, relação ambiente e saúde utilizando modelagem estatística. E-mail: iara.battisti@uﬀs.edu.br.
 
 **Tatiane Chassot**: Possui graduação em Engenharia Florestal pela Universidade Federal de Santa Maria (2008), mestrado (2009) e doutorado em Engenharia Florestal também pela Universidade Federal de Santa Maria (2013). Atualmente é professora adjunta da Universidade Federal da Fronteira Sul - Campus Cerro Largo onde ministra as disciplinas de Introdução à Informática, Estatística Básica, Experimentação Agrícola, Sistemas Agroflorestais, Silvicultura e Práticas Integradoras de Campo. E-mail: tatianechassot@uffs.edu.br.
+
 
 
 \setlength{\parindent}{0.0cm}

@@ -129,7 +129,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-03-05}
+    \date{2019-04-04}
 
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -142,6 +142,7 @@
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}
 \usepackage{microtype} 
+\usepackage{amssymb}
 
 \setlength{\parskip}{0.1cm}
 %\renewcommand{\baselinestretch}{1.5}
@@ -178,7 +179,7 @@ Outra questão importante é que o R possui uma comunidade ativa de desenvolvedo
 
 Outro progresso significativo na utilização do R foi a criação do \emph{software} RStudio, a partir de 2010. Este, por sua vez, se configura em um ambiente integrado com o R e com inúmeras linguagens de marcação de texto (exemplos LaTeX, Markdown, HTML). Possui igualmente versão livre que disponibiliza ao pesquisador a execução, guarda, retomada e manipulação dos códigos de programação diretamente em seu console, bem como a administração de diretórios de trabalhos e projetos.
 
-O material aqui criado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no \emph{software} RStudio. O sistema operacional aqui utilizado é o Windows 10. Importante mencionar que este livro originou-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Nº 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).
+O material aqui elaborado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no \emph{software} RStudio. O sistema operacional aqui utilizado é o Windows 10, o software R versão 3.5.2, RStudio 1.1.463. A solução dos exercícios de cada capítulo está disponibilizada no site \url{https://smolski.github.io/softwarelivrer/livro.html}. Importante mencionar que este livro originou-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Número 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).
 
 Este livro está organizado da seguinte maneira: no capítulo \protect\hyperlink{intro}{1} {[}\textbf{Primeiros Passos com o R}{]}, busca-se instruir o pesquisador para a instalação dos programas necessários para acessar o ambiente de programação, bem como orientar sobre a usabilidade do programa em suas funções básicas de carregamento de bases de dados, criação de objetos e princípios de manipulação.
 
@@ -188,11 +189,13 @@ O capítulo \protect\hyperlink{inf}{3} {[}\textbf{Estatística Inferencial}{]} t
 
 No capítulo \protect\hyperlink{qui}{4} {[}\textbf{Teste de Qui-Quadrado}{]}, serão abordadas as referidas técnicas para verificação de asssociação entre duas variáveis qualitativas e de aderência a uma distribuição.
 
-No capítulo \protect\hyperlink{reg}{5} {[}\textbf{Modelos de Regressão}{]} serão introduzidos os conhecimentos sobre as técnicas de análise de correlação e regressão linear simples, bem como sobre o diagrama de dispersão, método dos mínimos quadrados, análise de variância, coeficiente de determinação e intervalo de predição, da análise dos resíduos e dos princípios de regressão múltipla.
+No capítulo \protect\hyperlink{reg}{5} {[}\textbf{Modelos de Regressão Linear Simples}{]} serão introduzidos os conhecimentos sobre as técnicas de análise de correlação e regressão linear simples, bem como sobre o diagrama de dispersão, método dos mínimos quadrados, análise de variância, coeficiente de determinação e intervalo de predição, da análise dos resíduos e dos princípios de regressão múltipla.
 
 A criação de documentos dinâmicos utilizando o RStudio será tratada no capítulo \protect\hyperlink{rmark}{6} {[}\textbf{RMarkdown}{]}. O pesquisador poderá conhecer as formas de integrar a programação no R e a manipulação de bases de dados, criando, compilando e configurando relatórios finais em diversos formatos (HTML, PDF e Word/Libre/Open Office).
 
 Bons estudos!
+
+Iara Denise Endruweit Battisti, Felipe Micail da Silva Smolski \emph{(Organizadores)}
 
 \hypertarget{intro}{%
 \chapter{Primeiros Passos com o R}\label{intro}}
@@ -291,7 +294,7 @@ A mesma função, para instalação de um pacote, pode ser efetuada diretamente 
 \hypertarget{abrir-arquivo-de-dados}{%
 \section{Abrir arquivo de dados}\label{abrir-arquivo-de-dados}}
 
-Dispondo de um banco de dados em uma planilha eletrônica (LibreOffice Calc ou Excel), neste caso será utilizado o arquivo \href{https://github.com/Smolski/livror/raw/master/arvores.xlsx}{árvores} como exemplo de banco de dados. Os dados derivam de uma pesquisa com espécies de árvores registrando as variáveis diâmetro altura do peito (DAP) e altura. Dados cedidos pela professora Tatiane Chassot.
+Dispondo de um banco de dados em uma planilha eletrônica (LibreOffice Calc ou Excel), neste caso será utilizado o arquivo {[}árvores{]} (\url{https://github.com/Smolski/livror/raw/master/arvores.xlsx}) como exemplo de banco de dados. Os dados derivam de uma pesquisa com espécies de árvores registrando as variáveis diâmetro altura do peito (DAP) e altura. Dados cedidos pela professora Tatiane Chassot.
 
 Pode-se utilizar a linha de comando para carregar os arquivos de dados, da seguinte forma:
 
@@ -299,7 +302,7 @@ Pode-se utilizar a linha de comando para carregar os arquivos de dados, da segui
 
 \texttt{nome.objeto.xls\ =\ read\_excel("d:/arvores.xls")}
 
-Outras opções de arquivos podem ser carregados no RStudio, como por exemplo arquivos de texto (.txt ou .csv), arquivos derivados do excel (.xls ou .xlsx), arquivos de dados do SPSS (.sav), do \emph{software} SAS (.sas7bdat) e do STATA (.dta). A instalação de alguns pacotes é requerida, dependendo da origem da base de dados, como por exemplo o \texttt{readxl}, \texttt{readr} e \texttt{haven}, como os exemplos abaixo:
+Outras opções de arquivos podem ser carregados no RStudio, como por exemplo arquivos de texto (.txt ou .csv), arquivos derivados do excel (.xls ou .xlsx), arquivos de dados do SPSS (.sav), do \emph{software} SAS (.sas7bdat) e do STATA (.dta). A instalação de alguns pacotes é requerida, dependendo da origem da base de dados, como por exemplo o \texttt{readxl} (Wickham e Bryan, \protect\hyperlink{ref-readxl2018}{2018}) , \texttt{readr} (Wickham, Hester e Francois, \protect\hyperlink{ref-readr2018}{2018}) e \texttt{haven} (Wickham e Miller, \protect\hyperlink{ref-haven2018}{2018}), como os exemplos abaixo:
 
 \texttt{library(readr)}
 
@@ -386,7 +389,9 @@ Alguns tipos de dados:
   \textbf{Factor}: variável nominal, inclusive como fator ordenado, representam categorias.
 \end{itemize}
 
-Ainda, é possível importar objetos utilizando arquivos hospedados em links da internet, por exemplo o comando \texttt{source("http://www.openintro.org/stat/data/cdc.R")} utiliza a função \texttt{source()} para carregar um objeto do R denominado cdc (``cdc.R'').
+Ainda, é possível importar objetos utilizando arquivos hospedados em links da internet, por exemplo o comando abaixo utiliza a função \texttt{source()} para carregar um objeto do R denominado cdc (``cdc.R'').
+
+\texttt{source("http://www.openintro.org/stat/data/cdc.R")}
 
 \hypertarget{salvar-arquivo-de-dados}{%
 \section{Salvar arquivo de dados}\label{salvar-arquivo-de-dados}}
@@ -472,7 +477,7 @@ Outras bases de dados, no entanto, vêm acompanhadas dos pacotes que são instal
 
 \texttt{data(package\ =\ .packages(all.available\ =\ TRUE))}
 
-É possível carregar uma base de dados de determinado pacote instalado:
+É possível carregar uma base de dados de determinado pacote instalado, como exemplo utilizado a partir do pacote \texttt{Amelia} (Honaker, King e Blackwell, \protect\hyperlink{ref-Amelia2011}{2011}):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -899,12 +904,12 @@ Para que o pesquisador conheça melhor as bases de dados em que está atuando, o
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{class}\NormalTok{(iris}\OperatorTok{$}\NormalTok{Especie)}
+\KeywordTok{class}\NormalTok{(iris}\OperatorTok{$}\NormalTok{Species)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-[1] "NULL"
+[1] "factor"
 \end{verbatim}
 
 Efeito semelhante possui o comando \texttt{ls.str()}:
@@ -1108,6 +1113,24 @@ Para exemplo da utilização da função \texttt{table} agora com dados qualitat
   poor       283  394
 \end{verbatim}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Adiciona-se a soma dos valores das linhas e colunas}
+\KeywordTok{addmargins}\NormalTok{(}\KeywordTok{table}\NormalTok{(cdc}\OperatorTok{$}\NormalTok{genhlth,cdc}\OperatorTok{$}\NormalTok{gender))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+           
+                m     f   Sum
+  excellent  2298  2359  4657
+  very good  3382  3590  6972
+  good       2722  2953  5675
+  fair        884  1135  2019
+  poor        283   394   677
+  Sum        9569 10431 20000
+\end{verbatim}
+
 \hypertarget{estrutura-de-dados}{%
 \section{Estrutura de dados}\label{estrutura-de-dados}}
 
@@ -1293,7 +1316,7 @@ Se a matriz inserida tem menos elementos do que a ordem informada para a matriz,
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{lista=}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{matriz=}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{nrow=}\DecValTok{3}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{2}\NormalTok{))}
+\NormalTok{lista =}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{matriz=}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{nrow=}\DecValTok{3}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{2}\NormalTok{))}
 \NormalTok{lista}
 \end{Highlighting}
 \end{Shaded}
@@ -1323,7 +1346,7 @@ Para ver quais elementos estão em suas listas é só chamar pelo nome que foi d
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{lista=}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{matriz=}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{), }\DataTypeTok{nrow=}\DecValTok{3}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{2}\NormalTok{),}\DataTypeTok{vetor=}\DecValTok{1}\OperatorTok{:}\DecValTok{6}\NormalTok{)}
+\NormalTok{lista =}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{matriz=}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{), }\DataTypeTok{nrow=}\DecValTok{3}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{2}\NormalTok{),}\DataTypeTok{vetor=}\DecValTok{1}\OperatorTok{:}\DecValTok{6}\NormalTok{)}
 \NormalTok{lista}
 \end{Highlighting}
 \end{Shaded}
@@ -1388,9 +1411,9 @@ Para chamar várias listas utiliza-se o comando da seguinte forma:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{lista}\FloatTok{.1}\NormalTok{=}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{matriz=}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{), }\DataTypeTok{nrow=}\DecValTok{3}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{2}\NormalTok{),}
+\NormalTok{lista}\FloatTok{.1}\NormalTok{ =}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{matriz=}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{), }\DataTypeTok{nrow=}\DecValTok{3}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{2}\NormalTok{),}
               \DataTypeTok{vetor=}\DecValTok{1}\OperatorTok{:}\DecValTok{6}\NormalTok{)}
-\NormalTok{lista}\FloatTok{.2}\NormalTok{=}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{nomes=}\KeywordTok{c}\NormalTok{(}\StringTok{"Marcelo"}\NormalTok{, }\StringTok{"Fábio"}\NormalTok{, }\StringTok{"Felipe"}\NormalTok{), }
+\NormalTok{lista}\FloatTok{.2}\NormalTok{ =}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{nomes=}\KeywordTok{c}\NormalTok{(}\StringTok{"Marcelo"}\NormalTok{, }\StringTok{"Fábio"}\NormalTok{, }\StringTok{"Felipe"}\NormalTok{), }
               \DataTypeTok{idade=}\KeywordTok{c}\NormalTok{(}\DecValTok{25}\NormalTok{, }\DecValTok{34}\NormalTok{, }\DecValTok{26}\NormalTok{))}
 \KeywordTok{c}\NormalTok{(lista}\FloatTok{.1}\NormalTok{,lista}\FloatTok{.2}\NormalTok{)}
 \end{Highlighting}
@@ -1468,6 +1491,215 @@ Adiciona-se colunas no \emph{data frame} através do comando a seguir, pressupon
 [1] 1
 \end{verbatim}
 
+\hypertarget{pre-tratamento-de-banco-de-dados}{%
+\section{Pré tratamento de banco de dados}\label{pre-tratamento-de-banco-de-dados}}
+
+Os bancos de dados da ``vida real'' muitas vezes carecem de um tratamento inicial antes de serem destinados para a análise estatística. Isto porque, ao serem carregadas ao R estas bases estão permeadas por dados que podem prejudicar a criação de modelos ou mesmo enviesar as apresentações, como por exemplo a presença de dados faltantes (``NAs''), valores extremos (``outliers'') ou também apresentar rótulos das variáveis não adequados.
+
+Longe de apresentar um conjunto de regras rígidas para estas correções, visto que em muitos casos o tipo de substituição ou correção de variáveis dependerá do problema e da técnica estatística e serem trabalhados, almeja-se mostrar princípios de ações corretivas que podem ser efetuadas no RStudio. Será utilizada a base \texttt{starwars} (as 5 primeiras colunas) que consta junto ao pacote \texttt{dplyr} (Wickham \emph{et al.}, \protect\hyperlink{ref-dplyr2019}{2019}), como pode ser visto:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(dplyr)}
+\NormalTok{starwars=}\KeywordTok{data.frame}\NormalTok{(starwars[}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{])}
+\KeywordTok{str}\NormalTok{(starwars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+'data.frame':   87 obs. of  5 variables:
+ $ name      : chr  "Luke Skywalker" "C-3PO" "R2-D2" "Darth Vader" ...
+ $ height    : int  172 167 96 202 150 178 165 97 183 182 ...
+ $ mass      : num  77 75 32 136 49 120 75 32 84 77 ...
+ $ hair_color: chr  "blond" NA NA "none" ...
+ $ skin_color: chr  "fair" "gold" "white, blue" "white" ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(starwars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     name               height         mass         hair_color       
+ Length:87          Min.   : 66   Min.   :  15.0   Length:87         
+ Class :character   1st Qu.:167   1st Qu.:  55.6   Class :character  
+ Mode  :character   Median :180   Median :  79.0   Mode  :character  
+                    Mean   :174   Mean   :  97.3                     
+                    3rd Qu.:191   3rd Qu.:  84.5                     
+                    Max.   :264   Max.   :1358.0                     
+                    NA's   :6     NA's   :28                         
+  skin_color       
+ Length:87         
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   
+                   
+\end{verbatim}
+
+Nota-se que constam 5 variáveis (``name'', ``height'', ``mass'', ``hair\_color'', ``skin\_color'') que tratam de personagens dos filmes da franquia Star Wars com algumas características dos mesmos. Constam ainda variáveis com valores ausentes e dos mais variados tipos (``chr'', ``int'', ``num'', ``chr'', ``chr''). A função \texttt{abbreviate()} é utilizada para abreviar observações, sendo que pode ser extremamente útil quando os nomes das variáveis, por exemplo, são muito extensos. Ainda é possível determinar o tamanho dos caracteres, conjuntamente com a função \texttt{names()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{names}\NormalTok{(starwars)=}\KeywordTok{abbreviate}\NormalTok{(}\KeywordTok{names}\NormalTok{(starwars), }\DataTypeTok{minlength =} \DecValTok{3}\NormalTok{)}
+\KeywordTok{names}\NormalTok{(starwars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "nam" "hgh" "mss" "hr_" "sk_"
+\end{verbatim}
+
+Caso o pesquisador deseje renomear todas as variáveis, a função \texttt{names()} pode ser utilizada como é mostrado abaixo, em um primeiro momento somente determinando o nome da primeira variável, e no segundo exemplo alterando todas as variáveis do objeto:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{names}\NormalTok{(starwars)[}\DecValTok{1}\NormalTok{]=}\StringTok{"Nome"}
+\KeywordTok{names}\NormalTok{(starwars)=}\KeywordTok{c}\NormalTok{(}\StringTok{"Nome"}\NormalTok{, }\StringTok{"Altura"}\NormalTok{, }\StringTok{"Peso"}\NormalTok{, }\StringTok{"Corcabelo"}\NormalTok{, }\StringTok{"Corpele"}\NormalTok{)}
+\KeywordTok{names}\NormalTok{(starwars) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "Nome"      "Altura"    "Peso"      "Corcabelo" "Corpele"  
+\end{verbatim}
+
+Em sendo pertinente efetuar a alteração de uma variável para fator, utiliza-se a função \texttt{as.factor()} como no exemplo abaixo para transformar as variáveis ``Corcabelo'' e ``Corpele''.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{starwars}\OperatorTok{$}\NormalTok{Corcabelo=}\KeywordTok{as.factor}\NormalTok{(starwars}\OperatorTok{$}\NormalTok{Corcabelo)}
+\NormalTok{starwars}\OperatorTok{$}\NormalTok{Corpele=}\KeywordTok{as.factor}\NormalTok{(starwars}\OperatorTok{$}\NormalTok{Corpele)}
+\KeywordTok{summary}\NormalTok{(starwars}\OperatorTok{$}\NormalTok{Corpele)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+               blue          blue, grey               brown        brown mottle 
+                  2                   2                   4                   1 
+       brown, white                dark                fair fair, green, yellow 
+                  1                   6                  17                   1 
+               gold               green    green-tan, brown         green, grey 
+                  1                   6                   1                   1 
+               grey          grey, blue grey, green, yellow           grey, red 
+                  6                   1                   1                   1 
+              light               metal       mottled green                none 
+                 11                   1                   1                   1 
+             orange                pale                 red    red, blue, white 
+                  2                   5                   1                   1 
+        silver, red                 tan             unknown               white 
+                  1                   2                   2                   2 
+        white, blue          white, red              yellow 
+                  2                   1                   2 
+\end{verbatim}
+
+Como visto anteriormente este objeto apresenta valores faltantes (``NAs'') em diversas variáveis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(starwars))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      Nome Altura  Peso Corcabelo Corpele
+[1,] FALSE  FALSE FALSE     FALSE   FALSE
+[2,] FALSE  FALSE FALSE      TRUE   FALSE
+[3,] FALSE  FALSE FALSE      TRUE   FALSE
+[4,] FALSE  FALSE FALSE     FALSE   FALSE
+[5,] FALSE  FALSE FALSE     FALSE   FALSE
+[6,] FALSE  FALSE FALSE     FALSE   FALSE
+\end{verbatim}
+
+Desta forma, é possível quantificar os valores faltantes do objeto:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{table}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(starwars))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+FALSE  TRUE 
+  396    39 
+\end{verbatim}
+
+Em muitos casos é de interesse ao pesquisador substituir os valores faltantes pelo valor da média da variável em questão, é claro considerando somente o restante dos valores excluídos dos NAs. O exemplo abaixo demonstra o sumário das informações após a normalização pelo valor médio da variável ``Altura'' (também é possível utilizar outro critério, por exemplo o valor da moda ou mediana):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Substituindo NAs por média}
+\NormalTok{starwars}\OperatorTok{$}\NormalTok{Altura[}\KeywordTok{is.na}\NormalTok{(starwars}\OperatorTok{$}\NormalTok{Altura)]=}\KeywordTok{mean}\NormalTok{(starwars}\OperatorTok{$}\NormalTok{Altura, }\DataTypeTok{na.rm=}\OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{summary}\NormalTok{(starwars}\OperatorTok{$}\NormalTok{Altura)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+     66     168     178     174     190     264 
+\end{verbatim}
+
+É possível substituir os dados faltantes por zero ou por outro caractere, sendo que no exemplo abaixo utilizou-se a correção por zero sobre a variável numérica ``Peso'':
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Substituindo NAs por zero}
+\NormalTok{starwars}\OperatorTok{$}\NormalTok{Peso[}\KeywordTok{is.na}\NormalTok{(starwars}\OperatorTok{$}\NormalTok{Peso)]=}\DecValTok{0}
+\KeywordTok{summary}\NormalTok{(starwars}\OperatorTok{$}\NormalTok{Peso)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    0.0     0.0    56.2    66.0    80.0  1358.0 
+\end{verbatim}
+
+De igual forma, é possível transformar qualquer valor constante em uma variável em valores faltantes. No exemplo abaixo é desfeita operação anterior sobre a variável ``Peso'':
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{starwars}\OperatorTok{$}\NormalTok{Peso[starwars}\OperatorTok{$}\NormalTok{Peso}\OperatorTok{==}\DecValTok{0}\NormalTok{]=}\OtherTok{NA}
+\KeywordTok{summary}\NormalTok{(starwars}\OperatorTok{$}\NormalTok{Peso)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   15.0    55.6    79.0    97.3    84.5  1358.0      28 
+\end{verbatim}
+
+Ainda, se houver no objeto linhas que tenham pelo menos uma informação faltante (``NA''), estas podem ser excluídas com o comando \texttt{na.omit()}. Note que com este procedimento o objeto \texttt{starwars} passou a ter a dimensão 54x5 ao invés de 87x5 como apresentado inicialmente com a apressentação de valores faltantes:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{starwars=}\KeywordTok{na.omit}\NormalTok{(starwars)}
+\KeywordTok{summary}\NormalTok{(starwars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     Nome               Altura         Peso               Corcabelo 
+ Length:54          Min.   : 66   Min.   : 15.0   none         :27  
+ Class :character   1st Qu.:170   1st Qu.: 56.4   brown        :11  
+ Mode  :character   Median :182   Median : 79.0   black        : 7  
+                    Mean   :177   Mean   : 77.2   white        : 3  
+                    3rd Qu.:193   3rd Qu.: 84.8   blond        : 2  
+                    Max.   :234   Max.   :159.0   auburn, white: 1  
+                                                  (Other)      : 3  
+    Corpele  
+ fair   : 9  
+ light  : 7  
+ dark   : 4  
+ green  : 4  
+ grey   : 4  
+ brown  : 3  
+ (Other):23  
+\end{verbatim}
+
 \hypertarget{manipulacao-de-banco-de-dados}{%
 \section{Manipulação de banco de dados}\label{manipulacao-de-banco-de-dados}}
 
@@ -1527,8 +1759,17 @@ As funções a seguir são aplicáveis a vetores, data.frames e listas, e em mui
 \NormalTok{estudantes=}\KeywordTok{c}\NormalTok{(}\StringTok{"Guilherme"}\NormalTok{, }\StringTok{"Marcelo"}\NormalTok{, }\StringTok{"Pedro"}\NormalTok{, }\StringTok{"Camila"}\NormalTok{)}
 \NormalTok{altura=}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{1.50}\NormalTok{, }\FloatTok{1.9}\NormalTok{, }\FloatTok{1.74}\NormalTok{, }\FloatTok{1.80}\NormalTok{)}
 \NormalTok{informacoes}\FloatTok{.3}\NormalTok{=}\KeywordTok{data.frame}\NormalTok{(estudantes, altura)}
+\KeywordTok{head}\NormalTok{(informacoes}\FloatTok{.3}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+  estudantes altura
+1  Guilherme   1.50
+2    Marcelo   1.90
+3      Pedro   1.74
+4     Camila   1.80
+\end{verbatim}
 
 Já o comando \texttt{merge()} serve para juntar dois \emph{data frames} que possuam uma coluna em comum. Neste caso, unimos o objeto \texttt{informações.2} com o objeto \texttt{informações.3} utilizando o nome dos estudantes (informação em comum):
 
@@ -1537,50 +1778,23 @@ Já o comando \texttt{merge()} serve para juntar dois \emph{data frames} que pos
 \CommentTok{# União de um banco de dados (existencia de uma váriavel em comum)}
 
 \NormalTok{informacoes=}\KeywordTok{merge}\NormalTok{(informacoes}\FloatTok{.2}\NormalTok{,informacoes}\FloatTok{.3}\NormalTok{, }\DataTypeTok{by=}\StringTok{"estudantes"}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(informacoes)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+  estudantes idade peso      cidades altura
+1     Camila    21   65   Nova Hartz   1.80
+2  Guilherme    18  100 Porto Alegre   1.50
+3    Marcelo    17   80     Soledade   1.90
+4      Pedro    17   79      Gramado   1.74
+\end{verbatim}
 
 Adicionar um cálculo entre as colunas é muito simples com o RStudio, neste caso com os dados do peso e altura, pode-se calcular o IMC (Índice de Massa Corporal) em uma nova coluna:
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{informacoes}\OperatorTok{$}\NormalTok{Imc=}\KeywordTok{c}\NormalTok{(informacoes}\OperatorTok{$}\NormalTok{peso}\OperatorTok{/}\NormalTok{(informacoes}\OperatorTok{$}\NormalTok{altura}\OperatorTok{^}\DecValTok{2}\NormalTok{))}
-\NormalTok{informacoes}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-  estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 20.06
-2  Guilherme    18  100 Porto Alegre   1.50 44.44
-3    Marcelo    17   80     Soledade   1.90 22.16
-4      Pedro    17   79      Gramado   1.74 26.09
-\end{verbatim}
-
-Ainda, se houver linhas que tenham pelo menos uma informação faltante (NA), estas podem ser excluídas com o comando \texttt{na.omit()}, ou mesmo os NAs serem substituídos por outro caractere (neste caso foi substituído por zero) com o comando \texttt{is.na}:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# Retirar as linhas que tenham pelo menos um NA:}
-
-\NormalTok{informacoes<-}\StringTok{ }\KeywordTok{na.omit}\NormalTok{(informacoes)}
-\NormalTok{informacoes}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-  estudantes idade peso      cidades altura   Imc
-1     Camila    21   65   Nova Hartz   1.80 20.06
-2  Guilherme    18  100 Porto Alegre   1.50 44.44
-3    Marcelo    17   80     Soledade   1.90 22.16
-4      Pedro    17   79      Gramado   1.74 26.09
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# Substituir NA's por zero no data.frame}
-
-\NormalTok{informacoes[}\KeywordTok{is.na}\NormalTok{(informacoes)] =}\StringTok{ }\DecValTok{0}
 \NormalTok{informacoes}
 \end{Highlighting}
 \end{Shaded}
@@ -1630,10 +1844,6 @@ No nosso exemplo, cria-se um objeto ``classificacao'' e se a coluna IMC conter d
 2  Guilherme    18  100 Porto Alegre   1.50 44.44 excesso de peso
 3    Marcelo    19   80     Soledade   1.90 22.16     peso normal
 4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso
-\end{verbatim}
-
-\begin{verbatim}
-Carregando pacotes exigidos: knitr
 \end{verbatim}
 
 \begin{table}[t]
@@ -1716,7 +1926,7 @@ O comando \texttt{rbind()} é utilizado para incluir linhas novas abaixo de um o
 \begin{Highlighting}[]
 \NormalTok{novo1=}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{estudantes=}\StringTok{"Francisco"}\NormalTok{, }\DataTypeTok{idade=}\DecValTok{30}\NormalTok{, }\DataTypeTok{peso=}\DecValTok{59}\NormalTok{, }
                  \DataTypeTok{cidades=}\StringTok{"Ijuí"}\NormalTok{, }
-                 \DataTypeTok{altura=}\StringTok{"1,59"}\NormalTok{, }
+                 \DataTypeTok{altura=}\StringTok{"1.59"}\NormalTok{, }
                  \DataTypeTok{Imc=} \FloatTok{23.33768}\NormalTok{, }
                  \DataTypeTok{classificacao=} \StringTok{"peso normal"}\NormalTok{,}
                  \DataTypeTok{tipoimc=}\StringTok{"Peso Normal"}\NormalTok{, }
@@ -1732,7 +1942,7 @@ O comando \texttt{rbind()} é utilizado para incluir linhas novas abaixo de um o
 2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
 3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
 4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
-5  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
+5  Francisco    30   59         Ijuí   1.59 23.34     peso normal   Peso Normal
   binario
 1       1
 2       0
@@ -1745,33 +1955,7 @@ Outra forma de incluir informações adicionais nos \emph{data frames} através 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{require}\NormalTok{(dplyr)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Carregando pacotes exigidos: dplyr
-\end{verbatim}
-
-\begin{verbatim}
-
-Attaching package: 'dplyr'
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:stats':
-
-    filter, lag
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(dplyr)}
 \NormalTok{informacoes=}\StringTok{ }\KeywordTok{mutate}\NormalTok{(informacoes, }
                     \StringTok{"faixa etaria"}\NormalTok{=}\StringTok{ }\KeywordTok{ifelse}\NormalTok{(informacoes}\OperatorTok{$}\NormalTok{idade}\OperatorTok{<}\DecValTok{21}\NormalTok{,}
                                            \StringTok{"não adulto"}\NormalTok{, }\StringTok{"adulto"}\NormalTok{))}
@@ -1785,7 +1969,7 @@ The following objects are masked from 'package:base':
 2  Guilherme    18  100 Porto Alegre    1.5 44.44 excesso de peso Obesidade III
 3    Marcelo    19   80     Soledade    1.9 22.16     peso normal   Peso Normal
 4      Pedro    19   79      Gramado   1.74 26.09 excesso de peso Acima do Peso
-5  Francisco    30   59         Ijuí   1,59 23.34     peso normal   Peso Normal
+5  Francisco    30   59         Ijuí   1.59 23.34     peso normal   Peso Normal
   binario faixa etaria
 1       1       adulto
 2       0   não adulto
@@ -1818,7 +2002,7 @@ Caso se queira a inversão total da ordem das colunas do objeto estudado, o coma
 2   não adulto       0 excesso de peso    1.5 44.44  Guilherme Porto Alegre
 3   não adulto       1     peso normal    1.9 22.16    Marcelo     Soledade
 4   não adulto       0 excesso de peso   1.74 26.09      Pedro      Gramado
-5       adulto       1     peso normal   1,59 23.34  Francisco         Ijuí
+5       adulto       1     peso normal   1.59 23.34  Francisco         Ijuí
   peso idade       tipoimc
 1   65    21   Peso Normal
 2  100    18 Obesidade III
@@ -1864,7 +2048,7 @@ A ordenação de todo o \emph{data frame} a partir de uma variável, pode ser re
 
 \begin{verbatim}
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
-5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1.59     peso normal
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
@@ -1890,7 +2074,7 @@ A ordenação de todo o \emph{data frame} a partir de uma variável, pode ser re
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
-5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1.59     peso normal
   binario faixa etaria
 2       0   não adulto
 3       1   não adulto
@@ -1909,7 +2093,7 @@ A ordenação de todo o \emph{data frame} a partir de uma variável, pode ser re
 \begin{verbatim}
         tipoimc idade peso      cidades estudantes   Imc altura   classificacao
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1.59     peso normal
 1   Peso Normal    21   65   Nova Hartz     Camila 20.06    1.8     peso normal
 2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
@@ -1936,7 +2120,7 @@ O comando \texttt{rank()} cria uma ranqueamento crescente das informações. Se 
 2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44    1.5 excesso de peso
 3   Peso Normal    19   80     Soledade    Marcelo 22.16    1.9     peso normal
 4 Acima do Peso    19   79      Gramado      Pedro 26.09   1.74 excesso de peso
-5   Peso Normal    30   59         Ijuí  Francisco 23.34   1,59     peso normal
+5   Peso Normal    30   59         Ijuí  Francisco 23.34   1.59     peso normal
   binario faixa etaria rankingImc
 1       1       adulto          1
 2       0   não adulto          5
@@ -1960,7 +2144,7 @@ Para utilizar a função \texttt{rank} com os maiores valores em primeiro lugar:
 \hypertarget{o-pacote-tidyr}{%
 \subsection{\texorpdfstring{O pacote \emph{tidyr}}{O pacote tidyr}}\label{o-pacote-tidyr}}
 
-Nesta subseção será utilizado o pacote \texttt{tidyr} para demonstrar algumas funções que contribuem para a manipulação das bases de dados, tão importante no processo de preperação das informações para posterior análise. Serão utilizadas para demonstração as bases de dados existentes no próprio pacote.
+Nesta subseção será utilizado o pacote \texttt{tidyr} (Wickham e Henry, \protect\hyperlink{ref-tidyr2018}{2018}) para demonstrar algumas funções que contribuem para a manipulação das bases de dados, tão importante no processo de preperação das informações para posterior análise. Serão utilizadas para demonstração as bases de dados existentes no próprio pacote.
 
 Abaixo segue uma demonstração das convenções a respeito das bases de dados. Desta forma verifica-se que cada variável é apresentada em sua respectiva coluna, bem como as observações são apresentadas em sua própria linha e portanto os valores constam em sua própria célula.
 
@@ -1973,6 +2157,8 @@ Abaixo segue uma demonstração das convenções a respeito das bases de dados. 
 \caption{Convenção sobre variáveis, observações e valores}\label{fig:dados}
 \end{figure}
 
+Fonte: \url{http://garrettgman.github.io/tidying/}.
+
 \hypertarget{funcao-spread}{%
 \subsubsection{\texorpdfstring{Função \emph{spread}}{Função spread}}\label{funcao-spread}}
 
@@ -1980,16 +2166,7 @@ A função \texttt{spread()} é utilizada para transformar os valores constantes
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{require}\NormalTok{(tidyr)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Carregando pacotes exigidos: tidyr
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(tidyr)}
 \NormalTok{table2}
 \end{Highlighting}
 \end{Shaded}
@@ -2297,6 +2474,24 @@ Abaixo o exemplo da utilização de mais de um critério de filtragem de dados:
 1 15.8   8  351 264 4.22 3.17 14.5  0  1    5    4
 2 19.7   6  145 175 3.62 2.77 15.5  0  1    5    6
 3 15.0   8  301 335 3.54 3.57 14.6  0  1    5    8
+\end{verbatim}
+
+Utilizando o pacote \texttt{stringr} (Wickham, \protect\hyperlink{ref-stringr2018}{2018}) com sua função \texttt{str\_detect()}, é possível efetuar a filtragem pelo nome/identificação total ou parcial de um valor contido dentro de uma variável do banco de dados. Utilizou-se o banco de dados ``table5'' visto no subcapítulo anterior pra filtrar as informações da variável ``country'' que contém ``Bra'':
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(stringr)}
+\NormalTok{table5 }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(}\KeywordTok{str_detect}\NormalTok{(country, }\StringTok{"Bra"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+# A tibble: 2 x 4
+  country century year  rate           
+  <chr>   <chr>   <chr> <chr>          
+1 Brazil  19      99    37737/172006362
+2 Brazil  20      00    80488/174504898
 \end{verbatim}
 
 \hypertarget{funcao-mutate}{%
@@ -2779,27 +2974,12 @@ Time difference of -11308 days
 \hypertarget{o-pacote-lubridate}{%
 \subsection{\texorpdfstring{O pacote \emph{lubridate}}{O pacote lubridate}}\label{o-pacote-lubridate}}
 
-O pacote \texttt{lubridate} é responsável por contribuir de forma eficaz para a manipulação e transformação de variáveis sob o formato de datas e horas. No caso abaixo, os comandos \texttt{ymd()} e \texttt{mdy()} codificam corretamente parao R as datas que anteriormente não estavam neste padrão.
+O pacote \texttt{lubridate} (Grolemund e Wickham, \protect\hyperlink{ref-lubridate2011}{2011}) é responsável por contribuir de forma eficaz para a manipulação e transformação de variáveis sob o formato de datas e horas. No caso abaixo, os comandos \texttt{ymd()} e \texttt{mdy()} codificam corretamente parao R as datas que anteriormente não estavam neste padrão.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{library}\NormalTok{(lubridate)}
-\end{Highlighting}
-\end{Shaded}
 
-\begin{verbatim}
-
-Attaching package: 'lubridate'
-\end{verbatim}
-
-\begin{verbatim}
-The following object is masked from 'package:base':
-
-    date
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \KeywordTok{ymd}\NormalTok{(}\DecValTok{20190215}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -3267,11 +3447,11 @@ Ex. Construir um gráfico de colunas para a variável \textbf{Sexo}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-101-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-111-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável Sexo}\label{fig:unnamed-chunk-101}
+\caption{Gráfico de colunas com a variável Sexo}\label{fig:unnamed-chunk-111}
 \end{figure}
 
 \textbf{Obs}.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -3290,11 +3470,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-102-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-112-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável Sexo (Horizontal)}\label{fig:unnamed-chunk-102}
+\caption{Gráfico de colunas com a variável Sexo (Horizontal)}\label{fig:unnamed-chunk-112}
 \end{figure}
 
 \textbf{Ex.1)} Construir um gráfico de colunas para a variável \textbf{Pessoas\_familia}.
@@ -3311,11 +3491,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-103-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-113-1} 
 
 }
 
-\caption{Gráfico de colunas com a variável `Pessoas familia`}\label{fig:unnamed-chunk-103}
+\caption{Gráfico de colunas com a variável Pessoas familia}\label{fig:unnamed-chunk-113}
 \end{figure}
 
 \textbf{Ex.2)} Construir uma tabela de dupla entrada para as variáveis \textbf{Sexo} e \textbf{Divulgação}.
@@ -3330,11 +3510,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-104-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-114-1} 
 
 }
 
-\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}\label{fig:unnamed-chunk-104}
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}\label{fig:unnamed-chunk-114}
 \end{figure}
 
 \textbf{Ex.3)} Na sequência utiliza-se o sinal de atribuição \textless{}- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).
@@ -3360,11 +3540,11 @@ Para colocar o gráfico na horizontal, pode ser utilizado o comando \texttt{hori
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-106-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-116-1} 
 
 }
 
-\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}\label{fig:unnamed-chunk-106}
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}\label{fig:unnamed-chunk-116}
 \end{figure}
 
 Observe que o uso do argumento \texttt{beside=T} evita que as barras fiquem empilhadas e o arguemnto \texttt{legend}' insere a legenda conforme as cores das colunas.
@@ -3412,11 +3592,11 @@ Ex. Construa um gráfico na forma de Setograma para a variável \textbf{Sabor}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-107-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-117-1} 
 
 }
 
-\caption{Gráfico de pizza com a variável Sabor}\label{fig:unnamed-chunk-107}
+\caption{Gráfico de pizza com a variável Sabor}\label{fig:unnamed-chunk-117}
 \end{figure}
 
 \hypertarget{histograma}{%
@@ -3436,11 +3616,11 @@ Ex. Construa um histograma com a variável \textbf{Renda\_h}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-108-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-118-1} 
 
 }
 
-\caption{Histograma com a variável `Renda h`}\label{fig:unnamed-chunk-108}
+\caption{Histograma com a variável `Renda h`}\label{fig:unnamed-chunk-118}
 \end{figure}
 
 \textbf{Obs}. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixo y (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
@@ -3464,11 +3644,11 @@ Ex. Construa um histograma com a variável \textbf{Renda\_h}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-109-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-119-1} 
 
 }
 
-\caption{Histograma com a variável Renda h com breaks=5}\label{fig:unnamed-chunk-109}
+\caption{Histograma com a variável Renda h com breaks=5}\label{fig:unnamed-chunk-119}
 \end{figure}
 
 O comando \texttt{ylim} determina os limites do eixo y a serem mostrados; \texttt{xlab} e \texttt{ylab} determinam o nome das variáveis dos eixos x e y; \texttt{main} determina o nome do título e \texttt{col} determina a cor do gráfico. Use o argumento \texttt{main=NULL} para remover o título.
@@ -3491,7 +3671,7 @@ Inserindo as opções \texttt{\$counts} e \texttt{\$breaks} retomam-se os valore
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-110-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-120-1} \end{center}
 
 \begin{verbatim}
 [1]  0  5 10 15 20 25
@@ -3518,11 +3698,11 @@ Para obter o boxplot para um conjunto de dados:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-111-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-121-1} 
 
 }
 
-\caption{Boxplot com a variável Idade}\label{fig:unnamed-chunk-111}
+\caption{Boxplot com a variável Idade}\label{fig:unnamed-chunk-121}
 \end{figure}
 
 Ainda é possível criar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:
@@ -3535,11 +3715,11 @@ Ainda é possível criar um boxplot analisando a relação da variável contínu
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-112-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-122-1} 
 
 }
 
-\caption{Boxplot com as variáveis Idade e Sabor}\label{fig:unnamed-chunk-112}
+\caption{Boxplot com as variáveis Idade e Sabor}\label{fig:unnamed-chunk-122}
 \end{figure}
 
 \hypertarget{grafico-ramo-e-folhas}{%
@@ -3720,11 +3900,11 @@ Para o caso de representação no mesmo gráfico, de duas ou mais variáveis, o 
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-115-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-125-1} 
 
 }
 
-\caption{Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010}\label{fig:unnamed-chunk-115}
+\caption{Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010}\label{fig:unnamed-chunk-125}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es) a partir de DIEESE (\protect\hyperlink{ref-Dieese2011}{2011}).
@@ -3742,7 +3922,7 @@ Com o argumento \texttt{"legend"} instruímos a formatação da legenda:
 Obs.: \texttt{pch}= número (entre 0 e 25). No Help do R (buscando com pch), você encontra a lista completa de símbolos que podem ser utilizados na representação da legenda.
 Neste caso, pode ser importante também alterar o tamanho da fonte da legenda, com o uso do argumento \texttt{"cex"}.
 
-Exemplo: Segue exemplo de um gráfico de linhas para as temperaturas registradas durante o dia 11/04/2018, pela Estação Meteorológica de São Luiz Gonzaga, RS, conforme dados obtidos no site do Inmet.
+Exemplo: Segue exemplo de um gráfico de linhas para as temperaturas registradas durante o dia 11/04/2018, pela Estação Meteorológica de São Luiz Gonzaga, RS, conforme dados obtidos no site do INMET (\protect\hyperlink{ref-inmet}{2018}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3788,12 +3968,14 @@ Segue a sequência de comandos, para obtenção do gráfico de linhas:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-117-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-127-1} 
 
 }
 
-\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}\label{fig:unnamed-chunk-117}
+\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}\label{fig:unnamed-chunk-127}
 \end{figure}
+
+Fonte: Elaborado pelo(s) autor(es) a partir de INMET (\protect\hyperlink{ref-inmet}{2018}).
 
 \hypertarget{estatisticas-descritivas}{%
 \section{Estatísticas Descritivas}\label{estatisticas-descritivas}}
@@ -4233,7 +4415,7 @@ nível de confiança = 0,90 a 0,99
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{prop.test}\NormalTok{(}\DecValTok{260}\NormalTok{,}\DecValTok{500}\NormalTok{)}
+\KeywordTok{prop.test}\NormalTok{(}\DecValTok{260}\NormalTok{, }\DecValTok{500}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4261,7 +4443,7 @@ Para mudar o nível de confiança para 90\%:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{prop.test}\NormalTok{(}\DecValTok{260}\NormalTok{,}\DecValTok{500}\NormalTok{,}\DataTypeTok{conf.level =} \FloatTok{0.90}\NormalTok{)}
+\KeywordTok{prop.test}\NormalTok{(}\DecValTok{260}\NormalTok{,}\DecValTok{500}\NormalTok{, }\DataTypeTok{conf.level =} \FloatTok{0.90}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4287,7 +4469,7 @@ Para mudar o nível de confiança para 99\%:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{prop.test}\NormalTok{(}\DecValTok{260}\NormalTok{,}\DecValTok{500}\NormalTok{,}\DataTypeTok{conf.level =} \FloatTok{0.99}\NormalTok{)}
+\KeywordTok{prop.test}\NormalTok{(}\DecValTok{260}\NormalTok{, }\DecValTok{500}\NormalTok{, }\DataTypeTok{conf.level =} \FloatTok{0.99}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4415,7 +4597,7 @@ Teste a hipótese de que o tempo de espera é superior a 20 minutos.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{t.test}\NormalTok{(tempo,}\DataTypeTok{alt=}\StringTok{"greater"}\NormalTok{,}\DataTypeTok{mu=}\DecValTok{20}\NormalTok{)}
+\KeywordTok{t.test}\NormalTok{(tempo, }\DataTypeTok{alt=}\StringTok{"greater"}\NormalTok{, }\DataTypeTok{mu=}\DecValTok{20}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4448,7 +4630,7 @@ Estes dados são evidência para afirmar que o conteúdo de oxigênio é menor q
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{amostras=}\KeywordTok{c}\NormalTok{(}\FloatTok{4.9}\NormalTok{,}\FloatTok{5.1}\NormalTok{,}\FloatTok{4.9}\NormalTok{,}\FloatTok{5.5}\NormalTok{,}\FloatTok{5.0}\NormalTok{,}\FloatTok{4.7}\NormalTok{)}
-\KeywordTok{t.test}\NormalTok{(amostras,}\DataTypeTok{alt=}\StringTok{"less"}\NormalTok{,}\DataTypeTok{mu=}\DecValTok{5}\NormalTok{)}
+\KeywordTok{t.test}\NormalTok{(amostras, }\DataTypeTok{alt=}\StringTok{"less"}\NormalTok{, }\DataTypeTok{mu=}\DecValTok{5}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4507,7 +4689,7 @@ alt = \texttt{"two.sided"}, \texttt{"greater"} ou \texttt{"less"}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{prop.test}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{80}\NormalTok{,}\DataTypeTok{p=}\FloatTok{0.03}\NormalTok{,}\DataTypeTok{alt=}\StringTok{"two.sided"}\NormalTok{)}
+\KeywordTok{prop.test}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{80}\NormalTok{, }\DataTypeTok{p=}\FloatTok{0.03}\NormalTok{, }\DataTypeTok{alt=}\StringTok{"two.sided"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4535,7 +4717,7 @@ Conclusão: Aceita-se \(H_0\) e conclui-se que a máquina produz 3\% de peças d
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{prop.test}\NormalTok{(}\DecValTok{530}\NormalTok{,}\DecValTok{1000}\NormalTok{,}\DataTypeTok{p=}\FloatTok{0.6}\NormalTok{,}\DataTypeTok{alt=}\StringTok{"two.sided"}\NormalTok{)}
+\KeywordTok{prop.test}\NormalTok{(}\DecValTok{530}\NormalTok{, }\DecValTok{1000}\NormalTok{, }\DataTypeTok{p=}\FloatTok{0.6}\NormalTok{, }\DataTypeTok{alt=}\StringTok{"two.sided"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4563,7 +4745,7 @@ Conclusão: Rejeita-se \(H_0\) com nível de significância de 1\% e conclui-se 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{prop.test}\NormalTok{(}\DecValTok{9}\NormalTok{,}\DecValTok{500}\NormalTok{,}\DataTypeTok{p=}\FloatTok{0.015}\NormalTok{,}\DataTypeTok{alt=}\StringTok{"greater"}\NormalTok{)}
+\KeywordTok{prop.test}\NormalTok{(}\DecValTok{9}\NormalTok{, }\DecValTok{500}\NormalTok{, }\DataTypeTok{p=}\FloatTok{0.015}\NormalTok{, }\DataTypeTok{alt=}\StringTok{"greater"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4591,7 +4773,7 @@ Conclusão: Não rejeita \(H_0\) e conclui-se que a proporção de peças defeit
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{prop.test}\NormalTok{(}\DecValTok{80}\NormalTok{,}\DecValTok{100}\NormalTok{,}\DataTypeTok{p=}\FloatTok{0.90}\NormalTok{,}\DataTypeTok{alt=}\StringTok{"less"}\NormalTok{)}
+\KeywordTok{prop.test}\NormalTok{(}\DecValTok{80}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DataTypeTok{p=}\FloatTok{0.90}\NormalTok{, }\DataTypeTok{alt=}\StringTok{"less"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4634,7 +4816,7 @@ O teste de hipótese para duas médias aplica-se quando se deseja comparar dois 
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-150}Amostras dependentes}
+\caption{\label{tab:unnamed-chunk-160}Amostras dependentes}
 \centering
 \begin{tabular}{l|r|r|r|r|r|r}
 \hline
@@ -4683,7 +4865,7 @@ Conclusão: Não rejeita-se \(H_0\) e conclui-se que a média de peso antes do t
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-152}Amostras dependentes - caso 2}
+\caption{\label{tab:unnamed-chunk-162}Amostras dependentes - caso 2}
 \centering
 \begin{tabular}{l|r|r|r|r|r|r|r|r|r|r}
 \hline
@@ -4738,7 +4920,7 @@ Primeiramente é preciso saber se existe homogeneidade de variâncias populacion
 
 \begin{table}[t]
 
-\caption{\label{tab:unnamed-chunk-154}Comparação de dois tipos diferentes de tecidos}
+\caption{\label{tab:unnamed-chunk-164}Comparação de dois tipos diferentes de tecidos}
 \centering
 \begin{tabular}{l|l|l|l|l|l|l|l}
 \hline
@@ -4761,7 +4943,7 @@ Teste se um tecido é mais pesado que o outro.
 \begin{Highlighting}[]
 \NormalTok{tecidoa=}\KeywordTok{c}\NormalTok{(}\DecValTok{36}\NormalTok{,}\DecValTok{26}\NormalTok{,}\DecValTok{31}\NormalTok{,}\DecValTok{38}\NormalTok{,}\DecValTok{28}\NormalTok{,}\DecValTok{20}\NormalTok{,}\DecValTok{37}\NormalTok{)}
 \NormalTok{tecidob=}\KeywordTok{c}\NormalTok{(}\DecValTok{39}\NormalTok{,}\DecValTok{27}\NormalTok{,}\DecValTok{35}\NormalTok{,}\DecValTok{42}\NormalTok{,}\DecValTok{31}\NormalTok{,}\DecValTok{39}\NormalTok{,}\DecValTok{22}\NormalTok{)}
-\KeywordTok{var.test}\NormalTok{(tecidoa,tecidob)}
+\KeywordTok{var.test}\NormalTok{(tecidoa, tecidob)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4837,39 +5019,39 @@ Construa o intervalo de confiança para a proporção populacional dos alunos sa
 
 \textbf{6.} A fim de determinar a eficiência de um medicamento antitérmico, a temperatura corporal (em graus Celsius) de 15 indivíduos foi medida. Em seguida, foi administrado o medicamento e após uma hora a temperatura foi medida novamente. Os resultados podem ser encontrados na tabela abaixo.
 
-\begin{tabular}{r|r}
+\begin{tabular}{l|l}
 \hline
 Antes & Depois\\
 \hline
-37.5 & 37.8\\
+37,5 & 37,8\\
 \hline
-36.0 & 36.4\\
+36,0 & 36,4\\
 \hline
-39.0 & 37.6\\
+39,0 & 37,6\\
 \hline
-38.0 & 37.2\\
+38,0 & 37,2\\
 \hline
-37.8 & 36.9\\
+37,8 & 36,9\\
 \hline
-38.5 & 37.7\\
+38,5 & 37,7\\
 \hline
-36.9 & 36.8\\
+36,9 & 36,8\\
 \hline
-39.4 & 38.1\\
+39,4 & 38,1\\
 \hline
-37.2 & 36.7\\
+37,2 & 36,7\\
 \hline
-38.1 & 37.3\\
+38,1 & 37,3\\
 \hline
-39.3 & 38.0\\
+39,3 & 38,0\\
 \hline
-37.5 & 37.1\\
+37,5 & 37,1\\
 \hline
-38.5 & 36.6\\
+38,5 & 36,6\\
 \hline
-37.8 & 35.0\\
+37,8 & 35,0\\
 \hline
-39.0 & 39.0\\
+39,0 & 39,0\\
 \hline
 \end{tabular}
 
@@ -5517,7 +5699,7 @@ Fonte: Dados simulados.
 \textbf{1.4} Apresente o valor p e interprete os resultados do teste considerando nível de 5\% de significância.
 
 \hypertarget{reg}{%
-\chapter{Modelos de Regressão}\label{reg}}
+\chapter{Modelos de Regressão Linear Simples}\label{reg}}
 
 \emph{Iara Denise Endruweit Battisti}
 
@@ -5531,19 +5713,19 @@ Fonte: Dados simulados.
 
 Muitas vezes, há a necessidade de estudar duas ou mais variáveis ao mesmo tempo com o objetivo de predizer uma variável em função da(s) outra(s). Por exemplo, verificar se sólidos removidos de um material se relaciona com o tempo de secagem e qual é a forma dessa relação. Outros exemplos: relação entre tempo de estudo e desempenho a uma avaliação; relação entre investimento em comunicação e vendas; entre outros.
 
-A análise de correlação permite quantificar a relação linear entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Neste capítulo, serão estudados os modelos de regressão linear na qual a variáveis resposta (\(Y\)) é quantitativa e as variáveis preditoras (\(X_i\)) são quantitativas ou qualitativas.
+A análise de correlação permite quantificar a relação linear entre duas variáveis quantitativas. Os modelos de regressão permitem demonstrar a forma da relação entre duas ou mais variáveis. Neste capítulo, serão estudados os modelos de regressão linear simples na qual a variável resposta (\(Y\)) é quantitativa e a variável preditora (\(X_i\)) é quantitativa ou qualitativa.
 
 \hypertarget{correlacao-linear}{%
 \section{Correlação linear}\label{correlacao-linear}}
 
-A correlação linear é a técnica mais simples para estudar a relação entre duas variáveis. Os dados compõem uma única amostra de pares de valores (\(x_i, y_i\)), correspondendo aos valores das variáveis X e Y, respectivamente, mensurados em cada elemento de uma amostra ou uma população. Para analisar a existência de relação entre as duas variáveis de forma exploratória, primeiramente pode-se fazer o Diagrama de Dispersão.
+A correlação linear é a técnica mais simples para estudar a relação entre duas variáveis quantitativas. Os dados compõem uma única amostra de pares de valores (\(x_i, y_i\)), correspondendo aos valores das variáveis X e Y, respectivamente, mensurados em cada elemento de uma amostra ou uma população. Para analisar a existência de relação entre as duas variáveis de forma exploratória, primeiramente pode-se fazer o Diagrama de Dispersão.
 
 \hypertarget{diagrama-de-dispersao}{%
 \section{Diagrama de dispersão}\label{diagrama-de-dispersao}}
 
-O diagrama de dispersão é um gráfico para verificar a existência de relação entre os par de variáveis X e Y. É composto por pontos, os quais correspondem aos pares de valores (\(xi, y_i\)), sendo a variável X representada no eixo horizontal e a variável Y representada no eixo vertical.
+O diagrama de dispersão é um gráfico para verificar a existência de relação entre os pares de variáveis X e Y. É composto por pontos, os quais correspondem aos pares de valores (\(xi, y_i\)), sendo a variável X representada no eixo horizontal e a variável Y representada no eixo vertical.
 
-O diagrama de dispersão fornece uma visualização gráfica do comportamento conjunto das duas variáveis em estudo. Na Figura \ref{fig:diag}a, percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variáveis crescem conjuntamente. Na Figura \ref{fig:diag}b, percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura \ref{fig:diag}c informa a ausência de relação entre as duas variáveis e, a Figura \ref{fig:diag}d mostra uma relação não linear, que não será abordada neste capítulo.
+O diagrama de dispersão fornece uma visualização gráfica do comportamento conjunto das duas variáveis em estudo. Na Figura \ref{fig:diag}a, percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variáveis crescem conjuntamente. Na Figura \ref{fig:diag}b, percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura \ref{fig:diag}c informa a ausência de relação entre as duas variáveis e, a Figura \ref{fig:diag}d mostra uma correlação não linear, que não será abordada neste capítulo.
 
 \begin{figure}[H]
 
@@ -5556,10 +5738,10 @@ O diagrama de dispersão fornece uma visualização gráfica do comportamento co
 
 Fonte: Elaborado pelo(s) autor(es).
 
-\textbf{Exemplo}: Suponha que 15 alunos foram selecionados aleatoriamente na turma de Estatística, sendo registrado o tempo de estudo e nota da atividade avaliativa. O objetivo da pesquisa é verificar se existe relação entre tempo de estudo e nota.
+\textbf{Exemplo}: Suponha que 15 alunos foram selecionados aleatoriamente na turma de Estatística, sendo registrado o tempo de estudo e nota da atividade avaliativa. O objetivo da pesquisa é verificar se existe relação entre o tempo de estudo e a nota.
 
 \begin{longtable}[]{@{}llllllllllllllll@{}}
-\caption{\label{tab:reg1}Relação entre o tempo de estudo e a nota.}\tabularnewline
+\caption{\label{tab:reg1}Relação entre o tempo (horas) de estudo e a nota.}\tabularnewline
 \toprule
 \begin{minipage}[b]{0.09\columnwidth}\raggedright
 \textbf{Tempo}\strut
@@ -5679,9 +5861,9 @@ Primeiramente, deve-se digitar os dados para cada variável diretamente na linha
 \end{Highlighting}
 \end{Shaded}
 
-Para elaborar o diagrama de dispersão o compando utilizado é o plot em que x corresponde ao vetor de dados da variável resposta e y corresponde ao vetor de dados da variável preditora.
+Para elaborar o diagrama de dispersão o comando utilizado é o \texttt{plot} em que y corresponde ao vetor de dados da variável resposta e x corresponde ao vetor de dados da variável preditora.
 
-\texttt{plot(variável\_preditora,\ variável\_dependente}
+\texttt{plot(variável\_preditora,\ variável\_resposta)}
 
 Para o exemplo o comando é o seguinte:
 
@@ -5730,13 +5912,13 @@ em que:
   \(\bar{y}\): média dos valores de y;
 \end{itemize}
 
-O coeficiente de correlação linear (r) é uma estatística amostral, representando a magnitude da relação entre duas variáveis na amostra. O parâmetro populacional é representado por \(\rho\), que é calculado da mesma forma. O coeficiente de correlação linear assume valores entre -1 e +1, inclusive. Se o valor de r está próximo de 0, conclui-se que não há correlação linear entre as variáveis X e Y. Se o valor de r está próximo de -1 ou +1, conclui-se pela existência de correlação linear significativa entre as variáveis X e Y, sendo que o sinal indica uma relação linear positiva (direta) ou negativa (inversa).
+O coeficiente de correlação linear (r) é uma estatística amostral, representando a magnitude da relação entre duas variáveis na amostra. O parâmetro populacional é representado por \(\rho\), que é calculado da mesma forma. O coeficiente de correlação linear assume valores entre -1 e +1, inclusive. Se o valor de r está próximo de 0, conclui-se que não há correlação linear entre as variáveis X e Y. Se o valor de r está próximo de -1 ou +1, conclui-se pela existência de correlação linear entre as variáveis X e Y, sendo que o sinal indica uma relação linear positiva (direta) ou negativa (inversa).
 
 Sintaxe no software R:
 
-\texttt{cor(variável\_preditora,variável\_dependente)} ou \texttt{cor(x,y)}
+\texttt{cor(variável\_preditora,\ variável\_resposta)}
 
-Obs: x e y são numéricos.
+Lembrando que os valores de x e y são numéricos. No caso do exemplo, segue o comando e a resposta.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5748,7 +5930,37 @@ Obs: x e y são numéricos.
 [1] 0.9224
 \end{verbatim}
 
-No resultado é apresentado o valor do coeficiente de correlação linear, que neste caso, está próximo de +1, expressando uma relação forte e direta. Ainda, é possível aprimorar a exibição dos resultados sobre o coeficiente de correlação com as variáveis observadas com o pacote \texttt{PerformanceAnalytics}, que além do coeficientes de correlação, mostra a distribuição das variáveis e o gráfico de dispersão:
+No resultado é apresentado o valor do coeficiente de correlação linear, que neste caso, está próximo de +1, expressando uma correlação forte e direta entre as duas variáveis em análise.
+
+Caso o usuário deseja testar a significância do coeficiente de correlação, isto é, se o resultado do coeficiente de correlação amostral pode ser inferido para a população, utiliza-se o comando:
+
+\texttt{cor.test(variável\_preditora,\ variável\_resposta)}
+
+Para o exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{cor.test}\NormalTok{(tempo, nota)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+    Pearson's product-moment correlation
+
+data:  tempo and nota
+t = 8.6, df = 13, p-value = 1e-06
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.7776 0.9743
+sample estimates:
+   cor 
+0.9224 
+\end{verbatim}
+
+Como o valor de \(p\) é menor que 0,01 então pode-se afirmar que existe correlação linear positiva significativa, isto é, o resultado pode ser projeto para a população de onde a amostra foi extraida.
+
+Ainda, com o pacote \texttt{PerformanceAnalytics} (Peterson e Carl, \protect\hyperlink{ref-PerformanceAnalytics}{2018}) é possível aprimorar a exibição dos resultados sobre o coeficiente de correlação com as variáveis observadas, que além do coeficientes de correlação, mostra a distribuição das variáveis e o gráfico de dispersão:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5757,12 +5969,12 @@ No resultado é apresentado o valor do coeficiente de correlação linear, que n
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-172-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-183-1} \end{center}
 
-\hypertarget{modelo-de-regressao}{%
-\section{Modelo de Regressão}\label{modelo-de-regressao}}
+\hypertarget{regressao-linear-simples}{%
+\section{Regressão Linear Simples}\label{regressao-linear-simples}}
 
-No estudo de regressão estabelece-se aos casos em que se pretende estabelecer uma relação entre uma variável Y considerada dependente (variável resposta ou desfecho) e uma ou mais variáveis \(x_1, x_2,\cdots, x_k\) (variáveis explicativas ou preditoras) consideradas independentes.
+O estudo de regressão estabelece-se aos casos em que se pretende estabelecer uma relação entre uma variável Y considerada dependente (variável resposta ou desfecho) e uma ou mais variáveis \(X_1, X_2,\cdots, X_k\) (variáveis explicativas ou preditoras) consideradas independentes.
 
 O objetivo da análise de regressão é ajustar uma equação que permita explicar o comportamento da variável resposta de maneira que o valor previsto possa estar próximo do que seria observado, dado um conjunto de valores observados para as variáveis preditoras. A forma do modelo de regressão depende da relação entre as variáveis, expressa visualmente pelo diagrama de dispersão, conforme exemplificado na Figura \ref{fig:diag}.
 
@@ -5770,13 +5982,13 @@ A análise de regressão é uma técnica muito utilizada em variáveis quantitat
 
 \begin{itemize}
 \item
-  Vendas em função do investimento em comunicação;
+  vendas em função do investimento em comunicação;
 \item
-  Altura de crianças em função da idade;
+  altura de crianças em função da idade;
 \item
-  Nota obtida em função de horas de estudo;
+  nota obtida em função de horas de estudo;
 \item
-  Produtividade de uma cultura em relação a quantidade de adubação.
+  produtividade de uma cultura em relação a quantidade de adubação.
 \end{itemize}
 
 Na Figura \ref{fig:regress} é apresentada a variação explicada e não explicada na análise por modelo regressão.
@@ -5796,7 +6008,7 @@ Observa-se na Figura \ref{fig:regress}, uma identidade na regressão, conforme a
 
 \[
 \begin{matrix}
-\sum (y_i-\overline{y}) ^{2} = \sum (\hat{y}_i-\overline{y})^2 + \sum (y_i-\hat{y}_i)^2 \\
+\sum (y_i-\overline{y}_i) ^{2} = \sum (\hat{y}_i-\overline{y}_i)^2 + \sum (y_i-\hat{y}_i)^2 \\
 \\
 \text{Soma de Quadrado Total = Soma de Quadrado de Regressão + Soma de Quadrado de Resíduo}
 \end{matrix}
@@ -5821,9 +6033,9 @@ Em que:
 
 \(\beta_0\): coeficiente linear (intercepto). Interpretado como o valor da variável dependente quando a variável independente é igual a 0;
 
-\(\beta_1\): coeficiente angular (inclinação). Interpretado como acréscimo/decréscimo na variável dependente para a variação de uma unidade na variável independente;
+\(\beta_1\): coeficiente angular (inclinação). Interpretado como acréscimo ou decréscimo na variável dependente para a variação de uma unidade na variável independente;
 
-\(\varepsilon_i\): erros aleatórios costumeiramente assumidos como provenientes de uma população normal, com média 0 e variância constante \(\begin{bmatrix}\varepsilon_i N(0, \sigma^2)\end{bmatrix}\).
+\(\varepsilon_i\): erros aleatórios costumeiramente assumidos como provenientes de uma população normal, com média 0 e variância constante \(\begin{bmatrix}\varepsilon_i \text{~} N(0, \sigma^2)\end{bmatrix}\).
 
 \hypertarget{metodo-dos-minimos-quadrados}{%
 \section{Método dos Mínimos Quadrados}\label{metodo-dos-minimos-quadrados}}
@@ -5878,9 +6090,9 @@ em que:
 
 Esta equação refere-se a reta de regressão, sendo que se \(b_1\) é um valor positivo a reta é crescente, demonstrando uma relação positiva entre as variáveis; mas se \(b_1\) é um valor negativo, a reta é decrescente, demonstrando uma relação inversa entre as variáveis.
 
-No software utiliza-se o comando \texttt{lm} para executar a análise de regressão linear, em que y corresponde aos valores numéricos da variável resposta e x são valores numéricos da variável preditora. No caso do segundo comando, ``base'' corresponde ao nome da base de dados em que estão armazenadas as variáveis. Lembrando que ``regressao'' é o nome fornecido pelo usuário.
+No software R utiliza-se o comando \texttt{lm} para executar a análise de regressão linear, em que y corresponde aos valores numéricos da variável resposta e x são valores numéricos da variável preditora. No caso do segundo comando, ``base'' corresponde ao nome da base de dados em que estão armazenadas as variáveis. Lembrando que ``regressao'' é o nome fornecido pelo usuário.
 
-\texttt{nome\_para\_regressao=lm(variável\_dependente\textasciitilde{}variável\_preditora)}
+\texttt{nome\_para\_regressao=lm(variável\_dependente\ \textasciitilde{}\ variável\_preditora)}
 
 Por exemplo:
 
@@ -5901,14 +6113,15 @@ Coefficients:
       2.221        0.947  
 \end{verbatim}
 
-No resultado observa-se o valor do coeficiente linear (intercept) igual a 2,2214 e o valor do coeficiente angular (tempo).
+No resultado observa-se o valor do coeficiente linear (intercept) igual a 2,2214 e o valor do coeficiente angular (tempo) igual a 0,947 interpretando que a cada aumento de uma unidade de
+tempo (hora), a nota do aluno aumenta, em média, 0,947 pontos.
 
 \hypertarget{analise-de-variancia}{%
 \section{Análise de Variância}\label{analise-de-variancia}}
 
-A análise de variância, técnica introduzida por Fisher, na década de 20, testa o ajuste da equação como um todo, ou seja, um teste para verificar se a equação de regressão obtida pode ser exclusivamente fruto do erro amostral em uma situação em que a variável preditiva não possui nenhuma relação linear com o desfecho (isto é, testar a significância da equação ajustada). No caso de regressão linear simples, a análise de variância é definida como apresentada na Tabela \ref{tab:varian}.
+A Análise de Variância, técnica introduzida por Fisher, na década de 20, testa o ajuste da equação como um todo, ou seja, um teste para verificar se a equação de regressão obtida pode ser exclusivamente fruto do erro amostral em uma situação em que a variável preditiva não possui nenhuma relação linear com o desfecho. Isto é, testar a significância da equação ajustada.
 
-As hipóteses testadas na análise de variância da Regressão são:
+As hipóteses testadas na Análise de Variância da Regressão são:
 
 \[
 H_0:\beta_1=0 \textrm{ (a regressão não é significativa)} 
@@ -5917,6 +6130,8 @@ H_0:\beta_1=0 \textrm{ (a regressão não é significativa)}
 \[
 H_1:\beta_1 \neq 0 \textrm{ (a regressão é significativa)}
 \]
+No caso de regressão linear simples, a análise de variância é definida como apresentada na
+Tabela \ref{tab:varian}.
 
 \begin{longtable}[]{@{}lllll@{}}
 \caption{\label{tab:varian}Análise de variância para a regressão linear simples.}\tabularnewline
@@ -5986,7 +6201,19 @@ SQTotal\strut
 
 Fonte: Elaborado pelo(s) autor(es).
 
-em que:
+No qual:
+
+\textbf{FV}: Fonte de Variação;
+
+\textbf{GL}: Grau de Liberdade;
+
+\textbf{SQ}: Soma de Quadrados;
+
+\textbf{QM}: Quadrados Médios;
+
+\textbf{F}: F calculado.
+
+Em que:
 
 \[
 SQ \textrm{Regressão} = \frac{(\sum xy - \frac{(\sum x \sum y)^2}{n})}{\sum x^2 - \frac{(\sum x)^2}{n}}
@@ -6007,9 +6234,9 @@ Fc = QMRegressão \(/\) QMResíduo
 Espera-se que o QMResíduo seja mínimo, assim o modelo de regressão estará
 bem ajustado.
 
-A distribuição de probabilidade para a razão de duas variâncias é conhecida como a distribuição F. Se a hipótese nula for rejeitada ao nível de signicância \(\alpha\), rejeita-se \(H_0\) e portanto a regressão é significativa ao nível \(\alpha\) de significância.
+A distribuição de probabilidade para a razão de duas variâncias é conhecida como a distribuição F. Se a hipótese nula for rejeitada ao nível de signicância \(\alpha\) (rejeita-se \(H_0\)) e, portanto a regressão é significativa ao nível \(\alpha\) de significância.
 
-No software R, utiliza-se a função \texttt{anova()} para obter a análise de variância informando o nome dado ao modelo de regressão, obtido anteriormente.
+No software R, utiliza-se a função \texttt{anova()} para obter a análise de variância informando o nome dado ao modelo de regressão previamente.
 
 \texttt{anova(nome\_para\_regressão)}
 
@@ -6032,7 +6259,7 @@ Residuals 13    4.0    0.31
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 \end{verbatim}
 
-No resultado observa-se as fontes de variação: tempo (variável preditora) e resíduos (residuals); graus de liberdade (Df), soma de quadrado (Sum Sq), quadrado médio (Mean Sq), valor do F calculado (F value) e o valor \(p\) (Pr). Neste caso, como \(p<0,01\) rejeita-se \(H_0\) e, portanto a equação é significativa (\(p<0,01\)).
+No resultado observam-se as fontes de variação: tempo (variável preditora) e residuals (resíduos); graus de liberdade (Df), soma de quadrado (Sum Sq), quadrado médio (Mean Sq), valor do F calculado (F value) e o valor \(p\) (Pr). Neste caso, como \(p<0,01\) rejeita-se \(H_0\) ao nível de 1\% de significância e, portanto a equação é significativa (\(p<0,01\)).
 
 \hypertarget{coeficiente-de-determinacao}{%
 \section{Coeficiente de Determinação}\label{coeficiente-de-determinacao}}
@@ -6043,8 +6270,8 @@ O coeficiente de determinação representa o percentual de variação total que 
 R^2 = \frac{\textrm{SQRegressão}}{SQTotal}
 \]
 
-Quanto mais próximo de 1 (ou 100\%) for o R\(^2\), melhor será o ajuste da equação de regressão. Também utiliza-se o coeficiente de determinação ajustado (R\(^2\) ajustado), o qual considera o número de variáveis e o tamanho da amostra, sendo que este é o mais indicado para regressão múltipla.
-No software R, o valor do coeficiente de determinação é obtido pelo comando \texttt{summary()}, conforme segue:
+Quanto mais próximo de 1 (ou 100\%) for o R\(^2\), melhor será o ajuste da equação de regressão. Também, é possível utilizar o coeficiente de determinação ajustado (R\(^2\) ajustado), o qual considera o número de variáveis e o tamanho da amostra, sendo que este é o mais indicado para regressão múltipla.
+No software R, o valor do coeficiente de determinação é obtido pelo comando \texttt{summary()}, informando o nome dado aomodelo de regressão previamente, conforme segue:
 
 \texttt{summary(nome\_para\_regressao)}
 
@@ -6077,7 +6304,7 @@ Multiple R-squared:  0.851, Adjusted R-squared:  0.839
 F-statistic: 74.2 on 1 and 13 DF,  p-value: 9.88e-07
 \end{verbatim}
 
-No resultado, observa-se o valor de coeficiente de determinação (multiple R-squared) igual a 0,8509, indicando que 85,09\% da variação da nota (variável resposta) é devido a variação do tempo de estudo (variável preditora).
+No resultado, observa-se o valor de coeficiente de determinação (multiple R-squared) igual a 0,85, indicando que 85\% da variação da nota (variável resposta) é devido a variação do tempo de estudo (variável preditora).
 
 A reta de regressão pode ser visualizada no diagrama de dispersão com o comando \texttt{abline()}, como segue:
 
@@ -6088,17 +6315,17 @@ Para o exemplo:
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{plot}\NormalTok{(nota}\OperatorTok{~}\NormalTok{tempo)}
-\KeywordTok{abline}\NormalTok{(}\KeywordTok{coef}\NormalTok{(regressaolinear))}
+\KeywordTok{abline}\NormalTok{(regressaolinear)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-175-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-186-1} 
 
 }
 
-\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-175}
+\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-186}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -6119,6 +6346,75 @@ Para o exemplo:
              2.5 % 97.5 %
 (Intercept) 0.7671  3.676
 tempo       0.7097  1.185
+\end{verbatim}
+
+\hypertarget{intervalo-de-predicao}{%
+\section{Intervalo de Predição}\label{intervalo-de-predicao}}
+
+Após o ajuste da equação de regressão linear simples, verificada a significância da equação (p \(<\) 0,05). No caso da equação estimada se ajusta bem aos dados pelo valor do coeficiente de determinação então é possível predizer valores da variável Y (resposta) a partir de valores da variável X (explicativa). Caso a regressão não seja significativa a melhor predição para a variável Y é média dos valores de \(y\), ou seja, \(\hat{y}\).
+
+A predição de valores só tem sentido nos seguintes casos:
+
+\begin{itemize}
+\tightlist
+\item
+  regressão significativa;
+\item
+  os valores de X devem estar dentro dos limites inferior e superior dos dados amostrais;
+\item
+  as inferências referem-se somente a população de onde a amostra aleatória foi extraída;
+\item
+  as suposições sobre os resíduos devem ser satisfeitas.
+\end{itemize}
+
+Quando tem-se uma equação estimada do tipo \(\hat{y} = b_0 + b_1x\), \(\hat{y}\) representa o valor predito da variável Y para um dado valor da variável X, ou seja, é uma predição pontual, porém esta não informa a sua precisão, a qual é contemplada no intervalo de predição. O intervalo de predição para um determinado Y é dado por:
+
+\[
+\hat{y}\pm \varepsilon
+\]
+
+em que:
+
+\[
+\varepsilon = t_{(n-2;\frac{a}{2})}.S_e. \sqrt{ 1+ \frac{1}{n} +  \frac{n(x_p-\bar{x})^2}{n(\sum x^2)-(\sum x)^2} }
+\]
+
+onde:
+
+\(x_p\): o valor dado para x
+
+\(S_e\): o erro padrão da estimativa, definido por:
+
+\[
+S_e=\sqrt {\textrm{QMResíduo}}=\sqrt\frac{\sum(y-\hat{y})^2}{n-2}
+\]
+
+Assim, obtêm-se o intervalo de predição para um determinado Y, que também pode ser expresso da seguinte forma:
+
+\[
+(\hat{y} - \varepsilon; \hat{y} + \varepsilon)
+\]
+
+A sintaxe do comando é:
+
+\texttt{x0=data.frame(x=valor\_numérico)}
+
+\texttt{predict(regressao,x0,interval="prediction")}
+
+No comando apresentado o x0 recebe o valor de x e predict calcula o intervalo de predição para o valor de Y dado x0.
+
+Para o exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x0=}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{tempo=}\FloatTok{5.5}\NormalTok{)}
+\KeywordTok{predict}\NormalTok{(regressaolinear, x0, }\DataTypeTok{interval=}\StringTok{"prediction"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    fit   lwr   upr
+1 7.432 6.189 8.675
 \end{verbatim}
 
 \hypertarget{analise-dos-residuos}{%
@@ -6150,15 +6446,17 @@ Além da análise gráfica, existem testes para avaliar a homocedasticidade como
 
 Fonte: Elaborado pelo(s) autor(es).
 
-A seguir é apresentado o gráfico de resíduos apresentando os valores ajustados pela equação de regressão e os resuíduos:
+A seguir é apresentado o comando do gráfico de resíduos apresentando os valores ajustados pela equação de regressão e os resuíduos:
 
-\texttt{plot(fitted(nome\_para\_regressao),residuals(nome\_para\_regressao),}
+\texttt{plot(fitted(nome\_para\_regressao),\ residuals(nome\_para\_regressao),}
 
-\texttt{xlab="Valores\ ajustados",ylab="Resíduos")}
+\texttt{xlab="Valores\ ajustados",\ ylab="Resíduos")}
 
-Nesta sintaxe, o termo ``regressaolinear'' é o nome dado ao modelo de regressão, ``fitted'' define os valores ajustados no eixo horizontal, ``residuals'' define os resíduosno eixo vertical, ``xlab'' indica o nome do eixo horizontal e ``ylab'' indica o nome do eixo vertical. e ``abline(h=0)'' apresentauma linha constante em y=0 para facilitar os desvios dos resíduos.
+\texttt{abline(h=0)}
 
-Na Figura \ref{fig:residuos1} é apresentado o gráfico de resíduo, no qual os resíduos são apresentados no eixo y e os valores ajustados são apresentados no eixo x.
+Nesta sintaxe, o termo ``nome\_para\_regressao'' é o nome dado ao modelo de regressão, ``fitted'' define os valores ajustados no eixo horizontal, ``residuals'' define os resíduos no eixo vertical, ``xlab'' indica o rótulo do eixo horizontal e ``ylab'' indica o rótulo do eixo vertical. e ``abline(h=0)'' apresentauma linha constante em y = 0 para facilitar a visualização dos desvios dos resíduos.
+
+Na Figura \ref{fig:residuos1} é apresentado o gráfico de resíduo do exemplo, no qual os resíduos são apresentados no eixo y e os valores ajustados são apresentados no eixo x. Lembrando que ``regressaolinear'' é o nome definido para a regressão do exemplo.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6179,26 +6477,18 @@ Na Figura \ref{fig:residuos1} é apresentado o gráfico de resíduo, no qual os 
 
 Fonte: Elaborado pelo(s) autor(es).
 
-Outro gráfico de resíduos que é possível elaborar na análise de resíduos representa a variável preditora (x) no eixo x e o resíduos no eixo Y.
+Outro gráfico de resíduos que é possível elaborar na análise de resíduos representa a variável preditora (X) no eixo X e o resíduos no eixo Y, com a seguinte sintaxe:
 
-Sintaxe no software R:
+\texttt{plot(tempo,\ residuals(nome\_para\_regressao),}
 
-\texttt{plot(tempo,residuals(nome\_para\_regressao),}
+\texttt{xlab="Variável\ Preditora",\ ylab="Resíduos")}
 
-\texttt{xlab="Valores\ independente",\ ylab="Resíduos")}
-
-Obs: \texttt{regressao} é o nome dado ao modelo de regressão; a variável x define os valores do eixo x e residuals define os valores ajustados no eixo Y; \texttt{xlab} indica o nome do eixo x e ylab indica o nome do eixo y.
-
-\texttt{abline(h=0)}
-
-Obs: adicionar uma linha constante em y=0.
-
-Por exemplo:
+Para os dados do exemplo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{plot}\NormalTok{(tempo, }\KeywordTok{residuals}\NormalTok{(regressaolinear), }
-     \DataTypeTok{xlab =} \StringTok{"Valores independentes"}\NormalTok{,}
+     \DataTypeTok{xlab =} \StringTok{"Tempo"}\NormalTok{,}
      \DataTypeTok{ylab=}\StringTok{"Residuos"}\NormalTok{)}
 \KeywordTok{abline}\NormalTok{(}\DataTypeTok{h=}\DecValTok{0}\NormalTok{)}
 \end{Highlighting}
@@ -6210,26 +6500,28 @@ Por exemplo:
 
 }
 
-\caption{Gráfico gerado pelo RStudio para análise dos resíduos com os valores da variável independente}\label{fig:residuos2}
+\caption{Gráfico gerado para análise dos resíduos com os valores da variável preditora}\label{fig:residuos2}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
-Na Figura \ref{fig:residuos2} é apresentado o gráfico de resíduo, em que no eixo y constam os valores dos resíduos e no eixo x constam os valores da variável independente.
+O resultado desse comando é apresentado na Figura \ref{fig:residuos2} em que no eixo y constam os valores dos resíduos e no eixo x constam os valores da variável independente.
 
-Considerando os dados do exemplo, suponha que um aluno estudou 6,5 horas (x=6,5), então o valor ajustado da nota (y ) é dado por 2,2214+0,9474*6,5, resultando em 8,38. Para esse caso, o resíduo é:
+Considerando os dados do exemplo, suponha que um aluno estudou 6,5 horas (x=6,5), então o valor ajustado da nota (y) é dado por 2,2214+0,9474*6,5, resultando em 8,38. Para esse caso, o resíduo é:
 
 Yobservado -- Yestimado = 8 -- 8,38 = - 0,38
 
-Para exibir os valores ajustados e os resíduos da equação de regressão utilizam-se os seguintes comandos:
+Para exibir os resíduos e os valores ajustados da equação de regressão utilizam-se os seguintes comandos, respectivamente:
 
-\texttt{residuals(regressaolinear)} (exibe os resíduos do modelo regressao).
+\texttt{residuals(regressaolinear)}
 
-\texttt{fitted(regressaolinear)} (exibe os valores ajustados do modelo regressao).
+\texttt{fitted(regressaolinear)}
 
 Para testar a suposição que os erros aleatórios têm distribuição normal, pode-se elaborar o gráfico de probabilidade normal, conforme segue:
 
 \texttt{qqnorm(residuals(nome\_para\_regressao))}
+
+Para o exemplo, o comando é o seguinte:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6248,6 +6540,8 @@ Para testar a suposição que os erros aleatórios têm distribuição normal, p
 
 Fonte: Elaborado pelo(s) autor(es).
 
+E o resultado é apresentado na Figura \ref{fig:qqnorm}.
+
 Ainda, pode-se construir o gráfico com a distribuição da probabilidade dos resíduos, através de um histograma, verificando assim se a cauda é simétrica ou não:
 
 \begin{Shaded}
@@ -6264,20 +6558,22 @@ Ainda, pode-se construir o gráfico com a distribuição da probabilidade dos re
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-177-1} 
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/histresid-1} 
 
 }
 
-\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:unnamed-chunk-177}
+\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:histresid}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
-Também, pode-se aplicar o teste de normalidade de Shapiro-Wilk para verificar a normalidade dos dados, confirmando a simetria ou não da cauda do gráfico acima. O comando utilizado é o seguinte:
+O resultado desse comando é apresentado na Figura \ref{fig:histresid}.
+
+Também, pode-se aplicar o teste de normalidade de Shapiro-Wilk para verificar a normalidade dos resíduos. O comando utilizado é o seguinte:
 
 \texttt{shapiro.test(residuals(nome\_para\_regressao))}
 
-Por exemplo:
+Para o exemplo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6293,6 +6589,8 @@ data:  residuals(regressaolinear)
 W = 0.96, p-value = 0.6
 \end{verbatim}
 
+Conclui-se que os resíduos são normais se o valor de \(p \geq\) 0,05.
+
 \hypertarget{valores-outliers-na-regressao}{%
 \subsection{Valores outliers na regressão}\label{valores-outliers-na-regressao}}
 
@@ -6301,6 +6599,8 @@ Para análise dos valores outliers nos resíduos (\emph{residuals standard} e \e
 \texttt{rstudent(nome\_para\_regressao)}
 
 \texttt{rstandard(nome\_para\_regressao)}
+
+Para o exemplo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6334,9 +6634,7 @@ E o gráfico para verificar valores outliers nos resíduos:
 
 \texttt{plot(rstandard(nome\_para\_regressao))}
 
-Os gráficos dos resíduos padronizados (standard) e studentizados (student) estão apresentados nas Figuras \ref{fig:residpad} e \ref{fig:residst}, respectivamente.
-
-Para o exemplo:
+Os gráficos dos resíduos padronizados (standard) e studentizados (student) para o exemplo estão apresentados nas Figuras \ref{fig:residpad} e \ref{fig:residst}, respectivamente, utilizando os comandos que segue:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6385,7 +6683,7 @@ Para análise dos valores influentes, utiliza-se:
 
 \texttt{dffits(nome\_para\_regressao)}
 
-Para esse exemplo:
+Para os dados do exemplo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6414,7 +6712,7 @@ Para esse exemplo:
 [1] 0.7303
 \end{verbatim}
 
-O gráfico para detectar pontos influentes pode ser elaborado pelo comando (o gráfico está apresentado na Figura \ref{fig:ptoinf}:
+O gráfico para detectar pontos influentes para os dados do exemplo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6436,79 +6734,6 @@ O gráfico para detectar pontos influentes pode ser elaborado pelo comando (o gr
 Fonte: Elaborado pelo(s) autor(es).
 
 O comando \texttt{plot(nome\_para\_regressao)} elabora diferentes gráficos para o diagnóstico do modelo.
-
-\hypertarget{intervalo-de-predicao}{%
-\section{Intervalo de Predição}\label{intervalo-de-predicao}}
-
-Após o ajuste da equação de regressão linear simples, verificada a significância da equação (p \(<\) 0,05) e verificada que a equação estimada se ajusta bem aos dados pelo valor do coeficiente de determinação então é possível predizer valores da variável Y (resposta) a partir de valores da variável X (explicativa). Caso a regressão não seja significativa a melhor predição para a variável Y é média dos valores de \(y\), ou seja, \(\hat{y}\).
-
-A predição de valores só tem sentido nos seguintes casos:
-
-\begin{itemize}
-\tightlist
-\item
-  regressão significativa;
-\item
-  os valores de X devem estar dentro dos limites inferior e superior dos dados amostrais;
-\item
-  as inferências referem-se somente a população de onde a amostra aleatória foi extraída;
-\item
-  as suposições sobre os resíduos devem ser satisfeitas.
-\end{itemize}
-
-Quando tem-se um equação estimada do tipo \(\hat{y} = b_0 + b_1x\), \(\hat{y}\) representa o valor predito da variável Y para um dado valor da variável X, ou seja, é uma predição pontual, porém esta não informa a sua precisão, a qual é contemplada no intervalo de predição (da mesma forma do intervalo de confiança, já visto em inferência estatística).
-
-O intervalo de predição para um determinado Y é dado por:
-
-\[
-\hat{y}\pm \varepsilon
-\]
-
-em que:
-
-\[
-\varepsilon = t_{(n-2;\frac{a}{2})}.S_e. \sqrt{ 1+ \frac{1}{n} +  \frac{n(x_p-\bar{x})^2}{n(\sum x^2)-(\sum x)^2} }
-\]
-
-onde:
-
-\(x_p\): o valor dado para x
-
-\(S_e\): o erro padrão da estimativa, definido por:
-
-\[
-S_e=\sqrt {\textrm{QMResíduo}}=\sqrt\frac{\sum(y-\hat{y})^2}{n-2}
-\]
-
-Assim, obtêm-se o intervalo de predição para um determinado Y, que também pode ser expresso da seguinte forma:
-
-\[
-(\hat{y} - \varepsilon; \hat{y} + \varepsilon)
-\]
-
-Sintaxe no software R:
-
-\texttt{x0=data.frame(x=valor\_numérico)}
-
-Obs: x0 recebe o valor de x.
-
-\texttt{predict(regressao,x0,interval="prediction")}
-
-Obs: regressao é o nome dado ao modelo de regressão.
-
-Para o exemplo R:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{x0=}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{tempo=}\FloatTok{5.5}\NormalTok{)}
-\KeywordTok{predict}\NormalTok{(regressaolinear, x0, }\DataTypeTok{interval=}\StringTok{"prediction"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-    fit   lwr   upr
-1 7.432 6.189 8.675
-\end{verbatim}
 
 \hypertarget{exercicios-4}{%
 \section{Exercícios}\label{exercicios-4}}
@@ -6555,7 +6780,7 @@ Para o exemplo R:
 
 Fonte: Adaptado de Allaire \emph{et al.} (\protect\hyperlink{ref-R-rmarkdown}{2017}).
 
-Para criação dos documentos é preciso a instalação dos pacotes \texttt{rmarkdown} e \texttt{knitr} dentro do RStudio, bem como sugere-se a instalação, no Windows, do programa MiKTeX (\url{https://miktex.org/download}), que se encarrega de suporte à configurações da linguagem de marcação de textos LaTeX no caso de criação dos arquivos PDF.
+Para criação dos documentos é preciso a instalação dos pacotes denominados \texttt{rmarkdown} (Allaire \emph{et al.}, \protect\hyperlink{ref-R-rmarkdown}{2017}) e \texttt{knitr} (Xie, \protect\hyperlink{ref-knitr2018}{2018}) dentro do RStudio, bem como sugere-se a instalação, no Windows, do programa MiKTeX (\url{https://miktex.org/download}), que se encarrega de suporte à configurações da linguagem de marcação de textos LaTeX no caso de criação dos arquivos PDF.
 
 \hypertarget{criando-o-documento}{%
 \section{Criando o documento}\label{criando-o-documento}}
@@ -6810,7 +7035,7 @@ A primeira opção, \texttt{echo=FALSE}, informa que no arquivo compilado, somen
 
 }
 
-\caption{Criação de Chunks}\label{fig:rmarkchunk2}
+\caption{Criação de Chunks (2)}\label{fig:rmarkchunk2}
 \end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -6909,9 +7134,9 @@ Pacote & \textbf{HTML} & \textbf{PDF} & \textbf{Word}\tabularnewline
 \midrule
 \endhead
 knitr(função \texttt{kable})\footnote{Mais informações em \url{https://www.rdocumentation.org/packages/knitr/versions/1.21/topics/kable}. } & ok & ok & ok\tabularnewline
-pander & ok & ok & ok\tabularnewline
-stargazer & ok & ok & -\tabularnewline
-xtable & ok & ok & -\tabularnewline
+pander\footnote{Daróczi e Tsegelskyi (\protect\hyperlink{ref-pander2018}{2018}).} & ok & ok & ok\tabularnewline
+stargazer\footnote{Hlavac (\protect\hyperlink{ref-stargazer2018}{2018}).} & ok & ok & -\tabularnewline
+xtable\footnote{Dahl \emph{et al.} (\protect\hyperlink{ref-xtable2018}{2018}).} & ok & ok & -\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -7062,7 +7287,7 @@ Fonte: Elaborado pelo(s) autor(es).
 Para que o arquivo que foi criado com as referências bibliográficas (bibliografia.bib) seja utilizado, o pesquisador deve informar o seu nome dentro do YAML no campo \texttt{bibliography}.
 Mas qual norma será utilizada para as citações e a criação de referências bibliográficas neste trabalho, já que existem diversas delas? Uma solução é a utilização de arquivos ``.csl'' (Citation Style Language), que nada mais são do que arquivos com as descrições de cada estilo das diversas normas existentes, para ajudar o pesquisador a citar e gerenciar suas referências.
 
-Estes arquivos podem ser encontrados em diversos locais, como por exemplo em \url{https://github.com/citation-style-language/styles} (copie \href{https://raw.githubusercontent.com/citation-style-language/styles/44808db510152943c5d9dc471a9c8982a3edfbea/associacao-brasileira-de-normas-tecnicas-ipea.csl}{este} conteúdo para um arquivo ``.txt'' e o renomeie para ``.csl''). Lembrando que o arquivo ``.csl'' deve ser salvo na mesma pasta do arquivo ``.Rmd''. O arquivo csl aqui utilizado refere-se às normas da ABNT (Associação Brasileira de Normas Técnicas) utilizados pelo IPEA (Instituto de Pesquisa Econômica Aplicada). Verifica-se na Figura \ref{fig:rmarkcitar1} a configuração final do YAML. Neste site \url{http://editor.citationstyles.org/searchByName/}
+Estes arquivos podem ser encontrados em diversos locais, como por exemplo em \url{https://github.com/citation-style-language/styles} (copie este\footnote{\url{https://raw.githubusercontent.com/citation-style-language/styles/44808db510152943c5d9dc471a9c8982a3edfbea/associacao-brasileira-de-normas-tecnicas-ipea.csl}} conteúdo para um arquivo ``.txt'' e o renomeie para ``.csl''). Lembrando que o arquivo ``.csl'' deve ser salvo na mesma pasta do arquivo ``.Rmd''. O arquivo csl aqui utilizado refere-se às normas da ABNT (Associação Brasileira de Normas Técnicas) utilizados pelo IPEA (Instituto de Pesquisa Econômica Aplicada). Verifica-se na Figura \ref{fig:rmarkcitar1} a configuração final do YAML. Neste site \url{http://editor.citationstyles.org/searchByName/}
 também são encontrados arquivos para várias normas bibliográficas.
 
 \begin{figure}[H]
@@ -7104,13 +7329,13 @@ Fonte: Elaborado pelo(s) autor(es).
 
 \textbf{Denize Ivete Reis}: Possui Licenciatura Plena em Matemática pela Universidade Regional do Noroeste do Estado do Rio Grande do Sul (1994), especialização em Estatística Aplicada pela Universidade de Santa Cruz do Sul (2003), mestrado em Modelagem Matemática pela Universidade Regional do Noroeste do Estado do Rio Grande do Sul (1997) e doutorado em Qualidade Ambiental pela Universidade Feevale (2015). Atualmente é professora adjunta da Universidade Federal da Fronteira Sul, onde atua na área de Probabilidade e Estatística, Estatística Descritiva e Inferência Estatística. E-mail: \href{mailto:denizeir@uffs.edu.br}{\nolinkurl{denizeir@uffs.edu.br}}.
 
-\textbf{Djaina Sibiani Rieger}: Acadêmica do curso de Engenharia Ambiental e Sanitária da Universidade Federal da Fronteira Sul (UFFS) Campus Cerro Largo, aluna bolsista de extensão, integrante e conteudista dos cursos ofertados no Campus sobre o \emph{software} livre R.
+\textbf{Djaina Sibiani Rieger}: Acadêmica do curso de Matemática da Universidade Federal da Fronteira Sul (UFFS) Campus Chapecó, foi aluna bolsista de extensão, integrante e conteudista dos cursos ofertados no Campus Cerro Largo sobre o \emph{software} livre R.
 
 \textbf{Erikson Kaszubowski}: Doutor em Psicologia pela Universidade Federal de Santa Catarina, sob orientação do Prof.~Dr.~Fernando Aguiar, com a tese ``Modelos de tópicos para associações livres''. Formado em Psicologia pela Universidade Federal de Santa Catarina, nas graduações Bacharelado e Formação de Psicólogo (2006), e Licenciatura (2008). Foi professor de Psicologia da Educação na Universidade Federal da Fronteira Sul, ministrando as disciplinas da área de Psicologia nos cursos de Licenciatura e Pós-Graduação. Trabalha atualmente como psicólogo clínico no Serviço de Atenção Psicológica da UFSC. E-mail: \href{mailto:erikson84@yahoo.com.br}{\nolinkurl{erikson84@yahoo.com.br}}.
 
 \textbf{Felipe Micail da Silva Smolski}: Possui graduação em Ciências Econômicas pela Universidade Regional do Noroeste do Estado do Rio Grande do Sul - UNIJUÍ (2009), pós-graduação em Gestão de Investimentos pela Faculdade Integrada Grande Fortaleza - FGF (2012), mestrado em Desenvolvimento e Políticas Públicas pela Universidade Federal da Fronteira Sul - UFFS, Campus Cerro Largo (2017). E-mail: \href{mailto:felipesmolski@hotmail.com}{\nolinkurl{felipesmolski@hotmail.com}}.
 
-\textbf{Iara Denise Endruweit Battisti}: Possui graduação em Informática pela Universidade Regional do Noroeste do Estado do Rio Grande do Sul (1996), mestrado em Estatística e Experimentação Agropecuária pela Universidade Federal de Lavras (2001) e doutorado em Epidemiologia pela Universidade Federal do Rio Grande do Sul (2008). Atualmente é professora adjunta na Universidade Federal da Fronteira Sul, campus Cerro Largo (RS). Atua principalmente nos seguintes temas: amostragem complexa, modelagem multinível, estatística computacional, estatística aplicada, relação ambiente e saúde utilizando modelagem estatística. E-mail: \href{mailto:iara.battisti@uffs.edu.br}{\nolinkurl{iara.battisti@uffs.edu.br}}.
+\textbf{Iara Denise Endruweit Battisti}: Possui graduação em Informática pela Universidade Regional do Noroeste do Estado do Rio Grande do Sul (1996), mestrado em Estatística e Experimentação Agropecuária pela Universidade Federal de Lavras (2001) e doutorado em Epidemiologia pela Universidade Federal do Rio Grande do Sul (2008). Atualmente é professora associada na Universidade Federal da Fronteira Sul, campus Cerro Largo (RS). É docente dos Programas de mestrado em Ambiente e Tecnologias Sustentáveis e mestrado em Desenvolvimento e Políticas Públicas. Atua principalmente nos seguintes temas: amostragem complexa, relação ambiente e saúde utilizando modelagem estatística. E-mail: \href{mailto:iara.battisti@uﬀs.edu.br}{\nolinkurl{iara.battisti@uﬀs.edu.br}}.
 
 \textbf{Tatiane Chassot}: Possui graduação em Engenharia Florestal pela Universidade Federal de Santa Maria (2008), mestrado (2009) e doutorado em Engenharia Florestal também pela Universidade Federal de Santa Maria (2013). Atualmente é professora adjunta da Universidade Federal da Fronteira Sul - Campus Cerro Largo onde ministra as disciplinas de Introdução à Informática, Estatística Básica, Experimentação Agrícola, Sistemas Agroflorestais, Silvicultura e Práticas Integradoras de Campo. E-mail: \href{mailto:tatianechassot@uffs.edu.br}{\nolinkurl{tatianechassot@uffs.edu.br}}.
 
@@ -7132,7 +7357,7 @@ ALLAIRE, J. J. \emph{et al.} \textbf{rmarkdown: Dynamic Documents for R}, 2017. 
 ALMEIDA, L.; FREIRE, T. \textbf{Metodologia da investigação em psicologia e educação}.. 2. ed. Braga: Psiquilíbrios, 2000.
 
 \leavevmode\hypertarget{ref-anderson2002}{}%
-ANDERSON, D. R.; SWEENEY, D. J.; WILLIAMS, T. A. \textbf{Estatística aplicada à administração e economia}.. 2. ed. São Paulo: Pioneira Thomson Learninf, 2002.
+ANDERSON, D. R.; SWEENEY, D. J.; WILLIAMS, T. A. \textbf{Estatística aplicada à administração e economia}.. 2. ed. São Paulo: Pioneira Thomson Learning, 2002.
 
 \leavevmode\hypertarget{ref-barbetta1988}{}%
 BARBETTA, P. A. \textbf{Estatı́stica aplicada às ciências sociais}.. 7. ed. Florianópolis: Editora UFSC, 2010.
@@ -7140,14 +7365,32 @@ BARBETTA, P. A. \textbf{Estatı́stica aplicada às ciências sociais}.. 7. ed. 
 \leavevmode\hypertarget{ref-brasil2014}{}%
 BRASIL, M. \textbf{Estratégias para o cuidado da pessoa com doença crônica: obesidade}.. Cadernos de Atenção Básica, n 38 ed. Brasília: Ministério da Saúde, 2014.
 
+\leavevmode\hypertarget{ref-xtable2018}{}%
+DAHL, D. B. \emph{et al.} \textbf{xtable: Export Tables to LaTeX or HTML}, 2018. Disponível em: \textless{}\url{https://CRAN.R-project.org/package=xtable}\textgreater{}
+
+\leavevmode\hypertarget{ref-pander2018}{}%
+DARÓCZI, G.; TSEGELSKYI, R. \textbf{pander: An R 'Pandoc' Writer}, 2018. Disponível em: \textless{}\url{https://CRAN.R-project.org/package=pander}\textgreater{}
+
 \leavevmode\hypertarget{ref-Dieese2011}{}%
 DIEESE, D. \textbf{Estatísticas do meio rural 2010-2011}.. 6. ed. São Paulo: DIEESE, 2011.
 
 \leavevmode\hypertarget{ref-Fonseca2010}{}%
 FONSECA, J. S. DA; MARTINS, G. DE A. \textbf{Curso de Estatística}.. 6. ed. São Paulo: Atlas, 2010.
 
+\leavevmode\hypertarget{ref-lubridate2011}{}%
+GROLEMUND, G.; WICKHAM, H. Dates and Times Made Easy with lubridate. \textbf{Journal of Statistical Software}, v. 40, n. 3, p. 1--25, 2011.
+
+\leavevmode\hypertarget{ref-stargazer2018}{}%
+HLAVAC, M. \textbf{stargazer: Well-Formatted Regression and Summary Statistics Tables}.. Bratislava, Slovakia: Central European Labour Studies Institute (CELSI), 2018.
+
 \leavevmode\hypertarget{ref-hoffmann1998}{}%
 HOFFMANN, R.; VIEIRA, S. \textbf{Análise de regressão: uma introdução à econometria}.. 2. ed. São Paulo: Hucitec, 1998.
+
+\leavevmode\hypertarget{ref-Amelia2011}{}%
+HONAKER, J.; KING, G.; BLACKWELL, M. Amelia II: A Program for Missing Data. \textbf{Journal of Statistical Software}, v. 45, n. 7, p. 1--47, 2011.
+
+\leavevmode\hypertarget{ref-inmet}{}%
+INMET. \textbf{Insituto Nacional de Meteorologia}, 2018. Disponível em: \textless{}\url{http://www.inmet.gov.br/portal/}\textgreater{}. Acesso em: 1 dez. 2018
 
 \leavevmode\hypertarget{ref-biblatex}{}%
 LEHMAN, P.; KIME, P. \textbf{BibLATEX -- Sophisticated Bibliographies in LATEX}, 2006. Disponível em: \textless{}\url{https://ctan.org/pkg/biblatex}\textgreater{}. Acesso em: 1 mar. 2018
@@ -7157,6 +7400,9 @@ LOPES, L. F. D. \emph{et al.} \textbf{Caderno didático: estatística Geral}.. 3
 
 \leavevmode\hypertarget{ref-Morettin2009}{}%
 MORETTIN, P. A.; BUSSAB, W. DE O. \textbf{Estatística Básica}.. 6. ed. São Paulo: Saraiva, 2009.
+
+\leavevmode\hypertarget{ref-PerformanceAnalytics}{}%
+PETERSON, B. G.; CARL, P. \textbf{PerformanceAnalytics: Econometric Tools for Performance and Risk Analysis}, 2018. Disponível em: \textless{}\url{https://CRAN.R-project.org/package=PerformanceAnalytics}\textgreater{}
 
 \leavevmode\hypertarget{ref-rcore}{}%
 R CORE TEAM. \textbf{R: A Language and Environment for Statistical Computing}Vienna, AustriaR Foundation for Statistical Computing,, 2019. Disponível em: \textless{}\url{https://www.R-project.org}\textgreater{}. Acesso em: 20 fev. 2019
@@ -7169,6 +7415,27 @@ RSTUDIO TEAM. \textbf{RStudio: Integrated Development Environment for R}Boston, 
 
 \leavevmode\hypertarget{ref-triola1999}{}%
 TRIOLA, M. F. \textbf{Introdução à estatística}.. 10. ed. Rio de Janeiro: LTC, 2011.
+
+\leavevmode\hypertarget{ref-stringr2018}{}%
+WICKHAM, H. \textbf{stringr: Simple, Consistent Wrappers for Common String Operations}, 2018. Disponível em: \textless{}\url{https://CRAN.R-project.org/package=stringr}\textgreater{}
+
+\leavevmode\hypertarget{ref-readxl2018}{}%
+WICKHAM, H.; BRYAN, J. \textbf{readxl: Read Excel Files}, 2018. Disponível em: \textless{}\url{https://CRAN.R-project.org/package=readxl}\textgreater{}
+
+\leavevmode\hypertarget{ref-dplyr2019}{}%
+WICKHAM, H. \emph{et al.} \textbf{dplyr: A Grammar of Data Manipulation}, 2019. Disponível em: \textless{}\url{https://CRAN.R-project.org/package=dplyr}\textgreater{}
+
+\leavevmode\hypertarget{ref-tidyr2018}{}%
+WICKHAM, H.; HENRY, L. \textbf{tidyr: Easily Tidy Data with 'spread()' and 'gather()' Functions}, 2018. Disponível em: \textless{}\url{https://CRAN.R-project.org/package=tidyr}\textgreater{}
+
+\leavevmode\hypertarget{ref-readr2018}{}%
+WICKHAM, H.; HESTER, J.; FRANCOIS, R. \textbf{readr: Read Rectangular Text Data}, 2018. Disponível em: \textless{}\url{https://CRAN.R-project.org/package=readr}\textgreater{}
+
+\leavevmode\hypertarget{ref-haven2018}{}%
+WICKHAM, H.; MILLER, E. \textbf{haven: Import and Export 'SPSS', 'Stata' and 'SAS' Files}, 2018. Disponível em: \textless{}\url{https://CRAN.R-project.org/package=haven}\textgreater{}
+
+\leavevmode\hypertarget{ref-knitr2018}{}%
+XIE, Y. \textbf{knitr: A General-Purpose Package for Dynamic Report Generation in R}, 2018. Disponível em: \textless{}\url{https://CRAN.R-project.org/package=knitr}\textgreater{}
 
 
 \end{document}
