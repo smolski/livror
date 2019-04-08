@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Iara Denise Endruweit Battisti
 - Felipe Micail da Silva Smolski
-date: "2019-04-04"
+date: "2019-04-08"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -21,7 +21,7 @@ classoption: oneside
 
 
 
-
+<!--
 # Apresentação {-}
 
 A necessidade de flexibilidade e robustez para a análise estatística fez com que fosse criado, na década de 1990, a linguagem de programação R. Capitaneado pelos desenvolvedores Ross Ihaka e Robert Gentleman, dois estatísticos da Universidade de Auckland na Nova Zelândia, o projeto foi uma grande evolução para a análise de dados. A partir de então, a ideia inicial de proporcionar autonomia ao pesquisador, viu na expansão do acesso à internet uma oportunidade para que a pesquisa científica se tornasse cada vez mais colaborativa. Ao mesmo tempo, os códigos e rotinas se tornaram facilmente disponibilizáveis na rede, aumentando a reprodução e replicação dos estudos, práticas estas que podem tornar as análises mais confiáveis.
@@ -51,7 +51,7 @@ A criação de documentos dinâmicos utilizando o RStudio será tratada no capí
 Bons estudos!
 
 Iara Denise Endruweit Battisti, Felipe Micail da Silva Smolski *(Organizadores)*
-
+-->
 
 
 
@@ -3034,7 +3034,7 @@ barplot(table(Sexo))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-111-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
+<img src="index_files/figure-html/unnamed-chunk-111-1.png" alt="Gráfico de colunas com a variável Sexo" width="70%" />
 <p class="caption">(\#fig:unnamed-chunk-111)Gráfico de colunas com a variável Sexo</p>
 </div>
 
@@ -3053,7 +3053,7 @@ barplot(table(Sexo), horiz=T)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-112-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
+<img src="index_files/figure-html/unnamed-chunk-112-1.png" alt="Gráfico de colunas com a variável Sexo (Horizontal)" width="70%" />
 <p class="caption">(\#fig:unnamed-chunk-112)Gráfico de colunas com a variável Sexo (Horizontal)</p>
 </div>
 
@@ -3074,7 +3074,7 @@ barplot(table(`Pessoas_familia`), col=c("blue"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-113-1.png" alt="Gráfico de colunas com a variável Pessoas familia" width="70%" />
+<img src="index_files/figure-html/unnamed-chunk-113-1.png" alt="Gráfico de colunas com a variável Pessoas familia" width="70%" />
 <p class="caption">(\#fig:unnamed-chunk-113)Gráfico de colunas com a variável Pessoas familia</p>
 </div>
 
@@ -3088,7 +3088,7 @@ barplot(table(Sexo,Divulgacao),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-114-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
+<img src="index_files/figure-html/unnamed-chunk-114-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao" width="70%" />
 <p class="caption">(\#fig:unnamed-chunk-114)Gráfico de colunas com as variáveis Sexo e Divulgacao</p>
 </div>
 
@@ -3113,7 +3113,7 @@ barplot(Resultado,col=c("blue","red"),main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-116-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
+<img src="index_files/figure-html/unnamed-chunk-116-1.png" alt="Gráfico de colunas com as variáveis Sexo e Divulgacao (2)" width="70%" />
 <p class="caption">(\#fig:unnamed-chunk-116)Gráfico de colunas com as variáveis Sexo e Divulgacao (2)</p>
 </div>
 
@@ -3161,7 +3161,7 @@ legend(x="topright", # Determina posição da legenda
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-117-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
+<img src="index_files/figure-html/unnamed-chunk-117-1.png" alt="Gráfico de pizza com a variável Sabor" width="70%" />
 <p class="caption">(\#fig:unnamed-chunk-117)Gráfico de pizza com a variável Sabor</p>
 </div>
 
@@ -3179,7 +3179,7 @@ hist(as.numeric(`Renda_h`))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-118-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
+<img src="index_files/figure-html/unnamed-chunk-118-1.png" alt="Histograma com a variável `Renda h`" width="70%" />
 <p class="caption">(\#fig:unnamed-chunk-118)Histograma com a variável `Renda h`</p>
 </div>
 
@@ -3203,7 +3203,7 @@ hist(as.numeric(`Renda_h`),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-119-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
+<img src="index_files/figure-html/unnamed-chunk-119-1.png" alt="Histograma com a variável Renda h com breaks=5" width="70%" />
 <p class="caption">(\#fig:unnamed-chunk-119)Histograma com a variável Renda h com breaks=5</p>
 </div>
 O comando `ylim` determina os limites do eixo y a serem mostrados; `xlab` e `ylab` determinam o nome das variáveis dos eixos x e y; `main` determina o nome do título e `col` determina a cor do gráfico. Use o argumento `main=NULL` para remover o título.
@@ -3223,7 +3223,7 @@ hist(as.numeric(`Renda_h`), breaks=5)$counts
 hist(as.numeric(`Renda_h`), breaks=5)$breaks
 ```
 
-<img src="index_files/figure-epub3/unnamed-chunk-120-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="index_files/figure-html/unnamed-chunk-120-1.png" width="70%" style="display: block; margin: auto;" />
 
 ```
 [1]  0  5 10 15 20 25
@@ -3249,7 +3249,7 @@ boxplot(Idade,horizontal = T)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-121-1.png" alt="Boxplot com a variável Idade" width="70%" />
+<img src="index_files/figure-html/unnamed-chunk-121-1.png" alt="Boxplot com a variável Idade" width="70%" />
 <p class="caption">(\#fig:unnamed-chunk-121)Boxplot com a variável Idade</p>
 </div>
 
@@ -3261,7 +3261,7 @@ boxplot(Idade~Sabor, data=pesquisa_dados)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-122-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
+<img src="index_files/figure-html/unnamed-chunk-122-1.png" alt="Boxplot com as variáveis Idade e Sabor" width="70%" />
 <p class="caption">(\#fig:unnamed-chunk-122)Boxplot com as variáveis Idade e Sabor</p>
 </div>
 
@@ -3432,7 +3432,7 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-125-1.png" alt="Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
+<img src="index_files/figure-html/unnamed-chunk-125-1.png" alt="Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010" width="70%" />
 <p class="caption">(\#fig:unnamed-chunk-125)Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010</p>
 </div>
 Fonte: Elaborado pelo(s) autor(es) a partir de @Dieese2011. 
@@ -3494,7 +3494,7 @@ legend(0,40,c("temp_inst","temp_max","temp_min"),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-127-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
+<img src="index_files/figure-html/unnamed-chunk-127-1.png" alt="Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS" width="70%" />
 <p class="caption">(\#fig:unnamed-chunk-127)Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS</p>
 </div>
 
@@ -5046,7 +5046,7 @@ plot(tempo,nota)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/diadisp-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
+<img src="index_files/figure-html/diadisp-1.png" alt="Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo" width="70%" />
 <p class="caption">(\#fig:diadisp)Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo</p>
 </div>
 
@@ -5129,7 +5129,7 @@ library("PerformanceAnalytics")
 chart.Correlation(cbind(tempo,nota), histogram=TRUE, pch=19)
 ```
 
-<img src="index_files/figure-epub3/unnamed-chunk-183-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="index_files/figure-html/unnamed-chunk-183-1.png" width="70%" style="display: block; margin: auto;" />
 
 
 ## Regressão Linear Simples
@@ -5443,7 +5443,7 @@ abline(regressaolinear)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/unnamed-chunk-186-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
+<img src="index_files/figure-html/unnamed-chunk-186-1.png" alt="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa" width="70%" />
 <p class="caption">(\#fig:unnamed-chunk-186)Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa</p>
 </div>
 
@@ -5578,7 +5578,7 @@ abline(h=0)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/residuos1-1.png" alt="Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo" width="70%" />
+<img src="index_files/figure-html/residuos1-1.png" alt="Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo" width="70%" />
 <p class="caption">(\#fig:residuos1)Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo</p>
 </div>
 
@@ -5601,7 +5601,7 @@ abline(h=0)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/residuos2-1.png" alt="Gráfico gerado para análise dos resíduos com os valores da variável preditora" width="70%" />
+<img src="index_files/figure-html/residuos2-1.png" alt="Gráfico gerado para análise dos resíduos com os valores da variável preditora" width="70%" />
 <p class="caption">(\#fig:residuos2)Gráfico gerado para análise dos resíduos com os valores da variável preditora</p>
 </div>
 
@@ -5633,7 +5633,7 @@ qqnorm(residuals(regressaolinear))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/qqnorm-1.png" alt="Gráfico de probabilidade normal para verificar normalidade dos resíduos" width="70%" />
+<img src="index_files/figure-html/qqnorm-1.png" alt="Gráfico de probabilidade normal para verificar normalidade dos resíduos" width="70%" />
 <p class="caption">(\#fig:qqnorm)Gráfico de probabilidade normal para verificar normalidade dos resíduos</p>
 </div>
 
@@ -5655,7 +5655,7 @@ lines(density(regressaolinear$residuals))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/histresid-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
+<img src="index_files/figure-html/histresid-1.png" alt="Histograma de distribuição da probabilidade para os resíduos" width="70%" />
 <p class="caption">(\#fig:histresid)Histograma de distribuição da probabilidade para os resíduos</p>
 </div>
 
@@ -5734,7 +5734,7 @@ abline(h=-2,col="red")
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/residpad-1.png" alt="Resíduos padronizados para o exemplo" width="70%" />
+<img src="index_files/figure-html/residpad-1.png" alt="Resíduos padronizados para o exemplo" width="70%" />
 <p class="caption">(\#fig:residpad)Resíduos padronizados para o exemplo</p>
 </div>
 
@@ -5750,7 +5750,7 @@ abline(h=-2,col="red")
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/residst-1.png" alt="Resíduos studentizados para o exemplo" width="70%" />
+<img src="index_files/figure-html/residst-1.png" alt="Resíduos studentizados para o exemplo" width="70%" />
 <p class="caption">(\#fig:residst)Resíduos studentizados para o exemplo</p>
 </div>
 
@@ -5802,7 +5802,7 @@ abline(h=0.73,col="red")
 ```
 
 <div class="figure" style="text-align: center">
-<img src="index_files/figure-epub3/ptoinf-1.png" alt="Pontos influentes para o exemplo" width="70%" />
+<img src="index_files/figure-html/ptoinf-1.png" alt="Pontos influentes para o exemplo" width="70%" />
 <p class="caption">(\#fig:ptoinf)Pontos influentes para o exemplo</p>
 </div>
 

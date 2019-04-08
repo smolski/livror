@@ -7,15 +7,15 @@
     "folds" : "",
     "hash" : "0",
     "id" : "1C00C7DA",
-    "lastKnownWriteTime" : 1554051354,
-    "last_content_update" : 1554051354764,
+    "lastKnownWriteTime" : 1554738715,
+    "last_content_update" : 1554738715641,
     "path" : "D:/Github/livror/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "669,148",
+        "cursorPosition" : "60,321",
         "docOutlineSize" : "232",
         "docOutlineVisible" : "1",
-        "scrollLine" : "657"
+        "scrollLine" : "57"
     },
     "relative_order" : 1,
     "source_on_save" : false,
