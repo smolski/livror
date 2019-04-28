@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1555888824161.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "608423258",
+    "id" : "FA1A28E2",
+    "lastKnownWriteTime" : 1556484059,
+    "last_content_update" : 1556484059089,
+    "path" : "D:/Educ/Software_R/Manuais/Livro_R1/livro2019.Rnw",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "3327,0",
+        "docOutlineVisible" : "1",
+        "scrollLine" : "3322"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "sweave"
+}

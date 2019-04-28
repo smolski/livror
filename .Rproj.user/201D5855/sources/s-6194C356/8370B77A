@@ -7,15 +7,15 @@
     "folds" : "",
     "hash" : "0",
     "id" : "8370B77A",
-    "lastKnownWriteTime" : 1550791635,
-    "last_content_update" : 1550791635054,
+    "lastKnownWriteTime" : 1556483879,
+    "last_content_update" : 1556483879796,
     "path" : "D:/Github/livror/_output.yml",
     "project_path" : "_output.yml",
     "properties" : {
-        "cursorPosition" : "35,28",
-        "scrollLine" : "0"
+        "cursorPosition" : "32,23",
+        "scrollLine" : "12"
     },
-    "relative_order" : 2,
+    "relative_order" : 4,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "yaml"

@@ -24,7 +24,7 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 Sys.setenv(RSTUDIO_PDFLATEX = "latexmk")
-options(width = 80, digits = 4,
+options(width = 80, 
         bookdown.clean_book = TRUE)
 knitr::opts_chunk$set(
   tidy = FALSE, 
@@ -47,7 +47,7 @@ Outra questão importante é que o R possui uma comunidade ativa de desenvolvedo
 
 Outro progresso significativo na utilização do R foi a criação do *software* RStudio, a partir de 2010. Este, por sua vez, se configura em um ambiente integrado com o R e com inúmeras linguagens de marcação de texto (exemplos LaTeX, Markdown, HTML). Possui igualmente versão livre que disponibiliza ao pesquisador a execução, guarda, retomada e manipulação dos códigos de programação diretamente em seu console, bem como a administração de diretórios de trabalhos e projetos.
 
-O material aqui elaborado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no *software* RStudio. O sistema operacional aqui utilizado é o Windows 10, o software R versão 3.5.2, RStudio 1.1.463. A solução dos exercícios de cada capítulo está disponibilizada no site <https://smolski.github.io/softwarelivrer/livro.html>. Importante mencionar que este livro originou-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Número 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).
+O material aqui elaborado é destinado não somente a alunos de graduação, pós-graduação, professores e pesquisadores acadêmicos, mas também para qualquer indivíduo interessado no aprendizado inicial sobre a utilização de técnicas estatísticas com o R. Inclusive, com o objetivo de alcançar um público das mais variadas áreas do conhecimento, esta obra foi elaborada com exemplos gerais, a serem absorvidos em um momento inicial do estudante. Assim, possui a base para continuar estudos posteriores em estatística e no *software* RStudio. O sistema operacional aqui utilizado é o Windows 10, o software R versão 3.5.3, RStudio 1.1.463. A solução dos exercícios de cada capítulo está disponibilizada no site <https://smolski.github.io/softwarelivrer/livro.html>. Importante mencionar que este livro originou-se de projeto de extensão aprovado no Edital de Apoio a Programas de Extensão (Número 522/GR/UFFS/2016) da Universidade Federal da Fronteira Sul (UFFS).
 
 Este livro está organizado da seguinte maneira: no capítulo [1](#intro) [**Primeiros Passos com o R**], busca-se instruir o pesquisador para a instalação dos programas necessários para acessar o ambiente de programação, bem como orientar sobre a usabilidade do programa em suas funções básicas de carregamento de bases de dados, criação de objetos e princípios de manipulação. 
 
@@ -94,7 +94,7 @@ O R é um ambiente voltado para análise de dados com o uso de uma linguagem de 
 
 **R**: <http://www.r-project.org>. Clique em Download (CRAN) - escolha o link de um repositório - clique no link do sistema operacional (Linux, Mac ou Windows) - clique em *install R for de first time - Download* [@rcore]. 
 
-**RStudio**: <http://www.rstudio.com/products/rstudio/download>. Em RStudio Desktop, escolha a versão *free*, seguidas da opção do sistema operacional do usuário [@teamrstudio].
+**RStudio**: <http://www.rstudio.com/products/rstudio/download>. Em RStudio Desktop, escolha a versão *free*, seguido da opção do sistema operacional do usuário [@teamrstudio].
 
 Lembrando que:
 
@@ -113,7 +113,7 @@ Fonte: Elaborado pelo(s) autor(es).
 
 - **Fonte/Editor de Scripts**: se constitui do ambiente onde serão abertos os scripts previamente salvos nos mais diversos formatos ou mesmo sendo o local de visualização das bases de dados.
 - **Console**: local onde será efetuada a digitação das linhas de código que serão interpretadas pelo R.
-- **Ambiente e Histórico**: o ambiente será visualizado os objetos criados ou carregados durante a seção e; a aba History retoma os scripts digitados no console.
+- **Ambiente e Histórico**: neste ambiente serão visualizados os objetos criados ou carregados durante a seção e; a aba History retoma os scripts digitados no console.
 - **Plots/arquivos/Pacotes**: local onde podem ser acessados os arquivos salvos no computador pela aba *files*; a aba *Plots* carrega os gráficos e plotagens; a aba *Packages* contém os pacotes instalados em seu computador, onde são ativados ou instalados novos; em *Help* constam as ajudas e explicações dos pacotes e; *Viewer* visualiza documentos do tipo html.
 
 ## Help
@@ -122,7 +122,7 @@ A ajuda do RStudio é acessada por meio do comando `help()`, através da aba "He
 
 ## Instalação de pacotes
 
-Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, e para isso se faz necessário efetuar a sua instalação. É preciso ir até o painel dos pacotes em *packages*, selecionar a opção instalar e inserir o nome do pacote desejado na janela indicada. Ao selecionar a opção instalar, no console são demonstradas informações do procedimento e do sucesso do mesmo. 
+Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, sendo que para isso se faz necessário efetuar a sua instalação. É preciso ir até o painel dos pacotes em *packages*, selecionar a opção instalar e inserir o nome do pacote desejado na janela indicada. Ao selecionar a opção instalar, no console são demonstradas informações do procedimento e do sucesso do mesmo. 
 
 
 ```{r pacotes1, echo=FALSE, fig.cap='Instalação de pacotes'}
@@ -144,7 +144,7 @@ A mesma função, para instalação de um pacote, pode ser efetuada diretamente 
 
 ## Abrir arquivo de dados
 
-Dispondo de um banco de dados em uma planilha eletrônica (LibreOffice Calc ou Excel), neste caso será utilizado o arquivo  [árvores] (https://github.com/Smolski/livror/raw/master/arvores.xlsx) como exemplo de banco de dados. Os dados derivam de uma pesquisa com espécies de árvores registrando as variáveis diâmetro altura do peito (DAP) e altura. Dados cedidos pela professora Tatiane Chassot<!--Tatiane Chassot-->.
+Dispondo de um banco de dados em uma planilha eletrônica (LibreOffice Calc ou Excel), neste caso será utilizado o arquivo  [árvores] (https://smolski.github.io/softwarelivrer/arvores.xlsx) como exemplo de banco de dados. Os dados derivam de uma pesquisa com espécies de árvores registrando as variáveis diâmetro e altura. Dados cedidos pela professora Tatiane Chassot<!--Tatiane Chassot-->.
 
 Pode-se utilizar a linha de comando para carregar os arquivos de dados, da seguinte forma:
 
@@ -152,7 +152,7 @@ Pode-se utilizar a linha de comando para carregar os arquivos de dados, da segui
 
 `nome.objeto.xls = read_excel("d:/arvores.xls")`
 
-Outras opções de arquivos podem ser carregados no RStudio, como por exemplo arquivos de texto (.txt ou .csv), arquivos derivados do excel (.xls ou .xlsx), arquivos de dados do SPSS (.sav), do *software* SAS (.sas7bdat) e do STATA (.dta). A instalação de alguns pacotes é requerida, dependendo da origem da base de dados, como por exemplo o `readxl` [@readxl2018] , `readr` [@readr2018] e `haven` [@haven2018], como os exemplos abaixo:
+Outras opções de arquivos podem ser carregados no RStudio, como por exemplo arquivos de texto (.txt ou .csv), planilhas eletrônicas (.xls ou .xlsx), arquivos de dados do SPSS (.sav), do *software* SAS (.sas7bdat) e do STATA (.dta). A instalação de alguns pacotes é requerida, dependendo da origem da base de dados, como por exemplo o `readxl` [@readxl2018] , `readr` [@readr2018] e `haven` [@haven2018], como os exemplos abaixo:
 
 `library(readr)`
 
@@ -374,9 +374,11 @@ ls()
 rm(a)
 ```
 
-**Conversão de uma variável**
+## Conversão de uma variável
 
-Para a aplicação de algumas funções é importante que cada variável esteja corretamente classificada, o que em alguns casos não ocorre durante o reconhecimento automático do R. É preciso então reconhecê-la como variável texto, numérica ou fator. Além disso, a classe `ordered` se aplica a variáveis categóricas que podem ser consideradas ordenáveis.
+Para a aplicação de algumas funções é importante que cada variável esteja corretamente classificada, o que em alguns casos não ocorre durante o reconhecimento automático do R. É preciso então reconhecê-la como variável texto, numérica ou fator. Além disso, a classe `ordered` se aplica a variáveis categóricas que podem ser consideradas ordenáveis. 
+
+Abaixo segue um exemplo de conversão da variável "idade"  para numérico (utilizando o comando `as.numeric()`) e da variável "cep" para caractere (comando `as.character()`):
 
 ```{r, echo=TRUE}
 idade=c('11', '12', '31')
@@ -390,7 +392,7 @@ cep
 
 ## Algumas funções e comandos essenciais
 
-A função `head()` mostra as 6 primeiras colunas do arquivo para se ter uma noção do conteúdo. No caso do mesmo ser um data.frame, é possível solicitar o número de valores ou linhas a serem mostrados no console através do parâmetro `n` ou na ausência deste, todas as linhas serão impressas, como exemplo `head(x ,n=2)` para ver as duas primeiras linhas. 
+A função `head()` mostra as 6 primeiras colunas do arquivo para se ter uma noção do conteúdo. No caso do mesmo ser um objeto do tipo `data.frame`, é possível solicitar o número de valores ou linhas a serem mostrados no console através do parâmetro `n` ou na ausência deste, todas as linhas serão impressas, como exemplo `head(x ,n=2)` para ver as duas primeiras linhas. 
 
 O comando `summary()` efetua o resumo dos dados, se for qualitativa mostra a frequência absoluta das categorias e se for quantitativa apresenta as categorias. No exemplo abaixo é utilizada uma base de dados de treinamento denominada "iris" que está acessível no *software* RStudio através do comando que carrega dados específicos `data()`:
 
@@ -415,7 +417,7 @@ names(iris)
 tail(iris)
 ```
 
-Para que o pesquisador conheça melhor as bases de dados em que está atuando, o comando `class()` serve para identificar o tipo de base ou dados da base. Com o exemplo abaixo constata-se que o objeto "iris" é um *data frame*, a variável "Sepal.Length" é uma variável numérica e que a variável numérica.
+Para que o pesquisador conheça melhor as bases de dados em que está atuando, o comando `class()` serve para identificar o tipo de base ou dados da base. Com o exemplo abaixo constata-se que o objeto "iris" é um *data frame*, a variável "Sepal.Length" é uma variável numérica e que "Sepcies" é uma variável categórica (`Factor`).
 
 ```{r,echo = TRUE}
 class(iris)
@@ -431,32 +433,40 @@ ls.str(iris)
 
 Os comandos `ncol()` e `nrow()` mostram o número de colunas e o número de linhas do objeto, respectivamente.
 
+```{r}
+ncol(iris)
+nrow(iris)
+```
+
+
 ### Funções *View* e *dim*
 
-A função `View()` permite vizualizar os elementos no script do dataframe requesitado, enquando a função `dim()` (abreviatura de dimensões) fornece o número de linhas e de colunas, respectivamente.
+A função `View()` permite vizualizar os elementos no script do *data frame* requisitado, enquando a função `dim()` (abreviatura de dimensões) fornece o número de linhas e de colunas, respectivamente.
 
 ```{r,echo = TRUE}
 View(iris)
 dim(iris)
 ```
 
-Para alterar um nome de uma variável pode ser utilizado o comando colnames. No exemplo, é alterado o nome da coluna "Species" para "Especie". 
+Para alterar um nome de uma variável pode ser utilizado o comando `colnames()`. No exemplo, é alterado o nome da coluna "Species" para "Especie". 
 
 ```{r, echo = TRUE}
 #Alterar o nome da coluna, sendo que o '[5]' indica que está na quinta coluna.
 colnames(iris)[5]='Especie'
 ```
 
-Para selecionar uma coluna do objeto "iris", por exemplo a coluna "Sepal.Length", pode-se digitar no console o comando **iris\$Sepal.Length**. O padrão de carregamento da base de dados nos obriga a dizer ao R qual é a base que quer selecionar (iris), inserindo o símbolo `$` e após o nome da coluna a qual deseja as informações. Para criar um novo objeto com esta informação, basta dizer ao R, como já visto acima, por exemplo: **novoobjeto=iris\$novacoluna**.
+Para selecionar uma coluna do objeto "iris", por exemplo a coluna "Sepal.Length", pode-se digitar no console o comando `iris\$Sepal.Length`. O padrão de carregamento da base de dados nos obriga a dizer ao R qual é a base que quer selecionar (iris), inserindo o símbolo `$` e após o nome da coluna a qual deseja as informações. Para criar um novo objeto com esta informação, basta dizer ao R, como já visto acima, por exemplo: `novoobjeto=iris\$novacoluna`.
 
-No entanto, para acessar os dados sem o uso do símbolo `$`, é utilizado o seguinte comando: **attach(iris)**. Assim, é possível efetuar o sumário da coluna "Petal.Width":
+No entanto, para acessar os dados sem o uso do símbolo `$`, é utilizado o seguinte comando: `attach(iris)`. Assim, é possível efetuar o sumário da coluna "Petal.Width":
 
 ```{r, echo = TRUE}
-#Definindo a função attach para o objeto 'dados'.
+#Definindo a função attach para o objeto 'iris'.
 attach(iris)
-#Efetuando o sumário de 'pop.total'.
+
+#Efetuando o sumário de 'iris'.
 summary(Petal.Width)
-#Como a coluna 'distrito' é um fator, o sumário será 
+
+#Como a coluna 'Especie' é um fator, o sumário será 
 #a contagem da quantidade de cada fator na coluna.
 summary(Especie)
 ```
@@ -476,6 +486,7 @@ No caso da coluna "Sepal.Length", se ela possuir um registro NA (faltante), para
 ```{r,echo = TRUE}
 #Função 'tapply' considerando NAs:
 tapply(Sepal.Length, Especie, mean)
+
 #Função 'tapply' sem considerar NAs:
 tapply(Sepal.Length, Especie, mean, na.rm=T)
 ```
@@ -505,10 +516,13 @@ Para exemplo da utilização da função `table` agora com dados qualitativos (g
 ```{r, echo = TRUE}
 # Carregando a base
 source("http://www.openintro.org/stat/data/cdc.R")
+
 #Vizualiza-se as primeiras linhas
 head(cdc)
+
 # Efetua-se a contagem dos dados qualitativos com a função table
 table(cdc$genhlth,cdc$gender)
+
 # Adiciona-se a soma dos valores das linhas e colunas
 addmargins(table(cdc$genhlth,cdc$gender))
 ```
@@ -538,7 +552,7 @@ c(2:6)
 seq(2, 3, by=0.5)
 ```
 
-Criação de um vetor atráves de uma repetição também é útil em várias situações. No primeiro exemplo repete o intervalo de 1 a 3 4 vezes e no segundo exemplo, a cada 3 vezes:
+Criação de um vetor atráves de uma repetição também é útil em várias situações. No primeiro exemplo repete o intervalo de 1 a 3 por 4 vezes e no segundo exemplo, a cada 3 vezes:
 
 ```{r, echo = TRUE}
 rep(1:3, times=4)
@@ -638,8 +652,6 @@ lista = list(matriz=matrix(c(1,2,1,5,7,9), nrow=3, ncol=2),vetor=1:6)
 lista
 ```
 
-**Comandos para manipulação de listas**
-
 Para descobrir de maneira rápida o números de objetos que há na lista, utiliza-se o comando `length(nomedalista)`.
 
 ```{r, echo = TRUE}
@@ -660,8 +672,10 @@ Para chamar várias listas utiliza-se o comando da seguinte forma:
 ```{r, echo = TRUE}
 lista.1 = list(matriz=matrix(c(1,2,1,5,7,9), nrow=3, ncol=2),
               vetor=1:6)
+
 lista.2 = list(nomes=c("Marcelo", "Fábio", "Felipe"), 
               idade=c(25, 34, 26))
+
 c(lista.1,lista.2)
 ```
 
@@ -687,7 +701,7 @@ informacoes$cidades=c("Nova Hartz","Gramado","Soledade",
 informacoes
 ```
 
-É possível fazer uma contagem concatenando com a filtragem do pacote `subset`, como no exemplo a contagem dos indivíduos cuja origem é Soledade.
+É possível fazer uma contagem concatenando (função `length()`) com a filtragem  (função `subset()`), como no exemplo a contagem dos indivíduos cuja origem é Soledade.
 
 ```{r, echo = TRUE}
 length(subset(informacoes$cidades, informacoes$cidades=="Soledade"))
@@ -765,11 +779,12 @@ starwars$Peso[starwars$Peso==0]=NA
 summary(starwars$Peso)
 ```
 
-Ainda, se houver no objeto linhas que tenham pelo menos uma informação faltante ("NA"), estas podem ser excluídas com o comando `na.omit()`. Note que com este procedimento o objeto `starwars` passou a ter a dimensão 54x5 ao invés de 87x5 como apresentado inicialmente com a apressentação de valores faltantes:
+Ainda, se houver no objeto linhas que tenham pelo menos uma informação faltante ("NA"), estas podem ser excluídas com o comando `na.omit()`. Note que com este procedimento o objeto `starwars` passou a ter a dimensão 54x5 ao invés de 87x5 como apresentado inicialmente com a presença de valores faltante:
 
 ```{r}
 starwars=na.omit(starwars)
 summary(starwars)
+dim(starwars)
 ```
 
 
@@ -779,9 +794,7 @@ summary(starwars)
 ## Funções
 -->
 
-A função `edit()` abre uma interface simples de edição de dados em formato planilha, e é útil para pequenas modificações. Mas para salvar as modificações atribua o resultado da função `edit` a um objeto.
-
-Utiliza-se o comando da seguinte forma: 
+A função `edit()` abre uma interface simples de edição de dados em formato planilha, e é útil para pequenas modificações. Mas para salvar as modificações atribua o resultado da função `edit` a um objeto. Utiliza-se o comando da seguinte forma: 
 
 
 `novonomedabase = edit(nomeatualdabase)`
@@ -844,7 +857,7 @@ informacoes
 
 A classificação qualitativa das informações, com base em condições definidas pelo usuário podem ser facilmente efetuadas pelo comando `ifelse`. Para quem não tem intimidade com atributos de programação, este comando seleciona "se" (*if*) uma informação desejada é atendida, e cria uma rotina (*else*) que será aplicada "então". 
 
-No nosso exemplo, cria-se um objeto "classificacao" e se a coluna IMC conter dados acima de 25, será marcado como "peso normal", sendo que do contrário, constará como "excesso de peso". Após, utilizar o comando `cbind()` para unir os dois objetos pelas colunas. Caso não se deseje utilizar o comando `cbind()`, poderia ser criado uma nova coluna com o nome do obetjo sendo "informacoes\$classificacao".
+No nosso exemplo, cria-se uma variável denominada "classificacao" e se a coluna IMC conter dados acima de 25, será marcado como "peso normal", sendo que do contrário, constará como "excesso de peso". Após, utilizar o comando `cbind()` para unir os dois objetos pelas colunas. Caso não se deseje utilizar o comando `cbind()`, poderia ser criado uma nova coluna com o nome do obetjo sendo "informacoes\$classificacao".
 
 ```{r, echo = TRUE}
 # Classificar qualitativamente informações em um determinado intervalo 
@@ -888,7 +901,7 @@ informacoes
 ```
 
 
-A classificação binária dos dados (0,1) também é relevante para o estudo da manipulação dos dados trabalhados pelo pesquisador. Neste exemplo, classificou-se aqueles valores da coluna "classificacao" com o "peso normal" iguais a 1, do contrário classificou-se 0 (zero).
+A classificação binária dos dados (0,1) também é relevante para o estudo da manipulação dos dados trabalhados pelo pesquisador. Neste exemplo, classificaram-se aqueles valores da coluna "classificacao" com o "peso normal" iguais a 1, do contrário classificou-se 0 (zero).
 
 ```{r, echo = TRUE}
 # Classificar informações usando o código binário
@@ -958,7 +971,7 @@ informacoes[order(informacoes$idade, decreasing = FALSE),]
 informacoes[order(informacoes$cidades, decreasing = FALSE),]
 ```
 
-O comando `rank()` cria uma ranqueamento crescente das informações. Se pretende-se, por exemplo, criar uma coluna com o ranking dos valores do IMC, pode ser utilizado:
+O comando `rank()` cria uma ranqueamento crescente das informações. Se é pretendido, por exemplo, criar uma coluna com o ranking dos valores do IMC, pode ser utilizado:
 
 ```{r, echo = TRUE}
 informacoes$rankingImc=rank(informacoes$Imc)
@@ -970,6 +983,81 @@ Para utilizar a função `rank` com os maiores valores em primeiro lugar:
 ```{r, echo = TRUE}
 rank(-informacoes$Imc)
 ```
+
+### Funções Matemáticas
+
+A utilização de funções matemáticas no RStudio contribui para que o pesquisador possa realizar vários experimentos com seus dados. Os cálculos podem ser efetuados diretamente no console do programa ou aplicados aos objetos criados:
+
+```{r, echo = TRUE}
+log(1.5)
+
+exp(1)
+```
+
+No caso do *data frame* o qual foi criado acima ("informacoes"), pode-se buscar as informações dos valores mínimos (função `min()`), máximos (`max()`) da base:
+
+```{r, echo = TRUE}
+max(informacoes$idade)
+
+min(informacoes$idade)
+```
+
+Ainda, se o interesse está em descobrir a posição, no *data frame}, do peso mínimo e máximo da amostra utiliza-se o comando `which.min` e `which.max`.
+
+```{r, echo=TRUE}
+# Para descobrir em qual posição se encontra o peso mínimo:
+which.min(informacoes$peso)
+which.max(informacoes$peso)
+```
+
+Para descobrir qual é o estutande que possui o peso mínimo, por exemplo, ou o Imc máximo, utiliza-se o seguinte comando (notem que os resultados trazem a lista de todos os estudantes comparados):
+
+```{r, echo=TRUE}
+informacoes$estudantes[which.min(informacoes$peso)]
+informacoes$estudantes[which.max(informacoes$Imc)]
+``` 
+
+O arredondamento de valores numéricos pode ser feito utilizando o comando `round()`, o qual o pesquisador informa o número de casas decimais:
+
+```{r, echo=TRUE}
+# Arredondar para n casas decimais
+round(informacoes$Imc, 2)
+```
+
+Já o comando `signif()` determina o número de algarismos significativos da série escolhida, ou seja, ele arredonda para os valores em seu primeiro argumento com os número de dígitos detemrinados: 
+
+```{r, echo=TRUE}
+x2 <- pi * 100^(-1:3)
+round(x2, 3)
+signif(x2, 3) 
+```
+
+A soma do total da coluna idade, o desvio padrão, a variância, a média aritmética e mediana podem ser encontrados, respectivamente, pelos comandos `sum()`, `sd()`, `var()`, `mean()`, `median()`:
+
+```{r, echo=TRUE}
+# Realiza a somatória dos valores
+sum(informacoes$idade)
+
+# Desvio padrão
+sd(informacoes$idade)
+
+# Variancia
+var(informacoes$idade)
+
+# Calcula a média aritmética dos valores
+mean(informacoes$idade)
+
+# Informa o valor mediano do conjunto
+median(informacoes$idade)
+```
+
+O comando `quantile()` oferece a possibilidade de obter os quartis dos dados de acordo com as probabilidades estabelecidas pelo pesquisador. No exemplo, explora-se a variável idade:
+
+```{r, echo=TRUE}
+quantile(informacoes$idade,  probs = c(0.5, 1, 2, 5, 10, 50)/100)
+
+```
+
 <!--
 # Manipulando bases de dados
 
@@ -983,13 +1071,13 @@ manipulação e transformação de grandes bases de dados que o pesquisador ter�
 
 Nesta subseção será utilizado o pacote `tidyr` [@tidyr2018] para demonstrar algumas funções que contribuem para a manipulação das bases de dados, tão importante no processo de preperação das informações para posterior análise. Serão utilizadas para demonstração as bases de dados existentes no próprio pacote.
 
-Abaixo segue uma demonstração das convenções a respeito das bases de dados. Desta forma verifica-se que cada variável é apresentada em sua respectiva coluna, bem como as observações são apresentadas em sua própria linha e portanto os valores constam em sua própria célula.
-
 ```{r dados, echo=FALSE, fig.cap='Convenção sobre variáveis, observações e valores'}
 knitr::include_graphics("tidy-1.png")
 ```
 
 Fonte: <http://garrettgman.github.io/tidying/>.
+
+A Figura \@ref(fig:dados) retoma uma demonstração das convenções a respeito das nomenclaturas das bases de dados. Desta forma verifica-se que cada variável é apresentada em sua respectiva coluna, bem como as observações são apresentadas em sua própria linha e portanto os valores constam em sua própria célula.
 
 #### Função *spread*
 
@@ -1113,7 +1201,7 @@ novo=filter(mtcars, hp>146 & am==1)
 head(novo)
 ```
 
-Utilizando o pacote `stringr` [@stringr2018] com sua função `str_detect()`, é possível efetuar a filtragem pelo nome/identificação total ou parcial de um valor contido dentro de uma variável do banco de dados. Utilizou-se o banco de dados "table5" visto no subcapítulo anterior pra filtrar as informações da variável "country" que contém "Bra":
+Utilizando o pacote `stringr` [@stringr2018] com a função denominada `str_detect()`, é possível efetuar a filtragem pelo nome/identificação total ou parcial de um valor contido dentro de uma variável do banco de dados. Utilizou-se o banco de dados "table5" visto no subcapítulo anterior pra filtrar as informações da variável "country" que contém "Bra":
 
 ```{r}
 library(stringr)
@@ -1166,7 +1254,7 @@ count(mtcars, cyl)
 
 #### Função *arrange*
 
-A função `arrange` ordena a base de dados de acordo com o ordenamento da variável escolhida:
+A função `arrange()` ordena a base de dados de acordo com o ordenamento da variável escolhida:
 
 ```{r}
 novo=arrange(mtcars, cyl)
@@ -1222,79 +1310,7 @@ mtcars %>%
 
 
 
-## Funções Matemáticas
 
-A utilização de funções matemáticasno RStudio contribui para que o pesquisador possa realizar vários experimentos com seus dados. Os cálculos podem ser efetuados diretamente no console do programa ou aplicados aos objetos criados:
-
-```{r, echo = TRUE}
-log(1.5)
-
-exp(1)
-```
-
-No caso do *data frame* o qual foi criado acima ("informacoes"), pode-se buscar as informações dos valores mínimos (função `min()`), máximos (`max()`) da base:
-
-```{r, echo = TRUE}
-max(informacoes$idade)
-
-min(informacoes$idade)
-```
-
-Ainda, se o interesse está em descobrir a posição, no *data frame}, do peso mínimo e máximo da amostra utiliza-se o comando `which.min` e `which.max`.
-
-```{r, echo=TRUE}
-# Para descobrir em qual posição se encontra o peso mínimo:
-which.min(informacoes$peso)
-which.max(informacoes$peso)
-```
-
-Para descobrir qual é o estutande que possui o peso mínimo, por exemplo, ou o Imc máximo, utiliza-se o seguinte comando (notem que os resultados trazem a lista de todos os estudantes comparados):
-
-```{r, echo=TRUE}
-informacoes$estudantes[which.min(informacoes$peso)]
-informacoes$estudantes[which.max(informacoes$Imc)]
-``` 
-
-O arredondamento de valores numéricos pode ser feito utilizando o comando `round()`, o qual o pesquisador informa o número de casas decimais:
-
-```{r, echo=TRUE}
-# Arredondar para n casas decimais
-round(informacoes$Imc, 2)
-```
-
-Já o comando `signif()` determina o número de algarismos significativos da série escolhida, ou seja, ele arredonda para os valores em seu primeiro argumento com os número de dígitos detemrinados: 
-
-```{r, echo=TRUE}
-x2 <- pi * 100^(-1:3)
-round(x2, 3)
-signif(x2, 3) 
-```
-
-A soma do total da coluna idade, o desvio padrão, a variância, a média aritmética e mediana podem ser encontrados, respectivamente, pelos comandos `sum()`, `sd()`, `var()`, `mean()`, `median()`:
-
-```{r, echo=TRUE}
-# Realiza a somatória dos valores
-sum(informacoes$idade)
-
-# Desvio padrão
-sd(informacoes$idade)
-
-# Variancia
-var(informacoes$idade)
-
-# Calcula a média aritmética dos valores
-mean(informacoes$idade)
-
-# Informa o valor mediano do conjunto
-median(informacoes$idade)
-```
-
-O comando `quantile()` oferece a possibilidade de obter os quartis dos dados de acordo com as probabilidades estabelecidas pelo pesquisador. No exemplo, explora-se a variável idade:
-
-```{r, echo=TRUE}
-quantile(informacoes$idade,  probs = c(0.5, 1, 2, 5, 10, 50)/100)
-
-```
 
 ## Conversão e manipulação de datas
 
@@ -1538,7 +1554,7 @@ Pede-se:
   
 ```{r,  echo=TRUE}
 library(readxl)
-url <- "https://github.com/Smolski/livror/raw/master/pesquisa_dados.xlsx"
+url <- "https://smolski.github.io/softwarelivrer/pesquisa_dados.xlsx"
 destfile <- "pesquisa_dados.xlsx"
 curl::curl_download(url, destfile)
 pesquisa_dados <- read_excel(destfile)
@@ -2088,7 +2104,7 @@ Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a
 
 ```{r, include=FALSE}
 library(readxl)
-url <- "https://github.com/Smolski/livror/raw/master/arvores.xlsx"
+url <- "https://smolski.github.io/softwarelivrer/arvores.xlsx"
 destfile <- "arvores.xlsx"
 curl::curl_download(url, destfile)
 arvores <- read_excel(destfile)
@@ -2235,11 +2251,11 @@ Sintaxe no software RStudio:
 
 Em que:
 
-x = número de sucessos 
+x = número de sucessos; 
 
-n = tamanho da amostra
+n = tamanho da amostra;
 
-nível de confiança = 0,90 a 0,99
+nível de confiança = 0,90 a 0,99.
 
 ```{r, echo=TRUE, message=FALSE}
 prop.test(260, 500)
@@ -2313,8 +2329,6 @@ sintaxe: `t.test(amostra, opções)`
 - $\mu$: valor indicando o verdadeiro valor da média populacional.
 
 
-
-
 **Exemplo 3**: (adaptado de <www.leg.ufpr.br/~paulojus/CE002/pratica/praticase8.xml> ) A precipitação pluviométrica mensal numa certa região nos últimos 9 meses foi a seguinte:
 
 
@@ -2335,7 +2349,7 @@ t.test(chuva,alt="two.sided",mu=30)
 ```
 
 
-Conclusão: Aceita-se $H_0$ e conclui-se que a precipitação pluviométrica é igual a 30mm.
+Conclusão: Aceita-se $H_0$ e conclui-se que a precipitação pluviométrica média é igual a 30 mm.
 
 
 
@@ -2343,7 +2357,7 @@ Conclusão: Aceita-se $H_0$ e conclui-se que a precipitação pluviométrica é 
 
 22	20	21	23	22	20	23	22	20	24 21	20	21	24	22	22	23	22	20	24
 
-Teste a hipótese de que o tempo de espera é superior a 20 minutos.
+Teste a hipótese de que o tempo de espera médio é superior a 20 minutos.
 
 **$H_0$**: $\mu$ $=$ 20 minutos
 
@@ -2357,7 +2371,7 @@ t.test(tempo, alt="greater", mu=20)
 ```
 
 
-Conclusão: Rejeita-se $H_0$ com nível de significância de 1\% e conclui-se que o tempo de espera é superior a 20 minutos.
+Conclusão: Rejeita-se $H_0$ com nível de significância de 1\% e conclui-se que o tempo médio de espera é superior a 20 minutos.
 
 
 
@@ -2378,7 +2392,7 @@ t.test(amostras, alt="less", mu=5)
 ```
 
 
-Conclusão: Aceita-se $H_0$ e conclui-se que o conteúdo de oxigênio é igual a 5 ppm.
+Conclusão: Aceita-se $H_0$ e conclui-se que o conteúdo médio de oxigênio é igual a 5 ppm.
 
 ### Teste de hipóteses para uma proporção populacional
 
@@ -2608,9 +2622,8 @@ Construa o intervalo de confiança para a proporção populacional dos alunos sa
 
 **4.**	[@Fonseca2010] As estaturas de 20 recém-nascidos foram tomadas no Departamento de Pediatria da FNRP, cujos resultados em cm são: 41 50 52 49 49 54 50 47 52 49 50 52 50 47 49 51 46 50 49 50. Teste a hipótese de que a média desses recém nascidos é 50 cm.
 
-**5.**	(<https://www.passeidireto.com/arquivo/25297344/aula-19-testes-para-proporcao>) Uma pesquisa conclui que 90\% dos médicos recomendam aspirina a pacientes que têm filhos. Teste a afirmação contra a alternativa de que a percentagem é inferior a 90%, se numa amostra aleatória de 100 médicos, 80 recomendam aspirina.
 
-**6.**	A fim de determinar a eficiência de um medicamento antitérmico, a temperatura corporal (em graus Celsius) de 15 indivíduos foi medida. Em seguida, foi administrado o medicamento e após uma hora a temperatura foi medida novamente. Os resultados podem ser encontrados na tabela abaixo.
+**5.**	A fim de determinar a eficiência de um medicamento antitérmico, a temperatura corporal (em graus Celsius) de 15 indivíduos foi medida. Em seguida, foi administrado o medicamento e após uma hora a temperatura foi medida novamente. Os resultados podem ser encontrados na tabela abaixo.
 
 ```{r, echo=FALSE, fig.subcap='Fonte: Elaborado pelo(s) autor(es).'}
 
@@ -3640,7 +3653,7 @@ knitr::include_graphics("rmarkdown.png")
 
 Fonte: Adaptado de @R-rmarkdown.
 
-Para criação dos documentos é preciso a instalação dos pacotes denominados `rmarkdown` [@R-rmarkdown] e `knitr` [@knitr2018] dentro do RStudio, bem como sugere-se a instalação, no Windows, do programa MiKTeX (<https://miktex.org/download>), que se encarrega de suporte à configurações da linguagem de marcação de textos LaTeX no caso de criação dos arquivos PDF.
+Para criação dos documentos é preciso a instalação dos pacotes denominados `rmarkdown` [@R-rmarkdown] e `knitr` [@knitr2018] dentro do RStudio, bem como sugere-se a instalação, no Windows, do programa MiKTeX (<https://miktex.org/download>), que se encarrega de suporte à configurações da linguagem de marcação de textos LaTeX, no caso de criação dos arquivos PDF.
 
 ## Criando o documento
 

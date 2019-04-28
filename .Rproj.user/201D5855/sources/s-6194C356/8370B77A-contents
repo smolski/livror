@@ -26,7 +26,7 @@ bookdown::gitbook:
     fontsettings:
       theme: white
       family: sans
-      size: 2
+      size: 3
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
