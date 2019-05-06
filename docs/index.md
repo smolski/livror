@@ -3,7 +3,7 @@ title: "Software R: Análise estatística de dados utilizando um programa livre"
 author: 
 - Iara Denise Endruweit Battisti
 - Felipe Micail da Silva Smolski
-date: "2019-04-28"
+date: "2019-05-06"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -5897,7 +5897,7 @@ O comando `plot(nome_para_regressao)` elabora diferentes gráficos para o diagn�
 \end{flushright}
 
 
-**Markdown** é uma linguagem de marcação de textos utilizada para a criação de diversos documentos, incluindo artigos, livros e apresentações. A grande inovação do **RMarkdown** no RStudio neste sentido é a utilização desta linguagem por meio do pacote `rmarkdown` (arquivos .Rmd) para integrar a criação de documentos com a análise e manipulação de dados em um único documento (Figura \@ref(fig:rmark)). Desta forma, é possível efetuar  pesquisas científicas que podem ser reproduzidas de forma muito mais fácil.
+`Markdown` é uma linguagem de marcação de textos utilizada para a criação de diversos documentos, incluindo artigos, livros e apresentações. A grande inovação do `RMarkdown` no RStudio neste sentido é a utilização desta linguagem por meio do pacote `rmarkdown` (arquivos .Rmd) para integrar a criação de documentos com a análise e manipulação de dados em um único documento (Figura \@ref(fig:rmark)). Desta forma, é possível efetuar  pesquisas científicas que podem ser reproduzidas de forma muito mais fácil.
 
 <div class="figure" style="text-align: center">
 <img src="rmarkdown.png" alt="Processo de criação de documentos no RMarkdown" width="70%" />
@@ -5925,7 +5925,7 @@ Fonte: Elaborado pelo(s) autor(es).
 ## Compilando os resultados do arquivo
 
 
-O **RMarkdown** cria um documento incial padrão, contendo alguns exemplos básicos de inserção de textos e de formatação, que serão vistos adiante. Para compilação do documento para o formato desejado (neste caso Word), o usuário deve clicar na aba "Knit $>$ Knit to Word", ou pelo atalho no teclado CTRL+SHIFT+K.
+O `RMarkdown` cria um documento incial padrão, contendo alguns exemplos básicos de inserção de textos e de formatação, que serão vistos adiante. Para compilação do documento para o formato desejado (neste caso Word), o usuário deve clicar na aba "Knit $>$ Knit to Word", ou pelo atalho no teclado CTRL+SHIFT+K.
 
 <div class="figure" style="text-align: center">
 <img src="compilar.png" alt="Compilando o documento RMarkdown" width="70%" />
@@ -5964,7 +5964,7 @@ No exemplo acima (Figura \@ref(fig:rmark2)), a compilação irá gerar um arquiv
 
 ## Elementos básicos de formatação
 
-Dentro do documento **RMarkdown**, depois dos metadados, começa o espaço destinado ao texto do documento. Nesta etapa seguem algumas condições para a formatação do texto, bem como da configuração dos títulos e fórmulas matemáticas. A linguagem *markdown* preza pela simplicidade na formatação do texto, a qual posteriormente pode ser exportada para diversos tipos de documentos de uma só vez. Desta forma, como visto anteriormente, cria documentos totalmente dinâmicos entre si.
+Dentro do documento `RMarkdown`, depois dos metadados, começa o espaço destinado ao texto do documento. Nesta etapa seguem algumas condições para a formatação do texto, bem como da configuração dos títulos e fórmulas matemáticas. A linguagem *markdown* preza pela simplicidade na formatação do texto, a qual posteriormente pode ser exportada para diversos tipos de documentos de uma só vez. Desta forma, como visto anteriormente, cria documentos totalmente dinâmicos entre si.
 
 Os níveis de títulos dos documentos RMarkdown são definidos pelo símbolo `#`:
 
@@ -5983,7 +5983,7 @@ A acentuação das palavras, dentro do texto, é feita normalmente pelo teclado 
 </div>
 Fonte: Elaborado pelo(s) autor(es).
 
-Como visto, é possível escrever as fórmulas em notação matemática, o que facilita e muito a vida do pesquisador. No ambiente matemático do **RMarkdown**, elas são escritas por meio da linguagem de marcação de textos LaTeX. Existem muitos manuais sobre esta linguagem, e para facilitar a escrita, sites como <https://www.codecogs.com/latex/eqneditor.php?lang=pt-br> ajudam o pesquisador nesta empreitada.
+Como visto, é possível escrever as fórmulas em notação matemática, o que facilita e muito a vida do pesquisador. No ambiente matemático do `RMarkdown`, elas são escritas por meio da linguagem de marcação de textos LaTeX. Existem muitos manuais sobre esta linguagem, e para facilitar a escrita, sites como <https://www.codecogs.com/latex/eqneditor.php?lang=pt-br> ajudam o pesquisador nesta empreitada.
 
 É possível efetuar a inserção de links nos documentos, para páginas externas ou mesmo internas ao documento (Figura \@ref(fig:rmarklinks)).
 
@@ -6003,7 +6003,7 @@ A inserção de imagens externas no documento, em diversos formatos (aqui no exe
 
 Fonte: Elaborado pelo(s) autor(es).
 
-A Figura \@ref(fig:rmarklist) demonstra algumas formas de criar listas e itens no decorrer do corpo de texto no **RMarkdown**.
+A Figura \@ref(fig:rmarklist) demonstra algumas formas de criar listas e itens no decorrer do corpo de texto no `RMarkdown`.
 
 <div class="figure" style="text-align: center">
 <img src="rmarklist.png" alt="Listas no RMarkdown" width="70%" />
@@ -6130,7 +6130,7 @@ Seguem algumas importantes opções das Chunks dos arquivos RMarkdown [@R-rmarkd
 - **warning** - Mostra avisos de advertência no documento (padrão = TRUE).
 
 
-Como mencionado no início deste capítulo, a grande vantagem do **RMarkdown** é a sua versatilidade na criação de documentos concatenados com as análises estatísticas no RStudio. Desta forma, dentro das Ckunks, podem ser criadas bases de dados, bem como importados de sites ou mesmo carregados de arquivos trabalhados previamente no RStudio. 
+Como mencionado no início deste capítulo, a grande vantagem do `RMarkdown` é a sua versatilidade na criação de documentos concatenados com as análises estatísticas no RStudio. Desta forma, dentro das Ckunks, podem ser criadas bases de dados, bem como importados de sites ou mesmo carregados de arquivos trabalhados previamente no RStudio. 
 
 No exemplo abaixo, foi criado um *data frame* nomeado "amost" diretamente no console dentro da Chunk. Em um segundo momento, para utilizar um determinado pacote instalado no RStudio, se insere, dentro da Chunk, o comando `require()` juntamente com o pacote necessário. Podem ser inseridos tantos pacotes quanto forem utilizados no documento, conforme a Figura \@ref(fig:rmarkchunk3).
 

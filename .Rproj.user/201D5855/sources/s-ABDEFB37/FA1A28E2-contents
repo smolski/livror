@@ -18,7 +18,7 @@
 %% abntex2-modelo-livro.tex, abntex2-modelo-references.bib,   
 %% abntex2-modelo-livro-pintassilgo.jpg,
 %% abntex2-modelo-livro-saira-amarela.jpg,
-%% abntex2-modelo-livro-bandeirinha.jpg
+%% abntex2-modelo-livro-bandeirinha.jpg 
 %%
 
 \documentclass[
@@ -4210,6 +4210,7 @@ Para análise dos valores influentes, utiliza-se:
 \texttt{dffits(nome\_para\_regressao)}
 
 Para os dados do exemplo:
+
 <<>>=
 dffits(regressaolinear)
 @
@@ -4286,7 +4287,7 @@ O comando \texttt{plot(nome\_para\_regressao)} elabora diferentes gráficos para
 \end{flushright}
 
 
-\textbf{Markdown} é uma linguagem de marcação de textos utilizada para a criação de diversos documentos, incluindo artigos, livros e apresentações. A grande inovação do \textbf{RMarkdown} no RStudio neste sentido é a utilização desta linguagem por meio do pacote \texttt{rmarkdown} (arquivos .Rmd) para integrar a criação de documentos com a análise e manipulação de dados em um único documento (Figura \ref{fig:rmark}). Desta forma, é possível efetuar pesquisas científicas que podem ser reproduzidas de forma muito mais fácil.
+\texttt{Markdown} é uma linguagem de marcação de textos utilizada para a criação de diversos documentos, incluindo artigos, livros e apresentações. A grande inovação do \texttt{RMarkdown} no RStudio neste sentido é a utilização desta linguagem por meio do pacote rmarkdown (arquivos .Rmd) para integrar a criação de documentos com a análise e manipulação de dados em um único documento (Figura \ref{fig:rmark}). Desta forma, é possível efetuar pesquisas científicas que podem ser reproduzidas de forma muito mais fácil.
 
 \begin{figure}[!h]
 \caption{Processo de criação de documentos no RMarkdown}\label{fig:rmark}
@@ -4323,7 +4324,7 @@ Neste exemplo será criado um documento em Word, onde são preenchidos os campos
 \hypertarget{compilando-os-resultados-do-arquivo}{%
 \section{Compilando os resultados do arquivo}\label{compilando-os-resultados-do-arquivo}}
 
-O \textbf{RMarkdown} cria um documento incial padrão, contendo alguns exemplos básicos de inserção de textos e de formatação, que serão vistos adiante. Para compilação do documento para o formato desejado (neste caso Word), o usuário deve clicar na aba ``Knit \(>\) Knit to Word'', ou pelo atalho no teclado CTRL+SHIFT+K.
+O \texttt{RMarkdown} cria um documento incial padrão, contendo alguns exemplos básicos de inserção de textos e de formatação, que serão vistos adiante. Para compilação do documento para o formato desejado (neste caso Word), o usuário deve clicar na aba ``Knit \(>\) Knit to Word'', ou pelo atalho no teclado CTRL+SHIFT+K.
 
 \begin{figure}[!h]
 \caption{Compilando o documento RMarkdown}\label{fig:compil}
@@ -4374,7 +4375,7 @@ No exemplo acima (Figura \ref{fig:rmark2}), a compilação irá gerar um arquivo
 \hypertarget{elementos-basicos-de-formatacao}{%
 \section{Elementos básicos de formatação}\label{elementos-basicos-de-formatacao}}
 
-Dentro do documento \textbf{RMarkdown}, depois dos metadados, começa o espaço destinado ao texto do documento. Nesta etapa seguem algumas condições para a formatação do texto, bem como da configuração dos títulos e fórmulas matemáticas. A linguagem \emph{markdown} preza pela simplicidade na formatação do texto, a qual posteriormente pode ser exportada para diversos tipos de documentos de uma só vez. Desta forma, como visto anteriormente, cria documentos totalmente dinâmicos entre si.
+Dentro do documento \texttt{RMarkdown}, depois dos metadados, começa o espaço destinado ao texto do documento. Nesta etapa seguem algumas condições para a formatação do texto, bem como da configuração dos títulos e fórmulas matemáticas. A linguagem \texttt{markdown} preza pela simplicidade na formatação do texto, a qual posteriormente pode ser exportada para diversos tipos de documentos de uma só vez. Desta forma, como visto anteriormente, cria documentos totalmente dinâmicos entre si.
 
 
 
@@ -4400,7 +4401,7 @@ Os níveis de títulos dos documentos RMarkdown são definidos pelo símbolo \te
 
 \end{figure}
 
-Como visto, é possível escrever as fórmulas em notação matemática, o que facilita e muito a vida do pesquisador. No ambiente matemático do \textbf{RMarkdown}, elas são escritas por meio da linguagem de marcação de textos \LaTeX. Existem muitos manuais sobre esta linguagem, e para facilitar a escrita, sites como \url{https://www.codecogs.com/latex/eqneditor.php?lang=pt-br} ajudam o pesquisador nesta empreitada.
+Como visto, é possível escrever as fórmulas em notação matemática, o que facilita e muito a vida do pesquisador. No ambiente matemático do \texttt{RMarkdown}, elas são escritas por meio da linguagem de marcação de textos \LaTeX. Existem muitos manuais sobre esta linguagem, e para facilitar a escrita, sites como \url{https://www.codecogs.com/latex/eqneditor.php?lang=pt-br} ajudam o pesquisador nesta empreitada.
 
 É possível efetuar a inserção de links nos documentos, para páginas externas ou mesmo internas ao documento (Figura \ref{fig:rmarklinks}).
 
@@ -4428,7 +4429,7 @@ A inserção de imagens externas no documento, em diversos formatos (aqui no exe
 
 
 
-A Figura \ref{fig:rmarklist} demonstra algumas formas de criar listas e itens no decorrer do corpo de texto no \textbf{RMarkdown}.
+A Figura \ref{fig:rmarklist} demonstra algumas formas de criar listas e itens no decorrer do corpo de texto no \texttt{RMarkdown}.
 
 \begin{figure}[!h]
 \caption{Listas no RMarkdown}\label{fig:rmarklist}
@@ -4499,7 +4500,7 @@ Os campos \texttt{fig\_height} e \texttt{fig\_width} determinam a altura e largu
 \item
   \textbf{keep\_md} - Salva uma cópia em arquivo .md juntamente com os outros arquivos.
 \item
-  \textbf{md\_extensions} - Extensões Markdown a serem incluídas como definições padrão no RMarkdown.
+  \textbf{md\_extensions} - Extensões \texttt{Markdown} a serem incluídas como definições padrão no \texttt{RMarkdown}.
 \item
   \textbf{pandoc\_args} - Argumentos adicionais para utilizar com o pandoc.
 \item
@@ -4573,7 +4574,7 @@ Para padronizar todas as Chunks para que tenham as mesmas opções, uma maneira 
 
 
 
-Seguem algumas importantes opções das Chunks dos arquivos RMarkdown (ALLAIRE \emph{et al.}, \protect\hyperlink{ref-R-rmarkdown}{2017}):
+Seguem algumas importantes opções das Chunks dos arquivos \texttt{RMarkdown} (ALLAIRE \emph{et al.}, \protect\hyperlink{ref-R-rmarkdown}{2017}):
 
 \begin{itemize}
 \tightlist
@@ -4595,7 +4596,7 @@ Seguem algumas importantes opções das Chunks dos arquivos RMarkdown (ALLAIRE \
   \textbf{warning} - Mostra avisos de advertência no documento (padrão = TRUE).
 \end{itemize}
 
-Como mencionado no início deste capítulo, a grande vantagem do \textbf{RMarkdown} é a sua versatilidade na criação de documentos concatenados com as análises estatísticas no RStudio. Desta forma, dentro das Ckunks, podem ser criadas bases de dados, bem como importados de sites ou mesmo carregados de arquivos trabalhados previamente no RStudio.
+Como mencionado no início deste capítulo, a grande vantagem do \texttt{RMarkdown} é a sua versatilidade na criação de documentos concatenados com as análises estatísticas no RStudio. Desta forma, dentro das Ckunks, podem ser criadas bases de dados, bem como importados de sites ou mesmo carregados de arquivos trabalhados previamente no RStudio.
 
 No exemplo abaixo, foi criado um \emph{data frame} nomeado ``amost'' diretamente no console dentro da Chunk. Em um segundo momento, para utilizar um determinado pacote instalado no RStudio, se insere, dentro da Chunk, o comando \texttt{require()} juntamente com o pacote necessário. Podem ser inseridos tantos pacotes quanto forem utilizados no documento, conforme a Figura \ref{fig:rmarkchunk3}.
 
@@ -4639,7 +4640,7 @@ Além disso, o pacote \texttt{stargazer} é extremamente útil para geração de
 
 
 
-Existem diversos pacotes dentro do RStudio com a função de gerarem tabelas a partir dos dados analisados (neste caso sendo gerados dentro de chunks). Por sua vez, abaixo segue um resumo testado por este autor, em que os pacotes criam corretamente as tabelas no RMarkdown para cada saída de arquivo (HMTL, PDF, Word). Por exemplo, o pacote \texttt{knitr} (com a função \texttt{kable}) consegue gerar as tabelas para as três saídas de arquivos; já o pacote \texttt{xtable} não está configurado para criar a referida tabela com a saída do documento em Word.
+Existem diversos pacotes dentro do RStudio com a função de gerarem tabelas a partir dos dados analisados (neste caso sendo gerados dentro de chunks). Por sua vez, abaixo segue um resumo testado por este autor, em que os pacotes criam corretamente as tabelas no \texttt{RMarkdown} para cada saída de arquivo (HMTL, PDF, Word). Por exemplo, o pacote \texttt{knitr} (com a função \texttt{kable}) consegue gerar as tabelas para as três saídas de arquivos; já o pacote \texttt{xtable} não está configurado para criar a referida tabela com a saída do documento em Word.
 
 \begin{longtable}[]{@{}lccc@{}}
 \caption{\label{tab:tabelasrmk}Pacotes para elaboração de tabelas no RMarkdown}\tabularnewline
@@ -4682,7 +4683,7 @@ Da mesma forma que as tabelas, as imagens também podem ser inseridas com o aux�
 \hypertarget{criacao-de-modelos-para-formatacao-vinculada}{%
 \section{Criação de modelos para formatação vinculada}\label{criacao-de-modelos-para-formatacao-vinculada}}
 
-Para os pesquisadores que trabalham intensamente com o Word ou Libre/Open Office, a formatação dos resultados decorrentes das análises compiladas no RMarkdown podem ser incrementadas. Isto porque existe um recurso de criação de modelos vinculados aos editores de texto, estes que serão responsáveis pela definição da formatação de todos os itens (títulos, subtítulos, parágrafos, fontes, etc.), como será visto a seguir.
+Para os pesquisadores que trabalham intensamente com o Word ou Libre/Open Office, a formatação dos resultados decorrentes das análises compiladas no \texttt{RMarkdown} podem ser incrementadas. Isto porque existe um recurso de criação de modelos vinculados aos editores de texto, estes que serão responsáveis pela definição da formatação de todos os itens (títulos, subtítulos, parágrafos, fontes, etc.), como será visto a seguir.
 
 \hypertarget{primeiro-passo-criacao-de-um-documento-modelo}{%
 \subsection{Primeiro passo: criação de um documento modelo}\label{primeiro-passo-criacao-de-um-documento-modelo}}
@@ -4741,7 +4742,7 @@ A partir de então, as compilações do arquivo .Rmd criado pelo pesquisador seg
 \hypertarget{citacoes-e-bibliografias}{%
 \section{Citações e bibliografias}\label{citacoes-e-bibliografias}}
 
-Na escrita de trabalhos acadêmicos com o RMarkdown é possível efetuar um gerenciamento de citações e bibliografias de maneira extremamente satisfatória e automática. Para isto, o \emph{software} MiKTeX contribuirá nesta empreitada.\% juntamente com o programa Pandoc.
+Na escrita de trabalhos acadêmicos com o \texttt{RMarkdown} é possível efetuar um gerenciamento de citações e bibliografias de maneira extremamente satisfatória e automática. Para isto, o \emph{software} MiKTeX contribuirá nesta empreitada.\% juntamente com o programa Pandoc.
 
 O exemplo abaixo será utilizado com o formato BibLaTeX (extensão .bib). Primeiramente crie um documento .bib, que será o local onde o pesquisador armazenará as bibliografias, que serão posteriormente utilizadas. Crie um novo arquivo de texto (``File \(>\) New File \(>\) Text file'') e depois salve-o na mesma pasta do arquivo .Rmd em que serão inseridas as citações (salve com a extensão ``.bib'' - exemplo: ``bibliografia.bib'').
 
@@ -4821,7 +4822,7 @@ também são encontrados arquivos para várias normas bibliográficas.
 
 
 
-Por fim, após inserir a citação no texto e informar ao RMarkdown os arquivos ``.bib'' e ``.csl'' no YAML, basta compilar o arquivo no formato desejado (atalho no teclado CTRL+SHIFT+K), neste caso Word. Lembre-se de inserir um título \texttt{\#\ Referências} ou \texttt{\#\ Referências\ Bibliográficas} ou \texttt{\#\ Bibliografia} (como preferir), no final do texto, pois serão inseridas as referências no final do trabalho.
+Por fim, após inserir a citação no texto e informar ao \texttt{RMarkdown} os arquivos ``.bib'' e ``.csl'' no YAML, basta compilar o arquivo no formato desejado (atalho no teclado CTRL+SHIFT+K), neste caso Word. Lembre-se de inserir um título \texttt{\#\ Referências} ou \texttt{\#\ Referências\ Bibliográficas} ou \texttt{\#\ Bibliografia} (como preferir), no final do texto, pois serão inseridas as referências no final do trabalho.
 
 A partir de então fica muito mais fácil alterar a norma necessária para a produção do trabalho acadêmico, utilizando os mesmos dados de um artigo ou outro material a ser citado. Isto agiliza a produção acadêmica e proporciona, como visto neste livro, uma interação muito proveitosa com a geração das análises por meio do RStudio.
 
@@ -4842,7 +4843,7 @@ Segue o resultado do arquivo final:
 \hypertarget{exercicios-5}{%
 \section{Exercícios}\label{exercicios-5}}
 
-\textbf{1.} Ao final deste livro, você aprendeu a linguagem de programação em R no console RStudio, passando posteriormente para a aprendizagem dos comandos para efetuar estatísticas descritivas, análises com estatística inferencial, teste de qui-quadrado e chegando ao modelo de regressão simples. Desta forma, escolha algum dos exercícios que constam nos capítulos anteriores e com seu código de programação crie um arquivo em RMarkdown (.rmd, como aprendido no presente capítulo) com todos os passos efetuados na análise e seus resultados. Crie um documento dinâmico testando os formatos de saída HTML, Word e PDF.
+\textbf{1.} Ao final deste livro, você aprendeu a linguagem de programação em R no console RStudio, passando posteriormente para a aprendizagem dos comandos para efetuar estatísticas descritivas, análises com estatística inferencial, teste de qui-quadrado e chegando ao modelo de regressão simples. Desta forma, escolha algum dos exercícios que constam nos capítulos anteriores e com seu código de programação crie um arquivo em \texttt{RMarkdown} (.rmd, como aprendido no presente capítulo) com todos os passos efetuados na análise e seus resultados. Crie um documento dinâmico testando os formatos de saída HTML, Word e PDF.
 
 \chapter*[Sobre os autores]{Sobre os autores}\label{sobre-os-autores}}
 \addcontentsline{toc}{chapter}{Sobre os autores}

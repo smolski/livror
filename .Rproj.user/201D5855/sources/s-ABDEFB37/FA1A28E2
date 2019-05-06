@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "608423258",
+    "hash" : "3963981214",
     "id" : "FA1A28E2",
-    "lastKnownWriteTime" : 1556484059,
-    "last_content_update" : 1556484059089,
+    "lastKnownWriteTime" : 1557170937,
+    "last_content_update" : 1557170937497,
     "path" : "D:/Educ/Software_R/Manuais/Livro_R1/livro2019.Rnw",
     "project_path" : null,
     "properties" : {
-        "cursorPosition" : "3327,0",
-        "docOutlineVisible" : "1",
-        "scrollLine" : "3322"
+        "cursorPosition" : "20,40",
+        "docOutlineVisible" : "0",
+        "scrollLine" : "0"
     },
     "relative_order" : 2,
     "source_on_save" : false,
