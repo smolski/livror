@@ -1,2 +1,0 @@
-"0","dadossetosa2=subset(iris, Especie=='setosa'& Sepal.Length>5)"
-"0","head(dadossetosa2)"

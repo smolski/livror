@@ -3,7 +3,7 @@ title: 'Software R: Análise estatística de dados utilizando um programa livre'
 author:
 - Iara Denise Endruweit Battisti
 - Felipe Micail da Silva Smolski
-date: "`r Sys.Date()`"
+date: "2019-08-20"
 output:
   pdf_document: default
   html_document:
@@ -24,22 +24,7 @@ always_allow_html: yes
 url: http\://rstub.github.io/bookdown-chapterbib/
 ---
 
-```{r, echo = FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-Sys.setenv(RSTUDIO_PDFLATEX = "latexmk")
-options(width = 80, 
-        bookdown.clean_book = TRUE)
-knitr::opts_chunk$set(
-  tidy = FALSE, 
-  fig.align = "center", 
-  out.width = '70%',
-  comment = NA,
-  fig.pos = 'H'
-  )
-```
+
 
 
 <!--
@@ -157,9 +142,14 @@ Lembrando que:
 
 O RStudio é a interface que faz com que seja mais fácil a utilização da programação em R. 
 
-```{r paineis1, echo=FALSE, fig.cap='Painéis do Rstudio'}
-knitr::include_graphics("paineis.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{paineis} 
+
+}
+
+\caption{Painéis do Rstudio}\label{fig:paineis1}
+\end{figure}
 Fonte: Elaborado pelo(s) autor(es).
 
 - **Fonte/Editor de Scripts**: se constitui do ambiente onde serão abertos os scripts previamente salvos nos mais diversos formatos ou mesmo sendo o local de visualização das bases de dados.
@@ -176,15 +166,25 @@ A ajuda do RStudio é acessada por meio do comando `help()`, através da aba "He
 Em alguns situações, o uso de pacotes pode dar ao trabalho mais praticidade, sendo que para isso se faz necessário efetuar a sua instalação. É preciso ir até o painel dos pacotes em *packages*, selecionar a opção instalar e inserir o nome do pacote desejado na janela indicada. Ao selecionar a opção instalar, no console são demonstradas informações do procedimento e do sucesso do mesmo. 
 
 
-```{r pacotes1, echo=FALSE, fig.cap='Instalação de pacotes'}
-knitr::include_graphics("pacotes1.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{pacotes1} 
+
+}
+
+\caption{Instalação de pacotes}\label{fig:pacotes1}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
-```{r pacotes2, echo=FALSE, fig.cap='Caixa de informação de pacote a ser instalado'}
-knitr::include_graphics("pacotes2.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{pacotes2} 
+
+}
+
+\caption{Caixa de informação de pacote a ser instalado}\label{fig:pacotes2}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es)
 
@@ -227,26 +227,41 @@ A função `load()` (exemplo: `load("base.RData")`) pode ser utilizada para carr
 
 Outra opção é o carregamento das bases de dados manualmente pelo caminho *Envoirment $>$ Import Dataset*, escolhendo o tipo de arquivo:
 
-```{r r3, echo=FALSE, fig.cap="Aba Import Dataset"}
-knitr::include_graphics("r3.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{r3} 
+
+}
+
+\caption{Aba Import Dataset}\label{fig:r3}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 Na caixa correspondente a File/Url se insere o endereço virtual ou o local onde se encontra o arquivo. Ao importar os dados, carrega-se um objeto criado com as informações contidas no arquivo. Neste exemplo, é carregada a planilha `arvores` (arquivo .xls) como mostra a Figura \@ref(fig:r4), derivado do caminho "Import Dataset $>$ From Excel" do Environment.
 
-```{r r4, echo=FALSE, fig.cap='Caixa de informações do Import Data'}
-knitr::include_graphics("r4.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{r4} 
+
+}
+
+\caption{Caixa de informações do Import Data}\label{fig:r4}
+\end{figure}
 Fonte: Elaborado pelo(s) autor(es).
 
 O campo *Code Preview* mostra o comando que está sendo criado para a importação destes dados. Em *Import Options*, delimita-se opções do objeto como o nome (*name*), o número máximo de linhas (*Max Rows*), quantas linhas serão puladas na importação do arquivo (*Skip*), o tratamento das células em branco (*NA*) e se a primeira linha contém os nomes (*Firts Row as Names*).
 
 Com relação à importação de arquivos de texto separado por caracteres (.csv), ela se dá via "Import Dataset $>$ From Text (readr)" do Environment. Constam algumas solicitações diferentes a serem determinadas pelo usuário no campo *Import Options*, conforme mostra a Figura \@ref(fig:r4csv). Uma questão importante é a opção *Delimiter*, a qual o pesquisador tem que prestar atenção quando o arquivo está separado por vírgulas (*Comma*), ponto e vírgula (*Semicolon*) ou outro tipo de caractere. A opção *Locale $>$ Configure...* oportuniza determinar os tipos de marca decimal e codificação de textos, por exemplo.
 
-```{r r4csv, echo=FALSE, fig.cap='Opções da importação de arquivos .csv'}
-knitr::include_graphics("r4csv.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{r4csv} 
+
+}
+
+\caption{Opções da importação de arquivos .csv}\label{fig:r4csv}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es)
 
@@ -271,9 +286,14 @@ Ainda, é possível importar objetos utilizando arquivos hospedados em links da 
 
 O banco de dados que o R armazena na memória pode ser salvo, junto com todo o ambiente, usando o ícone de disquete na aba "Environment" (salva como arquivo .RData), e depois carregado pelo ícone de pasta (Abrir dados...) na mesma aba. Desta forma, salvará todos os objetos criados no ambiente de trabalho.
 
-```{r r6, echo=FALSE, fig.cap='Atalho para abrir e salvar arquivo de dados'}
-knitr::include_graphics("r6.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{r6} 
+
+}
+
+\caption{Atalho para abrir e salvar arquivo de dados}\label{fig:r6}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es)
 
@@ -308,14 +328,26 @@ onde o usuário escolhe a pasta desejada que ficará como padrão. O comando `di
 
 Para estimular a aprendizagem da linguagem de programação R e o uso do software RStudio, bem como para acompanhar muitos manuais e livros, existem bases de dados pré-estabelecidas que podem ser utilizadas para treino e manipulação pelos usuários. Algumas delas são nativas do RStudio, como por exemplo a famosa base `iris`. Para retomar tal base de dados nativa, basta "chamar" seu nome no console do programa:
 
-```{r}
+
+```r
 head(iris)
+```
+
+```
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
 ```
 
 
 O comando `data()` lista todas as bases nativas do RStudio:
 
-```{r}
+
+```r
 data()
 ```
 
@@ -325,9 +357,20 @@ Outras bases de dados, no entanto, vêm acompanhadas dos pacotes que são instal
 
 É possível carregar uma base de dados de determinado pacote instalado, como exemplo utilizado a partir do pacote `Amelia` [@Amelia2011]:
 
-```{r}
+
+```r
 data(africa, package="Amelia")
 head(africa)
+```
+
+```
+  year      country gdp_pc  infl trade    civlib population
+1 1972 Burkina Faso    377 -2.92 29.69 0.5000000    5848380
+2 1973 Burkina Faso    376  7.60 31.31 0.5000000    5958700
+3 1974 Burkina Faso    393  8.72 35.22 0.3333333    6075700
+4 1975 Burkina Faso    416 18.76 40.11 0.3333333    6202000
+5 1976 Burkina Faso    435 -8.40 37.76 0.5000000    6341030
+6 1977 Burkina Faso    448 29.99 41.11 0.6666667    6486870
 ```
 
 
@@ -338,25 +381,85 @@ head(africa)
 
 A realização de uma operação aritmética no R acontece da seguinte forma: onde a resolução das operações segue o padrão, ou seja, primeiro exponenciações, seguido de multiplicações e divisões, deixando por último adições e subtrações, de acordo com a ordem que estão dispostas. Utiliza-se o parênteses para destacar a operação que deve ser prioritária na resolução. Seguem alguns exemplos efetuados diretamente no console do RStudio:
 
-```{r, echo=TRUE}
+
+```r
 # soma
 19+26
+```
+
+```
+[1] 45
+```
+
+```r
 # subtração
 19-26
+```
+
+```
+[1] -7
+```
+
+```r
 # divisão
 4/2
+```
+
+```
+[1] 2
+```
+
+```r
 # multiplicação 
 4*2
+```
+
+```
+[1] 8
+```
+
+```r
 # exponenciação
 4^2
+```
+
+```
+[1] 16
+```
+
+```r
 # prioridade de resolução
 19 + 26 /4 -2 *10
+```
+
+```
+[1] 5.5
+```
+
+```r
 ((19 + 26) /(4 -2))*10
+```
+
+```
+[1] 225
+```
+
+```r
 # raiz quadrada
 sqrt(16)
+```
+
+```
+[1] 4
+```
+
+```r
 # Logaritmo 
 log(1)
+```
 
+```
+[1] 0
 ```
 
 ### Operações Lógicas
@@ -374,53 +477,126 @@ O ambiente de programação Rstudio trabalha com algumas operações lógicas, q
 
 Seguem alguns exemplos da aplicação das operações lógicas:
 
-```{r, echo=TRUE}
+
+```r
 # maior que 
 2 > 1
-1 > 2
+```
 
+```
+[1] TRUE
+```
+
+```r
+1 > 2
+```
+
+```
+[1] FALSE
+```
+
+```r
 # menor que 
 1 < 2
+```
 
+```
+[1] TRUE
+```
+
+```r
 # maior ou igual a 
 0 >= (2+(-2))
+```
 
+```
+[1] TRUE
+```
+
+```r
 # menor ou igual a 
 1 <= 3
+```
 
+```
+[1] TRUE
+```
+
+```r
 # conjunção
 9 > 11 & 0 < 1
+```
 
+```
+[1] FALSE
+```
+
+```r
 # ou
 6 < 5 | 0 > -1
+```
 
+```
+[1] TRUE
+```
+
+```r
 # igual a
 1 == 2/2
+```
 
+```
+[1] TRUE
+```
+
+```r
 # diferente de
 1 != 2
+```
+
+```
+[1] TRUE
 ```
 
 ## Criação de objetos
 
 A linguagem de programação R se configura em uma linguagem orientada a objetos, ou seja, a todo tempo estão sendo criados diversos tipos de objetos e sendo efetuadas operações com os mesmos. Por exemplo, a criação de listas, bases de dados, união de bases de dados, data.frames e até mesmo mapas!
 
-```{r, echo=TRUE}
+
+```r
 #Criando um objeto simples
 objeto = "meu primeiro objeto" #enter
 #Agora para retomar o objeto criado:
 objeto #enter
+```
 
+```
+[1] "meu primeiro objeto"
+```
+
+```r
 #Pode ser efetuada uma operação:
 a= 2+1
 a
 ```
 
+```
+[1] 3
+```
+
 O comando `ls()` lista todos os objetos que estão criados no ambiente e `rm(x)` remove o objeto indicado (x). Para remover todos os objetos de uma só vez utiliza-se `rm(list=ls())`.
 
-```{r, echo=TRUE}
+
+```r
 #Lista objetos do ambiente
 ls()
+```
+
+```
+[1] "a"      "africa" "objeto"
+```
+
+```r
 #Remover um banco de dados
 rm(a)
 ```
@@ -431,14 +607,26 @@ Para a aplicação de algumas funções é importante que cada variável esteja 
 
 Abaixo segue um exemplo de conversão da variável "idade"  para numérico (utilizando o comando `as.numeric()`) e da variável "cep" para caractere (comando `as.character()`):
 
-```{r, echo=TRUE}
+
+```r
 idade=c('11', '12', '31')
 nomes=c("Elisa", "Priscila", "Carol")
 cep=c(98700000,98701000,98702000)
 idade= as.numeric(idade)
 idade
+```
+
+```
+[1] 11 12 31
+```
+
+```r
 cep = as.character(cep)
 cep
+```
+
+```
+[1] "98700000" "98701000" "98702000"
 ```
 
 ## Algumas funções e comandos essenciais
@@ -447,46 +635,133 @@ A função `head()` mostra as 6 primeiras colunas do arquivo para se ter uma no�
 
 O comando `summary()` efetua o resumo dos dados, se for qualitativa mostra a frequência absoluta das categorias e se for quantitativa apresenta as categorias. No exemplo abaixo é utilizada uma base de dados de treinamento denominada "iris" que está acessível no *software* RStudio através do comando que carrega dados específicos `data()`:
 
-```{r, echo=TRUE}
+
+```r
 #Carregando dados da base do RSdudio iris.
 data(iris)
 
 #Visualizando as primeiras 6 colunas
 head(iris)
+```
 
+```
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+```
+
+```r
 #Resumo do objeto
 summary(iris)
 ```
 
+```
+  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+ Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+ 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+ Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+ Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+ 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+ Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+       Species  
+ setosa    :50  
+ versicolor:50  
+ virginica :50  
+                
+                
+                
+```
+
 O comando `names()` lista os nomes das colunas dos bancos de dados escolhidos, enquanto `tail()` mostra as últimas seis linhas.
 
-```{r, echo=TRUE}
+
+```r
 #Para visualizar os nomes das colunas dos dados:
 names(iris)
+```
 
+```
+[1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"     
+```
+
+```r
 #vizualizar as ultimas seis linhas do objetos
 tail(iris)
 ```
 
+```
+    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+145          6.7         3.3          5.7         2.5 virginica
+146          6.7         3.0          5.2         2.3 virginica
+147          6.3         2.5          5.0         1.9 virginica
+148          6.5         3.0          5.2         2.0 virginica
+149          6.2         3.4          5.4         2.3 virginica
+150          5.9         3.0          5.1         1.8 virginica
+```
+
 Para que o pesquisador conheça melhor as bases de dados em que está atuando, o comando `class()` serve para identificar o tipo de base ou dados da base. Com o exemplo abaixo constata-se que o objeto "iris" é um *data frame*, a variável "Sepal.Length" é uma variável numérica e que "Sepcies" é uma variável categórica (`Factor`).
 
-```{r,echo = TRUE}
+
+```r
 class(iris)
+```
+
+```
+[1] "data.frame"
+```
+
+```r
 class(iris$Sepal.Length)
+```
+
+```
+[1] "numeric"
+```
+
+```r
 class(iris$Species)
+```
+
+```
+[1] "factor"
 ```
 
 Efeito semelhante possui o comando `ls.str()`:
 
-```{r,echo = TRUE}
+
+```r
 ls.str(iris)
+```
+
+```
+Petal.Length :  num [1:150] 1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+Petal.Width :  num [1:150] 0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+Sepal.Length :  num [1:150] 5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+Sepal.Width :  num [1:150] 3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+Species :  Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
 ```
 
 Os comandos `ncol()` e `nrow()` mostram o número de colunas e o número de linhas do objeto, respectivamente.
 
-```{r}
+
+```r
 ncol(iris)
+```
+
+```
+[1] 5
+```
+
+```r
 nrow(iris)
+```
+
+```
+[1] 150
 ```
 
 
@@ -494,14 +769,20 @@ nrow(iris)
 
 A função `View()` permite vizualizar os elementos no script do *data frame* requisitado, enquando a função `dim()` (abreviatura de dimensões) fornece o número de linhas e de colunas, respectivamente.
 
-```{r,echo = TRUE}
+
+```r
 View(iris)
 dim(iris)
 ```
 
+```
+[1] 150   5
+```
+
 Para alterar um nome de uma variável pode ser utilizado o comando `colnames()`. No exemplo, é alterado o nome da coluna "Species" para "Especie". 
 
-```{r, echo = TRUE}
+
+```r
 #Alterar o nome da coluna, sendo que o '[5]' indica que está na quinta coluna.
 colnames(iris)[5]='Especie'
 ```
@@ -510,16 +791,29 @@ Para selecionar uma coluna do objeto "iris", por exemplo a coluna "Sepal.Length"
 
 No entanto, para acessar os dados sem o uso do símbolo `$`, é utilizado o seguinte comando: `attach(iris)`. Assim, é possível efetuar o sumário da coluna "Petal.Width":
 
-```{r, echo = TRUE}
+
+```r
 #Definindo a função attach para o objeto 'iris'.
 attach(iris)
 
 #Efetuando o sumário de 'iris'.
 summary(Petal.Width)
+```
 
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.100   0.300   1.300   1.199   1.800   2.500 
+```
+
+```r
 #Como a coluna 'Especie' é um fator, o sumário será 
 #a contagem da quantidade de cada fator na coluna.
 summary(Especie)
+```
+
+```
+    setosa versicolor  virginica 
+        50         50         50 
 ```
 
 
@@ -527,35 +821,76 @@ summary(Especie)
 
 O comando `tapply()` agrega os dados pelos níveis das variáveis qualitativas. Note que a coluna "Especie" possui dados em forma de fatores. Assim, para filtrar a informação (coluna "Sepal.Length") média por `Especie`, é possível utilizar:
 
-```{r,  echo = TRUE}
+
+```r
 #Função 'tapply', número médio da população total por distrito.
 tapply(Sepal.Length, Especie, mean)
 ```
 
+```
+    setosa versicolor  virginica 
+     5.006      5.936      6.588 
+```
+
 No caso da coluna "Sepal.Length", se ela possuir um registro NA (faltante), para que se efetue a média por este coluna neste quesito, há que se adicionar o parâmetro `na.rm=T`, que ignora as células faltantes para calcular-se a média:
 
-```{r,echo = TRUE}
+
+```r
 #Função 'tapply' considerando NAs:
 tapply(Sepal.Length, Especie, mean)
+```
 
+```
+    setosa versicolor  virginica 
+     5.006      5.936      6.588 
+```
+
+```r
 #Função 'tapply' sem considerar NAs:
 tapply(Sepal.Length, Especie, mean, na.rm=T)
+```
+
+```
+    setosa versicolor  virginica 
+     5.006      5.936      6.588 
 ```
 
 ### Função *subset*
 
 Utiliza-se o comando `subset()` para formar um subconjunto de dados o qual deseja-se selecionar de um objeto. Por exemplo, se a intensão é criar um novo objeto com somente os dados filtrados da "Especie" denominada "setosa":
 
-```{r, echo = TRUE}
+
+```r
 dadossetosa=subset(iris, Especie=='setosa')
 head(dadossetosa)
 ```
 
+```
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Especie
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+```
+
 Pode ser configurado mais de uma condição para a filtragem dos dados, por exemplo, além de serem filtrados os dados referentes a Especie setosa, aquelas na qual o Sepal.Length é superior a 5. Como no exemplo, é criado um novo objeto com estas condições:
 
-```{r, echo = TRUE}
+
+```r
 dadossetosa2=subset(iris, Especie=='setosa'& Sepal.Length>5)
 head(dadossetosa2)
+```
+
+```
+   Sepal.Length Sepal.Width Petal.Length Petal.Width Especie
+1           5.1         3.5          1.4         0.2  setosa
+6           5.4         3.9          1.7         0.4  setosa
+11          5.4         3.7          1.5         0.2  setosa
+15          5.8         4.0          1.2         0.2  setosa
+16          5.7         4.4          1.5         0.4  setosa
+17          5.4         3.9          1.3         0.4  setosa
 ```
 
 ### Função *table*
@@ -564,18 +899,54 @@ Para contar elementos em cada nível de um fator, usa-se a função `table()`. A
 
 Para exemplo da utilização da função `table` agora com dados qualitativos (gênero e saúde), é utilizada a base de dados `cdc`:
 
-```{r, echo = TRUE}
+
+```r
 # Carregando a base
 source("http://www.openintro.org/stat/data/cdc.R")
 
 #Vizualiza-se as primeiras linhas
 head(cdc)
+```
 
+```
+    genhlth exerany hlthplan smoke100 height weight wtdesire age gender
+1      good       0        1        0     70    175      175  77      m
+2      good       0        1        1     64    125      115  33      f
+3      good       1        1        1     60    105      105  49      f
+4      good       1        1        0     66    132      124  42      f
+5 very good       0        1        0     61    150      130  55      f
+6 very good       1        1        0     64    114      114  55      f
+```
+
+```r
 # Efetua-se a contagem dos dados qualitativos com a função table
 table(cdc$genhlth,cdc$gender)
+```
 
+```
+           
+               m    f
+  excellent 2298 2359
+  very good 3382 3590
+  good      2722 2953
+  fair       884 1135
+  poor       283  394
+```
+
+```r
 # Adiciona-se a soma dos valores das linhas e colunas
 addmargins(table(cdc$genhlth,cdc$gender))
+```
+
+```
+           
+                m     f   Sum
+  excellent  2298  2359  4657
+  very good  3382  3590  6972
+  good       2722  2953  5675
+  fair        884  1135  2019
+  poor        283   394   677
+  Sum        9569 10431 20000
 ```
 
 
@@ -588,79 +959,167 @@ addmargins(table(cdc$genhlth,cdc$gender))
 
 Os fatores são uma classe especial de vetores, que definem variáveis categóricas de classificação, como os tratamentos em um experimento fatorial, ou categorias em uma tabela de contingência.
 
-```{r, echo = TRUE}
+
+```r
 # Criação de um vetor
 c(2, 4, 6)
 ```
 
+```
+[1] 2 4 6
+```
+
 Os vetores podem ser criados a partir de uma sequência numérica ou mesmo de um intervalo entre valores:
 
-```{r, echo = TRUE}
-c(2:6)
 
+```r
+c(2:6)
+```
+
+```
+[1] 2 3 4 5 6
+```
+
+```r
 # Criação de um vetor a partir do intervalo entre cada elemento e valores
 #mínimo e máximo
 seq(2, 3, by=0.5)
 ```
 
+```
+[1] 2.0 2.5 3.0
+```
+
 Criação de um vetor atráves de uma repetição também é útil em várias situações. No primeiro exemplo repete o intervalo de 1 a 3 por 4 vezes e no segundo exemplo, a cada 3 vezes:
 
-```{r, echo = TRUE}
+
+```r
 rep(1:3, times=4)
+```
 
+```
+ [1] 1 2 3 1 2 3 1 2 3 1 2 3
+```
 
+```r
 rep(1:3, each=3)
+```
 
+```
+[1] 1 1 1 2 2 2 3 3 3
 ```
 
 A função factor cria um fator, a partir de um vetor:
 
-```{r, echo = TRUE}
+
+```r
 sexo<-factor(rep(c("F", "M"),each=8))
 sexo
+```
 
+```
+ [1] F F F F F F F F M M M M M M M M
+Levels: F M
+```
+
+```r
 numeros=rep(1:3,each=3)
 numeros
+```
 
+```
+[1] 1 1 1 2 2 2 3 3 3
+```
+
+```r
 numeros.f<-factor(numeros)
 numeros.f
+```
+
+```
+[1] 1 1 1 2 2 2 3 3 3
+Levels: 1 2 3
 ```
 
 
 Fatores têm um atributo que especifica seus níveis ou categorias (levels), que seguem ordem alfanumérica crescente, por *default*. Em muitas análises essa ordem é de fundamental importância e dessa forma pode ser alterada através do argumento levels, por exemplo, para que possa ser colocado o controle antes dos tratamentos: 
 
-```{r, echo = TRUE}
+
+```r
 tratamentos=factor(rep(c("controle","adubo A","adubo B"), each=4))
 tratamentos
+```
 
+```
+ [1] controle controle controle controle adubo A  adubo A  adubo A  adubo A 
+ [9] adubo B  adubo B  adubo B  adubo B 
+Levels: adubo A adubo B controle
+```
+
+```r
 tratamentos=factor(rep(c("controle","adubo A","adubo B"), each=4), 
 levels=c("controle", "adubo A", "adubo B"))
 tratamentos
 ```
 
+```
+ [1] controle controle controle controle adubo A  adubo A  adubo A  adubo A 
+ [9] adubo B  adubo B  adubo B  adubo B 
+Levels: controle adubo A adubo B
+```
+
 Fatores podem conter níveis não usados (vazios):
 
-```{r, echo = TRUE}
+
+```r
 participantes=factor(rep("mulheres",10), levels=c("mulheres","homens"))
 participantes
+```
+
+```
+ [1] mulheres mulheres mulheres mulheres mulheres mulheres mulheres mulheres
+ [9] mulheres mulheres
+Levels: mulheres homens
 ```
 <!--
 Também é possível aplicar uma função aos subconjuntos de um vetor definidos por um fator utilizando a função `tapply()`. Criamos um objeto com o sexo das pessoas, seguido pela dieta e peso (que caracterizamos como numérico). Depois, determinamos a média de peso frente ao sexo e a dieta
 
-```{r, echo=TRUE}
+
+```r
 sexo=factor(rep(c("F","M"),each=9))
 dieta=factor(rep(rep(c("normal","light","diet"), each=3),2), 
 levels=c("normal", "light","diet"))
 peso=c(90, 89, 78, 69, 85, 69, 77, 89, 80, 60, 75, 79, 65, 94,
        69, 85, 69, 77)
 sexo
+```
 
+```
+ [1] F F F F F F F F F M M M M M M M M M
+Levels: F M
+```
+
+```r
 dieta
+```
 
+```
+ [1] normal normal normal light  light  light  diet   diet   diet   normal
+[11] normal normal light  light  light  diet   diet   diet  
+Levels: normal light diet
+```
+
+```r
 peso=as.numeric(peso)
 
 # média de peso frente ao sexo e dieta
 tapply(peso,list(sexo,dieta), mean)
+```
+
+```
+    normal    light diet
+F 85.66667 74.33333   82
+M 71.33333 76.00000   77
 ```
 -->
 
@@ -669,24 +1128,49 @@ tapply(peso,list(sexo,dieta), mean)
 
 A função matrix tem a finalidade de criar uma matriz com os valores do argumento data, argumento este que insere as variáveis desejadas na matriz. O número de linhas é definido pelo argumento nrow e o número de colunas é definido pelo argumento ncol: 
 
-```{r, echo = TRUE}
+
+```r
 nome.da.matriz= matrix(data=1:12,nrow = 3,ncol = 4)
 nome.da.matriz
+```
+
+```
+     [,1] [,2] [,3] [,4]
+[1,]    1    4    7   10
+[2,]    2    5    8   11
+[3,]    3    6    9   12
 ```
 
 
 Por *default* (ação tomada pelo *software*), os valores são preenchidos por coluna. Para preencher por linha basta instruir o programa de outra forma, alterando o argumento `byrow` para TRUE:
 
-```{r, echo = TRUE}
+
+```r
 nome.da.matriz= matrix(data=1:12,nrow = 3,ncol = 4, byrow=T)
 nome.da.matriz
 ```
 
+```
+     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    5    6    7    8
+[3,]    9   10   11   12
+```
+
 Se a matriz inserida tem menos elementos do que a ordem informada para a matriz, os são repetidos até preenchê-la:
 
-```{r, echo = TRUE}
+
+```r
 lista = list(matriz=matrix(c(1,2,1), nrow=3, ncol=2))
 lista
+```
+
+```
+$matriz
+     [,1] [,2]
+[1,]    1    1
+[2,]    2    2
+[3,]    1    1
 ```
 
 ### Listas
@@ -698,29 +1182,66 @@ As listas podem ser criadas a partir do comando `list()`.
 
 Para ver quais elementos estão em suas listas é só chamar pelo nome que foi dado para ela, como no exemplo abaixo. Representa uma coleção de objetos.
 
-```{r, echo = TRUE}
+
+```r
 lista = list(matriz=matrix(c(1,2,1,5,7,9), nrow=3, ncol=2),vetor=1:6)
 lista
 ```
 
+```
+$matriz
+     [,1] [,2]
+[1,]    1    5
+[2,]    2    7
+[3,]    1    9
+
+$vetor
+[1] 1 2 3 4 5 6
+```
+
 Para descobrir de maneira rápida o números de objetos que há na lista, utiliza-se o comando `length(nomedalista)`.
 
-```{r, echo = TRUE}
+
+```r
 lista
+```
+
+```
+$matriz
+     [,1] [,2]
+[1,]    1    5
+[2,]    2    7
+[3,]    1    9
+
+$vetor
+[1] 1 2 3 4 5 6
+```
+
+```r
 length(lista)
+```
+
+```
+[1] 2
 ```
 
 O uso do comando `names(nomedalista)` retorna os nomes dos objetos que estão presentes na lista.
 
-```{r, echo = TRUE}
+
+```r
 names(lista)
+```
+
+```
+[1] "matriz" "vetor" 
 ```
 
 Para chamar várias listas utiliza-se o comando da seguinte forma:
 
 `c(nome1, nome2)`
 
-```{r, echo = TRUE}
+
+```r
 lista.1 = list(matriz=matrix(c(1,2,1,5,7,9), nrow=3, ncol=2),
               vetor=1:6)
 
@@ -730,11 +1251,29 @@ lista.2 = list(nomes=c("Marcelo", "Fábio", "Felipe"),
 c(lista.1,lista.2)
 ```
 
+```
+$matriz
+     [,1] [,2]
+[1,]    1    5
+[2,]    2    7
+[3,]    1    9
+
+$vetor
+[1] 1 2 3 4 5 6
+
+$nomes
+[1] "Marcelo" "Fábio"   "Felipe" 
+
+$idade
+[1] 25 34 26
+```
+
 ### Data frames
 
 Com a função `data.frame()` reunimos vetores de mesmo comprimento em um só objeto. Neste caso são criadas tabelas de dados. Cada observação é descrita por um conjunto de propriedades. No exemplo abaixo é possível verificar como inserir os dados para criar a "tabela". São similares como as matrizes, porém diferentes colunas podem possuir elementos de natureza diferentes. 
 
-```{r, echo = TRUE}
+
+```r
 estudantes= c("Camila", "Pedro", "Marcelo","Guilherme")
 idade=c(21,17,17,18)
 peso=c(65,79,80,100)
@@ -742,20 +1281,42 @@ informacoes=data.frame(estudantes,idade,peso)
 informacoes
 ```
 
+```
+  estudantes idade peso
+1     Camila    21   65
+2      Pedro    17   79
+3    Marcelo    17   80
+4  Guilherme    18  100
+```
+
 Adiciona-se colunas no *data frame* através do comando a seguir, pressupondo que a ordem dos dados esteja correta:
 
 `nomedodata.frame$variávelaseradicionada`
 
-```{r, echo = TRUE}
+
+```r
 informacoes$cidades=c("Nova Hartz","Gramado","Soledade",
                       "Porto Alegre")
 informacoes
 ```
 
+```
+  estudantes idade peso      cidades
+1     Camila    21   65   Nova Hartz
+2      Pedro    17   79      Gramado
+3    Marcelo    17   80     Soledade
+4  Guilherme    18  100 Porto Alegre
+```
+
 É possível fazer uma contagem concatenando (função `length()`) com a filtragem  (função `subset()`), como no exemplo a contagem dos indivíduos cuja origem é Soledade.
 
-```{r, echo = TRUE}
+
+```r
 length(subset(informacoes$cidades, informacoes$cidades=="Soledade"))
+```
+
+```
+[1] 1
 ```
 
 ## Pré tratamento de banco de dados
@@ -764,78 +1325,202 @@ Os bancos de dados da "vida real" muitas vezes carecem de um tratamento inicial 
 
 Longe de apresentar um conjunto de regras rígidas para estas correções, visto que em muitos casos o tipo de substituição ou correção de variáveis dependerá do problema e da técnica estatística e serem trabalhados, almeja-se mostrar princípios de ações corretivas que podem ser efetuadas no RStudio. Será utilizada a base `starwars` (as 5 primeiras colunas) que consta junto ao pacote `dplyr` [@dplyr2019], como pode ser visto:
 
-```{r, message=FALSE}
+
+```r
 library(dplyr)
 starwars=data.frame(starwars[1:5])
 str(starwars)
+```
+
+```
+'data.frame':	87 obs. of  5 variables:
+ $ name      : chr  "Luke Skywalker" "C-3PO" "R2-D2" "Darth Vader" ...
+ $ height    : int  172 167 96 202 150 178 165 97 183 182 ...
+ $ mass      : num  77 75 32 136 49 120 75 32 84 77 ...
+ $ hair_color: chr  "blond" NA NA "none" ...
+ $ skin_color: chr  "fair" "gold" "white, blue" "white" ...
+```
+
+```r
 summary(starwars)
+```
+
+```
+     name               height           mass          hair_color       
+ Length:87          Min.   : 66.0   Min.   :  15.00   Length:87         
+ Class :character   1st Qu.:167.0   1st Qu.:  55.60   Class :character  
+ Mode  :character   Median :180.0   Median :  79.00   Mode  :character  
+                    Mean   :174.4   Mean   :  97.31                     
+                    3rd Qu.:191.0   3rd Qu.:  84.50                     
+                    Max.   :264.0   Max.   :1358.00                     
+                    NA's   :6       NA's   :28                          
+  skin_color       
+ Length:87         
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   
+                   
 ```
 
 Nota-se que constam 5 variáveis ("name", "height", "mass", "hair_color", "skin_color") que tratam de personagens dos filmes da franquia Star Wars com algumas características dos mesmos. Constam ainda variáveis com valores ausentes e dos mais variados tipos ("chr", "int", "num", "chr", "chr"). A função `abbreviate()` é utilizada para abreviar observações, sendo que pode ser extremamente útil quando os nomes das variáveis, por exemplo, são muito extensos. Ainda é possível determinar o tamanho dos caracteres, conjuntamente com a função `names()`.
 
-```{r}
+
+```r
 names(starwars)=abbreviate(names(starwars), minlength = 3)
 names(starwars)
 ```
 
+```
+[1] "nam" "hgh" "mss" "hr_" "sk_"
+```
+
 Caso o pesquisador deseje renomear todas as variáveis, a função `names()` pode ser utilizada como é mostrado abaixo, em um primeiro momento somente determinando o nome da primeira variável, e no segundo exemplo alterando todas as variáveis do objeto:
 
-```{r}
+
+```r
 names(starwars)[1]="Nome"
 names(starwars)=c("Nome", "Altura", "Peso", "Corcabelo", "Corpele")
 names(starwars) 
 ```
 
+```
+[1] "Nome"      "Altura"    "Peso"      "Corcabelo" "Corpele"  
+```
+
 Em sendo pertinente efetuar a alteração de uma variável para fator, utiliza-se a função `as.factor()` como no exemplo abaixo para transformar as variáveis "Corcabelo" e "Corpele".
 
-```{r}
+
+```r
 starwars$Corcabelo=as.factor(starwars$Corcabelo)
 starwars$Corpele=as.factor(starwars$Corpele)
 summary(starwars$Corpele)
 ```
 
+```
+               blue          blue, grey               brown        brown mottle 
+                  2                   2                   4                   1 
+       brown, white                dark                fair fair, green, yellow 
+                  1                   6                  17                   1 
+               gold               green    green-tan, brown         green, grey 
+                  1                   6                   1                   1 
+               grey          grey, blue grey, green, yellow           grey, red 
+                  6                   1                   1                   1 
+              light               metal       mottled green                none 
+                 11                   1                   1                   1 
+             orange                pale                 red    red, blue, white 
+                  2                   5                   1                   1 
+        silver, red                 tan             unknown               white 
+                  1                   2                   2                   2 
+        white, blue          white, red              yellow 
+                  2                   1                   2 
+```
+
 Como visto anteriormente este objeto apresenta valores faltantes ("NAs") em diversas variáveis.
 
-```{r}
-head(is.na(starwars))
 
+```r
+head(is.na(starwars))
+```
+
+```
+      Nome Altura  Peso Corcabelo Corpele
+[1,] FALSE  FALSE FALSE     FALSE   FALSE
+[2,] FALSE  FALSE FALSE      TRUE   FALSE
+[3,] FALSE  FALSE FALSE      TRUE   FALSE
+[4,] FALSE  FALSE FALSE     FALSE   FALSE
+[5,] FALSE  FALSE FALSE     FALSE   FALSE
+[6,] FALSE  FALSE FALSE     FALSE   FALSE
 ```
 
 Desta forma, é possível quantificar os valores faltantes do objeto:
 
-```{r}
+
+```r
 table(is.na(starwars))
+```
+
+```
+
+FALSE  TRUE 
+  396    39 
 ```
 
 Em muitos casos é de interesse ao pesquisador substituir os valores faltantes pelo valor da média da variável em questão, é claro considerando somente o restante dos valores excluídos dos NAs. O exemplo abaixo demonstra o sumário das informações após a normalização pelo valor médio da variável "Altura" (também é possível utilizar outro critério, por exemplo o valor da moda ou mediana):
 
-```{r}
+
+```r
 # Substituindo NAs por média
 starwars$Altura[is.na(starwars$Altura)]=mean(starwars$Altura, na.rm=TRUE)
 summary(starwars$Altura)
 ```
 
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   66.0   167.5   178.0   174.4   190.5   264.0 
+```
+
 É possível substituir os dados faltantes por zero ou por outro caractere, sendo que no exemplo abaixo utilizou-se a correção por zero sobre a variável numérica "Peso":
 
-```{r}
+
+```r
 # Substituindo NAs por zero
 starwars$Peso[is.na(starwars$Peso)]=0
 summary(starwars$Peso)
 ```
 
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.00    0.00   56.20   65.99   80.00 1358.00 
+```
+
 De igual forma, é possível transformar qualquer valor constante em uma variável em valores faltantes. No exemplo abaixo é desfeita operação anterior sobre a variável "Peso":
 
-```{r}
+
+```r
 starwars$Peso[starwars$Peso==0]=NA
 summary(starwars$Peso)
 ```
 
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  15.00   55.60   79.00   97.31   84.50 1358.00      28 
+```
+
 Ainda, se houver no objeto linhas que tenham pelo menos uma informação faltante ("NA"), estas podem ser excluídas com o comando `na.omit()`. Note que com este procedimento o objeto `starwars` passou a ter a dimensão 54x5 ao invés de 87x5 como apresentado inicialmente com a presença de valores faltante:
 
-```{r}
+
+```r
 starwars=na.omit(starwars)
 summary(starwars)
+```
+
+```
+     Nome               Altura           Peso                Corcabelo 
+ Length:54          Min.   : 66.0   Min.   : 15.00   none         :27  
+ Class :character   1st Qu.:170.0   1st Qu.: 56.40   brown        :11  
+ Mode  :character   Median :182.5   Median : 79.00   black        : 7  
+                    Mean   :177.0   Mean   : 77.23   white        : 3  
+                    3rd Qu.:193.0   3rd Qu.: 84.75   blond        : 2  
+                    Max.   :234.0   Max.   :159.00   auburn, white: 1  
+                                                     (Other)      : 3  
+    Corpele  
+ fair   : 9  
+ light  : 7  
+ dark   : 4  
+ green  : 4  
+ grey   : 4  
+ brown  : 3  
+ (Other):23  
+```
+
+```r
 dim(starwars)
+```
+
+```
+[1] 54  5
 ```
 
 
@@ -850,30 +1535,51 @@ A função `edit()` abre uma interface simples de edição de dados em formato p
 
 `novonomedabase = edit(nomeatualdabase)`
 
-```{r, echo = TRUE}
+
+```r
 informacoes.2=edit(informacoes)
 ```
 
-```{r 95, echo=FALSE, fig.cap='Editor de dados',fig.subcap = c("Fonte: Elaborado pelo(s) autor(es).")}
-knitr::include_graphics("95.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{95} 
+
+}
+
+\caption{Editor de dados}\label{fig:95}
+\end{figure}
 
 Basta clicar no retângulo correspondente a variável que deseja ser modificada, excluir ou adicionar novas colunas.
 
-```{r 10, echo=FALSE, fig.cap='Acréscimo de uma nova coluna através do editor de dados',fig.subcap = c("Fonte: Elaborado pelo(s) autor(es).")}
-knitr::include_graphics("10.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{10} 
+
+}
+
+\caption{Acréscimo de uma nova coluna através do editor de dados}\label{fig:10}
+\end{figure}
 
 Logo, chamando o novo banco de dados, é obtido:
 
-```{r, echo = TRUE}
+
+```r
 informacoes.2 
+```
+
+```
+  estudantes idade peso      cidades
+1     Camila    21   65   Nova Hartz
+2      Pedro    17   79      Gramado
+3    Marcelo    17   80     Soledade
+4  Guilherme    18  100 Porto Alegre
 ```
 
 
 As funções a seguir são aplicáveis a vetores, data.frames e listas, e em muitos casos trazem praticidade a uma análise estatística. Foram criados objetos com informações do nome dos estudantes e altura. Segue o processo de criação do *data frame* com estas informações, lembrando que esta forma de "união" das informações pressupõe que a ordem dos dados esteja correta:
 
-```{r,  message=FALSE, warning=FALSE}
+
+```r
 # Crição do data frame
 estudantes=c("Guilherme", "Marcelo", "Pedro", "Camila")
 altura= c(1.50, 1.9, 1.74, 1.80)
@@ -881,66 +1587,105 @@ informacoes.3=data.frame(estudantes, altura)
 head(informacoes.3)
 ```
 
+```
+  estudantes altura
+1  Guilherme   1.50
+2    Marcelo   1.90
+3      Pedro   1.74
+4     Camila   1.80
+```
+
 Já o comando `merge()` serve para juntar dois *data frames* que possuam uma coluna em comum. Neste caso, unimos o objeto `informações.2` com o objeto `informações.3` utilizando o nome dos estudantes (informação em comum):
 
-```{r, echo = TRUE}
+
+```r
 # União de um banco de dados (existencia de uma váriavel em comum)
 
 informacoes=merge(informacoes.2,informacoes.3, by="estudantes")
 head(informacoes)
 ```
 
+```
+  estudantes idade peso      cidades altura
+1     Camila    21   65   Nova Hartz   1.80
+2  Guilherme    18  100 Porto Alegre   1.50
+3    Marcelo    17   80     Soledade   1.90
+4      Pedro    17   79      Gramado   1.74
+```
+
 Adicionar um cálculo entre as colunas é muito simples com o RStudio, neste caso com os dados do peso e altura, pode-se calcular o IMC (Índice de Massa Corporal) em uma nova coluna:
 
-```{r, echo = TRUE}
+
+```r
 informacoes$Imc=c(informacoes$peso/(informacoes$altura^2))
 informacoes
+```
+
+```
+  estudantes idade peso      cidades altura      Imc
+1     Camila    21   65   Nova Hartz   1.80 20.06173
+2  Guilherme    18  100 Porto Alegre   1.50 44.44444
+3    Marcelo    17   80     Soledade   1.90 22.16066
+4      Pedro    17   79      Gramado   1.74 26.09328
 ```
 
 
 Outro recurso interessante é a substituição de dados em uma coluna, que pode ser feito de forma automática para uma condição padrão escolhida. No exemplo abaixo, substituimos aquelas informações de idade igual a 17 pelo número 19:
 
-```{r, echo = TRUE}
+
+```r
 # Substituir números na coluna
 informacoes$idade[informacoes$idade == 17] <- 19
 informacoes
+```
+
+```
+  estudantes idade peso      cidades altura      Imc
+1     Camila    21   65   Nova Hartz   1.80 20.06173
+2  Guilherme    18  100 Porto Alegre   1.50 44.44444
+3    Marcelo    19   80     Soledade   1.90 22.16066
+4      Pedro    19   79      Gramado   1.74 26.09328
 ```
 
 A classificação qualitativa das informações, com base em condições definidas pelo usuário podem ser facilmente efetuadas pelo comando `ifelse`. Para quem não tem intimidade com atributos de programação, este comando seleciona "se" (*if*) uma informação desejada é atendida, e cria uma rotina (*else*) que será aplicada "então". 
 
 No nosso exemplo, cria-se uma variável denominada "classificacao" e se a coluna IMC conter dados acima de 25, será marcado como "peso normal", sendo que do contrário, constará como "excesso de peso". Após, utilizar o comando `cbind()` para unir os dois objetos pelas colunas. Caso não se deseje utilizar o comando `cbind()`, poderia ser criado uma nova coluna com o nome do obetjo sendo "informacoes\$classificacao".
 
-```{r, echo = TRUE}
+
+```r
 # Classificar qualitativamente informações em um determinado intervalo 
 classificacao=ifelse(informacoes$Imc<25, "peso normal","excesso de peso")
 informacoes=cbind(informacoes, classificacao)
 informacoes
 ```
 
-```{r imct, echo=FALSE}
-library(knitr)
-imc=data.frame(Resultado=c("Abaixo de 17",
-                             "Entre 17 e 18,49",
-                             "Entre 18,5 e 24,99",
-                             "Entre 25 e 29,99",
-                             "Entre 30 e 34,99",
-                             "Entre 35 e 39,99",
-                             "Acima de 40"),
-                 Significado=c("Muito abaixo do peso",
-                            "Abaixo do peso",
-                            "Peso normal",
-                            "Acima do peso",
-                            "Obesidade I",
-                            "Obesidade II (severa)",
-                            "Obesidade III (mórbida)"))
-knitr::kable(imc, caption = 'Valores padrão para o IMC')
 ```
+  estudantes idade peso      cidades altura      Imc   classificacao
+1     Camila    21   65   Nova Hartz   1.80 20.06173     peso normal
+2  Guilherme    18  100 Porto Alegre   1.50 44.44444 excesso de peso
+3    Marcelo    19   80     Soledade   1.90 22.16066     peso normal
+4      Pedro    19   79      Gramado   1.74 26.09328 excesso de peso
+```
+
+
+Table: Valores padrão para o IMC
+
+Resultado            Significado             
+-------------------  ------------------------
+Abaixo de 17         Muito abaixo do peso    
+Entre 17 e 18,49     Abaixo do peso          
+Entre 18,5 e 24,99   Peso normal             
+Entre 25 e 29,99     Acima do peso           
+Entre 30 e 34,99     Obesidade I             
+Entre 35 e 39,99     Obesidade II (severa)   
+Acima de 40          Obesidade III (mórbida) 
 
 Fonte: Adaptado de @brasil2014 .
 
 No entanto, o IMC possui várias classificações de acordo com o seu resultado (Tabela \@ref(tab:imct)), sendo que, por exemplo, resultados abaixo de 17 informam que o indivíduo se encontra como Muito abaixo do peso, e acima de 40, se encontra em Obesidade III. Para efetuar a classificação desta maneira utilizando o comando `ifelse`, ou seja, com mais de uma condição, pode ser efetuada a estruturação com a aglutinação do comando:
 
-```{r, echo = TRUE}
+
+```r
 informacoes$tipoimc=ifelse(informacoes$Imc<17, "Muito abaixo do peso",
 ifelse(informacoes$Imc>=17&informacoes$Imc<=18.49,"Abaixo do peso",
 ifelse(informacoes$Imc>=18.5&informacoes$Imc<=24.99,"Peso Normal",
@@ -951,19 +1696,47 @@ ifelse(informacoes$Imc>=35&informacoes$Imc<=39.99,"Obesidade II",
 informacoes
 ```
 
+```
+  estudantes idade peso      cidades altura      Imc   classificacao
+1     Camila    21   65   Nova Hartz   1.80 20.06173     peso normal
+2  Guilherme    18  100 Porto Alegre   1.50 44.44444 excesso de peso
+3    Marcelo    19   80     Soledade   1.90 22.16066     peso normal
+4      Pedro    19   79      Gramado   1.74 26.09328 excesso de peso
+        tipoimc
+1   Peso Normal
+2 Obesidade III
+3   Peso Normal
+4 Acima do Peso
+```
+
 
 A classificação binária dos dados (0,1) também é relevante para o estudo da manipulação dos dados trabalhados pelo pesquisador. Neste exemplo, classificaram-se aqueles valores da coluna "classificacao" com o "peso normal" iguais a 1, do contrário classificou-se 0 (zero).
 
-```{r, echo = TRUE}
+
+```r
 # Classificar informações usando o código binário
 informacoes$binario= ifelse(informacoes$classificacao 
                             == 'peso normal', 1, 0) 
 informacoes
 ```
 
+```
+  estudantes idade peso      cidades altura      Imc   classificacao
+1     Camila    21   65   Nova Hartz   1.80 20.06173     peso normal
+2  Guilherme    18  100 Porto Alegre   1.50 44.44444 excesso de peso
+3    Marcelo    19   80     Soledade   1.90 22.16066     peso normal
+4      Pedro    19   79      Gramado   1.74 26.09328 excesso de peso
+        tipoimc binario
+1   Peso Normal       1
+2 Obesidade III       0
+3   Peso Normal       1
+4 Acima do Peso       0
+```
+
 O comando `rbind()` é utilizado para incluir linhas novas abaixo de um objeto já criado pelo pesquisador, sendo que é importante o cuidado de que estas novas informações tenham os mesmos campos (colunas). A exemplo, pede-se para incluir uma nova pessoa no *data frame* informacoes: Francisco, 30 anos de idade, peso 59, natural de Ijuí, IMC 23,33768, classificado como peso normal. Lembrando de incluir os campos "tipoimc" e "binario".
 
-```{r, echo = TRUE}
+
+```r
 novo1=data.frame(estudantes="Francisco", idade=30, peso=59, 
                  cidades="Ijuí", 
                  altura="1.59", 
@@ -975,9 +1748,25 @@ informacoes=rbind(informacoes, novo1)
 informacoes
 ```
 
+```
+  estudantes idade peso      cidades altura      Imc   classificacao
+1     Camila    21   65   Nova Hartz    1.8 20.06173     peso normal
+2  Guilherme    18  100 Porto Alegre    1.5 44.44444 excesso de peso
+3    Marcelo    19   80     Soledade    1.9 22.16066     peso normal
+4      Pedro    19   79      Gramado   1.74 26.09328 excesso de peso
+5  Francisco    30   59         Ijuí   1.59 23.33768     peso normal
+        tipoimc binario
+1   Peso Normal       1
+2 Obesidade III       0
+3   Peso Normal       1
+4 Acima do Peso       0
+5   Peso Normal       1
+```
+
 Outra forma de incluir informações adicionais nos *data frames* através de atributos é utilizando o pacote `dplyr`. Decide-se criar um campo "faixa etária", sendo que aqueles indivíduos com idade acima de 21 serão chamados de "adulto" e do contrário "não adulto".
 
-```{r, echo = TRUE, message=FALSE}
+
+```r
 library(dplyr)
 informacoes= mutate(informacoes, 
                     "faixa etaria"= ifelse(informacoes$idade<21,
@@ -985,128 +1774,343 @@ informacoes= mutate(informacoes,
 informacoes
 ```
 
+```
+  estudantes idade peso      cidades altura      Imc   classificacao
+1     Camila    21   65   Nova Hartz    1.8 20.06173     peso normal
+2  Guilherme    18  100 Porto Alegre    1.5 44.44444 excesso de peso
+3    Marcelo    19   80     Soledade    1.9 22.16066     peso normal
+4      Pedro    19   79      Gramado   1.74 26.09328 excesso de peso
+5  Francisco    30   59         Ijuí   1.59 23.33768     peso normal
+        tipoimc binario faixa etaria
+1   Peso Normal       1       adulto
+2 Obesidade III       0   não adulto
+3   Peso Normal       1   não adulto
+4 Acima do Peso       0   não adulto
+5   Peso Normal       1       adulto
+```
+
 A (re)ordenação das colunas de um *data frame* pode ser muito útil em alguns casos, sendo extremamente fácil efetuá-la, cada número representa o número da respectiva coluna:
 
-```{r, echo = TRUE}
+
+```r
 # Reordenar colunas
 informacoes=informacoes[c(8,2,3,4,1,6,5,7,9,10)]
 ```
 
 Caso se queira a inversão total da ordem das colunas do objeto estudado, o comando `rev()` pode ser útil:
 
-```{r, echo = TRUE}
+
+```r
 # Inversão do posicionamento dos elementos
 rev(informacoes)
 ```
 
+```
+  faixa etaria binario   classificacao altura      Imc estudantes      cidades
+1       adulto       1     peso normal    1.8 20.06173     Camila   Nova Hartz
+2   não adulto       0 excesso de peso    1.5 44.44444  Guilherme Porto Alegre
+3   não adulto       1     peso normal    1.9 22.16066    Marcelo     Soledade
+4   não adulto       0 excesso de peso   1.74 26.09328      Pedro      Gramado
+5       adulto       1     peso normal   1.59 23.33768  Francisco         Ijuí
+  peso idade       tipoimc
+1   65    21   Peso Normal
+2  100    18 Obesidade III
+3   80    19   Peso Normal
+4   79    19 Acima do Peso
+5   59    30   Peso Normal
+```
+
 A  função `table()` faz a contagem os dados; já o comando `sort()` ordena os objetos em ordem crescente (caso queira no formato decrescente, informar `decreasing=TRUE`).
 
-```{r, echo = TRUE}
+
+```r
 # contagem de objetos
 table(informacoes$classificacao)
+```
 
+```
+
+excesso de peso     peso normal 
+              2               3 
+```
+
+```r
 # Ordenar os objetos em ordem crescente
 sort(informacoes$idade)
 ```
 
+```
+[1] 18 19 19 21 30
+```
+
 A ordenação de todo o *data frame* a partir de uma variável, pode ser realizada utilizando o comando `order`, sendo que pode ser realizada inclusive com variáveis categóricas (no exemplo abaixo o nome das cidades).
 
-```{r, echo = TRUE}
+
+```r
 # Ordem decrescente 
 informacoes[order(informacoes$idade, decreasing = TRUE),]
+```
 
+```
+        tipoimc idade peso      cidades estudantes      Imc altura
+5   Peso Normal    30   59         Ijuí  Francisco 23.33768   1.59
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06173    1.8
+3   Peso Normal    19   80     Soledade    Marcelo 22.16066    1.9
+4 Acima do Peso    19   79      Gramado      Pedro 26.09328   1.74
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44444    1.5
+    classificacao binario faixa etaria
+5     peso normal       1       adulto
+1     peso normal       1       adulto
+3     peso normal       1   não adulto
+4 excesso de peso       0   não adulto
+2 excesso de peso       0   não adulto
+```
+
+```r
 #ordem crescente
 informacoes[order(informacoes$idade, decreasing = FALSE),]
+```
 
+```
+        tipoimc idade peso      cidades estudantes      Imc altura
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44444    1.5
+3   Peso Normal    19   80     Soledade    Marcelo 22.16066    1.9
+4 Acima do Peso    19   79      Gramado      Pedro 26.09328   1.74
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06173    1.8
+5   Peso Normal    30   59         Ijuí  Francisco 23.33768   1.59
+    classificacao binario faixa etaria
+2 excesso de peso       0   não adulto
+3     peso normal       1   não adulto
+4 excesso de peso       0   não adulto
+1     peso normal       1       adulto
+5     peso normal       1       adulto
+```
+
+```r
 #ordem crescente
 informacoes[order(informacoes$cidades, decreasing = FALSE),]
 ```
 
+```
+        tipoimc idade peso      cidades estudantes      Imc altura
+4 Acima do Peso    19   79      Gramado      Pedro 26.09328   1.74
+5   Peso Normal    30   59         Ijuí  Francisco 23.33768   1.59
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06173    1.8
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44444    1.5
+3   Peso Normal    19   80     Soledade    Marcelo 22.16066    1.9
+    classificacao binario faixa etaria
+4 excesso de peso       0   não adulto
+5     peso normal       1       adulto
+1     peso normal       1       adulto
+2 excesso de peso       0   não adulto
+3     peso normal       1   não adulto
+```
+
 O comando `rank()` cria uma ranqueamento crescente das informações. Se é pretendido, por exemplo, criar uma coluna com o ranking dos valores do IMC, pode ser utilizado:
 
-```{r, echo = TRUE}
+
+```r
 informacoes$rankingImc=rank(informacoes$Imc)
 informacoes
 ```
 
+```
+        tipoimc idade peso      cidades estudantes      Imc altura
+1   Peso Normal    21   65   Nova Hartz     Camila 20.06173    1.8
+2 Obesidade III    18  100 Porto Alegre  Guilherme 44.44444    1.5
+3   Peso Normal    19   80     Soledade    Marcelo 22.16066    1.9
+4 Acima do Peso    19   79      Gramado      Pedro 26.09328   1.74
+5   Peso Normal    30   59         Ijuí  Francisco 23.33768   1.59
+    classificacao binario faixa etaria rankingImc
+1     peso normal       1       adulto          1
+2 excesso de peso       0   não adulto          5
+3     peso normal       1   não adulto          2
+4 excesso de peso       0   não adulto          4
+5     peso normal       1       adulto          3
+```
+
 Para utilizar a função `rank` com os maiores valores em primeiro lugar:
 
-```{r, echo = TRUE}
+
+```r
 rank(-informacoes$Imc)
+```
+
+```
+[1] 5 1 4 2 3
 ```
 
 ### Funções Matemáticas
 
 A utilização de funções matemáticas no RStudio contribui para que o pesquisador possa realizar vários experimentos com seus dados. Os cálculos podem ser efetuados diretamente no console do programa ou aplicados aos objetos criados:
 
-```{r, echo = TRUE}
-log(1.5)
 
+```r
+log(1.5)
+```
+
+```
+[1] 0.4054651
+```
+
+```r
 exp(1)
+```
+
+```
+[1] 2.718282
 ```
 
 No caso do *data frame* o qual foi criado acima ("informacoes"), pode-se buscar as informações dos valores mínimos (função `min()`), máximos (`max()`) da base:
 
-```{r, echo = TRUE}
-max(informacoes$idade)
 
+```r
+max(informacoes$idade)
+```
+
+```
+[1] 30
+```
+
+```r
 min(informacoes$idade)
+```
+
+```
+[1] 18
 ```
 
 Ainda, se o interesse está em descobrir a posição, no *data frame}, do peso mínimo e máximo da amostra utiliza-se o comando `which.min` e `which.max`.
 
-```{r, echo=TRUE}
+
+```r
 # Para descobrir em qual posição se encontra o peso mínimo:
 which.min(informacoes$peso)
+```
+
+```
+[1] 5
+```
+
+```r
 which.max(informacoes$peso)
+```
+
+```
+[1] 2
 ```
 
 Para descobrir qual é o estutande que possui o peso mínimo, por exemplo, ou o Imc máximo, utiliza-se o seguinte comando (notem que os resultados trazem a lista de todos os estudantes comparados):
 
-```{r, echo=TRUE}
+
+```r
 informacoes$estudantes[which.min(informacoes$peso)]
+```
+
+```
+[1] Francisco
+Levels: Camila Guilherme Marcelo Pedro Francisco
+```
+
+```r
 informacoes$estudantes[which.max(informacoes$Imc)]
-``` 
+```
+
+```
+[1] Guilherme
+Levels: Camila Guilherme Marcelo Pedro Francisco
+```
 
 O arredondamento de valores numéricos pode ser feito utilizando o comando `round()`, o qual o pesquisador informa o número de casas decimais:
 
-```{r, echo=TRUE}
+
+```r
 # Arredondar para n casas decimais
 round(informacoes$Imc, 2)
 ```
 
+```
+[1] 20.06 44.44 22.16 26.09 23.34
+```
+
 Já o comando `signif()` determina o número de algarismos significativos da série escolhida, ou seja, ele arredonda para os valores em seu primeiro argumento com os número de dígitos detemrinados: 
 
-```{r, echo=TRUE}
+
+```r
 x2 <- pi * 100^(-1:3)
 round(x2, 3)
+```
+
+```
+[1]       0.031       3.142     314.159   31415.927 3141592.654
+```
+
+```r
 signif(x2, 3) 
+```
+
+```
+[1] 3.14e-02 3.14e+00 3.14e+02 3.14e+04 3.14e+06
 ```
 
 A soma do total da coluna idade, o desvio padrão, a variância, a média aritmética e mediana podem ser encontrados, respectivamente, pelos comandos `sum()`, `sd()`, `var()`, `mean()`, `median()`:
 
-```{r, echo=TRUE}
+
+```r
 # Realiza a somatória dos valores
 sum(informacoes$idade)
+```
 
+```
+[1] 107
+```
+
+```r
 # Desvio padrão
 sd(informacoes$idade)
+```
 
+```
+[1] 4.929503
+```
+
+```r
 # Variancia
 var(informacoes$idade)
+```
 
+```
+[1] 24.3
+```
+
+```r
 # Calcula a média aritmética dos valores
 mean(informacoes$idade)
+```
 
+```
+[1] 21.4
+```
+
+```r
 # Informa o valor mediano do conjunto
 median(informacoes$idade)
 ```
 
+```
+[1] 19
+```
+
 O comando `quantile()` oferece a possibilidade de obter os quartis dos dados de acordo com as probabilidades estabelecidas pelo pesquisador. No exemplo, explora-se a variável idade:
 
-```{r, echo=TRUE}
-quantile(informacoes$idade,  probs = c(0.5, 1, 2, 5, 10, 50)/100)
 
+```r
+quantile(informacoes$idade,  probs = c(0.5, 1, 2, 5, 10, 50)/100)
+```
+
+```
+ 0.5%    1%    2%    5%   10%   50% 
+18.02 18.04 18.08 18.20 18.40 19.00 
 ```
 
 <!--
@@ -1122,9 +2126,14 @@ manipulação e transformação de grandes bases de dados que o pesquisador ter�
 
 Nesta subseção será utilizado o pacote `tidyr` [@tidyr2018] para demonstrar algumas funções que contribuem para a manipulação das bases de dados, tão importante no processo de preperação das informações para posterior análise. Serão utilizadas para demonstração as bases de dados existentes no próprio pacote.
 
-```{r dados, echo=FALSE, fig.cap='Convenção sobre variáveis, observações e valores'}
-knitr::include_graphics("tidy-1.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{tidy-1} 
+
+}
+
+\caption{Convenção sobre variáveis, observações e valores}\label{fig:dados}
+\end{figure}
 
 Fonte: <http://garrettgman.github.io/tidying/>.
 
@@ -1135,16 +2144,47 @@ A Figura \@ref(fig:dados) retoma uma demonstração das convenções a respeito 
 A função `spread()` é utilizada para transformar os valores constantes em uma coluna em nova configuração de colunas. Ainda, é possível determinar a transformação dos valores com o comando `convert = TRUE` informando o tipo de valores (doubles (numerics), integers, logicals, complexes, ou factors) nas colunas a serem criadas (comando `type.convert()`).
 
 
-```{r}
+
+```r
 library(tidyr)
 table2
 ```
 
+```
+# A tibble: 12 x 4
+   country      year type            count
+   <chr>       <int> <chr>           <int>
+ 1 Afghanistan  1999 cases             745
+ 2 Afghanistan  1999 population   19987071
+ 3 Afghanistan  2000 cases            2666
+ 4 Afghanistan  2000 population   20595360
+ 5 Brazil       1999 cases           37737
+ 6 Brazil       1999 population  172006362
+ 7 Brazil       2000 cases           80488
+ 8 Brazil       2000 population  174504898
+ 9 China        1999 cases          212258
+10 China        1999 population 1272915272
+11 China        2000 cases          213766
+12 China        2000 population 1280428583
+```
+
 Neste exemplo, a coluna "type" abriga os valores "cases" e "population", as quais terão suas próprias colunas com seus respectivos valores:
 
-```{r}
-spread(table2, type, count)
 
+```r
+spread(table2, type, count)
+```
+
+```
+# A tibble: 6 x 4
+  country      year  cases population
+  <chr>       <int>  <int>      <int>
+1 Afghanistan  1999    745   19987071
+2 Afghanistan  2000   2666   20595360
+3 Brazil       1999  37737  172006362
+4 Brazil       2000  80488  174504898
+5 China        1999 212258 1272915272
+6 China        2000 213766 1280428583
 ```
 
 
@@ -1152,15 +2192,37 @@ spread(table2, type, count)
 
 Já a função `gather()` realiza o processo oposto do comando `spread()`, pois agrupa o valor de determinadas variável em uma chave comum.
 
-```{r}
+
+```r
 table4a
+```
+
+```
+# A tibble: 3 x 3
+  country     `1999` `2000`
+* <chr>        <int>  <int>
+1 Afghanistan    745   2666
+2 Brazil       37737  80488
+3 China       212258 213766
 ```
 
 Abaixo a transformação das variáveis "1999" e "2000" em uma única variável "year", mantendo os valores inseridos na variável "cases":
 
-```{r}
-gather(table4a, "year", "cases", 2:3)
 
+```r
+gather(table4a, "year", "cases", 2:3)
+```
+
+```
+# A tibble: 6 x 3
+  country     year   cases
+  <chr>       <chr>  <int>
+1 Afghanistan 1999     745
+2 Brazil      1999   37737
+3 China       1999  212258
+4 Afghanistan 2000    2666
+5 Brazil      2000   80488
+6 China       2000  213766
 ```
 
 
@@ -1169,43 +2231,119 @@ gather(table4a, "year", "cases", 2:3)
 
 A função `separate()` é utilizada para partir uma determinada variável em novas variáveis da base de dados.
 
-```{r}
+
+```r
 table3
+```
+
+```
+# A tibble: 6 x 3
+  country      year rate             
+* <chr>       <int> <chr>            
+1 Afghanistan  1999 745/19987071     
+2 Afghanistan  2000 2666/20595360    
+3 Brazil       1999 37737/172006362  
+4 Brazil       2000 80488/174504898  
+5 China        1999 212258/1272915272
+6 China        2000 213766/1280428583
 ```
 
 Neste exemplo, a variável "rate", que está composta de duas informações separadas pelo caractere "$/$", será separada nas novas variáveis "cases" e "population":
 
 
-```{r}
+
+```r
 separate(table3, rate, into = c("cases", "population"),sep = "/")
+```
+
+```
+# A tibble: 6 x 4
+  country      year cases  population
+  <chr>       <int> <chr>  <chr>     
+1 Afghanistan  1999 745    19987071  
+2 Afghanistan  2000 2666   20595360  
+3 Brazil       1999 37737  172006362 
+4 Brazil       2000 80488  174504898 
+5 China        1999 212258 1272915272
+6 China        2000 213766 1280428583
 ```
 
 Da mesma forma é possível criar duas novas variáveis a partir do segundo caractere do valor que consta nas células utilizando o comando `sep=2`:
 
-```{r}
+
+```r
 separate(table3, year, into = c("century", "year"), sep = 2)
+```
+
+```
+# A tibble: 6 x 4
+  country     century year  rate             
+  <chr>       <chr>   <chr> <chr>            
+1 Afghanistan 19      99    745/19987071     
+2 Afghanistan 20      00    2666/20595360    
+3 Brazil      19      99    37737/172006362  
+4 Brazil      20      00    80488/174504898  
+5 China       19      99    212258/1272915272
+6 China       20      00    213766/1280428583
 ```
 
 #### Função *unite*
 
 A função `unite()` é oposta à função `separate()`:
 
-```{r}
+
+```r
 table5
+```
+
+```
+# A tibble: 6 x 4
+  country     century year  rate             
+* <chr>       <chr>   <chr> <chr>            
+1 Afghanistan 19      99    745/19987071     
+2 Afghanistan 20      00    2666/20595360    
+3 Brazil      19      99    37737/172006362  
+4 Brazil      20      00    80488/174504898  
+5 China       19      99    212258/1272915272
+6 China       20      00    213766/1280428583
 ```
 
 Neste exemplo, recria a variável "new" a partir dos dados de "century" e "year":
 
-```{r}
+
+```r
 unite(table5, "new", century, year, sep = "")
+```
+
+```
+# A tibble: 6 x 3
+  country     new   rate             
+  <chr>       <chr> <chr>            
+1 Afghanistan 1999  745/19987071     
+2 Afghanistan 2000  2666/20595360    
+3 Brazil      1999  37737/172006362  
+4 Brazil      2000  80488/174504898  
+5 China       1999  212258/1272915272
+6 China       2000  213766/1280428583
 ```
 
 ### O pacote *dplyr*
 
 O pacote `dplyr` é uma poderosa ferramenta para manipulação, criação e transformação de dados no RStudio, agregando agilidade e robustez para o processo de análise e preparação dos dados. Seguem a seguir algumas das principais funções do pacote com a utilização da base de dados nativa do RStudio `mtcars`.
 
-```{r}
+
+```r
 head(mtcars)
+```
+
+```
+                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 ```
 
 
@@ -1214,25 +2352,58 @@ head(mtcars)
 
 A função `select()` é utilizada para selecionar as variáveis de interesse do pesquisador, a partir de uma base de dados, neste caso a partir da base `mtcars`:
 
-```{r}
+
+```r
 library(dplyr)
 
 novo=select(mtcars, mpg, cyl)
 head(novo)
 ```
 
+```
+                   mpg cyl
+Mazda RX4         21.0   6
+Mazda RX4 Wag     21.0   6
+Datsun 710        22.8   4
+Hornet 4 Drive    21.4   6
+Hornet Sportabout 18.7   8
+Valiant           18.1   6
+```
+
 No exemplo são selecionadas todas as variáveis excluindo `mpg`:
 
-```{r}
+
+```r
 novo=select(mtcars, -c(mpg))
 head(novo)
 ```
 
+```
+                  cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4           6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag       6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710          4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive      6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant             6  225 105 2.76 3.460 20.22  1  0    3    1
+```
+
 É possível selecionar uma sequência de variáveis a partir de seus nomes (utilidade semelhante a `select(mtcars, 2:5)`):
 
-```{r}
+
+```r
 novo=select(mtcars, cyl:drat)
 head(novo)
+```
+
+```
+                  cyl disp  hp drat
+Mazda RX4           6  160 110 3.90
+Mazda RX4 Wag       6  160 110 3.90
+Datsun 710          4  108  93 3.85
+Hornet 4 Drive      6  258 110 3.08
+Hornet Sportabout   8  360 175 3.15
+Valiant             6  225 105 2.76
 ```
 
 
@@ -1240,24 +2411,52 @@ head(novo)
 
 A Função `filter()` seleciona as variáveis da base de dados conforme atributos determinados pelo pesquisador:
 
-```{r}
+
+```r
 novo=filter(mtcars, hp>146)
 head(novo)
 ```
 
+```
+   mpg cyl  disp  hp drat   wt  qsec vs am gear carb
+1 18.7   8 360.0 175 3.15 3.44 17.02  0  0    3    2
+2 14.3   8 360.0 245 3.21 3.57 15.84  0  0    3    4
+3 16.4   8 275.8 180 3.07 4.07 17.40  0  0    3    3
+4 17.3   8 275.8 180 3.07 3.73 17.60  0  0    3    3
+5 15.2   8 275.8 180 3.07 3.78 18.00  0  0    3    3
+6 10.4   8 472.0 205 2.93 5.25 17.98  0  0    3    4
+```
+
 Abaixo o exemplo da utilização de mais de um critério de filtragem de dados:
 
-```{r}
+
+```r
 novo=filter(mtcars, hp>146 & am==1)
 head(novo)
 ```
 
+```
+   mpg cyl disp  hp drat   wt qsec vs am gear carb
+1 15.8   8  351 264 4.22 3.17 14.5  0  1    5    4
+2 19.7   6  145 175 3.62 2.77 15.5  0  1    5    6
+3 15.0   8  301 335 3.54 3.57 14.6  0  1    5    8
+```
+
 Utilizando o pacote `stringr` [@stringr2018] com a função denominada `str_detect()`, é possível efetuar a filtragem pelo nome/identificação total ou parcial de um valor contido dentro de uma variável do banco de dados. Utilizou-se o banco de dados "table5" visto no subcapítulo anterior pra filtrar as informações da variável "country" que contém "Bra":
 
-```{r}
+
+```r
 library(stringr)
 table5 %>%
   filter(str_detect(country, "Bra"))
+```
+
+```
+# A tibble: 2 x 4
+  country century year  rate           
+  <chr>   <chr>   <chr> <chr>          
+1 Brazil  19      99    37737/172006362
+2 Brazil  20      00    80488/174504898
 ```
 
 
@@ -1266,9 +2465,20 @@ table5 %>%
 A função `mutate()` é utilizada para incluir informações ou variáveis na base de dados, como no exemplo abaixo a criação de uma nova variável denominada "novacol", multiplicando por 100 a variável "mpg" que já consta na base:
 
 
-```{r}
+
+```r
 novo=mutate(mtcars, novacol=(mpg*100))
 head(novo)
+```
+
+```
+   mpg cyl disp  hp drat    wt  qsec vs am gear carb novacol
+1 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4    2100
+2 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4    2100
+3 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1    2280
+4 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1    2140
+5 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2    1870
+6 18.1   6  225 105 2.76 3.460 20.22  1  0    3    1    1810
 ```
 
 
@@ -1276,20 +2486,36 @@ head(novo)
 
 A função `summarise()` é uma poderosa ferrarmenta para agregar sumarizações unindo diversos cálculos ao longo de uma base de dados:
 
-```{r}
+
+```r
 summarise(mtcars, 
           media.hp=mean(hp), 
           qtd.hp=length(hp),
           qtdunico.hp=length(unique(hp)))
 ```
 
+```
+  media.hp qtd.hp qtdunico.hp
+1 146.6875     32          22
+```
+
 Ainda, é possível agrupar as informações com a função `group_by()` ao mesmo tempo em que são efetuados cálculos adjacentes. No exemplo abaixo, agrupa-se o valor médio das variáveis "hp" e "wt", bem como a quantidade de informações de cada variável (função `n()`), com relação ao agrupamento formado pela variável "cyl":
 
-```{r}
+
+```r
 summarise(group_by(mtcars, cyl.agrup=cyl), 
           hp.medio=mean(hp), 
           wt.medio=mean(wt),
           qtd=n())
+```
+
+```
+# A tibble: 3 x 4
+  cyl.agrup hp.medio wt.medio   qtd
+      <dbl>    <dbl>    <dbl> <int>
+1         4     82.6     2.29    11
+2         6    122.      3.12     7
+3         8    209.      4.00    14
 ```
 
 
@@ -1297,8 +2523,18 @@ summarise(group_by(mtcars, cyl.agrup=cyl),
 
 A função `count()` é utilizada para sumarizar a contagem de determinados objetos dentro de uma variável do banco de dados:
 
-```{r}
+
+```r
 count(mtcars, cyl)
+```
+
+```
+# A tibble: 3 x 2
+    cyl     n
+  <dbl> <int>
+1     4    11
+2     6     7
+3     8    14
 ```
 
 
@@ -1307,16 +2543,38 @@ count(mtcars, cyl)
 
 A função `arrange()` ordena a base de dados de acordo com o ordenamento da variável escolhida:
 
-```{r}
+
+```r
 novo=arrange(mtcars, cyl)
 head(novo)
 ```
 
+```
+   mpg cyl  disp hp drat    wt  qsec vs am gear carb
+1 22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
+2 24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
+3 22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
+4 32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
+5 30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
+6 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
+```
+
 Ainda é possível indicar mais de uma variável para este ordenamento, bem como utilizar a função `desc()` para organizar em ordem descrescente:
 
-```{r}
+
+```r
 novo=arrange(mtcars, mpg, desc(disp))
 head(novo)
+```
+
+```
+   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+1 10.4   8  472 205 2.93 5.250 17.98  0  0    3    4
+2 10.4   8  460 215 3.00 5.424 17.82  0  0    3    4
+3 13.3   8  350 245 3.73 3.840 15.41  0  0    3    4
+4 14.3   8  360 245 3.21 3.570 15.84  0  0    3    4
+5 14.7   8  440 230 3.23 5.345 17.42  0  0    3    4
+6 15.0   8  301 335 3.54 3.570 14.60  0  1    5    8
 ```
 
 #### Operador *pipe*
@@ -1324,7 +2582,8 @@ head(novo)
 O operador `pipe` (símbolos `%>%`) contribui para que a manipulação de dados com o pacote `dplyr` fiquem mais organizados no código de programação em linguagem R. Abaixo segue um exemplo, onde o objetivo é filtrar os veículos com transmissão manual (am == 1), agrupando-os pela quantidade de cilindros ("cyl") e em seguida retomando a média das variáveis "drat" e "hp" para cada grupamento:
 
 
-```{r}
+
+```r
 novo = mtcars %>%
   filter(am == 1) %>%
   group_by(cyl) %>%
@@ -1334,29 +2593,72 @@ novo = mtcars %>%
 novo
 ```
 
+```
+# A tibble: 3 x 3
+    cyl disp.drat hp.media
+  <dbl>     <dbl>    <dbl>
+1     4      4.18     81.9
+2     6      3.81    132. 
+3     8      3.88    300. 
+```
+
 A função `starts_with()` seleciona as variáveis com base em um critério determinado pelo pesquisador com relação ao nome da variável, no exemplo abaixo, sendo aquelas que iniciam com a leetra "d" (a função inversa é `ends_with()`):
 
 
-```{r}
+
+```r
 mtcars %>%
   select(starts_with("d")) %>%
   head
 ```
 
+```
+                  disp drat
+Mazda RX4          160 3.90
+Mazda RX4 Wag      160 3.90
+Datsun 710         108 3.85
+Hornet 4 Drive     258 3.08
+Hornet Sportabout  360 3.15
+Valiant            225 2.76
+```
+
 A função `contains()` também filtra aquelas variáveis com algum critério, neste caso de conter:
 
-```{r}
+
+```r
 mtcars %>%
   select(contains("a")) %>%
   head
 ```
 
+```
+                  drat am gear carb
+Mazda RX4         3.90  1    4    4
+Mazda RX4 Wag     3.90  1    4    4
+Datsun 710        3.85  1    4    1
+Hornet 4 Drive    3.08  0    3    1
+Hornet Sportabout 3.15  0    3    2
+Valiant           2.76  0    3    1
+```
+
 
 A função `aggregate()` também é utilizada para agregação de resultados pelo pacote `dplyr`:
 
-```{r}
+
+```r
 mtcars %>%
   aggregate(. ~ cyl, ., mean)
+```
+
+```
+  cyl      mpg     disp        hp     drat       wt     qsec        vs
+1   4 26.66364 105.1364  82.63636 4.070909 2.285727 19.13727 0.9090909
+2   6 19.74286 183.3143 122.28571 3.585714 3.117143 17.97714 0.5714286
+3   8 15.10000 353.1000 209.21429 3.229286 3.999214 16.77214 0.0000000
+         am     gear     carb
+1 0.7272727 4.090909 1.545455
+2 0.4285714 3.857143 3.428571
+3 0.1428571 3.285714 3.500000
 ```
 
 
@@ -1367,42 +2669,91 @@ mtcars %>%
 
 A configuração e padronização dos formato de datas no RStudio podem ser efetuadas pelo pesquisador, primeiramente ao carregar a base de dados no programa e em um segundo momento durante a manipulação das informações. Por padrão o RStudio trabalha com o formato ANO-MÊS-DIA, sendo possível ainda ler e incluir dados de alta frequência como horas, minutos e segundos com utilização de outros pacotes. Assim, seguem alguns dos procedimentos para a correta alteração dos padrões de datas:
 
-```{r, echo=TRUE, warning=FALSE, message=FALSE}
+
+```r
 abertura <- c("03/02/69") # Exemplo de criação de data inicial
 fechamento <- c("2000-20-01") # Criação de data final
 abertura <- as.Date(abertura, format = "%d/%m/%y") # Formatação da data
 fechamento <- as.Date(fechamento, format = "%Y-%d-%m") 
 class(abertura) # Verificando a classe do objeto
+```
+
+```
+[1] "Date"
+```
+
+```r
 class(fechamento)
+```
+
+```
+[1] "Date"
 ```
 
 É possível efetuar cálculos entre datas como segue:
 
-```{r, echo=TRUE, warning=FALSE, message=FALSE}
+
+```r
 # Diferença de dias dos intervalos informados
 dif=abertura-fechamento # Efetua o cálculo da diferença entre as datas
 dif
+```
+
+```
+Time difference of -11308 days
+```
+
+```r
 class(dif) # Verifica a classe do objeto
+```
+
+```
+[1] "difftime"
+```
+
+```r
 as.numeric(dif) # Retoma o valor numérico da diferença
+```
+
+```
+[1] -11308
+```
+
+```r
 units(dif) # Retoma a unidade da diferença entre as datas
+```
+
+```
+[1] "days"
 ```
 
 ### O pacote *lubridate*
 
 O pacote `lubridate` [@lubridate2011] é responsável por contribuir de forma eficaz para a manipulação e transformação de variáveis sob o formato de datas e horas. No caso abaixo, os comandos `ymd()` e `mdy()` codificam corretamente parao R as datas que anteriormente não estavam neste padrão.
 
-```{r, message=FALSE}
+
+```r
 library(lubridate)
 
 ymd(20190215)
+```
 
+```
+[1] "2019-02-15"
+```
+
+```r
 mdy("2/15/19")
+```
 
+```
+[1] "2019-02-15"
 ```
 
 Para o exemplo posterior para a manipulação de datas, foi criado um objeto denominado "data" com as variáveis data, quant e valor, representando a quantidade e valor de vendas em  determinados dias do ano:
 
-```{r}
+
+```r
 # Criando uma base de dados
 data=data.frame(data=c("01/01/2018","02/02/2019",
                        "02/02/2019","05/02/2019","06/02/2019"),
@@ -1411,54 +2762,142 @@ data=data.frame(data=c("01/01/2018","02/02/2019",
 head(data)
 ```
 
+```
+        data quant valor
+1 01/01/2018   100   550
+2 02/02/2019   200   600
+3 02/02/2019   100   100
+4 05/02/2019   150   150
+5 06/02/2019   300   250
+```
+
 Em primeiro lugar é efetuada a normalização da variável data:
 
-```{r}
+
+```r
 # Configurando a variável data
 data$data=dmy(data$data)
 ```
 
 Depois, são criadas novas variáveis representando o ano, mês, dia e dia da semana de cada venda realizada, incrementando o poder de análise dos objetos:
 
-```{r}
+
+```r
 # Criando uma nova variável do ano da venda
 data$ano=year(data$data)
 data
+```
 
+```
+        data quant valor  ano
+1 2018-01-01   100   550 2018
+2 2019-02-02   200   600 2019
+3 2019-02-02   100   100 2019
+4 2019-02-05   150   150 2019
+5 2019-02-06   300   250 2019
+```
+
+```r
 # Criando uma nova variável do mês da venda
 data$mes=month(data$data)
 data
+```
 
+```
+        data quant valor  ano mes
+1 2018-01-01   100   550 2018   1
+2 2019-02-02   200   600 2019   2
+3 2019-02-02   100   100 2019   2
+4 2019-02-05   150   150 2019   2
+5 2019-02-06   300   250 2019   2
+```
+
+```r
 # Criando nova variável do dia da venda
 data$dia=day(data$data)
 data
+```
 
+```
+        data quant valor  ano mes dia
+1 2018-01-01   100   550 2018   1   1
+2 2019-02-02   200   600 2019   2   2
+3 2019-02-02   100   100 2019   2   2
+4 2019-02-05   150   150 2019   2   5
+5 2019-02-06   300   250 2019   2   6
+```
+
+```r
 # Criando nova variável do dia da semana da venda
 data$diasem=wday(data$data, label=TRUE)
 data
+```
 
+```
+        data quant valor  ano mes dia diasem
+1 2018-01-01   100   550 2018   1   1    seg
+2 2019-02-02   200   600 2019   2   2    sáb
+3 2019-02-02   100   100 2019   2   2    sáb
+4 2019-02-05   150   150 2019   2   5    ter
+5 2019-02-06   300   250 2019   2   6    qua
 ```
 
 Com isso é possível realizar várias análises após a normalização das datas e extração de demais informações, como a sumarização de vendas por exemplo:
 
 
-```{r}
+
+```r
 # Valor das vendas por mês
 aggregate(data$valor, list(Var = data$mes), sum)
+```
 
+```
+  Var    x
+1   1  550
+2   2 1100
+```
+
+```r
 # Quantidade de vendas por mês
 aggregate(data$quant, list(Var = data$mes), sum)
+```
 
+```
+  Var   x
+1   1 100
+2   2 750
+```
+
+```r
 # Valor das vendas por mês e dia da semana 
 aggregate(valor ~ mes + diasem, data = data, sum)
+```
 
+```
+  mes diasem valor
+1   1    seg   550
+2   2    ter   150
+3   2    qua   250
+4   2    sáb   700
+```
+
+```r
 # Utilizando o pacote dplyr
 library(dplyr)
 
 data %>%
   group_by(diasem) %>%
   summarise(total = sum(valor))
+```
 
+```
+# A tibble: 4 x 2
+  diasem total
+  <ord>  <dbl>
+1 seg      550
+2 ter      150
+3 qua      250
+4 sáb      700
 ```
 
 
@@ -1603,7 +3042,8 @@ Pede-se:
 
 `attach(nome_da_planilha)`
   
-```{r,  echo=TRUE}
+
+```r
 library(readxl)
 url <- "https://smolski.github.io/softwarelivrer/pesquisa_dados.xlsx"
 destfile <- "pesquisa_dados.xlsx"
@@ -1611,6 +3051,22 @@ curl::curl_download(url, destfile)
 pesquisa_dados <- read_excel(destfile)
 attach(pesquisa_dados)
 ls.str(pesquisa_dados)
+```
+
+```
+Altura_(m) :  num [1:348] 1.82 1.9 1.69 1.89 1.9 1.76 1.83 1.81 1.67 1.55 ...
+Caso :  num [1:348] 1 2 3 4 5 6 7 8 9 10 ...
+consumo_anterior :  chr [1:348] "N" "N" "S" "N" "S" "S" "S" "N" "N" "N" "N" "N" "S" "S" "S" ...
+consumo_pos :  chr [1:348] "N" "S" "N" "S" "N" "S" "N" "S" "N" "S" "S" "S" "S" "S" "S" ...
+Divulgacao :  chr [1:348] "Degustacao" "Radio" "TV" "TV" "Degustacao" "TV" "TV" "Radio" ...
+Idade :  num [1:348] 22 21 20 18 16 28 19 19 22 19 ...
+Peso_(Kg) :  num [1:348] 78.5 80 54 78 36 82 75 69 58 49 ...
+Pessoas_familia :  num [1:348] 4 3 3 7 4 4 3 4 1 4 ...
+Praticidade :  chr [1:348] "Pessima" "Otima" "Boa" "Pessima" "Ruim" "Boa" "Regular" ...
+Preço :  chr [1:348] "Acima_concorrencia" "Abaixo_concorrencia" ...
+Renda_h :  chr [1:348] "1.41" "17.34" "6.86" "2.65" "2.01" "11.32" "6.86" "3.25" ...
+Sabor :  chr [1:348] "Otimo" "Pessimo" "Bom" "Otimo" "Otimo" "Regular" "Ruim" "Bom" ...
+Sexo :  chr [1:348] "Feminino" "Feminino" "Feminino" "Feminino" "Masculino" ...
 ```
   
 ## Tabelas
@@ -1629,8 +3085,15 @@ Uma tabela simples considera quantas vezes ocorre cada categoria (ou nível).
 
 Ex. Variável **Praticidade**
 
-```{r,  echo=TRUE, message=FALSE}
+
+```r
 table(Praticidade)
+```
+
+```
+Praticidade
+    Boa   Otima Pessima Regular    Ruim 
+     82      70      21      80      95 
 ```
 
 ### Tabela cruzada
@@ -1643,8 +3106,16 @@ A tabela cruzada, também conhecida como tabela de dupla entrada, para apresenta
 
 Ex. Construir uma tabela cruzada apresentando as frequências absolutas das variáveis **Sexo** e **Divulgacao**.
 
-```{r, echo=TRUE}
+
+```r
 table(pesquisa_dados$Sexo,pesquisa_dados$Divulgacao)
+```
+
+```
+           
+            Degustacao Outro Radio  TV
+  Feminino          78     6    61 147
+  Masculino         19     1    15  21
 ```
 
 
@@ -1657,8 +3128,18 @@ Com a introdução do comando `prop.table` é possível gerar, facilmente, tabel
 
 Ex. Construir uma tabela cruzada apresentando as frequências relativas das variáveis **Sexo** e **Divulgacao**.
 
-```{r,  echo=TRUE, message=FALSE}
+
+```r
 prop.table(table(Divulgacao,Sexo))
+```
+
+```
+            Sexo
+Divulgacao      Feminino   Masculino
+  Degustacao 0.224137931 0.054597701
+  Outro      0.017241379 0.002873563
+  Radio      0.175287356 0.043103448
+  TV         0.422413793 0.060344828
 ```
 
 
@@ -1685,9 +3166,19 @@ No entanto, no caso de dados em banco de dados, quando não são utilizados outr
 
 Ex. Construir um gráfico de colunas para a variável **Sexo**.
 
-```{r,  fig.cap='Gráfico de colunas com a variável Sexo', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+
+```r
 barplot(table(Sexo))
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-112-1} 
+
+}
+
+\caption{Gráfico de colunas com a variável Sexo}\label{fig:unnamed-chunk-112}
+\end{figure}
 
 **Obs**.: É possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixoy (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
 
@@ -1696,11 +3187,21 @@ barplot(table(Sexo))
 Para colocar o gráfico na horizontal, pode ser utilizado o comando `horiz=T`:
 
 
-```{r,  fig.cap='Gráfico de colunas com a variável Sexo (Horizontal)', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+
+```r
 par(las=2) # Altera a direção dos nomes Masculino e Feminino
 par(mar=c(5,8,4,2)) # Aumenta a margem do eixo x
 barplot(table(Sexo), horiz=T)
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-113-1} 
+
+}
+
+\caption{Gráfico de colunas com a variável Sexo (Horizontal)}\label{fig:unnamed-chunk-113}
+\end{figure}
 
 
 
@@ -1709,8 +3210,8 @@ barplot(table(Sexo), horiz=T)
 **Ex.1)** Construir um gráfico de colunas para a variável **Pessoas\_familia**.
 
 
-```{r, fig.cap='Gráfico de colunas com a variável Pessoas familia', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
 
+```r
 barplot(table(`Pessoas_familia`), col=c("blue"), 
         main = "Frequência de pessoas por família", 
         xlab = "Frequência", 
@@ -1718,27 +3219,45 @@ barplot(table(`Pessoas_familia`), col=c("blue"),
         border = "red")
 ```
 
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-114-1} 
+
+}
+
+\caption{Gráfico de colunas com a variável Pessoas familia}\label{fig:unnamed-chunk-114}
+\end{figure}
+
 **Ex.2)** Construir uma tabela de dupla entrada para as variáveis **Sexo** e **Divulgação**.
 
-```{r,  fig.cap='Gráfico de colunas com as variáveis Sexo e Divulgacao', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+
+```r
 barplot(table(Sexo,Divulgacao), 
         col=c("blue"), 
         main = "Frequência de pessoas por Sexo e Divulgacao")
-  
-
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-115-1} 
+
+}
+
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao}\label{fig:unnamed-chunk-115}
+\end{figure}
 
 
 **Ex.3)** Na sequência utiliza-se o sinal de atribuição <- para atribuir o nome Resultado para esta tabela (tabela de dupla entrada obtida em Ex.2).
 
-```{r, echo=TRUE}
+
+```r
 Resultado<-table(Sexo,Divulgacao)
 ```
 
 **Ex.4)** Execute o seguinte comando:
 
-```{r,  fig.cap='Gráfico de colunas com as variáveis Sexo e Divulgacao (2)', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
 
+```r
 barplot(Resultado,col=c("blue","red"),main="Título",
         xlab="Variável do eixo x",
         ylab="Informação que consta no eixo y", 
@@ -1746,6 +3265,15 @@ barplot(Resultado,col=c("blue","red"),main="Título",
         beside=T,legend=rownames(Resultado),
         args.legend = list(x = "topleft"))
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-117-1} 
+
+}
+
+\caption{Gráfico de colunas com as variáveis Sexo e Divulgacao (2)}\label{fig:unnamed-chunk-117}
+\end{figure}
 
 
 Observe que o uso do argumento `beside=T` evita que as barras fiquem empilhadas e o arguemnto `legend`' insere a legenda conforme as cores das colunas.
@@ -1761,7 +3289,8 @@ Os gráficos em setores são utilizados para ilustrar dados qualitativos de modo
 
 Ex. Construa um gráfico na forma de Setograma para a variável **Sabor**.
 
-```{r,  fig.cap='Gráfico de pizza com a variável Sabor', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+
+```r
 # Criar objeto com a tabela de Sabor
 Sabor1=table(Sabor)
 
@@ -1787,9 +3316,16 @@ legend(x="topright", # Determina posição da legenda
 # - terrain.colors(n) 
 # - topo.colors(n)
 # - cm.colors(n)
-
-
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-118-1} 
+
+}
+
+\caption{Gráfico de pizza com a variável Sabor}\label{fig:unnamed-chunk-118}
+\end{figure}
 
 ### Histograma
 
@@ -1799,9 +3335,19 @@ No histograma, utilizado em geral quando têm-se variáveis quantitativas contí
 
 Ex. Construa um histograma com a variável **Renda\_h**.
 
-```{r,  fig.cap='Histograma com a variável `Renda h`', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+
+```r
 hist(as.numeric(`Renda_h`))
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-119-1} 
+
+}
+
+\caption{Histograma com a variável `Renda h`}\label{fig:unnamed-chunk-119}
+\end{figure}
 
 **Obs**. I: Neste caso também é possível personalizar o gráfico, incluindo o título do eixo x (xlab), o título do eixo y (ylab), o título do gráfico (main), a cor da coluna (col) e cor da borda da coluna (border), lembrando que as cores, assim como os comandos devem ser expressas em inglês.
 
@@ -1810,7 +3356,8 @@ hist(as.numeric(`Renda_h`))
 
 `hist(nome_variável, breaks = 5)`
 
-```{r,  fig.cap='Histograma com a variável Renda h com breaks=5', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+
+```r
 hist(as.numeric(`Renda_h`), 
      breaks=5, 
      labels=TRUE, 
@@ -1820,13 +3367,38 @@ hist(as.numeric(`Renda_h`),
      main = 'Histograma da Renda',
      col = '#BBDEFB')
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-120-1} 
+
+}
+
+\caption{Histograma com a variável Renda h com breaks=5}\label{fig:unnamed-chunk-120}
+\end{figure}
 O comando `ylim` determina os limites do eixo y a serem mostrados; `xlab` e `ylab` determinam o nome das variáveis dos eixos x e y; `main` determina o nome do título e `col` determina a cor do gráfico. Use o argumento `main=NULL` para remover o título.
 
 Inserindo as opções `$counts` e `$breaks` retomam-se os valores da contagem dos dados e dos intervalos do histograma:
 
-```{r, echo=TRUE}
+
+```r
 hist(as.numeric(`Renda_h`), breaks=5)$counts
+```
+
+```
+[1] 106 167  62  11   2
+```
+
+```r
 hist(as.numeric(`Renda_h`), breaks=5)$breaks
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-121-1} \end{center}
+
+```
+[1]  0  5 10 15 20 25
 ```
 
 
@@ -1843,15 +3415,35 @@ Para obter o boxplot para um conjunto de dados:
 
 **Ex.1)** Construir um boxplot da variável **Idade**.
 
-```{r,  fig.cap='Boxplot com a variável Idade', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+
+```r
 boxplot(Idade,horizontal = T)
 ```
 
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-122-1} 
+
+}
+
+\caption{Boxplot com a variável Idade}\label{fig:unnamed-chunk-122}
+\end{figure}
+
 Ainda é possível criar um boxplot analisando a relação da variável contínua de acordo com outras variáveis. Por exemplo, a relação de dispersão dos respondentes relacionando a idade da pessoa com o sabor:
 
-```{r,  fig.cap='Boxplot com as variáveis Idade e Sabor', fig.subcap=c('Fonte: Elaborado pelo(s) autor(es).')}
+
+```r
 boxplot(Idade~Sabor, data=pesquisa_dados)
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-123-1} 
+
+}
+
+\caption{Boxplot com as variáveis Idade e Sabor}\label{fig:unnamed-chunk-123}
+\end{figure}
 
 
 
@@ -1890,8 +3482,48 @@ c) `stem(nome_variável,scale=0.5,width=120)`
 
 Ex. Construa um gráfico Ramo e Follhas com a variável **Idade**.
 
-```{r, echo=TRUE}
+
+```r
 stem(Idade,scale=2)
+```
+
+```
+
+  The decimal point is at the |
+
+  16 | 000
+  17 | 000000000
+  18 | 0000000000000000000000000000000000000000
+  19 | 000000000000000000000000000000000000000000000000
+  20 | 0000000000000000000000000000000000000000000000000000000000000000
+  21 | 000000000000000000000000000000000000000000000000000000000000
+  22 | 0000000000000000000000000000000000000000000
+  23 | 000000000000
+  24 | 000000000
+  25 | 0000
+  26 | 00000000000
+  27 | 00000000000
+  28 | 0000000000000
+  29 | 00
+  30 | 00000
+  31 | 
+  32 | 00
+  33 | 
+  34 | 00
+  35 | 00
+  36 | 
+  37 | 
+  38 | 000
+  39 | 
+  40 | 
+  41 | 
+  42 | 
+  43 | 
+  44 | 
+  45 | 
+  46 | 
+  47 | 
+  48 | 00000
 ```
 
 ### Gráficos de dispersão
@@ -1911,14 +3543,24 @@ Apresenta a evolução de um dado, geralmente ao longo do tempo. Eixos na vertic
 Ex. Considere os dados que descrevem os valores do número de empresas fiscalizadas na fiscalização do trabalho na área rural Brasil 1998-2010.
 
 <!--
-```{r,  echo=FALSE, fig.subcap='Fonte: MTE. SFIT. Elaboração: DIEESE.'}
 
-emp=data.frame(
-  Ano=c(1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010),
-  `Empresas Fiscalizadas`=c("7.042","6.561","8.585","9.641","8.873","9.367","13.856","12.192","13.326","13.390","10.839","13.379","11.978")
-)
-knitr::kable(emp, caption = 'Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010')
-```
+Table: Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
+
+  Ano  Empresas.Fiscalizadas 
+-----  ----------------------
+ 1998  7.042                 
+ 1999  6.561                 
+ 2000  8.585                 
+ 2001  9.641                 
+ 2002  8.873                 
+ 2003  9.367                 
+ 2004  13.856                
+ 2005  12.192                
+ 2006  13.326                
+ 2007  13.390                
+ 2008  10.839                
+ 2009  13.379                
+ 2010  11.978                
 -->
 
 Table: (\#tab:evolres)Evolução dos resultados da fiscalização do trabalho na área rural Brasil 1998-2010
@@ -1958,7 +3600,8 @@ Para o caso de representação no mesmo gráfico, de duas ou mais variáveis, o 
 
 `plot(x,y1,type="b",main="Título", xlab="Nome_eixo_x",ylab="Nome_eixo_y", col="cor das linhas",ylim=c(yi,ys))`
 
-```{r,  fig.cap='Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010', fig.subcap='Fonte: Elaborado pelo(s) autor(es) a partir de MTE. SFIT. Elaboração: DIEESE.'}
+
+```r
 empfisc=data.frame(ano=c(1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,
     2008,2009,2010), qtd=c(7042,6561,8585,9641,8873,9367,
 13856,12192,13326,13390,10839,13379,11978))
@@ -1967,6 +3610,15 @@ plot(empfisc$ano,empfisc$qtd,type="b",main="Título",
      xlab="Nome_eixo_x",ylab="Nome_eixo_y", 
      col="blue",xlim=c(1998,2010))
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-126-1} 
+
+}
+
+\caption{Gráfico de linhas sobre a fiscalização do trabalho na área rural Brasil 1998-2010}\label{fig:unnamed-chunk-126}
+\end{figure}
 Fonte: Elaborado pelo(s) autor(es) a partir de @Dieese2011. 
 
 onde, no argumento `ylim`, deve-se indicar o intervalo de variação dos valores de y, ou seja todo o intervalo que será necessário para representar todas as variáveis.
@@ -1985,7 +3637,8 @@ Neste caso, pode ser importante também alterar o tamanho da fonte da legenda, c
 
 Exemplo: Segue exemplo de um gráfico de linhas para as temperaturas registradas durante o dia 11/04/2018, pela Estação Meteorológica de São Luiz Gonzaga, RS, conforme dados obtidos no site do @inmet.
 
-```{r, echo=TRUE}
+
+```r
 library(readr)
 inmet <- read_delim("https://goo.gl/2p11WS", 
     ";", escape_double = FALSE, 
@@ -1994,9 +3647,22 @@ inmet <- read_delim("https://goo.gl/2p11WS",
 head(inmet)
 ```
 
+```
+# A tibble: 6 x 6
+  codigo_estacao data        hora temp_inst temp_max temp_min
+  <chr>          <date>     <dbl>     <dbl>    <dbl>    <dbl>
+1 A852           2018-04-11     0      26.2     27.1     26.2
+2 A852           2018-04-11     1      26       26.2     26  
+3 A852           2018-04-11     2      25.5     26.1     25.5
+4 A852           2018-04-11     3      25.1     25.5     25  
+5 A852           2018-04-11     4      24.6     25.2     24.5
+6 A852           2018-04-11     5      24.3     24.7     24.2
+```
+
 Segue a sequência de comandos, para obtenção do gráfico de linhas:
 
-```{r,  fig.cap='Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS', fig.subcap='Fonte: Elaborado pelo(s) autor(es) a partir de INMET.'}
+
+```r
 plot(inmet$hora,inmet$temp_inst,type = "b", 
   main = "Temperaturas registradas na estação metereológica
   de São Luis Gonzaga, 11 de abril de 2018",
@@ -2011,6 +3677,15 @@ legend(0,40,c("temp_inst","temp_max","temp_min"),
   col =c("blue","red","green"),pch=4.1,cex = 0.75)
 ```
 
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-128-1} 
+
+}
+
+\caption{Gráfico de linha sobre as temperaturas registradas em São Luiz Gonzaga - RS}\label{fig:unnamed-chunk-128}
+\end{figure}
+
 Fonte: Elaborado pelo(s) autor(es) a partir de @inmet.
 
 ## Estatísticas Descritivas
@@ -2021,12 +3696,17 @@ Para determinar o valor máximo de um conjunto de dados, utiliza-se:
 
 Use a variável **Renda\_h**
 
-```{r,  echo=TRUE, message=FALSE}
+
+```r
 #Transforme a variável Renda_h em variável numérica
 pesquisa_dados$Renda_h=as.numeric(pesquisa_dados$Renda_h)
 #É preciso repetir o comando attach()
 attach(pesquisa_dados)
 max(Renda_h)
+```
+
+```
+[1] 21.83
 ```
 
 De forma análoga, para determinar o valor mínimo de um conjunto de dados, utiliza-se:
@@ -2035,8 +3715,13 @@ De forma análoga, para determinar o valor mínimo de um conjunto de dados, util
 
 Use a variável **Renda\_h**
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 min(Renda_h)
+```
+
+```
+[1] 1.02
 ```
 
 **Obs.**: Para determinar a amplitude total de um conjunto de dados, utiliza-se: 
@@ -2045,8 +3730,13 @@ min(Renda_h)
 
 Use a variável **Renda\_h**
 
-```{r,  echo=TRUE, message=FALSE}
+
+```r
 max(Renda_h)-min(Renda_h)
+```
+
+```
+[1] 20.81
 ```
 
 Para obter as medidas da estatística descritiva, no caso medidas de tendência central (mínimo, quartil 1, mediana, média, quartil 3, máximo):
@@ -2054,8 +3744,14 @@ Para obter as medidas da estatística descritiva, no caso medidas de tendência 
 `summary(nome_da_variável)`
 
 Ex. Use a variável **Renda\_h**
-```{r,  echo=TRUE, message=FALSE}
+
+```r
 summary(Renda_h)
+```
+
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.020   4.638   6.785   7.310   9.512  21.830 
 ```
 
 A moda é o valor que tem o maior número de ocorrências em um conjunto de dados.
@@ -2067,15 +3763,28 @@ O R não tem um padrão de função embutida para calcular a moda. Uma sugestão
 
 Ex. Use a variável **Praticidade**
 
-```{r,  echo=TRUE, message=FALSE}
+
+```r
 subset(table(Praticidade), 
        table(Praticidade)==max(table(Praticidade)))
 ```
 
+```
+Ruim 
+  95 
+```
+
 Ex. Use a variável quantitativa **Pessoas\_familia**
 
-```{r,  echo=TRUE, message=FALSE}
+
+```r
 table(Pessoas_familia)
+```
+
+```
+Pessoas_familia
+ 0  1  2  3  4  5  6  7  8  9 10 
+ 2 14 25 62 73 60 64 30 15  2  1 
 ```
 
 **Obs.**: O primeiro valor encontrado, refere-se ao valor da moda ao passo que o segundo valor representa quantas vezes esse valor foi verificado.
@@ -2091,9 +3800,23 @@ Comando que permite determinar o percentil, no caso o percentil 10:
 
 **Obs.**: Para a obtenção de quartis e decis, basta realizar a conversão para o respectivo percentil e assim calcular normalmente.
 
-```{r,  echo=TRUE, message=FALSE}
+
+```r
 quantile(Renda_h)
+```
+
+```
+     0%     25%     50%     75%    100% 
+ 1.0200  4.6375  6.7850  9.5125 21.8300 
+```
+
+```r
 quantile(Renda_h,0.1)
+```
+
+```
+  10% 
+3.244 
 ```
 
 Para obter as medidas de variabilidade, no caso, variância e desvio-padrão, respectivamente:
@@ -2104,9 +3827,21 @@ Para obter as medidas de variabilidade, no caso, variância e desvio-padrão, re
 
 Ex. Calcule as medidas de variabilidade com a variável **Pessoas\_familia**
 
-```{r,  echo=TRUE, message=FALSE}
+
+```r
 var(Pessoas_familia)
+```
+
+```
+[1] 3.245156
+```
+
+```r
 sd(Pessoas_familia)
+```
+
+```
+[1] 1.801432
 ```
 
 A função `subset()`:
@@ -2117,33 +3852,63 @@ Exemplos:
 
 Ex. 1) Altura das pessoas do sexo masculino: com a função abaixo o R gera um subconjunto com as alturas de todas as pessoas do sexo masculino.
 
-```{r, echo=TRUE}
+
+```r
 subset(`Altura_(m)`, Sexo=="Masculino")
+```
+
+```
+ [1] 1.90 1.76 1.83 1.81 1.67 1.55 1.60 1.84 1.80 1.60 1.75 1.73 1.68 1.81 1.90
+[16] 1.80 1.56 1.65 1.60 1.61 1.59 1.75 1.59 1.89 1.62 1.60 1.50 1.65 1.79 1.65
+[31] 1.79 1.67 1.59 1.71 1.60 1.72 1.73 1.65 1.65 1.50 1.57 1.86 1.85 1.80 1.77
+[46] 1.81 1.73 1.80 1.66 1.71 1.60 1.72 1.81 1.55 1.60 1.80
 ```
 
 Ex. 2) Média das alturas das pessoas do sexo masculino: inserindo o comando `mean()` ao subconjunto anterior, é obtido como resultado a média das alturas das pessoas do sexo masculino.
 
 
-```{r, echo=TRUE}
+
+```r
 mean(subset(`Altura_(m)`, Sexo=="Masculino"))
+```
+
+```
+[1] 1.702321
 ```
 
 Ex. 3) Média das alturas das pessoas do sexo masculino com mais de 26 anos:
 
-```{r, echo=TRUE}
+
+```r
 mean(subset(`Altura_(m)`, Sexo=="Masculino"& Idade>25))
+```
+
+```
+[1] 1.654
 ```
 
 Ex. 4) Contagem de pessoas do sexo feminino que tenham menos de 60 kg:
   
-```{r, echo=TRUE}
+
+```r
 length(subset(Sexo,Sexo=="Feminino" & `Peso_(Kg)`<60))
+```
+
+```
+[1] 94
 ```
 
 Ex. 5) Montando uma tabela para exibir o gênero de pessoas que classificaram o Sabor como “Pessimo”:
 
-```{r, echo=TRUE}
+
+```r
 table(subset(Sexo, Sabor=="Pessimo"))
+```
+
+```
+
+ Feminino Masculino 
+        7         3 
 ```
 
 Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a serem aplicados na estatística descritiva (veja help do R), nem tampouco os conceitos estatísticos necessários à compreensão. Para mais detalhes sobre os conceitos de estatística descritiva, você pode consultar outras referências ou até mesmo as já citadas neste capítulo.
@@ -2153,38 +3918,21 @@ Este capítulo não teve a pretensão de esgotar o estudo de todos os comandos a
 **1.** Carregue a base de dados denominada "arvores" disponível no site do livro (<https://smolski.github.io/softwarelivrer/livro.html>) e responda as questões abaixo:
 
 
-```{r, include=FALSE}
-library(readxl)
-url <- "https://smolski.github.io/softwarelivrer/arvores.xlsx"
-destfile <- "arvores.xlsx"
-curl::curl_download(url, destfile)
-arvores <- read_excel(destfile)
-#View(arvores)
-```
+
 
 **1.1** Utilize a função `summary` para identificar os principais indicadores da base de dados. Com a função `table` encontre a contagem das espécies que constam na planilha a partir da variável "Nomecientifico":
 
-```{r, include=FALSE}
-summary(arvores)
-```
 
 
-```{r, include=FALSE}
-table(arvores$Nomecientifico)
-```
+
+
 **1.2** Utilizando a função `tapply` calcule a média do diâmetro por cada espécie.
 
-```{r, include=FALSE}
-tapply(arvores$diametro_cm, arvores$Nomecientifico, mean)
-```
+
 
 **1.3** Utilizando as funções `table` e `barplot` construa um gráfico de barras com a quantidade de itens por espécies que constam na base de dados. Não esqueça de utilizar o comando `horiz=TRUE` para melhor visualização.
 
-```{r, include=FALSE}
-par(las=2)
-par(mar=c(5,15,4,2)) 
-barplot(table(arvores$Nomecientifico), horiz=TRUE)
-```
+
 
 
 
@@ -2202,9 +3950,14 @@ barplot(table(arvores$Nomecientifico), horiz=TRUE)
 
 A inferência estatística, ou estatística inferencial, tem por objetivo concluir e tomar decisões, com base em amostras (Figura \@ref(fig:infestat)). Usam-se dados extraídos de uma amostra para produzir inferência sobre a população [@lopes2008].
 
-```{r infestat, echo=FALSE, fig.cap='Inferência Estatística', fig.subcap='Fonte: <http://www.portalaction.com.br/inferencia-0>'}
-knitr::include_graphics("infestat.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{infestat} 
+
+}
+
+\caption{Inferência Estatística}\label{fig:infestat}
+\end{figure}
 
 Em Estatística, o termo **população** é definido como conjunto de indivíduos, ou itens, com pelo menos uma característica em comum, podendo ser finita ou infinita [@lopes2008]. Por exemplo, água de um rio, sangue de uma pessoa, lote de peças produzidas por uma indústria, eleitores de um município.
 
@@ -2232,9 +3985,24 @@ No software RStudio, o Intervalo de Confiança pode ser obtido usando o teste t.
 
 Qual é o intervalo de confiança para a média populacional de onde essa amostra foi retirada?
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 horasestudo=c(19,18,20,16,18,19,19,17,22,21)
 t.test(horasestudo)
+```
+
+```
+
+	One Sample t-test
+
+data:  horasestudo
+t = 33.353, df = 9, p-value = 9.646e-11
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ 17.61811 20.18189
+sample estimates:
+mean of x 
+     18.9 
 ```
 
 IC (17,6 $\leq$ $\mu$ $\leq$ 20,2) = 95\%
@@ -2244,8 +4012,23 @@ Com 95\% de confiança, a média populacional das horas semanais de estudo para 
 
 Se não for informado o nível de confiança, o software R considera 95\%. No entanto, para mudar o nível de confiança para 90\%, é acrescentada a informação `conf.level = 0.90` após o nome da variável:
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 t.test(horasestudo, conf.level = 0.90)
+```
+
+```
+
+	One Sample t-test
+
+data:  horasestudo
+t = 33.353, df = 9, p-value = 9.646e-11
+alternative hypothesis: true mean is not equal to 0
+90 percent confidence interval:
+ 17.86124 19.93876
+sample estimates:
+mean of x 
+     18.9 
 ```
 
 IC (17,9 $\leq$ $\mu$ $\leq$ 19,9) = 90\%
@@ -2254,8 +4037,23 @@ Com 90\% de confiança, a média populacional das horas semanais de estudo para 
 
 Para mudar o nível de confiança para 99\%:
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 t.test(horasestudo, conf.level = 0.99)
+```
+
+```
+
+	One Sample t-test
+
+data:  horasestudo
+t = 33.353, df = 9, p-value = 9.646e-11
+alternative hypothesis: true mean is not equal to 0
+99 percent confidence interval:
+ 17.05843 20.74157
+sample estimates:
+mean of x 
+     18.9 
 ```
 
 IC (17,1 $\leq$ $\mu$ $\leq$ 20,7) = 99\%
@@ -2275,14 +4073,28 @@ Hipóteses do teste:
 O **valor p** reflete a plausibilidade de se obter tais resultados  no caso de $H_0$ ser de fato verdadeira.
 
 
-```{r testehip1, echo=FALSE, fig.cap='Teste de hipóteses', fig.subcap='Fonte: Elaborado pelo(s) autor(es).'}
-knitr::include_graphics("testehip1.png")
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{testehip1} 
+
+}
+
+\caption{Teste de hipóteses}\label{fig:testehip1}
+\end{figure}
+
+
+
+
+```r
+shapiro.test(horasestudo)
 ```
 
+```
 
+	Shapiro-Wilk normality test
 
-```{r, echo=TRUE, message=FALSE}
-shapiro.test(horasestudo)
+data:  horasestudo
+W = 0.97552, p-value = 0.9368
 ```
 
 Como p $>$ 0,05, não rejeita-se $H_0$ e conclui-se que os dados seguem uma distribuição normal.
@@ -2308,8 +4120,23 @@ n = tamanho da amostra;
 
 nível de confiança = 0,90 a 0,99.
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 prop.test(260, 500)
+```
+
+```
+
+	1-sample proportions test with continuity correction
+
+data:  260 out of 500, null probability 0.5
+X-squared = 0.722, df = 1, p-value = 0.3955
+alternative hypothesis: true p is not equal to 0.5
+95 percent confidence interval:
+ 0.4752277 0.5644604
+sample estimates:
+   p 
+0.52 
 ```
 
 
@@ -2322,8 +4149,23 @@ Com 95\% de confiança, a proporção populacional dos eleitores favoráveis ao 
 
 Para mudar o nível de confiança para 90\%:
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 prop.test(260,500, conf.level = 0.90)
+```
+
+```
+
+	1-sample proportions test with continuity correction
+
+data:  260 out of 500, null probability 0.5
+X-squared = 0.722, df = 1, p-value = 0.3955
+alternative hypothesis: true p is not equal to 0.5
+90 percent confidence interval:
+ 0.4822432 0.5575357
+sample estimates:
+   p 
+0.52 
 ```
 
 
@@ -2333,8 +4175,23 @@ Com 90\% de confiança, a proporção populacional dos eleitores favoráveis ao 
 
 Para mudar o nível de confiança para 99\%:
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 prop.test(260, 500, conf.level = 0.99)
+```
+
+```
+
+	1-sample proportions test with continuity correction
+
+data:  260 out of 500, null probability 0.5
+X-squared = 0.722, df = 1, p-value = 0.3955
+alternative hypothesis: true p is not equal to 0.5
+99 percent confidence interval:
+ 0.4615731 0.5778941
+sample estimates:
+   p 
+0.52 
 ```
 
 IC (0,46 $\leq$ $\pi$ $\leq$  0,58) = 99\%
@@ -2392,11 +4249,32 @@ Construa um teste de hipóteses para saber se a média da precipitação pluviom
 **$H_1$**: $\mu$ $\neq$ 30 mm
 
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 chuva=c(30.5,34.1,27.9,35,26.9,30.2,28.3,31.7,25.8)
 chuva
+```
 
+```
+[1] 30.5 34.1 27.9 35.0 26.9 30.2 28.3 31.7 25.8
+```
+
+```r
 t.test(chuva,alt="two.sided",mu=30)
+```
+
+```
+
+	One Sample t-test
+
+data:  chuva
+t = 0.04229, df = 8, p-value = 0.9673
+alternative hypothesis: true mean is not equal to 30
+95 percent confidence interval:
+ 27.62097 32.46792
+sample estimates:
+mean of x 
+ 30.04444 
 ```
 
 
@@ -2414,11 +4292,32 @@ Teste a hipótese de que o tempo de espera médio é superior a 20 minutos.
 
 **$H_1$**: $\mu$ $>$ 20 minutos
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 tempo=c(22,20,21,23,22,20,23,22,20,24,21,20,21,24,22,22,23,22,20,24)
 tempo
+```
 
+```
+ [1] 22 20 21 23 22 20 23 22 20 24 21 20 21 24 22 22 23 22 20 24
+```
+
+```r
 t.test(tempo, alt="greater", mu=20)
+```
+
+```
+
+	One Sample t-test
+
+data:  tempo
+t = 5.753, df = 19, p-value = 7.613e-06
+alternative hypothesis: true mean is greater than 20
+95 percent confidence interval:
+ 21.25899      Inf
+sample estimates:
+mean of x 
+     21.8 
 ```
 
 
@@ -2437,9 +4336,24 @@ Estes dados são evidência para afirmar que o conteúdo de oxigênio é menor q
 
 **$H_1$**: $\mu$ $<$ 5 ppm
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 amostras=c(4.9,5.1,4.9,5.5,5.0,4.7)
 t.test(amostras, alt="less", mu=5)
+```
+
+```
+
+	One Sample t-test
+
+data:  amostras
+t = 0.15041, df = 5, p-value = 0.5568
+alternative hypothesis: true mean is less than 5
+95 percent confidence interval:
+     -Inf 5.239944
+sample estimates:
+mean of x 
+ 5.016667 
 ```
 
 
@@ -2483,8 +4397,23 @@ alt = `"two.sided"`, `"greater"` ou `"less"`.
 **$H_1$**: $\pi$ $\neq$ 3\%
 
 
-```{r, echo=TRUE, message=FALSE,warning=FALSE}
+
+```r
 prop.test(3,80, p=0.03, alt="two.sided")
+```
+
+```
+
+	1-sample proportions test with continuity correction
+
+data:  3 out of 80, null probability 0.03
+X-squared = 0.0042955, df = 1, p-value = 0.9477
+alternative hypothesis: true p is not equal to 0.03
+95 percent confidence interval:
+ 0.009734871 0.113170946
+sample estimates:
+     p 
+0.0375 
 ```
 
 
@@ -2496,8 +4425,23 @@ Conclusão: Aceita-se $H_0$ e conclui-se que a máquina produz 3\% de peças def
 
 **$H_1$**: $\pi$ $\neq$ 0,6
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 prop.test(530, 1000, p=0.6, alt="two.sided")
+```
+
+```
+
+	1-sample proportions test with continuity correction
+
+data:  530 out of 1000, null probability 0.6
+X-squared = 20.126, df = 1, p-value = 7.25e-06
+alternative hypothesis: true p is not equal to 0.6
+95 percent confidence interval:
+ 0.4985104 0.5612563
+sample estimates:
+   p 
+0.53 
 ```
 
 Conclusão: Rejeita-se $H_0$ com nível de significância de 1\% e conclui-se que a proporção de nascidos que sobrevivem até os 60 anos é diferente de 0,6.
@@ -2508,8 +4452,23 @@ Conclusão: Rejeita-se $H_0$ com nível de significância de 1\% e conclui-se qu
 
 **$H_1$**: $\pi$ $>$ 1,5\%
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 prop.test(9, 500, p=0.015, alt="greater")
+```
+
+```
+
+	1-sample proportions test with continuity correction
+
+data:  9 out of 500, null probability 0.015
+X-squared = 0.13536, df = 1, p-value = 0.3565
+alternative hypothesis: true p is greater than 0.015
+95 percent confidence interval:
+ 0.009766109 1.000000000
+sample estimates:
+    p 
+0.018 
 ```
 
 Conclusão: Não rejeita $H_0$ e conclui-se que a proporção de peças defeituosas é igual a 1,5\%, ou seja, o processo não precisa ser revisto.
@@ -2520,8 +4479,23 @@ Conclusão: Não rejeita $H_0$ e conclui-se que a proporção de peças defeituo
 
 **$H_1$**: $\pi$ $<$ 90\%
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 prop.test(80, 100, p=0.90, alt="less")
+```
+
+```
+
+	1-sample proportions test with continuity correction
+
+data:  80 out of 100, null probability 0.9
+X-squared = 10.028, df = 1, p-value = 0.000771
+alternative hypothesis: true p is less than 0.9
+95 percent confidence interval:
+ 0.0000000 0.8617706
+sample estimates:
+  p 
+0.8 
 ```
 
 
@@ -2531,9 +4505,14 @@ Conclusão: Rejeita-se $H_0$ com nível de significância de 1\% e conclui-se qu
 
 O teste de hipótese para duas médias aplica-se quando se deseja comparar dois grupos:
 
-```{r testehip2, echo=FALSE, fig.cap='Teste de hipótese para dois grupos', fig.subcap='Fonte: <http://www.leg.ufpr.br/lib/exe/fetch.php/disciplinas:ce001:bioestatistica_testes_t_para_comparacao_de_medias_de_dois.pdf>'}
-knitr::include_graphics("testehip2.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{testehip2} 
+
+}
+
+\caption{Teste de hipótese para dois grupos}\label{fig:testehip2}
+\end{figure}
 
 É possível comparar duas médias de duas amostras dependentes, também chamadas de pareadas, ou médias de duas amostras independentes.
 
@@ -2541,21 +4520,13 @@ knitr::include_graphics("testehip2.png")
 
 **Exemplo 10**: Foi obtido o peso de seis indivíduos antes e após um treinamento de exercício físico. Teste a hipótese de que a média antes do treinamento é diferente da média após o treinamento.
 
-```{r, echo=FALSE, fig.subcap='Fonte: Elaborado pelo(s) autor(es).'}
 
-library(knitr)
-amostdep=data.frame(
-  `Indivíduo`=c("Peso antes do treinamento","Peso depois do treinamento"),
-  A=c(99,94),
-  B=c(62,62),
-  C=c(74,66),
-  D=c(59,58),
-  E=c(70,70),
-  F=c(73,76)
-)
+Table: Amostras dependentes
 
-knitr::kable(amostdep, caption = 'Amostras dependentes')
-```
+Indivíduo                      A    B    C    D    E    F
+---------------------------  ---  ---  ---  ---  ---  ---
+Peso antes do treinamento     99   62   74   59   70   73
+Peso depois do treinamento    94   62   66   58   70   76
 
 No software RStudio, é utilizado o `t.test` para a realização do teste de hipóteses para uma média populacional, levando-se em conta o valor de *p-value* para aceitar ou rejeitar $H_0$.
 
@@ -2567,26 +4538,38 @@ Hipóteses:
 
 **$H_1$**: média antes $\neq$ média depois
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 antes=c(99,62,74,59,70,73)
 depois=c(94,62,66,58,70,76)
 t.test(antes,depois,paired=TRUE)
+```
+
+```
+
+	Paired t-test
+
+data:  antes and depois
+t = 1.131, df = 5, p-value = 0.3094
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -2.333688  6.000355
+sample estimates:
+mean of the differences 
+               1.833333 
 ```
 
 Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso antes do treinamento é igual à média de peso depois do treinamento.
 
 **Exemplo 11**: (adaptado de <www.inf.ufsc.br/~marcelo/testes2.html>) Dez cobaias foram submetidas ao tratamento de engorda com certa ração. Os pesos em gramas, antes e após o teste são dados a seguir. Pode-se concluir que o uso da ração contribuiu para o aumento do peso médio dos animais? 
 
-```{r, echo=FALSE, fig.subcap='Fonte: <www.inf.ufsc.br/~marcelo/testes2.html>'}
 
-library(knitr)
-cob=data.frame(Cobaia=c("Antes","Depois"))
-cobaiaantes=c(635,704,662,560,603,745,698,575,633,669)
-cobaiadepois=c(640,712,681,558,610,740,707,585,635,682)
-amostdep2=cbind(cob,rbind(cobaiaantes,cobaiadepois))
+Table: Amostras dependentes - caso 2
 
-knitr::kable(amostdep2, caption = 'Amostras dependentes - caso 2',row.names = FALSE)
-```  
+Cobaia      1     2     3     4     5     6     7     8     9    10
+-------  ----  ----  ----  ----  ----  ----  ----  ----  ----  ----
+Antes     635   704   662   560   603   745   698   575   633   669
+Depois    640   712   681   558   610   740   707   585   635   682
 
 Fonte: <www.inf.ufsc.br/~marcelo/testes2.html>.
 
@@ -2594,11 +4577,25 @@ Fonte: <www.inf.ufsc.br/~marcelo/testes2.html>.
 
 **$H_1$**: média antes $\neq$ média depois
 
-```{r, echo=TRUE, message=FALSE}
 
+```r
 cobaiaantes=c(635,704,662,560,603,745,698,575,633,669)
 cobaiadepois=c(640,712,681,558,610,740,707,585,635,682)
 t.test(cobaiaantes,cobaiadepois,paired=TRUE)
+```
+
+```
+
+	Paired t-test
+
+data:  cobaiaantes and cobaiadepois
+t = -2.9635, df = 9, p-value = 0.01587
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -11.638063  -1.561937
+sample estimates:
+mean of the differences 
+                   -6.6 
 ```
 
 Conclusão: Rejeita-se $H_0$ com nível de significância de 5\% e conclui-se que a média antes da engorda é diferente da média depois da engorda.
@@ -2614,16 +4611,13 @@ Primeiramente é preciso saber se existe homogeneidade de variâncias populacion
 
 
 
-```{r, echo=FALSE, fig.subcap='Fonte: <https://www.ime.unicamp.br/~hildete/Aula_p12.pdf>.'}
 
-library(knitr)
-cob2=c("Tecido A","Tecido B")
-tecidoa=c(36,26,31,38,28,20,37)
-tecidob=c(39,27,35,42,31,39,22)
-amostdep3=cbind(c("Tecido A", "Tecido B"),rbind(tecidoa,tecidob))
+Table: Comparação de dois tipos diferentes de tecidos
 
-knitr::kable(amostdep3, caption = 'Comparação de dois tipos diferentes de tecidos', row.names = FALSE)
-```  
+---------  ---  ---  ---  ---  ---  ---  ---
+Tecido A   36   26   31   38   28   20   37 
+Tecido B   39   27   35   42   31   39   22 
+---------  ---  ---  ---  ---  ---  ---  ---
 
 Fonte: <https://www.ime.unicamp.br/~hildete/Aula_p12.pdf>.
 
@@ -2633,10 +4627,25 @@ Teste se um tecido é mais pesado que o outro.
 
 **$H_1$**: as variâncias são heterogêneas
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 tecidoa=c(36,26,31,38,28,20,37)
 tecidob=c(39,27,35,42,31,39,22)
 var.test(tecidoa, tecidob)
+```
+
+```
+
+	F test to compare two variances
+
+data:  tecidoa and tecidob
+F = 0.83891, num df = 6, denom df = 6, p-value = 0.8366
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.1441493 4.8822754
+sample estimates:
+ratio of variances 
+          0.838914 
 ```
 
 Conclusão: Não rejeita-se $H_0$ e conclui-se que as variâncias são homogêneas.
@@ -2647,8 +4656,23 @@ Agora é possível realizar o teste de comparação de duas amostras independent
 
 **$H_1$**: média tecido A $\neq$ média tecido B
 
-```{r, echo=TRUE, message=FALSE}
+
+```r
 t.test(tecidoa, tecidob, var.equal = TRUE, paired=FALSE)
+```
+
+```
+
+	Two Sample t-test
+
+data:  tecidoa and tecidob
+t = -0.73005, df = 12, p-value = 0.4794
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -10.814996   5.386425
+sample estimates:
+mean of x mean of y 
+ 30.85714  33.57143 
 ```
 
 Conclusão: Não rejeita-se $H_0$ e conclui-se que a média de peso do tecido A é igual à média de peso do tecido B.
@@ -2676,28 +4700,32 @@ Construa o intervalo de confiança para a proporção populacional dos alunos sa
 
 **5.**	A fim de determinar a eficiência de um medicamento antitérmico, a temperatura corporal (em graus Celsius) de 15 indivíduos foi medida. Em seguida, foi administrado o medicamento e após uma hora a temperatura foi medida novamente. Os resultados podem ser encontrados na tabela abaixo.
 
-```{r, echo=FALSE, fig.subcap='Fonte: Elaborado pelo(s) autor(es).'}
 
-library(knitr)
-exerc6=data.frame(Antes=c("37,5","36,0","39,0","38,0","37,8","38,5","36,9","39,4","37,2","38,1","39,3","37,5","38,5","37,8","39,0"),
-                  Depois=c("37,8","36,4","37,6","37,2","36,9","37,7","36,8","38,1","36,7","37,3","38,0","37,1","36,6","35,0","39,0")
-)
-
-knitr::kable(exerc6)
-```
+Antes   Depois 
+------  -------
+37,5    37,8   
+36,0    36,4   
+39,0    37,6   
+38,0    37,2   
+37,8    36,9   
+38,5    37,7   
+36,9    36,8   
+39,4    38,1   
+37,2    36,7   
+38,1    37,3   
+39,3    38,0   
+37,5    37,1   
+38,5    36,6   
+37,8    35,0   
+39,0    39,0   
 
 <!--
 
-```{r, echo=FALSE,size = "tiny"}
 
-require(knitr)
-cob2=c("Antes","Depois")
-tecidoa=c(37.5,36.0,39.0,38.0,37.8,38.5,36.9,39.4,37.2,38.1,39.3,37.5,38.5,37.8,39.0)
-tecidob=c(37.8,36.4,37.6,37.2,36.9,37.7,36.8,38.1,36.7,37.3,38.0,37.1,36.6,35.0,39.0)
-amostdep3=cbind(c("Antes", "Depois"),rbind(tecidoa,tecidob))
-
-knitr::kable(amostdep3, row.names = FALSE)
-```  
+-------  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  ---
+Antes    37.5   36     39     38     37.8   38.5   36.9   39.4   37.2   38.1   39.3   37.5   38.5   37.8   39 
+Depois   37.8   36.4   37.6   37.2   36.9   37.7   36.8   38.1   36.7   37.3   38     37.1   36.6   35     39 
+-------  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  -----  ---
 -->
 
 Houve ou não diminuição da temperatura dos indivíduos?
@@ -2800,9 +4828,16 @@ Para aplicar o teste de qui-quadrado ou um alternativo no software R, primeirame
 
 Quando os dados estão organizados em uma tabela cruzada, conforme apresentado na Tabela \@ref(tab:tamprop), digitam-se os valores provenientes da tabela cruzada (tabela de contingência) no formato de uma matriz, na sequência por coluna. Por exemplo, digita-se todos os valores da primeira coluna, depois digita-se todos os valores da segunda coluna e assim sucessivamente. Para o exemplo da Tabela 1, o comando é o seguinte:
 
-```{r, warnings=FALSE}
+
+```r
 quiquadrado1<-matrix(c(59,31,8,14),nc=2)
 quiquadrado1
+```
+
+```
+     [,1] [,2]
+[1,]   59    8
+[2,]   31   14
 ```
 
 O comando `matrix` indica que os dados serão organizados em uma matriz, `nc` indica o número de colunas da tabela, o operador `<-` atribui os valores digitados no nome informado pelo usuário que neste caso é `quiquadrado1`.
@@ -2811,20 +4846,45 @@ O segundo comando `quiquadrado1`, mostra a matriz elaborada, que neste caso repr
 
 Para verificar a existência de alguma casela com frequência esperada menor que os valores apresentados no check-list, utiliza-se o comando `chisq.test` com a opção `expected`. O comando é apresentado a seguir:
 
-```{r, warning=FALSE}
+
+```r
 chisq.test(quiquadrado1)$expected
+```
+
+```
+         [,1]      [,2]
+[1,] 53.83929 13.160714
+[2,] 36.16071  8.839286
 ```
 
 O comando para aplicar o teste de qui-quadrado é o `chisq.test`, conforme segue:
 
-```{r, warning=FALSE}
+
+```r
 chisq.test(quiquadrado1)
+```
+
+```
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  quiquadrado1
+X-squared = 5.1122, df = 1, p-value = 0.02376
 ```
 
 Observa-se no *output* apresentado que o *software* R identificou que se trata de uma tabela 2x2 (duas linhas e duas colunas) e então aplicou a correção de continuidade (*Yates' continuity correction*). Porém, é possível aplicar a correção de continuidade como uma opção do comando utilizando `correct = TRUE`, como segue:
 
-```{r, warning=FALSE}
+
+```r
 chisq.test(quiquadrado1, correct=TRUE)
+```
+
+```
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  quiquadrado1
+X-squared = 5.1122, df = 1, p-value = 0.02376
 ```
 
 Conforme o output para os dados do exemplo, conclui-se que existe associação significativa ($p$ = 0,0238) entre as duas variáveis em análise, isto é, entre tamanho de propriedade e armazenamento seguro do agrotóxico.
@@ -2848,21 +4908,50 @@ Fonte: @Ristow2017.
 
 Inserindo a tabela no software, conforme segue:
 
-```{r, warning=FALSE}
+
+```r
 quiquadrado2<-matrix(c(8,3,59,43),nc=2)
 quiquadrado2
 ```
 
+```
+     [,1] [,2]
+[1,]    8   59
+[2,]    3   43
+```
+
 Verificando se todas frequências esperadas são maiores ou iguais a 5, uma vez que se trata de tabela 2x2:
 
-```{r, warning=FALSE}
+
+```r
 chisq.test(quiquadrado2)$expected
+```
+
+```
+         [,1]     [,2]
+[1,] 6.522124 60.47788
+[2,] 4.477876 41.52212
 ```
 
 Neste caso, o software R apresenta um "aviso" pois observa-se uma frequência esperada menor que 5. Então deve-se aplicar o teste exato de Fisher, conforme segue:
 
-```{r, warning=FALSE}
+
+```r
 fisher.test(quiquadrado2)
+```
+
+```
+
+	Fisher's Exact Test for Count Data
+
+data:  quiquadrado2
+p-value = 0.5206
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.4315501 11.9645588
+sample estimates:
+odds ratio 
+  1.932824 
 ```
 
 A partir do resultado do teste exato de Fisher para o exemplo 2, avaliando o valor $p$, conclui-se pela não rejeição de $H_0$, isto é, as variáveis são independentes. Desta forma, o tamanho da propriedade não está associado com a devolução das embalagens vazias.
@@ -2922,10 +5011,28 @@ $H_1$: As frequências b e c ocorrem em proporções diferentes, ou seja, as mud
 
 Para teste $H_0$, aplica-se o teste de McNemar no software R, conforme segue:
 
-```{r, warning=FALSE}
+
+```r
 mcnemar=matrix(c(15,18,5,7), nc=2)
 mcnemar
+```
+
+```
+     [,1] [,2]
+[1,]   15    5
+[2,]   18    7
+```
+
+```r
 mcnemar.test(mcnemar)
+```
+
+```
+
+	McNemar's Chi-squared test with continuity correction
+
+data:  mcnemar
+McNemar's chi-squared = 6.2609, df = 1, p-value = 0.01234
 ```
 
 O comando `matrix` permite inserir dados no formato de uma tabela cruzada, `nc` indica o número de colunas da tabela e `mcnemar` é o nome dado a tabela elaborada para esse exemplo. O comando para executar o teste de McNemar é `mcnemar.test`.
@@ -2957,16 +5064,18 @@ Considere o seguinte exemplo.
 
 **Exemplo 4**:  O objetivo da pesquisa é verificar se o número de borrachudos é o mesmo em diferentes pontos da margem de um rio, considerando nível de 5% de significância. O número de borrachudos observados para cada ponto (local) é apresentado na Tabela \@ref(tab:borrach).
 
-```{r borrach, echo=FALSE, fig.subcap="Fonte: Dados simulados."}
-library(knitr)
 
-borrach=data.frame(
-  Ponto=c("Ponto 1","Ponto 2","Ponto 3","Ponto 4","Ponto 5","Ponto 6","Ponto 7"),
-  Borrachudos=c(19,12,10,17,25,22,15)
-)
+Table: Número de borrachudos nos diferentes pontos
 
-knitr::kable(borrach, caption = 'Número de borrachudos nos diferentes pontos')
-```
+Ponto      Borrachudos
+--------  ------------
+Ponto 1             19
+Ponto 2             12
+Ponto 3             10
+Ponto 4             17
+Ponto 5             25
+Ponto 6             22
+Ponto 7             15
 
 Fonte: Dados simulados.
 
@@ -2978,10 +5087,26 @@ $H_1$: Pelo menos, um dos pontos, tem número de borrachudos diferente dos demai
 
 Primeiramente, inserem-se os dados do exemplo 4 no *software* R, com o comando `c` e armazena em "borrach". Em seguida, utiliza-se o comando `chisq.test` com a opção `expected` para verificar se todas as frequências esperadas são $\geq$ 2. Por fim, é executado o teste de qui-quadrado de aderência com o comando `chisq.test`. 
 
-```{r, warning=FALSE}
+
+```r
 borrach<-c(20,12,10,17,30,22,35)
 chisq.test(borrach)$expected
+```
+
+```
+[1] 20.85714 20.85714 20.85714 20.85714 20.85714 20.85714 20.85714
+```
+
+```r
 chisq.test(borrach)
+```
+
+```
+
+	Chi-squared test for given probabilities
+
+data:  borrach
+X-squared = 23.822, df = 6, p-value = 0.0005631
 ```
 
 No output do exemplo 4, analisando o valor de $p$, conclui-se pela rejeição de $H_0$, portanto, pelo menos, um dos pontos de número de borrachudos diferente dos demais pontos. Agora, considere outro exemplo.
@@ -2995,11 +5120,27 @@ $H_0$: O número de borrachudos segue a distribuição teórica informada;
 $H_1$: O número de borrachudos não segue a distribuição teórica informada.
 
 
-```{r, warning=FALSE}
+
+```r
 borrachudos<-c(20,12,10,17,30,22,35)
 dist<-c(0.10,0.10,0.10,0.15,0.15,0.15,0.25)
 chisq.test(borrachudos)$expected
+```
+
+```
+[1] 20.85714 20.85714 20.85714 20.85714 20.85714 20.85714 20.85714
+```
+
+```r
 chisq.test(borrachudos, p=dist)
+```
+
+```
+
+	Chi-squared test for given probabilities
+
+data:  borrachudos
+X-squared = 8.0639, df = 6, p-value = 0.2335
 ```
 
 No output do exemplo 5, considerando o valor de p, conclui-se pela rejeição de $H_0$, ao nível de 5\% de significância. Portanto, o número de borrachudos não segue a distribuição informada.
@@ -3068,9 +5209,31 @@ Após a instalação, é preciso ativar o pacote para ser utilizado com o comand
 
 **Exemplo 6**: Considerando os dados da Tabela \@ref(tab:tamprop), calcule a razão de prevalência.
 
-```{r, warning=FALSE, message=FALSE}
+
+```r
 library(epiR)
 epi.2by2(quiquadrado1, method="cross.sectional")
+```
+
+```
+             Outcome +    Outcome -      Total        Prevalence *        Odds
+Exposed +           59            8         67                88.1        7.38
+Exposed -           31           14         45                68.9        2.21
+Total               90           22        112                80.4        4.09
+
+Point estimates and 95% CIs:
+-------------------------------------------------------------------
+Prevalence ratio                             1.28 (1.03, 1.59)
+Odds ratio                                   3.33 (1.26, 8.80)
+Attrib prevalence *                          19.17 (3.57, 34.77)
+Attrib prevalence in population *            11.47 (-3.93, 26.87)
+Attrib fraction in exposed (%)              21.77 (2.98, 36.92)
+Attrib fraction in population (%)           14.27 (1.12, 25.68)
+-------------------------------------------------------------------
+ Test that odds ratio = 1: chi2(1) = 6.268 Pr>chi2 = 0.012
+ Wald confidence limits
+ CI: confidence interval
+ * Outcomes per 100 population units 
 ```
 
 Para calcular a medida de magnitude utiliza-se o comando `epi.2by2` e em `method` indica-se o delineamento do estudo, conforme segue:
@@ -3205,9 +5368,14 @@ O diagrama de dispersão é um gráfico para verificar a existência de relaçã
 O diagrama de dispersão fornece uma visualização gráfica do comportamento conjunto das duas variáveis em estudo. Na Figura \@ref(fig:diag)a, percebe-se uma correlação (relação) linear positiva entre as variáveis X e Y, ou seja, os valores das duas variáveis crescem conjuntamente. Na Figura \@ref(fig:diag)b, percebe-se uma correlação linear negativa entre as variáveis X e Y, neste caso, os valores de uma variável crescem enquanto os valores da outra variável decrescem. A Figura \@ref(fig:diag)c informa a ausência de relação entre as duas variáveis e, a Figura \@ref(fig:diag)d mostra uma correlação não linear, que não será abordada neste capítulo.
 
 
-```{r diag, echo=FALSE, fig.cap='Diagramas de Dispersão'}
-knitr::include_graphics("correlacao1.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{correlacao1} 
+
+}
+
+\caption{Diagramas de Dispersão}\label{fig:diag}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -3225,7 +5393,8 @@ Fonte: Dados simulados.
 
 Primeiramente, deve-se digitar os dados para cada variável diretamente na linha de comando ou em um arquivo de dados que será importado. No caso de linha de comando:
 
-```{r, echo=TRUE}
+
+```r
 tempo=c(4,6,5.5,5,6.8,6.5,3.5,4.5,7,8,5.4,6.5,7.7,7.5,5.8)
 nota=c(5.5,7.5,8,7,8.1,8.6,4.7,7.5,9.5,9.5,7.8,8,9.1,9.5,8)
 ```
@@ -3237,9 +5406,19 @@ Para elaborar o diagrama de dispersão o comando utilizado é o `plot` em que y 
 Para o exemplo o comando é o seguinte:
 
 
-```{r diadisp, echo=TRUE, message=FALSE, fig.cap='Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo'}
+
+```r
 plot(tempo,nota)
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/diadisp-1} 
+
+}
+
+\caption{Diagrama de dispersão da nota em relação ao tempo de estudo dos participantes do estudo}\label{fig:diadisp}
+\end{figure}
 
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -3272,8 +5451,13 @@ Sintaxe no software R:
 
 Lembrando que os valores de  x e y são numéricos. No caso do exemplo, segue o comando e a resposta.
 
-```{r, echo=TRUE}
+
+```r
 cor(tempo,nota)
+```
+
+```
+[1] 0.9224332
 ```
 
 
@@ -3286,18 +5470,38 @@ Caso o usuário deseja testar a significância do coeficiente de correlação, i
 
 Para o exemplo:
 
-```{r}
+
+```r
 cor.test(tempo, nota)
+```
+
+```
+
+	Pearson's product-moment correlation
+
+data:  tempo and nota
+t = 8.6128, df = 13, p-value = 9.878e-07
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.7776159 0.9743080
+sample estimates:
+      cor 
+0.9224332 
 ```
 
 Como o valor de $p$ é menor que 0,01 então pode-se afirmar que existe correlação linear positiva significativa, isto é, o resultado pode ser projeto para a população de onde a amostra foi extraida.
 
 Ainda,  com o pacote `PerformanceAnalytics` [@PerformanceAnalytics] é possível aprimorar a exibição dos resultados sobre o coeficiente de correlação com as variáveis observadas, que além do coeficientes de correlação, mostra a distribuição das variáveis e o gráfico de dispersão:
 
-```{r, message=FALSE, warning=FALSE}
+
+```r
 library("PerformanceAnalytics")
 chart.Correlation(cbind(tempo,nota), histogram=TRUE, pch=19)
 ```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-184-1} \end{center}
 
 
 ## Regressão Linear Simples
@@ -3319,9 +5523,14 @@ A análise de regressão é uma técnica muito utilizada em variáveis quantitat
 Na Figura \@ref(fig:regress) é apresentada a variação explicada e não explicada na análise por modelo regressão.
 
 
-```{r regress, echo=FALSE, fig.cap="Variação explicada e não explicada na análise de regressão"}
-knitr::include_graphics("regress1.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{regress1} 
+
+}
+
+\caption{Variação explicada e não explicada na análise de regressão}\label{fig:regress}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -3329,9 +5538,14 @@ Fonte: Elaborado pelo(s) autor(es).
 Observa-se na Figura \@ref(fig:regress), uma identidade na regressão, conforme a seguinte expressão:
 
 <!--
-```{r regress2, echo=FALSE, fig.cap="Identidade da Regressão"}
-knitr::include_graphics("regress2.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{regress2} 
+
+}
+
+\caption{Identidade da Regressão}\label{fig:regress2}
+\end{figure}
 Fonte: Elaborado pelo(s) autor(es).
 -->
 
@@ -3437,9 +5651,20 @@ No software R utiliza-se o comando `lm` para executar a análise de regressão l
 
 Por exemplo:
 
-```{r reg, echo=TRUE}
+
+```r
 regressaolinear=lm(nota~tempo)
 regressaolinear
+```
+
+```
+
+Call:
+lm(formula = nota ~ tempo)
+
+Coefficients:
+(Intercept)        tempo  
+     2.2214       0.9474  
 ```
 
 No resultado observa-se o valor do coeficiente linear (intercept) igual a 2,2214 e o valor do coeficiente angular (tempo) igual a 0,947 interpretando que a cada aumento de uma unidade de 
@@ -3521,8 +5746,20 @@ No software R, utiliza-se a função `anova()` para obter a análise de variânc
 
 Por exemplo:
 
-```{r, echo=TRUE}
+
+```r
 anova(regressaolinear)
+```
+
+```
+Analysis of Variance Table
+
+Response: nota
+          Df  Sum Sq Mean Sq F value    Pr(>F)    
+tempo      1 22.8184 22.8184   74.18 9.878e-07 ***
+Residuals 13  3.9989  0.3076                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
 No resultado observam-se as fontes de variação: tempo (variável preditora) e residuals (resíduos); graus de liberdade (Df), soma de quadrado (Sum Sq), quadrado médio (Mean Sq), valor do F calculado (F value) e o valor $p$ (Pr). Neste caso, como $p<0,01$ rejeita-se $H_0$ ao nível de 1\% de significância e, portanto a equação é significativa ($p<0,01$).
@@ -3543,8 +5780,30 @@ No software R, o valor do coeficiente de determinação é obtido pelo comando `
 
 Por exemplo:
 
-```{r, echo=TRUE}
+
+```r
 summary(regressaolinear)
+```
+
+```
+
+Call:
+lm(formula = nota ~ tempo)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.83718 -0.41088  0.04176  0.37333  1.01544 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   2.2214     0.6732   3.300  0.00575 ** 
+tempo         0.9474     0.1100   8.613 9.88e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.5546 on 13 degrees of freedom
+Multiple R-squared:  0.8509,	Adjusted R-squared:  0.8394 
+F-statistic: 74.18 on 1 and 13 DF,  p-value: 9.878e-07
 ```
 
 No resultado, observa-se o valor de coeficiente de determinação (multiple R-squared) igual a 0,85, indicando que 85\% da variação da nota (variável resposta) é devido a variação do tempo de estudo (variável preditora).
@@ -3557,10 +5816,20 @@ A reta de regressão pode ser visualizada no diagrama de dispersão com o comand
 
 Para o exemplo:
 
-```{r, fig.cap="Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa"}
+
+```r
 plot(nota~tempo)
 abline(regressaolinear)
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/unnamed-chunk-187-1} 
+
+}
+
+\caption{Reta de regressão ajustada da nota em relação ao tempo de estudo dos participantes da pesquisa}\label{fig:unnamed-chunk-187}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -3570,8 +5839,15 @@ O intervalo de 95\% de confiança para os coeficientes de regressão são obtido
 
 Para o exemplo:
 
-```{r, echo=TRUE}
+
+```r
 confint(regressaolinear)
+```
+
+```
+                2.5 %   97.5 %
+(Intercept) 0.7670509 3.675707
+tempo       0.7097403 1.185005
 ```
 
 ## Intervalo de Predição
@@ -3627,9 +5903,15 @@ No comando apresentado o x0 recebe o valor de x e predict calcula o intervalo de
 
 Para o exemplo:
 
-```{r, echo=TRUE}
+
+```r
 x0=data.frame(tempo=5.5)
 predict(regressaolinear, x0, interval="prediction")
+```
+
+```
+       fit      lwr      upr
+1 7.431928 6.189192 8.674664
 ```
 
 
@@ -3652,9 +5934,14 @@ distribuídos de forma aleatória no gráfico dos resíduos, conforme Figura \@r
 
 Além da análise gráfica, existem testes para avaliar a homocedasticidade como o Teste de Bartlett e para avaliar a normalidade aplicam-se os testes de Shapiro Wilks ou Kolmogorov-Smirnov.
 
-```{r residuos, echo=FALSE, fig.cap="Gráficos para análise de resíduos em regressão"}
-knitr::include_graphics("residuos1.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{residuos1} 
+
+}
+
+\caption{Gráficos para análise de resíduos em regressão}\label{fig:residuos}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -3671,11 +5958,21 @@ Nesta sintaxe, o termo "nome\_para\_regressao" é o nome dado ao modelo de regre
 
 Na Figura \@ref(fig:residuos1) é apresentado o gráfico de resíduo do exemplo, no qual os resíduos são apresentados no eixo y e os valores ajustados são apresentados no eixo x. Lembrando que "regressaolinear" é o nome definido para a regressão do exemplo.
 
-```{r residuos1, fig.cap="Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo"}
+
+```r
 plot(fitted(regressaolinear), residuals(regressaolinear),
 xlab="Valores ajustados", ylab="Residuos")
 abline(h=0)
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/residuos1-1} 
+
+}
+
+\caption{Gráfico dos resíduos em relação aos valores ajustados para os dados do exemplo}\label{fig:residuos1}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -3687,12 +5984,22 @@ Outro gráfico de resíduos que é possível elaborar na análise de resíduos r
                                   
 Para os dados do exemplo:
 
-```{r residuos2, fig.cap="Gráfico gerado para análise dos resíduos com os valores da variável preditora"}
+
+```r
 plot(tempo, residuals(regressaolinear), 
      xlab = "Tempo",
      ylab="Residuos")
 abline(h=0)
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/residuos2-1} 
+
+}
+
+\caption{Gráfico gerado para análise dos resíduos com os valores da variável preditora}\label{fig:residuos2}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -3716,9 +6023,19 @@ Para testar a suposição que os erros aleatórios têm distribuição normal, p
 
 Para o exemplo, o comando é o seguinte:
 
-```{r qqnorm, fig.cap="Gráfico de probabilidade normal para verificar normalidade dos resíduos"}
+
+```r
 qqnorm(residuals(regressaolinear))
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/qqnorm-1} 
+
+}
+
+\caption{Gráfico de probabilidade normal para verificar normalidade dos resíduos}\label{fig:qqnorm}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -3726,7 +6043,8 @@ E o resultado é apresentado na Figura \@ref(fig:qqnorm).
 
 Ainda, pode-se construir o gráfico com a distribuição da probabilidade dos resíduos, através de um histograma, verificando assim se a cauda é simétrica ou não:
 
-```{r histresid, fig.cap="Histograma de distribuição da probabilidade para os resíduos"}
+
+```r
 hist(x = regressaolinear$residuals,
       xlab = "Resíduos",
       ylab = "Densidade",
@@ -3735,6 +6053,15 @@ hist(x = regressaolinear$residuals,
       probability = TRUE)
 lines(density(regressaolinear$residuals))
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/histresid-1} 
+
+}
+
+\caption{Histograma de distribuição da probabilidade para os resíduos}\label{fig:histresid}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -3747,8 +6074,17 @@ Também, pode-se aplicar o teste de normalidade de Shapiro-Wilk para verificar a
 
 Para o exemplo:
 
-```{r, echo=TRUE}
+
+```r
 shapiro.test(residuals(regressaolinear))
+```
+
+```
+
+	Shapiro-Wilk normality test
+
+data:  residuals(regressaolinear)
+W = 0.95605, p-value = 0.6241
 ```
 
 Conclui-se que os resíduos são normais se o valor de $p \geq$ 0,05.
@@ -3763,9 +6099,31 @@ Para análise dos valores outliers nos resíduos (*residuals standard* e *residu
 
 Para o exemplo:
 
-```{r, echo=TRUE}
+
+```r
 rstudent(regressaolinear)
+```
+
+```
+          1           2           3           4           5           6 
+-1.04741775 -0.74388746  1.07142465  0.07645794 -1.07311058  0.40066077 
+          7           8           9          10          11          12 
+-2.01859862  2.29138249  1.26282997 -0.60068792  0.86124654 -0.69776509 
+         13          14          15 
+-0.81957806  0.32859165  0.51493020 
+```
+
+```r
 rstandard(regressaolinear)
+```
+
+```
+          1           2           3           4           5           6 
+-1.04352847 -0.75700504  1.06537935  0.07956057 -1.06690909  0.41425930 
+          7           8           9          10          11          12 
+-1.81530525  1.98915789  1.23489807 -0.61602286  0.86993078 -0.71195741 
+         13          14          15 
+-0.83012677  0.34048069  0.53013142 
 ```
 
 E o gráfico para verificar valores outliers nos resíduos:
@@ -3776,21 +6134,41 @@ E o gráfico para verificar valores outliers nos resíduos:
 
 Os gráficos dos resíduos padronizados (standard) e studentizados (student) para o exemplo estão apresentados nas Figuras \@ref(fig:residpad) e \@ref(fig:residst), respectivamente, utilizando os comandos que segue:
 
-```{r residpad, fig.cap="Resíduos padronizados para o exemplo"}
+
+```r
 plot(rstandard(regressaolinear))
 abline(h=2,col="red")
 abline(h=-2,col="red")
 ```
 
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/residpad-1} 
+
+}
+
+\caption{Resíduos padronizados para o exemplo}\label{fig:residpad}
+\end{figure}
+
 Fonte: Elaborado pelo(s) autor(es).
 
 Aqueles valores fora do intervalo (-2, +2) são possíveis outliers. 
 
-```{r residst, fig.cap="Resíduos studentizados para o exemplo"}
+
+```r
 plot(rstudent(regressaolinear)) 
 abline(h=2,col="red")
 abline(h=-2,col="red")
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/residst-1} 
+
+}
+
+\caption{Resíduos studentizados para o exemplo}\label{fig:residst}
+\end{figure}
 
 
 Fonte: Elaborado pelo(s) autor(es).
@@ -3805,25 +6183,50 @@ Para análise dos valores influentes, utiliza-se:
 
 Para os dados do exemplo:
 
-```{r, echo=TRUE}
+
+```r
 dffits(regressaolinear)
+```
+
+```
+          1           2           3           4           5           6 
+-0.55767359 -0.19883742  0.30668532  0.02611039 -0.34385546  0.11596936 
+          7           8           9          10          11          12 
+-1.34853650  0.97320050  0.43847569 -0.32566485  0.25379217 -0.20196480 
+         13          14          15 
+-0.38792448  0.14209527  0.13902497 
 ```
 
 Aqueles valores maiores que $2*(p/n)^{(1/2)}$ são possíveis pontos influentes. Em que, p = número de parâmetros do modelo e n = tamanho da amostra.
 
 Para esse exemplo:
 
-```{r, echo=TRUE}
+
+```r
 2*(2/15)^(1/2)
+```
+
+```
+[1] 0.7302967
 ```
 
 O gráfico para detectar pontos influentes para os dados do exemplo:
 
-```{r ptoinf, fig.cap="Pontos influentes para o exemplo"}
+
+```r
 plot(dffits(regressaolinear))
 abline(h=-0.73,col="red")
 abline(h=0.73,col="red")
 ```
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{index_files/figure-latex/ptoinf-1} 
+
+}
+
+\caption{Pontos influentes para o exemplo}\label{fig:ptoinf}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -3868,9 +6271,14 @@ O comando `plot(nome_para_regressao)` elabora diferentes gráficos para o diagn�
 
 `Markdown` é uma linguagem de marcação de textos utilizada para a criação de diversos documentos, incluindo artigos, livros e apresentações. A grande inovação do `RMarkdown` no RStudio neste sentido é a utilização desta linguagem por meio do pacote `rmarkdown` (arquivos .Rmd) para integrar a criação de documentos com a análise e manipulação de dados em um único documento (Figura \@ref(fig:rmark)). Desta forma, é possível efetuar  pesquisas científicas que podem ser reproduzidas de forma muito mais fácil.
 
-```{r rmark, echo=FALSE, fig.cap="Processo de criação de documentos no RMarkdown"}
-knitr::include_graphics("rmarkdown.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkdown} 
+
+}
+
+\caption{Processo de criação de documentos no RMarkdown}\label{fig:rmark}
+\end{figure}
 
 Fonte: Adaptado de @R-rmarkdown.
 
@@ -3883,9 +6291,14 @@ Para criação do documento RMarkdown, no RStudio clique em "File $>$ New File $
 Neste exemplo será criado um documento em Word, onde são preenchidos os campos com o título do documento, o nome do autor e escolha o tipo de documento.
 
 
-```{r criararq1, echo=FALSE, fig.cap="Criar documento RMarkdown"}
-knitr::include_graphics("criararq1.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{criararq1} 
+
+}
+
+\caption{Criar documento RMarkdown}\label{fig:criararq1}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -3894,17 +6307,27 @@ Fonte: Elaborado pelo(s) autor(es).
 
 O `RMarkdown` cria um documento incial padrão, contendo alguns exemplos básicos de inserção de textos e de formatação, que serão vistos adiante. Para compilação do documento para o formato desejado (neste caso Word), o usuário deve clicar na aba "Knit $>$ Knit to Word", ou pelo atalho no teclado CTRL+SHIFT+K.
 
-```{r compil, echo=FALSE, fig.cap="Compilando o documento RMarkdown"}
-knitr::include_graphics("compilar.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{compilar} 
+
+}
+
+\caption{Compilando o documento RMarkdown}\label{fig:compil}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 Caso ocorram erros com relação à codificação do documento, no que diz respeito aos caracteres de acentuação da língua portuguesa, este pode ser resolvido salvando o documento criado com a codificação UTF-8. Para isto, clique em "File $>$ Save with Encoding $>$ UTF-8". Deve ser feito este procedimento para cada tipo de arquivo: Word, HTML e PDF.
 
-```{r errocodif, echo=FALSE, fig.cap="Erro de codificação do documento RMarkdown"}
-knitr::include_graphics("errocodif.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{errocodif} 
+
+}
+
+\caption{Erro de codificação do documento RMarkdown}\label{fig:errocodif}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -3915,9 +6338,14 @@ A configuração básica de um arquivo RMarkdown divide-se entre a YAML Header e
 
 Já abaixo do YAML, situa-se o local onde o pesquisador digitará o texto, bem como integrará a inserção de códigos do R e também efetuará as análises posteriores (análises descritivas, regressões, tabelas, fórmulas, etc.). Por sua vez, os códigos do R (para manipulação de dados, como visto até o capítulo anterior deste livro) são "embutidos" no texto por meio das **Code Chunks**. Já o texto é inserido normalmente em forma de parágrafos ("fora" dos Chunks), sendo que o novo parágrafo é iniciado após pressionar a tecla "Enter" entre os textos informados.
 
-```{r rmark2, echo=FALSE, fig.cap="Tela inicial do arquivo RMarkdown"}
-knitr::include_graphics("rmark2.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmark2} 
+
+}
+
+\caption{Tela inicial do arquivo RMarkdown}\label{fig:rmark2}
+\end{figure}
 
 Elaborado pelo(s) autor(es).
 
@@ -3932,58 +6360,93 @@ Dentro do documento `RMarkdown`, depois dos metadados, começa o espaço destina
 
 Os níveis de títulos dos documentos RMarkdown são definidos pelo símbolo `#`:
 
-```{r rmarktit, echo=FALSE, fig.cap="Títulos no RMarkdown"}
-knitr::include_graphics("rmarktit.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarktit} 
+
+}
+
+\caption{Títulos no RMarkdown}\label{fig:rmarktit}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 A acentuação das palavras, dentro do texto, é feita normalmente pelo teclado do usuário. Os caracteres `*#/()[]<>` podem ser escritos normalmente dentro do texto, no entanto os demais (exemplo do cifrão `$`) devem ser escritos precedidos de uma barra: `\$`. Por outro lado, a formatação em itálico, negrito, subscrito, sobrescrito, links e demais formatações são feitas no documento (Figura \@ref(fig:rmarkform)).
 
-```{r rmarkform, echo=FALSE, fig.cap="Formatação no RMarkdown"}
-knitr::include_graphics("rmarkform.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkform} 
+
+}
+
+\caption{Formatação no RMarkdown}\label{fig:rmarkform}
+\end{figure}
 Fonte: Elaborado pelo(s) autor(es).
 
 Como visto, é possível escrever as fórmulas em notação matemática, o que facilita e muito a vida do pesquisador. No ambiente matemático do `RMarkdown`, elas são escritas por meio da linguagem de marcação de textos LaTeX. Existem muitos manuais sobre esta linguagem, e para facilitar a escrita, sites como <https://www.codecogs.com/latex/eqneditor.php?lang=pt-br> ajudam o pesquisador nesta empreitada.
 
 É possível efetuar a inserção de links nos documentos, para páginas externas ou mesmo internas ao documento (Figura \@ref(fig:rmarklinks)).
 
-```{r rmarklinks, echo=FALSE, fig.cap="Links no RMarkdown"}
-knitr::include_graphics("rmarklinks.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarklinks} 
+
+}
+
+\caption{Links no RMarkdown}\label{fig:rmarklinks}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 A inserção de imagens externas no documento, em diversos formatos (aqui no exemplo .png) é feita a partir do direcionamento do nome da imagem salva na mesma pasta do arquivo .Rmd criado, ou mesmo pelo link na internet (Figura \@ref(fig:rmarkimg)).
 
-```{r rmarkimg, echo=FALSE, fig.cap="Imagens no RMarkdown"}
-knitr::include_graphics("rmarkimg.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkimg} 
+
+}
+
+\caption{Imagens no RMarkdown}\label{fig:rmarkimg}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 A Figura \@ref(fig:rmarklist) demonstra algumas formas de criar listas e itens no decorrer do corpo de texto no `RMarkdown`.
 
-```{r rmarklist, echo=FALSE, fig.cap="Listas no RMarkdown"}
-knitr::include_graphics("rmarklist.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarklist} 
+
+}
+
+\caption{Listas no RMarkdown}\label{fig:rmarklist}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 A criação de tabelas simples segue a disposição dos elementos pré-definidos, sendo que o alinhamento da coluna se dá pelo caractere "`:`" (dois pontos) conforme a Figura \@ref(fig:rmarktab):
 
-```{r rmarktab, echo=FALSE, fig.cap="Tabelas simples no RMarkdown"}
-knitr::include_graphics("rmarktab.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarktab} 
+
+}
+
+\caption{Tabelas simples no RMarkdown}\label{fig:rmarktab}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 As notas de rodapé são inseridas no texto dentro das chaves precedidas do acento circunflexo `^[ ]`. O pesquisador adiciona-os durante o texto, e o programa enumera automaticamente no documento final em Word (Figura \@ref(fig:rmarkrodape)).
 
-```{r rmarkrodape, echo=FALSE, fig.cap="Notas de rodapé no RMarkdown"}
-knitr::include_graphics("rmarkrodape.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkrodape} 
+
+}
+
+\caption{Notas de rodapé no RMarkdown}\label{fig:rmarkrodape}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -3992,9 +6455,14 @@ Fonte: Elaborado pelo(s) autor(es).
 
 O YAML, ou os metadados do documento, são informações básicas do documento que podem ser alteradas (Figura \@ref(fig:rmarkautor)). Dentre elas *title* define o título do documento; em *author* é inserido o autor ou autores e as informações do currículo do pesquisador são inseridas via nota de rodapé dentro do símbolo `^[  ]`; o campo *date* é opcional.
 
-```{r rmarkautor, echo=FALSE, fig.cap="Configuração do YAML"}
-knitr::include_graphics("rmarkautor.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkautor} 
+
+}
+
+\caption{Configuração do YAML}\label{fig:rmarkautor}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4025,9 +6493,14 @@ Os campos `fig_height` e `fig_width` determinam a altura e largura padrão de to
 
 Também é possível incluir um campo `abstract` para o resumo, no caso de artigo e suas respectivas palavras-chave:
 
-```{r abstract, echo=FALSE, fig.cap="Abstract no YAML"}
-knitr::include_graphics("abstract.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{abstract} 
+
+}
+
+\caption{Abstract no YAML}\label{fig:abstract}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4039,9 +6512,14 @@ Os **Code Chunks**, como já visto, são espaços destinados à inclusão de có
 A criação das Chunks é feita manualmente no corpo do documento .Rmd pela inclusão do código demonstrado abaixo, ou via plataforma RStudio, no menu "Insert $>$ Insert a new R chunk", conforme demonstra a Figura \@ref(fig:rmarkchunk1):
 
 
-```{r rmarkchunk1, echo=FALSE, fig.cap="Criação de Chunks"}
-knitr::include_graphics("rmarkchunk1.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkchunk1} 
+
+}
+
+\caption{Criação de Chunks}\label{fig:rmarkchunk1}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4051,9 +6529,14 @@ No exemplo abaixo, o nome da Chunk criada foi "r nomedochunk". E no campo das op
 
 A primeira opção, `echo=FALSE`, informa que no arquivo compilado, somente será mostrado o resultado da rotina inserida na Chunk (1+1), portanto será mostrado somente o valor 2. Caso o usuário almejasse inserir, no arquivo final, o código do R escrito (1+1) juntamente com o resultado da operação, marcaria `echo=TRUE`.
 
-```{r rmarkchunk2, echo=FALSE, fig.cap="Criação de Chunks (2)"}
-knitr::include_graphics("rmarkchunk2.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkchunk2} 
+
+}
+
+\caption{Criação de Chunks (2)}\label{fig:rmarkchunk2}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4062,9 +6545,14 @@ As opções `fig.height` e `fig.width` referem-se à altura e largura caso o res
 
 Para padronizar todas as Chunks para que tenham as mesmas opções, uma maneira utilizada usualmente é a inserção de uma `Chunk global`. Ela é incluída no início do texto, sendo que a sua inclusão é facultativa. No entanto, contribui para padronizar o texto, ao mesmo tempo que se existir uma Chunk durante o texto que deva ser configurada de forma diferente (por exemplo, o tamanho da imagem), pode ser efetuado em cada Chunk individual.
 
-```{r rmarkchunkopt, echo=FALSE, fig.cap="Chunk global"}
-knitr::include_graphics("rmarkchunkopt.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkchunkopt} 
+
+}
+
+\caption{Chunk global}\label{fig:rmarkchunkopt}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4086,9 +6574,14 @@ Como mencionado no início deste capítulo, a grande vantagem do `RMarkdown` é 
 
 No exemplo abaixo, foi criado um *data frame* nomeado "amost" diretamente no console dentro da Chunk. Em um segundo momento, para utilizar um determinado pacote instalado no RStudio, se insere, dentro da Chunk, o comando `require()` juntamente com o pacote necessário. Podem ser inseridos tantos pacotes quanto forem utilizados no documento, conforme a Figura \@ref(fig:rmarkchunk3).
 
-```{r rmarkchunk3, echo=FALSE, fig.cap="Exemplo de criação de Chunk e carregamento de pacote"}
-knitr::include_graphics("rmarkchunk3.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkchunk3} 
+
+}
+
+\caption{Exemplo de criação de Chunk e carregamento de pacote}\label{fig:rmarkchunk3}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4097,18 +6590,28 @@ Fonte: Elaborado pelo(s) autor(es).
 
 Como visto, algumas ações extremamente úteis podem ser efetuadas por meio das Chunks. Dentre elas, inclui-se a plotagem de tabelas no texto final, derivadas de objetos criados pelo pesquisador no RStudio. Os exemplos trazidos abaixo incluem a utilização dos pacotes `kable`, `xtable` e `flextable` para a criação das tabelas. 
 
-```{r rmarkchunk31, echo=FALSE, fig.cap="Exemplo de criação de tabelas com os pacotes kable, xtable e flextable"}
-knitr::include_graphics("rmarkchunktab1.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkchunktab1} 
+
+}
+
+\caption{Exemplo de criação de tabelas com os pacotes kable, xtable e flextable}\label{fig:rmarkchunk31}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 
 Além disso, o pacote `stargazer` é extremamente útil para geração de tabelas com resultados de regressões com a saída dos documentos em PDF.
 
-```{r rmarkchunk33, echo=FALSE, fig.cap="Exemplo de criação de tabelas com stargazer"}
-knitr::include_graphics("rmarkchunktab2.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkchunktab2} 
+
+}
+
+\caption{Exemplo de criação de tabelas com stargazer}\label{fig:rmarkchunk33}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4135,9 +6638,14 @@ Outra forma de passar as tabelas para o Word é criando-a no formato HTML e copi
 Da mesma forma que as tabelas, as imagens também podem ser inseridas com o auxílio de Chunks. Lembrando que a imagem deve estar na mesma pasta do arquivo ou na pasta indicada:
 
 
-```{r rmarkchunk333, echo=FALSE, fig.cap="Exemplo de inserção de imagens pelos Chunks"}
-knitr::include_graphics("rmarkchunkimg.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkchunkimg} 
+
+}
+
+\caption{Exemplo de inserção de imagens pelos Chunks}\label{fig:rmarkchunk333}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4157,17 +6665,27 @@ Como já visto, para criação de documentos .Rmd clique em "File $>$ New File $
 
 Abra o arquivo em Word (denominado "modelo.docx"). Atente para a caixa de seleção de estilos do Word, que será trabalhado nesta etapa (Figura \@ref(fig:rmarkestilos)). 
 
-```{r rmarkestilos, echo=FALSE, fig.cap="Caixa estilos no Word"}
-knitr::include_graphics("rmarkestilos.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkestilos} 
+
+}
+
+\caption{Caixa estilos no Word}\label{fig:rmarkestilos}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
 Note que para o resultado desta compilação, o menu estilos traz várias formatações das diferentes partes do texto, entre elas "Abstract", "Author", "Normal", "Titulo", "Titulo 1", etc. Estes estilos serão alterados pelo usuário, para adequar às necessidades do pesquisador na criação do documento padrão. Clique com o botão direito nos estilos e em ``Modificar'' para definir a formatação padrão para cada parte do texto.
 
-```{r rmarkestilos1, echo=FALSE, fig.cap="Modificação de estilos no Word"}
-knitr::include_graphics("rmarkestilos1.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkestilos1} 
+
+}
+
+\caption{Modificação de estilos no Word}\label{fig:rmarkestilos1}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4177,9 +6695,14 @@ Fonte: Elaborado pelo(s) autor(es).
 Após determinar as alterações em todos os campos de estilos do documento modelo no Word, o pesquisador deve vincular este modelo ao documento .Rmd principal. Além de deixar salvo o modelo em Word na mesma pasta, deve-se incluir a seguinte informação no YAML mostrada na Figura  \@ref(fig:rmarkestilos2) (`reference_docx`). Lembrando que para arquivos em Open/Libre Office, deve ser inserida a opção `reference_odt` seguida do arquivo (.odt) do modelo.
 
 
-```{r rmarkestilos2, echo=FALSE, fig.cap="Vinculação do modelo"}
-knitr::include_graphics("rmarkestilos2.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkestilos2} 
+
+}
+
+\caption{Vinculação do modelo}\label{fig:rmarkestilos2}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4196,9 +6719,14 @@ Dentro deste arquivo serão armazenadas as referências bibliográficas, não de
 
 A primeira (`@article`), demonstra que é um artigo de uma revista enquanto a segunda (`@book`) se trata de um livro. Dentro das chaves estão os dados das referências, como o título (`title`), autores (`author`) e o ano (`year`) por exemplo.
 
-```{r rmarkbib, echo=FALSE, fig.cap="Arquivo .bib"}
-knitr::include_graphics("rmarkbib.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkbib} 
+
+}
+
+\caption{Arquivo .bib}\label{fig:rmarkbib}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4224,9 +6752,14 @@ O BibLateX gerencia todos os tipos de bibliografias sendo que, como visto acima,
 Estas configurações do BibLateX são comuns nos programas de gerenciamento de bibliografias, como por exemplo no *software* Mendeley. Os usuários deste programa tem uma facilidade na exportação para o formato do BibLateX, pois podem copiar as entradas com as informações de um trabalho e as inserir dentro do arquivo .bib (Figura \@ref(fig:rmarkmendeley)).
 
 
-```{r rmarkmendeley, echo=FALSE, fig.cap="Utilização do Mendeley para exportação de dados de bibliografias"}
-knitr::include_graphics("rmarkmendeley.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkmendeley} 
+
+}
+
+\caption{Utilização do Mendeley para exportação de dados de bibliografias}\label{fig:rmarkmendeley}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4235,9 +6768,14 @@ Fonte: Elaborado pelo(s) autor(es).
 Após escolhidas as bibliografias a serem utilizadas no trabalho, o pesquisador deve inserir estas entradas como referências dentro do texto. Para isto, utiliza o nome da bibliografia inserida no arquivo .bib, no nosso exemplo `bresser` e `Forstater2008`, como mostra a Figura \@ref(fig:rmarkcitar).
 
 
-```{r rmarkcitar, echo=FALSE, fig.cap="Inserção de citações no arquivo .Rmd"}
-knitr::include_graphics("rmarkcitar.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkcitar} 
+
+}
+
+\caption{Inserção de citações no arquivo .Rmd}\label{fig:rmarkcitar}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4249,9 +6787,14 @@ Mas qual norma será utilizada para as citações e a criação de referências 
 Estes arquivos podem ser encontrados em diversos locais, como por exemplo em <https://github.com/citation-style-language/styles> (copie este^[https://raw.githubusercontent.com/citation-style-language/styles/44808db510152943c5d9dc471a9c8982a3edfbea/associacao-brasileira-de-normas-tecnicas-ipea.csl] conteúdo para um arquivo ".txt" e o renomeie para ".csl"). Lembrando que o arquivo ".csl" deve ser salvo na mesma pasta do arquivo ".Rmd". O arquivo csl aqui utilizado refere-se às normas da ABNT (Associação Brasileira de Normas Técnicas) utilizados pelo IPEA (Instituto de Pesquisa Econômica Aplicada). Verifica-se na Figura \@ref(fig:rmarkcitar1) a configuração final do YAML. Neste site <http://editor.citationstyles.org/searchByName/>
 também são encontrados arquivos para várias normas bibliográficas.
 
-```{r rmarkcitar1, echo=FALSE, fig.cap="Configurando YAML para citações e fererências"}
-knitr::include_graphics("rmarkcitar1.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkcitar1} 
+
+}
+
+\caption{Configurando YAML para citações e fererências}\label{fig:rmarkcitar1}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4264,9 +6807,14 @@ A partir de então fica muito mais fácil alterar a norma necessária para a pro
 Segue o resultado do arquivo final:
 
 
-```{r rmarkcitarf, echo=FALSE, fig.cap="Resultado final das citações e referências com RMarkdown",fig.showtext="TEste"}
-knitr::include_graphics("rmarkcitarf.png")
-```
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{rmarkcitarf} 
+
+}
+
+\caption{Resultado final das citações e referências com RMarkdown}\label{fig:rmarkcitarf}
+\end{figure}
 
 Fonte: Elaborado pelo(s) autor(es).
 
@@ -4308,4 +6856,7 @@ Fonte: Elaborado pelo(s) autor(es).
 
 
 
+
+
+<!--chapter:end:index.Rmd-->
 

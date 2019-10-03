@@ -1,4 +1,0 @@
-"0","# União de um banco de dados (existencia de uma váriavel em comum)"
-"0","estudantes=c(""Guilherme"", ""Marcelo"", ""Pedro"", ""Camila"")"
-"0","altura= c(1.50, 1.9, 1.74, 1.80)"
-"0","informacoes.3=data.frame(estudantes, altura)"

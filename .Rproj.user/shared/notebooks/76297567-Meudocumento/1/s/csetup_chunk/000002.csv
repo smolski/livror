@@ -1,5 +1,0 @@
-"0","knitr::opts_chunk$set(echo = TRUE,message = TRUE,	"
-"0","                      warning = TRUE, fig.height=5, fig.width=5)"
-"0","knitr::opts_knit$get('rmarkdown.pandoc.to')"
-"1","NULL
-"

@@ -1,5 +1,0 @@
-"0","mean(subset(`Altura_(m)`, Sexo==""Masculino""& Idade>25))"
-"1","[1]"
-"1"," 1.654"
-"1","
-"
