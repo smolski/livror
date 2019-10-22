@@ -2,3 +2,4 @@
 
 [Download](http://www.editorafaith.com.br/ebooks/grat/software_r.pdf)
 
+![](CapaFINAL.png)
